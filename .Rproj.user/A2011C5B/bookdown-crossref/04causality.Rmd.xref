@@ -1,0 +1,25 @@
+h1:causality Analiza współzależności pomiędzy zmiennymi
+h2:dwie-zmienne-nominalne Dwie zmienne nominalne
+h3:ryzyko-względne-oraz-iloraz-szans Ryzyko względne oraz iloraz szans
+h3:przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans Przedziały ufności dla ryzyka względnego oraz ilorazu szans
+h3:tabele-wielodzielcze Tabele wielodzielcze
+h2:zmienna-liczbowa-i-zmienna-nominalna Zmienna liczbowa i zmienna nominalna
+h3:test-t-studenta test -Studenta
+h3:testowanie-normalności Testowanie normalności
+h3:test-u-manna-whitneya test U Manna-Whitneya
+h3:test-anova test ANOVA
+h3:test-kruskalla-wallisa test Kruskalla-Wallisa
+h2:zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne Zmienna liczbowa i zmienne liczbowe lub nominalne
+h3:przypadek-szczególny-dwie-zmienne-liczbowe Przypadek szczególny: dwie zmienne liczbowe
+h3:korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)
+h3:pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona Pomiar siły zależności: współczynnik korelacji liniowej Pearsona
+h3:macierz-korelacji Macierz korelacji
+h3:pomiar-siły-zależności-regresja-liniowa Pomiar siły zależności: regresja liniowa
+h3:regresja-prosta Regresja prosta
+h3:przypadek-ogólny-regresja-wieloraka Przypadek ogólny: regresja wieloraka
+h3:zmienne-zero-jedynkowe Zmienne zero-jedynkowe
+h2:przypadek-specjalny-regresja-logistyczna Przypadek specjalny: regresja logistyczna
+h2:przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe Przypadek specjalny: dwie zmienne co najmniej porządkowe
+h3:pomiar-siły-zależności-współczynnik-korelacji-rang Pomiar siły zależności: współczynnik korelacji rang
+h2:podsumowanie Podsumowanie
+

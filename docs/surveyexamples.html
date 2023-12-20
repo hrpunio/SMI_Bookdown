@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Przykłady badań ankietowych | Łagodne wprowadzenie do statystyki</title>
+  <meta name="description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Przykłady badań ankietowych | Łagodne wprowadzenie do statystyki" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Przykłady badań ankietowych | Łagodne wprowadzenie do statystyki" />
+  
+  <meta name="twitter:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="causality.html"/>
+<link rel="next" href="intro2jamovi.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Łagodne wprowadzenie do statystyki</a></li>
+
+<li class="divider"></li>
+<li><a href="przedmiotbadan.html#przedmiotbadan" id="toc-przedmiotbadan"><span class="toc-section-number">1</span> Przedmiot i metody badań statystycznych</a>
+<ul>
+<li><a href="przedmiotbadan.html#przedmiot-statystyki" id="toc-przedmiot-statystyki"><span class="toc-section-number">1.1</span> Przedmiot statystyki</a></li>
+<li><a href="przedmiotbadan.html#podstawowe-pojęcia" id="toc-podstawowe-pojęcia"><span class="toc-section-number">1.2</span> Podstawowe pojęcia</a></li>
+<li><a href="przedmiotbadan.html#pomiar" id="toc-pomiar"><span class="toc-section-number">1.3</span> Pomiar</a></li>
+<li><a href="przedmiotbadan.html#rodzaje-i-sposoby-analizy-danych" id="toc-rodzaje-i-sposoby-analizy-danych"><span class="toc-section-number">1.4</span> Rodzaje i sposoby analizy danych</a></li>
+<li><a href="przedmiotbadan.html#sposoby-pomiaru-danych-i-organizacja-badania" id="toc-sposoby-pomiaru-danych-i-organizacja-badania"><span class="toc-section-number">1.5</span> Sposoby pomiaru danych i organizacja badania</a>
+<ul>
+<li><a href="przedmiotbadan.html#przykłady-badań" id="toc-przykłady-badań"><span class="toc-section-number">1.5.1</span> Przykłady badań</a></li>
+</ul></li>
+<li><a href="przedmiotbadan.html#miary-częstości-chorób" id="toc-miary-częstości-chorób"><span class="toc-section-number">1.6</span> Miary częstości chorób</a></li>
+<li><a href="przedmiotbadan.html#oprogramowanie" id="toc-oprogramowanie"><span class="toc-section-number">1.7</span> Oprogramowanie</a></li>
+</ul></li>
+<li><a href="analiza1z.html#analiza1z" id="toc-analiza1z"><span class="toc-section-number">2</span> Analiza jednej zmiennej</a>
+<ul>
+<li><a href="analiza1z.html#tablice-statystyczne" id="toc-tablice-statystyczne"><span class="toc-section-number">2.1</span> Tablice statystyczne</a></li>
+<li><a href="analiza1z.html#wykresy" id="toc-wykresy"><span class="toc-section-number">2.2</span> Wykresy</a>
+<ul>
+<li><a href="analiza1z.html#skala-nominalna" id="toc-skala-nominalna"><span class="toc-section-number">2.2.1</span> skala nominalna</a></li>
+<li><a href="analiza1z.html#skala-liczbowa" id="toc-skala-liczbowa"><span class="toc-section-number">2.2.2</span> skala liczbowa</a></li>
+</ul></li>
+<li><a href="analiza1z.html#florence-nightingale" id="toc-florence-nightingale"><span class="toc-section-number">2.3</span> Florence Nightingale</a></li>
+<li><a href="analiza1z.html#analiza-parametryczna" id="toc-analiza-parametryczna"><span class="toc-section-number">2.4</span> Analiza parametryczna</a>
+<ul>
+<li><a href="analiza1z.html#miary-położenia" id="toc-miary-położenia"><span class="toc-section-number">2.4.1</span> Miary położenia</a></li>
+<li><a href="analiza1z.html#miary-zmienności" id="toc-miary-zmienności"><span class="toc-section-number">2.4.2</span> Miary zmienności</a></li>
+<li><a href="analiza1z.html#miary-asymetrii" id="toc-miary-asymetrii"><span class="toc-section-number">2.4.3</span> Miary asymetrii</a></li>
+<li><a href="analiza1z.html#parametryczna-analiza-struktury-w-jednym-zdaniu" id="toc-parametryczna-analiza-struktury-w-jednym-zdaniu"><span class="toc-section-number">2.4.4</span> (Parametryczna) analiza struktury w jednym zdaniu</a></li>
+</ul></li>
+<li><a href="analiza1z.html#porównanie-wielu-rozkładów" id="toc-porównanie-wielu-rozkładów"><span class="toc-section-number">2.5</span> Porównanie wielu rozkładów</a>
+<ul>
+<li><a href="analiza1z.html#wykres-pudełkowy" id="toc-wykres-pudełkowy"><span class="toc-section-number">2.5.1</span> Wykres pudełkowy</a></li>
+</ul></li>
+</ul></li>
+<li><a href="interference.html#interference" id="toc-interference"><span class="toc-section-number">3</span> Łagodne wprowadzenie do wnioskowanie statystycznego</a>
+<ul>
+<li><a href="interference.html#przykładowy-problem-nr-1" id="toc-przykładowy-problem-nr-1"><span class="toc-section-number">3.1</span> Przykładowy problem nr 1</a></li>
+<li><a href="interference.html#przykładowy-problem-nr-2" id="toc-przykładowy-problem-nr-2"><span class="toc-section-number">3.2</span> Przykładowy problem nr 2</a></li>
+<li><a href="interference.html#rozkład-normalny" id="toc-rozkład-normalny"><span class="toc-section-number">3.3</span> Rozkład normalny</a></li>
+<li><a href="interference.html#wnioskowanie-statystyczne-interferance" id="toc-wnioskowanie-statystyczne-interferance"><span class="toc-section-number">3.4</span> Wnioskowanie statystyczne (<em>interferance</em>)</a>
+<ul>
+<li><a href="interference.html#estymacja-punktowa" id="toc-estymacja-punktowa"><span class="toc-section-number">3.4.1</span> Estymacja punktowa</a></li>
+<li><a href="interference.html#estymacja-przedziałowa" id="toc-estymacja-przedziałowa"><span class="toc-section-number">3.4.2</span> Estymacja przedziałowa</a></li>
+<li><a href="interference.html#testowanie-hipotez" id="toc-testowanie-hipotez"><span class="toc-section-number">3.4.3</span> Testowanie hipotez</a></li>
+<li><a href="interference.html#testy-nieparametryczne" id="toc-testy-nieparametryczne"><span class="toc-section-number">3.4.4</span> Testy nieparametryczne</a></li>
+</ul></li>
+<li><a href="interference.html#słownik-terminów-które-warto-znać" id="toc-słownik-terminów-które-warto-znać"><span class="toc-section-number">3.5</span> Słownik terminów które warto znać</a></li>
+</ul></li>
+<li><a href="causality.html#causality" id="toc-causality"><span class="toc-section-number">4</span> Analiza współzależności pomiędzy zmiennymi</a>
+<ul>
+<li><a href="causality.html#dwie-zmienne-nominalne" id="toc-dwie-zmienne-nominalne"><span class="toc-section-number">4.1</span> Dwie zmienne nominalne</a>
+<ul>
+<li><a href="causality.html#ryzyko-względne-oraz-iloraz-szans" id="toc-ryzyko-względne-oraz-iloraz-szans"><span class="toc-section-number">4.1.1</span> Ryzyko względne oraz iloraz szans</a></li>
+<li><a href="causality.html#przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans" id="toc-przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans"><span class="toc-section-number">4.1.2</span> Przedziały ufności dla ryzyka względnego oraz ilorazu szans</a></li>
+<li><a href="causality.html#tabele-wielodzielcze" id="toc-tabele-wielodzielcze"><span class="toc-section-number">4.1.3</span> Tabele wielodzielcze</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienna-nominalna" id="toc-zmienna-liczbowa-i-zmienna-nominalna"><span class="toc-section-number">4.2</span> Zmienna liczbowa i zmienna nominalna</a>
+<ul>
+<li><a href="causality.html#test-t-studenta" id="toc-test-t-studenta"><span class="toc-section-number">4.2.1</span> test <span class="math inline">\(t\)</span>-Studenta</a></li>
+<li><a href="causality.html#testowanie-normalności" id="toc-testowanie-normalności"><span class="toc-section-number">4.2.2</span> Testowanie normalności</a></li>
+<li><a href="causality.html#test-u-manna-whitneya" id="toc-test-u-manna-whitneya"><span class="toc-section-number">4.2.3</span> test U Manna-Whitneya</a></li>
+<li><a href="causality.html#test-anova" id="toc-test-anova"><span class="toc-section-number">4.2.4</span> test ANOVA</a></li>
+<li><a href="causality.html#test-kruskalla-wallisa" id="toc-test-kruskalla-wallisa"><span class="toc-section-number">4.2.5</span> test Kruskalla-Wallisa</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne" id="toc-zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne"><span class="toc-section-number">4.3</span> Zmienna liczbowa i zmienne liczbowe lub nominalne</a>
+<ul>
+<li><a href="causality.html#przypadek-szczególny-dwie-zmienne-liczbowe" id="toc-przypadek-szczególny-dwie-zmienne-liczbowe"><span class="toc-section-number">4.3.1</span> Przypadek szczególny: dwie zmienne liczbowe</a></li>
+<li><a href="causality.html#korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot" id="toc-korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot"><span class="toc-section-number">4.3.2</span> Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" id="toc-pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona"><span class="toc-section-number">4.3.3</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</a></li>
+<li><a href="causality.html#macierz-korelacji" id="toc-macierz-korelacji"><span class="toc-section-number">4.3.4</span> Macierz korelacji</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-regresja-liniowa" id="toc-pomiar-siły-zależności-regresja-liniowa"><span class="toc-section-number">4.3.5</span> Pomiar siły zależności: regresja liniowa</a></li>
+<li><a href="causality.html#regresja-prosta" id="toc-regresja-prosta"><span class="toc-section-number">4.3.6</span> Regresja prosta</a></li>
+<li><a href="causality.html#przypadek-ogólny-regresja-wieloraka" id="toc-przypadek-ogólny-regresja-wieloraka"><span class="toc-section-number">4.3.7</span> Przypadek ogólny: regresja wieloraka</a></li>
+<li><a href="causality.html#zmienne-zero-jedynkowe" id="toc-zmienne-zero-jedynkowe"><span class="toc-section-number">4.3.8</span> Zmienne zero-jedynkowe</a></li>
+</ul></li>
+<li><a href="causality.html#przypadek-specjalny-regresja-logistyczna" id="toc-przypadek-specjalny-regresja-logistyczna"><span class="toc-section-number">4.4</span> Przypadek specjalny: regresja logistyczna</a></li>
+<li><a href="causality.html#przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe" id="toc-przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe"><span class="toc-section-number">4.5</span> Przypadek specjalny: dwie zmienne co najmniej porządkowe</a>
+<ul>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-rang" id="toc-pomiar-siły-zależności-współczynnik-korelacji-rang"><span class="toc-section-number">4.5.1</span> Pomiar siły zależności: współczynnik korelacji rang</a></li>
+</ul></li>
+<li><a href="causality.html#podsumowanie" id="toc-podsumowanie"><span class="toc-section-number">4.6</span> Podsumowanie</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#surveyexamples" id="toc-surveyexamples"><span class="toc-section-number">5</span> Przykłady badań ankietowych</a>
+<ul>
+<li><a href="surveyexamples.html#jak-zacząć-badanie" id="toc-jak-zacząć-badanie"><span class="toc-section-number">5.1</span> Jak zacząć badanie?</a>
+<ul>
+<li><a href="surveyexamples.html#co-chcemy-ustalić" id="toc-co-chcemy-ustalić"><span class="toc-section-number">5.1.1</span> Co chcemy ustalić?</a></li>
+<li><a href="surveyexamples.html#co-i-jak-mamy-mierzyć" id="toc-co-i-jak-mamy-mierzyć"><span class="toc-section-number">5.1.2</span> Co i jak mamy mierzyć?</a></li>
+<li><a href="surveyexamples.html#mierzenie-twardych-faktów-vs-mierzenia-przekonań" id="toc-mierzenie-twardych-faktów-vs-mierzenia-przekonań"><span class="toc-section-number">5.1.3</span> Mierzenie twardych faktów vs mierzenia przekonań</a></li>
+<li><a href="surveyexamples.html#pomiar-przekonań-wartości-i-postaw" id="toc-pomiar-przekonań-wartości-i-postaw"><span class="toc-section-number">5.1.4</span> Pomiar przekonań, wartości i postaw</a></li>
+<li><a href="surveyexamples.html#skala-likerta" id="toc-skala-likerta"><span class="toc-section-number">5.1.5</span> Skala Likerta</a></li>
+<li><a href="surveyexamples.html#skala-pomiarowainwentarzkwestionariusz" id="toc-skala-pomiarowainwentarzkwestionariusz"><span class="toc-section-number">5.1.6</span> Skala pomiarowa/inwentarz/kwestionariusz</a></li>
+<li><a href="surveyexamples.html#model-pomiaru" id="toc-model-pomiaru"><span class="toc-section-number">5.1.7</span> Model pomiaru</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.2</span> Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel" id="toc-cel"><span class="toc-section-number">5.2.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda" id="toc-metoda"><span class="toc-section-number">5.2.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#zastosowane-metody-statystyczne" id="toc-zastosowane-metody-statystyczne"><span class="toc-section-number">5.2.3</span> Zastosowane metody statystyczne</a></li>
+<li><a href="surveyexamples.html#metryczka-analiza-respondentów" id="toc-metryczka-analiza-respondentów"><span class="toc-section-number">5.2.4</span> Metryczka (analiza respondentów)</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1" id="toc-weryfikacja-hipotezy-1"><span class="toc-section-number">5.2.5</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-2" id="toc-weryfikacja-hipotezy-2"><span class="toc-section-number">5.2.6</span> Weryfikacja hipotezy 2</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-35" id="toc-weryfikacja-hipotez-35"><span class="toc-section-number">5.2.7</span> Weryfikacja hipotez 3–5</a></li>
+<li><a href="surveyexamples.html#wnioski" id="toc-wnioski"><span class="toc-section-number">5.2.8</span> Wnioski</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.3</span> Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel-1" id="toc-cel-1"><span class="toc-section-number">5.3.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda-1" id="toc-metoda-1"><span class="toc-section-number">5.3.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#metryczka" id="toc-metryczka"><span class="toc-section-number">5.3.3</span> Metryczka</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1-1" id="toc-weryfikacja-hipotezy-1-1"><span class="toc-section-number">5.3.4</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-24" id="toc-weryfikacja-hipotez-24"><span class="toc-section-number">5.3.5</span> Weryfikacja hipotez 2–4</a></li>
+<li><a href="surveyexamples.html#depresja-a-płeć" id="toc-depresja-a-płeć"><span class="toc-section-number">5.3.6</span> Depresja a płeć</a></li>
+<li><a href="surveyexamples.html#depresja-a-staż" id="toc-depresja-a-staż"><span class="toc-section-number">5.3.7</span> Depresja a staż</a></li>
+<li><a href="surveyexamples.html#depresja-a-rodzaj-miejsca-pracy" id="toc-depresja-a-rodzaj-miejsca-pracy"><span class="toc-section-number">5.3.8</span> Depresja a rodzaj miejsca pracy</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#wnioski-1" id="toc-wnioski-1"><span class="toc-section-number">5.4</span> Wnioski</a></li>
+<li><a href="surveyexamples.html#przykład-3" id="toc-przykład-3"><span class="toc-section-number">5.5</span> Przykład 3:</a></li>
+<li><a href="surveyexamples.html#formularze-ankiet" id="toc-formularze-ankiet"><span class="toc-section-number">5.6</span> Formularze ankiet</a>
+<ul>
+<li><a href="surveyexamples.html#ankieta-depresja-skala-depresji-becka" id="toc-ankieta-depresja-skala-depresji-becka"><span class="toc-section-number">5.6.1</span> Ankieta Depresja: Skala Depresji Becka</a></li>
+<li><a href="surveyexamples.html#ankieta-palenie" id="toc-ankieta-palenie"><span class="toc-section-number">5.6.2</span> Ankieta Palenie</a></li>
+</ul></li>
+</ul></li>
+<li><a href="intro2jamovi.html#intro2jamovi" id="toc-intro2jamovi"><span class="toc-section-number">6</span> Łagodne wprowadzenie z Jamovi</a>
+<ul>
+<li><a href="intro2jamovi.html#podstawy-pracy-z-jamovi" id="toc-podstawy-pracy-z-jamovi"><span class="toc-section-number">6.1</span> Podstawy pracy z Jamovi</a></li>
+<li><a href="intro2jamovi.html#przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia" id="toc-przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia"><span class="toc-section-number">6.2</span> Przykład: analiza ankiety satysfakcja–wiedza o paleniu–zamiar odejścia</a>
+<ul>
+<li><a href="intro2jamovi.html#wczytanie-danych" id="toc-wczytanie-danych"><span class="toc-section-number">6.2.1</span> Wczytanie danych</a></li>
+<li><a href="intro2jamovi.html#przekodowanie-danych" id="toc-przekodowanie-danych"><span class="toc-section-number">6.2.2</span> Przekodowanie danych</a></li>
+<li><a href="intro2jamovi.html#wyliczenie-nowych-zmiennych" id="toc-wyliczenie-nowych-zmiennych"><span class="toc-section-number">6.2.3</span> Wyliczenie nowych zmiennych</a></li>
+<li><a href="intro2jamovi.html#analiza-struktury" id="toc-analiza-struktury"><span class="toc-section-number">6.2.4</span> Analiza struktury</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienne-nominalne" id="toc-analiza-zależności-zmienne-nominalne"><span class="toc-section-number">6.2.5</span> Analiza zależności: zmienne nominalne</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-nominalna"><span class="toc-section-number">6.2.6</span> Analiza zależności: zmienna liczbowa/zmienna nominalna</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna"><span class="toc-section-number">6.2.7</span> Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna</a></li>
+<li><a href="intro2jamovi.html#regresja-logistyczna" id="toc-regresja-logistyczna"><span class="toc-section-number">6.2.8</span> Regresja logistyczna</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Łagodne wprowadzenie do statystyki</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="surveyexamples" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Przykłady badań ankietowych</h1>
+<p>Uwaga: ankieta nie jest kolejną metodą statystyczną tylko techniką zbierania danych.
+Wszystkie metody już zostały przedstawione i żadna nowe nie będzie.</p>
+<div id="jak-zacząć-badanie" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Jak zacząć badanie?</h2>
+<p>Każde w tym ankietowe.</p>
+<p>Należy zastanowić się nad trzema sprawami:</p>
+<ol style="list-style-type: decimal">
+<li>Co chcemy ustalić?</li>
+<li>Jakie dane są nam potrzebne żeby ustalić to co chcemy ustalić.</li>
+<li>Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)</li>
+</ol>
+<div id="co-chcemy-ustalić" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Co chcemy ustalić?</h3>
+<p>Najlepiej jakąś zależność. Na przykład: Stress a wypalenie zawodowe;
+satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej</p>
+<p>Może być od biedy opis czegoś lub porównanie czegoś z czymś. Przykłady:
+nadwaga wśród studentów wydziału zdrowia PSW; Analiza porównawcza
+wypalenia zawodowego pielęgniarek
+pracujących w różnych systemach opieki.</p>
+</div>
+<div id="co-i-jak-mamy-mierzyć" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Co i jak mamy mierzyć?</h3>
+<p>Jeżeli mamy zamiar badań nadwagę, to powinniśmy zmierzyć masę ciała.
+Jeżeli celem jest ustalenie zależności pomiędzy stresem a wypaleniem
+zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenia. Jak
+dotąd banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
+pytanie <strong>jak</strong></p>
+</div>
+<div id="mierzenie-twardych-faktów-vs-mierzenia-przekonań" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Mierzenie twardych faktów vs mierzenia przekonań</h3>
+<p>Możemy pytać w ankiecie o dwie rzeczy:</p>
+<ul>
+<li><p><strong>Fakty</strong> (wiek, staż, zawód, tętno, przebyte choroby)</p></li>
+<li><p><strong>Przekonania</strong>, <strong>Wartości</strong>, <strong>Postawy</strong>;
+<strong>Uczucia</strong> (strach / radość) albo <strong>Zamiary</strong>
+(w języku Attitudes/Emotions/Intentions)</p></li>
+</ul>
+<p>Mierzenie <strong>faktów</strong> nie wymaga dodatkowych objaśnień. Problem jest
+z mierzeniem <strong>przekonań</strong>.</p>
+<p><strong>Przekonanie</strong> to idea, którą jednostka uważa
+za prawdziwą. <strong>Wartości</strong> to trwałe przekonania o tym,
+co jest ważne dla jednostki. Stają się standardami, według których jednostki dokonują wyborów.
+<strong>Postawy</strong> to mentalne dyspozycje/nastawienie
+przed podjęciem decyzji, które skutkują
+określonym zachowaniem (zrobię to a nie tamto). Postawy
+kształtowane są wartościami i przekonaniami.</p>
+</div>
+<div id="pomiar-przekonań-wartości-i-postaw" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Pomiar przekonań, wartości i postaw</h3>
+<p>Postawy/uczucia/zamiary są to pojęcia
+abstrakcyjne. Często (albo zawsze) definiowane w obszarze psychologii,
+nauk o zarządzaniu itp.</p>
+<p>Pomiar <em>przekonań</em> jest dokonywany w specyficzny sposób.
+<strong>Definicja koncepcyjna</strong> definiuje pojęcie
+(zaufanie do kogoś/czegoś to <strong>przekonanie</strong>, że
+<em>działania tego kogoś/czegoś okażą się zgodne z naszymi
+oczekiwaniami</em>; satysfakcja to
+<strong>uczucie</strong> <em>przyjemności, zadowolenia z czegoś</em>;
+samoskuteczność to
+<strong>przekonanie</strong>, iż <em>jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele</em>).
+<strong>Definicja operacyjna</strong> określa jak zmierzyć pojęcie
+(jak zmierzyć satysfakcję)
+Przejście od DK do DO bywa czasami mocno, hmm… arbitralne.</p>
+</div>
+<div id="skala-likerta" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Skala Likerta</h3>
+<p>Przykładowo chcemy się dowiedzieć czy i jak bardzo respondenci boją się COVID19.</p>
+<p>W najprostszej wersji się po prostu pytamy:
+<strong>Czy pan/pani boi się COVID19?</strong> i dajemy
+respondentowi trzy możliwe warianty odpowiedzi: Tak/Nie/Nie wiem.</p>
+<p>Może też być pięć wariantów: bardzo się boję–boję się–ani/ani–nie boję się–zupełnie się nie boję.</p>
+<p>Taką skalę pomiarową określamy jak wiemy jako <strong>porządkową</strong>. Pomiary nie są liczbami
+ale są uporządkowane.
+Rangi wartości są już liczbami (np 1–5 w drugim przykładzie), można je np. uśredniać
+Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali <strong>Likerta</strong>.
+Można sobie wymyślać skalę Likerta 7-punktową i więcej.</p>
+<p>Moim zdaniem powyżej 7 wariantów normalny respondent będzie miał problem
+czy się bardziej-bardziej czy bardziej-bardziej-bardziej boi.</p>
+</div>
+<div id="skala-pomiarowainwentarzkwestionariusz" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Skala pomiarowa/inwentarz/kwestionariusz</h3>
+<p>Ponieważ skala Likerta jest zgrubna to
+uważa się powszechnie że lepszy wynik da pomiar
+wielokrotny.
+W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej
+precyzyjny tutaj pytamy się parę razy o to samo co
+ma dać podobny efekt (mniejszy średni błąd pomiaru).
+Taka seria pytań nosi też nazwę skali albo <strong>inwentarza</strong>.</p>
+<p>Nie pytamy się zatem <strong>Czy pan/pani boi się COVID19?</strong> tylko zadajemy serię
+pytań o strach względem COVID19.</p>
+<ol style="list-style-type: decimal">
+<li><p>I am most afraid of Corona</p></li>
+<li><p>It makes me uncomfortable to think about Corona</p></li>
+<li><p>My hands become clammy when I think about Corona</p></li>
+<li><p>I am afraid of losing my life because of Corona</p></li>
+<li><p>When I watch news and stories about Corona on social media, I become nervous or anxious.</p></li>
+<li><p>I cannot sleep because I’m worrying about getting Corona.</p></li>
+<li><p>My heart races or palpitates when I think about getting Corona</p></li>
+</ol>
+<p>albo:</p>
+<ol style="list-style-type: decimal">
+<li><p>Boję się koronawirusa</p></li>
+<li><p>Czuję dyskomfort, gdy myślę o koronawirusie</p></li>
+<li><p>Pocą mi się dłonie, gdy myślę o koronawirusie</p></li>
+<li><p>Boję się, że mogę stracić życie z powodu koronawirusa</p></li>
+<li><p>Gdy oglądam wiadomości i czytam o koronawirusie w mediach
+społecznościowych, robię się nerwowy i niespokojny</p></li>
+<li><p>Nie mogę spać, ponieważ martwię się, że ja lub moi bliscy zarażą się</p></li>
+<li><p>Dostaję palpitacji serca, gdy myślę o tym, że mógłbym się zarazić.</p></li>
+</ol>
+<p>Odpowiadający ma do wyboru pięć wariantów odpowiedzi:
+<strong>zdecydowanie nie</strong>/<strong>nie</strong>/<strong>nie mam zdania</strong>/<strong>tak</strong>/<strong>zdecydowanie tak</strong></p>
+<p>The Fear of COVID-19 Scale: Development and Initial Validation.
+International Journal of
+Mental Health and Addiction, 1–9.
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/</a></p>
+<p><em>Fear of COVID-19 Scale (FCV-19S) across countries: Measurement invariance issues</em>
+<a href="https://onlinelibrary.wiley.com/doi/10.1002/nop2.855" class="uri">https://onlinelibrary.wiley.com/doi/10.1002/nop2.855</a></p>
+<p><em>Fear of COVID-19, psychological distress, work satisfaction and turnover
+intention among frontline nurses</em>
+<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jonm.13168" class="uri">https://onlinelibrary.wiley.com/doi/full/10.1111/jonm.13168</a></p>
+<p>Lęk przed koronawirusem COVID-19
+i lęk przed śmiercią – polskie adaptacje narzędzi
+<a href="https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html" class="uri">https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html</a></p>
+</div>
+<div id="model-pomiaru" class="section level3" number="5.1.7">
+<h3><span class="header-section-number">5.1.7</span> Model pomiaru</h3>
+<p>Ukryty czynnik (strach) kształtuje wartości indykatorów (odpowiedzi na pytania)
+Taki sposób pomiaru <strong>ukrytego czynnika</strong> (latent w języku) określa się
+mianem refleksyjnego (co jest kalką od <em>reflexive</em>). Na rysunku
+kierunek strzałki obrazuje zależność (czynnik→indykator)</p>
+<p><img src="pomiar_ses-cropped.png" /></p>
+<p>Alternatywny sposób definiowania ukrytego (w pewnym sensie, raczej złożonego)
+czynnika nosi nazwę <strong>formatywnego</strong> (albo indeksu): czynnik jest sumą indykatorów.
+Przykładem może być SES:
+status socjo-ekonomiczny będący agregatem wykształcenia (W), dochodu (D)
+oraz zawodu (Z).</p>
+<p>W założeniu indykatory są jednakowo dobrymi miarami
+czynnika refleksyjnego i jako takie powinny być mocno
+skorelowane (mierzą to samo).
+Natomiast składniki czynnika formatywnego nie powinny
+być skorelowane, raczej każdy powinien mierzyć <strong>inny
+aspekt</strong> czynnika. Ktoś może być profesorem
+za przeproszeniem filozofii, nie mieć pracy i kiepskie
+dochody.
+Tylko jeden z trzech aspektów podwyższa mu SES;
+albo świetnie zarabiająca prostytutka bez matury.</p>
+<p>Jeżeli w czynniku refleksyjnym pominiemy jeden z trzech indykatorów to nic się
+nie stanie oprócz tego że pomiar będzie mniej precyzyjny. Jeżeli
+w czynniku formatywnym pominiemy indykator to popełniamy gruby błąd bo pomijamy
+jeden istotny składnik całości.</p>
+<p>Dobrą wiadomością jest, że najprostszy sposób pomiaru traktuje czynniki
+refleksyjne i formatywne jednakowo: wartością czynnika jest suma
+wartości indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta
+suma rang po prostu. W skali strachu przed COVID ten kto się najbardziej
+boi powinien odpowiedzieć 7 razy <strong>zdecydowanie tak</strong> co odpowiada
+sumie 35 rang (jeżeli rangujemy od 1 do 5).
+Ten który się wcale nie boi zaś 7.</p>
+<p>Małym utrudnieniem mogą być <strong>pytania odwrócone</strong>. Jeżeli pytamy
+o strach przed COVID i w każdym pytaniu jak bardzo ktoś się boi, albo jak
+bardzo mu serce bije, ale w jednym z pytań zapytamy <strong>nie boję się COVID</strong>
+To ranga 5 odpowiada uczuciu <strong>braku strachu</strong>. Rangi w pytaniach odwróconych
+należy przeliczyć (odwrócić): 1 zamienić na 5, 2 na 4 itd…
+Jeżeli używamy cudzych skal to w opisie powinno być wskazane które
+pytania są odwrócone.</p>
+<p><strong>Zalecany schemat postępowania jeżeli w ankiecie mają być mierzone
+przekonania</strong> (strach, samoskuteczność, wypalenie zawodowe, stress czy satysfakcja):</p>
+<ul>
+<li><p>Dokształcamy się nieco z psychologii mimo wszystko</p></li>
+<li><p>Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił żeby
+to mierzyć; <strong>raczej nie należy wymyślać własnych skal</strong>.</p></li>
+<li><p>Robimy ankietę (w Internecie) i zbieramy dane</p></li>
+<li><p>Wykonujemy analizę statystyczną</p></li>
+</ul>
+<p>Banalnie proste</p>
+</div>
+</div>
+<div id="przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW</h2>
+<div id="cel" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Cel</h3>
+<p>Celem jest ocena wielkości zjawiska palenia tytoniu oraz
+poziom wiedzy na temat szkodliwości palenia tytoniu
+wśród
+studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących na ten nałóg.</p>
+<p><strong>Postawiono następujące hipotezy badawcze</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>jaka jest wielkość zjawiska palenie tytoniu wśród studentów PSW?</p></li>
+<li><p>jaka jest wiedza na temat szkodliwości palenia tytoniu wśród studentów PSW?</p></li>
+<li><p>czy palenie jest skorelowane z płcią, stażem pracy i miejscem pracy?</p></li>
+<li><p>czy wiedza na temat szkodliwości palenie jest skorelowana z płcią, stażem pracy i miejscem pracy?</p></li>
+<li><p>czy palenie jest skorelowane z wiedzą na temat szkodliwości palenia?</p></li>
+</ol>
+</div>
+<div id="metoda" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Metoda</h3>
+<p>Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w styczniu 2023.
+Ankieta zawierała pytania dotyczące palenia tytoniu (pali/nie pali/palił, jak długo pali itd),
+test wiedzy na temat szkodliwości palenia oraz pytania
+o rodzaj miejsca pracy, staż pracy i płeć itd.</p>
+<p>Pięć następujących pytań oceniało wiedzę ankietowanego:</p>
+<ul>
+<li>Uważasz, że bardziej szkodliwe dla zdrowia jest (JW),</li>
+<li>Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
+bezpośrednio przez palenie papierosów?</li>
+<li>Czy palenie papierosów powoduje choroby układu pokarmowego? (JW)</li>
+<li>Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
+bezpośrednio przez palenie papierosów?
+Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (wielokrotnego)</li>
+</ul>
+<p>W przypadku pytań jednokrotnego wyboru, za wskazanie poprawnej odpowiedzi respondent otrzymywał 1 punkt.
+W przypadku pytań wielokrotnego wyboru za wskazanie prawidłowej odpowiedzi respondent otrzymywał 1 punkt, ale
+za wskazanie nieprawidłowej
+otrzymywał (minus) -1 punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
+Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.</p>
+</div>
+<div id="zastosowane-metody-statystyczne" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Zastosowane metody statystyczne</h3>
+<ul>
+<li><p>Hipotezę 1. oceniono na podstawie odsetka respondentów palących</p></li>
+<li><p>Hipotezę 2. oceniono na podstawie odsetka respondentów wykazujących się dobrą i bardzo dobrą wiedzą na temat palenia</p></li>
+<li><p>Hipotezę 3–5 zweryfikowano z wykorzystaniem tablic korelacyjnych/testu chi-kwadrat
+oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
+Kruskalla-Wallisa</p></li>
+</ul>
+</div>
+<div id="metryczka-analiza-respondentów" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Metryczka (analiza respondentów)</h3>
+<p><img src="_main_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p>W badaniu wzięło udział 110 studentów.
+Otrzymano 110 poprawnie
+wypełnionych ankiet. Średnia wartość testu oceniającego wiedzę
+wyniosła 10.3636364 (odchylenie
+standardowe 3.9970798)</p>
+<p>Rozkład ankietowanych ze względu na status względem
+palenia przedstawiono na rysunku</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p>Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p>Rozład ankietowanych ze względu na staż pracy przedstawiono na rysunku</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p>Rozkład ankietowanych ze względu na rodzaj miejsca pracy
+przedstawiono na rysunku</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+</div>
+<div id="weryfikacja-hipotezy-1" class="section level3" number="5.2.5">
+<h3><span class="header-section-number">5.2.5</span> Weryfikacja hipotezy 1</h3>
+<p>Palą lub paliło 62 respondentów
+( 56 %).
+Żeby stwierdzić czy to jest dużo czy mało to np. można by porównać
+z jakąś średnią ogólnopolską.</p>
+</div>
+<div id="weryfikacja-hipotezy-2" class="section level3" number="5.2.6">
+<h3><span class="header-section-number">5.2.6</span> Weryfikacja hipotezy 2</h3>
+<p>Średnia wartość uzyskana w teście wyniosła 10.3636364
+(mediana 11); 3/4 respondentów nie uzyskało więcej niż
+13 (czyli 68.4 %)</p>
+</div>
+<div id="weryfikacja-hipotez-35" class="section level3" number="5.2.7">
+<h3><span class="header-section-number">5.2.7</span> Weryfikacja hipotez 3–5</h3>
+<p>Czy palenie jest skorelowane z płcią?</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">K</th>
+<th align="right">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nigdy nie paliłem/am</td>
+<td align="right">31</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">Paliłem/łam</td>
+<td align="right">27</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">W dalszym ciągu palę</td>
+<td align="right">19</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  t.sex.f
+## X-squared = 2.4228, df = 2, p-value = 0.2978</code></pre>
+<p>Nie jest o czym świadczy wysoka wartość p (0.2977764)</p>
+<p>Czy palenie jest skorelowane ze stażem pracy?</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">0-4</th>
+<th align="right">10-14</th>
+<th align="right">15 i więcej</th>
+<th align="right">5-9</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nigdy nie paliłem/am</td>
+<td align="right">14</td>
+<td align="right">4</td>
+<td align="right">24</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="left">Paliłem/łam</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="right">23</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">W dalszym ciągu palę</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="right">11</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  t.staz.f
+## X-squared = 1.7687, df = 6, p-value = 0.9397</code></pre>
+<p>Nie jest o czym świadczy wysoka wartość p (0.9396967)</p>
+<p>Czy palenie jest skorelowane z miejscem pracy?</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Przychodnia</th>
+<th align="right">Szpital</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nigdy nie paliłem/am</td>
+<td align="right">5</td>
+<td align="right">43</td>
+</tr>
+<tr class="even">
+<td align="left">Paliłem/łam</td>
+<td align="right">3</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="left">W dalszym ciągu palę</td>
+<td align="right">3</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  t.praca.f
+## X-squared = 0.47674, df = 2, p-value = 0.7879</code></pre>
+<p>Nie jest o czym świadczy wysoka wartość p (0.7879097)</p>
+<p>Czy wiedza na temat palenia jest skorelowana z płcią:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">płeć</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">K</td>
+<td align="right">10.831169</td>
+<td align="right">77</td>
+</tr>
+<tr class="even">
+<td align="left">M</td>
+<td align="right">9.272727</td>
+<td align="right">33</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## $p.value
+## [1] 0.04883299</code></pre>
+<p>Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
+Wartość p wynosi 0.048833 – nie ma podstaw
+od odrzucenia hipotezy o braku korelacji na poziomie 0,05 (ale na poziomie
+0,1 już byśmy mogli przyjąć że takowa korelacji istnieje)</p>
+<p>Czy wiedza na temat palenia jest skorelowana z miejscem pracy:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">m.pracy</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Przychodnia</td>
+<td align="right">10.36364</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">Szpital</td>
+<td align="right">10.36364</td>
+<td align="right">99</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## $p.value
+## [1] 0.8026325</code></pre>
+<p>Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
+Wartość p wynosi 0.8026325 – nie ma podstaw
+od odrzucenia hipotezy o braku korelacji na poziomie 0,05.</p>
+<p>Czy wiedza na temat palenia jest skorelowana ze stażem:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">staż</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0-4</td>
+<td align="right">9.928571</td>
+<td align="right">28</td>
+</tr>
+<tr class="even">
+<td align="left">10-14</td>
+<td align="right">9.875000</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="left">15 i więcej</td>
+<td align="right">10.793103</td>
+<td align="right">58</td>
+</tr>
+<tr class="even">
+<td align="left">5-9</td>
+<td align="right">9.812500</td>
+<td align="right">16</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## $p.value
+## [1] 0.6771844</code></pre>
+<p>Porównujemy więcej niż dwie grupy zatem stosujemy test Kruskalla-Wallisa.
+Wartość p wynosi 0.6771844 – nie ma podstaw
+od odrzucenia hipotezy o braku korelacji na poziomie 0,05.</p>
+<p>Czy wiedza o szkodliwości palenia jest skorelowana
+ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
+0–5 mała; 6–10 średnia; 11–15 duża, 16–19 ogromna:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Nigdy nie paliłem/am</th>
+<th align="right">Paliłem/łam</th>
+<th align="right">W dalszym ciągu palę</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">duża</td>
+<td align="right">22</td>
+<td align="right">16</td>
+<td align="right">14</td>
+</tr>
+<tr class="even">
+<td align="left">mała</td>
+<td align="right">7</td>
+<td align="right">6</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">ogromna</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">średna</td>
+<td align="right">17</td>
+<td align="right">14</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  wiedza.status.t
+## X-squared = 4.9954, df = 6, p-value = 0.5444</code></pre>
+<p>Widza i status wzg. palenia nie jest skorelowana
+o czym świadczy wysoka wartość p (0.544403)</p>
+<p>Można to samo zweryfikować porównując średnie w grupach
+i stosując test Kruskalla-Wallisa</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">status</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nigdy nie paliłem/am</td>
+<td align="right">10.31250</td>
+<td align="right">48</td>
+</tr>
+<tr class="even">
+<td align="left">Paliłem/łam</td>
+<td align="right">10.07692</td>
+<td align="right">39</td>
+</tr>
+<tr class="odd">
+<td align="left">W dalszym ciągu palę</td>
+<td align="right">10.95652</td>
+<td align="right">23</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## $p.value
+## [1] 0.7787663</code></pre>
+<p>Wynik jest identyczny (wysoka wartość p 0.7787663)</p>
+</div>
+<div id="wnioski" class="section level3" number="5.2.8">
+<h3><span class="header-section-number">5.2.8</span> Wnioski</h3>
+<ul>
+<li><p>Ponad połowa studentów pali lub paliła</p></li>
+<li><p>Nie ma związku pomiędzy statusem względem palenia/wiedzą o szkodliwości
+palenia a płcią, miejscem pracy, stażem.</p></li>
+</ul>
+</div>
+</div>
+<div id="przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW</h2>
+<div id="cel-1" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Cel</h3>
+<p>Celem jest ustalenie czy depresja jest istotnym problemem wśród
+studentów RM/PO PSW oraz
+zweryfikowanie wybranych czynników warunkujących depresję.</p>
+</div>
+<div id="metoda-1" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Metoda</h3>
+<p>Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w styczniu 2023.
+Ankieta zawierała test samooceny depresji Becka oraz pytania
+o rodzaj miejsca pracy, staż pracy i płeć.</p>
+<p>Test samooceny depresji Becka składa się z 21 pytań. W każdym pytaniu
+możliwe są 4 warianty odpowiedzi, odpowiadające zwiększonej intensywności objawów depresji,
+którym w związku z tym przypisuje się od zera do 3 punktów. Maksymalna liczba punktów
+w teście wynosi 63 a minimalna 0.</p>
+<p>Interpretacja wyników testu Becka 0–19 brak/łagodna depresja;
+20–25 umiarkowana; 26–63 cieżka depresja.</p>
+<p>Postawiono następujące hipotezy badawcze</p>
+<ol style="list-style-type: decimal">
+<li><p>depresja stanowi duży problem wśród studentów PSW</p></li>
+<li><p>problem depresji zależy od miejsca pracy</p></li>
+<li><p>problem depresji zależy od stażu pracy</p></li>
+<li><p>problem depresji zależy od płci</p></li>
+</ol>
+<p>Sposoby weryfikacji:</p>
+<ul>
+<li><p>Hipotezę 1. oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji;</p></li>
+<li><p>Hipotezę 2–4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
+Kruskalla-Wallisa</p></li>
+</ul>
+</div>
+<div id="metryczka" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Metryczka</h3>
+<p>W badaniu wzięło udział 103 studentów. Otrzymano 103 poprawnie
+wypełnionych ankiet. Średnia wartość testu Becka wyniosła 8.3786408 (odchylenie
+standardowe 8.5773488)</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-98-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-98-3.png" width="672" /></p>
+</div>
+<div id="weryfikacja-hipotezy-1-1" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Weryfikacja hipotezy 1</h3>
+<p><img src="_main_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p>Ciężką postać depresji wykazuje zaledwie 3% studentów. Należy odrzucić hipotezę
+że depresja stanowi poważny problem wśród studentów RM/PO PSW.</p>
+</div>
+<div id="weryfikacja-hipotez-24" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Weryfikacja hipotez 2–4</h3>
+<p>Aby móc zastosować metody tablicy wielodzielczej i testu chi-kwadrat
+oryginalne wartości liczbowe depresji zamieniono
+na skalę porządkową: 0–19 brak/łagodna depresja (B);
+20–25 umiarkowana (Ł); 26–63 ciężka depresja (C).</p>
+</div>
+<div id="depresja-a-płeć" class="section level3" number="5.3.6">
+<h3><span class="header-section-number">5.3.6</span> Depresja a płeć</h3>
+<p>Tablica wielodzielcza i test chi-kwadrat:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">K</th>
+<th align="right">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">B</td>
+<td align="right">64</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">C</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Ł</td>
+<td align="right">5</td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  dep.sex.f
+## X-squared = 0.028134, df = 2, p-value = 0.986</code></pre>
+</div>
+<div id="depresja-a-staż" class="section level3" number="5.3.7">
+<h3><span class="header-section-number">5.3.7</span> Depresja a staż</h3>
+<p>Tablica wielodzielcza i test chi-kwadrat:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">06 i mniej</th>
+<th align="right">07-12</th>
+<th align="right">13-18</th>
+<th align="right">19 i więcej</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">B</td>
+<td align="right">36</td>
+<td align="right">6</td>
+<td align="right">9</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="left">C</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Ł</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  dep.staz.f
+## X-squared = 4.719, df = 6, p-value = 0.5803</code></pre>
+<p>albo jeżeli depresję mierzymy na skali liczbowej
+można porównać wartości średnie i zastosować test Kruskalla-Wallisa</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">staż</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">06 i mniej</td>
+<td align="right">8.512821</td>
+<td align="right">39</td>
+</tr>
+<tr class="even">
+<td align="left">07-12</td>
+<td align="right">7.857143</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="left">13-18</td>
+<td align="right">7.666667</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">19 i więcej</td>
+<td align="right">8.533333</td>
+<td align="right">45</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## $p.value
+## [1] 0.678923</code></pre>
+<p>Wynik jest ten sam (brak zależności)</p>
+</div>
+<div id="depresja-a-rodzaj-miejsca-pracy" class="section level3" number="5.3.8">
+<h3><span class="header-section-number">5.3.8</span> Depresja a rodzaj miejsca pracy</h3>
+<p>Tablica wielodzielcza i test chi-kwadrat:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Przychodnia</th>
+<th align="right">Szpital</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">B</td>
+<td align="right">12</td>
+<td align="right">81</td>
+</tr>
+<tr class="even">
+<td align="left">C</td>
+<td align="right">0</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Ł</td>
+<td align="right">0</td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  dep.praca.f
+## X-squared = 1.4605, df = 2, p-value = 0.4818</code></pre>
+<p>Albo jeżeli depresję mierzymy na skali liczbowej
+można porównać wartości średnie i zastosować test Manna-Whitneya</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">m-pracy</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Przychodnia</td>
+<td align="right">7.833333</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">Szpital</td>
+<td align="right">8.450549</td>
+<td align="right">91</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## $p.value
+## [1] 0.8528214</code></pre>
+<p>Wynik jest ten sam (brak zależności)</p>
+</div>
+</div>
+<div id="wnioski-1" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Wnioski</h2>
+<ul>
+<li><p>Depresja nie jest istotnym problemem wśród studentów RM/PO PSW</p></li>
+<li><p>Nie ma związku pomiędzy depresją a stażem, płcią i miejscem pracy</p></li>
+</ul>
+</div>
+<div id="przykład-3" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Przykład 3:</h2>
+<p><span style="color: red;">W przygotowaniu na podstawie ankiety:
+<a href="https://docs.google.com/forms/d/1bgNMhPEJMjiWeLfrmEAnPpns5U7Rooc-KOaeS7XlLV0/edit" class="uri">https://docs.google.com/forms/d/1bgNMhPEJMjiWeLfrmEAnPpns5U7Rooc-KOaeS7XlLV0/edit</a>
+</span></p>
+</div>
+<div id="formularze-ankiet" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Formularze ankiet</h2>
+<div id="ankieta-depresja-skala-depresji-becka" class="section level3" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Ankieta Depresja: Skala Depresji Becka</h3>
+<div id="pytania" class="section level4" number="5.6.1.1">
+<h4><span class="header-section-number">5.6.1.1</span> Pytania</h4>
+<p>Pytanie 1</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie jestem smutny ani przygnębiony.</li>
+<li>Odczuwam często smutek, przygnębienie</li>
+<li>Przeżywam stale smutek, przygnębienie i nie mogę uwolnić się od tych przeżyć.</li>
+<li>Jestem stale tak smutny i nieszczęśliwy, że jest to nie do wytrzymania.</li>
+</ol>
+<p>Pytanie 2</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie przejmuję się zbytnio przyszłością.</li>
+<li>Często martwię się o przyszłość.</li>
+<li>Obawiam się, że w przyszłości nic dobrego mnie nie czeka.</li>
+<li>Czuję, że przyszłość jest beznadziejna i nic tego nie zmieni.</li>
+</ol>
+<p>Pytanie 3</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Sądzę, że nie popełniam większych zaniedbań.</li>
+<li>Sądzę, że czynię więcej zaniedbań niż inni.</li>
+<li>Kiedy spoglądam na to, co robiłem, widzę mnóstwo błędów i zaniedbań.</li>
+<li>Jestem zupełnie niewydolny i wszystko robię źle.</li>
+</ol>
+<p>Pytanie 4</p>
+<ol start="0" style="list-style-type: decimal">
+<li>To, co robię, sprawia mi przyjemność.</li>
+<li>Nie cieszy mnie to, co robię.</li>
+<li>Nic mi teraz nie daje prawdziwego zadowolenia.</li>
+<li>Nie potrafię przeżywać zadowolenia i przyjemności; wszystko mnie nuży.</li>
+</ol>
+<p>Pytanie 5</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie czuję się winnym ani wobec siebie, ani wobec innych.</li>
+<li>Dość często miewam wyrzuty sumienia.</li>
+<li>Często czuję, że zawiniłem.</li>
+<li>Stale czuję się winny.</li>
+</ol>
+<p>Pytanie 6</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Sądzę, że nie zasługuję na karę</li>
+<li>Sądzę, że zasługuję na karę</li>
+<li>Spodziewam się ukarania</li>
+<li>Wiem, że jestem karany (lub ukarany)</li>
+</ol>
+<p>Pytanie 7</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Jestem z siebie zadowolony</li>
+<li>Nie jestem z siebie zadowolony</li>
+<li>Czuję do siebie niechęć</li>
+<li>Nienawidzę siebie</li>
+</ol>
+<p>Pytanie 8</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie czuję się gorszy od innych ludzi</li>
+<li>Zarzucam sobie, że jestem nieudolny i popełniam błędy</li>
+<li>Stale potępiam siebie za popełnione błędy</li>
+<li>Winię siebie za wszelkie zło, które istnieje</li>
+</ol>
+<p>Pytanie 9</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie myślę o odebraniu sobie życia</li>
+<li>Myślę o samobójstwie — ale nie mógłbym tego dokonać</li>
+<li>Pragnę odebrać sobie życie</li>
+<li>Popełnię samobójstwo, jak będzie odpowiednia sposobność</li>
+</ol>
+<p>Pytanie 10</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie płaczę częściej niż zwykle</li>
+<li>Płaczę częściej niż dawniej</li>
+<li>Ciągle chce mi się płakać</li>
+<li>Chciałbym płakać, lecz nie jestem w stanie</li>
+</ol>
+<p>Pytanie 11</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie jestem bardziej podenerwowany niż dawniej</li>
+<li>Jestem bardziej nerwowy i przykry niż dawniej</li>
+<li>Jestem stale zdenerwowany lub rozdrażniony</li>
+<li>Wszystko, co dawniej mnie drażniło, stało się obojętne</li>
+</ol>
+<p>Pytanie 12</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Ludzie interesują mnie jak dawniej</li>
+<li>Interesuję się ludźmi mniej niż dawniej</li>
+<li>Utraciłem większość zainteresowań innymi ludźmi</li>
+<li>Utraciłem wszelkie zainteresowanie innymi ludźmi</li>
+</ol>
+<p>Pytanie 13</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Decyzje podejmuję łatwo, tak jak dawniej</li>
+<li>Częściej niż kiedyś odwlekam podjęcie decyzji</li>
+<li>Mam dużo trudności z podjęciem decyzji</li>
+<li>Nie jestem w stanie podjąć żadnej decyzji</li>
+</ol>
+<p>Pytanie 14</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Sądzę, że wyglądam nie gorzej niż dawniej</li>
+<li>Martwię się tym, że wyglądam staro i nieatrakcyjnie</li>
+<li>Czuję, że wyglądam coraz gorzej</li>
+<li>Jestem przekonany, że wyglądam okropnie i odpychająco</li>
+</ol>
+<p>Pytanie 15</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Mogę pracować jak dawniej</li>
+<li>Z trudem rozpoczynam każdą czynność</li>
+<li>Z wielkim wysiłkiem zmuszam się do zrobienia czegokolwiek</li>
+<li>Nie jestem w stanie nic zrobić</li>
+</ol>
+<p>Pytanie 16</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Sypiam dobrze, jak zwykle</li>
+<li>Sypiam gorzej niż dawniej</li>
+<li>Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć</li>
+<li>Budzę się kilka godzin za wcześnie i nie mogę usnąć</li>
+</ol>
+<p>Pytanie 17</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie męczę się bardziej niż dawniej</li>
+<li>Męczę się znacznie łatwiej niż poprzednio.</li>
+<li>Męczę się wszystkim, co robię.</li>
+<li>Jestem zbyt zmęczony, aby cokolwiek robić.</li>
+</ol>
+<p>Pytanie 18</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Mam apetyt nie gorszy niż dawniej</li>
+<li>Mam trochę gorszy apetyt</li>
+<li>Apetyt mam wyraźnie gorszy</li>
+<li>Nie mam w ogóle apetytu</li>
+</ol>
+<p>Pytanie 19</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie tracę na wadze (w okresie ostatniego miesiąca)</li>
+<li>Straciłem na wadze więcej niż 2 kg</li>
+<li>Straciłem na wadze więcej niż 4 kg</li>
+<li>Straciłem na wadze więcej niż 6 kg</li>
+</ol>
+<p>Pytanie 20</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Nie martwię się o swoje zdrowie bardziej niż zawsze</li>
+<li>Martwię się swoimi dolegliwościami, mam rozstrój żołądka, zaparcie, bóle</li>
+<li>Stan mojego zdrowia bardzo mnie martwi, często o tym myślę</li>
+<li>Tak bardzo martwię się o swoje zdrowie, że nie mogę o niczym innym myśleć</li>
+</ol>
+<p>Pytanie 21</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Moje zainteresowania seksualne nie uległy zmianom</li>
+<li>Jestem mniej zainteresowany sprawami płci (seksu)</li>
+<li>Problemy płciowe wyraźnie mniej mnie interesują</li>
+<li>Utraciłem wszelkie zainteresowanie sprawami seksu</li>
+</ol>
+</div>
+<div id="nazwy-pytań" class="section level4" number="5.6.1.2">
+<h4><span class="header-section-number">5.6.1.2</span> Nazwy pytań:</h4>
+<p>Odczuwanie smutku i przygnębienia (1)
+Martwienie się o przyszłość (2)
+Uważasz, że zaniedbujesz swoje obowiązki? (3)
+Jesteś zadowolony z siebie? (4)
+Czy często masz poczucie winy? (5)
+Czy zasługujesz na karę? (6)
+Zadowolenie z siebie (7)
+Czy czujesz się gorszy od innych? (8)
+Czy masz myśli samobójcze? (9)
+Często chce Ci się płakać? (10)
+Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11)
+Czy zmieniło się coś w Twoim zainteresowaniu innymi ludźmi? (12)
+Czy ostatnio miewasz większe problemy z podejmowaniem różnych decyzji? (13)
+Czy uważasz, że wyglądasz gorzej i mniej atrakcyjnie niż kiedyś? (14)
+Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15)
+Masz kłopoty ze snem? (16)
+Czy męczysz się bardziej niż zwykle? (17)
+Czy masz kłopoty z apetytem? (18)
+W ciągu ostatniego miesiąca nie stosowałem diety, aby schudnąć,
+lecz straciłem na wadze (19)
+Czy ostatnio bardziej martwisz się swoim stanem zdrowia? (20)
+Czy masz kłopoty z potencją? (21)</p>
+</div>
+<div id="interpretacja-wyników" class="section level4" number="5.6.1.3">
+<h4><span class="header-section-number">5.6.1.3</span> Interpretacja wyników</h4>
+<ol style="list-style-type: decimal">
+<li>00–11 (brak depresji)</li>
+<li>12–19 (depresja łagodna)</li>
+<li>20–25 (depresja umiarkowana)</li>
+<li>26–63 (depresja ciężka)</li>
+</ol>
+</div>
+<div id="źródło" class="section level4" number="5.6.1.4">
+<h4><span class="header-section-number">5.6.1.4</span> Źródło</h4>
+<p><a href="https://psychiatra.bydgoszcz.eu/publikacje-dla-pacjenta/depresja/skala-depresji-becka/" class="uri">https://psychiatra.bydgoszcz.eu/publikacje-dla-pacjenta/depresja/skala-depresji-becka/</a></p>
+<p><a href="http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf" class="uri">http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf</a></p>
+</div>
+</div>
+<div id="ankieta-palenie" class="section level3" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Ankieta Palenie</h3>
+<p>Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu</p>
+<div id="pytania-1" class="section level4" number="5.6.2.1">
+<h4><span class="header-section-number">5.6.2.1</span> Pytania</h4>
+<ol style="list-style-type: decimal">
+<li><p>Płeć
+□ Kobieta
+□ Mężczyzna</p></li>
+<li><p>Wiek</p></li>
+<li><p>Pochodzenie
+□ wieś
+□ Miasto do 20 tys. mieszkańców
+□ Miasto powyżej 20 tyś mieszkańców</p></li>
+<li><p>Wykształcenie
+□ Średnie medyczne
+□ Licencjat pielęgniarstwa
+□ Magister pielęgniarstwa
+□ Inne wyższe</p></li>
+<li><p>Staż pracy
+□ Mniej niż rok
+□ 1-10 lat
+□ 10-15 lat
+□ Więcej niż 15 lat</p></li>
+<li><p>Miejsce pracy
+□ Oddział zabiegowy
+□ Oddział zachowawczy
+□ Przychodnia/poradnia</p></li>
+<li><p>Czy kiedykolwiek paliłeś/aś papierosy?
+□ Paliłem/łam
+□ W dalszym ciągu palę
+□ Nigdy nie paliłem/am</p></li>
+<li><p>Od ilu lat palisz?
+□ Nie palę/Nie dotyczy
+□ Mniej niż rok
+□ 1-10 lat
+□ 11-15 lat
+□ Więcej niż 15 l</p></li>
+<li><p>Czy zdarza Ci się palić w miejscu pracy?
+□ Tak
+□ Nie
+□ Nie dotyczy</p></li>
+<li><p>Czy próbowałeś kiedykolwiek rzucić palenie?
+□ Tak, udało się
+□ Tak, ale wróciłem/am do nałogu
+□ Nie
+□ Nie dotyczy</p></li>
+<li><p>Czy paląc przyznajesz się do uzależnienia
+□ Tak
+□ Nie
+□ Nie dotyczy</p></li>
+<li><p>Uważasz, że bardziej szkodliwe dla zdrowia jest:
+□ Palenie czynne - dym tytoniowy wdychany bezpośrednio przez palacza
+□ Palenie bierne-boczny strumień dymu
+☒ Każda forma kontaktu z dymem jest równie szkodliwa
+□ Nie wiem/Nie mam zdania</p></li>
+<li><p>Czy uważasz,że przepisy prawa powinny zabraniać palenia w obecności dzieci
+poniżej 15 roku życia?
+□ Tak
+□ Nie
+□ Nie wiem/nie mam zdania</p></li>
+<li><p>Czy przerwa na papierosa pomaga Ci w sytuacjach stresowych?
+□ Tak
+□ Nie
+□ Nie dotyczy</p></li>
+<li><p>Czy palenie nikotyny sprawia Ci przyjemność?
+□ Tak
+□ Nie
+□ Nie dotyczy</p></li>
+<li><p>Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
+bezpośrednio przez palenie papierosów?(wielokrotnego)
+☒ Przewlekła obturacyjna choroba płuc
+☒ Astma oskrzelowa
+☒ Alergie wziewne
+□ Gruźlica
+□ Zapalenie płuc
+☒ Przewlekłe zapalenie oskrzeli
+☒ Infekcje dróg oddechowych
+□ Palenie nie powoduje chorób układu oddechowego
+□ Nie wiem</p></li>
+<li><p>Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
+bezpośrednio przez palenie papierosów? (wielokrotnego)
+☒ Nadciśnienie tętnicze krwi
+☒ Zawał mięśnia sercowego
+☒ Udar mózgu
+☒ Choroba niedokrwienna serca
+☒ Miażdżyca tętnic obwodowych
+☒ Zaburzenie rytmu serca
+☒ Choroba Buergera
+□ Hipercholesterolemia
+□ Tętniak aorty
+□ Palenie nie powoduje chorób kardiologicznych</p></li>
+<li><p>Czy palenie papierosów powoduje choroby układu pokarmowego?
+☒ Tak
+□ Nie
+□ Nie wiem</p></li>
+<li><p>Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (wielokrotnego)
+☒ Upośledza węch i smak
+☒ Powoduje podrażnienie spojówek
+☒ Obniża apetyt
+☒ Niszczy struny głosowe
+☒ Zmniejsza ostrość wzroku
+□ Palenie nie ma negatywnego wpływu na narządy zmysłu.</p></li>
+<li><p>Jak oceniasz swoją wiedzę na temat palenia papierosów i jego wpływu na zdrowie człowieka?
+□ Bardzo dobrze
+□ Dobrze
+□ Przeciętnie
+□ Źle</p></li>
+<li><p>Czy wzorce sięgania po tytoń wyniosłaś/wyniosłeś z domu rodzinnego
+□ Tak
+□ Nie
+□ Nie dotyczy</p></li>
+</ol>
+<p>(Prawidłowe odpowiedzi zaznaczono ☒)</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="causality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro2jamovi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05examples.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

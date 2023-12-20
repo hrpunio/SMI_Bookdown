@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Analiza jednej zmiennej | Łagodne wprowadzenie do statystyki</title>
+  <meta name="description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Analiza jednej zmiennej | Łagodne wprowadzenie do statystyki" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Analiza jednej zmiennej | Łagodne wprowadzenie do statystyki" />
+  
+  <meta name="twitter:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="przedmiotbadan.html"/>
+<link rel="next" href="interference.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Łagodne wprowadzenie do statystyki</a></li>
+
+<li class="divider"></li>
+<li><a href="przedmiotbadan.html#przedmiotbadan" id="toc-przedmiotbadan"><span class="toc-section-number">1</span> Przedmiot i metody badań statystycznych</a>
+<ul>
+<li><a href="przedmiotbadan.html#przedmiot-statystyki" id="toc-przedmiot-statystyki"><span class="toc-section-number">1.1</span> Przedmiot statystyki</a></li>
+<li><a href="przedmiotbadan.html#podstawowe-pojęcia" id="toc-podstawowe-pojęcia"><span class="toc-section-number">1.2</span> Podstawowe pojęcia</a></li>
+<li><a href="przedmiotbadan.html#pomiar" id="toc-pomiar"><span class="toc-section-number">1.3</span> Pomiar</a></li>
+<li><a href="przedmiotbadan.html#rodzaje-i-sposoby-analizy-danych" id="toc-rodzaje-i-sposoby-analizy-danych"><span class="toc-section-number">1.4</span> Rodzaje i sposoby analizy danych</a></li>
+<li><a href="przedmiotbadan.html#sposoby-pomiaru-danych-i-organizacja-badania" id="toc-sposoby-pomiaru-danych-i-organizacja-badania"><span class="toc-section-number">1.5</span> Sposoby pomiaru danych i organizacja badania</a>
+<ul>
+<li><a href="przedmiotbadan.html#przykłady-badań" id="toc-przykłady-badań"><span class="toc-section-number">1.5.1</span> Przykłady badań</a></li>
+</ul></li>
+<li><a href="przedmiotbadan.html#miary-częstości-chorób" id="toc-miary-częstości-chorób"><span class="toc-section-number">1.6</span> Miary częstości chorób</a></li>
+<li><a href="przedmiotbadan.html#oprogramowanie" id="toc-oprogramowanie"><span class="toc-section-number">1.7</span> Oprogramowanie</a></li>
+</ul></li>
+<li><a href="analiza1z.html#analiza1z" id="toc-analiza1z"><span class="toc-section-number">2</span> Analiza jednej zmiennej</a>
+<ul>
+<li><a href="analiza1z.html#tablice-statystyczne" id="toc-tablice-statystyczne"><span class="toc-section-number">2.1</span> Tablice statystyczne</a></li>
+<li><a href="analiza1z.html#wykresy" id="toc-wykresy"><span class="toc-section-number">2.2</span> Wykresy</a>
+<ul>
+<li><a href="analiza1z.html#skala-nominalna" id="toc-skala-nominalna"><span class="toc-section-number">2.2.1</span> skala nominalna</a></li>
+<li><a href="analiza1z.html#skala-liczbowa" id="toc-skala-liczbowa"><span class="toc-section-number">2.2.2</span> skala liczbowa</a></li>
+</ul></li>
+<li><a href="analiza1z.html#florence-nightingale" id="toc-florence-nightingale"><span class="toc-section-number">2.3</span> Florence Nightingale</a></li>
+<li><a href="analiza1z.html#analiza-parametryczna" id="toc-analiza-parametryczna"><span class="toc-section-number">2.4</span> Analiza parametryczna</a>
+<ul>
+<li><a href="analiza1z.html#miary-położenia" id="toc-miary-położenia"><span class="toc-section-number">2.4.1</span> Miary położenia</a></li>
+<li><a href="analiza1z.html#miary-zmienności" id="toc-miary-zmienności"><span class="toc-section-number">2.4.2</span> Miary zmienności</a></li>
+<li><a href="analiza1z.html#miary-asymetrii" id="toc-miary-asymetrii"><span class="toc-section-number">2.4.3</span> Miary asymetrii</a></li>
+<li><a href="analiza1z.html#parametryczna-analiza-struktury-w-jednym-zdaniu" id="toc-parametryczna-analiza-struktury-w-jednym-zdaniu"><span class="toc-section-number">2.4.4</span> (Parametryczna) analiza struktury w jednym zdaniu</a></li>
+</ul></li>
+<li><a href="analiza1z.html#porównanie-wielu-rozkładów" id="toc-porównanie-wielu-rozkładów"><span class="toc-section-number">2.5</span> Porównanie wielu rozkładów</a>
+<ul>
+<li><a href="analiza1z.html#wykres-pudełkowy" id="toc-wykres-pudełkowy"><span class="toc-section-number">2.5.1</span> Wykres pudełkowy</a></li>
+</ul></li>
+</ul></li>
+<li><a href="interference.html#interference" id="toc-interference"><span class="toc-section-number">3</span> Łagodne wprowadzenie do wnioskowanie statystycznego</a>
+<ul>
+<li><a href="interference.html#przykładowy-problem-nr-1" id="toc-przykładowy-problem-nr-1"><span class="toc-section-number">3.1</span> Przykładowy problem nr 1</a></li>
+<li><a href="interference.html#przykładowy-problem-nr-2" id="toc-przykładowy-problem-nr-2"><span class="toc-section-number">3.2</span> Przykładowy problem nr 2</a></li>
+<li><a href="interference.html#rozkład-normalny" id="toc-rozkład-normalny"><span class="toc-section-number">3.3</span> Rozkład normalny</a></li>
+<li><a href="interference.html#wnioskowanie-statystyczne-interferance" id="toc-wnioskowanie-statystyczne-interferance"><span class="toc-section-number">3.4</span> Wnioskowanie statystyczne (<em>interferance</em>)</a>
+<ul>
+<li><a href="interference.html#estymacja-punktowa" id="toc-estymacja-punktowa"><span class="toc-section-number">3.4.1</span> Estymacja punktowa</a></li>
+<li><a href="interference.html#estymacja-przedziałowa" id="toc-estymacja-przedziałowa"><span class="toc-section-number">3.4.2</span> Estymacja przedziałowa</a></li>
+<li><a href="interference.html#testowanie-hipotez" id="toc-testowanie-hipotez"><span class="toc-section-number">3.4.3</span> Testowanie hipotez</a></li>
+<li><a href="interference.html#testy-nieparametryczne" id="toc-testy-nieparametryczne"><span class="toc-section-number">3.4.4</span> Testy nieparametryczne</a></li>
+</ul></li>
+<li><a href="interference.html#słownik-terminów-które-warto-znać" id="toc-słownik-terminów-które-warto-znać"><span class="toc-section-number">3.5</span> Słownik terminów które warto znać</a></li>
+</ul></li>
+<li><a href="causality.html#causality" id="toc-causality"><span class="toc-section-number">4</span> Analiza współzależności pomiędzy zmiennymi</a>
+<ul>
+<li><a href="causality.html#dwie-zmienne-nominalne" id="toc-dwie-zmienne-nominalne"><span class="toc-section-number">4.1</span> Dwie zmienne nominalne</a>
+<ul>
+<li><a href="causality.html#ryzyko-względne-oraz-iloraz-szans" id="toc-ryzyko-względne-oraz-iloraz-szans"><span class="toc-section-number">4.1.1</span> Ryzyko względne oraz iloraz szans</a></li>
+<li><a href="causality.html#przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans" id="toc-przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans"><span class="toc-section-number">4.1.2</span> Przedziały ufności dla ryzyka względnego oraz ilorazu szans</a></li>
+<li><a href="causality.html#tabele-wielodzielcze" id="toc-tabele-wielodzielcze"><span class="toc-section-number">4.1.3</span> Tabele wielodzielcze</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienna-nominalna" id="toc-zmienna-liczbowa-i-zmienna-nominalna"><span class="toc-section-number">4.2</span> Zmienna liczbowa i zmienna nominalna</a>
+<ul>
+<li><a href="causality.html#test-t-studenta" id="toc-test-t-studenta"><span class="toc-section-number">4.2.1</span> test <span class="math inline">\(t\)</span>-Studenta</a></li>
+<li><a href="causality.html#testowanie-normalności" id="toc-testowanie-normalności"><span class="toc-section-number">4.2.2</span> Testowanie normalności</a></li>
+<li><a href="causality.html#test-u-manna-whitneya" id="toc-test-u-manna-whitneya"><span class="toc-section-number">4.2.3</span> test U Manna-Whitneya</a></li>
+<li><a href="causality.html#test-anova" id="toc-test-anova"><span class="toc-section-number">4.2.4</span> test ANOVA</a></li>
+<li><a href="causality.html#test-kruskalla-wallisa" id="toc-test-kruskalla-wallisa"><span class="toc-section-number">4.2.5</span> test Kruskalla-Wallisa</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne" id="toc-zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne"><span class="toc-section-number">4.3</span> Zmienna liczbowa i zmienne liczbowe lub nominalne</a>
+<ul>
+<li><a href="causality.html#przypadek-szczególny-dwie-zmienne-liczbowe" id="toc-przypadek-szczególny-dwie-zmienne-liczbowe"><span class="toc-section-number">4.3.1</span> Przypadek szczególny: dwie zmienne liczbowe</a></li>
+<li><a href="causality.html#korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot" id="toc-korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot"><span class="toc-section-number">4.3.2</span> Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" id="toc-pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona"><span class="toc-section-number">4.3.3</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</a></li>
+<li><a href="causality.html#macierz-korelacji" id="toc-macierz-korelacji"><span class="toc-section-number">4.3.4</span> Macierz korelacji</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-regresja-liniowa" id="toc-pomiar-siły-zależności-regresja-liniowa"><span class="toc-section-number">4.3.5</span> Pomiar siły zależności: regresja liniowa</a></li>
+<li><a href="causality.html#regresja-prosta" id="toc-regresja-prosta"><span class="toc-section-number">4.3.6</span> Regresja prosta</a></li>
+<li><a href="causality.html#przypadek-ogólny-regresja-wieloraka" id="toc-przypadek-ogólny-regresja-wieloraka"><span class="toc-section-number">4.3.7</span> Przypadek ogólny: regresja wieloraka</a></li>
+<li><a href="causality.html#zmienne-zero-jedynkowe" id="toc-zmienne-zero-jedynkowe"><span class="toc-section-number">4.3.8</span> Zmienne zero-jedynkowe</a></li>
+</ul></li>
+<li><a href="causality.html#przypadek-specjalny-regresja-logistyczna" id="toc-przypadek-specjalny-regresja-logistyczna"><span class="toc-section-number">4.4</span> Przypadek specjalny: regresja logistyczna</a></li>
+<li><a href="causality.html#przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe" id="toc-przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe"><span class="toc-section-number">4.5</span> Przypadek specjalny: dwie zmienne co najmniej porządkowe</a>
+<ul>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-rang" id="toc-pomiar-siły-zależności-współczynnik-korelacji-rang"><span class="toc-section-number">4.5.1</span> Pomiar siły zależności: współczynnik korelacji rang</a></li>
+</ul></li>
+<li><a href="causality.html#podsumowanie" id="toc-podsumowanie"><span class="toc-section-number">4.6</span> Podsumowanie</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#surveyexamples" id="toc-surveyexamples"><span class="toc-section-number">5</span> Przykłady badań ankietowych</a>
+<ul>
+<li><a href="surveyexamples.html#jak-zacząć-badanie" id="toc-jak-zacząć-badanie"><span class="toc-section-number">5.1</span> Jak zacząć badanie?</a>
+<ul>
+<li><a href="surveyexamples.html#co-chcemy-ustalić" id="toc-co-chcemy-ustalić"><span class="toc-section-number">5.1.1</span> Co chcemy ustalić?</a></li>
+<li><a href="surveyexamples.html#co-i-jak-mamy-mierzyć" id="toc-co-i-jak-mamy-mierzyć"><span class="toc-section-number">5.1.2</span> Co i jak mamy mierzyć?</a></li>
+<li><a href="surveyexamples.html#mierzenie-twardych-faktów-vs-mierzenia-przekonań" id="toc-mierzenie-twardych-faktów-vs-mierzenia-przekonań"><span class="toc-section-number">5.1.3</span> Mierzenie twardych faktów vs mierzenia przekonań</a></li>
+<li><a href="surveyexamples.html#pomiar-przekonań-wartości-i-postaw" id="toc-pomiar-przekonań-wartości-i-postaw"><span class="toc-section-number">5.1.4</span> Pomiar przekonań, wartości i postaw</a></li>
+<li><a href="surveyexamples.html#skala-likerta" id="toc-skala-likerta"><span class="toc-section-number">5.1.5</span> Skala Likerta</a></li>
+<li><a href="surveyexamples.html#skala-pomiarowainwentarzkwestionariusz" id="toc-skala-pomiarowainwentarzkwestionariusz"><span class="toc-section-number">5.1.6</span> Skala pomiarowa/inwentarz/kwestionariusz</a></li>
+<li><a href="surveyexamples.html#model-pomiaru" id="toc-model-pomiaru"><span class="toc-section-number">5.1.7</span> Model pomiaru</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.2</span> Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel" id="toc-cel"><span class="toc-section-number">5.2.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda" id="toc-metoda"><span class="toc-section-number">5.2.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#zastosowane-metody-statystyczne" id="toc-zastosowane-metody-statystyczne"><span class="toc-section-number">5.2.3</span> Zastosowane metody statystyczne</a></li>
+<li><a href="surveyexamples.html#metryczka-analiza-respondentów" id="toc-metryczka-analiza-respondentów"><span class="toc-section-number">5.2.4</span> Metryczka (analiza respondentów)</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1" id="toc-weryfikacja-hipotezy-1"><span class="toc-section-number">5.2.5</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-2" id="toc-weryfikacja-hipotezy-2"><span class="toc-section-number">5.2.6</span> Weryfikacja hipotezy 2</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-35" id="toc-weryfikacja-hipotez-35"><span class="toc-section-number">5.2.7</span> Weryfikacja hipotez 3–5</a></li>
+<li><a href="surveyexamples.html#wnioski" id="toc-wnioski"><span class="toc-section-number">5.2.8</span> Wnioski</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.3</span> Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel-1" id="toc-cel-1"><span class="toc-section-number">5.3.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda-1" id="toc-metoda-1"><span class="toc-section-number">5.3.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#metryczka" id="toc-metryczka"><span class="toc-section-number">5.3.3</span> Metryczka</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1-1" id="toc-weryfikacja-hipotezy-1-1"><span class="toc-section-number">5.3.4</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-24" id="toc-weryfikacja-hipotez-24"><span class="toc-section-number">5.3.5</span> Weryfikacja hipotez 2–4</a></li>
+<li><a href="surveyexamples.html#depresja-a-płeć" id="toc-depresja-a-płeć"><span class="toc-section-number">5.3.6</span> Depresja a płeć</a></li>
+<li><a href="surveyexamples.html#depresja-a-staż" id="toc-depresja-a-staż"><span class="toc-section-number">5.3.7</span> Depresja a staż</a></li>
+<li><a href="surveyexamples.html#depresja-a-rodzaj-miejsca-pracy" id="toc-depresja-a-rodzaj-miejsca-pracy"><span class="toc-section-number">5.3.8</span> Depresja a rodzaj miejsca pracy</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#wnioski-1" id="toc-wnioski-1"><span class="toc-section-number">5.4</span> Wnioski</a></li>
+<li><a href="surveyexamples.html#przykład-3" id="toc-przykład-3"><span class="toc-section-number">5.5</span> Przykład 3:</a></li>
+<li><a href="surveyexamples.html#formularze-ankiet" id="toc-formularze-ankiet"><span class="toc-section-number">5.6</span> Formularze ankiet</a>
+<ul>
+<li><a href="surveyexamples.html#ankieta-depresja-skala-depresji-becka" id="toc-ankieta-depresja-skala-depresji-becka"><span class="toc-section-number">5.6.1</span> Ankieta Depresja: Skala Depresji Becka</a></li>
+<li><a href="surveyexamples.html#ankieta-palenie" id="toc-ankieta-palenie"><span class="toc-section-number">5.6.2</span> Ankieta Palenie</a></li>
+</ul></li>
+</ul></li>
+<li><a href="intro2jamovi.html#intro2jamovi" id="toc-intro2jamovi"><span class="toc-section-number">6</span> Łagodne wprowadzenie z Jamovi</a>
+<ul>
+<li><a href="intro2jamovi.html#podstawy-pracy-z-jamovi" id="toc-podstawy-pracy-z-jamovi"><span class="toc-section-number">6.1</span> Podstawy pracy z Jamovi</a></li>
+<li><a href="intro2jamovi.html#przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia" id="toc-przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia"><span class="toc-section-number">6.2</span> Przykład: analiza ankiety satysfakcja–wiedza o paleniu–zamiar odejścia</a>
+<ul>
+<li><a href="intro2jamovi.html#wczytanie-danych" id="toc-wczytanie-danych"><span class="toc-section-number">6.2.1</span> Wczytanie danych</a></li>
+<li><a href="intro2jamovi.html#przekodowanie-danych" id="toc-przekodowanie-danych"><span class="toc-section-number">6.2.2</span> Przekodowanie danych</a></li>
+<li><a href="intro2jamovi.html#wyliczenie-nowych-zmiennych" id="toc-wyliczenie-nowych-zmiennych"><span class="toc-section-number">6.2.3</span> Wyliczenie nowych zmiennych</a></li>
+<li><a href="intro2jamovi.html#analiza-struktury" id="toc-analiza-struktury"><span class="toc-section-number">6.2.4</span> Analiza struktury</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienne-nominalne" id="toc-analiza-zależności-zmienne-nominalne"><span class="toc-section-number">6.2.5</span> Analiza zależności: zmienne nominalne</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-nominalna"><span class="toc-section-number">6.2.6</span> Analiza zależności: zmienna liczbowa/zmienna nominalna</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna"><span class="toc-section-number">6.2.7</span> Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna</a></li>
+<li><a href="intro2jamovi.html#regresja-logistyczna" id="toc-regresja-logistyczna"><span class="toc-section-number">6.2.8</span> Regresja logistyczna</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Łagodne wprowadzenie do statystyki</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analiza1z" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Analiza jednej zmiennej</h1>
+<p><strong>Statystyka opisowa</strong> (opis statystyczny) to zbiór metod statystycznych służących do – surprise, surprise – opisu
+(w sensie przedstawienia sumarycznego) zbioru danych;
+w zależności od typu danych (przekrojowe, czasowe, przestrzenne) oraz sposobu pomiaru
+(dane nominalne, porządkowe liczbowe) należy używać różnych metod.</p>
+<p>W przypadku <strong>danych przekrojowych</strong> opis statystyczny nazywany jest <strong>analizą struktury</strong>
+i sprowadza się do opisania danych z wykorzystaniem:</p>
+<ul>
+<li><p>tablic (statystycznych)</p></li>
+<li><p>wykresów</p></li>
+<li><p>parametrów (takich jak średnia czy mediana)</p></li>
+</ul>
+<p><strong>Rozkład cechy</strong> (zmiennej) to przyporządkowanie
+wartościom cechy zmiennej odpowiedniej <strong>liczby wystąpień</strong> (liczebności albo częstości
+(czyli popularnych procentów).)</p>
+<p><strong>Analiza struktury</strong> (dla jednej zmiennej) obejmuje:</p>
+<ul>
+<li><p><strong>określenie tendencji centralnej</strong> (tzw. <strong>miary położenia</strong> / wartość przeciętna, mediana, dominanta);</p></li>
+<li><p><strong>zróżnicowanie wartości</strong> (rozproszenie);</p></li>
+<li><p><strong>asymetrię</strong> (rozłożenie wartości wokół średniej);</p></li>
+</ul>
+<div id="tablice-statystyczne" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Tablice statystyczne</h2>
+<p><strong>Tablica statystyczna</strong> to (w podstawowej formie) dwukolumnowa tabela zawierająca
+wartości cechy oraz odpowiadające tym wartościom liczebności.</p>
+<p><strong>Przykład 1</strong>: Tablica dla cechy niemierzalnej (nominalnej albo porządkowej)</p>
+<p>Absolwenci studiów pielęgniarskich w ośmiu największych
+krajach UE w roku 2018</p>
+<p><strong>Jednostka badania</strong>: absolwent studiów pielęgniarskich w roku 2018,</p>
+<p><strong>Badana cecha</strong>: kraj w którym ukończył studia (nominalna)</p>
+<p>Tablica: Absolwenci studiów pielęgniarskich w ośmiu największych
+krajach UE w roku 2018</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">kraj</th>
+<th align="right">liczba</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Belgium</td>
+<td align="right">7203</td>
+</tr>
+<tr class="even">
+<td align="left">Germany</td>
+<td align="right">35742</td>
+</tr>
+<tr class="odd">
+<td align="left">Spain</td>
+<td align="right">9936</td>
+</tr>
+<tr class="even">
+<td align="left">France</td>
+<td align="right">25757</td>
+</tr>
+<tr class="odd">
+<td align="left">Italy</td>
+<td align="right">11207</td>
+</tr>
+<tr class="even">
+<td align="left">Netherlands</td>
+<td align="right">9920</td>
+</tr>
+<tr class="odd">
+<td align="left">Poland</td>
+<td align="right">9070</td>
+</tr>
+<tr class="even">
+<td align="left">Romania</td>
+<td align="right">18664</td>
+</tr>
+</tbody>
+</table>
+<p>Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)</p>
+<p><strong>Przykład 2</strong>: Tablica dla cechy mierzalnej (liczbowej; skokowej lub ciągłej)</p>
+<p>Jeżeli liczba wariantów cechy jest mała tablica zawiera wyliczenie
+wariantów cechy i odpowiadających im liczebności. Jeżeli liczba wariantów
+cechy jest duża tablica zawiera klasy wartości (przedziały wartości)
+oraz odpowiadające im liczebności.</p>
+<ul>
+<li><p>Co do zasady klasy wartości powinny być jednakowej rozpiętości.</p></li>
+<li><p>Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
+były <strong>otwarte</strong>, tj. nie miały dolnej (pierwszy) lub górnej
+(ostatni) <strong>granicy</strong></p></li>
+</ul>
+<p>Tablica: Gospodarstwa domowe we wsi X wg liczby samochodów w roku 2022</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">liczba samochodów</th>
+<th align="right">liczba gospodarstw</th>
+<th align="right">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="right">230</td>
+<td align="right">39.3162393</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="right">280</td>
+<td align="right">47.8632479</td>
+</tr>
+<tr class="odd">
+<td align="left">2</td>
+<td align="right">70</td>
+<td align="right">11.9658120</td>
+</tr>
+<tr class="even">
+<td align="left">3 i więcej</td>
+<td align="right">5</td>
+<td align="right">0.8547009</td>
+</tr>
+<tr class="odd">
+<td align="left">razem</td>
+<td align="right">585</td>
+<td align="right">100.0000000</td>
+</tr>
+</tbody>
+</table>
+<p>Źródło: obliczenia własne</p>
+<p>Tablica dla cechy mierzalnej (liczbowej ciągłej–wymaga pogrupowania w klasy):</p>
+<p><strong>Przykład</strong>: Dzietność kobiet na świecie</p>
+<p>Współczynnik dzietności (<em>fertility ratio</em> albo FR) – przeciętna liczba urodzonych dzieci przypadających
+na jedną kobietę w wieku rozrodczym (15–49 lat).
+Przyjmuje się, iż FR między 2,10–2,15 zapewnia zastępowalność pokoleń.</p>
+<p>Dane dotyczące dzietności dla wszystkich krajów świata można
+znaleźć na stronie <a href="https://ourworldindata.org/grapher/fertility-rate-complete-gapminder" class="uri">https://ourworldindata.org/grapher/fertility-rate-complete-gapminder</a>)
+Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018</p>
+<p>Krajów jest 201. Wartość minimalna to 1.22 a wartość
+maksymalna to 7.13. Decydujemy się na rozpiętość przedziału równą 0,5;
+dolny koniec pierwszego przedziału przyjmujemy jako 1,0.</p>
+<p>Zwykle przyjmuje się za końce przedziałów <strong>okrągłe liczby</strong>
+bo dziwnie by wyglądało gdyby koniec przedziału np. był równy 1,05
+zamiast 1,0.</p>
+<p>Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:</p>
+<ul>
+<li><p>nie było przedziałów z zerową liczebnością</p></li>
+<li><p>przedziałów nie było za dużo ani za mało (typowo 8–15)</p></li>
+<li><p>większość populacji nie znajdowała się w jednej czy dwóch przedziałach</p></li>
+</ul>
+<p>Tablica: Kraje świata według współczynnika dzietności (2018)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Wsp. dzietności</th>
+<th align="right">liczba krajów</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(1,1.5]</td>
+<td align="right">24</td>
+</tr>
+<tr class="even">
+<td align="left">(1.5,2]</td>
+<td align="right">61</td>
+</tr>
+<tr class="odd">
+<td align="left">(2,2.5]</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">(2.5,3]</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">(3,3.5]</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="left">(3.5,4]</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="left">(4,4.5]</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="left">(4.5,5]</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">(5,5.5]</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="left">(5.5,6]</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">(6,6.5]</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">(7,7.5]</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Źródło: <a href="https://ourworldindata.org/grapher/fertility-rate-complete-gapminder" class="uri">https://ourworldindata.org/grapher/fertility-rate-complete-gapminder</a></p>
+<p>Każda tablica statystyczna <strong>musi</strong> mieć:</p>
+<ol style="list-style-type: decimal">
+<li><p>Część liczbową (kolumny i wiersze);</p>
+<ul>
+<li>żadna rubryka w części liczbowej nie może być pusta (żelazna zasada); w szczególności brak danych należy
+explicite zaznaczyć umownym symbolem</li>
+</ul></li>
+<li><p>Część opisową:</p>
+<ul>
+<li>tytuł tablicy;</li>
+<li>nazwy (opisy zawartości) wierszy;</li>
+<li>nazwy (opisy zawartości) kolumn;</li>
+<li>wskazanie źródła danych;</li>
+<li>ewentualne uwagi odnoszące się do danych liczb.</li>
+</ul></li>
+</ol>
+<p>Pominięcie czegokolwiek z powyższego jest <strong>ciężkim błędem</strong>. Jeżeli
+nie ma danych (a często nie ma–z różnych powodów – należy to zaznaczyć a nie
+pozostawiać pustą rubrykę)</p>
+</div>
+<div id="wykresy" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Wykresy</h2>
+<p><strong>Wykresy statystyczne</strong> są graficzną formą prezentacji materiału
+statystycznego, są mniej precyzyjne i szczegółowe niż tablice,
+natomiast bardziej sugestywne.</p>
+<p>Celem jest pokazanie rozkładu wartości cechy w populacji: jakie wartości występują
+często a jakie rzadko, jak bardzo wartości różnią się między sobą. Jak różnią
+się rozkłady dla różnych, ale logicznie powiązanych populacji
+(np rozkład czegoś-tam w kraju A i B albo w roku X, Y i Z).</p>
+<p>Do powyższego celu celu stosuje się:</p>
+<ul>
+<li><p><strong>wykres słupkowy</strong> (skala nominalna/porządkowa)</p></li>
+<li><p><strong>wykres kołowy</strong> (skala nominalna/porządkowa)</p></li>
+<li><p><strong>histogram</strong> (albo wykres słupkowy dla skal nominalnych)</p></li>
+</ul>
+<p>Uwaga: <strong>wykres kołowy</strong> jest
+zdecydowanie gorszy od wykresu słupkowego i nie jest zalecany.
+<strong>Każdy</strong> wykres kołowy można wykreślić jako słupkowy i w takiej postaci
+będzie on bardziej zrozumiały i łatwiejszy w interpretacji.</p>
+<div id="skala-nominalna" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> skala nominalna</h3>
+<p>Wykres słupkowy (<em>bar chart</em>)</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Ekwiwalentny wykres kołowy wygląda być może efektowniej (z uwagi na paletę kolorów)</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Ale jest mniej efektywny. Wymaga legendy w szczególności, która utrudnia
+interpretację treści (nieustannie trzeba porównywać koło z legendą żeby ustalić
+który kolor to który kraj.)</p>
+<p>Jeżeli zwiększymy liczbę krajów wykres kołowy staje się zupełnie nieczytelny
+(brakuje rozróżnialnych kolorów a wycinki koła są zbyt wąskie żeby cokolwiek
+wyróżniały):</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Wykres słupkowy dalej jest natomiast OK:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="skala-liczbowa" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> skala liczbowa</h3>
+<p>Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
+wariantów cechy są przedziały wartości.
+Histogram przedstawiający rozkład współczynników dzietności dla
+wszystkich krajów świata w roku 2018</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Podobnie jak tablice, rysunki powinny być opatrzone tytułem
+oraz zawierać źródło wskazujące na pochodzenie danych
+(zobacz przedstawione przykłady.)</p>
+</div>
+</div>
+<div id="florence-nightingale" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Florence Nightingale</h2>
+<p>Nie każdy wie że Florence Nightingale, która
+w czasie wojny krymskiej zorganizowała opiekę nad rannymi żołnierzami,
+była także statystykiem.</p>
+<p>Aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe prowadziła
+nie tylko staranną ewidencję szpitalną, ale zgromadzone dane potrafiła analizować, używając
+także wykresów własnego projektu.</p>
+<p>W szczególności słynny jest diagram Nightingale zwane także różą Nightingale, które wprawdzie
+(podobno) nie okazały się szczególnie użyteczny, no ale nie każdy nowy
+pomysł jest od razu genialny:</p>
+<p><img src="FN_diagram.jpg" /></p>
+<p>Jest to coś w rodzaju wykresu słupkowego tyle że zamiast słupków są wycinki koła. Wycinków jest dwanaście tyle ile miesięcy.
+Długość promienia a co za tym idzie wielkość pola wycinka zależy od wielkości zjawiska,
+który reprezentuje (przyczyna śmierci: rany/choroby/inne)</p>
+<p>Wpisując Florence+Nightingale można znaleźć dużo informacji
+na temat, w tym: <a href="http://www.matematyka.wroc.pl/ciekawieomatematyce/pielegniarka-statystyczna" class="uri">http://www.matematyka.wroc.pl/ciekawieomatematyce/pielegniarka-statystyczna</a></p>
+<p>W 1859 roku Nightingale została wybrana jako pierwsza kobieta na członka Royal Statistical Society (Królewskie Stowarzyszenie Statystyczne) oraz została honorowym członkiem American Statistical Association (Amerykańskiego Stowarzyszenia Statystycznego).</p>
+<p>Więc szanowi czytelnicy wnioski są oczywiste :-)</p>
+</div>
+<div id="analiza-parametryczna" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Analiza parametryczna</h2>
+<p>Analiza parametryczna z oczywistych względów dotyczy tylko zmiennych
+mierzonych na skali liczbowej.</p>
+<div id="miary-położenia" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Miary położenia</h3>
+<p>Miary przeciętne (<strong>położenia</strong>) charakteryzują średni lub
+typowy poziom wartości cechy. Są to więc takie wartości, wokół których
+skupiają się wszystkie pozostałe wartości analizowanej cechy.</p>
+<p><img src="canvas_distr_11.png" /></p>
+<p>Na rysunku po lewej mamy dwa rozkłady różniące się poziomem przeciętnym (czerwony ma przeciętnie mniejsze wartości
+niż turkusowy). Są to rozkłady <strong>jednomodalne</strong>, tj. wartości skupiają się wokół jednej wartości.
+Dla takich rozkładów ma sens obliczanie średniej arytmetycznej.</p>
+<p>Na rysunku po prawej mamy rozkłady <strong>nietypowe</strong>: <strong>wielomodalne</strong> (turkusowy)
+lub <strong>niesymetryczne</strong> (fioletowy.) W rozkładzie niesymetrycznym wartości skupiają się nie centralnie,
+ale po prawej/lewej od środka przedziału zmienności/wartości średniej).</p>
+<p>W świecie rzeczywistym zdecydowana większość rozkładów jest jednomodalna.
+Rzadkie przypadki rozkładów wielomodalnych zwykle wynikają z łącznego analizowania
+dwóch różniących się wartością średnią zbiorów danych.
+Oczywistym zaleceniem w takiej sytuacji jest analiza każdego zbioru oddzielnie.</p>
+<p>Rodzaje miar położenia</p>
+<ul>
+<li>klasyczne
+<ul>
+<li><strong>średnia arytmetyczna</strong></li>
+</ul></li>
+<li>pozycyjne
+<ul>
+<li><strong>mediana</strong></li>
+<li><strong>dominanta</strong></li>
+<li><strong>kwartyle</strong></li>
+<li>ewentualnie kwantyle, decyle, centyle (rzadziej używane)</li>
+</ul></li>
+</ul>
+<p><strong>Średnia arytmetyczna</strong> (<em>Mean</em>, <em>Arithmetic mean</em>) to łączna suma
+wartości podzielona przez liczbę sumowanych jednostek. Jeżeli
+wartość jednostki <span class="math inline">\(i\)</span> w <span class="math inline">\(N\)</span>-elementowym zbiorze oznaczymy
+jako <span class="math inline">\(x_i\)</span> (gdzie: <span class="math inline">\(i=1,\ldots,N\)</span>) to
+średnią można zapisać jako <span class="math inline">\(\bar x = (x_1 + \cdots + x_N)/N\)</span></p>
+<p>Uwaga: we wzorach statystycznych zmienne zwykle oznacza się małymi literami
+a średnią dla zmiennej przez umieszczenie nad nią kreski poziomej czyli
+<span class="math inline">\(\bar x\)</span> to średnia wartość zmiennej <span class="math inline">\(x\)</span>.</p>
+<p><strong>Mediana</strong> (<em>Median</em>, kwartyl drugi) dzieli <strong>uporządkowaną</strong> zbiorowość na dwie równe części;
+połowa jednostek ma wartości cechy mniejsze lub równe medianie, a połowa
+wartości cechy równe lub większe od mediany.
+Stąd też mediana bywa nazywana wartością środkową.</p>
+<p>Własności mediany: odporna na wartości nietypowe (w przeciwieństwie do średniej)</p>
+<p><strong>Kwartyle</strong>: coś jak mediana tylko bardziej szczegółowo. Kwartyli jest trzy i dzielą
+one zbiorowość na 4 równe części, każda zawierająca 25% całości.</p>
+<p>Pierwszy kwartyl dzieli <strong>uporządkowaną</strong> zbiorowość w proporcji 25%–75%.
+Trzeci dzieli <strong>uporządkowaną</strong> zbiorowość w proporcji 75%–25%.
+Drugi kwartyl to mediana.</p>
+<p><strong>Kwantyle</strong> (D, wartości dziesiętne), podobnie jak kwartyle, tyle że dzielą na 10 części.</p>
+<p><strong>Centyle</strong> (P, wartości setne), podobnie jak kwantyle tyle że dzielą na 100 części.
+Przykładowo wartość 99 centyla i mniejszą ma 99% jednostek w populacji.</p>
+<p><strong>Przykład: współczynnik dzietności na świecie w roku 2018</strong></p>
+<p>Średnia wartość współczynnika 2.68; mediana – 2.2.
+Interpretacja średniej:
+wartość współczynnika dzietności wyniosła 2.68 dziecka. Uwaga:
+średnia dzietność na świecie <strong>nie wynosi</strong> 2.68
+(bo kraje różnią się liczbą ludności).
+Interpretacja mediany: dzietność kobiet w połowie krajów na świecie
+wynosiła 2.2 i mniej. Uwaga: dzietność połowy kobiet na świecie wyniosła
+2.2 i mniej jest niepoprawną interpretacją (różne wielkości krajów.)</p>
+<p><strong>Generalna uwaga</strong>: interpretacja średniej-średnich często jest nieoczywista i należy uważać.
+(a współczynnik dzietności jest średnią: średnia liczba dzieci urodzonych przez kobietę
+w wieku rozrodczym. Jeżeli liczymy średnią dla 202 krajów, to mamy <em>średnią-średnich</em>).
+Inny przykład: odsetek ludności w wieku poprodukcyjnym wg powiatów (średnia z czegoś takiego
+nie da nam odsetka ludności w wieku poprodukcyjnym w Polsce,
+bo powiaty różnią się liczbą ludności.)</p>
+<p><strong>Kontynuując przykład</strong>:</p>
+<p>Pierwszy kwartyl: 1.75; trzeci kwartyl 3.56 co oznacza że
+25% krajów miało wartość współczynnika dzietności nie większą niż 1.75 dziecka
+a 75% krajów miało wartość współczynnika dzietności
+nie większą niż 3.56 dziecka.</p>
+</div>
+<div id="miary-zmienności" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Miary zmienności</h3>
+<p>Miary zmienności określają zmienność (dyspersję albo rozproszenie) w zbiorowości</p>
+<p>Rodzaje miar zmienności:</p>
+<ul>
+<li>Klasyczne
+<ul>
+<li>Wariancja i odchylenie standardowe</li>
+</ul></li>
+<li>Pozycyjne
+<ul>
+<li>rozstęp</li>
+<li>rozstęp ćwiartkowy</li>
+</ul></li>
+</ul>
+<p><strong>Wariancja</strong> (<em>variance</em>) jest to średnia arytmetyczna kwadratów
+odchyleń poszczególnych wartości cechy od średniej arytmetycznej
+zbiorowości. Co można zapisać</p>
+<p><span class="math display">\[s^2 = \frac{1}{N} \left( (x_1 - \bar x)^2 + (x_2 - \bar x)^2 +
+\cdots +  (x_N - \bar x)^N \right)\]</span></p>
+<p>Przy czym często zamiast dzielenie przez <span class="math inline">\(N\)</span> dzielimy przez <span class="math inline">\(N-1\)</span>.</p>
+<p><strong>Odchylenie standardowe</strong> (<em>standard deviation</em>, sd) jest
+pierwiastkiem kwadratowym z wariancji. Parametr ten określa
+przeciętną różnicą wartości cechy od średniej arytmetycznej.</p>
+<p><strong>Rozstęp ćwiartkowy</strong> (<em>interquartile range</em>, IQR) ma banalnie prostą definicję:</p>
+<p><span class="math display">\[
+R_Q = Q_3 - Q_1
+\]</span>
+gdzie: <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_3\)</span> oznaczają odpowiednio pierwszy oraz trzeci kwartyl.</p>
+<p><strong>Przykład</strong>: współczynnik dzietności na świecie w roku 2018 (cd)</p>
+<p>Średnie odchylenie od średniej wartości współczynnika wynosi 1.2595749 dziecka.
+Wartość rozstępu ćwiartkowego wynosi 1.81 dziecka.</p>
+<p><strong>Uwaga</strong>: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
+podać jednostkę miary.</p>
+</div>
+<div id="miary-asymetrii" class="section level3" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Miary asymetrii</h3>
+<p>Asymetria (<em>skewness</em>), to odwrotność symetrii. Szereg jest symetryczny
+jeżeli jednostki są rozłożone ,,równomiernie’’ wokół wartości średniej.
+W szeregu symetrycznym wartości średniej i mediany są sobie równe.</p>
+<p><img src="Negative_and_positive_skew.png" /></p>
+<p>Skośność może być dodatnia (<em>Positive Skew</em>) lub ujemna (<em>Negative Skew</em>). Czym się różni jedna
+od drugiej widać na rysunku.</p>
+<p>Miary asymetrii:</p>
+<ul>
+<li><p>klasyczny współczynnik asymetrii (<span class="math inline">\(g\)</span>)</p>
+<ul>
+<li>przyjmuje wartości ujemne dla asymetrii lewostronnej; a dodatnie
+dla prawostronnej. Teoretycznie może przyjąć dowolnie dużą wartość
+ale w praktyce rzadko przekracza 3 do do wartości bezwzględnej.</li>
+<li>wartości większe od 2 świadczą o dużej a większe od 3 o bardzo dużej
+asymetrii</li>
+</ul></li>
+<li><p>współczynniki asymetrii Pearsona (<span class="math inline">\(W_s\)</span>)</p>
+<ul>
+<li>wykorzystuje różnice między średnia Medianą: <span class="math inline">\(W_s = (\bar x - Me)/s\)</span></li>
+</ul></li>
+<li><p>Współczynnik asymetrii (skośności) oparty na odległościach
+między kwartylami lub decylami:</p>
+<ul>
+<li>Obliczany jest według następującej
+formuły: <span class="math inline">\(W_{sq} = \frac{(Q_3 - Q_2) - (Q_2 - Q_1)}{Q_3 - Q_1}\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="parametryczna-analiza-struktury-w-jednym-zdaniu" class="section level3" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> (Parametryczna) analiza struktury w jednym zdaniu</h3>
+<p>Polega na obliczeniu</p>
+<ul>
+<li><p>średniej i mediany</p></li>
+<li><p>odchylenia standardowego i rozstępu ćwiartkowego</p></li>
+<li><p>współczynnika skośności <span class="math inline">\(g\)</span></p></li>
+</ul>
+<p>Oraz</p>
+<ul>
+<li>zinterpretowaniu powyższych parametrów (patrz przykłady)</li>
+</ul>
+</div>
+</div>
+<div id="porównanie-wielu-rozkładów" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Porównanie wielu rozkładów</h2>
+<p>Często strukturę jednego rozkładu należy porównać z innym. Albo trzeba porównać
+strukturę wielu rozkładów. Pokażemy jak to zrobić na przykładzie.</p>
+<p><strong>Przykład: masa ciała uczestników Pucharu Świata w Rugby</strong></p>
+<p>W turniejach o puchar świata w Rugby w latach 2015, 2019 i 2023 uczestniczyło łącznie 1879 zawodników.
+W grze w rugby drużyna jest podzielona na dwie <strong>formacje</strong>: ataku i młyna. Należy scharakteryzować
+rozkład masy ciała zawodników obu formacji.</p>
+<p><strong>Zawodnicy ataku</strong></p>
+<p>Przeciętnie zawodnik ataku ważył 92.7 kg;
+mediana 92.0 kg (połowa
+zawodników ataku ważyła 92.0 kg i mniej);
+pierwszy/trzeci kwartyl 85.5/99 kg (1/4 zawodników
+ataku ważyła 85.5 kg i mniej;
+1/4 zawodników ataku ważyła 99 kg i więcej;</p>
+<p>Odchylenie standardowe 10.1 kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi 10.1 kg);
+rozstęp ćwiartkowy wynosi 13.5 kg (rozstęp 50% środkowych wartości
+wynosi 13.5 kg)</p>
+<p>Histogram przy przyjęciu długości przedziału równej 4kg
+(linia zielona oznacza poziom średniej):</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><strong>Zawodnicy młyna</strong></p>
+<p>Średnio zawodnik młyna ważył 112.3 kg;
+mediana 112.0 kg (połowa zawodników
+młyna ważyło 112 kg i mniej);
+pierwszy/trzeci kwartyl 106/118 kg (1/4 zawodników
+młyna ważyło 106 kg i mniej;
+1/4 zawodników młyna ważyło 118 kg i więcej;</p>
+<p>Odchylenie standardowe 9.2 kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi 9.2 kg);
+rozstęp ćwiartkowy wynosi 12 kg (rozstęp 50% środkowych wartości
+wynosi 12 kg)</p>
+<p>Histogram przy przyjęciu długości przedziału równej 4kg
+(linia zielona oznacza poziom średniej):</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><strong>Porównanie atak vs młyn</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Miara</th>
+<th>Atak</th>
+<th>Młyn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>średnia</td>
+<td>92.7087379</td>
+<td>112.327957</td>
+</tr>
+<tr class="even">
+<td>mediana</td>
+<td>92</td>
+<td>112</td>
+</tr>
+<tr class="odd">
+<td>odchyl.st</td>
+<td>10.0723816</td>
+<td>9.2406513</td>
+</tr>
+<tr class="even">
+<td>iqr</td>
+<td>13.5</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p>średnio zawodnik młyna ważył prawie 20 kg więcej od zawodnika ataku (w przypadku mediany
+jest to dokładnie 20 kg więcej).
+Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu grupach podobna.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div id="wykres-pudełkowy" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Wykres pudełkowy</h3>
+<p>Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (<strong>box-plot</strong>)</p>
+<p>Konstrukcja pudełka na wykresie:
+górny/dolny bok równy kwartylom, a linia pozioma w środku pudełka równa medianie;
+linie pionowe (zwane wąsami) mają długość równą <span class="math inline">\(Q_1 - 1,5 \textrm{IQR}\)</span>
+oraz <span class="math inline">\(Q_3 + \textrm{IQR}\)</span> (dla przypomnienia: <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_3\)</span> to kwartyle, zaś <span class="math inline">\(\textrm{IQR}\)</span> to odstęp między kwartlowy); Linia pozioma w połowie pudełka określa przeciętny poziom zjawiska; wysokość pudełka/wąsów
+określa zmienność (im większe wąsy/wysokość tym większa zmienność).
+Obserwacje nietypowe (czyli takie których wartość jest albo mniejsza od <span class="math inline">\(Q_1 - 1,5\textrm{IQR}\)</span>
+albo większa od <span class="math inline">\(Q_3 + 1,5\textrm{IQR}\)</span>) są zaznaczane indywidualnie jako kropki nad/pod wąsami.</p>
+<p><img src="box-plot-0.jpg" /></p>
+<p>Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako (na przykład) górne/dolne
+1% wszystkich wartości (bo wtedy <strong>każdy rozkład</strong> miałby wartości nietypowe);
+ale jako wartości mniejsze/większe od <span class="math inline">\(Q_* \pm 1,5 \times \mathrm{IQR}\)</span>.
+Wszystkie wartości rozkładów o umiarkowanej zmienności mieszczą się wewnątrz czegoś takiego.</p>
+<p>Wykres pudełkowy dla zawodników rugby w podziale na formacie ataku i młyna.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Z wykresu od razu widać, który rozkład ma wyższą średnią a który większe rozproszenie.</p>
+<p>Pudełek może być więcej oczywiście. Przykładowo
+masa ciała zawodników na poszczególnych turniejach:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019; największe zróżnicowanie masy
+ciała występowało na turnieju w roku 2023.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="przedmiotbadan.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="interference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02struktura.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

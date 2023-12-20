@@ -1,0 +1,63 @@
+---
+title: "Łagodne wprowadzenie do statystyki"
+author:
+- name: Tomasz Przechlewski
+  email: t.plata-przechlewski@psw.kwidzyn.edu.pl
+  affiliation: Powiślańska Szkoła Wyższa (Kwidzyn/Poland)
+date: "Niedatowany/wersja robocza"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+description: (c) Tomasz Przechlewski / CC-BY license
+subtitle: Podręcznik dla studentów wydziałów nauk o zdrowiu
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F )
+
+## https://pogotowiestatystyczne.pl/jak-analizowac-wyniki-badan-przy-uzyciu-ankiety-wlasnego-autorstwa/
+##
+library("knitr")
+library("ggplot2")
+library("tidyverse")
+library("ggpubr")
+library("rstatix")
+library ("lm.beta")
+library ("pROC")
+##
+sample.size <- 1000
+
+## Rozkład średniej z próby w zależności od wielkości próby 
+## Podejście empiryczne
+
+mks <- function  (n, maxN) {
+  ## w is global
+  sample <- rep(0, sample.size)
+  for(i in 1:sample.size) {
+    s <- floor(runif(n, min=0, max=maxN))
+    sample[i] <- mean(w[s])
+  }
+  return (sample)
+}
+
+diffMx <- function (s, t)  { 
+  ## sample (vector) - true_mean
+  mean.diff <- s - t
+## 10% błąd wagi
+  max.err <- 0.1 * true.mean.w 
+
+  return ( sum(abs(mean.diff) > max.err) )
+  }
+
+
+```
+
+
+
+
+
+
+
+
+

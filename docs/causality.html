@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Analiza współzależności pomiędzy zmiennymi | Łagodne wprowadzenie do statystyki</title>
+  <meta name="description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Analiza współzależności pomiędzy zmiennymi | Łagodne wprowadzenie do statystyki" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Analiza współzależności pomiędzy zmiennymi | Łagodne wprowadzenie do statystyki" />
+  
+  <meta name="twitter:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="interference.html"/>
+<link rel="next" href="surveyexamples.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Łagodne wprowadzenie do statystyki</a></li>
+
+<li class="divider"></li>
+<li><a href="przedmiotbadan.html#przedmiotbadan" id="toc-przedmiotbadan"><span class="toc-section-number">1</span> Przedmiot i metody badań statystycznych</a>
+<ul>
+<li><a href="przedmiotbadan.html#przedmiot-statystyki" id="toc-przedmiot-statystyki"><span class="toc-section-number">1.1</span> Przedmiot statystyki</a></li>
+<li><a href="przedmiotbadan.html#podstawowe-pojęcia" id="toc-podstawowe-pojęcia"><span class="toc-section-number">1.2</span> Podstawowe pojęcia</a></li>
+<li><a href="przedmiotbadan.html#pomiar" id="toc-pomiar"><span class="toc-section-number">1.3</span> Pomiar</a></li>
+<li><a href="przedmiotbadan.html#rodzaje-i-sposoby-analizy-danych" id="toc-rodzaje-i-sposoby-analizy-danych"><span class="toc-section-number">1.4</span> Rodzaje i sposoby analizy danych</a></li>
+<li><a href="przedmiotbadan.html#sposoby-pomiaru-danych-i-organizacja-badania" id="toc-sposoby-pomiaru-danych-i-organizacja-badania"><span class="toc-section-number">1.5</span> Sposoby pomiaru danych i organizacja badania</a>
+<ul>
+<li><a href="przedmiotbadan.html#przykłady-badań" id="toc-przykłady-badań"><span class="toc-section-number">1.5.1</span> Przykłady badań</a></li>
+</ul></li>
+<li><a href="przedmiotbadan.html#miary-częstości-chorób" id="toc-miary-częstości-chorób"><span class="toc-section-number">1.6</span> Miary częstości chorób</a></li>
+<li><a href="przedmiotbadan.html#oprogramowanie" id="toc-oprogramowanie"><span class="toc-section-number">1.7</span> Oprogramowanie</a></li>
+</ul></li>
+<li><a href="analiza1z.html#analiza1z" id="toc-analiza1z"><span class="toc-section-number">2</span> Analiza jednej zmiennej</a>
+<ul>
+<li><a href="analiza1z.html#tablice-statystyczne" id="toc-tablice-statystyczne"><span class="toc-section-number">2.1</span> Tablice statystyczne</a></li>
+<li><a href="analiza1z.html#wykresy" id="toc-wykresy"><span class="toc-section-number">2.2</span> Wykresy</a>
+<ul>
+<li><a href="analiza1z.html#skala-nominalna" id="toc-skala-nominalna"><span class="toc-section-number">2.2.1</span> skala nominalna</a></li>
+<li><a href="analiza1z.html#skala-liczbowa" id="toc-skala-liczbowa"><span class="toc-section-number">2.2.2</span> skala liczbowa</a></li>
+</ul></li>
+<li><a href="analiza1z.html#florence-nightingale" id="toc-florence-nightingale"><span class="toc-section-number">2.3</span> Florence Nightingale</a></li>
+<li><a href="analiza1z.html#analiza-parametryczna" id="toc-analiza-parametryczna"><span class="toc-section-number">2.4</span> Analiza parametryczna</a>
+<ul>
+<li><a href="analiza1z.html#miary-położenia" id="toc-miary-położenia"><span class="toc-section-number">2.4.1</span> Miary położenia</a></li>
+<li><a href="analiza1z.html#miary-zmienności" id="toc-miary-zmienności"><span class="toc-section-number">2.4.2</span> Miary zmienności</a></li>
+<li><a href="analiza1z.html#miary-asymetrii" id="toc-miary-asymetrii"><span class="toc-section-number">2.4.3</span> Miary asymetrii</a></li>
+<li><a href="analiza1z.html#parametryczna-analiza-struktury-w-jednym-zdaniu" id="toc-parametryczna-analiza-struktury-w-jednym-zdaniu"><span class="toc-section-number">2.4.4</span> (Parametryczna) analiza struktury w jednym zdaniu</a></li>
+</ul></li>
+<li><a href="analiza1z.html#porównanie-wielu-rozkładów" id="toc-porównanie-wielu-rozkładów"><span class="toc-section-number">2.5</span> Porównanie wielu rozkładów</a>
+<ul>
+<li><a href="analiza1z.html#wykres-pudełkowy" id="toc-wykres-pudełkowy"><span class="toc-section-number">2.5.1</span> Wykres pudełkowy</a></li>
+</ul></li>
+</ul></li>
+<li><a href="interference.html#interference" id="toc-interference"><span class="toc-section-number">3</span> Łagodne wprowadzenie do wnioskowanie statystycznego</a>
+<ul>
+<li><a href="interference.html#przykładowy-problem-nr-1" id="toc-przykładowy-problem-nr-1"><span class="toc-section-number">3.1</span> Przykładowy problem nr 1</a></li>
+<li><a href="interference.html#przykładowy-problem-nr-2" id="toc-przykładowy-problem-nr-2"><span class="toc-section-number">3.2</span> Przykładowy problem nr 2</a></li>
+<li><a href="interference.html#rozkład-normalny" id="toc-rozkład-normalny"><span class="toc-section-number">3.3</span> Rozkład normalny</a></li>
+<li><a href="interference.html#wnioskowanie-statystyczne-interferance" id="toc-wnioskowanie-statystyczne-interferance"><span class="toc-section-number">3.4</span> Wnioskowanie statystyczne (<em>interferance</em>)</a>
+<ul>
+<li><a href="interference.html#estymacja-punktowa" id="toc-estymacja-punktowa"><span class="toc-section-number">3.4.1</span> Estymacja punktowa</a></li>
+<li><a href="interference.html#estymacja-przedziałowa" id="toc-estymacja-przedziałowa"><span class="toc-section-number">3.4.2</span> Estymacja przedziałowa</a></li>
+<li><a href="interference.html#testowanie-hipotez" id="toc-testowanie-hipotez"><span class="toc-section-number">3.4.3</span> Testowanie hipotez</a></li>
+<li><a href="interference.html#testy-nieparametryczne" id="toc-testy-nieparametryczne"><span class="toc-section-number">3.4.4</span> Testy nieparametryczne</a></li>
+</ul></li>
+<li><a href="interference.html#słownik-terminów-które-warto-znać" id="toc-słownik-terminów-które-warto-znać"><span class="toc-section-number">3.5</span> Słownik terminów które warto znać</a></li>
+</ul></li>
+<li><a href="causality.html#causality" id="toc-causality"><span class="toc-section-number">4</span> Analiza współzależności pomiędzy zmiennymi</a>
+<ul>
+<li><a href="causality.html#dwie-zmienne-nominalne" id="toc-dwie-zmienne-nominalne"><span class="toc-section-number">4.1</span> Dwie zmienne nominalne</a>
+<ul>
+<li><a href="causality.html#ryzyko-względne-oraz-iloraz-szans" id="toc-ryzyko-względne-oraz-iloraz-szans"><span class="toc-section-number">4.1.1</span> Ryzyko względne oraz iloraz szans</a></li>
+<li><a href="causality.html#przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans" id="toc-przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans"><span class="toc-section-number">4.1.2</span> Przedziały ufności dla ryzyka względnego oraz ilorazu szans</a></li>
+<li><a href="causality.html#tabele-wielodzielcze" id="toc-tabele-wielodzielcze"><span class="toc-section-number">4.1.3</span> Tabele wielodzielcze</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienna-nominalna" id="toc-zmienna-liczbowa-i-zmienna-nominalna"><span class="toc-section-number">4.2</span> Zmienna liczbowa i zmienna nominalna</a>
+<ul>
+<li><a href="causality.html#test-t-studenta" id="toc-test-t-studenta"><span class="toc-section-number">4.2.1</span> test <span class="math inline">\(t\)</span>-Studenta</a></li>
+<li><a href="causality.html#testowanie-normalności" id="toc-testowanie-normalności"><span class="toc-section-number">4.2.2</span> Testowanie normalności</a></li>
+<li><a href="causality.html#test-u-manna-whitneya" id="toc-test-u-manna-whitneya"><span class="toc-section-number">4.2.3</span> test U Manna-Whitneya</a></li>
+<li><a href="causality.html#test-anova" id="toc-test-anova"><span class="toc-section-number">4.2.4</span> test ANOVA</a></li>
+<li><a href="causality.html#test-kruskalla-wallisa" id="toc-test-kruskalla-wallisa"><span class="toc-section-number">4.2.5</span> test Kruskalla-Wallisa</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne" id="toc-zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne"><span class="toc-section-number">4.3</span> Zmienna liczbowa i zmienne liczbowe lub nominalne</a>
+<ul>
+<li><a href="causality.html#przypadek-szczególny-dwie-zmienne-liczbowe" id="toc-przypadek-szczególny-dwie-zmienne-liczbowe"><span class="toc-section-number">4.3.1</span> Przypadek szczególny: dwie zmienne liczbowe</a></li>
+<li><a href="causality.html#korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot" id="toc-korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot"><span class="toc-section-number">4.3.2</span> Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" id="toc-pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona"><span class="toc-section-number">4.3.3</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</a></li>
+<li><a href="causality.html#macierz-korelacji" id="toc-macierz-korelacji"><span class="toc-section-number">4.3.4</span> Macierz korelacji</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-regresja-liniowa" id="toc-pomiar-siły-zależności-regresja-liniowa"><span class="toc-section-number">4.3.5</span> Pomiar siły zależności: regresja liniowa</a></li>
+<li><a href="causality.html#regresja-prosta" id="toc-regresja-prosta"><span class="toc-section-number">4.3.6</span> Regresja prosta</a></li>
+<li><a href="causality.html#przypadek-ogólny-regresja-wieloraka" id="toc-przypadek-ogólny-regresja-wieloraka"><span class="toc-section-number">4.3.7</span> Przypadek ogólny: regresja wieloraka</a></li>
+<li><a href="causality.html#zmienne-zero-jedynkowe" id="toc-zmienne-zero-jedynkowe"><span class="toc-section-number">4.3.8</span> Zmienne zero-jedynkowe</a></li>
+</ul></li>
+<li><a href="causality.html#przypadek-specjalny-regresja-logistyczna" id="toc-przypadek-specjalny-regresja-logistyczna"><span class="toc-section-number">4.4</span> Przypadek specjalny: regresja logistyczna</a></li>
+<li><a href="causality.html#przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe" id="toc-przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe"><span class="toc-section-number">4.5</span> Przypadek specjalny: dwie zmienne co najmniej porządkowe</a>
+<ul>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-rang" id="toc-pomiar-siły-zależności-współczynnik-korelacji-rang"><span class="toc-section-number">4.5.1</span> Pomiar siły zależności: współczynnik korelacji rang</a></li>
+</ul></li>
+<li><a href="causality.html#podsumowanie" id="toc-podsumowanie"><span class="toc-section-number">4.6</span> Podsumowanie</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#surveyexamples" id="toc-surveyexamples"><span class="toc-section-number">5</span> Przykłady badań ankietowych</a>
+<ul>
+<li><a href="surveyexamples.html#jak-zacząć-badanie" id="toc-jak-zacząć-badanie"><span class="toc-section-number">5.1</span> Jak zacząć badanie?</a>
+<ul>
+<li><a href="surveyexamples.html#co-chcemy-ustalić" id="toc-co-chcemy-ustalić"><span class="toc-section-number">5.1.1</span> Co chcemy ustalić?</a></li>
+<li><a href="surveyexamples.html#co-i-jak-mamy-mierzyć" id="toc-co-i-jak-mamy-mierzyć"><span class="toc-section-number">5.1.2</span> Co i jak mamy mierzyć?</a></li>
+<li><a href="surveyexamples.html#mierzenie-twardych-faktów-vs-mierzenia-przekonań" id="toc-mierzenie-twardych-faktów-vs-mierzenia-przekonań"><span class="toc-section-number">5.1.3</span> Mierzenie twardych faktów vs mierzenia przekonań</a></li>
+<li><a href="surveyexamples.html#pomiar-przekonań-wartości-i-postaw" id="toc-pomiar-przekonań-wartości-i-postaw"><span class="toc-section-number">5.1.4</span> Pomiar przekonań, wartości i postaw</a></li>
+<li><a href="surveyexamples.html#skala-likerta" id="toc-skala-likerta"><span class="toc-section-number">5.1.5</span> Skala Likerta</a></li>
+<li><a href="surveyexamples.html#skala-pomiarowainwentarzkwestionariusz" id="toc-skala-pomiarowainwentarzkwestionariusz"><span class="toc-section-number">5.1.6</span> Skala pomiarowa/inwentarz/kwestionariusz</a></li>
+<li><a href="surveyexamples.html#model-pomiaru" id="toc-model-pomiaru"><span class="toc-section-number">5.1.7</span> Model pomiaru</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.2</span> Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel" id="toc-cel"><span class="toc-section-number">5.2.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda" id="toc-metoda"><span class="toc-section-number">5.2.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#zastosowane-metody-statystyczne" id="toc-zastosowane-metody-statystyczne"><span class="toc-section-number">5.2.3</span> Zastosowane metody statystyczne</a></li>
+<li><a href="surveyexamples.html#metryczka-analiza-respondentów" id="toc-metryczka-analiza-respondentów"><span class="toc-section-number">5.2.4</span> Metryczka (analiza respondentów)</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1" id="toc-weryfikacja-hipotezy-1"><span class="toc-section-number">5.2.5</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-2" id="toc-weryfikacja-hipotezy-2"><span class="toc-section-number">5.2.6</span> Weryfikacja hipotezy 2</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-35" id="toc-weryfikacja-hipotez-35"><span class="toc-section-number">5.2.7</span> Weryfikacja hipotez 3–5</a></li>
+<li><a href="surveyexamples.html#wnioski" id="toc-wnioski"><span class="toc-section-number">5.2.8</span> Wnioski</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.3</span> Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel-1" id="toc-cel-1"><span class="toc-section-number">5.3.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda-1" id="toc-metoda-1"><span class="toc-section-number">5.3.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#metryczka" id="toc-metryczka"><span class="toc-section-number">5.3.3</span> Metryczka</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1-1" id="toc-weryfikacja-hipotezy-1-1"><span class="toc-section-number">5.3.4</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-24" id="toc-weryfikacja-hipotez-24"><span class="toc-section-number">5.3.5</span> Weryfikacja hipotez 2–4</a></li>
+<li><a href="surveyexamples.html#depresja-a-płeć" id="toc-depresja-a-płeć"><span class="toc-section-number">5.3.6</span> Depresja a płeć</a></li>
+<li><a href="surveyexamples.html#depresja-a-staż" id="toc-depresja-a-staż"><span class="toc-section-number">5.3.7</span> Depresja a staż</a></li>
+<li><a href="surveyexamples.html#depresja-a-rodzaj-miejsca-pracy" id="toc-depresja-a-rodzaj-miejsca-pracy"><span class="toc-section-number">5.3.8</span> Depresja a rodzaj miejsca pracy</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#wnioski-1" id="toc-wnioski-1"><span class="toc-section-number">5.4</span> Wnioski</a></li>
+<li><a href="surveyexamples.html#przykład-3" id="toc-przykład-3"><span class="toc-section-number">5.5</span> Przykład 3:</a></li>
+<li><a href="surveyexamples.html#formularze-ankiet" id="toc-formularze-ankiet"><span class="toc-section-number">5.6</span> Formularze ankiet</a>
+<ul>
+<li><a href="surveyexamples.html#ankieta-depresja-skala-depresji-becka" id="toc-ankieta-depresja-skala-depresji-becka"><span class="toc-section-number">5.6.1</span> Ankieta Depresja: Skala Depresji Becka</a></li>
+<li><a href="surveyexamples.html#ankieta-palenie" id="toc-ankieta-palenie"><span class="toc-section-number">5.6.2</span> Ankieta Palenie</a></li>
+</ul></li>
+</ul></li>
+<li><a href="intro2jamovi.html#intro2jamovi" id="toc-intro2jamovi"><span class="toc-section-number">6</span> Łagodne wprowadzenie z Jamovi</a>
+<ul>
+<li><a href="intro2jamovi.html#podstawy-pracy-z-jamovi" id="toc-podstawy-pracy-z-jamovi"><span class="toc-section-number">6.1</span> Podstawy pracy z Jamovi</a></li>
+<li><a href="intro2jamovi.html#przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia" id="toc-przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia"><span class="toc-section-number">6.2</span> Przykład: analiza ankiety satysfakcja–wiedza o paleniu–zamiar odejścia</a>
+<ul>
+<li><a href="intro2jamovi.html#wczytanie-danych" id="toc-wczytanie-danych"><span class="toc-section-number">6.2.1</span> Wczytanie danych</a></li>
+<li><a href="intro2jamovi.html#przekodowanie-danych" id="toc-przekodowanie-danych"><span class="toc-section-number">6.2.2</span> Przekodowanie danych</a></li>
+<li><a href="intro2jamovi.html#wyliczenie-nowych-zmiennych" id="toc-wyliczenie-nowych-zmiennych"><span class="toc-section-number">6.2.3</span> Wyliczenie nowych zmiennych</a></li>
+<li><a href="intro2jamovi.html#analiza-struktury" id="toc-analiza-struktury"><span class="toc-section-number">6.2.4</span> Analiza struktury</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienne-nominalne" id="toc-analiza-zależności-zmienne-nominalne"><span class="toc-section-number">6.2.5</span> Analiza zależności: zmienne nominalne</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-nominalna"><span class="toc-section-number">6.2.6</span> Analiza zależności: zmienna liczbowa/zmienna nominalna</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna"><span class="toc-section-number">6.2.7</span> Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna</a></li>
+<li><a href="intro2jamovi.html#regresja-logistyczna" id="toc-regresja-logistyczna"><span class="toc-section-number">6.2.8</span> Regresja logistyczna</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Łagodne wprowadzenie do statystyki</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="causality" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Analiza współzależności pomiędzy zmiennymi</h1>
+<p>Pomiędzy zjawiskami występują związki (zależności.) Nauki formułują te związki
+w postaci <strong>praw</strong>. Jak takie <strong>prawo naukowe</strong> powstaje? Typowo w dwu etapach,
+najpierw za pomocą <strong>dedukcji</strong> stawia się <strong>hipotezę</strong>, potem konfrontuje się
+hipotezę z danymi (podejście hipotetyczno-dedukcyjne).
+Na tym drugim etapie używa się statystyki (lub matematyki jeżeli prawo ma charakter deterministyczny)</p>
+<p>Upraszczając <em>metoda hypodedukcji</em> sprowadza się do dedukcyjnego sformułowania hipotezy, która następnie jest empirycznie <em>falsyfikowana</em>, tj. próbuje się wykazać, że jest ona nieprawdziwa. Konsekwencje:
+nie można dowieść prawdziwości żadnej hipotezy, można natomiast wykazać, że
+hipoteza jest fałszywa.</p>
+<p>Związki między cechami mogą być: <strong>funkcyjne</strong> (nauki przyrodnicze) – wartościom jednej zmiennej odpowiada tylko jedna wartość drugiej zmiennej lub
+<strong>stochastyczne</strong> – wartościom jednej zmiennej odpowiadają z pewnym
+przybliżeniem wartości innej zmiennej.</p>
+<p>Problem: czy istnieje związek (zależność) pomiędzy cechami?
+Przykładowo czy istnieje związek pomiędzy paleniem (przyczyna)
+a chorobą nowotworową (skutek), wiekiem a prawdopodobieństwem zgonu z powodu COVID19 itd</p>
+<p>Jaki jest charakter zależności? Jaka jest siła zależności?</p>
+<p>Rodzaj metod zastosowanej do empirycznej weryfikacji zależy
+w szczególności od sposobu pomiaru danych (nominalne, porządkowe, liczbowe.)
+co pokazano na diagramie.</p>
+<p><img src="DiagramMetod.png" /></p>
+<p>Optymistyczną informacją jest że metod (oznaczonych krojem pogrubionym na diagramie),
+które omawiamy dalej w rodziale, jest raptem siedem czyli niedużo.</p>
+<div id="dwie-zmienne-nominalne" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Dwie zmienne nominalne</h2>
+<div id="ryzyko-względne-oraz-iloraz-szans" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Ryzyko względne oraz iloraz szans</h3>
+<p>Ryzyko to udział (iloraz) liczby sukcesów do liczby prób (zdarzeń pozytywnych/wyróżnionych do wszystkich). Zwykle podawany w procentach. Warto zauważyć że jest to
+empiryczny odpowiednik prawdopodobieństwa.</p>
+<p><strong>Przykład: Podawanie witaminy C a przeziębienie/brak przeziębienia</strong></p>
+<p>Eksperyment przeprowadził Linus Pauling (laureat nagrody Nobla
+za odkrycie witaminy C).</p>
+<p>Eksperyment Paulinga polegał na tym, że podzielił 280 narciarzy na dwie grupy
+po 140 osób; przez 5–7 dni podawał witaminę C jednej grupie
+oraz placebo drugiej grupie;
+obserwował zachorowania na przeziębienie przez następne dwa tygodnie.
+Jeden narciarz nie dokończył eksperymentu. Historia milczy dlaczego :-)</p>
+<p><img src="Pauling.jpg" style="width:50.0%" /></p>
+<p>W grupie 139 narciarzy, którym podano witaminę C
+(grupa C) zachorowało 17. W grupie 140 narciarzy, którym podano placebo (grupa P)
+zachorowało 31. Zatem:</p>
+<ul>
+<li>Ryzyko zachorowania w grupie C wyniosło 17/139 = 12,2%.</li>
+<li>Ryzyko zachorowania w grupie P wyniosło 31/140 = 22,14%</li>
+</ul>
+<p>Na tzw. chłopski rozum jeżeli witamina C <strong>nie działa</strong> to powinien
+zachorować ten sam odsetek narciarzy w obu grupach.
+A tak nie jest jak widać…</p>
+<p>Prostymi miarami oceny siły zależności mogą być:</p>
+<ul>
+<li>różnica ryzyk (<strong>risk difference</strong>)</li>
+<li>ryzyko względne (<strong>relative risk</strong>), oraz</li>
+<li>iloraz szans (<strong>odds ratio</strong>).</li>
+</ul>
+<p>Jeżeli <span class="math inline">\(r_e\)</span> oznacza ryzyko w grupie eksperymentalnej
+(test group; grupa narażona/exposed group),
+a <span class="math inline">\(r_k\)</span> w grupie kontrolnej (control group; grupa nienarażona/unexposed),
+to <strong>różnica ryzyk</strong> to po prostu <span class="math inline">\(r_e - r_k\)</span>.
+W przykładzie będzie to <span class="math inline">\(22,14 - 12,2 = -9,94\)</span>%
+Ta miara aczkolwiek prosta jest rzadko stosowana.</p>
+<p>Znacznie częściej używa się <strong>ryzyka względnego</strong> definiowanego jako
+<span class="math inline">\(RR = r_e/r_k\)</span>. W przykładzie będzie to <span class="math inline">\(12,2/22,14 = 0,55\)</span>.
+Podanie witaminy C zmniejsza ryzyko o prawie połowę.
+Oczywiste jest że <span class="math inline">\(RR &lt; 1\)</span> oznacza zmniejszenie
+ryzyka; <span class="math inline">\(RR &gt; 1\)</span> zwiększenia a <span class="math inline">\(RR = 1\)</span> oznacza brak zależności.</p>
+<p>Zamiast ryzyka (czyli ilorazu liczby sukcesów do liczby prób) można używać
+pojęcia szansa/szansy (<strong>odds</strong>) definiowanego
+jako iloraz sukcesów do porażek.</p>
+<p>Przykładowo jeżeli w dwukrotnym rzucie monetą otrzymano orła i reszkę to ryzyko
+otrzymania orła wynosi 1/2 = 0,5 a szansa otrzymania orła wynosi 1/1 = 1.</p>
+<p><strong>Przykład: Narciarze Paulinga cd</strong></p>
+<p>Ryzyko zachorowania w grupie C wynosi 12,2 (jak wiemy); natomiast szansa, że narciarz grupie C
+zachoruje wynosi 17/122 = 13,9%. (A w grupie P wynosi 28,44%)</p>
+<p>Jak widać dla dużych ryzyk (rzut monetą) szansa
+różni się znacznie od prawdopodobieństwa, ale dla małych ryzyk obie miary mają zbliżoną wartość.</p>
+<p>Jeżeli <span class="math inline">\(o_e\)</span> oznacza szanse w grupie eksperymentalnej
+a <span class="math inline">\(o_k\)</span> w grupie kontrolnej, to <strong>iloraz szans</strong> (<em>odds ratio</em>), jest
+definiowany jako stosunek <span class="math inline">\(\textrm{OR} = o_e/o_k\)</span>.</p>
+<p>Zatem iloraz szans
+dla narciarzy wyniesie 13,9/28,44 = 0,48.
+Podanie witaminy C zmniejsza szansę na zachorowanie o ponad połowę.
+Albo 1/0,48 = 2,04, narciarz który nie brał witaminy C ma ponad
+dwukrotnie większą szansę na zachorowanie.</p>
+<p>Właściwości ilorazu szans:</p>
+<ul>
+<li>jeżeli równe 1 to sukces/porażka równie prawdopodobne;</li>
+<li>jeżeli większe od 1 to sukces bardziej prawdopodobny;</li>
+<li>jeżeli jest mniejsze od 1 to porażka jest bardziej prawdopodobna.</li>
+</ul>
+<p>Dane w badaniach wykorzystujących ryzyko/szanse mają często postać tabeli
+dwudzielnej o wymiarach <span class="math inline">\(2\times 2\)</span>, którą można przestawić następująco
+(a, b, c i d to liczebności):</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>sukces</th>
+<th>porażka</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>grupa kontrolna</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>grupa eksperymentalna</td>
+<td>c</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+<p>Dla danych w tej postaci:</p>
+<ul>
+<li><span class="math inline">\(\textrm{RR} = c(a+b)/a(c+d)\)</span> oraz</li>
+<li><span class="math inline">\(\textrm{OR} = (ad)/ (bc)\)</span></li>
+</ul>
+<p>czyli dla eksperymentu Paulinga:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>katar</th>
+<th>zdrowy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>grupa C</td>
+<td>17</td>
+<td>122</td>
+</tr>
+<tr class="even">
+<td>grupa P</td>
+<td>31</td>
+<td>109</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Przedziały ufności dla ryzyka względnego oraz ilorazu szans</h3>
+<p>Ryzyko, ryzyko względne czy iloraz szans to parametry podobne do procentu kobiet
+wśród kandydatów na radnych z przykładu w poprzednim rozdziale. Wiemy,
+że estymatorem punktowym proporcji jest proporcja z próby. Nie będzie
+wielkim odkryciem, że estymatorem punktowym ryzyka jest ryzyko z próby,
+ryzyka względnego/ilorazu szans zaś ryzyko względne/iloraz szans z próby.</p>
+<p>Standardem jest obliczanie dla ryzyka względnego oraz ilorazu szans
+oprócz ocen punktowych także
+przedziałów ufności czyli podawania dwóch wartości, pomiędzy którymi
+z zadanym prawdopodobieństem znajduje się nieznana wartość szacowanego
+parametru.</p>
+<p>Przykładowo (kontynuując eksperyment Paulinga)</p>
+<p>Końce przedziałów ufności dla ilorazu szans (ocena punktowa 0.4899524) wynoszą:
+[0.2569389; 0.934282] zaś dla
+ryzyka względnego (ocena punktowa 0.5523323) przedział ufności wynosi [0.3209146; 0.9506298].</p>
+<p><strong>Uwaga</strong>: nie jest specjalnie istotne jaka jest konkretna formuła obliczania
+przedziałów ufności, przecież obliczenia i tak koniec-końców wykona
+program komputerowy.</p>
+<p>Przedział ufności dla ilorazu szans nie zawiera 1;
+zatem branie witaminy C zmniejsza szanse na zachorowanie;
+albo zwiększa na niezachorowanie od <span class="math inline">\(1/25 = 4\)</span> do <span class="math inline">\(1/0,9 = 1,1\)</span>. Żeby
+to zabrzmiało ładnie i po polsku.
+Zwiększa na niezachorowanie od 300% do 10%.</p>
+<p>Dlaczego taka znacząca rozpiętość? Bo próba jest względnie mała. Gdyby
+Pauling zwerbował nie 280 a 2800 narciarzy mógłby weryfikować działanie
+swojej witaminy z większą pewnością.</p>
+</div>
+<div id="tabele-wielodzielcze" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Tabele wielodzielcze</h3>
+<p>Łączny rozkład dwóch lub większej liczby zmiennych można przedstawić
+w tabeli. Taka tabela nazywa się dwudzielcza (dla dwóch zmiennych)
+lub wielodzielcza albo wielodzielna (dla więcej niż dwóch liczby zmiennych.)
+Inne nazwy tych tabel to krzyżowe albo kontyngencji
+(cross-tabulation, contingency <strong>two-way tables</strong>.)</p>
+<p>Ograniczmy się do analizy tabel dwudzielnych.</p>
+<p><strong>Przykład: Narciarze Paulinga jeszcze raz</strong></p>
+<p>Eksperyment Paulinga można przedstawić w postaci tablicy dwudzielczej
+(P/C oznacza czy narciarz zażywał witaminę czy placebo; cold/nocold
+czy zachorował czy nie zachorował na katar):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">nocold</th>
+<th align="right">cold</th>
+<th align="right">razem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">122</td>
+<td align="right">17</td>
+<td align="right">139</td>
+</tr>
+<tr class="even">
+<td align="left">P</td>
+<td align="right">109</td>
+<td align="right">31</td>
+<td align="right">140</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum</td>
+<td align="right">231</td>
+<td align="right">48</td>
+<td align="right">279</td>
+</tr>
+</tbody>
+</table>
+<p>Taka tabela składa się z wierszy i kolumn. Dolny wiersz (Sum czyli Razem
+po polsku) zawiera łączną liczebność dla wszystkich wierszy w danej kolumnie. Podobnie prawa skrajna kolumna zawiera łączną
+liczebność dla wszystkich kolumn dla danego wiersza. Dolny wiersz/Prawą
+kolumnę nazywamy <strong>rozkładami brzegowymi</strong>.
+Pozostałe kolumny/wiersze (ale bez wartości łącznych) nazywane
+są <strong>rozkładami warunkowymi</strong>. Rozkładów warunkowych jest tyle ile
+wynosi iloczyn <span class="math inline">\(r \times c\)</span> gdzie <span class="math inline">\(r\)</span> to liczba wariantów jednej cechy
+a <span class="math inline">\(c\)</span> to liczba wariantów drugiej cechy.</p>
+<p>Przy warunku że narciarz brał witaminę C, 122 takich osób
+nie zachorowało (<strong>nocold</strong>) a 17 zachorowało (<strong>cold</strong>).
+Drugi rozkład warunkowy: 109 narciarzy, którzy brali placebo
+nie zachorowało, a 31 zachorowało. Są także rozkłady
+warunkowe dla drugiej cechy. W grupie narciarzy, którzy zachorowali
+122 brało witaminę C, a 109 brało placebo.
+Wreszcie w grupie narciarzy, którzy nie zachorowali
+109 brało witaminę C, a 31 brało placebo.
+Rozkładów warunkowych jest 4 bo obie cechy mają po dwa warianty. Jest
+to najmniejsza możliwa tabela wielodzielcza.</p>
+<p>Zamiast liczebności można posługiwać się odsetkami (procentami):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">N</th>
+<th align="right">Y</th>
+<th align="right">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">43.7276</td>
+<td align="right">6.09319</td>
+<td align="right">49.82079</td>
+</tr>
+<tr class="even">
+<td align="left">P</td>
+<td align="right">39.0681</td>
+<td align="right">11.11111</td>
+<td align="right">50.17921</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum</td>
+<td align="right">82.7957</td>
+<td align="right">17.20430</td>
+<td align="right">100.00000</td>
+</tr>
+</tbody>
+</table>
+<p>Narciarzy którzy brali witaminę C nie nie zachorowali stanowi 43.7275986%
+wszystkich narciarzy. Mało przydatne…</p>
+<p>Ciekawsze jest obliczenie procentów każdego wiersza osobno, tj. dzielimy
+liczebności w każdej kolumnie przez liczebności rozkładu brzegowego (wartości
+ostatniej kolumny):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">N</th>
+<th align="right">Y</th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">87.76978</td>
+<td align="right">12.23022</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">P</td>
+<td align="right">77.85714</td>
+<td align="right">22.14286</td>
+<td align="right">100</td>
+</tr>
+<tr class="odd">
+<td align="left">n.m</td>
+<td align="right">82.79570</td>
+<td align="right">17.20430</td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+<p>Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
+zachorowania dla całej grupy wynosi 17.2043011% a nie zachorowania
+82.7956989%. Jest przyznajmy całkiem <strong>zdroworozsądkowym założeniem</strong>
+(uczenie hipotezą statystyczną), że jeżeli przyjmowanie witaminy nie ma związku
+z zachorowaniem lub nie na katar, to w grupie tych co brali i tych co nie brali
+powinniśmy mieć identyczne rozkłady warunkowe równe rozkładowi brzegowemu.
+Czyli powinno przykładowo zachorować 17.2043011% narciarzy, którzy
+brali witaminę C a widzimy , że zachorowało jedynie 12.2302158%.</p>
+<p>Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się
+czy ta różnica jest na tyle duża, że (z założonym prawdopodobieństwem)
+można wykluczyć działanie przypadku.</p>
+<p>Rozumowanie jest następujące: jeżeli prawdopodobieństwo wystąpienia
+tak dużej różnicy jest małe, to cechy nie są niezależne.
+Jest to istota i jedyny wniosek z czegoś co się nazywa
+testem istotności-chi-kwadrat.
+Test chi-kwadrat porównuje liczebności tablicy wielodzielnej z idealną-tablicą-wielodzielną, która zakłada niezależność jednej zmiennej od drugiej.</p>
+<p>Można udowodnić, że taka tablica powstanie przez przemnożenie dla
+każdego elementu tablicy odpowiadających mu wartości brzegowych
+a następnie podzieleniu tego przez łączną liczebność (czyli przykładowo pierwszy
+element poniższej tablicy to 231 pomnożone przez
+139 i podzielone przez 279; proszę
+sprawdzić,
+że jest to 115.0860215):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">N</th>
+<th align="right">Y</th>
+<th align="right">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">C</td>
+<td align="right">115.086</td>
+<td align="right">23.91398</td>
+<td align="right">139</td>
+</tr>
+<tr class="even">
+<td align="left">P</td>
+<td align="right">115.914</td>
+<td align="right">24.08602</td>
+<td align="right">140</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum</td>
+<td align="right">231.000</td>
+<td align="right">48.00000</td>
+<td align="right">279</td>
+</tr>
+</tbody>
+</table>
+<p>Proszę
+zwrócić uwagę że <strong>rozkłady brzegowe</strong> są identyczne, identyczna
+jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
+liczbami całkowitami ale tak ma być–nie jest to błąd)</p>
+<p>Za pomocą testu Chi-kwadrat obliczamy jakie jest prawdopodobieństwo, wystąpienia
+tak dużych lub większych różnic. Wynosi ono 0.041864.
+Czyli wystąpienie tak dużych różnic
+pomiędzy <strong>oczekiwanymi</strong> (przy założeniu o niezależności zmiennych)
+liczebnościami
+a obserwowanymi liczebnościami zdarza się około 4 razy na 100.</p>
+<p>Jeszcze raz przypominamy ideę testu: jeżeli prawdopodobieństwo zaobserwowanych
+różnic jest małe to zakładamy że</p>
+<ul>
+<li><p>albo mamy pecha i pięć razy podrzucając monetą zawsze nam spadła
+reszka (prawdopodobieństwo około 0,03), albo</p></li>
+<li><p>że założenie co do niezależności jest fałszywe.</p></li>
+</ul>
+<p>Statystyk zawsze wybierze
+drugie. Pozostaje tylko ustalenie co to znaczy <strong>małe</strong>.</p>
+<p>Małe to takie które jest mniejsze od arbitralnie przyjętego
+przez statystyka. Zwykle jest to 0,05 lub 0,01 (czasami 0,1)
+co oznacza że odrzucając założenie o braku związku pomiędzy
+katarem a braniem witaminy C pomylimy się pięć lub raz na 100.</p>
+<p><strong>Uwaga</strong>: proszę zwrócić uwagę że wniosek z testu niezależności jest
+słabszy niż z porówania ryzyk. Tam mamy informację że zależność istnieje
+i oszacowaną jej wielkość (np. za pomocą ryzyka względnego) tutaj tylko
+zweryfikowaliśmy fakt czy obie zmienne są niezależne czy też nie.</p>
+<p><strong>Przykład: palenie a status społeczno-ekonomiczny</strong></p>
+<p>Dla pewnej grupy osób odnotowujemy ich status-społeczno-ekonomiczny
+(wysoki/<strong>high</strong>, średni/<strong>middle</strong>, niski/<strong>low</strong>)
+oraz status-względem-palenia
+(wartości: pali/<strong>current</strong>, palił-nie-pali/<strong>former</strong>, nigdy-nie-palił/<strong>never</strong>).
+Obie zmienne są nominalne, obie mają po trzy wartości. Można
+poklasyfikować wszystkich badanych w następujący sposób:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">High</th>
+<th align="right">Low</th>
+<th align="right">Middle</th>
+<th align="right">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">current</td>
+<td align="right">51</td>
+<td align="right">43</td>
+<td align="right">22</td>
+<td align="right">116</td>
+</tr>
+<tr class="even">
+<td align="left">former</td>
+<td align="right">92</td>
+<td align="right">28</td>
+<td align="right">21</td>
+<td align="right">141</td>
+</tr>
+<tr class="odd">
+<td align="left">never</td>
+<td align="right">68</td>
+<td align="right">22</td>
+<td align="right">9</td>
+<td align="right">99</td>
+</tr>
+<tr class="even">
+<td align="left">Sum</td>
+<td align="right">211</td>
+<td align="right">93</td>
+<td align="right">52</td>
+<td align="right">356</td>
+</tr>
+</tbody>
+</table>
+<p>Uwaga: status-społeczno-ekonomiczny to powiedzmy miara prestiżu używana w socjologii
+(można na Wikipedii doczytać co to dokładnie jest)</p>
+<p>Tym razem tabela składa się z 3 wierszy i 3 kolumn (ostatni wiersz/kolumna się
+nie liczą bo to sumy–rozkłady brzegowe)</p>
+<p>Przedstawmy tą tabelę w postaci udziałow procentowych sumujących się
+dla każdego wiersza osobno do 100% (tj. dzielimy
+liczebności w każdej kolumnie przez liczebności rozkładu brzegowego (wartości
+ostatniej kolumny):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">High</th>
+<th align="right">Low</th>
+<th align="right">Middle</th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">current</td>
+<td align="right">43.96552</td>
+<td align="right">37.06897</td>
+<td align="right">18.965517</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">former</td>
+<td align="right">65.24823</td>
+<td align="right">19.85816</td>
+<td align="right">14.893617</td>
+<td align="right">100</td>
+</tr>
+<tr class="odd">
+<td align="left">never</td>
+<td align="right">68.68687</td>
+<td align="right">22.22222</td>
+<td align="right">9.090909</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">n.m</td>
+<td align="right">59.26966</td>
+<td align="right">26.12360</td>
+<td align="right">14.606742</td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+<p>Rozumowanie jest identyczne jak dla narciarzy Pauliga. Jeżeli nie ma zależności
+pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
+być identyczne jak w wierszach 1–3 (nagłówka nie liczymy). Tym idealnym
+procentom odpowiadają następujące liczebności:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">High</th>
+<th align="right">Low</th>
+<th align="right">Middle</th>
+<th align="right">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">current</td>
+<td align="right">68.75281</td>
+<td align="right">30.30337</td>
+<td align="right">16.94382</td>
+<td align="right">116</td>
+</tr>
+<tr class="even">
+<td align="left">former</td>
+<td align="right">83.57022</td>
+<td align="right">36.83427</td>
+<td align="right">20.59551</td>
+<td align="right">141</td>
+</tr>
+<tr class="odd">
+<td align="left">never</td>
+<td align="right">58.67697</td>
+<td align="right">25.86236</td>
+<td align="right">14.46067</td>
+<td align="right">99</td>
+</tr>
+<tr class="even">
+<td align="left">Sum</td>
+<td align="right">211.00000</td>
+<td align="right">93.00000</td>
+<td align="right">52.00000</td>
+<td align="right">356</td>
+</tr>
+</tbody>
+</table>
+<p>Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi
+(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi 0.000981.
+Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
+statusu i palenia (myląc się w przybliżeniu 0.000981 ≈ raz na tysiąc)</p>
+</div>
+</div>
+<div id="zmienna-liczbowa-i-zmienna-nominalna" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Zmienna liczbowa i zmienna nominalna</h2>
+<p>Obliczamy średnie wartości zmiennej liczbowej <strong>w grupach</strong> określonych przez wartości zmiennej nominalnej,
+np wypalenie zawodowe w podziale na miejsce pracy. Grup może być dwie lub więcej</p>
+<p>Stawiamy hipotezę że wartości średnie w każdej grupie są równe, wobec hipotezy alternatywnej
+że tak nie jest (że są różne jeżeli grup jest dwie; co najmniej jedna jest różna jeżeli grup jest
+więcej niż dwie). Stosujemy odpowiedni test statystyczny:</p>
+<ul>
+<li><p>jeżeli liczba grup wynosi 2 oraz można przyjąć założenie o przybliżonej
+normalności rozkładów, to stosujemy test <span class="math inline">\(t\)</span>-Studenta (dla prób niezależnych),</p></li>
+<li><p>jeżeli liczba grup wynosi 2, ale nie można założyć normalności
+rozkładów to stosujemy test U-Manna-Whitneya</p></li>
+<li><p>jeżeli liczba grup jest większa niż dwie oraz można przyjąć założenie
+o normalności rozkładów to stosujemy test pn. ANOVA</p></li>
+<li><p>jeżeli liczba grup jest większa od dwóch oraz nie można przyjąć założenia
+o normalności rozkładów, to stosujemy test Kruskall-Wallisa</p></li>
+</ul>
+<p>Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku</p>
+<p><img src="TestFlowChart.png" /></p>
+<div id="test-t-studenta" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> test <span class="math inline">\(t\)</span>-Studenta</h3>
+<p>Test stosujemy jeżeli porównujemy dwie średnie oraz można przyjąć
+założenie że rozkład wartości w obu grupach jest normalny.</p>
+<p><strong>Przykład</strong>: Poziom depresji a miejsce pracy</p>
+<p>Studenci pielęgniarstwa i ratownictwa PSW w 2023 roku wypełnili
+ankietę zawierającą
+test depresji Becka, mierzący <strong>poziom depresji</strong> (wartość liczbowa)
+oraz pytanie o rodzaj miejsca pracy (skala nominalna). Poniżej
+zestawiono średnie wartości <strong>poziomu depresji</strong> w podziale
+na rodzaj miejsca pracy (szpital/przychodnia)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">m-pracy</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Przychodnia</td>
+<td align="right">7.833333</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">Szpital</td>
+<td align="right">8.450549</td>
+<td align="right">91</td>
+</tr>
+</tbody>
+</table>
+<p>Średnie różnią się
+o 0.62.
+Pytanie czy to dużo czy mało?</p>
+<p>Przyjmijmy (na razie bez sprawdzania), że rozkłady wartości poziomu depresji
+w obu grupach są (w przybliżeniu)
+normalne. Można zatem zastosować test <span class="math inline">\(t\)</span>-Studenta</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Grupa1</th>
+<th align="left">Grupa2</th>
+<th align="right">n1</th>
+<th align="right">n2</th>
+<th align="right">t</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Przychodnia</td>
+<td align="left">Szpital</td>
+<td align="right">12</td>
+<td align="right">91</td>
+<td align="right">-0.3241142</td>
+<td align="right">0.749</td>
+</tr>
+</tbody>
+</table>
+<p>Ponieważ wartość <span class="math inline">\(p\)</span> równa 0.749` jest większa od każdego zwyczajowo
+przyjmowanego poziomu istotności nie ma podstaw
+do odrzucenia hipotezy, że średnie w obu grupach są równe. Skoro tak, to
+w konsekwencji stwierdzamy że pomiędzy poziomem depresji
+a miejscem pracy nie ma zależności.</p>
+</div>
+<div id="testowanie-normalności" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Testowanie normalności</h3>
+<p>Statystyk nie przyjmuje założeń na słowo honoru.
+Kiedy zatem można przyjąć założenie o normalności a kiedy nie?
+Można to ocenić na podstawie wykresu kwantylowego. Oraz
+posługując się testem Shapiro-Wilka
+(bo Statystycy na każde pytanie mają zawsze <strong>jakiś</strong> stosowny test)</p>
+<p><strong>Przykład</strong>: Poziom depresji a miejsce pracy</p>
+<p>Wykres kwantylowy dla <strong>poziomu depresji</strong>
+wygląda jak na poniższym rysunku</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p>Prosta odpowiada teoretycznym wartościom kwantyli rozkładu poziomu depresji przy założeniu
+że mają one rozkład normalny. Punkty odpowiadają zaobserwowanym wartościom kwantyli.
+Im bardziej punkty nie pokrywają się z prostą
+(zwłaszcza na skrajach rozkładu) tym mniej wierzymy, że rozkład jest normalny.</p>
+<p>W tym przypadku wygląda, że rozkład w grupie Szpital <strong>nie jest</strong> normalny.
+W grupie Przychodnia jest lepiej ale jednocześnie to lepiej jest mało wiarygodne
+z uwagi na małą liczebność grupy (zaledwie 12).</p>
+<p>Wizualne obserwacja można potwierdzić stosując test Shapiro-Wilka.
+Interpretacja tego testu jest „standardowa“, mianowicie małe wartości <span class="math inline">\(p\)</span>
+świadczą przeciwko hipotezie zerowej (że rozkład jest Normalny)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">m-pracy</th>
+<th align="right">statystyka</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Przychodnia</td>
+<td align="right">0.9256178</td>
+<td align="right">0.3359655</td>
+</tr>
+<tr class="even">
+<td align="left">Szpital</td>
+<td align="right">0.7865090</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+<p>Rozkład w grupie <code>szpital</code> nie jest normalny. Nasze założenie co do normalności
+było niepoprawne i należy do weryfikacji hipotezy o równości średniej zamiast
+testu <span class="math inline">\(t\)</span>-Studenta zastosować test U Manna-Whitneya.</p>
+</div>
+<div id="test-u-manna-whitneya" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> test U Manna-Whitneya</h3>
+<p><strong>Przykład: Poziom depresji a miejsce pracy</strong></p>
+<p>Ponieważ grup jest dokładnie 2 a rozkład nie jest normalny, stosujemy test U Manna-Whitneya.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Grupa1</th>
+<th align="left">Grupa2</th>
+<th align="right">n1</th>
+<th align="right">n2</th>
+<th align="right">U</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Przychodnia</td>
+<td align="left">Szpital</td>
+<td align="right">12</td>
+<td align="right">91</td>
+<td align="right">564.5</td>
+<td align="right">0.853</td>
+</tr>
+</tbody>
+</table>
+<p>Prawdopodobieństwo wystąpienia tak dużej różnicy przy założeniu, że
+średnie w obu grupach
+są identyczne wynosi 0.853 (różnica jest zatem nieistotna; obie średnie są identyczne–nie ma zależności)</p>
+</div>
+<div id="test-anova" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> test ANOVA</h3>
+<p>Jeżeli liczba grup jest większa niż dwie ale można przyjąć założenie
+o normalności rozkładów to stosujemy test ANOVA.</p>
+<p><strong>Przykład: Poziom depresji a staż pracy</strong></p>
+<p>W ankiecie, którą wypełnili
+Studenci pielęgniarstwa i ratownictwa PSW w 2023 roku
+było też pytanie o staż pracy. Oryginalną liczbową wartość zmiennej
+staż zamieniono na zmienną w skali nominalnej o następujących
+czterech wartościach: <code>&lt;6</code> (oznacza od 0 do 6 lat stażu pracy), <code>07-12</code> (7–12 lat), <code>13-18</code> (13–18 lat)
+oraz <code>&gt;19</code> (19 i więcej lat.)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">staż (kategoria)</th>
+<th align="right">średnia</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">07-12</td>
+<td align="right">7.857143</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">13-18</td>
+<td align="right">7.666667</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;06</td>
+<td align="right">8.512821</td>
+<td align="right">39</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;19</td>
+<td align="right">8.533333</td>
+<td align="right">45</td>
+</tr>
+</tbody>
+</table>
+<p>Zakładając że rozkłady w grupach są normalne, do weryfikacji hipotezy o równości wszystkich
+średnich możemy zastosować test ANOVA.</p>
+<p>Wartość <span class="math inline">\(p\)</span> równa 0.988 świadczy że nie istotnych różnic pomiędzy średnimi, co oznacza
+że pomiędzy poziomem depresji a kategoriami stażu pracy nie ma zależności.</p>
+<p>Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
+zastosować (znowu) test Shapiro-Wilka:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">m-pracy</th>
+<th align="right">statystyka</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">07-12</td>
+<td align="right">0.8565271</td>
+<td align="right">0.1408865</td>
+</tr>
+<tr class="even">
+<td align="left">13-18</td>
+<td align="right">0.7596157</td>
+<td align="right">0.0033736</td>
+</tr>
+<tr class="odd">
+<td align="left">&lt;06</td>
+<td align="right">0.9008198</td>
+<td align="right">0.0023292</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;19</td>
+<td align="right">0.6780397</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+<p>Wobec takiego wyniku testu do oceny istotności różnic
+należy zastosować bardziej ogólny test Kruskalla-Wallisa</p>
+</div>
+<div id="test-kruskalla-wallisa" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> test Kruskalla-Wallisa</h3>
+<p><strong>Przykład: Poziom depresji a staż pracy</strong></p>
+<p>Prawdopodobieństwo tak dużych różnic w średnich
+przy założeniu, że średnie we wszystkich grupach są identyczne wynosi
+0.678923 (różnice są zatem nieistotne;
+wszystkie średnie są identyczne–nie ma zależności)</p>
+</div>
+</div>
+<div id="zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Zmienna liczbowa i zmienne liczbowe lub nominalne</h2>
+<div id="przypadek-szczególny-dwie-zmienne-liczbowe" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Przypadek szczególny: dwie zmienne liczbowe</h3>
+<p>Oznaczamy jedną zmienną jako <span class="math inline">\(X\)</span> a drugą jako <span class="math inline">\(Y\)</span>.
+W tym przypadku dobrze jest rozpocząć analizę od wykresu.</p>
+</div>
+<div id="korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)</h3>
+<p>W układzie kartezjańskim każdej obserwacji odpowiada
+kropka o współrzędnych XY.</p>
+<p>O występowaniu związku świadczy układanie się kropek według jakiegoś
+kształtu (krzywej). O braku związku
+świadczy chmura punktów niepodobna do żadnej krzywej.</p>
+<p>Punkty układające się według prostej świadczą o zależności liniowej
+(wyjątek: linia pozioma lub pionowa)
+Punkty układające się według krzywej świadczą
+o zależności nieliniowej.</p>
+<p><strong>Przykład: Zależność pomiędzy zamożnością a spożyciem mięsa</strong></p>
+<p>Organizacja Narodów Zjednoczonych do spraw Wyżywienia i Rolnictwa znana jako FAO
+udostępnia dane dotyczące konsumpcji żywności na świecie. Bank światowy
+udostępnia dane dotyczące dochodu narodowego.</p>
+<p>Konsumpcja mięsa jest mierzona jako średnia konsumpcja w kilogramach w każdym kraju (<em>per capita</em> się mówi);
+Dochód podobnie jako średnia wielkość dochodu narodowego <em>per capita</em>.
+Dane dotyczą roku 2013.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+</div>
+<div id="pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</h3>
+<p>Kowariancja to średnia arytemtyczna iloczynów odchyleń wartości zmiennych <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>
+od ich wartości średnich. Dla <span class="math inline">\(n\)</span> obserwacji na zmiennych <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>
+można powyższe zapisać w postaci następującej formuły:</p>
+<p><span class="math display">\[\mathrm{cov} (xy) = \frac{1}{n} \left( (x_1 - \bar x) (y_1 - \bar y)  + ... +
+(x_n- \bar x) (y_n - \bar y) \right)\]</span></p>
+<p>Kowariancja zależy od rozproszenia (im większe tym większa),
+ma też dziwną jednostkę (jednostkaX · jednostkaY) oraz zależy
+od wybranych skal (tony vs gramy na przykład.)</p>
+<p>Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
+standaryzowanego współczynnika kowariancji,
+zwanego <strong>współczynnikiem korelacji liniowej</strong>, (<em>Pearson linear
+correlation coefficient</em>). Standaryzacja polega na podzieleniu wartości
+kowariacji przez iloczyn odchyleń standardowych <span class="math inline">\(s_x\)</span> oraz <span class="math inline">\(s_y\)</span>.</p>
+<p><span class="math display">\[r_{xy} = \frac{\mathrm{cov}(xy) }{s_x \cdot s_y}\]</span></p>
+<p>Współczynnik jest miarą niemianowaną, przyjmującą wartości ze zbioru <span class="math inline">\([-1;1]\)</span>;
+Skrajne wartości <span class="math inline">\(\pm 1\)</span>
+świadczą o związku funkcyjnym (wszystkie punkty układają się na linii prostej);
+wartość zero świadczy o braku związku (linia pozioma/pionowa)</p>
+<p><img src="covariance_explained.png" style="width:75.0%" /></p>
+<p>Interpretacja opisowa: wartości powyżej 0,9 świadczą o silnej zależności.</p>
+<p><strong>Przykład: korelacja między spożyciem mięsa a GDP</strong></p>
+<p>Współczynnik korelacji liniowej wynosi 0.6823158 (umiarkowana korelacja).</p>
+<p>Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
+test statystyczny, który sprowadza się do określenia jakie jest
+prawdopodobieństwo otrzymania r = 0.6823158 przy założeniu że
+prawdziwa wartość r wynosi zero. Otóż w naszym przykładzie
+to prawdopodobieństwo wynosi 3.850676e-26
+(czyli jest ekstremalnie małe – r jest istotnie różne od zera).</p>
+</div>
+<div id="macierz-korelacji" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Macierz korelacji</h3>
+<p>Wstępnym etapem analizy zależności między zmiennymi jest często
+hurtowa ocena współczynników korelacji w postaci kwadratowej <strong>macierzy korelacji</strong>.</p>
+<p><strong>Przykład: korelacja pomiędzy wiekiem, edukacją, szczęściem a stanem zdrowia</strong></p>
+<p>Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, szczęściem a stanem zdrowia.
+(The relationship between happiness and self-rated health: A population-based study of 19499 Iranian adults;
+<a href="https://doi.org/10.1371/journal.pone.0265914" class="uri">https://doi.org/10.1371/journal.pone.0265914</a>)</p>
+<pre><code>##                   age            edu  Happiness         Health
+## age        1.00000000 -0.18341325501 0.04491863  0.00125622963
+## edu       -0.18341326  1.00000000000 0.07418519 -0.00003728405
+## Happiness  0.04491863  0.07418519038 1.00000000  0.17863069296
+## Health     0.00125623 -0.00003728405 0.17863069  1.00000000000</code></pre>
+<p>Albo w bardziej efektownej postaci tekstowo-graficznej:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+</div>
+<div id="pomiar-siły-zależności-regresja-liniowa" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Pomiar siły zależności: regresja liniowa</h3>
+<p><strong>Regresja liniowa</strong> zakłada, że istnieje związek przyczyna-skutek
+i ten związek można opisać linią prostą (stąd liniowa). Skutek jest
+jeden i nazywa się go <strong>zmienną zależną</strong> a przyczyn może być wiele i noszą
+nazwę <strong>zmiennych niezależnych</strong> (albo <strong>predyktorów</strong>).
+W przypadku gdy związek dotyczy dwóch zmiennych mówi się o <strong>regresji prostej</strong>.
+Przykładowo zależność
+pomiędzy spożywaniem kawy w czasie sesji egzaminacyjnej a wynikiem egzaminu
+można formalnie zapisać jako:</p>
+<p><span class="math display">\[ \textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa}\]</span></p>
+<p>Współczynnik <span class="math inline">\(b_1\)</span> określa wpływ spożycia kawy na wynik egzaminu.
+W szczególności jeżeli <span class="math inline">\(b_1 = 0\)</span> to
+nie ma związku między spożywaniem kawy a wynikiem egzaminu.</p>
+<p>Jeżeli zmiennych niezależnych jest więcej niż jedna,
+to mówimy o <strong>regresji wielorakiej</strong>. Przykładowo
+zależność
+pomiędzy wynikiem egzaminu, spożyciem kawy czasem nauki oraz predyspozycjami
+opisuje następujący model regresji:</p>
+<p><span class="math display">\[\textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa} + b_2 \cdot \textrm{czas} + b_3 \cdot \textrm{predyspozycje} \]</span></p>
+<p>Współczynnik <span class="math inline">\(b_1\)</span> określa wpływ spożycia kawy
+<span class="math inline">\(b_2\)</span> czasu poświęconego na naukę,
+a <span class="math inline">\(b_3\)</span> predyspozycji
+(intelektualnych, mierzonych np. średnią ocenę ze studiów)</p>
+</div>
+<div id="regresja-prosta" class="section level3" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Regresja prosta</h3>
+<p>Równianie regresji dla zmiennych <span class="math inline">\(Y\)</span> (skutek) oraz <span class="math inline">\(X\)</span> (przyczyna) można zapisać następująco:</p>
+<p><span class="math display">\[Y = b_0 + b_1 \cdot X + e \]</span></p>
+<p><span class="math inline">\(Y = b_0 + b_1 \cdot X\)</span> to <strong>część deterministyczna</strong>,
+a <span class="math inline">\(e\)</span> oznacza <strong>składnik losowy</strong>.
+O tym składniku zakładamy, że średnia jego wartość wynosi zero.
+Można to sobie wyobrazić, że w populacji jest jakaś prawdziwa zależność
+<span class="math inline">\(Y = b_0 + b_1 \cdot X\)</span> pomiędzy <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span>, która w próbie
+ujawnia się z błędem o charakterze losowym. Ten błąd może wynikać
+z pominięcia jakiejś ważnej zmiennej (model
+to zawsze uproszczenie rzeczywistości), przybliżonego charakteru linii
+prostej jako zależności pomiędzy <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span> (prosta ale nie do końca prosta)
+albo błędu pomiaru.</p>
+<p>Współczynnik <span class="math inline">\(a\)</span> (nachylenia prostej) określa wielkość efektu
+w przypadku regresji, tj. siły zależności pomiędzy zmiennymi.</p>
+<p>Współczynnik <span class="math inline">\(a\)</span> ma prostą interpretację: jeżeli wartość zmiennej <span class="math inline">\(X\)</span>
+rośnie o jednostkę to wartość zmiennej <span class="math inline">\(Y\)</span> zmienia
+się przeciętnie o <span class="math inline">\(b_1\)</span> jednostek zmiennej Y.
+Wyraz wolny zwykle nie ma sensownej interpretacji
+(formalnie jest to wartość zmiennej <span class="math inline">\(Y\)</span> dla <span class="math inline">\(X=0\)</span>)</p>
+<p>Oznaczmy przez <span class="math inline">\(y_i\)</span> wartości obserwowane (zwane też empirycznymi)
+a przez <span class="math inline">\(\hat y_i\)</span> <em>wartości teoretyczne</em> (leżące na prostej linii regresji).</p>
+<p>Wartości <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> wyznacza się minimalizując sumę kwadratów
+odchyleń wartości teoretycznych od wartości empirycznych, tj.:</p>
+<p><span class="math display">\[(\hat y_1 - y_1)^2 + (\hat y_2 - y_2)^2 + ... +  (\hat y_n - y_n)^2\]</span></p>
+<p>Rozwiązując powyższy <strong>problem minimalizacyjny</strong> otrzymujemy wzory
+definiujące parametry <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span>. Metoda wyznaczania parametrów
+linii prostej w oparciu o minimalizację sumy kwadratów odchyleń
+nosi nazwę <strong>metoda największych kwadratów</strong>.</p>
+<p>Przypominamy, że <strong>estymatorem</strong> nazywamy metodę oszacowania parametru na podstawie próby.
+Ponieważ traktujemy <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> jako parametry jakieś populacji generalnej
+to wzory na <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> statystyk nazwie estymatorami parametrów
+<span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span>. W konsekwencji tego <span class="math inline">\(b_0\)</span>/<span class="math inline">\(b_1\)</span> posiadają jakąś wartość średnią oraz wariancję.</p>
+<p>Przypominamy że wartość średnia <strong>dobrego estymatora</strong> powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
+oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności próby. Można udowodnić
+że estymatory parametrów <span class="math inline">\(b_0\)</span>/<span class="math inline">\(b_1\)</span>
+uzyskane <strong>metodą najmniejszych kwadratów</strong> posiadają obie właściwości.</p>
+<p>Graficznie <strong>kryterium minimalizacyjne</strong> przedstawia rysunek</p>
+<p><img src="kmnk_roznice.png" style="width:75.0%" /></p>
+<p>Suma podniesionych do kwadratu odległości pomiędzy czerwonymi
+i niebieskimi kropkami ma być minimalna. Kropki niebieskie to
+wartości empiryczne; kropki czerwone to wartości teoretyczne.
+Zadanie wyznaczenie
+parametrów takiej prostej oczywiście realizuje program komputerowy.</p>
+<p>Można udowodnić że bez względu czy punkty na wykresie układają się
+w przybliżeniu wzdłuż prostej czy nie, zawsze <strong>jakaś prosta</strong> zostanie
+dopasowana (jeżeli tylko punktów jest więcej niż jeden.)
+Jak to ocenić w sposób bardziej konkretny a nie tylko na oko dopasowanie
+prostej do wartości empirycznych?</p>
+<p><strong>Ocena dopasowania: wariancja resztowa oraz średni błąd szacunku</strong></p>
+<p>Oznaczając <em>resztę</em> jako: <span class="math inline">\(e_i = y_i - \hat y_i\)</span>, definiujemy <strong>wariancję
+resztową</strong> jako:</p>
+<p><span class="math display">\[s_e^2 = \frac{e_1^2 + e_2^2 + ... e_n^2}{n-k}\]</span>.</p>
+<p>Gdzie <span class="math inline">\(n\)</span> oznacza liczbę obserwacji (liczebność próby), a <span class="math inline">\(k\)</span> liczbę
+szacowanych parametrów bez wyrazu wolnego czyli jeden w regresji
+prostej (a więcej niż jeden w regresji wielorakiej o czym dalej.)</p>
+<p>Pierwiastek kwadratowy z <strong>wariancji resztowej</strong>.
+nazywamy <strong>średnim błędem szacunku</strong> (<em>mean square error</em>, MSE)</p>
+<p><strong>Ocena dopasowania: współczynniki zbieżności i determinacji</strong></p>
+<p>Suma kwadratów reszt (albo odchyleń wartości teoretycznych
+od wartości empirycznych,
+albo suma kwadratów błędów vel <strong>resztowa suma kwadratów</strong>):</p>
+<p><span class="math display">\[\mathrm{RSK} = (y_1 - \hat y_1)^2 + (y_2 - \hat y_2)^2 + ... +  (y_n - \hat y_n)^2\]</span>.</p>
+<p>Suma kwadratów odchyleń <strong>wartości empirycznych</strong>
+od średniej (<strong>ogólna suma kwadratów</strong>):</p>
+<p><span class="math display">\[\mathrm{OSK} = (y_1 - \bar y)^2 + (y_2 - \bar y)^2 + ... +  (y_n - \bar y)^2\]</span></p>
+<p>Suma kwadratów odchyleń <strong>wartości teoretycznych</strong>
+od średniej (<strong>wyjaśniona suma kwadratów</strong>):</p>
+<p><span class="math display">\[\mathrm{WSK} = (\hat y_1 - \bar y)^2 + (\hat y_2 - \bar y)^2 + ... +  (\hat y_n - \bar y)^2\]</span></p>
+<p>Można wykazać, że <span class="math inline">\(\mathrm{OSK} = \mathrm{WSK} + \mathrm{RSK}\)</span> zatem (po podzieleniu obu stron
+równania przez <span class="math inline">\(\mathrm{OSK}\)</span> otrzymujemy:</p>
+<p><span class="math display">\[ 1 =  \mathrm{WSK}/\mathrm{OSK} + \mathrm{RSK}/\mathrm{OSK}\]</span></p>
+<p><strong>Współczynnik zbieżności</strong> oznaczany jako <span class="math inline">\(R^2\)</span> to <span class="math inline">\(\mathrm{WSK}/\mathrm{OSK}\)</span>.</p>
+<p><strong>Współczynnik determinacji</strong> oznaczany jako <span class="math inline">\(\Phi^2\)</span> (duża grecka litera Fi) to <span class="math inline">\(RSK/OSK\)</span>.</p>
+<p>Współczynniki przyjmują wartość z przedziału <span class="math inline">\([0,1]\)</span> lub <span class="math inline">\([0, 100]\)</span>% jeżeli
+ich wartości zostaną pomnożone przez 100.</p>
+<p>Interpretacja współczynnika zbieżności: udział (procent) zmienność wyjaśnianej
+przez linię regresji. Im <span class="math inline">\(R^2\)</span> jest bliższe jedności (lub 100% jeżeli
+jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.</p>
+<p><strong>Ocena dopasowania: istotność parametru <span class="math inline">\(a\)</span></strong></p>
+<p>Jeżeli: <span class="math inline">\(Y= 0 \cdot X + b_0\)</span>, to <span class="math inline">\(Y = b_0\)</span> czyli nie ma zależności
+pomiędzy <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>.
+Wartości <span class="math inline">\(b_1\)</span> bliskie zero wskazują na słabą zależność
+pomiędzy cechami.</p>
+<p>Przypominamy, że <strong>estymator</strong> parametru <span class="math inline">\(b_1\)</span> ma średnią równą prawdziej wartości <span class="math inline">\(b_1\)</span>.
+Dodatkowo zakładamy, że rozkład tego estymatora jest normalny. To założenie
+pozwala wiarygodnie oszacować wariancję; w konsekwencji znamy dokładny
+rozkład (bo przypominamy, że rozkład
+normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję)</p>
+<p>Można teraz zadać pytanie jeżeli faktycznie <span class="math inline">\(b_1=0\)</span>, to jakie jest prawdopodobieństwo, że
+współczynnik <span class="math inline">\(\hat b_1\)</span> oszacowany
+na podstawie <span class="math inline">\(n\)</span> obserwacji będzie (co do wartości bezwzględnej) większy niż <span class="math inline">\(b_e\)</span>.
+Albo inaczej: otrzymaliśmy <span class="math inline">\(b_e\)</span>, jakie jest prawdopodobieństwo
+otrzymania takiej wartości (lub większej co do wartości bezwzględnej)
+przy założeniu, że istotnie <span class="math inline">\(b_1=0\)</span>.</p>
+<p>Jeżeli takie prawdopodobieństwo jest duże, to uznajemy, że być może <span class="math inline">\(b_1 = 0\)</span>,
+a jeżeli małe to będziemy skłonni uznać, że <span class="math inline">\(b_1 \not= 0\)</span>.
+Duże/małe przyjmujemy arbitralnie, zwykle
+jest to <span class="math inline">\(0,1\)</span>, <span class="math inline">\(0,05\)</span> lub <span class="math inline">\(0,01\)</span>. Tak zgadza się, to prawdopodobieństwo
+to <strong>poziom istotności</strong></p>
+<p>W każdym programie komputerowym na wydruku wyników linii regresji są podane wartości
+prawdopodobieństwa <span class="math inline">\(\hat b_1 &gt; b_e\)</span> (co do wartości bezwzględnej). Jeżeli jest
+ono mniejsze
+niż ustalony <strong>poziom istotności</strong> to <span class="math inline">\(b_1\)</span> ma wartość istotnie różną od zera.</p>
+<p>Testowanie istotności współczynnika regresji jest ważnym kryterium oceny
+jakości dopasowania.
+Regresja z <strong>nieistotnym</strong> współczynnikiem nie
+może być podstawą do interpretowania zależności pomiędzy <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>.</p>
+<p><strong>Przykład: Waga a wzrost rugbystów</strong></p>
+<p>Zależność między wagą (<code>weight</code>) a wzrostem (<code>height</code>):</p>
+<p><span class="math display">\[ \textrm{height} = b_0 + b_1 \textrm{weight}\]</span>
+Oszacowanie tego równania na próbie 635 uczestników
+Pucharu Świata w rugby w 2023 roku
+daje następujące wyniki:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="15%" />
+<col width="12%" />
+<col width="4%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">CI95</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">157.1485718</td>
+<td align="right">2.1297673</td>
+<td align="right">73.78673</td>
+<td align="right">0</td>
+<td align="left">152.970000–161.330000</td>
+</tr>
+<tr class="even">
+<td align="left">weight</td>
+<td align="right">0.2808207</td>
+<td align="right">0.0206739</td>
+<td align="right">13.58336</td>
+<td align="right">0</td>
+<td align="left">0.240000–0.320000</td>
+</tr>
+</tbody>
+</table>
+<p>Co oznacza, że wzrost wagi o 1kg
+skutkuje przeciętnie większym wzrostem o 0.2808207 cm. Współczynnik determinacji
+wynosi 23.16%.
+Współczynnik nachylenia prostej jest istotny ponieważ wartość <span class="math inline">\(p\)</span> (tak mała, że w tabeli
+oznaczona jako 0)
+jest grubo poniżej zwyczajowego poziomu istotności (p &lt; 0,05).</p>
+<p>Kolumna <code>CI95</code> zawiera 95% przedziały ufności: z 95% prawdopodobieństwem wartość współczynnika nachylenia
+prostej znajduje się w przedziale 0,24–0,32.</p>
+<p><strong>Przykład: zamożność a konsumpcja mięsa</strong></p>
+<p>Następujący równanie opisuje zależność pomiędzy dochodem narodowym na głowę (<em>per capita</em>)
+a konsumpcją mięsa w kilogramach:</p>
+<p><span class="math display">\[\textrm{konsumpcja} = b_0 + b_1 \textrm{gdp}\]</span>
+Model oszacowano dla krajów świata w roku 2013 na podstawie danych
+pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
+następujące wyniki</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="16%" />
+<col width="16%" />
+<col width="13%" />
+<col width="4%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">CI95</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">34.0847681</td>
+<td align="right">2.2324799</td>
+<td align="right">15.26767</td>
+<td align="right">0</td>
+<td align="left">29.680000–38.490000</td>
+</tr>
+<tr class="even">
+<td align="left">gdp2013</td>
+<td align="right">0.0011075</td>
+<td align="right">0.0000996</td>
+<td align="right">11.12427</td>
+<td align="right">0</td>
+<td align="left">0.000000–0.000000</td>
+</tr>
+</tbody>
+</table>
+<p>Każdy USD <em>per capita</em> więcej dochodu narodowego (GDP) oznacza przeciętny
+wzrost spożycia mięsa o 0.0011075 kg. Przeciętna różnica wartości teoretycznych
+od empirycznych wynosi 21,04 kg (średni błąd szacunku).
+Współczynnik zbieżności wynosi 40.88%.
+Współczynnik nachylenia prostej (mimo że jego wartość wynosi zaledwie
+0.0011075) jest statystycznie istotny.</p>
+<p>Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
+bo jest ona zbyt dużym uproszczeniem rzeczywistości. Jest to jednak
+dobry punkt startu do bardziej skomplikowanego modelu regresji wielorakiej.</p>
+</div>
+<div id="przypadek-ogólny-regresja-wieloraka" class="section level3" number="4.3.7">
+<h3><span class="header-section-number">4.3.7</span> Przypadek ogólny: regresja wieloraka</h3>
+<p>Uogólnieniem regresji prostej jest regresja wieloraka. W modelu
+regresji wielorakiej po lewej stronie równania występuje zmienna
+liczbowa oznaczona jako <span class="math inline">\(Y\)</span>, a po prawej zmienne liczbowe
+lub nominalne, <span class="math inline">\(X_1, \ldots, X_k\)</span>:</p>
+<p><span class="math display">\[Y = b_0 + b_1 \cdot X_1 + b_2 \cdot X_2 + ... + b_k \cdot X_k \]</span></p>
+<p>Wpływ każdej
+zmiennej <span class="math inline">\(X_i\)</span> na zmienną zależną <span class="math inline">\(Y\)</span> jest określony przez odpowiedni współczynnik <span class="math inline">\(b_i\)</span>.</p>
+<p>Podobnie jak w przypadku regresji prostej do oceny stopnia dopasowania modelu do danych
+wykorzystuje się: średni błąd szacunku, współczynnik zbieżności <span class="math inline">\(R^2\)</span> oraz
+weryfikuje się istotność współczynników <span class="math inline">\(b_i\)</span>.</p>
+<p><strong>Standaryzacja współczynników regresji</strong></p>
+<p>Ponieważ współczynniki regresji <span class="math inline">\(b_1, …, b_k\)</span> mogą być wyrażone w różnych jednostkach miary,
+bezpośrednie porównanie jest niemożliwe; mały współczynnik może w rzeczywistości być ważniejszy niż większy.
+Jeżeli chcemy porównywać wielkości współczynników to trzeba je <strong>zestandaryzować</strong>.</p>
+<p>Standaryzowany współczynnik regresji dla <span class="math inline">\(i\)</span>-tej zmiennej
+obliczony jest poprzez pomnożenie współczynnika regresji <span class="math inline">\(b_i\)</span> przez <span class="math inline">\(s_{xi}\)</span>
+i podzielenie przez <span class="math inline">\(s_y\)</span>, tj. <span class="math inline">\(\beta_i = b_i s_{xi}/ s_y\)</span>. Dla przypomnienia <span class="math inline">\(s_{xi}\)</span>
+to odchylenie standardowe zmiennej <span class="math inline">\(X_i\)</span>, a <span class="math inline">\(s_y\)</span> to odchylenie standardowe zmiennej <span class="math inline">\(Y\)</span>.
+Interpretacja współczynnika standardyzowanego jest cokolwiek dziwaczna:
+zmiana zmiennej <span class="math inline">\(X_i\)</span> o jedno odchylenie standardowe (<span class="math inline">\(s_{xi}\)</span>)
+skutkuje zmianą zmiennej <span class="math inline">\(Y\)</span> o <span class="math inline">\(b_i\)</span> jej odchylenia standardowego <span class="math inline">\(s_y\)</span>.
+Na szczęście współczynniki regresji standaryzuje się nie w celu lepszej interpretacji,
+tylko w celu umożliwienia porównania ich względnej wielkości (<em>wielkości efektu</em>).
+W publikacjach medycznych zwykle używa się litery <span class="math inline">\(b\)</span> na oznaczenie współczynników niestandaryzowanych
+a litery <span class="math inline">\(\beta\)</span> na oznaczenie współczynników standaryzowanych.</p>
+<p><strong>Wielkość efektu</strong></p>
+<p>Współczynniki regresji to miara wielkości efektu, która wskazuje na siłę zależności między zmiennymi.
+Standaryzacja pozwala na porównanie wielkości efektu zmiennych mierzonych w różnych jednostkach miary.
+Standaryzacja przydaje się także w przypadku posługiwania się skalami pomiarowymi mierzącymi
+przekonania i postawy, które z definicji są bezjednostkowe.</p>
+<p><strong>Wybór zmiennych objaśniających</strong></p>
+<p>Zwykle jest tak, że do objaśniającej kształtowanie się wartości zmiennej <span class="math inline">\(Y\)</span> kandyduje wiele potencjalnych
+predyktorów <span class="math inline">\(X_k\)</span>.
+Model zawierający wszystkie <span class="math inline">\(X_k\)</span> predyktory niekoniecznie będzie najlepszy.
+Nie wdając się w omawianie szczegółowych zasad poprzestaniemy na dwóch kryteriach:</p>
+<ol style="list-style-type: decimal">
+<li><p>Model prostszy jest lepszy od modelu bardziej skomplikowanego jeżeli adekwatnie objaśnia zmienność <span class="math inline">\(Y\)</span>
+(zasada brzytwy Ockhama)</p></li>
+<li><p>Model powinien zawierać tylko zmienne o współczynnikach, których wartości są statystycznie różne od zera</p></li>
+</ol>
+<p>Regresja krokowa (<strong>stepwise regression</strong>) jest metodą wyboru najlepszych predyktorów
+spośród większego zbioru zmiennych. Występuje w dwóch wariantach <strong>dołączania</strong> i <strong>eliminacji</strong>.
+Ponieważ <strong>eliminacja</strong> wydaje się prostsza omówimy tylko ten wariant.</p>
+<p>W metodzie eliminacji początkowym modelem jest model zawierający wszystkie potencjalne <span class="math inline">\(X_k\)</span> predyktory.
+Następnie testujemy istotność wszystkich współczynników regresji i usuwamy
+ze zbioru predyktorów ten, który jest „najbardziej nieistotny“ (ma największą wartość <span class="math inline">\(p\)</span>)
+Procedurę powtarzamy dla modelu bez usuniętej zmiennej.
+Procedurę przerywamy gdy wszystkie współczynniki regresji są statystycznie istotne.</p>
+<p><strong>Przykład: zależność pomiędzy ciśnienie skurczowym, BMI oraz wiekiem</strong></p>
+<p><span class="math display">\[\textrm{ciśnienie} = b_0 + b_1 \textrm{BMI} + b_2\textrm{wiek}\]</span></p>
+<p>Dane pochodzą z badania: Zależność pomiędzy BMI i wiekiem a występowaniem cukrzycy
+wśród dorosłych osób w Chinach. Badanie kohortowe (Chen i inni, <em>Association of body mass index
+and age with incident diabetes in Chinese adults: a population-based cohort study.</em>
+BMJ Open. 2018 Sep 28;8(9):e021768. doi: 10.1136/bmjopen-2018-021768. PMID: 30269064; PMCID: PMC6169758.)</p>
+<p>Oryginalny zbiór danych liczy 60 tysięcy obserwacji. Dla celów przykładu losowo wybrano 90, 490
+oraz 4490 obserwacji.</p>
+<p>Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące wyniki:</p>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="13%" />
+<col width="13%" />
+<col width="10%" />
+<col width="12%" />
+<col width="10%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI95</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">59.6980648</td>
+<td align="right">11.9647074</td>
+<td align="right">4.989513</td>
+<td align="right">0.0000031</td>
+<td align="left">NA</td>
+<td align="left">35.920000–83.480000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">1.7416538</td>
+<td align="right">0.4860235</td>
+<td align="right">3.583477</td>
+<td align="right">0.0005584</td>
+<td align="left">0.330000</td>
+<td align="left">0.780000–2.710000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.4838519</td>
+<td align="right">0.1238715</td>
+<td align="right">3.906079</td>
+<td align="right">0.0001849</td>
+<td align="left">0.360000</td>
+<td align="left">0.240000–0.730000</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 26.24%.</p>
+<p>Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
+wyniki:</p>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="13%" />
+<col width="13%" />
+<col width="11%" />
+<col width="11%" />
+<col width="10%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI95</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">79.0607936</td>
+<td align="right">4.3783434</td>
+<td align="right">18.057239</td>
+<td align="right">0.0000000</td>
+<td align="left">NA</td>
+<td align="left">70.460000–87.660000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">1.2125475</td>
+<td align="right">0.1827041</td>
+<td align="right">6.636675</td>
+<td align="right">0.0000000</td>
+<td align="left">0.280000</td>
+<td align="left">0.850000–1.570000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.2593172</td>
+<td align="right">0.0534066</td>
+<td align="right">4.855526</td>
+<td align="right">0.0000016</td>
+<td align="left">0.210000</td>
+<td align="left">0.150000–0.360000</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 14.97%.</p>
+<p>Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
+wyniki:</p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="14%" />
+<col width="14%" />
+<col width="11%" />
+<col width="3%" />
+<col width="11%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">74.0109877</td>
+<td align="right">1.5304851</td>
+<td align="right">48.35786</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="left">71.010000–77.010000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">1.3747728</td>
+<td align="right">0.0642304</td>
+<td align="right">21.40377</td>
+<td align="right">0</td>
+<td align="left">0.300000</td>
+<td align="left">1.250000–1.500000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.3204461</td>
+<td align="right">0.0175393</td>
+<td align="right">18.27012</td>
+<td align="right">0</td>
+<td align="left">0.250000</td>
+<td align="left">0.290000–0.350000</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 18.54%.</p>
+</div>
+<div id="zmienne-zero-jedynkowe" class="section level3" number="4.3.8">
+<h3><span class="header-section-number">4.3.8</span> Zmienne zero-jedynkowe</h3>
+<p>Zamiast (celem wykazania związku między zmienną licznową a nominalną) porównywać
+średnie w grupach możemy wykorzystać metodę regresji
+wielorakiej. Zmienna nominalna jest zamieniana na jedną lub więcej
+zmiennych binarnych, które przyjmują tylko dwie wartości 0 lub 1.</p>
+<p>Przykładowo rodzaj miejsca pracy (skala nominalna; dwie wartości: szpital, przychodnia)
+można zamienić na zmienną binarną <code>praca</code> przypisując 1 = szpital, oraz
+0 = przychodnia (lub odwrotnie). Załóżmy że poziom stresu zależy od stażu pracy, satysfakcji
+(obie mierzone na skali liczbowej)
+rodzaju miejsca pracy. Możemy to zapisać jako następujące równanie regresji</p>
+<p><span class="math display">\[\textrm{stres} = b_0 + b_1\textrm{staż} + b_2 \textrm{satysfakcja} + b_3 \textrm{praca}\]</span>
+Jaka jest interpretacja współczynnika <span class="math inline">\(b_3\)</span>? Zakładając że 0 = przychodnia, <span class="math inline">\(b_3\)</span> oznacza
+przeciętną zmianę wielkości stresu
+spowodowaną pracą w szpitalu w porównaniu do pracy w przychodni. Jeżeli ten współczynnik jest istotny
+statystycznie, to istnieje zależność pomiędzy stresem a miejscem pracy. Czyli zamiast
+stosować test <span class="math inline">\(t\)</span>-Studenta i porównywać średnie w grupach,
+możemy oszacować model regresji z wykorzystaniem stosownej
+zmiennej zero-jedynkowej a następnie sprawdzić czy współczynnik stojący przy tej zmiennej jest istotny.</p>
+<p>Jeżeli zmienna nominalna ma <span class="math inline">\(n\)</span> wartości należy ją zamienić na <span class="math inline">\(n-1\)</span> zmiennych zero-jedynkowych.
+Załóżmy że stress zależy także od wykształcenia, mierzonego w skali nominalnej
+(średnie, licencjat, magisterskie.) Tworzymy dwie zmienne:
+magister (jeden jeżeli respondent ma wykształcenie magisterskie lub 0 jeżeli nie ma)
+oraz licencjat (jeden jeżeli respondent ma licencjat lub 0 jeżeli nie ma). Równanie
+regresji ma postać:</p>
+<p><span class="math display">\[\textrm{stres} = b_0 + b_1\textrm{staż} + b_2 \textrm{satysfakcja} + b_3 \textrm{praca}
++ b_4 \textrm{magister} + b_5 \textrm{licencjat} \]</span></p>
+<p>Jeżeli <span class="math inline">\(\textrm{magister} = 0\)</span> oraz <span class="math inline">\(\textrm{licencjat} = 0\)</span> to osoba ma wykształcenie średnie.</p>
+<p>Interpretacja: <span class="math inline">\(b_4\)</span> (jeżeli istotne) oznacza przeciętną zmianę wielkości stresu osoby z wykształceniem magisterskim w porównaniu do osoby z wykształceniem średnim. Podobnie <span class="math inline">\(b_5\)</span> oznacza przeciętną zmianę
+wielkości stresu osoby z wykształceniem licencjackim
+w porównaniu do osoby z wykształceniem średnim.</p>
+<p><strong>Przykład: zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem</strong></p>
+<p>Poprzednio rozważany model zależności pomiędzy ciśnienie skurczowym, BMI oraz wiekiem
+rozszerzymy o trzy zmienne: płeć (kobieta/mężczyzna),
+status względem picia alkoholu (pije, pił, nigdy nie pił)
+oraz status względem palenia (palił, pali, nigdy nie palił).
+Zwróćmy uwagę że zmienne mierzące status względem palenia/picia mają nie dwie a trzy wartości.
+Należy każdą zamienić na dwie zmienne binarne, wg schematu:</p>
+<p><code>current.smoker</code> (pali) = 1 jeżeli pali, 0 w przeciwnym przypadku</p>
+<p><code>ever.smoker</code> (kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku</p>
+<p>Zmienna płeć <code>genderF</code> = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
+dwuwartościowej wskazuje która wartość jest zakodowana jako 1. Przykładowo <code>genderF</code> (<em>female</em> żeby się
+trzymać języka angielskiego) wskazuje że jedynką jest kobieta.
+Taka konwencja ułatwia interpretację. Gdybyśmy zamiast <code>genderF</code> nazwali zmienną <code>gender</code> to na pierwszy
+rzut oka nie było by wiadomo co zakodowano jako jeden. A tak wiadomo od razu jak
+interpretować parametr stojący przy tej zmiennej: zmiana wielkości ciśnienia u kobiet w porównaniu do mężczyzn.</p>
+<p>Rozważany model ma postać:</p>
+<p><span class="math display">\[SBP = b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} +
+b_4 \textrm{current.smoker} + b_5 \textrm{ever.smoker} +
+b_6 \textrm{current.drinker} + b_7 \textrm{ever.drinker}\]</span></p>
+<p>Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="13%" />
+<col width="12%" />
+<col width="12%" />
+<col width="10%" />
+<col width="10%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">90.3324858</td>
+<td align="right">15.7447575</td>
+<td align="right">5.7373056</td>
+<td align="right">0.0000002</td>
+<td align="left">NA</td>
+<td align="left">59.010000 121.650000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">0.7780668</td>
+<td align="right">0.5922540</td>
+<td align="right">1.3137383</td>
+<td align="right">0.1925980</td>
+<td align="left">0.150000</td>
+<td align="left">-0.400000 1.960000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.4408317</td>
+<td align="right">0.1205219</td>
+<td align="right">3.6576902</td>
+<td align="right">0.0004484</td>
+<td align="left">0.330000</td>
+<td align="left">0.200000 0.680000</td>
+</tr>
+<tr class="even">
+<td align="left">genderF</td>
+<td align="right">-13.8196581</td>
+<td align="right">4.3993394</td>
+<td align="right">-3.1413030</td>
+<td align="right">0.0023400</td>
+<td align="left">-0.400000</td>
+<td align="left">-22.570000 -5.070000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.smoker</td>
+<td align="right">-6.8898579</td>
+<td align="right">3.9716110</td>
+<td align="right">-1.7347766</td>
+<td align="right">0.0865377</td>
+<td align="left">-0.180000</td>
+<td align="left">-14.790000 1.010000</td>
+</tr>
+<tr class="even">
+<td align="left">ever.smoker</td>
+<td align="right">7.6258343</td>
+<td align="right">6.8823895</td>
+<td align="right">1.1080213</td>
+<td align="right">0.2710921</td>
+<td align="left">0.110000</td>
+<td align="left">-6.070000 21.320000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.drinker</td>
+<td align="right">-3.9592512</td>
+<td align="right">8.5230314</td>
+<td align="right">-0.4645356</td>
+<td align="right">0.6434952</td>
+<td align="left">-0.040000</td>
+<td align="left">-20.910000 13.000000</td>
+</tr>
+<tr class="even">
+<td align="left">ever.drinker</td>
+<td align="right">-4.0011737</td>
+<td align="right">4.5751715</td>
+<td align="right">-0.8745407</td>
+<td align="right">0.3843781</td>
+<td align="left">-0.080000</td>
+<td align="left">-13.100000 5.100000</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 38.11%. Tylko dwie na siedem zmiennych
+są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
+z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie–nie mamy
+nawet pewności co do kierunku zależności między zmienną zmienną objaśniającą a ciśnieniem.
+Zmienne, które okazały się istotne jednocześnie mają największą wielkość efektu (kolumna <code>Beta</code>)
+i nie jest to przypadek.</p>
+<p>Oszacowanie tego samego równania dla próba o wielkości 4490 obserwacji daje następujące
+wyniki:</p>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="12%" />
+<col width="12%" />
+<col width="13%" />
+<col width="11%" />
+<col width="11%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">80.0892506</td>
+<td align="right">1.6234001</td>
+<td align="right">49.3342644</td>
+<td align="right">0.0000000</td>
+<td align="left">NA</td>
+<td align="left">76.910000 83.270000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">1.1923484</td>
+<td align="right">0.0662091</td>
+<td align="right">18.0088428</td>
+<td align="right">0.0000000</td>
+<td align="left">0.260000</td>
+<td align="left">1.060000 1.320000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.3356278</td>
+<td align="right">0.0175842</td>
+<td align="right">19.0868652</td>
+<td align="right">0.0000000</td>
+<td align="left">0.260000</td>
+<td align="left">0.300000 0.370000</td>
+</tr>
+<tr class="even">
+<td align="left">genderF</td>
+<td align="right">-5.3287419</td>
+<td align="right">0.5076689</td>
+<td align="right">-10.4964911</td>
+<td align="right">0.0000000</td>
+<td align="left">-0.160000</td>
+<td align="left">-6.320000 -4.330000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.smoker</td>
+<td align="right">-2.7520369</td>
+<td align="right">0.5834007</td>
+<td align="right">-4.7172331</td>
+<td align="right">0.0000025</td>
+<td align="left">-0.070000</td>
+<td align="left">-3.900000 -1.610000</td>
+</tr>
+<tr class="even">
+<td align="left">ever.smoker</td>
+<td align="right">-2.0210024</td>
+<td align="right">1.0452758</td>
+<td align="right">-1.9334633</td>
+<td align="right">0.0532420</td>
+<td align="left">-0.030000</td>
+<td align="left">-4.070000 0.030000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.drinker</td>
+<td align="right">3.6213408</td>
+<td align="right">1.5345859</td>
+<td align="right">2.3598163</td>
+<td align="right">0.0183266</td>
+<td align="left">0.030000</td>
+<td align="left">0.610000 6.630000</td>
+</tr>
+<tr class="even">
+<td align="left">ever.drinker</td>
+<td align="right">0.1928834</td>
+<td align="right">0.6231969</td>
+<td align="right">0.3095063</td>
+<td align="right">0.7569508</td>
+<td align="left">0.000000</td>
+<td align="left">-1.030000 1.410000</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 20.72%. Zwiększenie
+liczebności próby spowodowało, że tylko dwie z siedmiu zmiennych
+mają nieistotne wartości. Analizując wartości standaryzowane możemy ustalić
+które zmienne mają największy wpływ na wielkość ciśnienia krwi.</p>
+<p>Ktoś mógłby dojść do wniosku że wszystko da się <strong>uistotnić</strong>
+wystarczy zwiększyć wielkość próby. Teoretycznie tak, praktycznie nie.
+W praktyce nie interesuje nas niewielka wielkość
+efektu (znikomy wpływ czegoś na coś). Dodatkowo zebranie dużej próby może
+być kosztowne czyli w praktyce niemożliwe – nie mamy dość dużo pieniędzy.
+Można teoretycznie określić jaka wielkość próby pozwoli nam na ocenę jakiej
+wielkości efektu. Sposób postępowania jest wtedy następujący: określamy
+jaka wielkość efektu ma <strong>znaczenie praktyczne</strong>, na tej podstawie określamy
+niezbędną minimalną liczebność próby. Takie zaawansowane podejście
+wykracza poza ramy tego podręcznika.</p>
+<p><strong>Przykład: regresja krokowa</strong></p>
+<p>W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem
+(próba 4490) zmienne <code>ever.drinker</code> oraz <code>ever.smoker</code> są nieistotne przy czym współczynnik
+przy zmiennej <code>ever.drinker</code> ma wartość <span class="math inline">\(p\)</span> równą 0,309 zaś przy zmiennej
+<code>ever.smoker</code> ma wartość 0,05324. Usuwamy zmienną <code>ever.drinker</code> (bo wartość <span class="math inline">\(p\)</span> jest większa)
+i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="11%" />
+<col width="11%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">80.1084605</td>
+<td align="right">1.6220496</td>
+<td align="right">49.387183</td>
+<td align="right">0.0000000</td>
+<td align="left">NA</td>
+<td align="left">76.930000 83.290000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">1.1934881</td>
+<td align="right">0.0660999</td>
+<td align="right">18.055825</td>
+<td align="right">0.0000000</td>
+<td align="left">0.260000</td>
+<td align="left">1.060000 1.320000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.3353602</td>
+<td align="right">0.0175612</td>
+<td align="right">19.096671</td>
+<td align="right">0.0000000</td>
+<td align="left">0.260000</td>
+<td align="left">0.300000 0.370000</td>
+</tr>
+<tr class="even">
+<td align="left">genderF</td>
+<td align="right">-5.3577694</td>
+<td align="right">0.4988803</td>
+<td align="right">-10.739588</td>
+<td align="right">0.0000000</td>
+<td align="left">-0.160000</td>
+<td align="left">-6.340000 -4.380000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.smoker</td>
+<td align="right">-2.7400398</td>
+<td align="right">0.5820528</td>
+<td align="right">-4.707545</td>
+<td align="right">0.0000026</td>
+<td align="left">-0.070000</td>
+<td align="left">-3.880000 -1.600000</td>
+</tr>
+<tr class="even">
+<td align="left">ever.smoker</td>
+<td align="right">-1.9798697</td>
+<td align="right">1.0366884</td>
+<td align="right">-1.909802</td>
+<td align="right">0.0562225</td>
+<td align="left">-0.030000</td>
+<td align="left">-4.010000 0.050000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.drinker</td>
+<td align="right">3.5790137</td>
+<td align="right">1.5283260</td>
+<td align="right">2.341787</td>
+<td align="right">0.0192352</td>
+<td align="left">0.030000</td>
+<td align="left">0.580000 6.580000</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik przy zmiennej <code>ever.smoker</code> dalej uparcie jest nieistotny. Usuwamy
+teraz tę zmienną. Otrzymujemy:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="11%" />
+<col width="11%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">79.8648829</td>
+<td align="right">1.6175049</td>
+<td align="right">49.375358</td>
+<td align="right">0.0000000</td>
+<td align="left">NA</td>
+<td align="left">76.690000 83.040000</td>
+</tr>
+<tr class="even">
+<td align="left">BMI</td>
+<td align="right">1.1950238</td>
+<td align="right">0.0661145</td>
+<td align="right">18.075060</td>
+<td align="right">0.0000000</td>
+<td align="left">0.260000</td>
+<td align="left">1.070000 1.320000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.3355111</td>
+<td align="right">0.0175662</td>
+<td align="right">19.099824</td>
+<td align="right">0.0000000</td>
+<td align="left">0.260000</td>
+<td align="left">0.300000 0.370000</td>
+</tr>
+<tr class="even">
+<td align="left">genderF</td>
+<td align="right">-5.1545435</td>
+<td align="right">0.4875431</td>
+<td align="right">-10.572487</td>
+<td align="right">0.0000000</td>
+<td align="left">-0.160000</td>
+<td align="left">-6.110000 -4.200000</td>
+</tr>
+<tr class="odd">
+<td align="left">current.smoker</td>
+<td align="right">-2.5395634</td>
+<td align="right">0.5726778</td>
+<td align="right">-4.434542</td>
+<td align="right">0.0000094</td>
+<td align="left">-0.060000</td>
+<td align="left">-3.660000 -1.420000</td>
+</tr>
+<tr class="even">
+<td align="left">current.drinker</td>
+<td align="right">3.5511109</td>
+<td align="right">1.5287072</td>
+<td align="right">2.322950</td>
+<td align="right">0.0202263</td>
+<td align="left">0.030000</td>
+<td align="left">0.550000 6.550000</td>
+</tr>
+</tbody>
+</table>
+<p>Wszystkie współczynniki mają istotnie różnie od zera wartości. Wartość
+współczynnika zbieżności ostatecznego modelu wynosi 20.66%.
+Usuwając nieistotne zmienne z modelu obniżyliśmy wartość
+współczynnika zmienności o
+20.72% - 20.66% = 0.07%, czyli
+tyle co nic.</p>
+</div>
+</div>
+<div id="przypadek-specjalny-regresja-logistyczna" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Przypadek specjalny: regresja logistyczna</h2>
+<p>Jeżeli zmienna <span class="math inline">\(Y\)</span> jest zmienną <strong>dwuwartościową</strong>, czyli taką która przyjmuje tylko dwie
+wartości (np. chory/zdrowy), to metoda regresji nie może być zastosowana.
+Przykładowo jeżeli zakodujemy te wartości jako chory=0 i zdrowy=1,
+to zastosowanie regresji
+doprowadzi do obliczenia (teoretycznych) wartości <span class="math inline">\(Y\)</span> różnych od <span class="math inline">\(0\)</span> i <span class="math inline">\(1\)</span>.
+Taki wynik nie ma sensownej interpretacji…</p>
+<p>Ale zamiast szacować regresję <span class="math inline">\(Y\)</span> względem (<span class="math inline">\(X\)</span>/<span class="math inline">\(X\)</span>-ów) można szacować
+regresję względem ryzyka dla <span class="math inline">\(Y\)</span> (czyli prawdopodobieństwa że <span class="math inline">\(Y\)</span> przyjmnie wartość 1).
+Tutaj znowu pojawia się jednak trudność, bo ryzyko może przyjąć tylko wartości
+z przedziału <span class="math inline">\([0,1]\)</span>.
+Nie wchodząc w matematyczne zawiłości
+model zapisuje się jako (ln oznacza logarytm naturalny):</p>
+<p><span class="math display">\[\ln(\frac{p}{1-p}) = b_0 + b_1 \cdot x_1  + \ldots + b_k \cdot x_k\]</span></p>
+<p>Zauważmy, że <span class="math inline">\(o = \frac{p}{1-p}\)</span> to nic innego jak szansa (<strong>odds</strong>).
+Parametr <span class="math inline">\(b_i\)</span> jest miarą wpływu zmiennej <span class="math inline">\(X_i\)</span> na zmienną <span class="math inline">\(Y\)</span>.
+Jeżeli <span class="math inline">\(X_i\)</span> wzrośnie o jednostkę, to logarytm ilorazu szans
+wzrośnie o <span class="math inline">\(\ln(o)\)</span> (przy założeniu, że pozostałem zmienne <span class="math inline">\(X\)</span> mają
+pewne ustalone wartości a zmienia się tylko <span class="math inline">\(X_i\)</span>).
+Jeżeli <span class="math inline">\(X_i\)</span> jest zmienną <strong>dwuwartościową</strong>
+to interpretacja jest jeszcze prostsza: jest to logarytm ilorazu szans
+dla wartości <span class="math inline">\(X_i=1\)</span> względem <span class="math inline">\(X_i=0\)</span>.</p>
+<p>Zwykle zamiast <strong>logarytmu ilorazu szans</strong> wolimy interpretować zmianę w kategoriach
+<strong>ilorazu szans</strong>. Aby otrzymać ów iloraz należy wykonać następujące
+przekształcenie (<span class="math inline">\(\exp\)</span> oznacza podstawę logarytmu naturalnego):</p>
+<p><span class="math display">\[o = \exp^{\ln(o)}\]</span></p>
+<p>Dla przypomnienia: zwykle iloraz szans wyraża się
+w procentach, czyli mnoży przez 100. Jeżeli ta liczba jest większa od 100 oznacza
+to wzrost szansy, a jeżeli mniejsza od 100, spadek szansy.</p>
+<p><strong>Ocena dopasowania</strong></p>
+<p>Nie ma w przypadku regresji logistycznej możliwości obliczenia sumy
+kwadratów reszt (<em>residual sum of squares</em>) oraz współczynnika zbieżności.
+Model ocenia się
+używając jako kryterium dewiancję (<em>deviance</em>). Dewiancja to miara, której
+wielkość zależy od proporcji pomiędzy liczbą sukcesów obliczonych
+z modelu a liczbą sukcesów zaobserwowanych (jak dokładnie dewiancja
+jest liczona nie jest dla nas istotne).</p>
+<p>Wyjaśnijmy to na przykładzie
+prostego modelu pomiędzy wystąpieniem osteoporozy a płcią. Model ma postać:</p>
+<p><span class="math display">\[\ln(o) = b_0 + b_1 \textrm{płeć}\]</span></p>
+<p>Po oszacowaniu <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> możemy łatwo obliczyć <span class="math inline">\(\ln(o)\)</span>.
+Wiedząc że <span class="math inline">\(\ln(o)=\frac{p}{1-p}\)</span> możemy stąd obliczyć prawdopodobieństwo, które
+jak widać będzie różne dla kobiet i mężczyzn.
+Po pomnożeniu tych prawdopodobieństw przez liczebności dostajemy
+(teoretyczne) liczebności sukcesów (tj. wystąpienia osteoporozy).
+Dewiancja będzie tym większa im różnica między tymi
+teoretycznymi liczebnościami a liczebnościami empirycznymi będzie większa.</p>
+<p>Jako minimum porównuje się wielkość dewiancji szacowanego modelu
+z modelem zerowym (<em>null model</em>), tj. modelem w którym po prawej stronie
+równania występuje tylko stała:</p>
+<p><span class="math display">\[\ln(o) = b_0\]</span></p>
+<p>W tym modelu prawdopodobieństwo osteoporozy jest identyczne dla
+kobiet i mężczyzn, zatem w oczywisty sposób dewiancja tego modelu
+będzie większa. Pytanie jest czy różnica jest istotna statystycznie.
+Jeżeli jest większa to przyjmuje się, że szacowany model jest lepszy od modelu
+trywialnego (warunek minimum przydatności.)</p>
+<p>Jeżeli model zawiera wiele zmiennych w tym zmienne liczbowe, idea
+liczenia dewiancji jest podobna, ale oczywiście szczegóły są już bardziej
+skomplikowane. Szczegóły te nie są wszakże dla nas istotne.</p>
+<p><strong>Minimalne kryteria oceny przydatności modelu regresji logistycznej</strong>:
+istotnie mniejsza od modelu zerowego dewiancja oraz istotnie różne
+od zera parametry przy zmiennych niezależnych (predyktorach)</p>
+<p><strong>Ocena skuteczności klasyfikacji</strong></p>
+<p>Model regresji logistycznej nie oblicza wartości zmiennej prognozowanej,
+bo ta nie jest liczbą, tylko <strong>klasyfikuje</strong>, tj. ustala (albo prognozuje) wartość
+zmiennej nominalnej w kategoriach „sukces”/„porażka”.
+Ważnym kryterium oceny jakości modelu jest ocena jakości
+klasyfikacji, to jest ocena na ile model poprawnie
+przypisuje przypadkom kategorie zmiennej prognozowanej. Im mniejsza
+rozbieżność pomiędzy wartościami rzeczywistymi, a prognozowanymi tym oczywiście lepiej.</p>
+<p>Tę jakość klasyfikacji ocenia się za pomocą dwóch wskaźników,
+czułość (<em>sensitivity</em>) oraz swoistość (<em>specifity</em>).</p>
+<ol style="list-style-type: decimal">
+<li>Odsetek sukcesów zaklasyfikowanych jako „sukces” (<strong>Czułość</strong>); określany
+także jako TPR (<em>true-positive-rate</em>)</li>
+<li>Odsetek porażek zaklasyfikowanych jako „porażka” (<strong>Swoistość</strong>);
+określany także jako TNR (<em>true-negative-rate</em>)</li>
+</ol>
+<p>Klasyfikacja w modelu regresji logistycznej wygląda następująco.
+Jeżeli prawdopodobieństwo obliczone
+jest wyższe-lub-równe niż założona <strong>wartość graniczna</strong>, to zakładamy „sukces”,
+jeżeli tak nie jest, to zakładamy „porażkę”.
+Wartość graniczna jest ustala albo
+arbitralnie albo na podstawie jakieś dodatkowej (pozastatystycznej) informacji.
+Domyślnie za wartość graniczną przyjmuje się zwykle 0,5, co oznacza że
+wartości <span class="math inline">\(p \geq p_g\)</span> zostaną zamienione na „sukces”
+a wartości <span class="math inline">\(p &lt; p_g\)</span> zostaną zamienione na „porażkę”.</p>
+<p><strong>Ocena dopasowania: krzywa ROC</strong></p>
+<p>Czułości oraz swoistości zależą od prawdopodobieństwa granicznego.
+Im wyższa
+jest wartość prawdopodobieństwa granicznego tym mniej będzie „sukcesów“.</p>
+<p>Krzywa ROC przedstawia w układzie współrzędnych XY wartości
+czułości oraz swoistości dla różnych wartości granicznych.
+Współczynnik AUC (<em>area under curve</em>) to wielkość pola pod
+krzywą wyrażona w procentach pola kwadratu o boku 100%.
+AUC zawiera się w przedziale 50–100. Im większa wartość tym lepiej.
+Model który klasyfikuje czysto losowo ma wartość AUC równą 50%.</p>
+<p><img src="ROCcurve.png" /></p>
+<p><strong>Przykład #1: Osteoporoza i witamina D</strong></p>
+<p>Al Zarooni A.A.R i inni badali wpływ różnych czynników na ryzyka na
+wystąpienie osteoporozy (Risk factors for vitamin D deficiency
+in Abu Dhabi Emirati population; <a href="https://doi.org/10.1371/journal.pone.0264064" class="uri">https://doi.org/10.1371/journal.pone.0264064</a>),
+takich jak deficyt witaminy D, wiek oraz płeć w grupie 392 osób.</p>
+<p>Zacznijmy od modelu zerowego tj. takiego w którym ryzyko/prawdopodobieństwo/szansa
+wystąpienia osteoporozy jest takie same bez względu na wielkości innych zmiennych.
+Odpowiada to następującemu równaniu:</p>
+<p><span class="math display">\[\ln(o) = b_0\]</span></p>
+<p>W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
+oraz prawdopodobieństwo</p>
+<p>Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
+wyniosło 0.0663265. Krzywa ROC dla modelu zerowego wygląda następująco:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p>Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
+z bardziej skomplikowanymi modelami.</p>
+<p>Takim bardziej skomplikowanym modelem będzie przykładowo
+zależność pomiędzy wystąpieniem osteoporozy a płcią, którą
+można opisać następującym równaniem regresji:</p>
+<p><span class="math display">\[\ln(o) = b_0 + b_1 \textrm{kobieta}\]</span></p>
+<p>Zmienna <code>kobieta</code> przyjmuje wartość 1 jeżeli osoba była kobietą
+oraz zero w przypadku jeżeli była mężczyzną.
+Dla przypomnienia <span class="math inline">\(o\)</span> jest szansą wystąpienia osteoporozy.</p>
+<p>W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
+oraz prawdopodobieństwo</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="12%" />
+<col width="13%" />
+<col width="12%" />
+<col width="12%" />
+<col width="11%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parametr</th>
+<th align="right">Ocena</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">OR</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">-3.367296</td>
+<td align="right">0.4548585</td>
+<td align="right">-7.402952</td>
+<td align="right">0.0000000</td>
+<td align="left">0.030000</td>
+<td align="left">0.010000–0.080000</td>
+</tr>
+<tr class="even">
+<td align="left">genderF</td>
+<td align="right">1.013656</td>
+<td align="right">0.5089599</td>
+<td align="right">1.991621</td>
+<td align="right">0.0464126</td>
+<td align="left">2.760000</td>
+<td align="left">1.090000–8.400000</td>
+</tr>
+</tbody>
+</table>
+<p>Znając wartości współczynników równania można obliczyć wartości <span class="math inline">\(\ln(o)\)</span></p>
+<p>Dewiancja modelu jest istotnie mniejsza od modelu zerowego (wartość <span class="math inline">\(p\)</span> wynosi bowiem 0.0303521)</p>
+<p>Zależność pomiędzy wystąpieniem osteoporozy a płcią, wiekiem oraz poziomem witaminy D
+można opisać następującym równaniem regresji:</p>
+<p><span class="math display">\[\ln(o) = b_0 + b_1 \textrm{kobieta} + b_2 \textrm{wiek} + b_3 \textrm{poziomD}\]</span></p>
+<p>W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
+oraz prawdopodobieństwo</p>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="13%" />
+<col width="12%" />
+<col width="12%" />
+<col width="11%" />
+<col width="11%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parametr</th>
+<th align="right">Ocena</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">OR</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">-12.1833261</td>
+<td align="right">1.7661567</td>
+<td align="right">-6.8982135</td>
+<td align="right">0.0000000</td>
+<td align="left">0.000000</td>
+<td align="left">0.000000–0.000000</td>
+</tr>
+<tr class="even">
+<td align="left">d</td>
+<td align="right">0.0046126</td>
+<td align="right">0.0086084</td>
+<td align="right">0.5358247</td>
+<td align="right">0.5920797</td>
+<td align="left">1.000000</td>
+<td align="left">0.990000–1.020000</td>
+</tr>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">0.1563185</td>
+<td align="right">0.0263592</td>
+<td align="right">5.9303149</td>
+<td align="right">0.0000000</td>
+<td align="left">1.170000</td>
+<td align="left">1.120000–1.240000</td>
+</tr>
+<tr class="even">
+<td align="left">genderF</td>
+<td align="right">2.4627808</td>
+<td align="right">0.6616269</td>
+<td align="right">3.7223105</td>
+<td align="right">0.0001974</td>
+<td align="left">11.740000</td>
+<td align="left">3.540000–48.760000</td>
+</tr>
+</tbody>
+</table>
+<p>Macierz pomyłek (<em>confussion matrix</em>)</p>
+<pre><code>##         Osteoporoza
+## Prognoza   0   1
+##        0 362  22
+##        1   4   4</code></pre>
+<p>Stąd: czułość 0.1538462; swoistość 0.989071</p>
+<p>Istotność modelu</p>
+<p>Dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = 0)</p>
+<p>Krzywa ROC</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+</div>
+<div id="przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Przypadek specjalny: dwie zmienne co najmniej porządkowe</h2>
+<div id="pomiar-siły-zależności-współczynnik-korelacji-rang" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Pomiar siły zależności: współczynnik korelacji rang</h3>
+<p>Współczynnik korelacji rang (Spearmana vel <em>Spearman’s Rank-Order Correlation</em>)
+może być stosowany
+w przypadku gdy cechy są mierzone w skali porządkowej (lub lepszej)</p>
+<p>Obliczenie współczynnika Spearmana dla <span class="math inline">\(N\)</span> obserwacji na zmiennych <span class="math inline">\(XY\)</span>
+polega na zamianie wartości
+zmiennych <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span> na <strong>rangi</strong> (numery porządkowe od <span class="math inline">\(1...N\)</span>).
+Następnie stosowana jest formuła współczynnika korelacji
+liniowej Pearsona (<span class="math inline">\(\tau_x\)</span> oraz <span class="math inline">\(\tau_y\)</span> oznaczają <strong>rangi</strong>):</p>
+<p><span class="math display">\[\rho_{xy} = \frac{\textrm{cov}(\tau_x, \tau_y)}{s_{\tau_x}  s_{\tau_y}}\]</span></p>
+<p>Współczynnik <span class="math inline">\(\rho_{xy}\)</span> to – podobnie jak <strong>oryginalny</strong> współczynnik
+korelacji liniowej Pearsona – miara niemianowana, o wartościach
+ze zbioru [-1;1];</p>
+<p><strong>Przykład: spożycie mięsa</strong></p>
+<p>Współczynnik Pearsona i Spearmana dla zależności między spożyciem mięsa w 1980
+a spożyciem mięsa w 2013 roku (zmienna objaśniana):</p>
+<pre><code>## [1] &quot;współczynnik Pearsona: 0.68&quot;</code></pre>
+<pre><code>## [1] &quot;współczynnik Spearmana: 0.68&quot;</code></pre>
+<p>Nie ma sensu liczenia współczynnika korelacji rang w przypadku kiedy obie
+cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
+Ale nie jest to też błędem więc w powyższym przykładzie
+go liczymy :-)</p>
+<p>Współczynnik korelacji liniowej Spearmana wynosi 0.6845429 (umiarkowana korelacja).</p>
+<p>Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
+test statystyczny, który sprowadza się do określenia jakie jest
+prawdopodobieństwo otrzymania <span class="math inline">\(r_s\)</span> = 0.6845429 przy założeniu że
+prawdziwa wartość <span class="math inline">\(r_s\)</span> wynosi zero. Otóż w naszym przykładzie
+to prawdopodobieństwo wynosi 2.302116e-26
+(czyli jest ekstremalnie małe – <span class="math inline">\(r_s\)</span> jest istotnie różne od zera).</p>
+</div>
+</div>
+<div id="podsumowanie" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Podsumowanie</h2>
+<p>Przedstawiono 6 następujących metod ustalania zależności między zmiennymi:</p>
+<ol style="list-style-type: decimal">
+<li><p>korelogram</p></li>
+<li><p>tablica korelacyjna/test chi-kwadrat</p></li>
+<li><p>współczynnik korelacji Pearsona</p></li>
+<li><p>współczynnik korelacji Spearmana</p></li>
+<li><p>regresja liniową i logistyczna</p></li>
+<li><p>testy <span class="math inline">\(t\)</span>-Studenta, U Manna-Whitneya, ANOVA albo test Kruskalla-Wallisa</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="surveyexamples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04causality.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

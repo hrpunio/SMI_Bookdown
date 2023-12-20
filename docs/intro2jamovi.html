@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Łagodne wprowadzenie z Jamovi | Łagodne wprowadzenie do statystyki</title>
+  <meta name="description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Łagodne wprowadzenie z Jamovi | Łagodne wprowadzenie do statystyki" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Łagodne wprowadzenie z Jamovi | Łagodne wprowadzenie do statystyki" />
+  
+  <meta name="twitter:description" content="(c) Tomasz Przechlewski / CC-BY license" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="surveyexamples.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Łagodne wprowadzenie do statystyki</a></li>
+
+<li class="divider"></li>
+<li><a href="przedmiotbadan.html#przedmiotbadan" id="toc-przedmiotbadan"><span class="toc-section-number">1</span> Przedmiot i metody badań statystycznych</a>
+<ul>
+<li><a href="przedmiotbadan.html#przedmiot-statystyki" id="toc-przedmiot-statystyki"><span class="toc-section-number">1.1</span> Przedmiot statystyki</a></li>
+<li><a href="przedmiotbadan.html#podstawowe-pojęcia" id="toc-podstawowe-pojęcia"><span class="toc-section-number">1.2</span> Podstawowe pojęcia</a></li>
+<li><a href="przedmiotbadan.html#pomiar" id="toc-pomiar"><span class="toc-section-number">1.3</span> Pomiar</a></li>
+<li><a href="przedmiotbadan.html#rodzaje-i-sposoby-analizy-danych" id="toc-rodzaje-i-sposoby-analizy-danych"><span class="toc-section-number">1.4</span> Rodzaje i sposoby analizy danych</a></li>
+<li><a href="przedmiotbadan.html#sposoby-pomiaru-danych-i-organizacja-badania" id="toc-sposoby-pomiaru-danych-i-organizacja-badania"><span class="toc-section-number">1.5</span> Sposoby pomiaru danych i organizacja badania</a>
+<ul>
+<li><a href="przedmiotbadan.html#przykłady-badań" id="toc-przykłady-badań"><span class="toc-section-number">1.5.1</span> Przykłady badań</a></li>
+</ul></li>
+<li><a href="przedmiotbadan.html#miary-częstości-chorób" id="toc-miary-częstości-chorób"><span class="toc-section-number">1.6</span> Miary częstości chorób</a></li>
+<li><a href="przedmiotbadan.html#oprogramowanie" id="toc-oprogramowanie"><span class="toc-section-number">1.7</span> Oprogramowanie</a></li>
+</ul></li>
+<li><a href="analiza1z.html#analiza1z" id="toc-analiza1z"><span class="toc-section-number">2</span> Analiza jednej zmiennej</a>
+<ul>
+<li><a href="analiza1z.html#tablice-statystyczne" id="toc-tablice-statystyczne"><span class="toc-section-number">2.1</span> Tablice statystyczne</a></li>
+<li><a href="analiza1z.html#wykresy" id="toc-wykresy"><span class="toc-section-number">2.2</span> Wykresy</a>
+<ul>
+<li><a href="analiza1z.html#skala-nominalna" id="toc-skala-nominalna"><span class="toc-section-number">2.2.1</span> skala nominalna</a></li>
+<li><a href="analiza1z.html#skala-liczbowa" id="toc-skala-liczbowa"><span class="toc-section-number">2.2.2</span> skala liczbowa</a></li>
+</ul></li>
+<li><a href="analiza1z.html#florence-nightingale" id="toc-florence-nightingale"><span class="toc-section-number">2.3</span> Florence Nightingale</a></li>
+<li><a href="analiza1z.html#analiza-parametryczna" id="toc-analiza-parametryczna"><span class="toc-section-number">2.4</span> Analiza parametryczna</a>
+<ul>
+<li><a href="analiza1z.html#miary-położenia" id="toc-miary-położenia"><span class="toc-section-number">2.4.1</span> Miary położenia</a></li>
+<li><a href="analiza1z.html#miary-zmienności" id="toc-miary-zmienności"><span class="toc-section-number">2.4.2</span> Miary zmienności</a></li>
+<li><a href="analiza1z.html#miary-asymetrii" id="toc-miary-asymetrii"><span class="toc-section-number">2.4.3</span> Miary asymetrii</a></li>
+<li><a href="analiza1z.html#parametryczna-analiza-struktury-w-jednym-zdaniu" id="toc-parametryczna-analiza-struktury-w-jednym-zdaniu"><span class="toc-section-number">2.4.4</span> (Parametryczna) analiza struktury w jednym zdaniu</a></li>
+</ul></li>
+<li><a href="analiza1z.html#porównanie-wielu-rozkładów" id="toc-porównanie-wielu-rozkładów"><span class="toc-section-number">2.5</span> Porównanie wielu rozkładów</a>
+<ul>
+<li><a href="analiza1z.html#wykres-pudełkowy" id="toc-wykres-pudełkowy"><span class="toc-section-number">2.5.1</span> Wykres pudełkowy</a></li>
+</ul></li>
+</ul></li>
+<li><a href="interference.html#interference" id="toc-interference"><span class="toc-section-number">3</span> Łagodne wprowadzenie do wnioskowanie statystycznego</a>
+<ul>
+<li><a href="interference.html#przykładowy-problem-nr-1" id="toc-przykładowy-problem-nr-1"><span class="toc-section-number">3.1</span> Przykładowy problem nr 1</a></li>
+<li><a href="interference.html#przykładowy-problem-nr-2" id="toc-przykładowy-problem-nr-2"><span class="toc-section-number">3.2</span> Przykładowy problem nr 2</a></li>
+<li><a href="interference.html#rozkład-normalny" id="toc-rozkład-normalny"><span class="toc-section-number">3.3</span> Rozkład normalny</a></li>
+<li><a href="interference.html#wnioskowanie-statystyczne-interferance" id="toc-wnioskowanie-statystyczne-interferance"><span class="toc-section-number">3.4</span> Wnioskowanie statystyczne (<em>interferance</em>)</a>
+<ul>
+<li><a href="interference.html#estymacja-punktowa" id="toc-estymacja-punktowa"><span class="toc-section-number">3.4.1</span> Estymacja punktowa</a></li>
+<li><a href="interference.html#estymacja-przedziałowa" id="toc-estymacja-przedziałowa"><span class="toc-section-number">3.4.2</span> Estymacja przedziałowa</a></li>
+<li><a href="interference.html#testowanie-hipotez" id="toc-testowanie-hipotez"><span class="toc-section-number">3.4.3</span> Testowanie hipotez</a></li>
+<li><a href="interference.html#testy-nieparametryczne" id="toc-testy-nieparametryczne"><span class="toc-section-number">3.4.4</span> Testy nieparametryczne</a></li>
+</ul></li>
+<li><a href="interference.html#słownik-terminów-które-warto-znać" id="toc-słownik-terminów-które-warto-znać"><span class="toc-section-number">3.5</span> Słownik terminów które warto znać</a></li>
+</ul></li>
+<li><a href="causality.html#causality" id="toc-causality"><span class="toc-section-number">4</span> Analiza współzależności pomiędzy zmiennymi</a>
+<ul>
+<li><a href="causality.html#dwie-zmienne-nominalne" id="toc-dwie-zmienne-nominalne"><span class="toc-section-number">4.1</span> Dwie zmienne nominalne</a>
+<ul>
+<li><a href="causality.html#ryzyko-względne-oraz-iloraz-szans" id="toc-ryzyko-względne-oraz-iloraz-szans"><span class="toc-section-number">4.1.1</span> Ryzyko względne oraz iloraz szans</a></li>
+<li><a href="causality.html#przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans" id="toc-przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans"><span class="toc-section-number">4.1.2</span> Przedziały ufności dla ryzyka względnego oraz ilorazu szans</a></li>
+<li><a href="causality.html#tabele-wielodzielcze" id="toc-tabele-wielodzielcze"><span class="toc-section-number">4.1.3</span> Tabele wielodzielcze</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienna-nominalna" id="toc-zmienna-liczbowa-i-zmienna-nominalna"><span class="toc-section-number">4.2</span> Zmienna liczbowa i zmienna nominalna</a>
+<ul>
+<li><a href="causality.html#test-t-studenta" id="toc-test-t-studenta"><span class="toc-section-number">4.2.1</span> test <span class="math inline">\(t\)</span>-Studenta</a></li>
+<li><a href="causality.html#testowanie-normalności" id="toc-testowanie-normalności"><span class="toc-section-number">4.2.2</span> Testowanie normalności</a></li>
+<li><a href="causality.html#test-u-manna-whitneya" id="toc-test-u-manna-whitneya"><span class="toc-section-number">4.2.3</span> test U Manna-Whitneya</a></li>
+<li><a href="causality.html#test-anova" id="toc-test-anova"><span class="toc-section-number">4.2.4</span> test ANOVA</a></li>
+<li><a href="causality.html#test-kruskalla-wallisa" id="toc-test-kruskalla-wallisa"><span class="toc-section-number">4.2.5</span> test Kruskalla-Wallisa</a></li>
+</ul></li>
+<li><a href="causality.html#zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne" id="toc-zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne"><span class="toc-section-number">4.3</span> Zmienna liczbowa i zmienne liczbowe lub nominalne</a>
+<ul>
+<li><a href="causality.html#przypadek-szczególny-dwie-zmienne-liczbowe" id="toc-przypadek-szczególny-dwie-zmienne-liczbowe"><span class="toc-section-number">4.3.1</span> Przypadek szczególny: dwie zmienne liczbowe</a></li>
+<li><a href="causality.html#korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot" id="toc-korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot"><span class="toc-section-number">4.3.2</span> Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" id="toc-pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona"><span class="toc-section-number">4.3.3</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</a></li>
+<li><a href="causality.html#macierz-korelacji" id="toc-macierz-korelacji"><span class="toc-section-number">4.3.4</span> Macierz korelacji</a></li>
+<li><a href="causality.html#pomiar-siły-zależności-regresja-liniowa" id="toc-pomiar-siły-zależności-regresja-liniowa"><span class="toc-section-number">4.3.5</span> Pomiar siły zależności: regresja liniowa</a></li>
+<li><a href="causality.html#regresja-prosta" id="toc-regresja-prosta"><span class="toc-section-number">4.3.6</span> Regresja prosta</a></li>
+<li><a href="causality.html#przypadek-ogólny-regresja-wieloraka" id="toc-przypadek-ogólny-regresja-wieloraka"><span class="toc-section-number">4.3.7</span> Przypadek ogólny: regresja wieloraka</a></li>
+<li><a href="causality.html#zmienne-zero-jedynkowe" id="toc-zmienne-zero-jedynkowe"><span class="toc-section-number">4.3.8</span> Zmienne zero-jedynkowe</a></li>
+</ul></li>
+<li><a href="causality.html#przypadek-specjalny-regresja-logistyczna" id="toc-przypadek-specjalny-regresja-logistyczna"><span class="toc-section-number">4.4</span> Przypadek specjalny: regresja logistyczna</a></li>
+<li><a href="causality.html#przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe" id="toc-przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe"><span class="toc-section-number">4.5</span> Przypadek specjalny: dwie zmienne co najmniej porządkowe</a>
+<ul>
+<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-rang" id="toc-pomiar-siły-zależności-współczynnik-korelacji-rang"><span class="toc-section-number">4.5.1</span> Pomiar siły zależności: współczynnik korelacji rang</a></li>
+</ul></li>
+<li><a href="causality.html#podsumowanie" id="toc-podsumowanie"><span class="toc-section-number">4.6</span> Podsumowanie</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#surveyexamples" id="toc-surveyexamples"><span class="toc-section-number">5</span> Przykłady badań ankietowych</a>
+<ul>
+<li><a href="surveyexamples.html#jak-zacząć-badanie" id="toc-jak-zacząć-badanie"><span class="toc-section-number">5.1</span> Jak zacząć badanie?</a>
+<ul>
+<li><a href="surveyexamples.html#co-chcemy-ustalić" id="toc-co-chcemy-ustalić"><span class="toc-section-number">5.1.1</span> Co chcemy ustalić?</a></li>
+<li><a href="surveyexamples.html#co-i-jak-mamy-mierzyć" id="toc-co-i-jak-mamy-mierzyć"><span class="toc-section-number">5.1.2</span> Co i jak mamy mierzyć?</a></li>
+<li><a href="surveyexamples.html#mierzenie-twardych-faktów-vs-mierzenia-przekonań" id="toc-mierzenie-twardych-faktów-vs-mierzenia-przekonań"><span class="toc-section-number">5.1.3</span> Mierzenie twardych faktów vs mierzenia przekonań</a></li>
+<li><a href="surveyexamples.html#pomiar-przekonań-wartości-i-postaw" id="toc-pomiar-przekonań-wartości-i-postaw"><span class="toc-section-number">5.1.4</span> Pomiar przekonań, wartości i postaw</a></li>
+<li><a href="surveyexamples.html#skala-likerta" id="toc-skala-likerta"><span class="toc-section-number">5.1.5</span> Skala Likerta</a></li>
+<li><a href="surveyexamples.html#skala-pomiarowainwentarzkwestionariusz" id="toc-skala-pomiarowainwentarzkwestionariusz"><span class="toc-section-number">5.1.6</span> Skala pomiarowa/inwentarz/kwestionariusz</a></li>
+<li><a href="surveyexamples.html#model-pomiaru" id="toc-model-pomiaru"><span class="toc-section-number">5.1.7</span> Model pomiaru</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-1-wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.2</span> Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel" id="toc-cel"><span class="toc-section-number">5.2.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda" id="toc-metoda"><span class="toc-section-number">5.2.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#zastosowane-metody-statystyczne" id="toc-zastosowane-metody-statystyczne"><span class="toc-section-number">5.2.3</span> Zastosowane metody statystyczne</a></li>
+<li><a href="surveyexamples.html#metryczka-analiza-respondentów" id="toc-metryczka-analiza-respondentów"><span class="toc-section-number">5.2.4</span> Metryczka (analiza respondentów)</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1" id="toc-weryfikacja-hipotezy-1"><span class="toc-section-number">5.2.5</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-2" id="toc-weryfikacja-hipotezy-2"><span class="toc-section-number">5.2.6</span> Weryfikacja hipotezy 2</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-35" id="toc-weryfikacja-hipotez-35"><span class="toc-section-number">5.2.7</span> Weryfikacja hipotez 3–5</a></li>
+<li><a href="surveyexamples.html#wnioski" id="toc-wnioski"><span class="toc-section-number">5.2.8</span> Wnioski</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw" id="toc-przykład-2-depresja-i-jej-uwarunkowania-wśród-studentów-psw"><span class="toc-section-number">5.3</span> Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW</a>
+<ul>
+<li><a href="surveyexamples.html#cel-1" id="toc-cel-1"><span class="toc-section-number">5.3.1</span> Cel</a></li>
+<li><a href="surveyexamples.html#metoda-1" id="toc-metoda-1"><span class="toc-section-number">5.3.2</span> Metoda</a></li>
+<li><a href="surveyexamples.html#metryczka" id="toc-metryczka"><span class="toc-section-number">5.3.3</span> Metryczka</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotezy-1-1" id="toc-weryfikacja-hipotezy-1-1"><span class="toc-section-number">5.3.4</span> Weryfikacja hipotezy 1</a></li>
+<li><a href="surveyexamples.html#weryfikacja-hipotez-24" id="toc-weryfikacja-hipotez-24"><span class="toc-section-number">5.3.5</span> Weryfikacja hipotez 2–4</a></li>
+<li><a href="surveyexamples.html#depresja-a-płeć" id="toc-depresja-a-płeć"><span class="toc-section-number">5.3.6</span> Depresja a płeć</a></li>
+<li><a href="surveyexamples.html#depresja-a-staż" id="toc-depresja-a-staż"><span class="toc-section-number">5.3.7</span> Depresja a staż</a></li>
+<li><a href="surveyexamples.html#depresja-a-rodzaj-miejsca-pracy" id="toc-depresja-a-rodzaj-miejsca-pracy"><span class="toc-section-number">5.3.8</span> Depresja a rodzaj miejsca pracy</a></li>
+</ul></li>
+<li><a href="surveyexamples.html#wnioski-1" id="toc-wnioski-1"><span class="toc-section-number">5.4</span> Wnioski</a></li>
+<li><a href="surveyexamples.html#przykład-3" id="toc-przykład-3"><span class="toc-section-number">5.5</span> Przykład 3:</a></li>
+<li><a href="surveyexamples.html#formularze-ankiet" id="toc-formularze-ankiet"><span class="toc-section-number">5.6</span> Formularze ankiet</a>
+<ul>
+<li><a href="surveyexamples.html#ankieta-depresja-skala-depresji-becka" id="toc-ankieta-depresja-skala-depresji-becka"><span class="toc-section-number">5.6.1</span> Ankieta Depresja: Skala Depresji Becka</a></li>
+<li><a href="surveyexamples.html#ankieta-palenie" id="toc-ankieta-palenie"><span class="toc-section-number">5.6.2</span> Ankieta Palenie</a></li>
+</ul></li>
+</ul></li>
+<li><a href="intro2jamovi.html#intro2jamovi" id="toc-intro2jamovi"><span class="toc-section-number">6</span> Łagodne wprowadzenie z Jamovi</a>
+<ul>
+<li><a href="intro2jamovi.html#podstawy-pracy-z-jamovi" id="toc-podstawy-pracy-z-jamovi"><span class="toc-section-number">6.1</span> Podstawy pracy z Jamovi</a></li>
+<li><a href="intro2jamovi.html#przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia" id="toc-przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia"><span class="toc-section-number">6.2</span> Przykład: analiza ankiety satysfakcja–wiedza o paleniu–zamiar odejścia</a>
+<ul>
+<li><a href="intro2jamovi.html#wczytanie-danych" id="toc-wczytanie-danych"><span class="toc-section-number">6.2.1</span> Wczytanie danych</a></li>
+<li><a href="intro2jamovi.html#przekodowanie-danych" id="toc-przekodowanie-danych"><span class="toc-section-number">6.2.2</span> Przekodowanie danych</a></li>
+<li><a href="intro2jamovi.html#wyliczenie-nowych-zmiennych" id="toc-wyliczenie-nowych-zmiennych"><span class="toc-section-number">6.2.3</span> Wyliczenie nowych zmiennych</a></li>
+<li><a href="intro2jamovi.html#analiza-struktury" id="toc-analiza-struktury"><span class="toc-section-number">6.2.4</span> Analiza struktury</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienne-nominalne" id="toc-analiza-zależności-zmienne-nominalne"><span class="toc-section-number">6.2.5</span> Analiza zależności: zmienne nominalne</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-nominalna"><span class="toc-section-number">6.2.6</span> Analiza zależności: zmienna liczbowa/zmienna nominalna</a></li>
+<li><a href="intro2jamovi.html#analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna" id="toc-analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna"><span class="toc-section-number">6.2.7</span> Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna</a></li>
+<li><a href="intro2jamovi.html#regresja-logistyczna" id="toc-regresja-logistyczna"><span class="toc-section-number">6.2.8</span> Regresja logistyczna</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Łagodne wprowadzenie do statystyki</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro2jamovi" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Łagodne wprowadzenie z Jamovi</h1>
+<p>Jak wspomniano w rozdziale 1, statystkę można uprawiać (tj. liczyć statystyki w drugim tego słowa znaczeniu :-))
+wykorzystując różne programy. My zdecydowaliśmy się promować <strong>Jamovi</strong>, program
+który naszym zdaniem jest najlepszym – z punktu widzenia większości
+studentów Nauk o Zdrowiu – połączeniem ceny, możliwości, prostoty i łatwości nauki.</p>
+<div id="podstawy-pracy-z-jamovi" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Podstawy pracy z Jamovi</h2>
+<p>Jamovi jest oprogramowaniem rozpowszechnianym na licencji typu <em>Open Source</em>,
+a więc można go używać za darmo. Program jest dostępny ze strony
+<a href="https://www.jamovi.org/download.html" class="uri">https://www.jamovi.org/download.html</a>. Klikamy, ściągamy, uruchamiamy instalator.
+Program jest dość duży, ale to nie jest aż tak wielki problem w czasach kiedy
+pojemności dysków w domowym komputerze zaczynają się od 250 gigabajtów.
+Po zainstalowaniu uruchamiamy program, którego ekrano startowy wygląda jak
+na rysunku</p>
+<p><img src="jamovi_main_screen.png" /></p>
+<p>Menu akcji umożliwia wykonanie podstawowych akcji:</p>
+<ul>
+<li><p>wczytanie danych i zapisanie danych (pierwsza pozycja menu oznaczona jako
+trzy poziome kreski)</p></li>
+<li><p>podgląd (w sensie skontrolowania wartości zmiennych) i modyfikację
+danych (pozycje <strong>Zmienne</strong> oraz <strong>Dane</strong>)</p></li>
+<li><p>wykonanie obliczeń (pozycja <strong>Analizy</strong>)</p></li>
+<li><p>modyfikowanie raportu (pozycja <strong>Edit</strong>)</p></li>
+</ul>
+<p>Typowa sesja w <strong>Jamovi</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>Wczytanie danych z pliku o praktycznie dowolnym formacie. Jeżeli przykładowo
+dane są wynikiem wykonania badania ankietowego z wykorzystaniem Formularzy Google to zalecamy posługiwanie się formatem CSV.</p></li>
+<li><p>Transformacja danych. Przekodowanie wartości nominalnych na rangi. Przekodowanie
+wartości liczbowych na nominalne.
+Odwrócenie pytań odwróconych. Obliczenie sum/srednich rang dla wielu zmiennych.</p></li>
+<li><p>Wykonanie obliczeń:</p></li>
+<li><p>Analiza struktury (<strong>Eksploracja</strong>),</p></li>
+<li><p>Analiza zależności między zmienną liczbową a nominalną (<em>testy t</em>/<strong>ANOVA</strong>),</p></li>
+<li><p>Analiza zależności między zmiennymi liczbowymi: współczynnik korelacji
+liniowej/macierz korelacji (<em>Regresja</em>)
+4 Analiza zależnosci między zmienną liczbową a zmiennymi liczbowymi/nominalnymi:
+regresja liniowa i logistyczna (<strong>Regresja</strong>)</p></li>
+<li><p>Analiza zależności między zmiennymi nominalnymi: tablica wielodzielcza, test
+chi-kwadrat zgodności (<em>Częstości</em>)</p></li>
+</ol>
+<p>Wykonanie obliczeń jest banalnie proste i sprowadza się do wybrania myszką odpowiednich
+zmiennych oraz procedury która ma być wykonana.
+Wynik obliczeń pojawia się natychmiast w <strong>oknie wyników</strong>. Jeżeli coś
+nam nie wyszło można procedurę poprawić a poprzedni wynik usunąć z okna wynikowego.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Zapisania danych (pozycja trzy poziome kreski). Po skończeniu pracy wynik można
+zapisać żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
+pracę kontynuuować bo wykładowca chciał żebyśmy coś poprawili.</li>
+</ol>
+</div>
+<div id="przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Przykład: analiza ankiety satysfakcja–wiedza o paleniu–zamiar odejścia</h2>
+<p>Przykład nieco absurdalny, ale za to w zwartej postaci ilustrujący
+praktyczne sposoby transformacji danych oraz
+wykorzystania wszystkich procedur omawianych w podręczniku.</p>
+<div id="wczytanie-danych" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Wczytanie danych</h3>
+<p>W wyniku przeprowadzenia badania ankietowego zebrano za pomocą Formularza Google
+dane dotyczące
+satysfkacji/zamiaru odejścia oraz wiedzy nt. szkodliwości palenia tytoniu.
+Wyniki wyeksportowano do arkusza kalkulacyjnego, którego początek
+wygląda jakoś tak:</p>
+<p><img src="GoogleFormsTestA.png" />
+Ankieta składa się z 10 następujących pytań:</p>
+<p><code>Ogólnie rzecz biorąc nie lubię swojej pracy</code> (kolumna <code>B</code>),
+<code>Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy</code> (<code>C</code>),
+<code>Ogólnie rzecz biorąc, lubię tu pracować</code> (<code>D</code>),
+<code>Jakie według Ciebie choroby układu oddechowego mogą być spowodowane bezpośrednio przez palenie papierosów?</code> (<code>E</code>),
+<code>Często poważnie rozważam odejście z obecnej pracy</code> (<code>F</code>),
+<code>Zamierzam rzucić obecną pracę</code> (<code>G</code>),
+<code>Zacząłem szukać innej pracy</code> (<code>H</code>),
+<code>Płeć</code> (<code>I</code>),
+<code>Wiek (w latach)</code> (<code>J</code>),
+oraz <code>Staż pracy</code> (<code>K</code>).</p>
+<p>Ponadto Formularz Googla dodał automatycznie sygnaturę czasową
+jako zawartość pierwszej kolumny (<code>A</code>).</p>
+<p>Zmieniamy wartości w pierwszym wierszu, który powinien zawierać nazwy zmiennych.
+Nazwy zmiennych powinny być jednowyrazowe i w miarę krótkie żeby się później
+można nimi wygodnie posługiwać. Jednocześnie nie powinny być za krótkie żeby
+od razu było widać jakie dane zawiera zmienna.</p>
+<p>Jak widać
+pytania z kolumn <code>B</code>–<code>C</code> mierzą to samo (satysfakcję)
+więc zmieniamy im nazwę na bardziej zwartą <code>s1</code>, <code>s2</code> oraz <code>s3</code> (<code>s</code> od satysfakcja).
+Podobnie
+ponieważ pytania z kolumn <code>F</code>–<code>H</code> też mierzą to samo (zmiar odejścia), to
+też zmieniamy nazwy na coś krótszego: <code>zo1</code>, <code>zo2</code>, <code>zo3</code>. Kolumnę <code>E</code> nazywamy
+<code>wiedza_nt_palenia</code> a kolumny <code>I</code>, <code>J</code> oraz <code>K</code> odpowiednio:
+<code>plec</code>, <code>wiek</code> oraz <code>staz</code>.</p>
+<p>Teraz arkusz wygląda jakoś tak:</p>
+<p><img src="GoogleFormsTestHdr.png" /></p>
+<p>Arkusz eksportujemy wybierając format CSV. Bez problemu powinniśmy
+go wczytać do Jamovi (trzy poziome kreski →<code>Otwórz</code>)</p>
+<p>Reasumując:</p>
+<ul>
+<li><p>Pytania oznaczone jako <code>s1</code>/<code>s2</code>/<code>s3</code> mierzą
+<strong>satysfakcję z pracy</strong>; pytania <code>zo1</code>/<code>zo2</code>/<code>zo3</code> mierzą <strong>zamiar odejścia
+z pracy</strong>. Pytania <code>s1</code>–<code>s3</code> oraz <code>zo1</code>–<code>zo3</code> są pytaniami jednokrotnego wyboru.</p></li>
+<li><p>Pytanie oznaczone jako <code>wiedza_nt_palenia</code> mierzy wiedzę na temat palenia tytoniu.
+Jest to przykład wykorzystania pytania z wielokrotnym wyborem.</p></li>
+<li><p>Pytania <code>plec</code>, <code>wiek</code>, <code>staz</code> mierzą płeć (<code>kobieta</code>/<code>mężczyna</code>), wiek (lata ukończone)
+oraz staż pracy (lata przepracowane)</p></li>
+<li><p>Pierwsza kolumna nie jest potrzebna ale jest dodawana przez aplikację Formularze Google.</p></li>
+</ul>
+<p><img src="Jamovi_data_import.png" /></p>
+</div>
+<div id="przekodowanie-danych" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Przekodowanie danych</h3>
+<p>Zwykle zawartość arkusza zawierającego wyniki ankiety wymaga przekodowania.
+W naszym przykładzie należy wykonać:</p>
+<ul>
+<li><p>Zmienne s1–s3 oraz zo1–zo3 są mierzone w skali porządkowej. Wartości tych zmiennych
+chcemy zmienić (przekodować) na rangi wg schematu: <code>Zdecydowanie się nie zgadzam</code> = 1;
+<code>Nie zgadzam się</code> = 2; <code>Trudno powiedzieć</code> = 3 itd.
+Dodatkowo zauważmy że s1 jest pytaniem odwróconym.
+W takich pytaniach należy przeliczyć rangi wg prostej formuły s1r = 6 - s1.</p>
+<ul>
+<li>Miarą satysfakcji będzie suma rang s1r+s2+s3.</li>
+<li>Miarą zamiaru odejścia będzie suma rang zo1+zo2+zo3</li>
+</ul></li>
+<li><p>Zmienna <code>plec</code> jest mierzona w skali nominalnej. Nie musimy jest przekodowywać</p></li>
+<li><p>Wartość zmiennej <code>wiedza_nt_palenia</code> należy przekodować na liczbę wg schematu:
+za wybranie poprawnej odpowiedzi plus jeden punkt; za wybranie błędnej odpowiedzi
+minus jeden punkt.</p>
+<ul>
+<li>Miarą wiedzy nt. palenia będzy suma punktów uzyskanych za odpowiedzi prawidłowe
+minus suma punktów uzyskanych za odpowiedzi nieprawidłowe.</li>
+</ul></li>
+</ul>
+<p>Uwaga: Sposób mierzenia wiedzy nt. palenia jest niepotrzebnie pokręcony; zamiast
+pytania z wielokrotnym wyborem spośród 8 możliwości/wariantów prościej jest zastosować
+8 pytań Tak/Nie po czym pytania poprawne zsumować
+a pytania niepoprawne też dodać a wartość odjąć od sumy uzyskanej dla pytań poprawnych.
+My o tym wiemy, że tak jest bez sensu ale pokazujemy jako przykład przekodowania
+pytania z wielokrotnym wyborem.</p>
+<ul>
+<li>Wartości zmiennych <code>wiek</code> oraz <code>staz</code> są liczbami. Mogą być analizowane tak-jak-są
+(regresja/korelacja) ale można też je przekodować na wartości nominalne
+(mały-średni-duży staż) i zastosować metody z grupy zmienna-liczbowa/zmienna nominalna
+(takie jak test ANOVA czy Kruskala-Wallisa)</li>
+</ul>
+<p>Przekodowanie wykonujemy wybierając <strong>Dane</strong> w menu głównym.</p>
+<ol style="list-style-type: decimal">
+<li><p>Klikamy w nazwę zmienną, którą zamierzamy przekodować. Niech to będzie <code>s1</code>.
+Kolumna po kliknięciu zmieni kolor.</p></li>
+<li><p>Wybieramy ikonę <code>Przekształcenie</code>. Wypełniamy jak na rysunku poniżej:</p></li>
+</ol>
+<p>Uwaga: Jamovi nie zmieni wartości zmiennej <code>s1</code> tylko utworzy nową zmienną
+z przekodowanymi wartościami. Zmienna na podstawie której jest tworzona
+nowa zmienna nazywa się źródłową (<code>s1</code> w naszym przykładzie jest źródłowa.)</p>
+<p><img src="przeksztalcenie_0.png" /></p>
+<p>Wpisujemy sensowną nazwę (na przykład <code>s1p</code> od przekodowana). Jak będziemy
+używać sensownych nazwa łatwiej będzie nam się pracowało. Dobrze jest
+też podać w opisie co zawiera zmienna.</p>
+<p>Klikamy w pole wyboru na dole (obok napisu <code>za pomocą przekształcenia</code>)
+Powinniśmy zobaczyć coś takiego:</p>
+<p><img src="przeksztalcenie_1.png" /></p>
+<p>Wybieramy <code>Utwórz nowe przekształcenie</code>. Wpisujemy sensowną nazwę
+przekształcenia (na przykład <code>Likert2R5</code>) oraz formułę przekształcenia:</p>
+<pre><code>IF ($source==&quot;Zdecydowanie się nie zgadzam&quot;, 1,
+ IF ($source==&quot;Nie zgadzam się&quot;, 2,
+   IF ($source==&quot;Trudno powiedzieć&quot;, 3,
+      IF ($source==&quot;Zgadzam się&quot;, 4, 5))))</code></pre>
+<p>Formuła może wydawać się przerażająca, ale jest koncepcyjnie bardzo prosta:</p>
+<pre><code>IF (warunek, jeżeli-prawda, jeżeli-fałsz)</code></pre>
+<p><code>Warunek</code> to fragment <code>$source=="Zdecydowanie się nie zgadzam"</code>:</p>
+<ul>
+<li><p><code>$source</code> oznacza bieżącą wartość zmiennej źródłowej</p></li>
+<li><p><code>==</code> to <strong>operator</strong> równości; jest więcej operatorów, które można
+wybrać z menu</p></li>
+<li><p><code>$source=="Zdecydowanie się nie zgadzam"</code> oznacza, że jeżeli
+bieżącą wartością w kolumnie źródłowej jest <code>Zdecydowanie się nie zgadzam</code>
+to wykonaj <code>jeżeli-prawda</code>; w wypadku przeciwnym wykonaj <code>jeżeli-fałsz</code>.</p></li>
+</ul>
+<p><code>jeżeli-prawda</code> to zwykle wstawienie nowej wartości;
+<code>jeżeli-fałsz</code> to często następna formuła <code>IF</code> albo wstawienie innej
+nowej wartości. Przykładowo jeżeli
+bieżącą wartością w kolumnie źródłowej jest <code>Zdecydowanie się nie zgadzam</code>
+to wstaw <code>1</code>, jeżeli nie jest to wstaw <code>0</code>:</p>
+<pre><code>  IF ($source==&quot;Zdecydowanie się nie zgadzam&quot;, 1,0)</code></pre>
+<p>Ponieważ w naszym przykładzie mamy do przekodowania nie dwie a 5 wartości
+musimy użyć 4 warunków, które
+są zagnieżdżone jeden w drugim. Można powyższe przepisać, można
+też skopiować z podręcznika i wkleić do Jamovi.</p>
+<p><img src="przeksztalcenie_1p.png" /></p>
+<p>Naciskamy Enter i gotowe. Zostaje utworzona zmienna <code>s1p</code>
+zawierająca zamiast napisów rangi.</p>
+<p>Jeżeli uporaliśmy się z przekodowaniem <code>s1</code>
+ustawiamy kursor na <code>s2</code> w okno danych. Naciskamy ikonę <code>Przekształcenie</code>.
+Upewniamy się że zmienną źródłową jest <code>s2</code>.
+Zmieniamy nazwę nowej zmiennej na <code>s2p</code>. Klikamy
+w pole wyboru przekształcenia. Poprzednio były tam tylko dwie pozycje
+<code>Brak</code> oraz <code>Utwórz nowe przekształcenie</code> teraz jest trzecia pozycja
+<code>Likert2R5</code> czyli przekształcenie które zdefiniowaliśmy dla zmiennej s1p.
+Wybieramy <code>Likert2R5</code> bo zmienną <code>s2</code> chcemy przekodować dokładnie
+w ten sam sposób jak <code>s1</code>. Po wybraniu przekształcenia w oknie danych
+pojawia się nowa zmienna <code>s2p</code></p>
+<p><img src="przeksztalcenie_3.png" /></p>
+<p>W podobny łatwy sposób przekodowujemy <code>s3</code> oraz <code>zo1</code>, <code>zo2</code>, <code>zo3</code></p>
+<p><strong>Uwaga</strong>: polecenie <code>IF</code> wpisujemy używając dużych liter. Słowo
+<code>$source</code> wpisujemy tak jak jest to zademonstrowane (<code>$Source</code> jest błędem.)</p>
+<p>Przekodowanie pytanie z możliwością wielokrotnego wyboru jest równie
+proste tyle że pisania jest więcej. Zmienna <code>wiedza_na_temat_palenia</code> może zawierać
+do ośmiu następujących napisów oddzielonych średnikami:
+<code>Przewlekła obturacyjna choroba płuc</code>,
+<code>Astma oskrzelowa</code>,
+<code>Alergie wziewne</code>,
+<code>Gruźlica</code> (B),
+<code>Zapalenie płuc</code> (B),
+<code>Przewlekłe zapalenie oskrzeli</code>,
+<code>Infekcje dróg oddechowych</code>,
+<code>Palenie nie powoduje chorób układu oddechowego</code> (B).</p>
+<p>Odpowiedzi błędne oznaczono jako (B).</p>
+<p>W arkuszu lub oknie danych Jamovi ta zmienna wygląda jakoś tak:</p>
+<pre><code>...,Przewlekła obturacyjna choroba płuc,...
+...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;Alergie wziewne;Gruźlica;Zapalenie płuc;Przewlekłe zapalenie oskrzeli,...
+...,Astma oskrzelowa,
+...,Astma oskrzelowa;Gruźlica;Przewlekłe zapalenie oskrzeli,...
+...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;Infekcje dróg oddechowych,...</code></pre>
+<p>Należy zsumować wystąpienia poprawne i wystąpienia błędne. W tym celu trzeba utworzyć tyle
+nowych zmiennych ile jest wariantów odpowiedzi, czyli w naszym przykładzie osiem. Każda
+nowa zmienna jest przekodowywana za pomocą prostej formuły wykorzystującą funkcję <code>CONTAINS</code> (zawiera).
+Przykładowo pierwsza (nazwijmy ją <code>wiedz1p</code>) powinna być utworzona w oparciu o następujące przekształcenie</p>
+<pre><code>CONTAINS(&quot;Przewlekła obturacyjna choroba płuc&quot;, $source)</code></pre>
+<p><img src="przeksztalcenie_4.png" /></p>
+<p><img src="przeksztalcenie_contains.png" /></p>
+<p>Funkcja CONTAINS wstawi 1 jeżeli <code>$source</code> zawiera <code>Przewlekła obturacyjna choroba płuc</code>.
+Oczywiście następna zmienna powinna zawierać <code>Astma oskrzelowa</code>:</p>
+<pre><code>CONTAINS(&quot;Astma oskrzelowa&quot;, $source)</code></pre>
+<p>I tak dalej aż do ostatniego wariantu odpowiedzi:</p>
+<pre><code>CONTAINS(&#39;Alergie wziewne&#39;, $source)
+CONTAINS(&#39;Gruźlica&#39;, $source)
+CONTAINS(&#39;Zapalenie płuc&#39;, $source)
+CONTAINS(&#39;Przewlekłe zapalenie oskrzeli&#39;, $source)
+CONTAINS(&#39;Infekcje dróg oddechowych&#39;, $source)
+CONTAINS(&#39;Palenie nie powoduje chorób układu oddechowego&#39;, $source)</code></pre>
+<p>Każda zmienna <code>wiedza1</code>…<code>wiedza8</code> zawiera 1 jeżeli ankietowany wskazał dany wariant lub zero jeżeli
+nie wskazał.</p>
+<p>Ostatnia sprawa to przekodowanie liczb na wartości nominalne. Przykładowo chcemy podzielić
+ankietowanych na grupy stażowe: mały (do pięciu lat), średni (5–15 lat), duży (16 i więcej) staż pracy.</p>
+<p>Wartości liczbowe stażu pracy zawiera zmienna <code>staz</code>. Aby ją przekodować
+należy użyć następującego przekształcenia:</p>
+<pre><code>IF ($source &lt; 5, &quot;M&quot;,
+  IF ($source &lt; 16, &quot;S&quot;, &quot;D&quot;))</code></pre>
+<p>Poleceń <code>IF</code> musi być o jedno mniej niż mamy klas. W naszym przykładzie zatem dwa. Jeżeli
+<code>staż</code> jest mniejszy od 5 wstawiony zostanie napis <code>M</code>, jeżeli <code>staż</code> jest mniejszy od 16
+wstawiony zostanie napis <code>S</code> a w przeciwnym wypadku zostanie wstawiony napis <code>D</code>.</p>
+<p>Gdyby ktoś się niepokoił że 3 spełnia jednocześnie <code>$source &lt; 5</code> oraz <code>$source &lt; 16</code>
+to dodamy, że pierwszy się liczy. Przekształcenie kończy działanie po spełnieniu pierwszego warunku i nie
+wykonuje dalszych porównań. Dlatego liczba 3 zostanie zamieniona na <code>M</code> a nie na <code>S</code>.</p>
+<p>Podobnie przekodowujemy zmienną <code>wiek</code>.</p>
+</div>
+<div id="wyliczenie-nowych-zmiennych" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Wyliczenie nowych zmiennych</h3>
+<p><strong>Przekodowanie</strong> to była w zasadzie zamiana sposobu mierzenia. <strong>Wyliczenie</strong> to utworzenie
+nowej zmiennej, zwykle w oparciu o jakąś formułę matematyczną. Na przykład odwrócenie pytanie s1p
+realizuje <code>s1pr = 6 - s1p</code>. Satysfakcja to suma rang z trzech pytań:
+<code>satysfakcja =  s1pr + s2p + s3p</code>.</p>
+<p>W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia sie okno
+zmiennej wyliczonej zatytułowane <code>ZMIENNA WYLICZONA</code></p>
+<p>Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego, w przykładzie
+jest to litera <code>H</code>) W polu definiowania zmiennej należy wpisać
+stosowną formułę matematyczną. W przypadku odwracania pytania <code>s1p</code> będzie to:</p>
+<pre><code>6 - s1p</code></pre>
+<p>W przypadku liczenia łącznej satysfakcji (przy założeniu,
+że wcześniej utworzyliśmy zmienną <code>s1pr</code>):</p>
+<pre><code>SUM(s1pr, s2p, s3p)</code></pre>
+<p><img src="zmienna_satysfakcja.png" /></p>
+<p>Jeżeli nie chcemy sumy ale np. średnią powinniśmy użyć</p>
+<pre><code>MEAN(s1pr, s2p, s3p)</code></pre>
+<p>Inne funkcje matematyczne są dostępne po klinięciu w pole wyboru znajdujące się po lewej
+stronie pola definiowania zmiennej.</p>
+<p>Powiedzieliśmy że miarą wiedzy nt. palenia będzy suma punktów uzyskanych za odpowiedzi prawidłowe minus
+suma punktów uzyskanych za odpowiedzi nieprawidłowe. Odpowiedzi prawidłowe to
+<code>w1p</code>, <code>w2p</code>, <code>w3p</code>, <code>w6</code> oraz <code>w7</code>. Odpowiedzi błędne to <code>w4p</code>, <code>w5p</code>, <code>w8p</code>. Zatem
+w polu definiowania zmiennej wpisujemy:</p>
+<pre><code>SUM(w1p, w2p, w3p, w6, w7) - SUM(w4p, w5p, w8p)</code></pre>
+</div>
+<div id="analiza-struktury" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Analiza struktury</h3>
+<p>Wybieramy <code>Analizy</code>→<code>Eksploracja</code>→<code>Statystyki opisowe</code>.</p>
+<p>W wyświetlonym oknie po lewej deklarujemy co ma być liczone. Wynik
+pojawi się po prawej (por rysunek)</p>
+<p>Ustawiamy kursor na zmiennej która nas interesuje i klikamy w strzałkę górną.
+Jeżeli chcemy podzielić wartości zmiennej na grupy według jakiejś
+zmiennej nominalnej, to ustawiamy kursor na tej zmiennej nominalnej
+(na przykład <code>plec</code>) i klikamy strzałkę dolną.</p>
+<p>Można analizować wiele zmiennych na raz. Wystarczy w tym celu ustawić
+kursor na zmiennej i kliknąć w odpowiednią strzałkę. Zawartość okna
+wynikowego zostanie automagicznie uaktualniona.</p>
+<p><img src="statystyki_opisowe_okno.png" />
+Poniżej okien wyboru zmiennych są zakładki określające
+precyzyjnie co ma być obliczone oraz jakie wykresy mają
+zostać wyrysowane. Przykładowo domyślny wydruk nie zawiera
+rozstępu kwartylowego. Żeby go dodać do wyniku należy
+w zakładce <code>Statystyki</code> zaznaczyć przycisk <code>IQR</code>.</p>
+<p><img src="statystyki_opisowe_wynik.png" /></p>
+</div>
+<div id="analiza-zależności-zmienne-nominalne" class="section level3" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Analiza zależności: zmienne nominalne</h3>
+<p>Wybieramy <code>Analizy</code>→<code>Częstości</code>→<code>Próby niezależne</code>.</p>
+<p>Podobnie jak w przypadku analizy struktury jest wyświetlana
+lista zmiennych oraz okna i strzałki pozwalające
+wygodnie wybrać to co ma być analizowane. Jest to tak proste
+że wystarczy przyjrzeć się przykładowemu rysunkowi żeby
+wiedzieć jak postępować. Przykładową analizę zależności
+pomiędzy zmiennymi nominalnymi <code>zamiarOklasa</code> oraz <code>staz.klasa</code> przedstawia rysunek.</p>
+<p><img src="tabele_krzyzowe.png" /></p>
+</div>
+<div id="analiza-zależności-zmienna-liczbowazmienna-nominalna" class="section level3" number="6.2.6">
+<h3><span class="header-section-number">6.2.6</span> Analiza zależności: zmienna liczbowa/zmienna nominalna</h3>
+<p>Wybieramy <code>Analizy</code>→<code>Testy t</code>→<code>Test t dla prób niezależnych</code> i/lub
+<code>Analizy</code>→<code>ANOVA</code>→<code>Jednoczynnikowa ANOVA</code>.</p>
+<p>Zostanie wyświetlony znajomy interfejs. Wybieramy
+co trzeba. Wynik automagicznie pojawia się w lewym oknie.</p>
+<p><img src="testy.png" /></p>
+</div>
+<div id="analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna" class="section level3" number="6.2.7">
+<h3><span class="header-section-number">6.2.7</span> Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna</h3>
+<p>Wybieramy <code>Analizy</code>→<code>Regresja</code>→<code>Regresja liniowa</code></p>
+<p>Interfejs podobny do poprzednio opisywanych. Wybieramy
+zmienną zależną (musi oczywiście być liczbowa) klikając w górną strzłkę.
+Zmienne niezależne mierzone w skali liczbowej
+klikając w środkową strzałkę. Zmienne niezależne mierzone
+w skali nominalnej klikając w dolną strzałkę.
+Wynik automagicznie pojawia się w lewym oknie.</p>
+<p><img src="regresja_liniowa.png" /></p>
+</div>
+<div id="regresja-logistyczna" class="section level3" number="6.2.8">
+<h3><span class="header-section-number">6.2.8</span> Regresja logistyczna</h3>
+<p>Wybieramy <code>Analizy</code>→<code>Regresja</code>→<code>Regresja logistyczna</code>→<code>Dwie wartości</code></p>
+<p>Interfejs podobny do analizy regresji. Wybieramy
+zmienną zależną klikając w górną strzłkę. Zmienna ta
+<strong>musi</strong> być zmienną dwuwartościową.</p>
+<p>Zmienne niezależne mierzone w skali liczbowej
+wybieramy klikając w środkową strzałkę a zmienne niezależne mierzone
+w skali nominalnej klikając w dolną strzałkę.</p>
+<p><img src="regresja_logistyczna.png" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="surveyexamples.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06jamovi.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
