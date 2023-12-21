@@ -4,7 +4,7 @@ author:
 - name: Tomasz Przechlewski
   email: t.plata-przechlewski@psw.kwidzyn.edu.pl
   affiliation: Powiślańska Szkoła Wyższa (Kwidzyn/Poland)
-date: "Niedatowany/wersja robocza"
+date: "![Niedatowany/wersja robocza](./FN.jpg){width=50%} "
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -52,7 +52,6 @@ diffMx <- function (s, t)  {
 
 
 ```
-
 
 
 

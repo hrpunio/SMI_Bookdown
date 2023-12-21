@@ -148,7 +148,11 @@ Są dwa fundamentalne rodzaje pomiaru
 
 Mówimy w związku z tym **dane eksperymentalne** albo **dane obserwacyjne**.
 
-**Przykład**: chcemy ustalić czy spożywanie kawy w czasie sesji egzaminacyjnej
+::: {.example}
+
+**Picie kawy a lepsza ocena**
+
+Chcemy ustalić czy spożywanie kawy w czasie sesji egzaminacyjnej
 skutkuje uzyskaniem lepszej oceny. W celu oceny prawdziwości takiej
 tezy przeprowadzono badanie wśród studentów pytając ich o to ile
 kawy pili w czasie sesji i zestawiając te dane z wynikami egzaminów.
@@ -163,6 +167,7 @@ Prawdziwą przyczyną jest czas poświęcony na przygotowanie a nie to ile ktoś
 wypił lub nie wypił kawy. Inaczej mówiąc gdyby ktoś pił dużo kawy,
 bo uwierzył, że to poprawi mu wyniki 
 i się nie uczył, to pewnie by się rozczarował.
+:::
 
 Rodzaje badań: **eksperymentalne** vs **obserwacyjne**. 
 
@@ -186,10 +191,10 @@ Manipulacja określana jest jako
 ekspozycja (**exposure**) albo leczenie (**treatment**)
 Zmienne ukryte określa się mianem **confunding factors** (**czynniki zakłócające**)
 
-Rysunek przedstawia zależność pomiędzy wynikiem (*outcome*), przyczyną
+Rysunek \@ref(fig:fluor) przedstawia zależność pomiędzy wynikiem (*outcome*), przyczyną
 oraz czynnikami zakłócającymi na przykładzie zależności dotyczącej domniemanego
 wpływu fluoryzowania wody na zwiększenie ryzyka zgonów z powodu nowotworów.
-W badaniu którego autor uważał że udowodnił związek fluoryzowanie→nowotór
+W badaniu którego autor uważał, że udowodnił związek fluoryzowanie→nowotór
 porównał on współczynniki zgonów z miast fluoryzujących oraz
 nie fluoryzujących wodę. Okazało się, że przeciętnie współczynnik ten był wyższy
 w grupie miast fluoryzujących wodę. Czy to świadczy, że fluoryzowanie wody
@@ -201,8 +206,10 @@ A ponieważ współczynniki zgonów rosną wraz ze wzrostem wieku, to nie można
 wykluczyć, że prawdziwą przyczyną obserwowanego zwiększenia wartości
 współczynników zgonów jest wiek a nie fluoryzacja wody.
 
+```{r fluor, fig.cap = "Fluoryzacja, wiek a nowotwór"}
+knitr::include_graphics("./Model1_cropped.png")
+```
 
-![](./Model1.png)
 
 **Efekt przyczynowy** to **ilościowe** określenie wpływu
 ekspozycji na wynik 
@@ -238,8 +245,10 @@ ATT - ATC (albo ATT/ATC)
 gdzie: ATT oznacza ATE w grupie eksperymentalnej 
 a ATC oznacza ATE w grupie kontrolnej.
 
-**Przykład (kontynuuacja)**:
-można przypuszczać, że oprócz kawy na wynik egzaminu ma wpływ np. wrodzone predyspozycje
+::: {.example}
+**Kawa a ocena (kontynuuacja)**
+
+Można przypuszczać, że oprócz kawy na wynik egzaminu ma wpływ np. wrodzone predyspozycje
 w dziedzinie intelektualnej oraz czas poświęcony na naukę.
 Aby kontrolować ten czynnik można podzielić losowo grupę studentów;
 dzięki czemu średnia wielkość predyspozycji oraz czasu w obu grupach będzie podobna.
@@ -250,7 +259,7 @@ grupie studentów pijących 1l kawy okazały się wyższe niż w grupie pijącej
 Czy można powiedzieć że udowodniono
 iż picie dużej ilości kawy poprawia wynik egzaminu?
 Raczej tak...
-
+:::
 
 **Badania obserwacyjne** można z kolei podzielić na **analityczne** i **opisowe**.
 
@@ -289,20 +298,28 @@ bez podziału na grupę eksperymentalną i kontrolną.
 Problem: nie da się określić związku przyczyna-skutek w taki sposób jaki się stosuje w badaniach analitycznych,
 ale można do tego celu zastosować **model** regresji liniowej.
 
-**Przykład**: badamy grupę pacjentów przychodni onkologicznej. Stwierdzamy że 90% z nich paliło
+::: {.example}
+**Palenie a nowotwór**
+
+Badamy grupę pacjentów przychodni onkologicznej. Stwierdzamy że 90% z nich paliło
 papierosy. Czy z tego wynika że palenie powoduje raka? Niekoniecznie. Możemy **dopasować**
 pacjentów o podobnym profilu demograficzno-społecznym z innej przychodni (którzy nie chorują na raka)
 i stwierdzić że 20% z nich paliło. 
 To już jest konkretny argument -- ale takie badanie nie jest już **przekrojowe**
 tylko **kliniczno-kontrolne**.
+:::
 
-**Przykład (kontynuuacja)**:
+::: {.example}
+**Kawa a ocena (kontynuuacja)**
+
 można oprócz pytania studentów o ilość kawy i wynik pytać ich jeszcze o czas poświęcony
 na naukę oraz o średnią ze studiów (wrodzone predyspozycje w dziedzinie intelektualnej). 
 Za pomocą metody regresji możemy ustalić czy i jak bardzo kawa, czas i predyspozycje
 wpływają na ocenę. Teoretycznie zamiast eksperymentu można używać regresji, ale jest to w większości
 przypadków trudne--albo zmienne nie da się zmierzyć (czy średnia ze studiów jest dobrą miarą predyspozycji?)
-albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale 3.
+albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale \@ref(causality).
+
+:::
 
 Badanie **ekologiczne**: badanie (przekrojowe) zależności pomiędzy danymi **zagregowanymi** a nie indywidualnymi.
 Przykładowo zależność pomiędzy przeciętną
@@ -333,7 +350,8 @@ wykorzystane w pracy wystarczy zapoznać się z treścią punktu **materiał i m
 powinien tam być określony **rodzaj badania**: eksperyment, badanie kohortowe, kliniczno-kontrolne,
 przekrojowe lub inne...
 
-**Przykład 1: Czy konsumpcja soli kuchennej szkodzi? (eksperyment)**
+::: {.example}
+**Czy konsumpcja soli kuchennej szkodzi? (eksperyment)**
 
 Neal B. i inni zastosowali eksperyment kontrolowany do zbadania
 wpływu substytucji chlorku sodu chlorkiem potasu na choroby sercowo-naczyniowe 
@@ -348,9 +366,10 @@ chlorku sodu; grupa badana zaś używała soli tradycyjnej czyli zawierającej
 wyłącznie chlorek sodu. Obserwowano w okresie pięcioletnim w obu grupach 
 liczbę udarów, incydentów sercowo-naczyniowych oraz zgonów. Wpływ 
 substytucji oceniono porównując współczynniki ryzyka w obu grupach.
+:::
 
-
-**Przykład 2: Konflikt praca-dom w zawodzie pielęgniarki (przekrojowe)**
+::: {.example}
+**Konflikt praca-dom w zawodzie pielęgniarki (przekrojowe)**
 
 Simon i inni badali konflikt Praca-Dom w zawodzie Pielęgniarki/Pielęgniarza
 (Work-Home Conflict in the European Nursing Profession
@@ -375,7 +394,7 @@ a przyczyny WHC ustalono za pomocą metody regresji wielorakiej.
 
 Teraz porówajmy koszty badania #1, w którym jedynie starano się ustalić że sól szkodzi (lub nie)
 z badaniem #2, w którym starano się ustalić przyczyny stanów psychicznych badanych-:)
-
+:::
 
 ## Miary częstości chorób
 
@@ -424,5 +443,6 @@ i mamy w tym zakresie trzy możliwości:
    
 W większości podręczników opisuje się **procedury** 
 oraz **program**, w którym te procedury można zastosować jednocześnie. 
-My zdecydowaliśmy się oddzielnie przestawić teorię statystyki (rozdziały 1--4)
-a oddzielnie opis posługiwania się konkretnym programem (rozdział 5.)
+My zdecydowaliśmy się oddzielnie przestawić teorię 
+statystyki (rozdziały \@ref(przedmiotbadan)--\@ref(surveyexamples))
+a oddzielnie opis posługiwania się konkretnym programem (rozdział \@ref(intro2jamovi))

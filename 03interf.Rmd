@@ -8,7 +8,7 @@ na 100 h polu. Można ściąć wszystkie i zważyć, ale można też ściąć
 trochę (pobrać próbę się mówi uczenie) zważyć i poznać średnią
 na całym polu z dobrą dokładnością.
 
-## Przykładowy problem nr 1
+## Problem 1: masa ciała uczestników PŚ w rugby
 
 
 ```{r}
@@ -168,7 +168,7 @@ niemożliwe jest wynalezienie czegoś jeszcze bardziej efektywnego. Takim estyma
 Konkretną wartość estymatora dla konkretnych wartości próby nazywamy **oceną**
 (parametru)
 
-## Przykładowy problem nr 2
+## Problem 2: wiek kandydatów na radnych
 
 ```{r}
 r <- read.csv("kandydaci_ws_2018_3.csv", sep = ';', dec = ",",  header=T, na.string="NA")
@@ -415,7 +415,7 @@ Uogólnieniem teoretycznym pojęcia **zmiennej statystycznej**, które do tej po
 używaliśmy jest **zmienna losowa**, zmienna której wartości są liczbami a realizują się
 z określonym prawdopodobieństwem np. określonym przez rozkład normalny.
 
-**Przykład: szacowanie odsetka kobiet**
+## Problem 3: szacowanie odsetka kobiet
 
 ```{r}
 r <- read.csv("kandydaci_ws_2018_4.csv", sep = ';', dec = ",",  header=T, na.string="NA") %>%

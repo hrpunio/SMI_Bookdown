@@ -32,15 +32,10 @@ wartościom cechy zmiennej odpowiedniej **liczby wystąpień** (liczebności alb
 **Tablica statystyczna** to (w podstawowej formie) dwukolumnowa tabela zawierająca
 wartości cechy oraz odpowiadające tym wartościom liczebności.
 
-**Przykład 1**: Tablica dla cechy niemierzalnej (nominalnej albo porządkowej)
+**Tablica dla cechy niemierzalnej (nominalnej albo porządkowej)**
 
-Absolwenci studiów pielęgniarskich w ośmiu największych
-krajach UE w roku 2018
-
-**Jednostka badania**: absolwent studiów pielęgniarskich w roku 2018, 
-
-**Badana cecha**: kraj w którym ukończył studia (nominalna)
-
+::: {.example}
+**Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
 
 ```{r, echo=F}
 members <- read.csv("eu_codes_members.csv", sep = ';', dec = ".",  header=T, na.string="NA" ) %>%
@@ -69,20 +64,37 @@ t1
 ```
 
 Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)
+:::
 
-**Przykład 2**: Tablica dla cechy mierzalnej (liczbowej; skokowej lub ciągłej)
+W przykładzie **jednostką badania** jest absolwent studiów pielęgniarskich w roku 2018, 
+**badaną cechą** zaś **kraj w którym ukończył studia** (cecha nominalna).
 
-Jeżeli liczba wariantów cechy jest mała tablica zawiera wyliczenie
-wariantów cechy i odpowiadających im liczebności. Jeżeli liczba wariantów
+
+**Tablica dla cechy mierzalnej liczbowej skokowej**
+
+Cecha skokowa to taka cecha, która może przyjąć skończoną liczbę wartości.
+Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb całkowitych.
+
+Jeżeli tych wartości jest mało tablica zawiera wyliczenie
+wartości cechy i odpowiadających im liczebności. Jeżeli liczba wariantów
 cechy jest duża tablica zawiera klasy wartości (przedziały wartości)
 oraz odpowiadające im liczebności.
 
-* Co do zasady klasy wartości powinny być jednakowej rozpiętości.
+Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
+
+* przedziały wartości powinny być jednakowej rozpiętości.
 
 * Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
-były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej
-(ostatni) **granicy**
+  były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**
 
+* nie było przedziałów z zerową liczebnością
+
+* przedziałów nie było za dużo ani za mało (typowo 8--15)
+
+* większość populacji nie znajdowała się w jednej czy dwóch przedziałach
+
+::: {.example}
+**Gospodarstwa domowe wg liczby samochodów**
 
 Tablica: Gospodarstwa domowe we wsi X wg liczby samochodów w roku 2022
 
@@ -97,10 +109,36 @@ t3
 ```
 
 Źródło: obliczenia własne
+:::
 
-Tablica dla cechy mierzalnej (liczbowej ciągłej--wymaga pogrupowania w klasy):
+**Tablica dla cechy mierzalnej liczbowej ciągłej**
 
-**Przykład**: Dzietność kobiet na świecie
+Cecha ciągła to taka cecha, która może przyjąć nieskończoną/nieprzeliczalną liczbę wartości.
+Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb rzeczywistych.
+
+Tablica zawiera klasy wartości (przedziały wartości)
+oraz odpowiadające im liczebności.
+
+Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
+
+* przedziały wartości powinny być jednakowej rozpiętości.
+
+* Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
+  były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**
+
+* nie było przedziałów z zerową liczebnością
+
+* przedziałów nie było za dużo ani za mało (typowo 8--15)
+
+* większość populacji nie znajdowała się w jednej czy dwóch przedziałach
+
+* zwykle przyjmuje się za końce przedziałów **okrągłe liczby**
+  bo dziwnie 
+  by wyglądało gdyby koniec przedziału np. był równy 1,015 zamiast 1,0. 
+
+
+::: {.example}
+**Dzietność kobiet na świecie**
 
 Współczynnik dzietności (*fertility ratio* albo FR) -- przeciętna liczba urodzonych dzieci przypadających
 na jedną kobietę w wieku rozrodczym (15–49 lat).
@@ -130,18 +168,6 @@ Krajów jest `r N2018`. Wartość minimalna to `r min2018` a wartość
 maksymalna to `r max2018`. Decydujemy się na rozpiętość przedziału równą 0,5;
 dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
 
-Zwykle przyjmuje się za końce przedziałów **okrągłe liczby**
-bo dziwnie by wyglądało gdyby koniec przedziału np. był równy 1,05
-zamiast 1,0. 
-
-Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
-
-* nie było przedziałów z zerową liczebnością
-
-* przedziałów nie było za dużo ani za mało (typowo 8--15)
-
-* większość populacji nie znajdowała się w jednej czy dwóch przedziałach
-
 
 Tablica: Kraje świata według współczynnika dzietności (2018)
 
@@ -157,6 +183,9 @@ t2
 ```
 
 Źródło: https://ourworldindata.org/grapher/fertility-rate-complete-gapminder
+
+:::
+
 
 Każda tablica statystyczna **musi** mieć:
 
@@ -201,7 +230,7 @@ zdecydowanie gorszy od wykresu słupkowego i nie jest zalecany.
 **Każdy** wykres kołowy można wykreślić jako słupkowy i w takiej postaci
 będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 
-### skala nominalna
+### Skala nominalna
 
 Wykres słupkowy (*bar chart*)
 
@@ -293,7 +322,7 @@ pc41 <- ggplot(g2, aes(x = reorder(member, values), y=values )) +
 pc41
 ```
 
-### skala liczbowa
+### Skala liczbowa
 
 Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
 wariantów cechy są przedziały wartości.
@@ -326,11 +355,15 @@ Aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polo
 nie tylko staranną ewidencję szpitalną, ale zgromadzone dane potrafiła analizować, używając
 także wykresów własnego projektu.
 
-W szczególności słynny jest diagram Nightingale zwane także różą Nightingale, które wprawdzie
+W szczególności słynny jest diagram Nightingale zwane także 
+różą Nightingale (rys. \@ref(fig:nightingale)), które wprawdzie
 (podobno) nie okazały się szczególnie użyteczny, no ale nie każdy nowy 
 pomysł jest od razu genialny:
 
-![](./FN_diagram.jpg)
+```{r nightingale, fig.cap = "Róża Nightingale"}
+knitr::include_graphics("./FN_diagram.jpg")
+```
+
 
 Jest to coś w rodzaju wykresu słupkowego tyle że zamiast słupków są wycinki koła. Wycinków jest dwanaście tyle ile miesięcy.
 Długość promienia a co za tym idzie wielkość pola wycinka zależy od wielkości zjawiska,
@@ -409,7 +442,8 @@ Drugi kwartyl to mediana.
 **Centyle** (P, wartości setne), podobnie jak kwantyle tyle że dzielą na 100 części.
 Przykładowo wartość 99 centyla i mniejszą ma 99% jednostek w populacji.
 
-**Przykład: współczynnik dzietności na świecie w roku 2018**
+::: {.example}
+**Współczynnik dzietności na świecie w roku 2018**
 
 Średnia wartość współczynnika `r sprintf ("%.2f", mean2018)`; mediana -- `r median2018`. 
 Interpretacja średniej:
@@ -419,6 +453,7 @@ wartość współczynnika dzietności wyniosła `r sprintf ("%.2f", mean2018)` d
 Interpretacja mediany: dzietność kobiet w połowie krajów na świecie
 wynosiła `r median2018` i mniej. Uwaga: dzietność połowy kobiet na świecie wyniosła
 `r median2018` i mniej jest niepoprawną interpretacją (różne wielkości krajów.)
+:::
 
 **Generalna uwaga**: interpretacja średniej-średnich często jest nieoczywista i należy uważać.
 (a współczynnik dzietności jest średnią: średnia liczba dzieci urodzonych przez kobietę 
@@ -427,12 +462,14 @@ Inny przykład: odsetek ludności w wieku poprodukcyjnym wg powiatów (średnia 
 nie da nam odsetka ludności w wieku poprodukcyjnym w Polsce, 
 bo powiaty różnią się liczbą ludności.)
 
-**Kontynuując przykład**:
+::: {.example}
+**Współczynnik dzietności (kontynuuacja)**:
 
 Pierwszy kwartyl: `r q1.2018`; trzeci kwartyl `r q3.2018` co oznacza że
 25% krajów miało wartość współczynnika dzietności nie większą niż `r q1.2018` dziecka
 a 75% krajów miało wartość współczynnika dzietności 
 nie większą niż `r q3.2018` dziecka.
+:::
 
 ### Miary zmienności
 
@@ -446,7 +483,6 @@ Rodzaje miar zmienności:
 * Pozycyjne
   + rozstęp
   + rozstęp ćwiartkowy
-
 
 **Wariancja** (*variance*) jest to średnia arytmetyczna kwadratów
 odchyleń poszczególnych wartości cechy od średniej arytmetycznej
@@ -468,7 +504,8 @@ R_Q = Q_3 - Q_1
 $$
 gdzie: $Q_1$, $Q_3$ oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 
-**Przykład**: współczynnik dzietności na świecie w roku 2018 (cd)
+::: {.example}
+**Współczynnik dzietności (kontynuacja)**
 
 ```{r, echo=F}
 sd2018 <-  sd(d2018$frate)
@@ -477,6 +514,7 @@ iqr2018 <- q3.2018 - q1.2018
 
 Średnie odchylenie od średniej wartości współczynnika wynosi `r sd2018` dziecka. 
 Wartość rozstępu ćwiartkowego wynosi `r iqr2018` dziecka.
+:::
 
 **Uwaga**: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
 podać jednostkę miary.
@@ -540,7 +578,8 @@ fb <- read.csv("rwc-2015-2023.csv", sep = ';', dec = ".",  header=T, na.string="
 
 ```
 
-**Przykład: masa ciała uczestników Pucharu Świata w Rugby**
+::: {.example}
+**Masa ciała uczestników Pucharu Świata w Rugby**
 
 W turniejach o puchar świata w Rugby w latach 2015, 2019 i 2023 uczestniczyło łącznie `r nrow(fb)` zawodników.
 W grze w rugby drużyna jest podzielona na dwie **formacje**: ataku i młyna. Należy scharakteryzować
@@ -657,6 +696,7 @@ Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu g
 ```{r}
 ggarrange(h1.b, h1.f, ncol = 2, nrow = 1)
 ```
+:::
 
 ### Wykres pudełkowy
 

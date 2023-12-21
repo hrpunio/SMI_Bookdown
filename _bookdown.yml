@@ -1,6 +1,26 @@
 delete_merged_file: true
 language:
-  ui:
-    chapter_name: "Chapter "
+  label:
+    fig: 'Rysunek '
+    tab: 'Tabela '
+    eq: 'Równanie '
+    thm: 'Twierdzenie '
+    lem: 'Lemat '
+    cor: 'Corollary '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Definicja '
+    exm: 'Przykład '
+    exr: 'Ćwiczenie '
+    hyp: 'Hipoteza '
+    proof: 'Proof. '
+    remark: 'Remark. '
+    solution: 'Solution. '
+ui:
+    edit: Edit
+    chapter_name: ''
+    appendix_name: ''
+    abstract_name: ''
+    abstract: ''
 output_dir: "docs"
 split_by: rmd
