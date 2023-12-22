@@ -1,0 +1,7 @@
+# Literatura
+
+Beaglehole, Robert, Ruth Bonita, and Tord Kjellstrom. 1996. *Podstawy Epidemiologii*. Instytut Medycyny Pracy.
+
+Bland, Martin. 2015. *An Introduction to Medical Statistics*. Oxford University Press.
+
+Machin, David, Michael J Campbell, and Stephen J Walters. 2007. *Medical Statistics*. John Wiley.
