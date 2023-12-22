@@ -1181,7 +1181,11 @@ Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
 Kolumna `Beta`, której wcześniej nie było, zawiera standaryzowane
 oceny parametrów regresji. Tej kolumny na poprzednich wydrukach nie było
 bo w przypadku regresji 
-prostej standaryzacja jest zabiegiem raczej zbędnym.
+prostej standaryzacja jest zabiegiem raczej zbędnym. Dla wyrazu wolnego
+nie ma wartości standaryzowanej (oznaczone jako `NA` czyli *not available*),
+ale to żadna strata--oceny tego parametru nie są interpretowane.
+Wpływ `BMI` na wielkość ciśnienia jest nieco niższy niż `age`.
+
 
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
 wyniki:
@@ -1208,7 +1212,9 @@ kable(lm.2.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI95') )
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
+Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Wpływ `BMI` na wielkość ciśnienia jest teraz wyższy niż `age`. Przedziały ufności są węższe
+co wynika z większej liczebności próby.
 
 Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
 wyniki:
@@ -1236,7 +1242,10 @@ kable(lm.3.coef.df, row.names = F, digits=3,
 ```
 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
-
+Przedziały ufności są jeszcze węższe. Ocena `age` 
+z 95% prawdopodobieństwem znajdujesię w przedziale [0.290 0.350]
+a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0.240 0.730].
+Przedział jest ponad 8 razy węższy...
 :::
 
 

@@ -234,6 +234,10 @@ będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 
 Wykres słupkowy (*bar chart*)
 
+:::{.example}
+**Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
+
+
 ```{r, echo=F}
 
 g2 <- g0 %>%
@@ -260,11 +264,16 @@ pc4 <- ggplot(g1, aes(x = reorder(member, values), y=values )) +
   coord_flip()+ 
   ggtitle("Rysunek: Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
   theme(plot.title = element_text(hjust = 0.5, size=8)) +
-  labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
+  labs(caption="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc4
 ```
 
-Ekwiwalentny wykres kołowy wygląda być może efektowniej (z uwagi na paletę kolorów)
+:::
+
+Wykres kołowy (*pie chart*)
+
+:::{.example}
+**Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
 
 ```{r, echo=F}
 pc2 <- g1 %>%
@@ -281,15 +290,21 @@ pc2 <- g1 %>%
   labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc2
 ```
+:::
 
+Wykres słupkowy i kołowy przedstawiają dokładnie to samo.
 
-Ale jest mniej efektywny. Wymaga legendy w szczególności, która utrudnia 
+Wykres kołowy wygląda zapewne efektowniej (z uwagi na paletę kolorów)
+ale jest mniej efektywny. Wymaga legendy w szczególności, która utrudnia 
 interpretację treści (nieustannie trzeba porównywać koło z legendą żeby ustalić
 który kolor to który kraj.)
 
 Jeżeli zwiększymy liczbę krajów wykres kołowy staje się zupełnie nieczytelny
 (brakuje rozróżnialnych kolorów a wycinki koła są zbyt wąskie żeby cokolwiek
 wyróżniały):
+
+:::{.example}
+**Absolwenci studiów pielęgniarskich w krajach UE**
 
 ```{r, echo=F}
 pc21 <- g2 %>%
@@ -322,12 +337,15 @@ pc41 <- ggplot(g2, aes(x = reorder(member, values), y=values )) +
 pc41
 ```
 
+:::
+
 ### Skala liczbowa
 
 Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
 wariantów cechy są przedziały wartości.
-Histogram przedstawiający rozkład współczynników dzietności dla 
-wszystkich krajów świata w roku 2018
+
+:::{.example}
+**Dzietność kobiet na świecie**
 
 ```{r message=FALSE, echo=FALSE}
 h2018 <- ggplot(d2018, aes(x = frate)) + 
@@ -341,19 +359,20 @@ h2018
 
 ```
 
+:::
+
 Podobnie jak tablice, rysunki powinny być opatrzone tytułem
 oraz zawierać źródło wskazujące na pochodzenie danych
 (zobacz przedstawione przykłady.)
 
 ## Florence Nightingale
 
-Nie każdy wie że Florence Nightingale, która 
-w czasie wojny krymskiej zorganizowała opiekę nad rannymi żołnierzami,
-była także statystykiem.
-
-Aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe prowadziła
-nie tylko staranną ewidencję szpitalną, ale zgromadzone dane potrafiła analizować, używając
-także wykresów własnego projektu.
+Nie każdy kto wie kim była Florence Nightingale, wie że
+była ona także statystykiem. W czasie wojny krymskiej nie tylko 
+zorganizowała opiekę nad rannymi żołnierzami, ale również
+-- aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe 
+-- prowadziła staranną ewidencję szpitalną oraz 
+zgromadzone dane potrafiła analizować, używając wykresów własnego projektu.
 
 W szczególności słynny jest diagram Nightingale zwane także 
 różą Nightingale (rys. \@ref(fig:nightingale)), które wprawdzie
