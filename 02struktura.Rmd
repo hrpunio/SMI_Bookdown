@@ -360,7 +360,7 @@ różą Nightingale (rys. \@ref(fig:nightingale)), które wprawdzie
 (podobno) nie okazały się szczególnie użyteczny, no ale nie każdy nowy 
 pomysł jest od razu genialny:
 
-```{r nightingale, fig.cap = "Róża Nightingale"}
+```{r nightingale, out.width="90%", fig.cap = "Róża Nightingale"}
 knitr::include_graphics("./FN_diagram.jpg")
 ```
 

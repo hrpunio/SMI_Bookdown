@@ -1,1 +1,25 @@
+%%%
+\usepackage[a4paper, total={6in, 8.6in}]{geometry}
+%%
+\usepackage{polyglossia}  \setdefaultlanguage{polish}
+%%
 \usepackage{booktabs}
+\usepackage{fontspec}
+\setmainfont{Cambria}
+\setmathfont{Cambria Math}
+%% Supress any other theorems (probably)
+\newtheorem{theorem}{}
+
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{example}[1][]{%
+    colback=black!5,
+    colframe=black!5,
+    notitle,
+    sharp corners,
+    enhanced,
+    breakable,
+}
+
+
+%%%

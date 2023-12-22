@@ -8,6 +8,8 @@ date: "![Niedatowany/wersja robocza](./FN.jpg){width=50%} "
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
+classoption:
+  - openany
 link-citations: yes
 description: (c) Tomasz Przechlewski / CC-BY license
 subtitle: Podręcznik dla studentów wydziałów nauk o zdrowiu
@@ -25,6 +27,8 @@ library("ggpubr")
 library("rstatix")
 library ("lm.beta")
 library ("pROC")
+##
+## options(bookdown.theorem.preamble = FALSE)
 ##
 sample.size <- 1000
 
@@ -50,6 +54,13 @@ diffMx <- function (s, t)  {
   return ( sum(abs(mean.diff) > max.err) )
   }
 
+# Not working either
+# https://github.com/rstudio/bookdown/issues/750
+#options(bookdown.post.latex = function(x) {
+#    from <- grep("usepackage\\{amsthm\\}", x)
+#    to <- grep("newtheorem\\*\\{solution", x)
+#    x <- x[-c(from:to)]
+#  })
 
 ```
 

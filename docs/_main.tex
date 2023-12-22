@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-]{book}
+  openany]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -63,7 +63,31 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+%%%
+\usepackage[a4paper, total={6in, 8.6in}]{geometry}
+%%
+\usepackage{polyglossia}  \setdefaultlanguage{polish}
+%%
 \usepackage{booktabs}
+\usepackage{fontspec}
+\setmainfont{Cambria}
+\setmathfont{Cambria Math}
+%% Supress any other theorems (probably)
+\newtheorem{theorem}{}
+
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{example}[1][]{%
+    colback=black!5,
+    colframe=black!5,
+    notitle,
+    sharp corners,
+    enhanced,
+    breakable,
+}
+
+
+%%%
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -86,7 +110,7 @@
 \makeatother
 \subtitle{Podręcznik dla studentów wydziałów nauk o zdrowiu}
 \author{true}
-\date{Niedatowany/wersja robocza}
+\date{\includegraphics[width=0.5\textwidth,height=\textheight]{./FN.jpg}}
 
 \begin{document}
 \maketitle
@@ -259,7 +283,10 @@ Są dwa fundamentalne rodzaje pomiaru
 
 Mówimy w związku z tym \textbf{dane eksperymentalne} albo \textbf{dane obserwacyjne}.
 
-\textbf{Przykład}: chcemy ustalić czy spożywanie kawy w czasie sesji egzaminacyjnej
+\begin{example}
+\textbf{Picie kawy a lepsza ocena}
+
+Chcemy ustalić czy spożywanie kawy w czasie sesji egzaminacyjnej
 skutkuje uzyskaniem lepszej oceny. W celu oceny prawdziwości takiej
 tezy przeprowadzono badanie wśród studentów pytając ich o to ile
 kawy pili w czasie sesji i zestawiając te dane z wynikami egzaminów.
@@ -274,6 +301,7 @@ Prawdziwą przyczyną jest czas poświęcony na przygotowanie a nie to ile ktoś
 wypił lub nie wypił kawy. Inaczej mówiąc gdyby ktoś pił dużo kawy,
 bo uwierzył, że to poprawi mu wyniki
 i się nie uczył, to pewnie by się rozczarował.
+\end{example}
 
 Rodzaje badań: \textbf{eksperymentalne} vs \textbf{obserwacyjne}.
 
@@ -297,10 +325,10 @@ Manipulacja określana jest jako
 ekspozycja (\textbf{exposure}) albo leczenie (\textbf{treatment})
 Zmienne ukryte określa się mianem \textbf{confunding factors} (\textbf{czynniki zakłócające})
 
-Rysunek przedstawia zależność pomiędzy wynikiem (\emph{outcome}), przyczyną
+Rysunek \ref{fig:fluor} przedstawia zależność pomiędzy wynikiem (\emph{outcome}), przyczyną
 oraz czynnikami zakłócającymi na przykładzie zależności dotyczącej domniemanego
 wpływu fluoryzowania wody na zwiększenie ryzyka zgonów z powodu nowotworów.
-W badaniu którego autor uważał że udowodnił związek fluoryzowanie→nowotór
+W badaniu którego autor uważał, że udowodnił związek fluoryzowanie→nowotór
 porównał on współczynniki zgonów z miast fluoryzujących oraz
 nie fluoryzujących wodę. Okazało się, że przeciętnie współczynnik ten był wyższy
 w grupie miast fluoryzujących wodę. Czy to świadczy, że fluoryzowanie wody
@@ -312,7 +340,9 @@ A ponieważ współczynniki zgonów rosną wraz ze wzrostem wieku, to nie można
 wykluczyć, że prawdziwą przyczyną obserwowanego zwiększenia wartości
 współczynników zgonów jest wiek a nie fluoryzacja wody.
 
-\includegraphics{./Model1.png}
+\begin{figure}
+\includegraphics[width=17.25in]{./Model1_cropped} \caption{Fluoryzacja, wiek a nowotwór}\label{fig:fluor}
+\end{figure}
 
 \textbf{Efekt przyczynowy} to \textbf{ilościowe} określenie wpływu
 ekspozycji na wynik
@@ -348,8 +378,10 @@ ATT - ATC (albo ATT/ATC)
 gdzie: ATT oznacza ATE w grupie eksperymentalnej
 a ATC oznacza ATE w grupie kontrolnej.
 
-\textbf{Przykład (kontynuuacja)}:
-można przypuszczać, że oprócz kawy na wynik egzaminu ma wpływ np. wrodzone predyspozycje
+\begin{example}
+\textbf{Kawa a ocena (kontynuuacja)}
+
+Można przypuszczać, że oprócz kawy na wynik egzaminu ma wpływ np. wrodzone predyspozycje
 w dziedzinie intelektualnej oraz czas poświęcony na naukę.
 Aby kontrolować ten czynnik można podzielić losowo grupę studentów;
 dzięki czemu średnia wielkość predyspozycji oraz czasu w obu grupach będzie podobna.
@@ -360,6 +392,7 @@ grupie studentów pijących 1l kawy okazały się wyższe niż w grupie pijącej
 Czy można powiedzieć że udowodniono
 iż picie dużej ilości kawy poprawia wynik egzaminu?
 Raczej tak\ldots{}
+\end{example}
 
 \textbf{Badania obserwacyjne} można z kolei podzielić na \textbf{analityczne} i \textbf{opisowe}.
 
@@ -401,20 +434,27 @@ bez podziału na grupę eksperymentalną i kontrolną.
 Problem: nie da się określić związku przyczyna-skutek w taki sposób jaki się stosuje w badaniach analitycznych,
 ale można do tego celu zastosować \textbf{model} regresji liniowej.
 
-\textbf{Przykład}: badamy grupę pacjentów przychodni onkologicznej. Stwierdzamy że 90\% z nich paliło
+\begin{example}
+\textbf{Palenie a nowotwór}
+
+Badamy grupę pacjentów przychodni onkologicznej. Stwierdzamy że 90\% z nich paliło
 papierosy. Czy z tego wynika że palenie powoduje raka? Niekoniecznie. Możemy \textbf{dopasować}
 pacjentów o podobnym profilu demograficzno-społecznym z innej przychodni (którzy nie chorują na raka)
 i stwierdzić że 20\% z nich paliło.
 To już jest konkretny argument -- ale takie badanie nie jest już \textbf{przekrojowe}
 tylko \textbf{kliniczno-kontrolne}.
+\end{example}
 
-\textbf{Przykład (kontynuuacja)}:
+\begin{example}
+\textbf{Kawa a ocena (kontynuuacja)}
+
 można oprócz pytania studentów o ilość kawy i wynik pytać ich jeszcze o czas poświęcony
 na naukę oraz o średnią ze studiów (wrodzone predyspozycje w dziedzinie intelektualnej).
 Za pomocą metody regresji możemy ustalić czy i jak bardzo kawa, czas i predyspozycje
 wpływają na ocenę. Teoretycznie zamiast eksperymentu można używać regresji, ale jest to w większości
 przypadków trudne--albo zmienne nie da się zmierzyć (czy średnia ze studiów jest dobrą miarą predyspozycji?)
-albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale 3.
+albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale \ref{causality}.
+\end{example}
 
 Badanie \textbf{ekologiczne}: badanie (przekrojowe) zależności pomiędzy danymi \textbf{zagregowanymi} a nie indywidualnymi.
 Przykładowo zależność pomiędzy przeciętną
@@ -454,7 +494,8 @@ wykorzystane w pracy wystarczy zapoznać się z treścią punktu \textbf{materia
 powinien tam być określony \textbf{rodzaj badania}: eksperyment, badanie kohortowe, kliniczno-kontrolne,
 przekrojowe lub inne\ldots{}
 
-\textbf{Przykład 1: Czy konsumpcja soli kuchennej szkodzi? (eksperyment)}
+\begin{example}
+\textbf{Czy konsumpcja soli kuchennej szkodzi? (eksperyment)}
 
 Neal B. i inni zastosowali eksperyment kontrolowany do zbadania
 wpływu substytucji chlorku sodu chlorkiem potasu na choroby sercowo-naczyniowe
@@ -469,8 +510,10 @@ chlorku sodu; grupa badana zaś używała soli tradycyjnej czyli zawierającej
 wyłącznie chlorek sodu. Obserwowano w okresie pięcioletnim w obu grupach
 liczbę udarów, incydentów sercowo-naczyniowych oraz zgonów. Wpływ
 substytucji oceniono porównując współczynniki ryzyka w obu grupach.
+\end{example}
 
-\textbf{Przykład 2: Konflikt praca-dom w zawodzie pielęgniarki (przekrojowe)}
+\begin{example}
+\textbf{Konflikt praca-dom w zawodzie pielęgniarki (przekrojowe)}
 
 Simon i inni badali konflikt Praca-Dom w zawodzie Pielęgniarki/Pielęgniarza
 (Work-Home Conflict in the European Nursing Profession
@@ -495,6 +538,7 @@ a przyczyny WHC ustalono za pomocą metody regresji wielorakiej.
 
 Teraz porówajmy koszty badania \#1, w którym jedynie starano się ustalić że sól szkodzi (lub nie)
 z badaniem \#2, w którym starano się ustalić przyczyny stanów psychicznych badanych-:)
+\end{example}
 
 \hypertarget{miary-czux119stoux15bci-choruxf3b}{%
 \section{Miary częstości chorób}\label{miary-czux119stoux15bci-choruxf3b}}
@@ -548,8 +592,9 @@ i mamy w tym zakresie trzy możliwości:
 
 W większości podręczników opisuje się \textbf{procedury}
 oraz \textbf{program}, w którym te procedury można zastosować jednocześnie.
-My zdecydowaliśmy się oddzielnie przestawić teorię statystyki (rozdziały 1--4)
-a oddzielnie opis posługiwania się konkretnym programem (rozdział 5.)
+My zdecydowaliśmy się oddzielnie przestawić teorię
+statystyki (rozdziały \ref{przedmiotbadan}--\ref{surveyexamples})
+a oddzielnie opis posługiwania się konkretnym programem (rozdział \ref{intro2jamovi})
 
 \hypertarget{analiza1z}{%
 \chapter{Analiza jednej zmiennej}\label{analiza1z}}
@@ -592,14 +637,10 @@ wartościom cechy zmiennej odpowiedniej \textbf{liczby wystąpień} (liczebnośc
 \textbf{Tablica statystyczna} to (w podstawowej formie) dwukolumnowa tabela zawierająca
 wartości cechy oraz odpowiadające tym wartościom liczebności.
 
-\textbf{Przykład 1}: Tablica dla cechy niemierzalnej (nominalnej albo porządkowej)
+\textbf{Tablica dla cechy niemierzalnej (nominalnej albo porządkowej)}
 
-Absolwenci studiów pielęgniarskich w ośmiu największych
-krajach UE w roku 2018
-
-\textbf{Jednostka badania}: absolwent studiów pielęgniarskich w roku 2018,
-
-\textbf{Badana cecha}: kraj w którym ukończył studia (nominalna)
+\begin{example}
+\textbf{Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE}
 
 Tablica: Absolwenci studiów pielęgniarskich w ośmiu największych
 krajach UE w roku 2018
@@ -627,22 +668,39 @@ Romania & 18664\\
 \end{tabular}
 
 Źródło: Eurostat, tablica Health graduates (HLTH\_RS\_GRD)
+\end{example}
 
-\textbf{Przykład 2}: Tablica dla cechy mierzalnej (liczbowej; skokowej lub ciągłej)
+W przykładzie \textbf{jednostką badania} jest absolwent studiów pielęgniarskich w roku 2018,
+\textbf{badaną cechą} zaś \textbf{kraj w którym ukończył studia} (cecha nominalna).
 
-Jeżeli liczba wariantów cechy jest mała tablica zawiera wyliczenie
-wariantów cechy i odpowiadających im liczebności. Jeżeli liczba wariantów
+\textbf{Tablica dla cechy mierzalnej liczbowej skokowej}
+
+Cecha skokowa to taka cecha, która może przyjąć skończoną liczbę wartości.
+Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb całkowitych.
+
+Jeżeli tych wartości jest mało tablica zawiera wyliczenie
+wartości cechy i odpowiadających im liczebności. Jeżeli liczba wariantów
 cechy jest duża tablica zawiera klasy wartości (przedziały wartości)
 oraz odpowiadające im liczebności.
 
+Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
+
 \begin{itemize}
 \item
-  Co do zasady klasy wartości powinny być jednakowej rozpiętości.
+  przedziały wartości powinny być jednakowej rozpiętości.
 \item
   Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
-  były \textbf{otwarte}, tj. nie miały dolnej (pierwszy) lub górnej
-  (ostatni) \textbf{granicy}
+  były \textbf{otwarte}, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) \textbf{granicy}
+\item
+  nie było przedziałów z zerową liczebnością
+\item
+  przedziałów nie było za dużo ani za mało (typowo 8--15)
+\item
+  większość populacji nie znajdowała się w jednej czy dwóch przedziałach
 \end{itemize}
+
+\begin{example}
+\textbf{Gospodarstwa domowe wg liczby samochodów}
 
 Tablica: Gospodarstwa domowe we wsi X wg liczby samochodów w roku 2022
 
@@ -663,10 +721,38 @@ razem & 585 & 100.0000000\\
 \end{tabular}
 
 Źródło: obliczenia własne
+\end{example}
 
-Tablica dla cechy mierzalnej (liczbowej ciągłej--wymaga pogrupowania w klasy):
+\textbf{Tablica dla cechy mierzalnej liczbowej ciągłej}
 
-\textbf{Przykład}: Dzietność kobiet na świecie
+Cecha ciągła to taka cecha, która może przyjąć nieskończoną/nieprzeliczalną liczbę wartości.
+Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb rzeczywistych.
+
+Tablica zawiera klasy wartości (przedziały wartości)
+oraz odpowiadające im liczebności.
+
+Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
+
+\begin{itemize}
+\item
+  przedziały wartości powinny być jednakowej rozpiętości.
+\item
+  Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
+  były \textbf{otwarte}, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) \textbf{granicy}
+\item
+  nie było przedziałów z zerową liczebnością
+\item
+  przedziałów nie było za dużo ani za mało (typowo 8--15)
+\item
+  większość populacji nie znajdowała się w jednej czy dwóch przedziałach
+\item
+  zwykle przyjmuje się za końce przedziałów \textbf{okrągłe liczby}
+  bo dziwnie
+  by wyglądało gdyby koniec przedziału np. był równy 1,015 zamiast 1,0.
+\end{itemize}
+
+\begin{example}
+\textbf{Dzietność kobiet na świecie}
 
 Współczynnik dzietności (\emph{fertility ratio} albo FR) -- przeciętna liczba urodzonych dzieci przypadających
 na jedną kobietę w wieku rozrodczym (15--49 lat).
@@ -679,21 +765,6 @@ Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w rok
 Krajów jest 201. Wartość minimalna to 1.22 a wartość
 maksymalna to 7.13. Decydujemy się na rozpiętość przedziału równą 0,5;
 dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
-
-Zwykle przyjmuje się za końce przedziałów \textbf{okrągłe liczby}
-bo dziwnie by wyglądało gdyby koniec przedziału np. był równy 1,05
-zamiast 1,0.
-
-Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
-
-\begin{itemize}
-\item
-  nie było przedziałów z zerową liczebnością
-\item
-  przedziałów nie było za dużo ani za mało (typowo 8--15)
-\item
-  większość populacji nie znajdowała się w jednej czy dwóch przedziałach
-\end{itemize}
 
 Tablica: Kraje świata według współczynnika dzietności (2018)
 
@@ -728,6 +799,7 @@ Wsp. dzietności & liczba krajów\\
 \end{tabular}
 
 Źródło: \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder}
+\end{example}
 
 Każda tablica statystyczna \textbf{musi} mieć:
 
@@ -793,7 +865,7 @@ zdecydowanie gorszy od wykresu słupkowego i nie jest zalecany.
 będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 
 \hypertarget{skala-nominalna}{%
-\subsection{skala nominalna}\label{skala-nominalna}}
+\subsection{Skala nominalna}\label{skala-nominalna}}
 
 Wykres słupkowy (\emph{bar chart})
 
@@ -818,7 +890,7 @@ Wykres słupkowy dalej jest natomiast OK:
 \includegraphics{_main_files/figure-latex/unnamed-chunk-9-1.pdf}
 
 \hypertarget{skala-liczbowa}{%
-\subsection{skala liczbowa}\label{skala-liczbowa}}
+\subsection{Skala liczbowa}\label{skala-liczbowa}}
 
 Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
 wariantów cechy są przedziały wartości.
@@ -842,11 +914,14 @@ Aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polo
 nie tylko staranną ewidencję szpitalną, ale zgromadzone dane potrafiła analizować, używając
 także wykresów własnego projektu.
 
-W szczególności słynny jest diagram Nightingale zwane także różą Nightingale, które wprawdzie
+W szczególności słynny jest diagram Nightingale zwane także
+różą Nightingale (rys. \ref{fig:nightingale}), które wprawdzie
 (podobno) nie okazały się szczególnie użyteczny, no ale nie każdy nowy
 pomysł jest od razu genialny:
 
-\includegraphics{./FN_diagram.jpg}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{./FN_diagram} \caption{Róża Nightingale}\label{fig:nightingale}
+\end{figure}
 
 Jest to coś w rodzaju wykresu słupkowego tyle że zamiast słupków są wycinki koła. Wycinków jest dwanaście tyle ile miesięcy.
 Długość promienia a co za tym idzie wielkość pola wycinka zależy od wielkości zjawiska,
@@ -944,7 +1019,8 @@ Drugi kwartyl to mediana.
 \textbf{Centyle} (P, wartości setne), podobnie jak kwantyle tyle że dzielą na 100 części.
 Przykładowo wartość 99 centyla i mniejszą ma 99\% jednostek w populacji.
 
-\textbf{Przykład: współczynnik dzietności na świecie w roku 2018}
+\begin{example}
+\textbf{Współczynnik dzietności na świecie w roku 2018}
 
 Średnia wartość współczynnika 2.68; mediana -- 2.2.
 Interpretacja średniej:
@@ -954,6 +1030,7 @@ wartość współczynnika dzietności wyniosła 2.68 dziecka. Uwaga:
 Interpretacja mediany: dzietność kobiet w połowie krajów na świecie
 wynosiła 2.2 i mniej. Uwaga: dzietność połowy kobiet na świecie wyniosła
 2.2 i mniej jest niepoprawną interpretacją (różne wielkości krajów.)
+\end{example}
 
 \textbf{Generalna uwaga}: interpretacja średniej-średnich często jest nieoczywista i należy uważać.
 (a współczynnik dzietności jest średnią: średnia liczba dzieci urodzonych przez kobietę
@@ -962,12 +1039,14 @@ Inny przykład: odsetek ludności w wieku poprodukcyjnym wg powiatów (średnia 
 nie da nam odsetka ludności w wieku poprodukcyjnym w Polsce,
 bo powiaty różnią się liczbą ludności.)
 
-\textbf{Kontynuując przykład}:
+\begin{example}
+\textbf{Współczynnik dzietności (kontynuuacja)}:
 
 Pierwszy kwartyl: 1.75; trzeci kwartyl 3.56 co oznacza że
 25\% krajów miało wartość współczynnika dzietności nie większą niż 1.75 dziecka
 a 75\% krajów miało wartość współczynnika dzietności
 nie większą niż 3.56 dziecka.
+\end{example}
 
 \hypertarget{miary-zmiennoux15bci}{%
 \subsection{Miary zmienności}\label{miary-zmiennoux15bci}}
@@ -1018,10 +1097,12 @@ R_Q = Q_3 - Q_1
 \]
 gdzie: \(Q_1\), \(Q_3\) oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 
-\textbf{Przykład}: współczynnik dzietności na świecie w roku 2018 (cd)
+\begin{example}
+\textbf{Współczynnik dzietności (kontynuacja)}
 
 Średnie odchylenie od średniej wartości współczynnika wynosi 1.2595749 dziecka.
 Wartość rozstępu ćwiartkowego wynosi 1.81 dziecka.
+\end{example}
 
 \textbf{Uwaga}: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
 podać jednostkę miary.
@@ -1102,7 +1183,8 @@ Oraz
 Często strukturę jednego rozkładu należy porównać z innym. Albo trzeba porównać
 strukturę wielu rozkładów. Pokażemy jak to zrobić na przykładzie.
 
-\textbf{Przykład: masa ciała uczestników Pucharu Świata w Rugby}
+\begin{example}
+\textbf{Masa ciała uczestników Pucharu Świata w Rugby}
 
 W turniejach o puchar świata w Rugby w latach 2015, 2019 i 2023 uczestniczyło łącznie 1879 zawodników.
 W grze w rugby drużyna jest podzielona na dwie \textbf{formacje}: ataku i młyna. Należy scharakteryzować
@@ -1166,6 +1248,7 @@ jest to dokładnie 20 kg więcej).
 Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu grupach podobna.
 
 \includegraphics{_main_files/figure-latex/unnamed-chunk-17-1.pdf}
+\end{example}
 
 \hypertarget{wykres-pudeux142kowy}{%
 \subsection{Wykres pudełkowy}\label{wykres-pudeux142kowy}}
@@ -1212,8 +1295,8 @@ na 100 h polu. Można ściąć wszystkie i zważyć, ale można też ściąć
 trochę (pobrać próbę się mówi uczenie) zważyć i poznać średnią
 na całym polu z dobrą dokładnością.
 
-\hypertarget{przykux142adowy-problem-nr-1}{%
-\section{Przykładowy problem nr 1}\label{przykux142adowy-problem-nr-1}}
+\hypertarget{problem-1-masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}{%
+\section{Problem 1: masa ciała uczestników PŚ w rugby}\label{problem-1-masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}}
 
 W turnieju o Puchar Świata w rugby w 2015 roku uczestniczyło
 623 rugbystów. Znamy szczegółowe dane odnośnie wzrostu i wagi każdego
@@ -1241,15 +1324,15 @@ wariancji)
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    79.5    97.0   103.0   103.2   109.5   133.5
+##    76.0    95.5   102.5   102.4   109.0   130.0
 \end{verbatim}
 
-średnia (średnich z próby) ma wartość 103.17
-a odchylenie standardowe 9.03.
+średnia (średnich z próby) ma wartość 102.40
+a odchylenie standardowe 9.35.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
 z liczebności próby) jest równa 9.14. Zauważmy że ta wartość
 jest zbliżona do odchylenia standardowego uzyskanego
-w eksperymencie (9.03 vs 9.14)
+w eksperymencie (9.35 vs 9.14)
 
 \textbf{szacujemy średnią na podstawie 10 zawodników pobranych losowo}
 
@@ -1257,11 +1340,11 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    89.9   100.1   102.8   102.8   105.6   115.3
+##    89.9   100.1   102.7   102.9   105.8   117.9
 \end{verbatim}
 
-średnia wyszła 102.78 a odchylenie standardowe
-4.02.
+średnia wyszła 102.9 a odchylenie standardowe
+4.12.
 Wartość \(s/\sqrt{10}\) jest równa 4.09.
 
 \textbf{szacujemy średnią na podstawie 40 zawodników pobranych losowo}
@@ -1272,10 +1355,10 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   96.88  101.27  102.65  102.65  104.20  109.38
+##   95.88  101.35  102.72  102.72  104.05  110.03
 \end{verbatim}
 
-średnia jest równa 102.65 a odchylenie standardowe 2.15.
+średnia jest równa 102.72 a odchylenie standardowe 2.01.
 Wartość \(s/\sqrt{40}\) jest równa 2.04.
 
 \textbf{Wykres}
@@ -1321,8 +1404,8 @@ niemożliwe jest wynalezienie czegoś jeszcze bardziej efektywnego. Takim estyma
 Konkretną wartość estymatora dla konkretnych wartości próby nazywamy \textbf{oceną}
 (parametru)
 
-\hypertarget{przykux142adowy-problem-nr-2}{%
-\section{Przykładowy problem nr 2}\label{przykux142adowy-problem-nr-2}}
+\hypertarget{problem-2-wiek-kandydatuxf3w-na-radnych}{%
+\section{Problem 2: wiek kandydatów na radnych}\label{problem-2-wiek-kandydatuxf3w-na-radnych}}
 
 W wyborach samorządowychych w Polsce w roku 2018 o mandat radnego
 sejmików wojewódzkich ubiegało się 7076 kandydatów.
@@ -1349,11 +1432,11 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   20.00   39.50   46.50   46.52   54.00   77.50
+##   20.50   38.00   46.50   46.08   53.50   75.50
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.52 lat.
-Odchylenie standardowe wyniosło 10.3.
+Średnia średnich z próby ma wartość 46.08 lat.
+Odchylenie standardowe wyniosło 10.37.
 Wartość \(s/\sqrt{2}\) jest równa 10.33.
 
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}
@@ -1362,11 +1445,11 @@ Powtarzamy eksperyment 1000 razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   30.70   42.90   46.35   46.23   49.33   59.20
+##   30.90   43.00   46.10   46.24   49.50   62.60
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.23 lat.
-Odchylenie standardowe wyniosło 4.72.
+Średnia średnich z próby ma wartość 46.24 lat.
+Odchylenie standardowe wyniosło 4.76.
 Wartość \(s/\sqrt{10}\) jest równa 4.62.
 
 \textbf{Szacujemy średnią na podstawie 40 kandydatów pobranych losowo}
@@ -1376,11 +1459,11 @@ Powtarzamy eksperyment 1000 razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   38.85   44.70   46.30   46.31   47.85   54.10
+##   38.38   44.75   46.38   46.30   48.02   52.80
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.31 lat.
-Odchylenie standardowe wyniosło 2.3365597.
+Średnia średnich z próby ma wartość 46.3 lat.
+Odchylenie standardowe wyniosło 2.3842323.
 Wartość \(s/\sqrt{40}\) jest równa 2.3105373.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}
@@ -1389,11 +1472,11 @@ Uwaga: 70 kandydatów to około ok 1\% całości (1000 powtórzeń)
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   41.16   45.24   46.37   46.38   47.54   53.06
+##   41.17   45.08   46.24   46.30   47.49   51.81
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.38 lat.
-Odchylenie standardowe wyniosło 1.7595065
+Średnia średnich z próby ma wartość 46.3 lat.
+Odchylenie standardowe wyniosło 1.7287899
 Wartość \(s/\sqrt{70}\) jest równa 1.746602.
 
 \textbf{Wykres}
@@ -1495,7 +1578,8 @@ Uogólnieniem teoretycznym pojęcia \textbf{zmiennej statystycznej}, które do t
 używaliśmy jest \textbf{zmienna losowa}, zmienna której wartości są liczbami a realizują się
 z określonym prawdopodobieństwem np. określonym przez rozkład normalny.
 
-\textbf{Przykład: szacowanie odsetka kobiet}
+\hypertarget{problem-3-szacowanie-odsetka-kobiet}{%
+\section{Problem 3: szacowanie odsetka kobiet}\label{problem-3-szacowanie-odsetka-kobiet}}
 
 Dane dotyczące kandydatów zawierają także płeć. Ktoś może być ciekaw
 jaki był odsetek kobiet w tej grupie. Taki parametr nazywa się proporcją
@@ -1727,9 +1811,11 @@ Jaki jest charakter zależności? Jaka jest siła zależności?
 
 Rodzaj metod zastosowanej do empirycznej weryfikacji zależy
 w szczególności od sposobu pomiaru danych (nominalne, porządkowe, liczbowe.)
-co pokazano na diagramie.
+co pokazano na rysunku \ref{fig:metodyAZ}.
 
-\includegraphics{./DiagramMetod.png}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{./DiagramMetod} \caption{Metody statystycznej weryfikacji zależności pomiędzy zmiennymi}\label{fig:metodyAZ}
+\end{figure}
 
 Optymistyczną informacją jest że metod (oznaczonych krojem pogrubionym na diagramie),
 które omawiamy dalej w rodziale, jest raptem siedem czyli niedużo.
@@ -1743,7 +1829,8 @@ które omawiamy dalej w rodziale, jest raptem siedem czyli niedużo.
 Ryzyko to udział (iloraz) liczby sukcesów do liczby prób (zdarzeń pozytywnych/wyróżnionych do wszystkich). Zwykle podawany w procentach. Warto zauważyć że jest to
 empiryczny odpowiednik prawdopodobieństwa.
 
-\textbf{Przykład: Podawanie witaminy C a przeziębienie/brak przeziębienia}
+\begin{example}
+\textbf{Podawanie witaminy C a przeziębienie/brak przeziębienia}
 
 Eksperyment przeprowadził Linus Pauling (laureat nagrody Nobla
 za odkrycie witaminy C).
@@ -1771,6 +1858,7 @@ zachorowało 31. Zatem:
 Na tzw. chłopski rozum jeżeli witamina C \textbf{nie działa} to powinien
 zachorować ten sam odsetek narciarzy w obu grupach.
 A tak nie jest jak widać\ldots{}
+\end{example}
 
 Prostymi miarami oceny siły zależności mogą być:
 
@@ -1801,10 +1889,15 @@ Zamiast ryzyka (czyli ilorazu liczby sukcesów do liczby prób) można używać
 pojęcia szansa/szansy (\textbf{odds}) definiowanego
 jako iloraz sukcesów do porażek.
 
+Jeżeli \(o_e\) oznacza szanse w grupie eksperymentalnej
+a \(o_k\) w grupie kontrolnej, to \textbf{iloraz szans} (\emph{odds ratio}), jest
+definiowany jako stosunek \(\textrm{OR} = o_e/o_k\).
+
 Przykładowo jeżeli w dwukrotnym rzucie monetą otrzymano orła i reszkę to ryzyko
 otrzymania orła wynosi 1/2 = 0,5 a szansa otrzymania orła wynosi 1/1 = 1.
 
-\textbf{Przykład: Narciarze Paulinga cd}
+\begin{example}
+\textbf{Narciarze Paulinga (kontynuacja)}
 
 Ryzyko zachorowania w grupie C wynosi 12,2 (jak wiemy); natomiast szansa, że narciarz grupie C
 zachoruje wynosi 17/122 = 13,9\%. (A w grupie P wynosi 28,44\%)
@@ -1812,15 +1905,12 @@ zachoruje wynosi 17/122 = 13,9\%. (A w grupie P wynosi 28,44\%)
 Jak widać dla dużych ryzyk (rzut monetą) szansa
 różni się znacznie od prawdopodobieństwa, ale dla małych ryzyk obie miary mają zbliżoną wartość.
 
-Jeżeli \(o_e\) oznacza szanse w grupie eksperymentalnej
-a \(o_k\) w grupie kontrolnej, to \textbf{iloraz szans} (\emph{odds ratio}), jest
-definiowany jako stosunek \(\textrm{OR} = o_e/o_k\).
-
 Zatem iloraz szans
 dla narciarzy wyniesie 13,9/28,44 = 0,48.
 Podanie witaminy C zmniejsza szansę na zachorowanie o ponad połowę.
 Albo 1/0,48 = 2,04, narciarz który nie brał witaminy C ma ponad
 dwukrotnie większą szansę na zachorowanie.
+\end{example}
 
 Właściwości ilorazu szans:
 
@@ -1918,7 +2008,8 @@ Inne nazwy tych tabel to krzyżowe albo kontyngencji
 
 Ograniczmy się do analizy tabel dwudzielnych.
 
-\textbf{Przykład: Narciarze Paulinga jeszcze raz}
+\begin{example}
+\textbf{Narciarze Paulinga (kontynuacja)}
 
 Eksperyment Paulinga można przedstawić w postaci tablicy dwudzielczej
 (P/C oznacza czy narciarz zażywał witaminę czy placebo; cold/nocold
@@ -2039,6 +2130,7 @@ Czyli wystąpienie tak dużych różnic
 pomiędzy \textbf{oczekiwanymi} (przy założeniu o niezależności zmiennych)
 liczebnościami
 a obserwowanymi liczebnościami zdarza się około 4 razy na 100.
+\end{example}
 
 Jeszcze raz przypominamy ideę testu: jeżeli prawdopodobieństwo zaobserwowanych
 różnic jest małe to zakładamy że
@@ -2064,7 +2156,8 @@ słabszy niż z porówania ryzyk. Tam mamy informację że zależność istnieje
 i oszacowaną jej wielkość (np. za pomocą ryzyka względnego) tutaj tylko
 zweryfikowaliśmy fakt czy obie zmienne są niezależne czy też nie.
 
-\textbf{Przykład: palenie a status społeczno-ekonomiczny}
+\begin{example}
+\textbf{Palenie a status społeczno-ekonomiczny}
 
 Dla pewnej grupy osób odnotowujemy ich status-społeczno-ekonomiczny
 (wysoki/\textbf{high}, średni/\textbf{middle}, niski/\textbf{low})
@@ -2135,6 +2228,7 @@ Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy zał
 (porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi 0.000981.
 Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
 statusu i palenia (myląc się w przybliżeniu 0.000981 ≈ raz na tysiąc)
+\end{example}
 
 \hypertarget{zmienna-liczbowa-i-zmienna-nominalna}{%
 \section{Zmienna liczbowa i zmienna nominalna}\label{zmienna-liczbowa-i-zmienna-nominalna}}
@@ -2161,9 +2255,11 @@ więcej niż dwie). Stosujemy odpowiedni test statystyczny:
   o normalności rozkładów, to stosujemy test Kruskall-Wallisa
 \end{itemize}
 
-Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku
+Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku \ref{fig:testy}
 
-\includegraphics{./TestFlowChart.png}
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{./TestFlowChart} \caption{Testowanie istotości różnicy pomiędzy średnimi}\label{fig:testy}
+\end{figure}
 
 \hypertarget{test-t-studenta}{%
 \subsection{\texorpdfstring{test \(t\)-Studenta}{test t-Studenta}}\label{test-t-studenta}}
@@ -2171,7 +2267,8 @@ Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku
 Test stosujemy jeżeli porównujemy dwie średnie oraz można przyjąć
 założenie że rozkład wartości w obu grupach jest normalny.
 
-\textbf{Przykład}: Poziom depresji a miejsce pracy
+\begin{example}
+\textbf{Poziom depresji a miejsce pracy}
 
 Studenci pielęgniarstwa i ratownictwa PSW w 2023 roku wypełnili
 ankietę zawierającą
@@ -2211,6 +2308,7 @@ przyjmowanego poziomu istotności nie ma podstaw
 do odrzucenia hipotezy, że średnie w obu grupach są równe. Skoro tak, to
 w konsekwencji stwierdzamy że pomiędzy poziomem depresji
 a miejscem pracy nie ma zależności.
+\end{example}
 
 \hypertarget{testowanie-normalnoux15bci}{%
 \subsection{Testowanie normalności}\label{testowanie-normalnoux15bci}}
@@ -2221,7 +2319,8 @@ Można to ocenić na podstawie wykresu kwantylowego. Oraz
 posługując się testem Shapiro-Wilka
 (bo Statystycy na każde pytanie mają zawsze \textbf{jakiś} stosowny test)
 
-\textbf{Przykład}: Poziom depresji a miejsce pracy
+\begin{example}
+\textbf{Poziom depresji a miejsce pracy}
 
 Wykres kwantylowy dla \textbf{poziomu depresji}
 wygląda jak na poniższym rysunku
@@ -2254,11 +2353,13 @@ Szpital & 0.7865090 & 0.0000000\\
 Rozkład w grupie \texttt{szpital} nie jest normalny. Nasze założenie co do normalności
 było niepoprawne i należy do weryfikacji hipotezy o równości średniej zamiast
 testu \(t\)-Studenta zastosować test U Manna-Whitneya.
+\end{example}
 
 \hypertarget{test-u-manna-whitneya}{%
 \subsection{test U Manna-Whitneya}\label{test-u-manna-whitneya}}
 
-\textbf{Przykład: Poziom depresji a miejsce pracy}
+\begin{example}
+\textbf{Poziom depresji a miejsce pracy}
 
 Ponieważ grup jest dokładnie 2 a rozkład nie jest normalny, stosujemy test U Manna-Whitneya.
 
@@ -2273,6 +2374,7 @@ Przychodnia & Szpital & 12 & 91 & 564.5 & 0.853\\
 Prawdopodobieństwo wystąpienia tak dużej różnicy przy założeniu, że
 średnie w obu grupach
 są identyczne wynosi 0.853 (różnica jest zatem nieistotna; obie średnie są identyczne--nie ma zależności)
+\end{example}
 
 \hypertarget{test-anova}{%
 \subsection{test ANOVA}\label{test-anova}}
@@ -2280,7 +2382,8 @@ są identyczne wynosi 0.853 (różnica jest zatem nieistotna; obie średnie są 
 Jeżeli liczba grup jest większa niż dwie ale można przyjąć założenie
 o normalności rozkładów to stosujemy test ANOVA.
 
-\textbf{Przykład: Poziom depresji a staż pracy}
+\begin{example}
+\textbf{Poziom depresji a staż pracy}
 
 W ankiecie, którą wypełnili
 Studenci pielęgniarstwa i ratownictwa PSW w 2023 roku
@@ -2328,16 +2431,19 @@ m-pracy & statystyka & p\\
 
 Wobec takiego wyniku testu do oceny istotności różnic
 należy zastosować bardziej ogólny test Kruskalla-Wallisa
+\end{example}
 
 \hypertarget{test-kruskalla-wallisa}{%
 \subsection{test Kruskalla-Wallisa}\label{test-kruskalla-wallisa}}
 
-\textbf{Przykład: Poziom depresji a staż pracy}
+\begin{example}
+\textbf{Poziom depresji a staż pracy}
 
 Prawdopodobieństwo tak dużych różnic w średnich
 przy założeniu, że średnie we wszystkich grupach są identyczne wynosi
 0.678922994359164 (różnice są zatem nieistotne;
 wszystkie średnie są identyczne--nie ma zależności)
+\end{example}
 
 \hypertarget{zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne}{%
 \section{Zmienna liczbowa i zmienne liczbowe lub nominalne}\label{zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne}}
@@ -2363,7 +2469,8 @@ Punkty układające się według prostej świadczą o zależności liniowej
 Punkty układające się według krzywej świadczą
 o zależności nieliniowej.
 
-\textbf{Przykład: Zależność pomiędzy zamożnością a spożyciem mięsa}
+\begin{example}
+\textbf{Zamożność a konsumpcja mięsa}
 
 Organizacja Narodów Zjednoczonych do spraw Wyżywienia i Rolnictwa znana jako FAO
 udostępnia dane dotyczące konsumpcji żywności na świecie. Bank światowy
@@ -2374,6 +2481,7 @@ Dochód podobnie jako średnia wielkość dochodu narodowego \emph{per capita}.
 Dane dotyczą roku 2013.
 
 \includegraphics{_main_files/figure-latex/unnamed-chunk-56-1.pdf}
+\end{example}
 
 \hypertarget{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-liniowej-pearsona}{%
 \subsection{Pomiar siły zależności: współczynnik korelacji liniowej Pearsona}\label{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-liniowej-pearsona}}
@@ -2406,7 +2514,8 @@ wartość zero świadczy o braku związku (linia pozioma/pionowa)
 
 Interpretacja opisowa: wartości powyżej 0,9 świadczą o silnej zależności.
 
-\textbf{Przykład: korelacja między spożyciem mięsa a GDP}
+\begin{example}
+\textbf{Zamożność a konsumpcja mięsa (kontynuacja)}
 
 Współczynnik korelacji liniowej wynosi 0.6823158 (umiarkowana korelacja).
 
@@ -2416,6 +2525,7 @@ prawdopodobieństwo otrzymania r = 0.6823158 przy założeniu że
 prawdziwa wartość r wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi 3.850676e-26
 (czyli jest ekstremalnie małe -- r jest istotnie różne od zera).
+\end{example}
 
 \hypertarget{macierz-korelacji}{%
 \subsection{Macierz korelacji}\label{macierz-korelacji}}
@@ -2423,7 +2533,8 @@ to prawdopodobieństwo wynosi 3.850676e-26
 Wstępnym etapem analizy zależności między zmiennymi jest często
 hurtowa ocena współczynników korelacji w postaci kwadratowej \textbf{macierzy korelacji}.
 
-\textbf{Przykład: korelacja pomiędzy wiekiem, edukacją, szczęściem a stanem zdrowia}
+\begin{example}
+\textbf{Korelacja pomiędzy wiekiem, edukacją, szczęściem a stanem zdrowia}
 
 Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, szczęściem a stanem zdrowia.
 (The relationship between happiness and self-rated health: A population-based study of 19499 Iranian adults;
@@ -2440,6 +2551,7 @@ Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, sz
 Albo w bardziej efektownej postaci tekstowo-graficznej:
 
 \includegraphics{_main_files/figure-latex/unnamed-chunk-59-1.pdf}
+\end{example}
 
 \hypertarget{pomiar-siux142y-zaleux17cnoux15bci-regresja-liniowa}{%
 \subsection{Pomiar siły zależności: regresja liniowa}\label{pomiar-siux142y-zaleux17cnoux15bci-regresja-liniowa}}
@@ -2522,9 +2634,11 @@ oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności prób
 że estymatory parametrów \(b_0\)/\(b_1\)
 uzyskane \textbf{metodą najmniejszych kwadratów} posiadają obie właściwości.
 
-Graficznie \textbf{kryterium minimalizacyjne} przedstawia rysunek
+Graficznie \textbf{kryterium minimalizacyjne} przedstawia rysunek \ref{fig:KMNK}
 
-\includegraphics[width=0.75\textwidth,height=\textheight]{./kmnk_roznice.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./kmnk_roznice} \caption{Metody statystycznej weryfikacji zależności pomiędzy zmiennymi}\label{fig:KMNK}
+\end{figure}
 
 Suma podniesionych do kwadratu odległości pomiędzy czerwonymi
 i niebieskimi kropkami ma być minimalna. Kropki niebieskie to
@@ -2622,7 +2736,8 @@ jakości dopasowania.
 Regresja z \textbf{nieistotnym} współczynnikiem nie
 może być podstawą do interpretowania zależności pomiędzy \(X\) oraz \(Y\).
 
-\textbf{Przykład: Waga a wzrost rugbystów}
+\begin{example}
+\textbf{Waga a wzrost rugbystów}
 
 Zależność między wagą (\texttt{weight}) a wzrostem (\texttt{height}):
 
@@ -2637,14 +2752,14 @@ daje następujące wyniki:
 \hline
 Zmienna & B & Błąd stand & z & p & CI95\\
 \hline
-(Intercept) & 157.1485718 & 2.1297673 & 73.78673 & 0 & 152.970000--161.330000\\
+(Intercept) & 157.149 & 2.130 & 73.787 & 0 & 152.970 161.330\\
 \hline
-weight & 0.2808207 & 0.0206739 & 13.58336 & 0 & 0.240000--0.320000\\
+weight & 0.281 & 0.021 & 13.583 & 0 & 0.240 0.320\\
 \hline
 \end{tabular}
 
 Co oznacza, że wzrost wagi o 1kg
-skutkuje przeciętnie większym wzrostem o 0.2808207 cm. Współczynnik determinacji
+skutkuje przeciętnie większym wzrostem o 0.281 cm. Współczynnik determinacji
 wynosi 23.16\%.
 Współczynnik nachylenia prostej jest istotny ponieważ wartość \(p\) (tak mała, że w tabeli
 oznaczona jako 0)
@@ -2652,10 +2767,12 @@ jest grubo poniżej zwyczajowego poziomu istotności (p \textless{} 0,05).
 
 Kolumna \texttt{CI95} zawiera 95\% przedziały ufności: z 95\% prawdopodobieństwem wartość współczynnika nachylenia
 prostej znajduje się w przedziale 0,24--0,32.
+\end{example}
 
-\textbf{Przykład: zamożność a konsumpcja mięsa}
+\begin{example}
+\textbf{Zamożność a konsumpcja mięsa}
 
-Następujący równanie opisuje zależność pomiędzy dochodem narodowym na głowę (\emph{per capita})
+Następujący równanie opisuje zależność pomiędzy dochodem narodowym na głowę (tys USD \emph{per capita})
 a konsumpcją mięsa w kilogramach:
 
 \[\textrm{konsumpcja} = b_0 + b_1 \textrm{gdp}\]
@@ -2669,18 +2786,19 @@ następujące wyniki
 \hline
 Zmienna & B & Błąd stand & z & p & CI95\\
 \hline
-(Intercept) & 34.0847681 & 2.2324799 & 15.26767 & 0 & 29.680000--38.490000\\
+(Intercept) & 34.085 & 2.232 & 15.268 & 0 & 29.680 38.490\\
 \hline
-gdp2013 & 0.0011075 & 0.0000996 & 11.12427 & 0 & 0.000000--0.000000\\
+gdp2013 & 1.108 & 0.100 & 11.124 & 0 & 0.910 1.300\\
 \hline
 \end{tabular}
 
-Każdy USD \emph{per capita} więcej dochodu narodowego (GDP) oznacza przeciętny
-wzrost spożycia mięsa o 0.0011075 kg. Przeciętna różnica wartości teoretycznych
+Każdy tysiąc USD \emph{per capita} więcej dochodu narodowego (GDP) oznacza przeciętny
+wzrost spożycia mięsa o 1.108 kg. Przeciętna różnica wartości teoretycznych
 od empirycznych wynosi 21,04 kg (średni błąd szacunku).
 Współczynnik zbieżności wynosi 40.88\%.
-Współczynnik nachylenia prostej (mimo że jego wartość wynosi zaledwie
-0.0011075) jest statystycznie istotny.
+Współczynnik nachylenia prostej (którego wartość
+wynosi 1.108) jest statystycznie istotny.
+\end{example}
 
 Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
 bo jest ona zbyt dużym uproszczeniem rzeczywistości. Jest to jednak
@@ -2754,7 +2872,8 @@ ze zbioru predyktorów ten, który jest „najbardziej nieistotny`` (ma najwięk
 Procedurę powtarzamy dla modelu bez usuniętej zmiennej.
 Procedurę przerywamy gdy wszystkie współczynniki regresji są statystycznie istotne.
 
-\textbf{Przykład: zależność pomiędzy ciśnienie skurczowym, BMI oraz wiekiem}
+\begin{example}
+\textbf{Zależność pomiędzy ciśnienie skurczowym, BMI oraz wiekiem}
 
 \[\textrm{ciśnienie} = b_0 + b_1 \textrm{BMI} + b_2\textrm{wiek}\]
 
@@ -2772,11 +2891,11 @@ Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące w
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI95\\
 \hline
-(Intercept) & 59.6980648 & 11.9647074 & 4.989513 & 0.0000031 & NA & 35.920000--83.480000\\
+(Intercept) & 59.698 & 11.965 & 4.990 & 0.000 & NA & 35.920 83.480\\
 \hline
-BMI & 1.7416538 & 0.4860235 & 3.583477 & 0.0005584 & 0.330000 & 0.780000--2.710000\\
+BMI & 1.742 & 0.486 & 3.583 & 0.001 & 0.330 & 0.780 2.710\\
 \hline
-age & 0.4838519 & 0.1238715 & 3.906079 & 0.0001849 & 0.360000 & 0.240000--0.730000\\
+age & 0.484 & 0.124 & 3.906 & 0.000 & 0.360 & 0.240 0.730\\
 \hline
 \end{tabular}
 
@@ -2789,11 +2908,11 @@ wyniki:
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI95\\
 \hline
-(Intercept) & 79.0607936 & 4.3783434 & 18.057239 & 0.0000000 & NA & 70.460000--87.660000\\
+(Intercept) & 79.061 & 4.378 & 18.057 & 0 & NA & 70.460 87.660\\
 \hline
-BMI & 1.2125475 & 0.1827041 & 6.636675 & 0.0000000 & 0.280000 & 0.850000--1.570000\\
+BMI & 1.213 & 0.183 & 6.637 & 0 & 0.280 & 0.850 1.570\\
 \hline
-age & 0.2593172 & 0.0534066 & 4.855526 & 0.0000016 & 0.210000 & 0.150000--0.360000\\
+age & 0.259 & 0.053 & 4.856 & 0 & 0.210 & 0.150 0.360\\
 \hline
 \end{tabular}
 
@@ -2806,15 +2925,16 @@ wyniki:
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI\\
 \hline
-(Intercept) & 74.0109877 & 1.5304851 & 48.35786 & 0 & NA & 71.010000--77.010000\\
+(Intercept) & 74.011 & 1.530 & 48.358 & 0 & NA & 71.010 77.010\\
 \hline
-BMI & 1.3747728 & 0.0642304 & 21.40377 & 0 & 0.300000 & 1.250000--1.500000\\
+BMI & 1.375 & 0.064 & 21.404 & 0 & 0.300 & 1.250 1.500\\
 \hline
-age & 0.3204461 & 0.0175393 & 18.27012 & 0 & 0.250000 & 0.290000--0.350000\\
+age & 0.320 & 0.018 & 18.270 & 0 & 0.250 & 0.290 0.350\\
 \hline
 \end{tabular}
 
 Współczynnik zbieżności wynosi 18.54\%.
+\end{example}
 
 \hypertarget{zmienne-zero-jedynkowe}{%
 \subsection{Zmienne zero-jedynkowe}\label{zmienne-zero-jedynkowe}}
@@ -2855,7 +2975,8 @@ Interpretacja: \(b_4\) (jeżeli istotne) oznacza przeciętną zmianę wielkości
 wielkości stresu osoby z wykształceniem licencjackim
 w porównaniu do osoby z wykształceniem średnim.
 
-\textbf{Przykład: zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem}
+\begin{example}
+\textbf{Zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem}
 
 Poprzednio rozważany model zależności pomiędzy ciśnienie skurczowym, BMI oraz wiekiem
 rozszerzymy o trzy zmienne: płeć (kobieta/mężczyzna),
@@ -2887,21 +3008,21 @@ Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następuj�
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI\\
 \hline
-(Intercept) & 90.3324858 & 15.7447575 & 5.7373056 & 0.0000002 & NA & 59.010000 121.650000\\
+(Intercept) & 90.332 & 15.745 & 5.737 & 0.000 & NA & 59.010 121.650\\
 \hline
-BMI & 0.7780668 & 0.5922540 & 1.3137383 & 0.1925980 & 0.150000 & -0.400000 1.960000\\
+BMI & 0.778 & 0.592 & 1.314 & 0.193 & 0.150 & -0.400 1.960\\
 \hline
-age & 0.4408317 & 0.1205219 & 3.6576902 & 0.0004484 & 0.330000 & 0.200000 0.680000\\
+age & 0.441 & 0.121 & 3.658 & 0.000 & 0.330 & 0.200 0.680\\
 \hline
-genderF & -13.8196581 & 4.3993394 & -3.1413030 & 0.0023400 & -0.400000 & -22.570000 -5.070000\\
+genderF & -13.820 & 4.399 & -3.141 & 0.002 & -0.400 & -22.570 -5.070\\
 \hline
-current.smoker & -6.8898579 & 3.9716110 & -1.7347766 & 0.0865377 & -0.180000 & -14.790000 1.010000\\
+current.smoker & -6.890 & 3.972 & -1.735 & 0.087 & -0.180 & -14.790 1.010\\
 \hline
-ever.smoker & 7.6258343 & 6.8823895 & 1.1080213 & 0.2710921 & 0.110000 & -6.070000 21.320000\\
+ever.smoker & 7.626 & 6.882 & 1.108 & 0.271 & 0.110 & -6.070 21.320\\
 \hline
-current.drinker & -3.9592512 & 8.5230314 & -0.4645356 & 0.6434952 & -0.040000 & -20.910000 13.000000\\
+current.drinker & -3.959 & 8.523 & -0.465 & 0.643 & -0.040 & -20.910 13.000\\
 \hline
-ever.drinker & -4.0011737 & 4.5751715 & -0.8745407 & 0.3843781 & -0.080000 & -13.100000 5.100000\\
+ever.drinker & -4.001 & 4.575 & -0.875 & 0.384 & -0.080 & -13.100 5.100\\
 \hline
 \end{tabular}
 
@@ -2919,21 +3040,21 @@ wyniki:
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI\\
 \hline
-(Intercept) & 80.0892506 & 1.6234001 & 49.3342644 & 0.0000000 & NA & 76.910000 83.270000\\
+(Intercept) & 80.089 & 1.623 & 49.334 & 0.000 & NA & 76.910 83.270\\
 \hline
-BMI & 1.1923484 & 0.0662091 & 18.0088428 & 0.0000000 & 0.260000 & 1.060000 1.320000\\
+BMI & 1.192 & 0.066 & 18.009 & 0.000 & 0.260 & 1.060 1.320\\
 \hline
-age & 0.3356278 & 0.0175842 & 19.0868652 & 0.0000000 & 0.260000 & 0.300000 0.370000\\
+age & 0.336 & 0.018 & 19.087 & 0.000 & 0.260 & 0.300 0.370\\
 \hline
-genderF & -5.3287419 & 0.5076689 & -10.4964911 & 0.0000000 & -0.160000 & -6.320000 -4.330000\\
+genderF & -5.329 & 0.508 & -10.496 & 0.000 & -0.160 & -6.320 -4.330\\
 \hline
-current.smoker & -2.7520369 & 0.5834007 & -4.7172331 & 0.0000025 & -0.070000 & -3.900000 -1.610000\\
+current.smoker & -2.752 & 0.583 & -4.717 & 0.000 & -0.070 & -3.900 -1.610\\
 \hline
-ever.smoker & -2.0210024 & 1.0452758 & -1.9334633 & 0.0532420 & -0.030000 & -4.070000 0.030000\\
+ever.smoker & -2.021 & 1.045 & -1.933 & 0.053 & -0.030 & -4.070 0.030\\
 \hline
-current.drinker & 3.6213408 & 1.5345859 & 2.3598163 & 0.0183266 & 0.030000 & 0.610000 6.630000\\
+current.drinker & 3.621 & 1.535 & 2.360 & 0.018 & 0.030 & 0.610 6.630\\
 \hline
-ever.drinker & 0.1928834 & 0.6231969 & 0.3095063 & 0.7569508 & 0.000000 & -1.030000 1.410000\\
+ever.drinker & 0.193 & 0.623 & 0.310 & 0.757 & 0.000 & -1.030 1.410\\
 \hline
 \end{tabular}
 
@@ -2952,8 +3073,10 @@ wielkości efektu. Sposób postępowania jest wtedy następujący: określamy
 jaka wielkość efektu ma \textbf{znaczenie praktyczne}, na tej podstawie określamy
 niezbędną minimalną liczebność próby. Takie zaawansowane podejście
 wykracza poza ramy tego podręcznika.
+\end{example}
 
-\textbf{Przykład: regresja krokowa}
+\begin{example}
+\textbf{Regresja krokowa}
 
 W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem
 (próba 4490) zmienne \texttt{ever.drinker} oraz \texttt{ever.smoker} są nieistotne przy czym współczynnik
@@ -2965,19 +3088,19 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI\\
 \hline
-(Intercept) & 80.1084605 & 1.6220496 & 49.387183 & 0.0000000 & NA & 76.930000 83.290000\\
+(Intercept) & 80.108 & 1.622 & 49.387 & 0.000 & NA & 76.930 83.290\\
 \hline
-BMI & 1.1934881 & 0.0660999 & 18.055825 & 0.0000000 & 0.260000 & 1.060000 1.320000\\
+BMI & 1.193 & 0.066 & 18.056 & 0.000 & 0.260 & 1.060 1.320\\
 \hline
-age & 0.3353602 & 0.0175612 & 19.096671 & 0.0000000 & 0.260000 & 0.300000 0.370000\\
+age & 0.335 & 0.018 & 19.097 & 0.000 & 0.260 & 0.300 0.370\\
 \hline
-genderF & -5.3577694 & 0.4988803 & -10.739588 & 0.0000000 & -0.160000 & -6.340000 -4.380000\\
+genderF & -5.358 & 0.499 & -10.740 & 0.000 & -0.160 & -6.340 -4.380\\
 \hline
-current.smoker & -2.7400398 & 0.5820528 & -4.707545 & 0.0000026 & -0.070000 & -3.880000 -1.600000\\
+current.smoker & -2.740 & 0.582 & -4.708 & 0.000 & -0.070 & -3.880 -1.600\\
 \hline
-ever.smoker & -1.9798697 & 1.0366884 & -1.909802 & 0.0562225 & -0.030000 & -4.010000 0.050000\\
+ever.smoker & -1.980 & 1.037 & -1.910 & 0.056 & -0.030 & -4.010 0.050\\
 \hline
-current.drinker & 3.5790137 & 1.5283260 & 2.341787 & 0.0192352 & 0.030000 & 0.580000 6.580000\\
+current.drinker & 3.579 & 1.528 & 2.342 & 0.019 & 0.030 & 0.580 6.580\\
 \hline
 \end{tabular}
 
@@ -2988,17 +3111,17 @@ teraz tę zmienną. Otrzymujemy:
 \hline
 Zmienna & B & Błąd stand & z & p & Beta & CI\\
 \hline
-(Intercept) & 79.8648829 & 1.6175049 & 49.375358 & 0.0000000 & NA & 76.690000 83.040000\\
+(Intercept) & 79.865 & 1.618 & 49.375 & 0.00 & NA & 76.690 83.040\\
 \hline
-BMI & 1.1950238 & 0.0661145 & 18.075060 & 0.0000000 & 0.260000 & 1.070000 1.320000\\
+BMI & 1.195 & 0.066 & 18.075 & 0.00 & 0.260 & 1.070 1.320\\
 \hline
-age & 0.3355111 & 0.0175662 & 19.099824 & 0.0000000 & 0.260000 & 0.300000 0.370000\\
+age & 0.336 & 0.018 & 19.100 & 0.00 & 0.260 & 0.300 0.370\\
 \hline
-genderF & -5.1545435 & 0.4875431 & -10.572487 & 0.0000000 & -0.160000 & -6.110000 -4.200000\\
+genderF & -5.155 & 0.488 & -10.572 & 0.00 & -0.160 & -6.110 -4.200\\
 \hline
-current.smoker & -2.5395634 & 0.5726778 & -4.434542 & 0.0000094 & -0.060000 & -3.660000 -1.420000\\
+current.smoker & -2.540 & 0.573 & -4.435 & 0.00 & -0.060 & -3.660 -1.420\\
 \hline
-current.drinker & 3.5511109 & 1.5287072 & 2.322950 & 0.0202263 & 0.030000 & 0.550000 6.550000\\
+current.drinker & 3.551 & 1.529 & 2.323 & 0.02 & 0.030 & 0.550 6.550\\
 \hline
 \end{tabular}
 
@@ -3008,6 +3131,7 @@ Usuwając nieistotne zmienne z modelu obniżyliśmy wartość
 współczynnika zmienności o
 20.72\% - 20.66\% = 0.07\%, czyli
 tyle co nic.
+\end{example}
 
 \hypertarget{przypadek-specjalny-regresja-logistyczna}{%
 \section{Przypadek specjalny: regresja logistyczna}\label{przypadek-specjalny-regresja-logistyczna}}
@@ -3139,7 +3263,8 @@ Model który klasyfikuje czysto losowo ma wartość AUC równą 50\%.
 
 \includegraphics{./ROCcurve.png}
 
-\textbf{Przykład \#1: Osteoporoza i witamina D}
+\begin{example}
+\textbf{Osteoporoza i witamina D}
 
 Al Zarooni A.A.R i inni badali wpływ różnych czynników na ryzyka na
 wystąpienie osteoporozy (Risk factors for vitamin D deficiency
@@ -3180,9 +3305,9 @@ oraz prawdopodobieństwo
 \hline
 Parametr & Ocena & Błąd stand & z & p & OR & CI\\
 \hline
-(Intercept) & -3.367296 & 0.4548585 & -7.402952 & 0.0000000 & 0.030000 & 0.010000--0.080000\\
+(Intercept) & -3.367 & 0.455 & -7.403 & 0.000 & 0.030 & 0.010 0.080\\
 \hline
-genderF & 1.013656 & 0.5089599 & 1.991621 & 0.0464126 & 2.760000 & 1.090000--8.400000\\
+genderF & 1.014 & 0.509 & 1.992 & 0.046 & 2.760 & 1.090 8.400\\
 \hline
 \end{tabular}
 
@@ -3202,13 +3327,13 @@ oraz prawdopodobieństwo
 \hline
 Parametr & Ocena & Błąd stand & z & p & OR & CI\\
 \hline
-(Intercept) & -12.1833261 & 1.7661567 & -6.8982135 & 0.0000000 & 0.000000 & 0.000000--0.000000\\
+(Intercept) & -12.183 & 1.766 & -6.898 & 0.000 & 0.000 & 0.000 0.000\\
 \hline
-d & 0.0046126 & 0.0086084 & 0.5358247 & 0.5920797 & 1.000000 & 0.990000--1.020000\\
+d & 0.005 & 0.009 & 0.536 & 0.592 & 1.000 & 0.990 1.020\\
 \hline
-age & 0.1563185 & 0.0263592 & 5.9303149 & 0.0000000 & 1.170000 & 1.120000--1.240000\\
+age & 0.156 & 0.026 & 5.930 & 0.000 & 1.170 & 1.120 1.240\\
 \hline
-genderF & 2.4627808 & 0.6616269 & 3.7223105 & 0.0001974 & 11.740000 & 3.540000--48.760000\\
+genderF & 2.463 & 0.662 & 3.722 & 0.000 & 11.740 & 3.540 48.760\\
 \hline
 \end{tabular}
 
@@ -3230,6 +3355,7 @@ Dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = 0)
 Krzywa ROC
 
 \includegraphics{_main_files/figure-latex/unnamed-chunk-79-1.pdf}
+\end{example}
 
 \hypertarget{przypadek-specjalny-dwie-zmienne-co-najmniej-porzux105dkowe}{%
 \section{Przypadek specjalny: dwie zmienne co najmniej porządkowe}\label{przypadek-specjalny-dwie-zmienne-co-najmniej-porzux105dkowe}}
@@ -3253,6 +3379,7 @@ Współczynnik \(\rho_{xy}\) to -- podobnie jak \textbf{oryginalny} współczynn
 korelacji liniowej Pearsona -- miara niemianowana, o wartościach
 ze zbioru {[}-1;1{]};
 
+\begin{example}
 \textbf{Przykład: spożycie mięsa}
 
 Współczynnik Pearsona i Spearmana dla zależności między spożyciem mięsa w 1980
@@ -3279,6 +3406,7 @@ prawdopodobieństwo otrzymania \(r_s\) = 0.6845429 przy założeniu że
 prawdziwa wartość \(r_s\) wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi 2.302116e-26
 (czyli jest ekstremalnie małe -- \(r_s\) jest istotnie różne od zera).
+\end{example}
 
 \hypertarget{podsumowanie}{%
 \section{Podsumowanie}\label{podsumowanie}}

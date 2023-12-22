@@ -965,20 +965,20 @@ lm.0.coef <- as.data.frame(coef(summary(lm.0)))
 ##lm_std_txt <- sprintf ("%f", lm.0.std )
 ## Przedziały ufności
 lm.0.ci <- round(confint(lm.0), 2)
-lm_ci_txt <- sprintf ("%f--%f", lm.0.ci[,1], lm.0.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.0.ci[,1], lm.0.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
   mutate(ci=lm_ci_txt)
 
-kable(lm.0.coef.df, row.names = F, 
+kable(lm.0.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'CI95') )
 
 ```
 
 
 Co oznacza, że wzrost wagi o 1kg
-skutkuje przeciętnie większym wzrostem o `r coeff_b` cm. Współczynnik determinacji
+skutkuje przeciętnie większym wzrostem o `r sprintf("%.3f", coeff_b)` cm. Współczynnik determinacji
 wynosi `r sprintf ("%.2f", lmr * 100)`%. 
 Współczynnik nachylenia prostej jest istotny ponieważ wartość $p$ (tak mała, że w tabeli
 oznaczona jako 0)
@@ -996,7 +996,7 @@ meatCons <- read.csv(file='meatCons_vs_GDP.csv',sep=';',header=T)
 n0 <- nrow(meatCons)
 ```
 
-Następujący równanie opisuje zależność pomiędzy dochodem narodowym na głowę (*per capita*)
+Następujący równanie opisuje zależność pomiędzy dochodem narodowym na głowę (tys USD *per capita*)
 a konsumpcją mięsa w kilogramach:
 
 $$\textrm{konsumpcja} = b_0 + b_1 \textrm{gdp}$$
@@ -1006,6 +1006,7 @@ następujące wyniki
 
 
 ```{r, message=F}
+meatCons <- meatCons %>% mutate (gdp2013 = gdp2013 / 1000)
 ggplot(meatCons, aes(x = gdp2013, y = y2013)) + geom_point() +
   geom_smooth(method='lm', se=F)
 
@@ -1024,28 +1025,27 @@ lm.0.coef <- as.data.frame(coef(summary(lm.0)))
 ##lm_std_txt <- sprintf ("%f", lm.0.std )
 ## Przedziały ufności
 lm.0.ci <- round(confint(lm.0), 2)
-lm_ci_txt <- sprintf ("%f--%f", lm.0.ci[,1], lm.0.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.0.ci[,1], lm.0.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
   mutate(ci=lm_ci_txt)
 
-kable(lm.0.coef.df, row.names = F,
+kable(lm.0.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'CI95') )
 
 ```
 
 
 
-Każdy USD *per capita* więcej dochodu narodowego (GDP) oznacza przeciętny 
-wzrost spożycia mięsa o `r coeff_b`  kg.  Przeciętna różnica wartości teoretycznych
+Każdy tysiąc USD *per capita* więcej dochodu narodowego (GDP) oznacza przeciętny 
+wzrost spożycia mięsa o `r sprintf("%.3f", coeff_b)`  kg.  Przeciętna różnica wartości teoretycznych
 od empirycznych wynosi 21,04 kg (średni błąd szacunku). 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
-Współczynnik nachylenia prostej (mimo że jego wartość wynosi zaledwie
-`r coeff_b`) jest statystycznie istotny.
+Współczynnik nachylenia prostej (którego wartość 
+wynosi `r sprintf("%.3f", coeff_b)`) jest statystycznie istotny.
 
 :::
-
 
 Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
 bo jest ona zbyt dużym uproszczeniem rzeczywistości. Jest to jednak
@@ -1159,16 +1159,16 @@ lmr <- summary(lm.1)$r.squared
 
 ## wielkości standaryzowane
 lm.1.std <- round(coef(lm.beta(lm.1)), 2)
-lm_std_txt <- sprintf ("%f", lm.1.std )
+lm_std_txt <- sprintf ("%.3f", lm.1.std )
 ## Przedziały ufności
 lm.1.ci <- round(confint(lm.1), 2)
-lm_ci_txt <- sprintf ("%f--%f", lm.1.ci[,1], lm.1.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.1.coef.df, row.names = F,
+kable(lm.1.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI95') )
 
 ```
@@ -1187,16 +1187,16 @@ lm.2.coef <- as.data.frame(coef(summary(lm.2)))
 lmr <- summary(lm.2)$r.squared
 ## wielkości standaryzowane
 lm.2.std <- round(coef(lm.beta(lm.2)), 2)
-lm_std_txt <- sprintf ("%f", lm.2.std )
+lm_std_txt <- sprintf ("%.3f", lm.2.std )
 ## Przedziały ufności
 lm.2.ci <- round(confint(lm.2), 2)
-lm_ci_txt <- sprintf ("%f--%f", lm.2.ci[,1], lm.2.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.2.ci[,1], lm.2.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.2.coef.df <- tibble::rownames_to_column(lm.2.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.2.coef.df, row.names = F,
+kable(lm.2.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI95') )
 ```
 
@@ -1214,16 +1214,16 @@ lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 lmr <- summary(lm.3)$r.squared
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%f", lm.3.std )
+lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%f--%f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.3.coef.df, row.names = F,
+kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
 ```
 
@@ -1310,16 +1310,16 @@ lmr <- summary(lm.1)$r.squared
 lm.1.coef <- as.data.frame(coef(summary(lm.1)))
 ## wielkości standaryzowane
 lm.1.std <- round(coef(lm.beta(lm.1)), 2)
-lm_std_txt <- sprintf ("%f", lm.1.std )
+lm_std_txt <- sprintf ("%.3f", lm.1.std )
 ## Przedziały ufności
 lm.1.ci <- round(confint(lm.1), 2)
-lm_ci_txt <- sprintf ("%f %f", lm.1.ci[,1], lm.1.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.1.coef.df, row.names = F,
+kable(lm.1.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
 
 ```
@@ -1345,16 +1345,16 @@ lmr7 <- lmr
 lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%f", lm.3.std )
+lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%f %f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.3.coef.df, row.names = F,
+kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
 
 ```
@@ -1396,16 +1396,16 @@ lmr <- summary(lm.3)$r.squared
 lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%f", lm.3.std )
+lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%f %f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.3.coef.df, row.names = F,
+kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
 
 ```
@@ -1423,16 +1423,16 @@ lmr <- summary(lm.3)$r.squared
 lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%f", lm.3.std )
+lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%f %f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
-kable(lm.3.coef.df, row.names = F,
+kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
 
 ```
@@ -1652,16 +1652,16 @@ glm.1 = glm(osteoporosis ~ genderF, data = vd0, family = "binomial")
 gml.1.coef <- as.data.frame(coef(summary(glm.1)))
 ## OR
 glm.1.or <- round(exp(coef(glm.1)), 2)
-glm_or_txt <- sprintf ("%f", glm.1.or )
+glm_or_txt <- sprintf ("%.3f", glm.1.or )
 ## Przedziały ufności
 glm.1.ci <- round(exp(confint(glm.1)), 2)
-glm_ci_txt <- sprintf ("%f--%f", glm.1.ci[,1], glm.1.ci[,2] )
+glm_ci_txt <- sprintf ("%.3f %.3f", glm.1.ci[,1], glm.1.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
-kable(gml.1.coef.df, row.names = F,
+kable(gml.1.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
 ```
 
@@ -1701,17 +1701,17 @@ glm.2 = glm(osteoporosis ~ d + age + genderF, data = vd0, family = "binomial")
 gml.2.coef <- as.data.frame(coef(summary(glm.2)))
 ## OR
 glm.2.or <- round(exp(coef(glm.2)), 2)
-glm_or_txt <- sprintf ("%f", glm.2.or )
+glm_or_txt <- sprintf ("%.3f", glm.2.or )
 ## Przedziały ufności
 glm.2.ci <- round(exp(confint(glm.2)), 2)
-glm_ci_txt <- sprintf ("%f--%f", glm.2.ci[,1], glm.2.ci[,2] )
+glm_ci_txt <- sprintf ("%.3f %.3f", glm.2.ci[,1], glm.2.ci[,2] )
 
 ## zestawienie tabelaryczne wyników
 gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
   mutate(or=glm_or_txt,
          ci=glm_ci_txt)
 
-kable(gml.2.coef.df, row.names = F,
+kable(gml.2.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
 ```
 

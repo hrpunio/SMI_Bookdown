@@ -13,5 +13,7 @@ bookdown::pdf_book:
     in_header: preamble.tex
   latex_engine: lualatex
   citation_package: natbib
+  theorem.preamble: false
+  bookdown.theorem.preamble: false
   keep_tex: yes
 bookdown::epub_book: default
