@@ -769,7 +769,7 @@ opisuje następujący model regresji:
 
 $$\textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa} + b_2 \cdot \textrm{czas} + b_3 \cdot \textrm{predyspozycje} $$
 
-Współczynnik $b_1$ określa wpływ spożycia kawy
+Współczynnik $b_1$ określa wpływ spożycia kawy,
 $b_2$ czasu poświęconego na naukę,
 a $b_3$ predyspozycji
 (intelektualnych, mierzonych np. średnią ocenę ze studiów)
@@ -792,10 +792,10 @@ to zawsze uproszczenie rzeczywistości), przybliżonego charakteru linii
 prostej jako zależności pomiędzy $X$ a $Y$ (prosta ale nie do końca prosta)
 albo błędu pomiaru.
 
-Współczynnik $a$ (nachylenia prostej) określa wielkość efektu
+Współczynnik $b_1$ (nachylenia prostej) określa wielkość efektu
 w przypadku regresji, tj. siły zależności pomiędzy zmiennymi.
 
-Współczynnik $a$ ma prostą interpretację: jeżeli wartość zmiennej $X$
+Współczynnik $b_1$ ma prostą interpretację: jeżeli wartość zmiennej $X$
 rośnie o jednostkę to wartość zmiennej $Y$ zmienia
 się przeciętnie o $b_1$ jednostek zmiennej Y. 
 Wyraz wolny zwykle nie ma sensownej interpretacji
@@ -812,19 +812,19 @@ $$(\hat y_1 - y_1)^2 + (\hat y_2 - y_2)^2 + ... +  (\hat y_n - y_n)^2$$
 Rozwiązując powyższy **problem minimalizacyjny** otrzymujemy wzory
 definiujące parametry $b_0$ oraz $b_1$. Metoda wyznaczania parametrów
 linii prostej w oparciu o minimalizację sumy kwadratów odchyleń 
-nosi nazwę **metoda największych kwadratów**.
+nosi nazwę **metoda najmniejszych kwadratów**.
 
 Przypominamy, że **estymatorem** nazywamy metodę oszacowania parametru na podstawie próby.
 Ponieważ traktujemy $b_0$ oraz $b_1$ jako parametry jakieś populacji generalnej
 to wzory na $b_0$ oraz $b_1$ statystyk nazwie estymatorami parametrów
-$b_0$ oraz $b_1$. W konsekwencji tego $b_0$/$b_1$ posiadają jakąś wartość średnią oraz wariancję.
+$b_0$ oraz $b_1$. W konsekwencji tego $b_0$ oraz $b_1$ posiadają jakąś wartość średnią oraz wariancję.
 
-Przypominamy że wartość średnia **dobrego estymatora** powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
+Przypominamy dalej, że wartość średnia **dobrego estymatora** powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
 oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności próby. Można udowodnić
-że estymatory parametrów $b_0$/$b_1$
+że estymatory parametrów $b_0$ oraz $b_1$
 uzyskane **metodą najmniejszych kwadratów** posiadają obie właściwości.
 
-Graficznie **kryterium minimalizacyjne** przedstawia rysunek \@ref(fig:KMNK)
+Graficznie **kryterium minimalizacyjne** przedstawia rysunek \@ref(fig:KMNK).
 
 
 ```{r KMNK, out.width="80%", fig.cap = "Metody statystycznej weryfikacji zależności pomiędzy zmiennymi"}
@@ -837,10 +837,10 @@ wartości empiryczne; kropki czerwone to wartości teoretyczne.
 Zadanie wyznaczenie
 parametrów takiej prostej oczywiście realizuje program komputerowy.
 
-Można udowodnić że bez względu czy punkty na wykresie układają się
+Można udowodnić, że bez względu czy punkty na wykresie układają się
 w przybliżeniu wzdłuż prostej czy nie, zawsze **jakaś prosta** zostanie
 dopasowana (jeżeli tylko punktów jest więcej niż jeden.) 
-Jak to ocenić w sposób bardziej konkretny a nie tylko na oko dopasowanie
+Jak ocenić w sposób bardziej konkretny a nie tylko na oko jakość dopasowania
 prostej do wartości empirycznych?
 
 **Ocena dopasowania: wariancja resztowa oraz średni błąd szacunku**
@@ -891,7 +891,7 @@ Interpretacja współczynnika zbieżności: udział (procent) zmienność wyjaś
 przez linię regresji. Im $R^2$ jest bliższe jedności (lub 100% jeżeli
 jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.
 
-**Ocena dopasowania: istotność parametru $a$**
+**Ocena dopasowania: istotność parametru $b_1$**
 
 Jeżeli: $Y= 0 \cdot X + b_0$, to $Y = b_0$ czyli nie ma zależności
 pomiędzy $X$ oraz $Y$.
@@ -918,7 +918,7 @@ jest to $0,1$, $0,05$ lub $0,01$. Tak zgadza się, to prawdopodobieństwo
 to **poziom istotności**
 
 W każdym programie komputerowym na wydruku wyników linii regresji są podane wartości
-prawdopodobieństwa $\hat b_1 > b_e$ (co do wartości bezwzględnej). Jeżeli jest
+prawdopodobieństwa $b_1 > b_e$ (co do wartości bezwzględnej). Jeżeli jest
 ono mniejsze
 niż ustalony **poziom istotności** to $b_1$ ma wartość istotnie różną od zera.
 
@@ -976,8 +976,12 @@ kable(lm.0.coef.df, row.names = F, digits=3,
 
 ```
 
+Pierwsza kolumna `Zmienna` zawiera nazwy zmiennych (`(Intercept)` oznacza wyraz wolny).
+Druga kolumna oznaczona jako `B` zawiera oszacowane wartości (oceny) parametrów linii regresji.
+Kolumna `Błąd stand` zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
+Kolumna `p` zawiera prawdopodobieństwo $b>b_e$.
 
-Co oznacza, że wzrost wagi o 1kg
+Wzrost wagi zawodnika o 1kg
 skutkuje przeciętnie większym wzrostem o `r sprintf("%.3f", coeff_b)` cm. Współczynnik determinacji
 wynosi `r sprintf ("%.2f", lmr * 100)`%. 
 Współczynnik nachylenia prostej jest istotny ponieważ wartość $p$ (tak mała, że w tabeli
@@ -1173,7 +1177,11 @@ kable(lm.1.coef.df, row.names = F, digits=3,
 
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
+Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Kolumna `Beta`, której wcześniej nie było, zawiera standaryzowane
+oceny parametrów regresji. Tej kolumny na poprzednich wydrukach nie było
+bo w przypadku regresji 
+prostej standaryzacja jest zabiegiem raczej zbędnym.
 
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
 wyniki:

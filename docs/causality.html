@@ -1135,7 +1135,7 @@ zależność
 pomiędzy wynikiem egzaminu, spożyciem kawy czasem nauki oraz predyspozycjami
 opisuje następujący model regresji:</p>
 <p><span class="math display">\[\textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa} + b_2 \cdot \textrm{czas} + b_3 \cdot \textrm{predyspozycje} \]</span></p>
-<p>Współczynnik <span class="math inline">\(b_1\)</span> określa wpływ spożycia kawy
+<p>Współczynnik <span class="math inline">\(b_1\)</span> określa wpływ spożycia kawy,
 <span class="math inline">\(b_2\)</span> czasu poświęconego na naukę,
 a <span class="math inline">\(b_3\)</span> predyspozycji
 (intelektualnych, mierzonych np. średnią ocenę ze studiów)</p>
@@ -1154,9 +1154,9 @@ z pominięcia jakiejś ważnej zmiennej (model
 to zawsze uproszczenie rzeczywistości), przybliżonego charakteru linii
 prostej jako zależności pomiędzy <span class="math inline">\(X\)</span> a <span class="math inline">\(Y\)</span> (prosta ale nie do końca prosta)
 albo błędu pomiaru.</p>
-<p>Współczynnik <span class="math inline">\(a\)</span> (nachylenia prostej) określa wielkość efektu
+<p>Współczynnik <span class="math inline">\(b_1\)</span> (nachylenia prostej) określa wielkość efektu
 w przypadku regresji, tj. siły zależności pomiędzy zmiennymi.</p>
-<p>Współczynnik <span class="math inline">\(a\)</span> ma prostą interpretację: jeżeli wartość zmiennej <span class="math inline">\(X\)</span>
+<p>Współczynnik <span class="math inline">\(b_1\)</span> ma prostą interpretację: jeżeli wartość zmiennej <span class="math inline">\(X\)</span>
 rośnie o jednostkę to wartość zmiennej <span class="math inline">\(Y\)</span> zmienia
 się przeciętnie o <span class="math inline">\(b_1\)</span> jednostek zmiennej Y.
 Wyraz wolny zwykle nie ma sensownej interpretacji
@@ -1169,16 +1169,16 @@ odchyleń wartości teoretycznych od wartości empirycznych, tj.:</p>
 <p>Rozwiązując powyższy <strong>problem minimalizacyjny</strong> otrzymujemy wzory
 definiujące parametry <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span>. Metoda wyznaczania parametrów
 linii prostej w oparciu o minimalizację sumy kwadratów odchyleń
-nosi nazwę <strong>metoda największych kwadratów</strong>.</p>
+nosi nazwę <strong>metoda najmniejszych kwadratów</strong>.</p>
 <p>Przypominamy, że <strong>estymatorem</strong> nazywamy metodę oszacowania parametru na podstawie próby.
 Ponieważ traktujemy <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> jako parametry jakieś populacji generalnej
 to wzory na <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> statystyk nazwie estymatorami parametrów
-<span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span>. W konsekwencji tego <span class="math inline">\(b_0\)</span>/<span class="math inline">\(b_1\)</span> posiadają jakąś wartość średnią oraz wariancję.</p>
-<p>Przypominamy że wartość średnia <strong>dobrego estymatora</strong> powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
+<span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span>. W konsekwencji tego <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span> posiadają jakąś wartość średnią oraz wariancję.</p>
+<p>Przypominamy dalej, że wartość średnia <strong>dobrego estymatora</strong> powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
 oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności próby. Można udowodnić
-że estymatory parametrów <span class="math inline">\(b_0\)</span>/<span class="math inline">\(b_1\)</span>
+że estymatory parametrów <span class="math inline">\(b_0\)</span> oraz <span class="math inline">\(b_1\)</span>
 uzyskane <strong>metodą najmniejszych kwadratów</strong> posiadają obie właściwości.</p>
-<p>Graficznie <strong>kryterium minimalizacyjne</strong> przedstawia rysunek <a href="causality.html#fig:KMNK">4.3</a></p>
+<p>Graficznie <strong>kryterium minimalizacyjne</strong> przedstawia rysunek <a href="causality.html#fig:KMNK">4.3</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:KMNK"></span>
 <img src="kmnk_roznice.png" alt="Metody statystycznej weryfikacji zależności pomiędzy zmiennymi" width="80%" />
 <p class="caption">
@@ -1190,10 +1190,10 @@ i niebieskimi kropkami ma być minimalna. Kropki niebieskie to
 wartości empiryczne; kropki czerwone to wartości teoretyczne.
 Zadanie wyznaczenie
 parametrów takiej prostej oczywiście realizuje program komputerowy.</p>
-<p>Można udowodnić że bez względu czy punkty na wykresie układają się
+<p>Można udowodnić, że bez względu czy punkty na wykresie układają się
 w przybliżeniu wzdłuż prostej czy nie, zawsze <strong>jakaś prosta</strong> zostanie
 dopasowana (jeżeli tylko punktów jest więcej niż jeden.)
-Jak to ocenić w sposób bardziej konkretny a nie tylko na oko dopasowanie
+Jak ocenić w sposób bardziej konkretny a nie tylko na oko jakość dopasowania
 prostej do wartości empirycznych?</p>
 <p><strong>Ocena dopasowania: wariancja resztowa oraz średni błąd szacunku</strong></p>
 <p>Oznaczając <em>resztę</em> jako: <span class="math inline">\(e_i = y_i - \hat y_i\)</span>, definiujemy <strong>wariancję
@@ -1225,7 +1225,7 @@ ich wartości zostaną pomnożone przez 100.</p>
 <p>Interpretacja współczynnika zbieżności: udział (procent) zmienność wyjaśnianej
 przez linię regresji. Im <span class="math inline">\(R^2\)</span> jest bliższe jedności (lub 100% jeżeli
 jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.</p>
-<p><strong>Ocena dopasowania: istotność parametru <span class="math inline">\(a\)</span></strong></p>
+<p><strong>Ocena dopasowania: istotność parametru <span class="math inline">\(b_1\)</span></strong></p>
 <p>Jeżeli: <span class="math inline">\(Y= 0 \cdot X + b_0\)</span>, to <span class="math inline">\(Y = b_0\)</span> czyli nie ma zależności
 pomiędzy <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>.
 Wartości <span class="math inline">\(b_1\)</span> bliskie zero wskazują na słabą zależność
@@ -1247,7 +1247,7 @@ Duże/małe przyjmujemy arbitralnie, zwykle
 jest to <span class="math inline">\(0,1\)</span>, <span class="math inline">\(0,05\)</span> lub <span class="math inline">\(0,01\)</span>. Tak zgadza się, to prawdopodobieństwo
 to <strong>poziom istotności</strong></p>
 <p>W każdym programie komputerowym na wydruku wyników linii regresji są podane wartości
-prawdopodobieństwa <span class="math inline">\(\hat b_1 &gt; b_e\)</span> (co do wartości bezwzględnej). Jeżeli jest
+prawdopodobieństwa <span class="math inline">\(b_1 &gt; b_e\)</span> (co do wartości bezwzględnej). Jeżeli jest
 ono mniejsze
 niż ustalony <strong>poziom istotności</strong> to <span class="math inline">\(b_1\)</span> ma wartość istotnie różną od zera.</p>
 <p>Testowanie istotności współczynnika regresji jest ważnym kryterium oceny
@@ -1292,7 +1292,11 @@ daje następujące wyniki:</p>
 </tr>
 </tbody>
 </table>
-<p>Co oznacza, że wzrost wagi o 1kg
+<p>Pierwsza kolumna <code>Zmienna</code> zawiera nazwy zmiennych (<code>(Intercept)</code> oznacza wyraz wolny).
+Druga kolumna oznaczona jako <code>B</code> zawiera oszacowane wartości (oceny) parametrów linii regresji.
+Kolumna <code>Błąd stand</code> zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
+Kolumna <code>p</code> zawiera prawdopodobieństwo <span class="math inline">\(b&gt;b_e\)</span>.</p>
+<p>Wzrost wagi zawodnika o 1kg
 skutkuje przeciętnie większym wzrostem o 0.281 cm. Współczynnik determinacji
 wynosi 23.16%.
 Współczynnik nachylenia prostej jest istotny ponieważ wartość <span class="math inline">\(p\)</span> (tak mała, że w tabeli
@@ -1453,7 +1457,11 @@ oraz 4490 obserwacji.</p>
 </tr>
 </tbody>
 </table>
-<p>Współczynnik zbieżności wynosi 26.24%.</p>
+<p>Współczynnik zbieżności wynosi 26.24%.
+Kolumna <code>Beta</code>, której wcześniej nie było, zawiera standaryzowane
+oceny parametrów regresji. Tej kolumny na poprzednich wydrukach nie było
+bo w przypadku regresji
+prostej standaryzacja jest zabiegiem raczej zbędnym.</p>
 <p>Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
 wyniki:</p>
 <table>

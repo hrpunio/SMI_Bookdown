@@ -1324,15 +1324,15 @@ wariancji)
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    78.0    96.0   102.5   102.5   109.0   126.5
+##    74.0    96.5   103.0   102.8   109.0   135.0
 \end{verbatim}
 
-średnia (średnich z próby) ma wartość 102.47
-a odchylenie standardowe 9.03.
+średnia (średnich z próby) ma wartość 102.82
+a odchylenie standardowe 9.42.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
 z liczebności próby) jest równa 9.14. Zauważmy że ta wartość
 jest zbliżona do odchylenia standardowego uzyskanego
-w eksperymencie (9.03 vs 9.14)
+w eksperymencie (9.42 vs 9.14)
 
 \textbf{szacujemy średnią na podstawie 10 zawodników pobranych losowo}
 
@@ -1340,11 +1340,11 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    89.0    99.8   102.7   102.6   105.5   115.7
+##    91.0    99.8   102.8   102.6   105.3   114.8
 \end{verbatim}
 
-średnia wyszła 102.61 a odchylenie standardowe
-4.24.
+średnia wyszła 102.64 a odchylenie standardowe
+4.11.
 Wartość \(s/\sqrt{10}\) jest równa 4.09.
 
 \textbf{szacujemy średnią na podstawie 40 zawodników pobranych losowo}
@@ -1355,10 +1355,10 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    96.6   101.5   102.8   102.8   104.1   110.7
+##   97.28  101.35  102.83  102.75  104.11  109.83
 \end{verbatim}
 
-średnia jest równa 102.76 a odchylenie standardowe 1.97.
+średnia jest równa 102.75 a odchylenie standardowe 1.97.
 Wartość \(s/\sqrt{40}\) jest równa 2.04.
 
 \textbf{Wykres}
@@ -1432,11 +1432,11 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   19.50   38.50   46.00   46.08   53.50   79.50
+##   19.50   38.50   46.00   45.94   53.50   77.50
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.08 lat.
-Odchylenie standardowe wyniosło 10.55.
+Średnia średnich z próby ma wartość 45.94 lat.
+Odchylenie standardowe wyniosło 10.38.
 Wartość \(s/\sqrt{2}\) jest równa 10.33.
 
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}
@@ -1445,11 +1445,11 @@ Powtarzamy eksperyment 1000 razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   31.40   43.10   46.30   46.26   49.40   59.50
+##   32.10   43.30   46.35   46.33   49.42   62.00
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.26 lat.
-Odchylenie standardowe wyniosło 4.58.
+Średnia średnich z próby ma wartość 46.33 lat.
+Odchylenie standardowe wyniosło 4.54.
 Wartość \(s/\sqrt{10}\) jest równa 4.62.
 
 \textbf{Szacujemy średnią na podstawie 40 kandydatów pobranych losowo}
@@ -1459,11 +1459,11 @@ Powtarzamy eksperyment 1000 razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39.52   44.65   46.26   46.22   47.77   54.50
+##   39.42   44.79   46.40   46.30   47.90   56.23
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.22 lat.
-Odchylenie standardowe wyniosło 2.2656871.
+Średnia średnich z próby ma wartość 46.3 lat.
+Odchylenie standardowe wyniosło 2.3683331.
 Wartość \(s/\sqrt{40}\) jest równa 2.3105373.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}
@@ -1472,11 +1472,11 @@ Uwaga: 70 kandydatów to około ok 1\% całości (1000 powtórzeń)
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   40.59   45.13   46.23   46.24   47.37   52.41
+##   40.93   45.07   46.31   46.26   47.37   51.94
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.24 lat.
-Odchylenie standardowe wyniosło 1.702523
+Średnia średnich z próby ma wartość 46.26 lat.
+Odchylenie standardowe wyniosło 1.6999604
 Wartość \(s/\sqrt{70}\) jest równa 1.746602.
 
 \textbf{Wykres}
@@ -2579,7 +2579,7 @@ opisuje następujący model regresji:
 
 \[\textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa} + b_2 \cdot \textrm{czas} + b_3 \cdot \textrm{predyspozycje} \]
 
-Współczynnik \(b_1\) określa wpływ spożycia kawy
+Współczynnik \(b_1\) określa wpływ spożycia kawy,
 \(b_2\) czasu poświęconego na naukę,
 a \(b_3\) predyspozycji
 (intelektualnych, mierzonych np. średnią ocenę ze studiów)
@@ -2602,10 +2602,10 @@ to zawsze uproszczenie rzeczywistości), przybliżonego charakteru linii
 prostej jako zależności pomiędzy \(X\) a \(Y\) (prosta ale nie do końca prosta)
 albo błędu pomiaru.
 
-Współczynnik \(a\) (nachylenia prostej) określa wielkość efektu
+Współczynnik \(b_1\) (nachylenia prostej) określa wielkość efektu
 w przypadku regresji, tj. siły zależności pomiędzy zmiennymi.
 
-Współczynnik \(a\) ma prostą interpretację: jeżeli wartość zmiennej \(X\)
+Współczynnik \(b_1\) ma prostą interpretację: jeżeli wartość zmiennej \(X\)
 rośnie o jednostkę to wartość zmiennej \(Y\) zmienia
 się przeciętnie o~\(b_1\) jednostek zmiennej Y.
 Wyraz wolny zwykle nie ma sensownej interpretacji
@@ -2622,19 +2622,19 @@ odchyleń wartości teoretycznych od wartości empirycznych, tj.:
 Rozwiązując powyższy \textbf{problem minimalizacyjny} otrzymujemy wzory
 definiujące parametry \(b_0\) oraz \(b_1\). Metoda wyznaczania parametrów
 linii prostej w oparciu o minimalizację sumy kwadratów odchyleń
-nosi nazwę \textbf{metoda największych kwadratów}.
+nosi nazwę \textbf{metoda najmniejszych kwadratów}.
 
 Przypominamy, że \textbf{estymatorem} nazywamy metodę oszacowania parametru na podstawie próby.
 Ponieważ traktujemy \(b_0\) oraz \(b_1\) jako parametry jakieś populacji generalnej
 to wzory na \(b_0\) oraz \(b_1\) statystyk nazwie estymatorami parametrów
-\(b_0\) oraz \(b_1\). W konsekwencji tego \(b_0\)/\(b_1\) posiadają jakąś wartość średnią oraz wariancję.
+\(b_0\) oraz \(b_1\). W konsekwencji tego \(b_0\) oraz \(b_1\) posiadają jakąś wartość średnią oraz wariancję.
 
-Przypominamy że wartość średnia \textbf{dobrego estymatora} powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
+Przypominamy dalej, że wartość średnia \textbf{dobrego estymatora} powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
 oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności próby. Można udowodnić
-że estymatory parametrów \(b_0\)/\(b_1\)
+że estymatory parametrów \(b_0\) oraz \(b_1\)
 uzyskane \textbf{metodą najmniejszych kwadratów} posiadają obie właściwości.
 
-Graficznie \textbf{kryterium minimalizacyjne} przedstawia rysunek \ref{fig:KMNK}
+Graficznie \textbf{kryterium minimalizacyjne} przedstawia rysunek \ref{fig:KMNK}.
 
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{./kmnk_roznice} \caption{Metody statystycznej weryfikacji zależności pomiędzy zmiennymi}\label{fig:KMNK}
@@ -2646,10 +2646,10 @@ wartości empiryczne; kropki czerwone to wartości teoretyczne.
 Zadanie wyznaczenie
 parametrów takiej prostej oczywiście realizuje program komputerowy.
 
-Można udowodnić że bez względu czy punkty na wykresie układają się
+Można udowodnić, że bez względu czy punkty na wykresie układają się
 w przybliżeniu wzdłuż prostej czy nie, zawsze \textbf{jakaś prosta} zostanie
 dopasowana (jeżeli tylko punktów jest więcej niż jeden.)
-Jak to ocenić w sposób bardziej konkretny a nie tylko na oko dopasowanie
+Jak ocenić w sposób bardziej konkretny a nie tylko na oko jakość dopasowania
 prostej do wartości empirycznych?
 
 \textbf{Ocena dopasowania: wariancja resztowa oraz średni błąd szacunku}
@@ -2700,7 +2700,7 @@ Interpretacja współczynnika zbieżności: udział (procent) zmienność wyjaś
 przez linię regresji. Im \(R^2\) jest bliższe jedności (lub 100\% jeżeli
 jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.
 
-\textbf{Ocena dopasowania: istotność parametru \(a\)}
+\textbf{Ocena dopasowania: istotność parametru \(b_1\)}
 
 Jeżeli: \(Y= 0 \cdot X + b_0\), to \(Y = b_0\) czyli nie ma zależności
 pomiędzy \(X\) oraz \(Y\).
@@ -2727,7 +2727,7 @@ jest to \(0,1\), \(0,05\) lub \(0,01\). Tak zgadza się, to prawdopodobieństwo
 to \textbf{poziom istotności}
 
 W każdym programie komputerowym na wydruku wyników linii regresji są podane wartości
-prawdopodobieństwa \(\hat b_1 > b_e\) (co do wartości bezwzględnej). Jeżeli jest
+prawdopodobieństwa \(b_1 > b_e\) (co do wartości bezwzględnej). Jeżeli jest
 ono mniejsze
 niż ustalony \textbf{poziom istotności} to \(b_1\) ma wartość istotnie różną od zera.
 
@@ -2758,7 +2758,12 @@ weight & 0.281 & 0.021 & 13.583 & 0 & 0.240 0.320\\
 \hline
 \end{tabular}
 
-Co oznacza, że wzrost wagi o 1kg
+Pierwsza kolumna \texttt{Zmienna} zawiera nazwy zmiennych (\texttt{(Intercept)} oznacza wyraz wolny).
+Druga kolumna oznaczona jako \texttt{B} zawiera oszacowane wartości (oceny) parametrów linii regresji.
+Kolumna \texttt{Błąd\ stand} zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
+Kolumna \texttt{p} zawiera prawdopodobieństwo \(b>b_e\).
+
+Wzrost wagi zawodnika o 1kg
 skutkuje przeciętnie większym wzrostem o 0.281 cm. Współczynnik determinacji
 wynosi 23.16\%.
 Współczynnik nachylenia prostej jest istotny ponieważ wartość \(p\) (tak mała, że w tabeli
@@ -2900,6 +2905,10 @@ age & 0.484 & 0.124 & 3.906 & 0.000 & 0.360 & 0.240 0.730\\
 \end{tabular}
 
 Współczynnik zbieżności wynosi 26.24\%.
+Kolumna \texttt{Beta}, której wcześniej nie było, zawiera standaryzowane
+oceny parametrów regresji. Tej kolumny na poprzednich wydrukach nie było
+bo w przypadku regresji
+prostej standaryzacja jest zabiegiem raczej zbędnym.
 
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
 wyniki:
