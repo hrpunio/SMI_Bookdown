@@ -1,27 +1,28 @@
 h1:causality Analiza współzależności pomiędzy zmiennymi
 fig:metodyAZ Metody statystycznej weryfikacji zależności pomiędzy zmiennymi
 h2:dwie-zmienne-nominalne Dwie zmienne nominalne
-h3:ryzyko-względne-oraz-iloraz-szans Ryzyko względne oraz iloraz szans
+h3:oddsSec Ryzyko względne oraz iloraz szans
 h3:przedziały-ufności-dla-ryzyka-względnego-oraz-ilorazu-szans Przedziały ufności dla ryzyka względnego oraz ilorazu szans
 h3:tabele-wielodzielcze Tabele wielodzielcze
 h2:zmienna-liczbowa-i-zmienna-nominalna Zmienna liczbowa i zmienna nominalna
 fig:testy Testowanie istotości różnicy pomiędzy średnimi
-h3:test-t-studenta test -Studenta
+h3:test-t-studenta Test -Studenta
 h3:testowanie-normalności Testowanie normalności
-h3:test-u-manna-whitneya test U Manna-Whitneya
-h3:test-anova test ANOVA
-h3:test-kruskalla-wallisa test Kruskalla-Wallisa
-h2:zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne Zmienna liczbowa i zmienne liczbowe lub nominalne
-h3:przypadek-szczególny-dwie-zmienne-liczbowe Przypadek szczególny: dwie zmienne liczbowe
-h3:korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)
+h3:test-u-manna-whitneya Test U Manna-Whitneya
+h3:test-anova Test ANOVA
+h3:test-kruskala-wallisa Test Kruskala-Wallisa
+h2:dwie-zmienne-liczbowe Dwie zmienne liczbowe
+h3:korelacyjny-wykres-rozrzutu Korelacyjny wykres rozrzutu
 h3:pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona Pomiar siły zależności: współczynnik korelacji liniowej Pearsona
+fig:correlations5 Wykresy rozrzutu dla korelacji o różnej sile
 h3:macierz-korelacji Macierz korelacji
 h3:pomiar-siły-zależności-regresja-liniowa Pomiar siły zależności: regresja liniowa
-h3:regresja-prosta Regresja prosta
+h3:regProsta Regresja prosta
 fig:KMNK Metody statystycznej weryfikacji zależności pomiędzy zmiennymi
-h3:przypadek-ogólny-regresja-wieloraka Przypadek ogólny: regresja wieloraka
+h3:zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne Zmienna liczbowa i zmienne liczbowe lub nominalne
 h3:zmienne-zero-jedynkowe Zmienne zero-jedynkowe
 h2:przypadek-specjalny-regresja-logistyczna Przypadek specjalny: regresja logistyczna
+fig:ROCcurve Krzywa ROC
 h2:przypadek-specjalny-dwie-zmienne-co-najmniej-porządkowe Przypadek specjalny: dwie zmienne co najmniej porządkowe
 h3:pomiar-siły-zależności-współczynnik-korelacji-rang Pomiar siły zależności: współczynnik korelacji rang
 h2:podsumowanie Podsumowanie

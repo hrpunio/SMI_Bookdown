@@ -1,12 +1,30 @@
 h1:intro2jamovi Łagodne wprowadzenie z Jamovi
 h2:podstawy-pracy-z-jamovi Podstawy pracy z Jamovi
-h2:przykład-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia Przykład: analiza ankiety satysfakcja–wiedza o paleniu–zamiar odejścia
+fig:mainscreen Ekran startowy Jamovi
+h2:analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia Analiza ankiety: satysfakcja–wiedza o paleniu–zamiar odejścia
 h3:wczytanie-danych Wczytanie danych
+fig:GoogleFormsTestA Fragment przykładowej ankiety
+fig:GoogleFormsTestHdr Fragment przykładowej ankiety
+fig:dataimport Import danych
 h3:przekodowanie-danych Przekodowanie danych
+fig:przeksztalcenie0 Przekształcenie
+fig:przeksztalcenie1 Przekształcenie
+fig:przeksztalcenie1p Przekształcenie
+fig:przeksztalcenie3 Przekształcenie
+fig:przeksztalcenie4 Przekształcenie
+fig:przeksztalcenieContains Przekształcenie
 h3:wyliczenie-nowych-zmiennych Wyliczenie nowych zmiennych
+fig:zmiennaSatysfakcja Obliczanie nowej zmiennej
 h3:analiza-struktury Analiza struktury
+fig:statystykiOpisoweOkno Statystyki opisowe
+fig:statystykiSpisoweWynik Statystyki opisowe
 h3:analiza-zależności-zmienne-nominalne Analiza zależności: zmienne nominalne
+fig:tabeleKrzyzowe Tabele krzyżowe
 h3:analiza-zależności-zmienna-liczbowazmienna-nominalna Analiza zależności: zmienna liczbowa/zmienna nominalna
+fig:testyJamovi Test dla prób niezależnych
 h3:analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna
+fig:regresjaLiniowa Regresja liniowa
 h3:regresja-logistyczna Regresja logistyczna
+fig:regresjaLogistyczna Regresja logistyczna
+h3:redagowanie-raportu Redagowanie raportu
 

@@ -7,9 +7,12 @@ h2:florence-nightingale Florence Nightingale
 fig:nightingale Róża Nightingale
 h2:analiza-parametryczna Analiza parametryczna
 h3:miary-położenia Miary położenia
+fig:distributions5 Rozkłady cechy a miary średnie
 h3:miary-zmienności Miary zmienności
 h3:miary-asymetrii Miary asymetrii
-h3:parametryczna-analiza-struktury-w-jednym-zdaniu (Parametryczna) analiza struktury w jednym zdaniu
+fig:skeweness Rozkłady symetryczne i asymetryczne
 h2:porównanie-wielu-rozkładów Porównanie wielu rozkładów
 h3:wykres-pudełkowy Wykres pudełkowy
+fig:boxplot Wykres pudełkowy
+h2:zestawienie-metod-opisu-statystycznego Zestawienie metod opisu statystycznego
 

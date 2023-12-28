@@ -12,7 +12,7 @@ classoption:
   - openany
 link-citations: yes
 description: (c) Tomasz Przechlewski / CC-BY license
-subtitle: Podręcznik dla studentów wydziałów nauk o zdrowiu
+subtitle: "Podręcznik dla studentów wydziałów nauk o zdrowiu"
 ---
 
 ```{r setup, include=FALSE}
@@ -62,6 +62,8 @@ diffMx <- function (s, t)  {
 #    x <- x[-c(from:to)]
 #  })
 
+jamovi.screen <- "80%"
+ex.out.width <- "70%"
 ```
 
 

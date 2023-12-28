@@ -14,7 +14,7 @@ Należy zastanowić się nad trzema sprawami:
 3. Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)
 
 
-### Co chcemy ustalić?
+**Co chcemy ustalić?**
 
 Najlepiej jakąś zależność. Na przykład: Stress a wypalenie zawodowe;
 satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej
@@ -24,23 +24,23 @@ nadwaga wśród studentów wydziału zdrowia PSW; Analiza porównawcza
 wypalenia zawodowego pielęgniarek
 pracujących w różnych systemach opieki.
 
-### Co i jak mamy mierzyć?
+**Co i jak mierzyć?**
 	
 Jeżeli mamy zamiar badań nadwagę, to powinniśmy zmierzyć masę ciała.
 Jeżeli celem jest ustalenie zależności pomiędzy stresem a wypaleniem
 zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenia.  Jak
 dotąd banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
-pytanie **jak**
+pytanie **jak**?
 
 ### Mierzenie twardych faktów vs mierzenia przekonań
 
 Możemy pytać w ankiecie o dwie rzeczy:
 
-* **Fakty** (wiek, staż, zawód, tętno, przebyte choroby)
+* **fakty** (wiek, staż, zawód, tętno, przebyte choroby);
 
-* **Przekonania**, **Wartości**, **Postawy**; 
-  **Uczucia** (strach / radość) albo **Zamiary**
-  (w języku Attitudes/Emotions/Intentions)
+* **przekonania**, **wartości**, **postawy**; 
+  **uczucia** (strach / radość) albo **zamiary**
+  (w języku attitudes/emotions/intentions).
 
 Mierzenie **faktów** nie wymaga dodatkowych objaśnień. Problem jest
 z mierzeniem **przekonań**.
@@ -69,7 +69,7 @@ samoskuteczność to
 **przekonanie**, iż *jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele*).
 **Definicja operacyjna** określa jak zmierzyć pojęcie
 (jak zmierzyć satysfakcję)
-Przejście od DK do DO bywa czasami mocno, hmm... arbitralne.
+Przejście od definicji koncepcyjnej do definicji operecyjnej bywa czasami mocno, hmm... arbitralne.
 
 ### Skala Likerta
 
@@ -81,27 +81,40 @@ respondentowi trzy możliwe  warianty odpowiedzi: Tak/Nie/Nie wiem.
 
 Może też być pięć wariantów: bardzo się boję--boję się--ani/ani--nie boję się--zupełnie się nie boję.
 
-Taką skalę pomiarową określamy jak wiemy jako **porządkową**. Pomiary nie są liczbami
+Taką skalę pomiarową określamy jak wiemy jako **porządkową**. Pomiary nie są liczbami,
 ale są uporządkowane.
 Rangi wartości są już liczbami (np 1--5 w drugim przykładzie), można je np. uśredniać
 Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali **Likerta**.
 Można sobie wymyślać skalę Likerta 7-punktową i więcej. 
 
-Moim zdaniem powyżej  7 wariantów normalny respondent będzie miał problem 
+Naszym zdaniem powyżej 7 wariantów normalny respondent będzie miał problem 
 czy się bardziej-bardziej  czy bardziej-bardziej-bardziej boi.
 
-### Skala pomiarowa/inwentarz/kwestionariusz
+### Skala pomiarowa czyli inwentarz albo kwestionariusz
 
 Ponieważ skala Likerta jest zgrubna to 
-uważa się powszechnie że lepszy wynik da pomiar 
+uważa się powszechnie, że lepszy wynik da pomiar 
 wielokrotny. 
 W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej 
-precyzyjny tutaj pytamy się parę razy o to samo co
+precyzyjny. Tutaj pytamy się parę razy o to samo co
 ma dać podobny efekt (mniejszy średni błąd pomiaru). 
 Taka seria pytań nosi też nazwę skali albo **inwentarza**.
-
 Nie pytamy się zatem **Czy pan/pani boi się COVID19?** tylko zadajemy serię
-pytań o strach względem COVID19. 
+pytań o strach względem COVID19:
+
+
+
+::: {.example}
+**strach przed COVID19**
+
+The Fear of COVID-19 Scale: Development and Initial Validation. 
+International Journal of
+Mental Health and Addiction, 1–9. 
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/
+
+Lęk przed koronawirusem COVID-19
+i lęk przed śmiercią – polskie adaptacje narzędzi
+https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html
 
 
 1. I am most afraid of Corona
@@ -129,7 +142,7 @@ albo:
 4. Boję się, że mogę stracić życie z powodu koronawirusa
 
 5. Gdy oglądam wiadomości i czytam o koronawirusie w mediach
-    społecznościowych, robię się nerwowy i niespokojny
+   społecznościowych, robię się nerwowy i niespokojny
 
 6. Nie mogę spać, ponieważ martwię się, że ja lub moi bliscy zarażą się
 
@@ -138,32 +151,18 @@ albo:
 Odpowiadający ma do wyboru pięć wariantów odpowiedzi:
 **zdecydowanie nie**/**nie**/**nie mam zdania**/**tak**/**zdecydowanie tak**
 
-
-The Fear of COVID-19 Scale: Development and Initial Validation. 
-International Journal of
-Mental Health and Addiction, 1–9. 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/
-
-*Fear of COVID-19 Scale (FCV-19S) across countries: Measurement invariance issues*
-https://onlinelibrary.wiley.com/doi/10.1002/nop2.855
-
-*Fear of COVID-19, psychological distress, work satisfaction and turnover 
-intention among frontline nurses*
-https://onlinelibrary.wiley.com/doi/full/10.1111/jonm.13168
-
-Lęk przed koronawirusem COVID-19
-i lęk przed śmiercią – polskie adaptacje narzędzi
-https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html
+:::
 
 ### Model pomiaru
 
 Ukryty czynnik (strach) kształtuje wartości indykatorów (odpowiedzi na pytania)
 Taki sposób pomiaru **ukrytego czynnika** (latent w języku) określa się
-mianem refleksyjnego (co jest kalką od *reflexive*). Na rysunku
+mianem refleksyjnego (co jest kalką od *reflexive*). Na rysunku \@ref(fig:modelP)
 kierunek strzałki obrazuje zależność (czynnik→indykator)
 
-
-![](./pomiar_ses-cropped.png)
+```{r modelP, out.width="90%", fig.cap = "Modele pomiaru czynnika ukrytego"}
+knitr::include_graphics("./pomiar_ses-cropped.png")
+```
 
 Alternatywny sposób definiowania ukrytego (w pewnym sensie, raczej złożonego)
 czynnika nosi nazwę **formatywnego** (albo indeksu): czynnik jest sumą indykatorów.
@@ -183,23 +182,23 @@ dochody.
 Tylko jeden z trzech aspektów podwyższa mu SES;
 albo świetnie zarabiająca prostytutka bez matury.
 
-Jeżeli w czynniku refleksyjnym pominiemy jeden z trzech indykatorów to nic się
+Jeżeli w czynniku refleksyjnym pominiemy z trzech indykatorów to nic się
 nie stanie oprócz tego że pomiar będzie mniej precyzyjny. Jeżeli
-w czynniku formatywnym pominiemy indykator to popełniamy gruby błąd bo pomijamy
-jeden istotny składnik całości.
+w czynniku formatywnym pominiemy indykator, to popełniamy gruby błąd, bo pomijamy
+istotny składnik całości.
 
 Dobrą wiadomością jest, że najprostszy sposób pomiaru traktuje czynniki
-refleksyjne i formatywne jednakowo: wartością czynnika jest suma 
+refleksyjne i formatywne jednakowo: wartością czynnika jest suma albo ewentualnie średnia 
 wartości indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta
-suma rang po prostu. W skali strachu przed COVID ten kto się najbardziej
+suma (albo średnia) wartości rang po prostu. W skali strachu przed COVID ten kto się najbardziej
 boi powinien odpowiedzieć 7 razy **zdecydowanie tak** co odpowiada 
 sumie 35 rang (jeżeli rangujemy od 1 do 5). 
-Ten który się wcale nie boi zaś 7.
+Ten który się wcale nie boi zaś będzie miał 7.
 
 Małym utrudnieniem mogą być **pytania odwrócone**. Jeżeli pytamy
 o strach przed COVID i w każdym pytaniu jak bardzo ktoś się boi, albo jak
-bardzo mu serce bije, ale w jednym z pytań zapytamy **nie boję się COVID**
-To ranga 5 odpowiada uczuciu **braku strachu**. Rangi w pytaniach odwróconych
+bardzo mu serce bije, ale w jednym z pytań zapytamy **nie boję się COVID**,
+to ranga 5 odpowiada uczuciu **braku strachu**. Rangi w pytaniach odwróconych
 należy przeliczyć (odwrócić): 1 zamienić na 5, 2 na 4 itd...
 Jeżeli używamy cudzych skal to w opisie powinno być wskazane które
 pytania są odwrócone.
@@ -207,20 +206,20 @@ pytania są odwrócone.
 **Zalecany schemat postępowania jeżeli w ankiecie mają być mierzone
 przekonania** (strach, samoskuteczność, wypalenie zawodowe, stress czy satysfakcja):
 
-* Dokształcamy się nieco z psychologii mimo wszystko
+* Dokształcamy się nieco z psychologii mimo wszystko.
 
 * Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił żeby
-  to mierzyć; **raczej nie należy wymyślać własnych skal**.
+  mierzyć to co my chcemy zmierzyć, bo **raczej nie należy wymyślać własnych skal**.
 
-* Robimy ankietę (w Internecie) i zbieramy dane
+* Robimy ankietę (w Internecie) i zbieramy dane.
 
-* Wykonujemy analizę statystyczną
+* Wykonujemy analizę statystyczną.
 
-Banalnie proste
+Banalnie proste co udowodnimy na przykładach
 
-## Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW
+## Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW
 
-```{r}
+```{r, out.width=ex.out.width}
 s0 <- read.csv("palenie_PSW.csv", sep = ',',  header=F, skip=1, na.string="NA", fileEncoding = "UTF-8",
    col.names = c('time', 
    'status', 'palenie.staz', 
@@ -310,19 +309,19 @@ mutate (
 Celem jest ocena wielkości zjawiska palenia tytoniu oraz
 poziom wiedzy na temat szkodliwości palenia tytoniu
 wśród
-studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących na ten nałóg.
+studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących ten nałóg.
 
-**Postawiono następujące hipotezy badawcze**
+**Postawiono następujące hipotezy badawcze**:
 
-1. jaka jest wielkość zjawiska palenie tytoniu wśród studentów PSW?
+1. Jaka jest wielkość zjawiska palenie tytoniu wśród studentów PSW?
 
-2. jaka jest wiedza na temat szkodliwości palenia tytoniu wśród studentów PSW?
+2. Jaka jest wiedza na temat szkodliwości palenia tytoniu wśród studentów PSW?
 
-3. czy palenie jest skorelowane z płcią, stażem pracy i miejscem pracy?
+3. Czy palenie jest skorelowane z płcią, stażem pracy i miejscem pracy?
 
-4. czy wiedza na temat szkodliwości palenie jest skorelowana z płcią, stażem pracy i miejscem pracy?
+4. Czy wiedza na temat szkodliwości palenie jest skorelowana z płcią, stażem pracy i miejscem pracy?
 
-5. czy palenie jest skorelowane z wiedzą na temat szkodliwości palenia?
+5. Czy palenie jest skorelowane z wiedzą na temat szkodliwości palenia?
 
 
 ### Metoda
@@ -332,37 +331,40 @@ Ankieta zawierała pytania dotyczące palenia tytoniu (pali/nie pali/palił, jak
 test wiedzy na temat szkodliwości palenia oraz pytania
 o rodzaj miejsca pracy, staż pracy i płeć itd.
 
-Pięć następujących pytań oceniało wiedzę ankietowanego:
+Pięć następujących pytań oceniało wiedzę ankietowanego na temat szkodliwości palenia:
 
-* Uważasz, że bardziej szkodliwe dla zdrowia jest (JW),
+* Czy bardziej szkodliwe dla zdrowia jest czynne czy bierne palenie? (JW),
 * Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
-  bezpośrednio przez palenie papierosów?
+  bezpośrednio przez palenie papierosów? (WW)
 * Czy palenie papierosów powoduje choroby układu pokarmowego? (JW)
 * Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
-  bezpośrednio przez palenie papierosów?
-  Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (wielokrotnego)
+  bezpośrednio przez palenie papierosów? (WW)
+* Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (WW)
 
-W przypadku pytań jednokrotnego wyboru, za wskazanie poprawnej odpowiedzi respondent otrzymywał 1 punkt.
-W przypadku pytań wielokrotnego wyboru za wskazanie prawidłowej odpowiedzi respondent otrzymywał 1 punkt, ale
+W przypadku pytań jednokrotnego wyboru (JW), za wskazanie poprawnej odpowiedzi respondent otrzymywał 1 punkt.
+W przypadku pytań wielokrotnego wyboru (WW) za wskazanie prawidłowej odpowiedzi respondent otrzymywał 1 punkt, ale
 za wskazanie nieprawidłowej
 otrzymywał (minus) -1 punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
 Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 
 ### Zastosowane metody statystyczne
 
-* Hipotezę 1. oceniono na podstawie odsetka respondentów palących
+* Hipotezę 1 weryfikowano na podstawie wielkości odsetka respondentów palących.
 
-* Hipotezę 2. oceniono na podstawie odsetka respondentów wykazujących się dobrą i bardzo dobrą wiedzą na temat palenia
+* Hipotezę 2 weryfikowano na podstawie wielkości odsetka respondentów wykazujących się
+  dobrą i bardzo dobrą wiedzą na temat palenia
 
-* Hipotezę 3--5 zweryfikowano z wykorzystaniem tablic korelacyjnych/testu chi-kwadrat
-oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
-Kruskalla-Wallisa
+* Hipotezy 3--5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
+  oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
+  Kruskala-Wallisa.
 
 
 ### Metryczka (analiza respondentów)
 
+Rozkład ankietowanych wg wyniku testu 
+na znajomość szkodliwości palenia przedstawiono na rysunku.
 
-```{r, echo=F}
+```{r, echo=F, out.width=ex.out.width}
 P.total.mean <- mean (s1$P.total)
 P.total.sd <- sd (s1$P.total)
 P.total.median <- median(s1$P.total)
@@ -379,14 +381,14 @@ ex.p
 W badaniu wzięło udział `r P.total.N` studentów. 
 Otrzymano `r P.total.N` poprawnie
 wypełnionych ankiet. Średnia wartość testu oceniającego wiedzę
-wyniosła `r P.total.mean` (odchylenie
-standardowe `r P.total.sd`)
+wyniosła `r sprintf ("%.3f", P.total.mean)` (odchylenie
+standardowe `r sprintf ("%.3f", P.total.sd)`).
 
 Rozkład ankietowanych ze względu na status względem
-palenia przedstawiono na rysunku
+palenia przedstawiono na rysunku.
 
 
-```{r}
+```{r, out.width=ex.out.width}
 s0.status <- s1 %>%
   select (status) %>%
   group_by(status)%>%
@@ -404,7 +406,7 @@ p.status
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku
 
-```{r}
+```{r, out.width=ex.out.width}
 s0.sex <- s1 %>%
   select (plec) %>%
   group_by(plec)%>%
@@ -424,7 +426,7 @@ p.1
 
 Rozład ankietowanych ze względu na staż pracy przedstawiono na rysunku
 
-```{r}
+```{r, out.width=ex.out.width}
 s0.staz <- s1 %>%
   select (staz) %>%
   group_by(staz)%>%
@@ -445,7 +447,7 @@ p.3
 Rozkład ankietowanych ze względu na rodzaj miejsca pracy
 przedstawiono na rysunku
 
-```{r}
+```{r, out.width=ex.out.width}
 s0.miejsce <- s1 %>%
   select (miejsce.pracy) %>%
   group_by(miejsce.pracy)%>%
@@ -471,15 +473,15 @@ pala_lub_palili <- s0 %>% filter (status != 'Nigdy nie paliłem/am') %>%
 ```
 
 Palą lub paliło `r pala_lub_palili` respondentów 
-( `r sprintf("%.f", pala_lub_palili/ P.total.N *100)` %).
-Żeby stwierdzić czy to jest dużo czy mało to np. można by porównać
+(`r sprintf("%.2f", pala_lub_palili/ P.total.N *100)` %).
+Żeby stwierdzić czy to jest dużo czy mało to na przykład można by porównać
 z jakąś średnią ogólnopolską.
 
 ### Weryfikacja hipotezy 2
 
-Średnia wartość uzyskana w teście wyniosła `r P.total.mean`
+Średnia wartość uzyskana w teście wyniosła `r sprintf("%.2f", P.total.mean)`
 (mediana `r P.total.median`); 3/4 respondentów nie uzyskało więcej niż
-`r P.total.q3` (czyli `r sprintf("%.1f", P.total.q3/19 *100)` %)
+`r P.total.q3` (czyli `r sprintf("%.1f", P.total.q3/19 *100)` %).
 
 ### Weryfikacja hipotez 3--5
 
@@ -497,7 +499,7 @@ chi_test <- chisq.test(t.sex.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r chi_test["p.value"]`)
+Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
 
 Czy palenie jest skorelowane ze stażem pracy?
 
@@ -515,7 +517,7 @@ chi_test <- chisq.test(t.staz.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r chi_test["p.value"]`)
+Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
 
 
 Czy palenie jest skorelowane z miejscem pracy?
@@ -534,7 +536,7 @@ chi_test <- chisq.test(t.praca.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r chi_test["p.value"]`)
+Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
 
 Czy wiedza na temat palenia jest skorelowana z płcią:
 
@@ -551,9 +553,9 @@ wilcoxp['p.value']
 ```
 
 Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
-Wartość p wynosi `r wilcoxp['p.value']` -- nie ma podstaw
-od odrzucenia hipotezy o braku korelacji na poziomie 0,05 (ale na poziomie
-0,1 już byśmy mogli przyjąć że takowa korelacji istnieje)
+Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` zatem
+hipotezy o braku korelacji na poziomie 0,05 należy odrzucić.
+Istnieje zależność pomiędzy wiedzą na temat palenia a płcią.
 
 Czy wiedza na temat palenia jest skorelowana z miejscem pracy:
 
@@ -567,7 +569,7 @@ wilcoxp['p.value']
 ```
 
 Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
-Wartość p wynosi `r wilcoxp['p.value']` -- nie ma podstaw
+Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` -- nie ma podstaw
 od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
 
 Czy wiedza na temat palenia jest skorelowana ze stażem:
@@ -583,8 +585,8 @@ kw["p.value"]
 #wilcoxp['p.value']
 ```
 
-Porównujemy więcej niż dwie grupy zatem stosujemy test Kruskalla-Wallisa.
-Wartość p wynosi `r kw["p.value"]` -- nie ma podstaw
+Porównujemy więcej niż dwie grupy zatem stosujemy test Kruskala-Wallisa.
+Wartość p wynosi `r sprintf("%.8f", kw["p.value"])` -- nie ma podstaw
 od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
@@ -596,7 +598,7 @@ ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test c
 wiedza.status.t <- s1 %>%
   select (P.total, status) %>% 
   mutate( P.total=case_when(P.total < 6 ~ "mała",  
-                         P.total < 11 ~ "średna", 
+                         P.total < 11 ~ "średnia", 
                          P.total < 16 ~ "duża",
                          TRUE ~ "ogromna") ) %>%
   table()
@@ -609,10 +611,10 @@ chi_test
 ```
 
 Widza i status wzg. palenia nie jest skorelowana
-o czym świadczy wysoka wartość p (`r chi_test["p.value"]`)
+o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
 
 Można to samo zweryfikować porównując średnie w grupach
-i stosując test Kruskalla-Wallisa
+i stosując test Kruskala-Wallisa
 
 ```{r}
 ## albo średnia wiedzia w grupach wg statusu
@@ -626,16 +628,19 @@ kw<- kruskal.test(P.total ~ status, data = s1)
 kw["p.value"]
 ```
 
-Wynik jest identyczny (wysoka wartość p `r kw["p.value"]`)
+Wynik jest identyczny (wysoka wartość p `r sprintf("%.f", kw["p.value"])`).
 
 ### Wnioski
 
-* Ponad połowa studentów pali lub paliła 
+* Ponad połowa studentów pali lub paliła.
 
-* Nie ma związku pomiędzy statusem względem palenia/wiedzą o szkodliwości
-palenia a płcią, miejscem pracy, stażem.
+* Istnieje zależność pomiędzy wiedzą o szkodliwości palenia a płcią.
 
-## Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW
+* Nie ma związku pomiędzy statusem względem palenia a płcią, miejscem pracy i stażem.
+
+* Nie ma związku pomiędzy wiedzą o szkodliwości palenia a miejscem pracy i stażem.
+
+## Depresja i jej uwarunkowania wśród studentów PSW
 
 ### Cel
 
@@ -651,29 +656,29 @@ o rodzaj miejsca pracy, staż pracy i płeć.
 
 Test samooceny depresji Becka składa się z 21 pytań. W każdym pytaniu
 możliwe są 4 warianty odpowiedzi, odpowiadające zwiększonej intensywności objawów depresji,
-którym w związku z tym przypisuje się od zera do 3 punktów. Maksymalna liczba punktów
+którym w związku z tym przypisuje się wartości od zera do 3 punktów. Maksymalna liczba punktów
 w teście wynosi 63 a minimalna 0.
 
-Interpretacja wyników testu Becka 0--19 brak/łagodna depresja;
+Interpretacja wyników testu Becka: 0--19 brak/łagodna depresja;
 20--25 umiarkowana; 26--63 cieżka depresja.
 
-Postawiono następujące hipotezy badawcze
+Postawiono następujące hipotezy badawcze:
 
-1. depresja stanowi duży problem wśród studentów PSW
+1. Depresja stanowi duży problem wśród studentów PSW.
 
-2. problem depresji zależy od miejsca pracy
+2. Problem depresji zależy od miejsca pracy.
 
-3. problem depresji zależy od stażu pracy
+3. Problem depresji zależy od stażu pracy.
 
-4. problem depresji zależy od płci
+4. Problem depresji zależy od płci.
 
-Sposoby weryfikacji:
+### Zastosowane metody statystyczne
 
-* Hipotezę 1. oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji;
+* Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 
-* Hipotezę 2--4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
-oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
-Kruskalla-Wallisa
+* Hipotezy 2--4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+  oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
+  Kruskala-Wallisa
 
 
 ```{r, echo=F}
@@ -832,18 +837,23 @@ s0.sd <- sd(s0$P)
 ```
 
 W badaniu wzięło udział `r s0.N` studentów. Otrzymano `r s0.N` poprawnie
-wypełnionych ankiet. Średnia wartość testu Becka wyniosła `r s0.mean` (odchylenie
-standardowe `r s0.sd`)
+wypełnionych ankiet. Średnia wartość testu Becka wyniosła `r sprintf ("%.3f", s0.mean)` (odchylenie
+standardowe `r sprintf ("%.3f",  s0.sd)`)
 
+Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku.
 
-```{r}
+```{r, out.width=ex.out.width}
 ex.p <- ggplot(s0, aes(x = P)) + 
   geom_histogram(binwidth = 2, fill='steelblue', color='navyblue') +
   ylab("liczba respondentów") +
   xlab("Wynik testu") +
   ggtitle("Studenci wg wyniku testu Becka") 
 ex.p
+```
 
+Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku.
+
+```{r, out.width=ex.out.width}
 ###
 s0.sex <- s0 %>%
   select (plec) %>%
@@ -861,7 +871,11 @@ p.1 <- s0.sex %>%
   #scale_x_discrete (breaks=var.names,  labels=var.labels) +
   coord_flip()
 p.1
+```
 
+Rozkład ankietowanych ze względu na staż przedstawiono na rysunku.
+
+```{r, out.width=ex.out.width}
 ##
 s0.staz <- s0 %>%
   select (staz) %>%
@@ -881,10 +895,9 @@ p.3
 ```
 
 
-
 ### Weryfikacja hipotezy 1
 
-```{r, echo=F}
+```{r, echo=F, out.width=ex.out.width}
 s0.dep <- s0 %>%
   select (Depresja) %>%
   group_by(Depresja)%>%
@@ -929,6 +942,8 @@ chi_test <- chisq.test(dep.sex.f)
 chi_test
 ```
 
+Nie stwierdzono zależności pomiędzy depresją a płcią (p = `r sprintf ("%.3f", chi_test["p.value"])`).
+
 ### Depresja a staż 
 
 Tablica wielodzielcza i test chi-kwadrat:
@@ -948,8 +963,10 @@ chi_test <- chisq.test(dep.staz.f)
 chi_test
 ```
 
-albo jeżeli depresję mierzymy na skali liczbowej
-można porównać wartości średnie i zastosować test Kruskalla-Wallisa
+Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = `r sprintf ("%.4f", chi_test["p.value"])`).
+
+Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
+można porównać wartości średnie i zastosować test Kruskala-Wallisa.
 
 ```{r}
 s0.staz <- s0 %>%
@@ -981,7 +998,11 @@ chi_test <- chisq.test(dep.praca.f)
 chi_test
 ```
 
-Albo jeżeli depresję mierzymy na skali liczbowej
+Nie stwierdzono zależności pomiędzy depresją
+a miejscem pracy (p = `r sprintf ("%.4f", chi_test["p.value"])`).
+
+
+Jeżeli depresję mierzymy na skali liczbowej
 można porównać wartości średnie i zastosować test Manna-Whitneya
 
 ```{r, echo=F}
@@ -998,11 +1019,11 @@ Wynik jest ten sam (brak zależności)
 
 ## Wnioski
 
-* Depresja nie jest istotnym problemem wśród studentów RM/PO PSW
+* Depresja nie jest istotnym problemem wśród studentów RM/PO PSW.
 
-* Nie ma związku pomiędzy depresją a stażem, płcią i miejscem pracy
+* Nie ma związku pomiędzy depresją a stażem, płcią i miejscem pracy.
 
-## Przykład 3:
+## Satysfakcja, przywiązanie i zamiar odejścia
 
 <span style="color: red;">W przygotowaniu na podstawie ankiety:
 https://docs.google.com/forms/d/1bgNMhPEJMjiWeLfrmEAnPpns5U7Rooc-KOaeS7XlLV0/edit
@@ -1010,9 +1031,9 @@ https://docs.google.com/forms/d/1bgNMhPEJMjiWeLfrmEAnPpns5U7Rooc-KOaeS7XlLV0/edi
 
 ## Formularze ankiet
 
-### Ankieta Depresja: Skala Depresji Becka
+### Skala Depresji Becka
 
-#### Pytania
+**Pytania**
 
 Pytanie 1
 
@@ -1161,49 +1182,49 @@ Pytanie 21
 2. Problemy płciowe wyraźnie mniej mnie interesują
 3. Utraciłem wszelkie zainteresowanie sprawami seksu
 
-#### Nazwy pytań:
-
-Odczuwanie smutku i przygnębienia (1)
-Martwienie się o przyszłość (2)
-Uważasz, że zaniedbujesz swoje obowiązki? (3)
-Jesteś zadowolony z siebie? (4)
-Czy często masz poczucie winy? (5)
-Czy zasługujesz na karę? (6)
-Zadowolenie z siebie (7)
-Czy czujesz się gorszy od innych? (8)
-Czy masz myśli samobójcze? (9)
-Często chce Ci się płakać? (10)
-Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11)
-Czy zmieniło się coś w Twoim zainteresowaniu innymi ludźmi? (12)
-Czy ostatnio miewasz większe problemy z podejmowaniem różnych decyzji? (13)
-Czy uważasz, że wyglądasz gorzej i mniej atrakcyjnie niż kiedyś? (14)
-Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15)
-Masz kłopoty ze snem? (16)
-Czy męczysz się bardziej niż zwykle? (17)
-Czy masz kłopoty z apetytem? (18)
+**Treść pytań* (nie prezentowana ankietowanym):
+Odczuwanie smutku i przygnębienia (1),
+Martwienie się o przyszłość (2),
+Uważasz, że zaniedbujesz swoje obowiązki? (3),
+Jesteś zadowolony z siebie? (4),
+Czy często masz poczucie winy? (5),
+Czy zasługujesz na karę? (6),
+Zadowolenie z siebie (7),
+Czy czujesz się gorszy od innych? (8),
+Czy masz myśli samobójcze? (9),
+Często chce Ci się płakać? (10),
+Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11),
+Czy zmieniło się coś w Twoim zainteresowaniu innymi ludźmi? (12),
+Czy ostatnio miewasz większe problemy z podejmowaniem różnych decyzji? (13),
+Czy uważasz, że wyglądasz gorzej i mniej atrakcyjnie niż kiedyś? (14),
+Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15),
+Masz kłopoty ze snem? (16),
+Czy męczysz się bardziej niż zwykle? (17),
+Czy masz kłopoty z apetytem? (18),
 W ciągu ostatniego miesiąca nie stosowałem diety, aby schudnąć,
-lecz straciłem na wadze (19)
-Czy ostatnio bardziej martwisz się swoim stanem zdrowia? (20)
-Czy masz kłopoty z potencją? (21)
+lecz straciłem na wadze (19),
+Czy ostatnio bardziej martwisz się swoim stanem zdrowia? (20),
+Czy masz kłopoty z potencją? (21).
 
-#### Interpretacja wyników
+**Interpretacja wyników**
 
-1. 00--11 (brak depresji)
-2. 12--19 (depresja łagodna)
-3. 20--25 (depresja umiarkowana)
-4. 26--63 (depresja ciężka)
+| Punkty     | Depresja      |
+|------------|---------------|
+| 0--11      |  Brak         |
+| 12--19     |  Łagodna      |
+| 20--25     |  Umiarkowana  |
+| 26--63     |   Ciężka      |
 
-#### Źródło
-
+**Źródło**:
 https://psychiatra.bydgoszcz.eu/publikacje-dla-pacjenta/depresja/skala-depresji-becka/
-
+oraz
 http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf
 
 ### Ankieta Palenie
 
 Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 
-#### Pytania
+**Pytania**
 
 1. Płeć
 □ Kobieta
@@ -1335,3 +1356,9 @@ bezpośrednio przez palenie papierosów? (wielokrotnego)
 
 (Prawidłowe odpowiedzi zaznaczono ☒)
 
+**Źródło**: Na podstawie ankiety z pracy Izabeli Marendowskiej
+     *Ocena poziomu wiedzy pielęgniarek na
+temat szkodliwości palenia papierosów* (promotor: dr Marzeny Barton);
+Kwidzyn 2022.
+
+### Ankieta: satysfakcja, przywiązanie i zamiar odejścia

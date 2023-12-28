@@ -22,4 +22,17 @@
 }
 
 
+\font\chineseFont="NotoSansTC-Regular" at 10pt
+\def\chinese#1{{\chineseFont #1}}
+\edef\bbChar{□}
+\edef\bbCharX{☒}
+\edef\bbArrowR{→}
+
+\catcode`☒=\active
+\catcode`□=\active
+\catcode`→=\active
+\def☒{\chinese{\bbCharX}} %% bb with X
+\def□{\chinese{\bbChar}} %% ballot box
+\def→{\chinese{\bbArrowR}} %% right arrow
+
 %%%

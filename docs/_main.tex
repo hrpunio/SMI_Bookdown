@@ -87,6 +87,19 @@
 }
 
 
+\font\chineseFont="NotoSansTC-Regular" at 10pt
+\def\chinese#1{{\chineseFont #1}}
+\edef\bbChar{□}
+\edef\bbCharX{☒}
+\edef\bbArrowR{→}
+
+\catcode`☒=\active
+\catcode`□=\active
+\catcode`→=\active
+\def☒{\chinese{\bbCharX}} %% bb with X
+\def□{\chinese{\bbChar}} %% ballot box
+\def→{\chinese{\bbArrowR}} %% right arrow
+
 %%%
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -618,17 +631,18 @@ i sprowadza się do opisania danych z wykorzystaniem:
 
 \textbf{Rozkład cechy} (zmiennej) to przyporządkowanie
 wartościom cechy zmiennej odpowiedniej \textbf{liczby wystąpień} (liczebności albo częstości
-(czyli popularnych procentów).)
+(czyli popularnych procentów).
 
 \textbf{Analiza struktury} (dla jednej zmiennej) obejmuje:
 
 \begin{itemize}
 \item
-  \textbf{określenie tendencji centralnej} (tzw. \textbf{miary położenia} / wartość przeciętna, mediana, dominanta);
+  \textbf{określenie tendencji centralnej} (\textbf{miary położenia}:
+  wartość przeciętna, mediana, dominanta);
 \item
-  \textbf{zróżnicowanie wartości} (rozproszenie);
+  \textbf{zróżnicowanie wartości} (rozproszenie: odchylenie standardowe, rozstęp ćwiartkowy);
 \item
-  \textbf{asymetrię} (rozłożenie wartości wokół średniej);
+  \textbf{asymetrię} (rozłożenie wartości zmiennej wokół średniej);
 \end{itemize}
 
 \hypertarget{tablice-statystyczne}{%
@@ -872,7 +886,7 @@ Wykres słupkowy (\emph{bar chart})
 \begin{example}
 \textbf{Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-6-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-6-1}
 \end{example}
 
 Wykres kołowy (\emph{pie chart})
@@ -880,7 +894,7 @@ Wykres kołowy (\emph{pie chart})
 \begin{example}
 \textbf{Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-7-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-7-1}
 \end{example}
 
 Wykres słupkowy i kołowy przedstawiają dokładnie to samo.
@@ -897,11 +911,11 @@ wyróżniały):
 \begin{example}
 \textbf{Absolwenci studiów pielęgniarskich w krajach UE}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-8-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-8-1}
 
 Wykres słupkowy dalej jest natomiast OK:
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-9-1}
 \end{example}
 
 \hypertarget{skala-liczbowa}{%
@@ -913,7 +927,7 @@ wariantów cechy są przedziały wartości.
 \begin{example}
 \textbf{Dzietność kobiet na świecie}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-10-1}
 \end{example}
 
 Podobnie jak tablice, rysunki powinny być opatrzone tytułem
@@ -963,14 +977,19 @@ Miary przeciętne (\textbf{położenia}) charakteryzują średni lub
 typowy poziom wartości cechy. Są to więc takie wartości, wokół których
 skupiają się wszystkie pozostałe wartości analizowanej cechy.
 
-\includegraphics{./canvas_distr_11.png}
+\begin{figure}
+\includegraphics[width=0.99\linewidth]{./distributions} \caption{Rozkłady cechy a miary średnie}\label{fig:distributions5}
+\end{figure}
 
-Na rysunku po lewej mamy dwa rozkłady różniące się poziomem przeciętnym (czerwony ma przeciętnie mniejsze wartości
-niż turkusowy). Są to rozkłady \textbf{jednomodalne}, tj. wartości skupiają się wokół jednej wartości.
-Dla takich rozkładów ma sens obliczanie średniej arytmetycznej.
+Na rysunku \ref{fig:distributions5} po lewej mamy dwa rozkłady różniące się poziomem przeciętnym. Rozkład
+czerwony ma przeciętnie większe wartości
+niż turkusowy. Są to rozkłady \textbf{jednomodalne}, czyli takie, w których rozkład cechy skupia się
+wokół jednej wartości.
+Dla takich rozkładów ma sens obliczanie średniej arytmetycznej. Te średnie wartości
+są zaznaczone na rysunku linią pionową.
 
-Na rysunku po prawej mamy rozkłady \textbf{nietypowe}: \textbf{wielomodalne} (turkusowy)
-lub \textbf{niesymetryczne} (fioletowy.) W rozkładzie niesymetrycznym wartości skupiają się nie centralnie,
+Na rysunku po prawej mamy rozkłady \textbf{nietypowe}: \textbf{wielomodalne} (czerwony)
+lub \textbf{niesymetryczne} (niebieski). W rozkładzie niesymetrycznym wartości skupiają się nie centralnie,
 ale po prawej/lewej od środka przedziału zmienności/wartości średniej).
 
 W świecie rzeczywistym zdecydowana większość rozkładów jest jednomodalna.
@@ -1038,14 +1057,18 @@ Przykładowo wartość 99 centyla i mniejszą ma 99\% jednostek w populacji.
 \begin{example}
 \textbf{Współczynnik dzietności na świecie w roku 2018}
 
-Średnia wartość współczynnika 2.68; mediana -- 2.2.
-Interpretacja średniej:
-wartość współczynnika dzietności wyniosła 2.68 dziecka. Uwaga:
-średnia dzietność na świecie \textbf{nie wynosi} 2.68
-(bo kraje różnią się liczbą ludności).
-Interpretacja mediany: dzietność kobiet w połowie krajów na świecie
-wynosiła 2.2 i mniej. Uwaga: dzietność połowy kobiet na świecie wyniosła
-2.2 i mniej jest niepoprawną interpretacją (różne wielkości krajów.)
+Średnia: 2.68.
+Interpretacja: średnia wartość współczynnika dzietności wyniosła
+2.68 dziecka.
+Mediana: 2.2. Interpretacja mediany: współczynnik dzietności
+w połowie krajów na świecie
+wynosiła 2.2 dziecka i mniej.
+
+Uwaga: średnia dzietność na świecie \textbf{nie wynosi} 2.68 dziecka
+(bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
+Podobnie dzietność połowy kobiet na świecie wyniosła
+2.2 dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
+względów jak w przypadku średniej.)
 \end{example}
 
 \textbf{Generalna uwaga}: interpretacja średniej-średnich często jest nieoczywista i należy uważać.
@@ -1116,7 +1139,8 @@ gdzie: \(Q_1\), \(Q_3\) oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 \begin{example}
 \textbf{Współczynnik dzietności (kontynuacja)}
 
-Średnie odchylenie od średniej wartości współczynnika wynosi 1.2595749 dziecka.
+Średnie odchylenie od średniej wartości współczynnika
+wynosi 1.26 dziecka.
 Wartość rozstępu ćwiartkowego wynosi 1.81 dziecka.
 \end{example}
 
@@ -1127,13 +1151,14 @@ podać jednostkę miary.
 \subsection{Miary asymetrii}\label{miary-asymetrii}}
 
 Asymetria (\emph{skewness}), to odwrotność symetrii. Szereg jest symetryczny
-jeżeli jednostki są rozłożone ,,równomiernie'\,' wokół wartości średniej.
+jeżeli jednostki są rozłożone „równomiernie'' wokół wartości średniej.
 W szeregu symetrycznym wartości średniej i mediany są sobie równe.
+Skośność może być dodatnia (\emph{positive skew}) lub ujemna (\emph{negative skew}).
+Czym się różni jedna od drugiej widać na rysunku \ref{fig:skeweness}.
 
-\includegraphics{./Negative_and_positive_skew.png}
-
-Skośność może być dodatnia (\emph{Positive Skew}) lub ujemna (\emph{Negative Skew}). Czym się różni jedna
-od drugiej widać na rysunku.
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{./neg_posit_screw} \caption{Rozkłady symetryczne i asymetryczne}\label{fig:skeweness}
+\end{figure}
 
 Miary asymetrii:
 
@@ -1171,28 +1196,6 @@ Miary asymetrii:
   \end{itemize}
 \end{itemize}
 
-\hypertarget{parametryczna-analiza-struktury-w-jednym-zdaniu}{%
-\subsection{(Parametryczna) analiza struktury w jednym zdaniu}\label{parametryczna-analiza-struktury-w-jednym-zdaniu}}
-
-Polega na obliczeniu
-
-\begin{itemize}
-\item
-  średniej i mediany
-\item
-  odchylenia standardowego i rozstępu ćwiartkowego
-\item
-  współczynnika skośności \(g\)
-\end{itemize}
-
-Oraz
-
-\begin{itemize}
-\tightlist
-\item
-  zinterpretowaniu powyższych parametrów (patrz przykłady)
-\end{itemize}
-
 \hypertarget{poruxf3wnanie-wielu-rozkux142aduxf3w}{%
 \section{Porównanie wielu rozkładów}\label{poruxf3wnanie-wielu-rozkux142aduxf3w}}
 
@@ -1223,7 +1226,7 @@ wynosi 13.5 kg)
 Histogram przy przyjęciu długości przedziału równej 4kg
 (linia zielona oznacza poziom średniej):
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-14-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-14-1}
 
 \textbf{Zawodnicy młyna}
 
@@ -1242,7 +1245,7 @@ wynosi 12 kg)
 Histogram przy przyjęciu długości przedziału równej 4kg
 (linia zielona oznacza poziom średniej):
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-16-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-16-1}
 
 \textbf{Porównanie atak vs młyn}
 
@@ -1269,36 +1272,97 @@ Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu g
 \hypertarget{wykres-pudeux142kowy}{%
 \subsection{Wykres pudełkowy}\label{wykres-pudeux142kowy}}
 
-Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (\textbf{box-plot})
+Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (\textbf{box-plot}).
 
-Konstrukcja pudełka na wykresie:
-górny/dolny bok równy kwartylom, a linia pozioma w środku pudełka równa medianie;
-linie pionowe (zwane wąsami) mają długość równą \(Q_1 - 1,5 \textrm{IQR}\)
-oraz \(Q_3 + \textrm{IQR}\) (dla przypomnienia: \(Q_1\), \(Q_3\) to kwartyle, zaś \(\textrm{IQR}\) to odstęp między kwartlowy); Linia pozioma w połowie pudełka określa przeciętny poziom zjawiska; wysokość pudełka/wąsów
-określa zmienność (im większe wąsy/wysokość tym większa zmienność).
-Obserwacje nietypowe (czyli takie których wartość jest albo mniejsza od \(Q_1 - 1,5\textrm{IQR}\)
-albo większa od \(Q_3 + 1,5\textrm{IQR}\)) są zaznaczane indywidualnie jako kropki nad/pod wąsami.
+Konstrukcja pudełka na wykresie (por rys. @(fig:boxplot)):
 
-\includegraphics{./box-plot-0.jpg}
+\begin{itemize}
+\tightlist
+\item
+  górny dolny bok pudełka jest równy kwartylom;
+\item
+  linia pionowa w środku pudełka jest równa medianie;
+\item
+  linie poziome (zwane wąsami) mają długość równą \(Q_1 - 1,5 \textrm{IQR}\)
+  oraz \(Q_3 + \textrm{IQR}\)
+  (dla przypomnienia: \(Q_1\), \(Q_3\) to kwartyle, zaś \(\textrm{IQR}\) to rozstęp ćwiartkowy);
+\item
+  kropki nad/pod wąsami to wartości zmiennej większe od
+  \(Q_3 + 1,5 \textrm{IQR}\) lub mniejsze od \(Q_1 - 1,5 \textrm{IQR}\).
+\end{itemize}
 
-Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako (na przykład) górne/dolne
-1\% wszystkich wartości (bo wtedy \textbf{każdy rozkład} miałby wartości nietypowe);
+Interpretacja pudełka:
+
+\begin{itemize}
+\tightlist
+\item
+  linia pozioma w środku pudełka określa przeciętny poziom zjawiska;
+\item
+  wysokość pudełka oraz wąsów określa zmienność (im większe wąsy/wysokość tym większa zmienność);
+\item
+  kropki nad/pod wąsami to \textbf{obserwacje nietypowe}.
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{./box-plot-0} \caption{Wykres pudełkowy}\label{fig:boxplot}
+\end{figure}
+
+Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako na przykład górne/dolne
+1\% wszystkich wartości (bo wtedy \textbf{każdy rozkład} miałby wartości nietypowe),
 ale jako wartości mniejsze/większe od \(Q_* \pm 1,5 \times \mathrm{IQR}\).
 Wszystkie wartości rozkładów o umiarkowanej zmienności mieszczą się wewnątrz czegoś takiego.
 
-Wykres pudełkowy dla zawodników rugby w podziale na formacie ataku i młyna.
+Typowo wykres zawiera wiele pudełek a każde pudełko wizualizuje jeden rozkład. Pudełka
+mogą być umieszczone jedno pod drugim, tak jak na rysunku @(fig:boxplot) lub
+jedno obok drugiego jak na przykładach poniżej.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-18-1.pdf}
+\begin{example}
+\textbf{Masa ciała rugbystów}
 
-Z wykresu od razu widać, który rozkład ma wyższą średnią a który większe rozproszenie.
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-18-1}
+\end{example}
 
-Pudełek może być więcej oczywiście. Przykładowo
-masa ciała zawodników na poszczególnych turniejach:
+Z wykresu od razu widać, który rozkład ma wyższą średnią, który większe
+rozproszenie oraz w którym występują wartości nietypowe.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-19-1.pdf}
+Pudełek może być więcej niż dwa oczywiście. Następny przykład
+pokazuje
+porównanie rozkładów masy ciała zawodników rugby na poszczególnych turniejach.
 
-Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019; największe zróżnicowanie masy
+\begin{example}
+\textbf{Masa ciała rugbystów}
+
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-19-1}
+\end{example}
+
+Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019;
+największe zróżnicowanie masy
 ciała występowało na turnieju w roku 2023.
+
+\hypertarget{zestawienie-metod-opisu-statystycznego}{%
+\section{Zestawienie metod opisu statystycznego}\label{zestawienie-metod-opisu-statystycznego}}
+
+W rozdziale przedstawiono osiem sposobów opisania rozkładu zmiennej:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Tablice statystyczne
+\item
+  Wykres słupkowy
+\item
+  Wykres kołowy (niezalecany)
+\item
+  Histogram
+\item
+  Wykres pudełkowy
+\item
+  Miary tendencji centralnej: średnia, mediana, kwartyle
+\item
+  Miary rozproszenia: odchylenie standardowe, rozstęp ćwiartkowy
+\item
+  Miary asymetrii
+\end{enumerate}
 
 \hypertarget{interference}{%
 \chapter{Łagodne wprowadzenie do wnioskowanie statystycznego}\label{interference}}
@@ -1311,8 +1375,8 @@ na 100 h polu. Można ściąć wszystkie i zważyć, ale można też ściąć
 trochę (pobrać próbę się mówi uczenie) zważyć i poznać średnią
 na całym polu z dobrą dokładnością.
 
-\hypertarget{problem-1-masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}{%
-\section{Problem 1: masa ciała uczestników PŚ w rugby}\label{problem-1-masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}}
+\hypertarget{masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}{%
+\section{Masa ciała uczestników PŚ w rugby}\label{masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}}
 
 W turnieju o Puchar Świata w rugby w 2015 roku uczestniczyło
 623 rugbystów. Znamy szczegółowe dane odnośnie wzrostu i wagi każdego
@@ -1335,20 +1399,20 @@ nie wszyscy \textgreater{} 110 kg):
 
 \textbf{Szacujemy średnią na podstawie 2 zawodników pobranych losowo}
 
-Powtarzamy eksperyment 1000 razy (dwóch bo dla jednego nie obliczmy
+Powtarzamy eksperyment 1000 razy (dwóch bo dla jednego nie obliczymy
 wariancji)
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    79.5    96.5   103.5   103.3   110.0   135.0
+##    74.0    95.5   102.0   102.1   109.0   130.0
 \end{verbatim}
 
-średnia (średnich z próby) ma wartość 103.33
-a odchylenie standardowe 9.24.
+średnia (średnich z próby) ma wartość 102.13
+a odchylenie standardowe 9.28.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
 z liczebności próby) jest równa 9.14. Zauważmy że ta wartość
 jest zbliżona do odchylenia standardowego uzyskanego
-w eksperymencie (9.24 vs 9.14)
+w eksperymencie (9.28 vs 9.14)
 
 \textbf{szacujemy średnią na podstawie 10 zawodników pobranych losowo}
 
@@ -1356,11 +1420,11 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    91.4   100.2   102.6   102.7   105.3   114.4
+##    89.3    99.7   102.7   102.5   105.4   116.5
 \end{verbatim}
 
-średnia wyszła 102.74 a odchylenie standardowe
-3.95.
+średnia wyszła 102.47 a odchylenie standardowe
+4.09.
 Wartość \(s/\sqrt{10}\) jest równa 4.09.
 
 \textbf{szacujemy średnią na podstawie 40 zawodników pobranych losowo}
@@ -1371,10 +1435,10 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   96.17  101.34  102.75  102.80  104.20  111.25
+##   96.38  101.45  102.81  102.84  104.23  110.00
 \end{verbatim}
 
-średnia jest równa 102.8 a odchylenie standardowe 2.08.
+średnia jest równa 102.84 a odchylenie standardowe 2.04.
 Wartość \(s/\sqrt{40}\) jest równa 2.04.
 
 \textbf{Wykres}
@@ -1418,10 +1482,10 @@ niemożliwe jest wynalezienie czegoś jeszcze bardziej efektywnego. Takim estyma
 średniej w populacji jest średnia z próby\ldots{}
 
 Konkretną wartość estymatora dla konkretnych wartości próby nazywamy \textbf{oceną}
-(parametru)
+(parametru).
 
-\hypertarget{problem-2-wiek-kandydatuxf3w-na-radnych}{%
-\section{Problem 2: wiek kandydatów na radnych}\label{problem-2-wiek-kandydatuxf3w-na-radnych}}
+\hypertarget{wiek-kandydatuxf3w-na-radnych}{%
+\section{Wiek kandydatów na radnych}\label{wiek-kandydatuxf3w-na-radnych}}
 
 W wyborach samorządowychych w Polsce w roku 2018 o mandat radnego
 sejmików wojewódzkich ubiegało się 7076 kandydatów.
@@ -1448,11 +1512,11 @@ Powtarzamy eksperyment 1000 razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   20.50   39.00   46.50   46.32   54.00   74.00
+##   19.00   38.50   46.00   46.19   54.00   73.00
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.32 lat.
-Odchylenie standardowe wyniosło 10.79.
+Średnia średnich z próby ma wartość 46.19 lat.
+Odchylenie standardowe wyniosło 10.62.
 Wartość \(s/\sqrt{2}\) jest równa 10.33.
 
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}
@@ -1461,11 +1525,11 @@ Powtarzamy eksperyment 1000 razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   34.90   43.17   46.30   46.39   49.40   60.30
+##   30.30   43.10   46.20   46.28   49.40   62.70
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.39 lat.
-Odchylenie standardowe wyniosło 4.69.
+Średnia średnich z próby ma wartość 46.28 lat.
+Odchylenie standardowe wyniosło 4.66.
 Wartość \(s/\sqrt{10}\) jest równa 4.62.
 
 \textbf{Szacujemy średnią na podstawie 40 kandydatów pobranych losowo}
@@ -1475,11 +1539,11 @@ Powtarzamy eksperyment 1000 razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   38.82   44.58   46.12   46.08   47.58   52.25
+##   39.00   44.74   46.27   46.23   47.76   53.27
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.08 lat.
-Odchylenie standardowe wyniosło 2.2611867.
+Średnia średnich z próby ma wartość 46.23 lat.
+Odchylenie standardowe wyniosło 2.2729681.
 Wartość \(s/\sqrt{40}\) jest równa 2.3105373.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}
@@ -1488,11 +1552,11 @@ Uwaga: 70 kandydatów to około ok 1\% całości (1000 powtórzeń)
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   41.14   45.05   46.34   46.28   47.47   51.40
+##   40.83   45.09   46.24   46.23   47.30   52.99
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.28 lat.
-Odchylenie standardowe wyniosło 1.7227446
+Średnia średnich z próby ma wartość 46.23 lat.
+Odchylenie standardowe wyniosło 1.6966764
 Wartość \(s/\sqrt{70}\) jest równa 1.746602.
 
 \textbf{Wykres}
@@ -1589,22 +1653,23 @@ Czyli w przedziale \([-3s < m, m +3s]\) znajdują się praktycznie wszystkie war
 rozkładu. Albo innymi słowy przyjęcie wartości spoza przedziału średnia plus/minus trzykrotność
 odchylenia standardowego jest bardzo mało prawdopodobna.
 
-Rozkład normalny będzie identyczny dla wagi rugbystów, wieku czy czasu opóźnień.
+Rozkład normalny będzie identyczny dla wagi rugbystów, wieku, wagi noworodków itd/itp.
 Uogólnieniem teoretycznym pojęcia \textbf{zmiennej statystycznej}, które do tej pory
 używaliśmy jest \textbf{zmienna losowa}, zmienna której wartości są liczbami a realizują się
 z określonym prawdopodobieństwem np. określonym przez rozkład normalny.
 
-\hypertarget{problem-3-szacowanie-odsetka-kobiet}{%
-\section{Problem 3: szacowanie odsetka kobiet}\label{problem-3-szacowanie-odsetka-kobiet}}
+\hypertarget{odsetek-kobiet-wux15bruxf3d-kandydatuxf3w-na-radnych}{%
+\section{Odsetek kobiet wśród kandydatów na radnych}\label{odsetek-kobiet-wux15bruxf3d-kandydatuxf3w-na-radnych}}
 
-Dane dotyczące kandydatów zawierają także płeć. Ktoś może być ciekaw
+Dane dotyczące kandydatów na radnych do sejmików wojewódzkich zawierają także płeć kandydata.
+Ktoś może być ciekaw
 jaki był odsetek kobiet w tej grupie. Taki parametr nazywa się proporcją
 albo ryzykiem, a potocznie i niefachowo procentem.
 Matematycznym modelem jest \textbf{zmienna dwuwartościowa}, która
 z określonym prawdopodobieństwem przyjmuje wartość \texttt{kobieta}.
 Obliczmy
 empiryczną wartość tego prawdopodobieństwa jako liczbę kobiet do liczby
-wszystkich kandydatów. Wartość tego parametru wynosi 0.4587337 (albo
+wszystkich kandydatów. Wartość tego parametru wynosi 0.4587 (albo
 45.87\%).
 Potraktujmy to jako prawdziwą wartość prawdopodobieństwa (p), że
 kandydat jest kobietą i empirycznie sprawdźmy czy możemy szacować
@@ -1619,22 +1684,22 @@ Wnioski:
 
 \begin{itemize}
 \item
-  Dla próby 20 elementowej rozkład nie przypomina rozkładu normalnego
+  Dla próby 20 elementowej rozkład nie przypomina rozkładu normalnego.
 \item
-  Dla prób 120 i 420 elementowej rozkład jest podobny do normalnego
+  Dla prób 120 i 420 elementowej rozkład jest podobny do normalnego.
 \item
   Zmienność estymatora maleje wraz ze wzrostem liczebności próby;
-  każe nam to przypuszczać (i tak jest w istocie) że jest on zgodny
+  każe nam to przypuszczać (i tak jest w istocie) że jest on zgodny.
 \item
-  W każdym przypadku średnia z 1000 eksperymentów jest zbliżona do wartości prawdziwej
-  każe nam to przypuszczać (i tak jest w istocie) że estymator jest nieobciążony
+  W każdym przypadku średnia z 1000 eksperymentów jest zbliżona do wartości prawdziwej;
+  każe nam to przypuszczać (i tak jest w istocie) że estymator jest nieobciążony.
 \end{itemize}
 
-Rozkład normalny jest tak magiczny że nawet jeżeli zmienna której parametr
+Rozkład normalny jest tak magiczny że nawet jeżeli zmienna, której parametr
 szacujemy nie ma rozkładu zbliżonego
-do normalnego (jak w przypadku zmiennej która przyjmuje tylko dwie wartości)
+do normalnego (jak w przypadku zmiennej, która przyjmuje tylko dwie wartości)
 to i tak estymator tego parametru będzie normalny. Co najwyżej będziemy
-potrzebowali większej próby żeby znormalniał (jak w opisywanym przykładzie)
+potrzebowali większej próby żeby „znormalniał'' (jak w opisywanym przykładzie).
 
 \hypertarget{wnioskowanie-statystyczne-interferance}{%
 \section{\texorpdfstring{Wnioskowanie statystyczne (\emph{interferance})}{Wnioskowanie statystyczne (interferance)}}\label{wnioskowanie-statystyczne-interferance}}
@@ -1647,7 +1712,7 @@ Dobrze by było wiedzieć jak bardzo wiarygodna jest ta wartość (zwana oceną 
 na podstawie konkretnego estymatora, inaczej mówiąc jak dużo mogliśmy się pomylić.
 
 Do oceny tej wiarygodności można użyć wariancji-średniej-z-próby (która nazywa się
-\textbf{wariancją błędu} albo \textbf{error variance})
+\textbf{wariancją błędu} albo \textbf{error variance}).
 Jeżeli wariancja błędu jest duża, to w pojedynczej próbie mogą wystąpić wartości
 znacznie różniące się od prawdziwej średniej; jeżeli jest mała to takie bardzo różniące
 się od prawdziwej średniej wartości mają małe szanse na zaistnienie. Do tego w przypadku rozkładu
@@ -1658,17 +1723,17 @@ W ramach wnioskowania stosowane są trzy metody (podejścia):
 
 \begin{itemize}
 \item
-  Estymacja punktowa,
+  estymacja punktowa,
 \item
-  Estymacja przedziałowa,
+  estymacja przedziałowa,
 \item
-  Testowanie hipotez.
+  testowanie hipotez.
 \end{itemize}
 
 \hypertarget{estymacja-punktowa}{%
 \subsection{Estymacja punktowa}\label{estymacja-punktowa}}
 
-Szacujemy średnią (inny parametr) i tę wartość uznajemy za wartość prawdziwą;
+Szacujemy średnią (albo inny parametr) i tę wartość uznajemy za wartość prawdziwą;
 dokładność szacunku jest nieokreślona. Inaczej mówiąc wartość \textbf{estymatora}
 dla konkretnej próby przyjmujemy za ocenę parametru.
 
@@ -1685,13 +1750,13 @@ modelu), ale można dla dowolnego przedziału od--do.
 Czyli nie można ustalić, że z prawdopodobieństwem 95\%
 oszacujemy wartość średnią czegoś jako 5,000000,
 ale można z prawdopodobieństwem 95\% oszacować
-\textbf{przedział} w którym znajdzie się średnia (np że będzie to na przykład 4,9--5,1).
+\textbf{przedział}, w którym znajdzie się średnia (przykładowo, że będzie to przedział 4,9--5,1).
 
 Estymacja przedziałowa to oszacowanie przedziału wartości od--do,
-który z zadanym z góry prawdopodobieństwem zawiera prawdziwą wartość średniej.
+który z zadanym z góry prawdopodobieństwem zawiera prawdziwą wartość parametru.
 
 Z góry wyznaczone prawdopodobieństwo nazywa się
-\textbf{poziomem ufności} (określa jak często mamy się NIE rąbnąć)
+\textbf{poziomem ufności} (określa jak często mamy się NIE rąbnąć).
 
 \hypertarget{testowanie-hipotez}{%
 \subsection{Testowanie hipotez}\label{testowanie-hipotez}}
@@ -1701,40 +1766,45 @@ tego porównania otrzymujemy liczbę. Załóżmy, że mamy dwie próby dotycząc
 kandydatów na radnych do sejmików wojewódzkich z roku 2018 (średnia 46,1)
 oraz z roku 2014 (47,2). Różnica wynosi 1,1 lat i może być spowodowana błędem przypadkowym
 (tj. gdybyśmy wylosowali jeszcze raz dwie próby, to wynik byłby zupełnie odmienny np 46,9 vs 46,5)
-i/lub wynikać z tego że faktycznie w roku 2014 kandydaci byli starsi.
+i/lub wynikać z tego, że faktycznie w roku 2014 kandydaci byli starsi.
 
 Formalnie stawiamy \textbf{hipotezę}, że różnica średnich wynosi zero. Jest to tzw. \textbf{hipoteza zerowa}. Niezbędne jest także postawienie \textbf{hipotezy alternatywnej},
-którą może być proste zaprzeczenie zerowej. Zapisuje się to następująco:
+którą może być proste zaprzeczenie zerowej.
+Zapisuje się to następująco (\(m_{14}\)/\(m_{18}\) oznacza odpowiednio średnie w latach 2014/2018):
 
-\(H_0\): różnica średnich wieku wynosi zero (\(m_1 = m_2\))
+\(H_0\): różnica średnich wieku wynosi zero (\(m_{14} = m_{18}\))
 
-\(H_1\): różnica średnich wieku jest różna od zera (\(m_1 \not= m_2\))
+\(H_1\): różnica średnich wieku jest różna od zera (\(m_{14} \not= m_{18}\))
 
-Hipotezy sprawdzamy wykorzystując \textbf{test statystyczny} czyli funkcję
-której wartości zależą wartości testowanych parametrów (w tym przypadku \(m_1\) oraz \(m_2\))
+Hipotezy sprawdzamy wykorzystując \textbf{test statystyczny} czyli zmienną losową
+której rozkład prawdopodobieństwa zależy (jest funkcją powiedziałby matematyk)
+od wartości testowanych parametrów (w tym przypadku \(m_{14}\) oraz \(m_{18}\)).
+Tę zmienną losową nazywa się \textbf{statystyką testu}.
 
-Nie jest chyba wielkim zaskoczeniem, że testem dla różnicy średnich jest
-różnica średnich w próbie. Całkiem \textbf{zdroworozsądkowo} możemy przyjąć, że duże różnice
-świadczą na rzecz hipotezy alternatywnej a małe na rzecz hipotezy zerowej.
+Nie jest chyba wielkim zaskoczeniem, że \textbf{statystyką testu} w teście różnicy średnich jest
+różnica średnich w próbie (poprawnie mówiąc różnica uwzględniająca liczebność próby
+oraz zmienność obu populacji). Całkiem \textbf{zdroworozsądkowo} możemy przyjąć, że duże różnice
+\textbf{statystyki testu} świadczą na rzecz
+hipotezy alternatywnej, natomiast małe na rzecz hipotezy zerowej.
 
 Duża różnica pomiędzy \textbf{hipotezą} a wynikiem z próby może wynikać z tego, że
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  pechowo trafiła nam się nietypowa próba, który zdarza się rzadko (rozkład normalny)
+  Pechowo trafiła nam się nietypowa próba, który zdarza się rzadko (rozkład normalny).
 \item
-  hipoteza jest fałszywa, średnie mają inną wartość niż zakładamy w hipotezie zerowej
+  Hipoteza jest fałszywa, średnie mają inną wartość niż zakładamy w hipotezie zerowej.
 \end{enumerate}
 
 Statystyk zawsze wybierze drugą wersję. Pozostaje tylko ustalić (dla statystyka) co to jest rzadko?
 
 Rzadko to z prawdopodobieństwem mniejszym niż z góry ustalone prawdopodobieństwo
-otrzymania różnicy (zakładające że hipoteza zerowa jest prawdziwa),
+otrzymania różnicy (zakładając, że hipoteza zerowa jest prawdziwa),
 którą otrzymaliśmy w próbie lub większej
-(coś jak założenie że zrealizował się najlepszy z najgorszych scenariuszy).
+(coś jak założenie, że zrealizował się najlepszy z najgorszych scenariuszy).
 
-Przyjmijmy przykładowo że prawdopodobieństwo wystąpienia różnicy 1,1 lat (i większej) oszacowane
+Przyjmijmy przykładowo, że prawdopodobieństwo wystąpienia różnicy 1,1 lat (i większej) oszacowane
 na podstawie odpowiedniego modelu matematycznego (rozkład normalny) wynosi 0,3
 co znaczy że coś takiego
 zdarza się względnie często -- trzy razy na 10 pobranych prób.
@@ -1746,27 +1816,27 @@ zdarza się względnie rzadko -- 9 razy na tysiąc prób.
 Przyjmując, że możemy się mylić 5 razy na 100 w pierwszym przypadku statystyk powie,
 że nie ma podstaw do odrzucenia hipotezy \(H_0\).
 Różnica 1,1 lat wynika z przypadku. W drugim wypadku
-powie że hipoteza jest fałszywa, bo zdarzyło się coś co nie powinno się zdarzyć.
+statystyk powie, że hipoteza jest fałszywa, bo zdarzyło się coś co nie powinno się zdarzyć.
 
-Prawdopodobieństwo ,,graniczne'\,' ustalamy z góry i
+Prawdopodobieństwo „graniczne'' ustalamy z góry i
 nazywa się ono \textbf{poziomem istotności}. Określa ono jak często
-możemy się rąbnąć \textbf{odrzucając hipotezę zerową która jest prawdziwa}.
+możemy się rąbnąć \textbf{odrzucając hipotezę zerową, która jest prawdziwa}.
 
 Ale jest jeszcze drugi przypadek popełnienia błędu:
-\textbf{przyjmujemy hipotezę która jest fałszywa}. W testach
-statystycznych nie określa się tego prawdopodobieństwa a w związku z tym nie można
+\textbf{przyjmujemy hipotezę zerową, która jest fałszywa}. W testach
+statystycznych nie określa się prawdopodobieństwa popełnienia tego błędu, a w związku z tym nie można
 \textbf{przyjąć hipotezy zerowej} (bo nie znamy ryzyka popełnienia błędu).
 
-W konsekwencji hipotezę zerową albo się odrzuca albo nie ma podstaw do odrzucenia.
+W konsekwencji hipotezę zerową albo się odrzuca albo \textbf{nie ma podstaw do odrzucenia}.
 Wniosek cokolwiek niekonkluzywny, ale tak jest.
 
-Dlatego też często ,,opłaca się'\,' odrzucić hipotezę zerową, bo taki rezultat jest
-,,bardziej konkretny'\,'.
+Dlatego też często „opłaca się'' tak postawić hipotezę zerową aby ją następnie odrzucić,
+bo taki rezultat jest bardziej konkretny.
 
 \hypertarget{testy-nieparametryczne}{%
 \subsection{Testy nieparametryczne}\label{testy-nieparametryczne}}
 
-Można testować hipotezy nt. wartości parametrów ale można też testować
+Można testować hipotezy na temat wartości parametrów, ale można też testować
 przypuszczenia o charakterze mniej konkretnym. Na przykład, że dwie zmienne
 są niezależne (co to znaczy wyjaśniono w następnym rozdziale), albo
 że dwa rozkłady są podobne do siebie (rozkłady nie średnie).
@@ -1774,33 +1844,33 @@ Takie hipotezy/testy określa się jako \textbf{nieparametryczne}.
 Przykładami są testy niezależności chi-kwadrat albo normalności
 Shapiro-Wilka (opisane w następnym rozdziale)
 
-Oczywiste ale podkreślmy: przypuszczenia o charakterze nieparametrycznym
+Oczywiste, ale powtórzmy: przypuszczenia o charakterze nieparametrycznym
 możemy tylko testować (sprawdzać hipotezy);
-nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności
-z oczywistych względów.
+nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
 
 \hypertarget{sux142ownik-terminuxf3w-ktuxf3re-warto-znaux107}{%
 \section{Słownik terminów które warto znać}\label{sux142ownik-terminuxf3w-ktuxf3re-warto-znaux107}}
 
+Estymacja (punktowa, przedziałowa): szacowanie wartości parametru na podstawie próby.
+
 Estymator (nieobciążony, zgodny, efektywny): funkcja na wartościach próby która służy
-do oszacowania parametru. Estymator średniej wartości
+do oszacowania parametru.
 
-Ocena (parametru); konkretna wartość estymatora dla pewnej próby.
+Hipoteza statystyczna: przypuszczenie dotyczące parametru lub rozkładu zmiennej.
 
-Rozkład (prawdopodobieństwa)
+Ocena (parametru): konkretna wartość estymatora dla pewnej próby.
 
-Estymacja (punktowa, przedziałowa)
+Poziom istotności (testu; oznaczany jako \(\alpha\); zwykle 0,05): prawdopodobieństwo
+popełnienia błędu.
 
-Wnioskowanie statystyczne
+Poziom ufności = prawdopodobieństwo, że przedział ufności zawiera prawdziwą wartość parametru;
+oznaczany jako \(1- \alpha\); zwykle 0,95.
 
-Hipoteza statystyczna
+Rozkład (prawdopodobieństwa): przypisanie prawdopodobieństwa wartościom zmiennej losowej.
 
-Test statystyczny
+Test statystyczny: metoda weryfikacji hipotezy statystycznej.
 
-Poziom istotności (testu); oznaczany jako \(\alpha\); zwykle 0,05
-
-Poziom ufności; prawdopodobieństwo, że przedział ufności zawiera prawdziwą wartość parametru;
-oznaczany jako \(1- \alpha\); zwykle 0,95
+Wnioskowanie statystyczne: wnioskowanie o całości na podstawie próby.
 
 \hypertarget{causality}{%
 \chapter{Analiza współzależności pomiędzy zmiennymi}\label{causality}}
@@ -1821,7 +1891,7 @@ przybliżeniem wartości innej zmiennej.
 
 Problem: czy istnieje związek (zależność) pomiędzy cechami?
 Przykładowo czy istnieje związek pomiędzy paleniem (przyczyna)
-a chorobą nowotworową (skutek), wiekiem a prawdopodobieństwem zgonu z powodu COVID19 itd
+a chorobą nowotworową (skutek), wiekiem a prawdopodobieństwem zgonu z powodu COVID19 itd.
 
 Jaki jest charakter zależności? Jaka jest siła zależności?
 
@@ -1839,8 +1909,8 @@ które omawiamy dalej w rodziale, jest raptem siedem czyli niedużo.
 \hypertarget{dwie-zmienne-nominalne}{%
 \section{Dwie zmienne nominalne}\label{dwie-zmienne-nominalne}}
 
-\hypertarget{ryzyko-wzglux119dne-oraz-iloraz-szans}{%
-\subsection{Ryzyko względne oraz iloraz szans}\label{ryzyko-wzglux119dne-oraz-iloraz-szans}}
+\hypertarget{oddsSec}{%
+\subsection{Ryzyko względne oraz iloraz szans}\label{oddsSec}}
 
 Ryzyko to udział (iloraz) liczby sukcesów do liczby prób (zdarzeń pozytywnych/wyróżnionych do wszystkich). Zwykle podawany w procentach. Warto zauważyć że jest to
 empiryczny odpowiednik prawdopodobieństwa.
@@ -1852,12 +1922,10 @@ Eksperyment przeprowadził Linus Pauling (laureat nagrody Nobla
 za odkrycie witaminy C).
 
 Eksperyment Paulinga polegał na tym, że podzielił 280 narciarzy na dwie grupy
-po 140 osób; przez 5--7 dni podawał witaminę C jednej grupie
-oraz placebo drugiej grupie;
-obserwował zachorowania na przeziębienie przez następne dwa tygodnie.
+po 140 osób. Przez 5--7 dni podawał witaminę C jednej grupie
+oraz placebo drugiej grupie.
+Obserwował zachorowania na przeziębienie przez następne dwa tygodnie.
 Jeden narciarz nie dokończył eksperymentu. Historia milczy dlaczego :-)
-
-\includegraphics[width=0.5\textwidth,height=\textheight]{./Pauling.jpg}
 
 W grupie 139 narciarzy, którym podano witaminę C
 (grupa C) zachorowało 17. W grupie 140 narciarzy, którym podano placebo (grupa P)
@@ -1871,7 +1939,7 @@ zachorowało 31. Zatem:
   Ryzyko zachorowania w grupie P wyniosło 31/140 = 22,14\%
 \end{itemize}
 
-Na tzw. chłopski rozum jeżeli witamina C \textbf{nie działa} to powinien
+Na tzw. chłopski rozum jeżeli witamina C \textbf{nie działa}, to powinien
 zachorować ten sam odsetek narciarzy w obu grupach.
 A tak nie jest jak widać\ldots{}
 \end{example}
@@ -1897,9 +1965,9 @@ Ta miara aczkolwiek prosta jest rzadko stosowana.
 
 Znacznie częściej używa się \textbf{ryzyka względnego} definiowanego jako
 \(RR = r_e/r_k\). W przykładzie będzie to \(12,2/22,14 = 0,55\).
-Podanie witaminy C zmniejsza ryzyko o prawie połowę.
-Oczywiste jest że \(RR < 1\) oznacza zmniejszenie
-ryzyka; \(RR > 1\) zwiększenia a \(RR = 1\) oznacza brak zależności.
+Podanie witaminy C zmniejsza ryzyko zachorowania o prawie połowę.
+Oczywiste jest, że \(RR < 1\) oznacza zmniejszenie
+ryzyka; \(RR > 1\) oznacza zwiększenia; \(RR = 1\) oznacza brak zależności.
 
 Zamiast ryzyka (czyli ilorazu liczby sukcesów do liczby prób) można używać
 pojęcia szansa/szansy (\textbf{odds}) definiowanego
@@ -1916,7 +1984,7 @@ otrzymania orła wynosi 1/2 = 0,5 a szansa otrzymania orła wynosi 1/1 = 1.
 \textbf{Narciarze Paulinga (kontynuacja)}
 
 Ryzyko zachorowania w grupie C wynosi 12,2 (jak wiemy); natomiast szansa, że narciarz grupie C
-zachoruje wynosi 17/122 = 13,9\%. (A w grupie P wynosi 28,44\%)
+zachoruje wynosi 17/122 = 13,9\%. (A w grupie P wynosi 28,44\%).
 
 Jak widać dla dużych ryzyk (rzut monetą) szansa
 różni się znacznie od prawdopodobieństwa, ale dla małych ryzyk obie miary mają zbliżoną wartość.
@@ -1946,7 +2014,7 @@ dwudzielnej o wymiarach \(2\times 2\), którą można przestawić następująco
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& sukces & porażka \\
+Grupa & sukces & porażka \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1965,11 +2033,13 @@ Dla danych w tej postaci:
   \(\textrm{OR} = (ad)/ (bc)\)
 \end{itemize}
 
-czyli dla eksperymentu Paulinga:
+\begin{example}
+
+\textbf{Narciarze Paulinga (tabela dwudzielna)}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-& katar & zdrowy \\
+Grupa & katar & zdrowy \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1977,6 +2047,8 @@ czyli dla eksperymentu Paulinga:
 grupa C & 17 & 122 \\
 grupa P & 31 & 109 \\
 \end{longtable}
+
+\end{example}
 
 \hypertarget{przedziaux142y-ufnoux15bci-dla-ryzyka-wzglux119dnego-oraz-ilorazu-szans}{%
 \subsection{Przedziały ufności dla ryzyka względnego oraz ilorazu szans}\label{przedziaux142y-ufnoux15bci-dla-ryzyka-wzglux119dnego-oraz-ilorazu-szans}}
@@ -1993,11 +2065,13 @@ przedziałów ufności czyli podawania dwóch wartości, pomiędzy którymi
 z zadanym prawdopodobieństem znajduje się nieznana wartość szacowanego
 parametru.
 
-Przykładowo (kontynuując eksperyment Paulinga)
+\begin{example}
+\textbf{Narciarze Paulinga (przedziały ufności)}
 
 Końce przedziałów ufności dla ilorazu szans (ocena punktowa 0.4899524) wynoszą:
 {[}0.2569389; 0.934282{]} zaś dla
 ryzyka względnego (ocena punktowa 0.5523323) przedział ufności wynosi {[}0.3209146; 0.9506298{]}.
+\end{example}
 
 \textbf{Uwaga}: nie jest specjalnie istotne jaka jest konkretna formuła obliczania
 przedziałów ufności, przecież obliczenia i tak koniec-końców wykona
@@ -2020,7 +2094,7 @@ swojej witaminy z większą pewnością.
 w tabeli. Taka tabela nazywa się dwudzielcza (dla dwóch zmiennych)
 lub wielodzielcza albo wielodzielna (dla więcej niż dwóch liczby zmiennych.)
 Inne nazwy tych tabel to krzyżowe albo kontyngencji
-(cross-tabulation, contingency \textbf{two-way tables}.)
+(\emph{cross-tabulation}, \emph{contingency} albo \emph{two-way tables}).
 
 Ograniczmy się do analizy tabel dwudzielnych.
 
@@ -2028,7 +2102,7 @@ Ograniczmy się do analizy tabel dwudzielnych.
 \textbf{Narciarze Paulinga (kontynuacja)}
 
 Eksperyment Paulinga można przedstawić w postaci tablicy dwudzielczej
-(P/C oznacza czy narciarz zażywał witaminę czy placebo; cold/nocold
+(\texttt{P}/\texttt{C} oznacza czy narciarz zażywał witaminę czy placebo; \texttt{cold}/\texttt{nocold}
 czy zachorował czy nie zachorował na katar):
 
 \begin{tabular}{l|r|r|r}
@@ -2047,9 +2121,9 @@ Taka tabela składa się z wierszy i kolumn. Dolny wiersz (Sum czyli Razem
 po polsku) zawiera łączną liczebność dla wszystkich wierszy w danej kolumnie. Podobnie prawa skrajna kolumna zawiera łączną
 liczebność dla wszystkich kolumn dla danego wiersza. Dolny wiersz/Prawą
 kolumnę nazywamy \textbf{rozkładami brzegowymi}.
-Pozostałe kolumny/wiersze (ale bez wartości łącznych) nazywane
+Pozostałe kolumny oraz wiersze nazywane
 są \textbf{rozkładami warunkowymi}. Rozkładów warunkowych jest tyle ile
-wynosi iloczyn \(r \times c\) gdzie \(r\) to liczba wariantów jednej cechy
+wynosi suma \(r + c\) gdzie \(r\) to liczba wariantów jednej cechy
 a \(c\) to liczba wariantów drugiej cechy.
 
 Przy warunku że narciarz brał witaminę C, 122 takich osób
@@ -2069,15 +2143,16 @@ Zamiast liczebności można posługiwać się odsetkami (procentami):
 \hline
   & N & Y & Sum\\
 \hline
-C & 43.7276 & 6.09319 & 49.82079\\
+C & 43.73 & 6.09 & 49.82\\
 \hline
-P & 39.0681 & 11.11111 & 50.17921\\
+P & 39.07 & 11.11 & 50.18\\
 \hline
-Sum & 82.7957 & 17.20430 & 100.00000\\
+Sum & 82.80 & 17.20 & 100.00\\
 \hline
 \end{tabular}
 
-Narciarzy którzy brali witaminę C nie nie zachorowali stanowi 43.7275986\%
+Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
+43.73\%
 wszystkich narciarzy. Mało przydatne\ldots{}
 
 Ciekawsze jest obliczenie procentów każdego wiersza osobno, tj. dzielimy
@@ -2088,22 +2163,25 @@ ostatniej kolumny):
 \hline
   & N & Y & \\
 \hline
-C & 87.76978 & 12.23022 & 100\\
+C & 87.77 & 12.23 & 100\\
 \hline
-P & 77.85714 & 22.14286 & 100\\
+P & 77.86 & 22.14 & 100\\
 \hline
-n.m & 82.79570 & 17.20430 & 100\\
+n.m & 82.80 & 17.20 & 100\\
 \hline
 \end{tabular}
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
-zachorowania dla całej grupy wynosi 17.2043011\% a nie zachorowania
-82.7956989\%. Jest przyznajmy całkiem \textbf{zdroworozsądkowym założeniem}
+zachorowania dla całej grupy wynosi
+17.20\% a nie zachorowania
+82.80\%. Jest przyznajmy całkiem \textbf{zdroworozsądkowym założeniem}
 (uczenie hipotezą statystyczną), że jeżeli przyjmowanie witaminy nie ma związku
 z zachorowaniem lub nie na katar, to w grupie tych co brali i tych co nie brali
 powinniśmy mieć identyczne rozkłady warunkowe równe rozkładowi brzegowemu.
-Czyli powinno przykładowo zachorować 17.2043011\% narciarzy, którzy
-brali witaminę C a widzimy , że zachorowało jedynie 12.2302158\%.
+Czyli powinno przykładowo zachorować
+17.20\% narciarzy, którzy
+brali witaminę C a widzimy , że zachorowało
+jedynie 12.23\%.
 
 Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się
 czy ta różnica jest na tyle duża, że (z założonym prawdopodobieństwem)
@@ -2115,23 +2193,23 @@ Jest to istota i jedyny wniosek z czegoś co się nazywa
 testem istotności-chi-kwadrat.
 Test chi-kwadrat porównuje liczebności tablicy wielodzielnej z idealną-tablicą-wielodzielną, która zakłada niezależność jednej zmiennej od drugiej.
 
-Można udowodnić, że taka tablica powstanie przez przemnożenie dla
+Można udowodnić, że taka idealna tablica powstanie przez przemnożenie dla
 każdego elementu tablicy odpowiadających mu wartości brzegowych
 a następnie podzieleniu tego przez łączną liczebność (czyli przykładowo pierwszy
-element poniższej tablicy to 231 pomnożone przez
+element poniższej „idealnej'' tablicy to 231 pomnożone przez
 139 i podzielone przez 279; proszę
 sprawdzić,
-że jest to 115.0860215):
+że jest to 115.086):
 
 \begin{tabular}{l|r|r|r}
 \hline
   & N & Y & Sum\\
 \hline
-C & 115.086 & 23.91398 & 139\\
+C & 115.086 & 23.914 & 139\\
 \hline
-P & 115.914 & 24.08602 & 140\\
+P & 115.914 & 24.086 & 140\\
 \hline
-Sum & 231.000 & 48.00000 & 279\\
+Sum & 231.000 & 48.000 & 279\\
 \hline
 \end{tabular}
 
@@ -2140,7 +2218,7 @@ zwrócić uwagę że \textbf{rozkłady brzegowe} są identyczne, identyczna
 jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
 liczbami całkowitami ale tak ma być--nie jest to błąd)
 
-Za pomocą testu Chi-kwadrat obliczamy jakie jest prawdopodobieństwo, wystąpienia
+Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
 tak dużych lub większych różnic. Wynosi ono 0.041864.
 Czyli wystąpienie tak dużych różnic
 pomiędzy \textbf{oczekiwanymi} (przy założeniu o niezależności zmiennych)
@@ -2197,12 +2275,12 @@ Sum & 211 & 93 & 52 & 356\\
 \end{tabular}
 
 Uwaga: status-społeczno-ekonomiczny to powiedzmy miara prestiżu używana w socjologii
-(można na Wikipedii doczytać co to dokładnie jest)
+(można na Wikipedii doczytać co to dokładnie jest).
 
 Tym razem tabela składa się z 3 wierszy i 3 kolumn (ostatni wiersz/kolumna się
 nie liczą bo to sumy--rozkłady brzegowe)
 
-Przedstawmy tą tabelę w postaci udziałow procentowych sumujących się
+Przedstawmy tą tabelę w postaci udziałów procentowych sumujących się
 dla każdego wiersza osobno do 100\% (tj. dzielimy
 liczebności w każdej kolumnie przez liczebności rozkładu brzegowego (wartości
 ostatniej kolumny):
@@ -2250,35 +2328,59 @@ statusu i palenia (myląc się w przybliżeniu 0.000981 ≈ raz na tysiąc)
 \section{Zmienna liczbowa i zmienna nominalna}\label{zmienna-liczbowa-i-zmienna-nominalna}}
 
 Obliczamy średnie wartości zmiennej liczbowej \textbf{w grupach} określonych przez wartości zmiennej nominalnej,
-np wypalenie zawodowe w podziale na miejsce pracy. Grup może być dwie lub więcej
+np. wypalenie zawodowe w podziale na miejsce pracy. Grup może być dwie lub więcej.
 
-Stawiamy hipotezę że wartości średnie w każdej grupie są równe, wobec hipotezy alternatywnej
+Stawiamy hipotezę, że wartości średnie w każdej grupie są równe, wobec hipotezy alternatywnej
 że tak nie jest (że są różne jeżeli grup jest dwie; co najmniej jedna jest różna jeżeli grup jest
 więcej niż dwie). Stosujemy odpowiedni test statystyczny:
 
 \begin{itemize}
 \item
   jeżeli liczba grup wynosi 2 oraz można przyjąć założenie o przybliżonej
-  normalności rozkładów, to stosujemy test \(t\)-Studenta (dla prób niezależnych),
+  normalności rozkładów, to stosujemy test \(t\)-Studenta (dla prób niezależnych);
 \item
   jeżeli liczba grup wynosi 2, ale nie można założyć normalności
-  rozkładów to stosujemy test U-Manna-Whitneya
+  rozkładów to stosujemy test U-Manna-Whitneya;
 \item
   jeżeli liczba grup jest większa niż dwie oraz można przyjąć założenie
-  o normalności rozkładów to stosujemy test pn. ANOVA
+  o normalności rozkładów to stosujemy test pn. ANOVA;
 \item
   jeżeli liczba grup jest większa od dwóch oraz nie można przyjąć założenia
-  o normalności rozkładów, to stosujemy test Kruskall-Wallisa
+  o normalności rozkładów, to stosujemy test Kruskal-Wallisa.
 \end{itemize}
 
-Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku \ref{fig:testy}
+Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku \ref{fig:testy}.
 
 \begin{figure}
 \includegraphics[width=0.75\linewidth]{./TestFlowChart} \caption{Testowanie istotości różnicy pomiędzy średnimi}\label{fig:testy}
 \end{figure}
 
+Każdy z testów jest interpretowany identycznie:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Obliczana jest wartość statystyki testu \(t_k\).
+\item
+  Obliczane jest prawdopodobieństwo \(t \geq t_k\) czyli przyjęcia przez
+  statystykę testu \(t\) równej lub większej od \(t_k\) (co do wartości bezwzględnej).
+  To prawdopodobieństwo zwyczajowo oznacza się literą p albo p-value (czyli wartość p).
+\item
+  Jeżeli p jest mniejsze/równe od przyjętego poziomu istotności to hipotezę zerową odrzucamy;
+  jezeli p jest większe od przyjętego poziomu istotności to nie ma podstaw do odrzucenia
+  hipotezy zerowej.
+\end{enumerate}
+
+Odrzucenie hipotezy zerowej oznacza, że istnieje związek pomiędzy jedną a drugą zmienną.
+Jeżeli nie ma podstaw do odrzucenia
+hipotezy zerowej to oznacza to że takiej zależności nie udało nam się wykazać.
+
+Omawiając wynik należy podać się wartość \(t_k\) oraz p.~Statystyka testu może się
+różnie nazywać i być oznaczana różnym symbolem,
+np.: t (test t-Studenta), U (test U Manna-Whitneya).
+
 \hypertarget{test-t-studenta}{%
-\subsection{\texorpdfstring{test \(t\)-Studenta}{test t-Studenta}}\label{test-t-studenta}}
+\subsection{\texorpdfstring{Test \(t\)-Studenta}{Test t-Studenta}}\label{test-t-studenta}}
 
 Test stosujemy jeżeli porównujemy dwie średnie oraz można przyjąć
 założenie że rozkład wartości w obu grupach jest normalny.
@@ -2291,7 +2393,7 @@ ankietę zawierającą
 test depresji Becka, mierzący \textbf{poziom depresji} (wartość liczbowa)
 oraz pytanie o rodzaj miejsca pracy (skala nominalna). Poniżej
 zestawiono średnie wartości \textbf{poziomu depresji} w podziale
-na rodzaj miejsca pracy (szpital/przychodnia)
+na rodzaj miejsca pracy (szpital/przychodnia).
 
 \begin{tabular}{l|r|r}
 \hline
@@ -2302,6 +2404,8 @@ Przychodnia & 7.833333 & 12\\
 Szpital & 8.450549 & 91\\
 \hline
 \end{tabular}
+
+Kolumna n zawiera liczbność.
 
 Średnie różnią się
 o 0.62.
@@ -2319,8 +2423,11 @@ Przychodnia & Szpital & 12 & 91 & -0.3241142 & 0.749\\
 \hline
 \end{tabular}
 
+Kolumna t zawiera wartość statystyki testu \(t_k\). Kolumna p
+zawiera oczywiście wartość prawdopodobieństwa p.
+
 Ponieważ wartość \(p\) równa 0.749` jest większa od każdego zwyczajowo
-przyjmowanego poziomu istotności nie ma podstaw
+przyjmowanego poziomu istotności (0,05 na przykład, albo 0,1) nie ma podstaw
 do odrzucenia hipotezy, że średnie w obu grupach są równe. Skoro tak, to
 w konsekwencji stwierdzamy że pomiędzy poziomem depresji
 a miejscem pracy nie ma zależności.
@@ -2333,7 +2440,7 @@ Statystyk nie przyjmuje założeń na słowo honoru.
 Kiedy zatem można przyjąć założenie o normalności a kiedy nie?
 Można to ocenić na podstawie wykresu kwantylowego. Oraz
 posługując się testem Shapiro-Wilka
-(bo Statystycy na każde pytanie mają zawsze \textbf{jakiś} stosowny test)
+(bo statystycy na każde pytanie mają zawsze \textbf{jakiś} stosowny test).
 
 \begin{example}
 \textbf{Poziom depresji a miejsce pracy}
@@ -2352,13 +2459,13 @@ W tym przypadku wygląda, że rozkład w grupie Szpital \textbf{nie jest} normal
 W grupie Przychodnia jest lepiej ale jednocześnie to lepiej jest mało wiarygodne
 z uwagi na małą liczebność grupy (zaledwie 12).
 
-Wizualne obserwacja można potwierdzić stosując test Shapiro-Wilka.
+Wizualne obserwacja można potwierdzić stosując test Shapiro-Wilka (S-W).
 Interpretacja tego testu jest „standardowa``, mianowicie małe wartości \(p\)
-świadczą przeciwko hipotezie zerowej (że rozkład jest Normalny)
+świadczą przeciwko hipotezie zerowej (że rozkład jest normalny).
 
 \begin{tabular}{l|r|r}
 \hline
-m-pracy & statystyka & p\\
+m-pracy & S-W & p\\
 \hline
 Przychodnia & 0.9256178 & 0.3359655\\
 \hline
@@ -2366,13 +2473,16 @@ Szpital & 0.7865090 & 0.0000000\\
 \hline
 \end{tabular}
 
-Rozkład w grupie \texttt{szpital} nie jest normalny. Nasze założenie co do normalności
+Rozkład w grupie \texttt{szpital} nie jest normalny (o czym świadczy niska wartość p).
+Nasze założenie co do normalności
 było niepoprawne i należy do weryfikacji hipotezy o równości średniej zamiast
 testu \(t\)-Studenta zastosować test U Manna-Whitneya.
+
+Kolumna S-W zawiera wartości statystki testu S-W oczywiście.
 \end{example}
 
 \hypertarget{test-u-manna-whitneya}{%
-\subsection{test U Manna-Whitneya}\label{test-u-manna-whitneya}}
+\subsection{Test U Manna-Whitneya}\label{test-u-manna-whitneya}}
 
 \begin{example}
 \textbf{Poziom depresji a miejsce pracy}
@@ -2389,11 +2499,12 @@ Przychodnia & Szpital & 12 & 91 & 564.5 & 0.853\\
 
 Prawdopodobieństwo wystąpienia tak dużej różnicy przy założeniu, że
 średnie w obu grupach
-są identyczne wynosi 0.853 (różnica jest zatem nieistotna; obie średnie są identyczne--nie ma zależności)
+są identyczne wynosi 0.853 (różnica jest zatem nieistotna; obie średnie są identyczne--nie ma zależności). Kolumna U zawiera wartość statystyki testu U. Przypominamy, że
+dobry zwyczaj nakazuje podawać tę wartość omawiając wynik testu (więc ją podajemy).
 \end{example}
 
 \hypertarget{test-anova}{%
-\subsection{test ANOVA}\label{test-anova}}
+\subsection{Test ANOVA}\label{test-anova}}
 
 Jeżeli liczba grup jest większa niż dwie ale można przyjąć założenie
 o normalności rozkładów to stosujemy test ANOVA.
@@ -2422,10 +2533,18 @@ staż (kategoria) & średnia & n\\
 \hline
 \end{tabular}
 
-Zakładając że rozkłady w grupach są normalne, do weryfikacji hipotezy o równości wszystkich
-średnich możemy zastosować test ANOVA.
+Zakładając, że rozkłady w grupach są normalne, do weryfikacji hipotezy o równości wszystkich
+średnich możemy zastosować test ANOVA. Na poniższym wydruku kolumna F zawiera
+wartość statystki test ANOVA a kolumna p jak zwykle wartość prawdopodobieństwa p:
 
-Wartość \(p\) równa 0.988 świadczy że nie istotnych różnic pomiędzy średnimi, co oznacza
+\begin{verbatim}
+## ANOVA Table (type II tests)
+## 
+##   Effect DFn DFd     F     p p<.05   ges
+## 1   staz   3  99 0.043 0.988       0.001
+\end{verbatim}
+
+Wartość p równa 0.988 świadczy że nie istotnych różnic pomiędzy średnimi, co oznacza
 że pomiędzy poziomem depresji a kategoriami stażu pracy nie ma zależności.
 
 Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
@@ -2433,7 +2552,7 @@ zastosować (znowu) test Shapiro-Wilka:
 
 \begin{tabular}{l|r|r}
 \hline
-m-pracy & statystyka & p\\
+m-pracy & S-W & p\\
 \hline
 07-12 & 0.8565271 & 0.1408865\\
 \hline
@@ -2446,57 +2565,70 @@ m-pracy & statystyka & p\\
 \end{tabular}
 
 Wobec takiego wyniku testu do oceny istotności różnic
-należy zastosować bardziej ogólny test Kruskalla-Wallisa
+należy zastosować bardziej ogólny test Kruskala-Wallisa
 \end{example}
 
-\hypertarget{test-kruskalla-wallisa}{%
-\subsection{test Kruskalla-Wallisa}\label{test-kruskalla-wallisa}}
+\hypertarget{test-kruskala-wallisa}{%
+\subsection{Test Kruskala-Wallisa}\label{test-kruskala-wallisa}}
 
 \begin{example}
 \textbf{Poziom depresji a staż pracy}
 
-Prawdopodobieństwo tak dużych różnic w średnich
+Na poniższym wydruku wartość statystyki testu jest oznaczona jako
+\texttt{Kruskal-Wallis\ chi-squared} a wartość p symbolem \texttt{p-value}:
+
+\begin{verbatim}
+## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  P by staz
+## Kruskal-Wallis chi-squared = 1.5145, df = 3, p-value = 0.6789
+\end{verbatim}
+
+Prawdopodobieństwo tak dużych różnic w wartościach średnich
 przy założeniu, że średnie we wszystkich grupach są identyczne wynosi
 0.678922994359164 (różnice są zatem nieistotne;
 wszystkie średnie są identyczne--nie ma zależności)
 \end{example}
 
-\hypertarget{zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne}{%
-\section{Zmienna liczbowa i zmienne liczbowe lub nominalne}\label{zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne}}
+\hypertarget{dwie-zmienne-liczbowe}{%
+\section{Dwie zmienne liczbowe}\label{dwie-zmienne-liczbowe}}
 
-\hypertarget{przypadek-szczeguxf3lny-dwie-zmienne-liczbowe}{%
-\subsection{Przypadek szczególny: dwie zmienne liczbowe}\label{przypadek-szczeguxf3lny-dwie-zmienne-liczbowe}}
+\hypertarget{korelacyjny-wykres-rozrzutu}{%
+\subsection{Korelacyjny wykres rozrzutu}\label{korelacyjny-wykres-rozrzutu}}
 
-Oznaczamy jedną zmienną jako \(X\) a drugą jako \(Y\).
-W tym przypadku dobrze jest rozpocząć analizę od wykresu.
-
-\hypertarget{korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot}{%
-\subsection{Korelacyjny wykres rozrzutu (korelogram, wykres XY w Excelu, scatter plot)}\label{korelacyjny-wykres-rozrzutu-korelogram-wykres-xy-w-excelu-scatter-plot}}
-
-W układzie kartezjańskim każdej obserwacji odpowiada
-kropka o współrzędnych XY.
+Wykres rozrzutu (\emph{scatter plot}) znany także jako korelogram, albo wykres XY,
+to prosty wykres kreślony w układzie kartezjańskim, w którym każdej obserwacji
+(składającej się z dwóch liczb) odpowiada kropka o współrzędnych XY.
 
 O występowaniu związku świadczy układanie się kropek według jakiegoś
 kształtu (krzywej). O braku związku
 świadczy chmura punktów niepodobna do żadnej krzywej.
 
 Punkty układające się według prostej świadczą o zależności liniowej
-(wyjątek: linia pozioma lub pionowa)
-Punkty układające się według krzywej świadczą
+(wyjątek: linia pozioma lub pionowa o czym dalej) zaś
+punkty układające się według krzywej świadczą
 o zależności nieliniowej.
 
 \begin{example}
 \textbf{Zamożność a konsumpcja mięsa}
 
 Organizacja Narodów Zjednoczonych do spraw Wyżywienia i Rolnictwa znana jako FAO
-udostępnia dane dotyczące konsumpcji żywności na świecie. Bank światowy
-udostępnia dane dotyczące dochodu narodowego.
+udostępnia dane dotyczące konsumpcji żywności
+na świecie (\url{https://www.fao.org/faostat/en/\#home}). Bank światowy
+udostępnia dane dotyczące dochodu narodowego (\url{https://data.worldbank.org/}).
 
 Konsumpcja mięsa jest mierzona jako średnia konsumpcja w kilogramach w każdym kraju (\emph{per capita} się mówi);
 Dochód podobnie jako średnia wielkość dochodu narodowego \emph{per capita}.
 Dane dotyczą roku 2013.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-56-1.pdf}
+\includegraphics[width=0.9\linewidth]{_main_files/figure-latex/unnamed-chunk-56-1}
+
+Przy dużej dozie wyobraźni można dostrzec relację liniową pomiędzy
+konsumpcją mięsa a GDP co oznaczono na wykresie linią prostą. Można też założyć, że
+relacja pomiędzy konsumpcją mięsa a GDP ma charakter nieliniowy (linia krzywa).
+Liniowa czy nieliniowa, relacja jest na pewno mocno przybliżona co jest najbardziej
+pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
 \end{example}
 
 \hypertarget{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-liniowej-pearsona}{%
@@ -2524,9 +2656,12 @@ kowariacji przez iloczyn odchyleń standardowych \(s_x\) oraz \(s_y\).
 Współczynnik jest miarą niemianowaną, przyjmującą wartości ze zbioru \([-1;1]\);
 Skrajne wartości \(\pm 1\)
 świadczą o związku funkcyjnym (wszystkie punkty układają się na linii prostej);
-wartość zero świadczy o braku związku (linia pozioma/pionowa)
+wartość zero świadczy o braku związku co odpowiada linii poziomej lub pionowej
+(por. rysunek \ref{fig:correlations5}).
 
-\includegraphics[width=0.75\textwidth,height=\textheight]{./covariance_explained.png}
+\begin{figure}
+\includegraphics[width=0.99\linewidth]{./correlation_expl} \caption{Wykresy rozrzutu dla korelacji o różnej sile}\label{fig:correlations5}
+\end{figure}
 
 Interpretacja opisowa: wartości powyżej 0,9 świadczą o silnej zależności.
 
@@ -2566,7 +2701,12 @@ Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, sz
 
 Albo w bardziej efektownej postaci tekstowo-graficznej:
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-59-1.pdf}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-59-1}
+
+Ze wszystkich zmiennych analizowanych w badaniu Mohammadiego i innych
+jedynie zależność pomiędzy wiekiem a wykształceniem
+(raczej trywialna) oraz szczęściem i zdrowiem (raczej oczywista) okazały się
+znacząco różne od zera.
 \end{example}
 
 \hypertarget{pomiar-siux142y-zaleux17cnoux15bci-regresja-liniowa}{%
@@ -2587,23 +2727,10 @@ Współczynnik \(b_1\) określa wpływ spożycia kawy na wynik egzaminu.
 W szczególności jeżeli \(b_1 = 0\) to
 nie ma związku między spożywaniem kawy a wynikiem egzaminu.
 
-Jeżeli zmiennych niezależnych jest więcej niż jedna,
-to mówimy o \textbf{regresji wielorakiej}. Przykładowo
-zależność
-pomiędzy wynikiem egzaminu, spożyciem kawy czasem nauki oraz predyspozycjami
-opisuje następujący model regresji:
+\hypertarget{regProsta}{%
+\subsection{Regresja prosta}\label{regProsta}}
 
-\[\textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa} + b_2 \cdot \textrm{czas} + b_3 \cdot \textrm{predyspozycje} \]
-
-Współczynnik \(b_1\) określa wpływ spożycia kawy,
-\(b_2\) czasu poświęconego na naukę,
-a \(b_3\) predyspozycji
-(intelektualnych, mierzonych np. średnią ocenę ze studiów)
-
-\hypertarget{regresja-prosta}{%
-\subsection{Regresja prosta}\label{regresja-prosta}}
-
-Równianie regresji dla zmiennych \(Y\) (skutek) oraz \(X\) (przyczyna) można zapisać następująco:
+Równanie regresji dla zmiennych \(Y\) (skutek) oraz \(X\) (przyczyna) można zapisać następująco:
 
 \[Y = b_0 + b_1 \cdot X + e \]
 
@@ -2657,6 +2784,7 @@ Graficznie \textbf{kryterium minimalizacyjne} przedstawia rysunek \ref{fig:KMNK}
 \end{figure}
 
 Suma podniesionych do kwadratu odległości pomiędzy czerwonymi
+(leżącymi na linii prostej w wersji czarno-białej)
 i niebieskimi kropkami ma być minimalna. Kropki niebieskie to
 wartości empiryczne; kropki czerwone to wartości teoretyczne.
 Zadanie wyznaczenie
@@ -2762,15 +2890,15 @@ Oszacowanie tego równania na próbie 635 uczestników
 Pucharu Świata w rugby w 2023 roku
 daje następujące wyniki:
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-61-1.pdf}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-61-1}
 
 \begin{tabular}{l|r|r|r|r|l}
 \hline
 Zmienna & B & Błąd stand & z & p & CI95\\
 \hline
-(Intercept) & 157.149 & 2.130 & 73.787 & 0 & 152.970 161.330\\
+(Intercept) & 155.926 & 1.753 & 88.969 & 0 & 152.480 159.370\\
 \hline
-weight & 0.281 & 0.021 & 13.583 & 0 & 0.240 0.320\\
+weight & 0.294 & 0.017 & 17.305 & 0 & 0.260 0.330\\
 \hline
 \end{tabular}
 
@@ -2780,8 +2908,8 @@ Kolumna \texttt{Błąd\ stand} zawiera oceny błędu standardowego estymatorów 
 Kolumna \texttt{p} zawiera prawdopodobieństwo \(b>b_e\).
 
 Wzrost wagi zawodnika o 1kg
-skutkuje przeciętnie większym wzrostem o 0.281 cm. Współczynnik determinacji
-wynosi 23.16\%.
+skutkuje przeciętnie większym wzrostem o 0.294 cm. Współczynnik determinacji
+wynosi 32.86\%.
 Współczynnik nachylenia prostej jest istotny ponieważ wartość \(p\) (tak mała, że w tabeli
 oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p \textless{} 0,05).
@@ -2799,9 +2927,9 @@ a konsumpcją mięsa w kilogramach:
 \[\textrm{konsumpcja} = b_0 + b_1 \textrm{gdp}\]
 Model oszacowano dla krajów świata w roku 2013 na podstawie danych
 pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
-następujące wyniki
+następujące wyniki:
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-63-1.pdf}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-63-1}
 
 \begin{tabular}{l|r|r|r|r|l}
 \hline
@@ -2823,20 +2951,31 @@ wynosi 1.108) jest statystycznie istotny.
 
 Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
 bo jest ona zbyt dużym uproszczeniem rzeczywistości. Jest to jednak
-dobry punkt startu do bardziej skomplikowanego modelu regresji wielorakiej.
+dobry punkt startu do bardziej skomplikowanego modelu \textbf{regresji wielorakiej}.
 
-\hypertarget{przypadek-oguxf3lny-regresja-wieloraka}{%
-\subsection{Przypadek ogólny: regresja wieloraka}\label{przypadek-oguxf3lny-regresja-wieloraka}}
+\hypertarget{zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne}{%
+\subsection{Zmienna liczbowa i zmienne liczbowe lub nominalne}\label{zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne}}
 
-Uogólnieniem regresji prostej jest regresja wieloraka. W modelu
-regresji wielorakiej po lewej stronie równania występuje zmienna
-liczbowa oznaczona jako \(Y\), a po prawej zmienne liczbowe
-lub nominalne, \(X_1, \ldots, X_k\):
+Jeżeli zmiennych niezależnych jest więcej niż jedna,
+to mówimy o \textbf{regresji wielorakiej}. Przykładowo
+zależność
+pomiędzy wynikiem egzaminu, spożyciem kawy czasem nauki oraz predyspozycjami
+opisuje następujący model regresji:
+
+\[\textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa} + b_2 \cdot \textrm{czas} + b_3 \cdot \textrm{predyspozycje} \]
+
+Współczynnik \(b_1\) określa wpływ spożycia kawy,
+\(b_2\) czasu poświęconego na naukę,
+a \(b_3\) predyspozycji
+(intelektualnych, mierzonych np. średnią ocenę ze studiów). Ogólnie
+model
+regresji wielorakiej zapisać można jako:
 
 \[Y = b_0 + b_1 \cdot X_1 + b_2 \cdot X_2 + ... + b_k \cdot X_k \]
 
 Wpływ każdej
 zmiennej \(X_i\) na zmienną zależną \(Y\) jest określony przez odpowiedni współczynnik \(b_i\).
+Zmienne \(X_i\) mogą być zmiennymi liczbowymi lub nominalnymi.
 
 Podobnie jak w przypadku regresji prostej do oceny stopnia dopasowania modelu do danych
 wykorzystuje się: średni błąd szacunku, współczynnik zbieżności \(R^2\) oraz
@@ -2850,7 +2989,11 @@ Jeżeli chcemy porównywać wielkości współczynników to trzeba je \textbf{ze
 
 Standaryzowany współczynnik regresji dla \(i\)-tej zmiennej
 obliczony jest poprzez pomnożenie współczynnika regresji \(b_i\) przez \(s_{xi}\)
-i podzielenie przez \(s_y\), tj. \(\beta_i = b_i s_{xi}/ s_y\). Dla przypomnienia \(s_{xi}\)
+i podzielenie przez \(s_y\):
+
+\[\beta_i = b_i \frac{s_{xi}}{s_y}\]
+
+Dla przypomnienia \(s_{xi}\)
 to odchylenie standardowe zmiennej \(X_i\), a \(s_y\) to odchylenie standardowe zmiennej \(Y\).
 Interpretacja współczynnika standardyzowanego jest cokolwiek dziwaczna:
 zmiana zmiennej \(X_i\) o jedno odchylenie standardowe (\(s_{xi}\))
@@ -2869,7 +3012,7 @@ przekonania i postawy, które z definicji są bezjednostkowe.
 
 \textbf{Wybór zmiennych objaśniających}
 
-Zwykle jest tak, że do objaśniającej kształtowanie się wartości zmiennej \(Y\) kandyduje wiele potencjalnych
+Zwykle jest tak, że do objaśniania kształtowania się wartości zmiennej \(Y\) kandyduje wiele potencjalnych
 predyktorów \(X_k\).
 Model zawierający wszystkie \(X_k\) predyktory niekoniecznie będzie najlepszy.
 Nie wdając się w omawianie szczegółowych zasad poprzestaniemy na dwóch kryteriach:
@@ -2878,12 +3021,12 @@ Nie wdając się w omawianie szczegółowych zasad poprzestaniemy na dwóch kryt
 \def\labelenumi{\arabic{enumi}.}
 \item
   Model prostszy jest lepszy od modelu bardziej skomplikowanego jeżeli adekwatnie objaśnia zmienność \(Y\)
-  (zasada brzytwy Ockhama)
+  (zasada brzytwy Ockhama, por. \url{https://pl.wikipedia.org/wiki/Brzytwa_Ockhama}).
 \item
-  Model powinien zawierać tylko zmienne o współczynnikach, których wartości są statystycznie różne od zera
+  Model powinien zawierać tylko zmienne o współczynnikach, których wartości są statystycznie różne od zera.
 \end{enumerate}
 
-Regresja krokowa (\textbf{stepwise regression}) jest metodą wyboru najlepszych predyktorów
+Regresja krokowa (\emph{stepwise regression}) jest metodą wyboru najlepszych predyktorów
 spośród większego zbioru zmiennych. Występuje w dwóch wariantach \textbf{dołączania} i \textbf{eliminacji}.
 Ponieważ \textbf{eliminacja} wydaje się prostsza omówimy tylko ten wariant.
 
@@ -2904,7 +3047,7 @@ and age with incident diabetes in Chinese adults: a population-based cohort stud
 BMJ Open. 2018 Sep 28;8(9):e021768. doi: 10.1136/bmjopen-2018-021768. PMID: 30269064; PMCID: PMC6169758.)
 
 Oryginalny zbiór danych liczy 60 tysięcy obserwacji. Dla celów przykładu losowo wybrano 90, 490
-oraz 4490 obserwacji.
+oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacowania modelu.
 
 Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
@@ -2921,12 +3064,13 @@ age & 0.484 & 0.124 & 3.906 & 0.000 & 0.360 & 0.240 0.730\\
 \end{tabular}
 
 Współczynnik zbieżności wynosi 26.24\%.
-Kolumna \texttt{Beta}, której wcześniej nie było, zawiera standaryzowane
-oceny parametrów regresji. Tej kolumny na poprzednich wydrukach nie było
-bo w przypadku regresji
+Kolumna \texttt{Beta} zawiera standaryzowane
+oceny parametrów regresji. Tej kolumny na poprzednich wydrukach
+(punkt \ref{regProsta})
+nie było, bo w przypadku regresji
 prostej standaryzacja jest zabiegiem raczej zbędnym. Dla wyrazu wolnego
-nie ma wartości standaryzowanej (oznaczone jako \texttt{NA} czyli \emph{not available}),
-ale to żadna strata--oceny tego parametru nie są interpretowane.
+nie ma wartości standaryzowanej (co oznaczono jako \texttt{NA} czyli \emph{not available}),
+ale to żadna strata -- oceny tego parametru nie są interpretowane.
 Wpływ \texttt{BMI} na wielkość ciśnienia jest nieco niższy niż \texttt{age}.
 
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
@@ -2965,7 +3109,7 @@ age & 0.320 & 0.018 & 18.270 & 0 & 0.250 & 0.290 0.350\\
 
 Współczynnik zbieżności wynosi 18.54\%.
 Przedziały ufności są jeszcze węższe. Ocena \texttt{age}
-z 95\% prawdopodobieństwem znajdujesię w przedziale {[}0.290 0.350{]}
+z 95\% prawdopodobieństwem znajduje się w przedziale {[}0.290 0.350{]}
 a w pierwszym oszacowaniu dla znacznie mniejszej próby było to {[}0.240 0.730{]}.
 Przedział jest ponad 8 razy węższy\ldots{}
 \end{example}
@@ -2982,7 +3126,7 @@ Przykładowo rodzaj miejsca pracy (skala nominalna; dwie wartości: szpital, prz
 można zamienić na zmienną binarną \texttt{praca} przypisując 1 = szpital, oraz
 0 = przychodnia (lub odwrotnie). Załóżmy że poziom stresu zależy od stażu pracy, satysfakcji
 (obie mierzone na skali liczbowej)
-rodzaju miejsca pracy. Możemy to zapisać jako następujące równanie regresji
+i rodzaju miejsca pracy. Możemy to zapisać jako następujące równanie regresji:
 
 \[\textrm{stres} = b_0 + b_1\textrm{staż} + b_2 \textrm{satysfakcja} + b_3 \textrm{praca}\]
 Jaka jest interpretacja współczynnika \(b_3\)? Zakładając że 0 = przychodnia, \(b_3\) oznacza
@@ -3032,9 +3176,10 @@ interpretować parametr stojący przy tej zmiennej: zmiana wielkości ciśnienia
 
 Rozważany model ma postać:
 
-\[SBP = b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + 
-b_4 \textrm{current.smoker} + b_5 \textrm{ever.smoker} + 
-b_6 \textrm{current.drinker} + b_7 \textrm{ever.drinker}\]
+\begin{align}
+SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{current.smoker} + \\
+&+  b_5 \textrm{ever.smoker} + b_6 \textrm{current.drinker} + b_7 \textrm{ever.drinker}
+\end{align}
 
 Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
@@ -3062,8 +3207,8 @@ ever.drinker & -4.001 & 4.575 & -0.875 & 0.384 & -0.080 & -13.100 5.100\\
 
 Współczynnik zbieżności wynosi 38.11\%. Tylko dwie na siedem zmiennych
 są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
-z 95\% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie--nie mamy
-nawet pewności co do kierunku zależności między zmienną zmienną objaśniającą a ciśnieniem.
+z 95\% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie -- nie mamy
+nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
 Zmienne, które okazały się istotne jednocześnie mają największą wielkość efektu (kolumna \texttt{Beta})
 i nie jest to przypadek.
 
@@ -3093,7 +3238,7 @@ ever.drinker & 0.193 & 0.623 & 0.310 & 0.757 & 0.000 & -1.030 1.410\\
 \end{tabular}
 
 Współczynnik zbieżności wynosi 20.72\%. Zwiększenie
-liczebności próby spowodowało, że tylko dwie z siedmiu zmiennych
+liczebności próby z 90 do 4490 obserwacji spowodowało, że tylko dwie z siedmiu zmiennych
 mają nieistotne wartości. Analizując wartości standaryzowane możemy ustalić
 które zmienne mają największy wpływ na wielkość ciśnienia krwi.
 
@@ -3186,7 +3331,7 @@ model zapisuje się jako (ln oznacza logarytm naturalny):
 
 \[\ln(\frac{p}{1-p}) = b_0 + b_1 \cdot x_1  + \ldots + b_k \cdot x_k\]
 
-Zauważmy, że \(o = \frac{p}{1-p}\) to nic innego jak szansa (\textbf{odds}).
+Zauważmy, że \(o = \frac{p}{1-p}\) to nic innego jak szansa (\emph{odds}, por. punkt \ref{oddsSec}).
 Parametr \(b_i\) jest miarą wpływu zmiennej \(X_i\) na zmienną \(Y\).
 Jeżeli \(X_i\) wzrośnie o jednostkę, to logarytm ilorazu szans
 wzrośnie o \(\ln(o)\) (przy założeniu, że pozostałem zmienne \(X\) mają
@@ -3242,7 +3387,8 @@ trywialnego (warunek minimum przydatności.)
 
 Jeżeli model zawiera wiele zmiennych w tym zmienne liczbowe, idea
 liczenia dewiancji jest podobna, ale oczywiście szczegóły są już bardziej
-skomplikowane. Szczegóły te nie są wszakże dla nas istotne.
+skomplikowane. Szczegóły te nie są wszakże dla nas istotne bo zajmuje się
+tym program komputerowy.
 
 \textbf{Minimalne kryteria oceny przydatności modelu regresji logistycznej}:
 istotnie mniejsza od modelu zerowego dewiancja oraz istotnie różne
@@ -3258,7 +3404,7 @@ klasyfikacji, to jest ocena na ile model poprawnie
 przypisuje przypadkom kategorie zmiennej prognozowanej. Im mniejsza
 rozbieżność pomiędzy wartościami rzeczywistymi, a prognozowanymi tym oczywiście lepiej.
 
-Tę jakość klasyfikacji ocenia się za pomocą dwóch wskaźników,
+Tę jakość klasyfikacji ocenia się za pomocą dwóch wskaźników:
 czułość (\emph{sensitivity}) oraz swoistość (\emph{specifity}).
 
 \begin{enumerate}
@@ -3266,21 +3412,21 @@ czułość (\emph{sensitivity}) oraz swoistość (\emph{specifity}).
 \tightlist
 \item
   Odsetek sukcesów zaklasyfikowanych jako „sukces'' (\textbf{Czułość}); określany
-  także jako TPR (\emph{true-positive-rate})
+  także jako TPR (\emph{true-positive-rate}).
 \item
   Odsetek porażek zaklasyfikowanych jako „porażka'' (\textbf{Swoistość});
-  określany także jako TNR (\emph{true-negative-rate})
+  określany także jako TNR (\emph{true-negative-rate}).
 \end{enumerate}
 
 Klasyfikacja w modelu regresji logistycznej wygląda następująco.
-Jeżeli prawdopodobieństwo obliczone
-jest wyższe-lub-równe niż założona \textbf{wartość graniczna}, to zakładamy „sukces'',
+Jeżeli prawdopodobieństwo obliczone z modelu
+jest wyższe-lub-równe niż założona \textbf{wartość graniczna} (\(p_g\)), to zakładamy „sukces'',
 jeżeli tak nie jest, to zakładamy „porażkę''.
 Wartość graniczna jest ustala albo
 arbitralnie albo na podstawie jakieś dodatkowej (pozastatystycznej) informacji.
-Domyślnie za wartość graniczną przyjmuje się zwykle 0,5, co oznacza że
-wartości \(p \geq p_g\) zostaną zamienione na „sukces''
-a wartości \(p < p_g\) zostaną zamienione na „porażkę''.
+Domyślnie za wartość graniczną przyjmuje się zwykle \(p_g = 0,5\), co oznacza że
+wartości \(p \geq 0,5\) zostaną zamienione na „sukces''
+a wartości \(p < 0,5\) zostaną zamienione na „porażkę''.
 
 \textbf{Ocena dopasowania: krzywa ROC}
 
@@ -3292,10 +3438,13 @@ Krzywa ROC przedstawia w układzie współrzędnych XY wartości
 czułości oraz swoistości dla różnych wartości granicznych.
 Współczynnik AUC (\emph{area under curve}) to wielkość pola pod
 krzywą wyrażona w procentach pola kwadratu o boku 100\%.
-AUC zawiera się w przedziale 50--100. Im większa wartość tym lepiej.
-Model który klasyfikuje czysto losowo ma wartość AUC równą 50\%.
+AUC zawiera się w przedziale 50--100. Im większa wartość współczynnika tym lepiej.
+Model który klasyfikuje czysto losowo
+ma wartość AUC równą 50\% (por. rysunek \ref{fig:ROCcurve}).
 
-\includegraphics{./ROCcurve.png}
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{./ROCcurve} \caption{Krzywa ROC}\label{fig:ROCcurve}
+\end{figure}
 
 \begin{example}
 \textbf{Osteoporoza i witamina D}
@@ -3314,10 +3463,18 @@ Odpowiada to następującemu równaniu:
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo
 
+\begin{tabular}{l|r|r|r|r}
+\hline
+Parametr & Ocena & Błąd stand & z & p\\
+\hline
+(Intercept) & -2.644537 & 0.2029618 & -13.02973 & 0\\
+\hline
+\end{tabular}
+
 Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
 wyniosło 0.0663265. Krzywa ROC dla modelu zerowego wygląda następująco:
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-73-1.pdf}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-73-1}
 
 Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
 z bardziej skomplikowanymi modelami.
@@ -3388,7 +3545,7 @@ Dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = 0)
 
 Krzywa ROC
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-79-1.pdf}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-79-1}
 \end{example}
 
 \hypertarget{przypadek-specjalny-dwie-zmienne-co-najmniej-porzux105dkowe}{%
@@ -3397,13 +3554,13 @@ Krzywa ROC
 \hypertarget{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-rang}{%
 \subsection{Pomiar siły zależności: współczynnik korelacji rang}\label{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-rang}}
 
-Współczynnik korelacji rang (Spearmana vel \emph{Spearman's Rank-Order Correlation})
+Współczynnik korelacji rang Spearmana (\emph{Spearman's Rank-Order Correlation})
 może być stosowany
-w przypadku gdy cechy są mierzone w skali porządkowej (lub lepszej)
+w przypadku gdy cechy są mierzone w skali porządkowej (lub lepszej czyli liczbowej).
 
 Obliczenie współczynnika Spearmana dla \(N\) obserwacji na zmiennych \(XY\)
 polega na zamianie wartości
-zmiennych \(X\) oraz \(Y\) na \textbf{rangi} (numery porządkowe od \(1...N\)).
+zmiennych \(X\) oraz \(Y\) na \textbf{rangi} (numery porządkowe od \(1\) do \(N\)).
 Następnie stosowana jest formuła współczynnika korelacji
 liniowej Pearsona (\(\tau_x\) oraz \(\tau_y\) oznaczają \textbf{rangi}):
 
@@ -3432,11 +3589,12 @@ cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
 Ale nie jest to też błędem więc w powyższym przykładzie
 go liczymy :-)
 
-Współczynnik korelacji liniowej Spearmana wynosi 0.6845429 (umiarkowana korelacja).
+Współczynnik korelacji liniowej Spearmana
+wynosi 0.68 (umiarkowana korelacja).
 
 Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
 test statystyczny, który sprowadza się do określenia jakie jest
-prawdopodobieństwo otrzymania \(r_s\) = 0.6845429 przy założeniu że
+prawdopodobieństwo otrzymania \(r_s\) = 0.68 przy założeniu że
 prawdziwa wartość \(r_s\) wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi 2.302116e-26
 (czyli jest ekstremalnie małe -- \(r_s\) jest istotnie różne od zera).
@@ -3445,22 +3603,24 @@ to prawdopodobieństwo wynosi 2.302116e-26
 \hypertarget{podsumowanie}{%
 \section{Podsumowanie}\label{podsumowanie}}
 
-Przedstawiono 6 następujących metod ustalania zależności między zmiennymi:
+Przedstawiono 7 następujących metod ustalania zależności między zmiennymi:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  korelogram
+  Wykres rozrzutu.
 \item
-  tablica korelacyjna/test chi-kwadrat
+  Tablica wielodzielcza i test chi-kwadrat.
 \item
-  współczynnik korelacji Pearsona
+  Współczynnik korelacji liniowej Pearsona.
 \item
-  współczynnik korelacji Spearmana
+  Współczynnik korelacji Spearmana.
 \item
-  regresja liniową i logistyczna
+  Regresja liniowa.
 \item
-  testy \(t\)-Studenta, U Manna-Whitneya, ANOVA albo test Kruskalla-Wallisa
+  Regresja logistyczna.
+\item
+  testy \(t\)-Studenta, U Manna-Whitneya, ANOVA albo test Kruskala-Wallisa.
 \end{enumerate}
 
 \hypertarget{surveyexamples}{%
@@ -3487,8 +3647,7 @@ Należy zastanowić się nad trzema sprawami:
   Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)
 \end{enumerate}
 
-\hypertarget{co-chcemy-ustaliux107}{%
-\subsection{Co chcemy ustalić?}\label{co-chcemy-ustaliux107}}
+\textbf{Co chcemy ustalić?}
 
 Najlepiej jakąś zależność. Na przykład: Stress a wypalenie zawodowe;
 satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej
@@ -3498,14 +3657,13 @@ nadwaga wśród studentów wydziału zdrowia PSW; Analiza porównawcza
 wypalenia zawodowego pielęgniarek
 pracujących w różnych systemach opieki.
 
-\hypertarget{co-i-jak-mamy-mierzyux107}{%
-\subsection{Co i jak mamy mierzyć?}\label{co-i-jak-mamy-mierzyux107}}
+\textbf{Co i jak mierzyć?}
 
 Jeżeli mamy zamiar badań nadwagę, to powinniśmy zmierzyć masę ciała.
 Jeżeli celem jest ustalenie zależności pomiędzy stresem a wypaleniem
 zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenia. Jak
 dotąd banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
-pytanie \textbf{jak}
+pytanie \textbf{jak}?
 
 \hypertarget{mierzenie-twardych-faktuxf3w-vs-mierzenia-przekonaux144}{%
 \subsection{Mierzenie twardych faktów vs mierzenia przekonań}\label{mierzenie-twardych-faktuxf3w-vs-mierzenia-przekonaux144}}
@@ -3514,11 +3672,11 @@ Możemy pytać w ankiecie o dwie rzeczy:
 
 \begin{itemize}
 \item
-  \textbf{Fakty} (wiek, staż, zawód, tętno, przebyte choroby)
+  \textbf{fakty} (wiek, staż, zawód, tętno, przebyte choroby);
 \item
-  \textbf{Przekonania}, \textbf{Wartości}, \textbf{Postawy};
-  \textbf{Uczucia} (strach / radość) albo \textbf{Zamiary}
-  (w języku Attitudes/Emotions/Intentions)
+  \textbf{przekonania}, \textbf{wartości}, \textbf{postawy};
+  \textbf{uczucia} (strach / radość) albo \textbf{zamiary}
+  (w języku attitudes/emotions/intentions).
 \end{itemize}
 
 Mierzenie \textbf{faktów} nie wymaga dodatkowych objaśnień. Problem jest
@@ -3549,7 +3707,7 @@ samoskuteczność to
 \textbf{przekonanie}, iż \emph{jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele}).
 \textbf{Definicja operacyjna} określa jak zmierzyć pojęcie
 (jak zmierzyć satysfakcję)
-Przejście od DK do DO bywa czasami mocno, hmm\ldots{} arbitralne.
+Przejście od definicji koncepcyjnej do definicji operecyjnej bywa czasami mocno, hmm\ldots{} arbitralne.
 
 \hypertarget{skala-likerta}{%
 \subsection{Skala Likerta}\label{skala-likerta}}
@@ -3562,28 +3720,39 @@ respondentowi trzy możliwe warianty odpowiedzi: Tak/Nie/Nie wiem.
 
 Może też być pięć wariantów: bardzo się boję--boję się--ani/ani--nie boję się--zupełnie się nie boję.
 
-Taką skalę pomiarową określamy jak wiemy jako \textbf{porządkową}. Pomiary nie są liczbami
+Taką skalę pomiarową określamy jak wiemy jako \textbf{porządkową}. Pomiary nie są liczbami,
 ale są uporządkowane.
 Rangi wartości są już liczbami (np 1--5 w drugim przykładzie), można je np. uśredniać
 Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali \textbf{Likerta}.
 Można sobie wymyślać skalę Likerta 7-punktową i więcej.
 
-Moim zdaniem powyżej 7 wariantów normalny respondent będzie miał problem
+Naszym zdaniem powyżej 7 wariantów normalny respondent będzie miał problem
 czy się bardziej-bardziej czy bardziej-bardziej-bardziej boi.
 
-\hypertarget{skala-pomiarowainwentarzkwestionariusz}{%
-\subsection{Skala pomiarowa/inwentarz/kwestionariusz}\label{skala-pomiarowainwentarzkwestionariusz}}
+\hypertarget{skala-pomiarowa-czyli-inwentarz-albo-kwestionariusz}{%
+\subsection{Skala pomiarowa czyli inwentarz albo kwestionariusz}\label{skala-pomiarowa-czyli-inwentarz-albo-kwestionariusz}}
 
 Ponieważ skala Likerta jest zgrubna to
-uważa się powszechnie że lepszy wynik da pomiar
+uważa się powszechnie, że lepszy wynik da pomiar
 wielokrotny.
 W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej
-precyzyjny tutaj pytamy się parę razy o to samo co
+precyzyjny. Tutaj pytamy się parę razy o to samo co
 ma dać podobny efekt (mniejszy średni błąd pomiaru).
 Taka seria pytań nosi też nazwę skali albo \textbf{inwentarza}.
-
 Nie pytamy się zatem \textbf{Czy pan/pani boi się COVID19?} tylko zadajemy serię
-pytań o strach względem COVID19.
+pytań o strach względem COVID19:
+
+\begin{example}
+\textbf{strach przed COVID19}
+
+The Fear of COVID-19 Scale: Development and Initial Validation.
+International Journal of
+Mental Health and Addiction, 1--9.
+\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/}
+
+Lęk przed koronawirusem COVID-19
+i lęk przed śmiercią -- polskie adaptacje narzędzi
+\url{https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3626,32 +3795,19 @@ albo:
 
 Odpowiadający ma do wyboru pięć wariantów odpowiedzi:
 \textbf{zdecydowanie nie}/\textbf{nie}/\textbf{nie mam zdania}/\textbf{tak}/\textbf{zdecydowanie tak}
-
-The Fear of COVID-19 Scale: Development and Initial Validation.
-International Journal of
-Mental Health and Addiction, 1--9.
-\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/}
-
-\emph{Fear of COVID-19 Scale (FCV-19S) across countries: Measurement invariance issues}
-\url{https://onlinelibrary.wiley.com/doi/10.1002/nop2.855}
-
-\emph{Fear of COVID-19, psychological distress, work satisfaction and turnover
-intention among frontline nurses}
-\url{https://onlinelibrary.wiley.com/doi/full/10.1111/jonm.13168}
-
-Lęk przed koronawirusem COVID-19
-i lęk przed śmiercią -- polskie adaptacje narzędzi
-\url{https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html}
+\end{example}
 
 \hypertarget{model-pomiaru}{%
 \subsection{Model pomiaru}\label{model-pomiaru}}
 
 Ukryty czynnik (strach) kształtuje wartości indykatorów (odpowiedzi na pytania)
 Taki sposób pomiaru \textbf{ukrytego czynnika} (latent w języku) określa się
-mianem refleksyjnego (co jest kalką od \emph{reflexive}). Na rysunku
+mianem refleksyjnego (co jest kalką od \emph{reflexive}). Na rysunku \ref{fig:modelP}
 kierunek strzałki obrazuje zależność (czynnik→indykator)
 
-\includegraphics{./pomiar_ses-cropped.png}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{./pomiar_ses-cropped} \caption{Modele pomiaru czynnika ukrytego}\label{fig:modelP}
+\end{figure}
 
 Alternatywny sposób definiowania ukrytego (w pewnym sensie, raczej złożonego)
 czynnika nosi nazwę \textbf{formatywnego} (albo indeksu): czynnik jest sumą indykatorów.
@@ -3670,23 +3826,23 @@ dochody.
 Tylko jeden z trzech aspektów podwyższa mu SES;
 albo świetnie zarabiająca prostytutka bez matury.
 
-Jeżeli w czynniku refleksyjnym pominiemy jeden z trzech indykatorów to nic się
+Jeżeli w czynniku refleksyjnym pominiemy z trzech indykatorów to nic się
 nie stanie oprócz tego że pomiar będzie mniej precyzyjny. Jeżeli
-w czynniku formatywnym pominiemy indykator to popełniamy gruby błąd bo pomijamy
-jeden istotny składnik całości.
+w czynniku formatywnym pominiemy indykator, to popełniamy gruby błąd, bo pomijamy
+istotny składnik całości.
 
 Dobrą wiadomością jest, że najprostszy sposób pomiaru traktuje czynniki
-refleksyjne i formatywne jednakowo: wartością czynnika jest suma
+refleksyjne i formatywne jednakowo: wartością czynnika jest suma albo ewentualnie średnia
 wartości indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta
-suma rang po prostu. W skali strachu przed COVID ten kto się najbardziej
+suma (albo średnia) wartości rang po prostu. W skali strachu przed COVID ten kto się najbardziej
 boi powinien odpowiedzieć 7 razy \textbf{zdecydowanie tak} co odpowiada
 sumie 35 rang (jeżeli rangujemy od 1 do 5).
-Ten który się wcale nie boi zaś 7.
+Ten który się wcale nie boi zaś będzie miał 7.
 
 Małym utrudnieniem mogą być \textbf{pytania odwrócone}. Jeżeli pytamy
 o strach przed COVID i w każdym pytaniu jak bardzo ktoś się boi, albo jak
-bardzo mu serce bije, ale w jednym z pytań zapytamy \textbf{nie boję się COVID}
-To ranga 5 odpowiada uczuciu \textbf{braku strachu}. Rangi w pytaniach odwróconych
+bardzo mu serce bije, ale w jednym z pytań zapytamy \textbf{nie boję się COVID},
+to ranga 5 odpowiada uczuciu \textbf{braku strachu}. Rangi w pytaniach odwróconych
 należy przeliczyć (odwrócić): 1 zamienić na 5, 2 na 4 itd\ldots{}
 Jeżeli używamy cudzych skal to w opisie powinno być wskazane które
 pytania są odwrócone.
@@ -3696,20 +3852,20 @@ przekonania} (strach, samoskuteczność, wypalenie zawodowe, stress czy satysfak
 
 \begin{itemize}
 \item
-  Dokształcamy się nieco z psychologii mimo wszystko
+  Dokształcamy się nieco z psychologii mimo wszystko.
 \item
   Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił żeby
-  to mierzyć; \textbf{raczej nie należy wymyślać własnych skal}.
+  mierzyć to co my chcemy zmierzyć, bo \textbf{raczej nie należy wymyślać własnych skal}.
 \item
-  Robimy ankietę (w Internecie) i zbieramy dane
+  Robimy ankietę (w Internecie) i zbieramy dane.
 \item
-  Wykonujemy analizę statystyczną
+  Wykonujemy analizę statystyczną.
 \end{itemize}
 
-Banalnie proste
+Banalnie proste co udowodnimy na przykładach
 
-\hypertarget{przykux142ad-1-wiedza-na-temat-szkodliwoux15bci-palenia-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}{%
-\section{Przykład 1: Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW}\label{przykux142ad-1-wiedza-na-temat-szkodliwoux15bci-palenia-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}}
+\hypertarget{wiedza-na-temat-szkodliwoux15bci-palenia-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}{%
+\section{Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW}\label{wiedza-na-temat-szkodliwoux15bci-palenia-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}}
 
 \hypertarget{cel}{%
 \subsection{Cel}\label{cel}}
@@ -3717,22 +3873,22 @@ Banalnie proste
 Celem jest ocena wielkości zjawiska palenia tytoniu oraz
 poziom wiedzy na temat szkodliwości palenia tytoniu
 wśród
-studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących na ten nałóg.
+studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących ten nałóg.
 
-\textbf{Postawiono następujące hipotezy badawcze}
+\textbf{Postawiono następujące hipotezy badawcze}:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  jaka jest wielkość zjawiska palenie tytoniu wśród studentów PSW?
+  Jaka jest wielkość zjawiska palenie tytoniu wśród studentów PSW?
 \item
-  jaka jest wiedza na temat szkodliwości palenia tytoniu wśród studentów PSW?
+  Jaka jest wiedza na temat szkodliwości palenia tytoniu wśród studentów PSW?
 \item
-  czy palenie jest skorelowane z płcią, stażem pracy i miejscem pracy?
+  Czy palenie jest skorelowane z płcią, stażem pracy i miejscem pracy?
 \item
-  czy wiedza na temat szkodliwości palenie jest skorelowana z płcią, stażem pracy i miejscem pracy?
+  Czy wiedza na temat szkodliwości palenie jest skorelowana z płcią, stażem pracy i miejscem pracy?
 \item
-  czy palenie jest skorelowane z wiedzą na temat szkodliwości palenia?
+  Czy palenie jest skorelowane z wiedzą na temat szkodliwości palenia?
 \end{enumerate}
 
 \hypertarget{metoda}{%
@@ -3743,25 +3899,26 @@ Ankieta zawierała pytania dotyczące palenia tytoniu (pali/nie pali/palił, jak
 test wiedzy na temat szkodliwości palenia oraz pytania
 o rodzaj miejsca pracy, staż pracy i płeć itd.
 
-Pięć następujących pytań oceniało wiedzę ankietowanego:
+Pięć następujących pytań oceniało wiedzę ankietowanego na temat szkodliwości palenia:
 
 \begin{itemize}
 \tightlist
 \item
-  Uważasz, że bardziej szkodliwe dla zdrowia jest (JW),
+  Czy bardziej szkodliwe dla zdrowia jest czynne czy bierne palenie? (JW),
 \item
   Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
-  bezpośrednio przez palenie papierosów?
+  bezpośrednio przez palenie papierosów? (WW)
 \item
   Czy palenie papierosów powoduje choroby układu pokarmowego? (JW)
 \item
   Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
-  bezpośrednio przez palenie papierosów?
-  Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (wielokrotnego)
+  bezpośrednio przez palenie papierosów? (WW)
+\item
+  Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (WW)
 \end{itemize}
 
-W przypadku pytań jednokrotnego wyboru, za wskazanie poprawnej odpowiedzi respondent otrzymywał 1 punkt.
-W przypadku pytań wielokrotnego wyboru za wskazanie prawidłowej odpowiedzi respondent otrzymywał 1 punkt, ale
+W przypadku pytań jednokrotnego wyboru (JW), za wskazanie poprawnej odpowiedzi respondent otrzymywał 1 punkt.
+W przypadku pytań wielokrotnego wyboru (WW) za wskazanie prawidłowej odpowiedzi respondent otrzymywał 1 punkt, ale
 za wskazanie nieprawidłowej
 otrzymywał (minus) -1 punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
 Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
@@ -3771,58 +3928,62 @@ Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 
 \begin{itemize}
 \item
-  Hipotezę 1. oceniono na podstawie odsetka respondentów palących
+  Hipotezę 1 weryfikowano na podstawie wielkości odsetka respondentów palących.
 \item
-  Hipotezę 2. oceniono na podstawie odsetka respondentów wykazujących się dobrą i bardzo dobrą wiedzą na temat palenia
+  Hipotezę 2 weryfikowano na podstawie wielkości odsetka respondentów wykazujących się
+  dobrą i bardzo dobrą wiedzą na temat palenia
 \item
-  Hipotezę 3--5 zweryfikowano z wykorzystaniem tablic korelacyjnych/testu chi-kwadrat
+  Hipotezy 3--5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
   oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
-  Kruskalla-Wallisa
+  Kruskala-Wallisa.
 \end{itemize}
 
 \hypertarget{metryczka-analiza-respondentuxf3w}{%
 \subsection{Metryczka (analiza respondentów)}\label{metryczka-analiza-respondentuxf3w}}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-82-1.pdf}
+Rozkład ankietowanych wg wyniku testu
+na znajomość szkodliwości palenia przedstawiono na rysunku.
+
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-82-1}
 
 W badaniu wzięło udział 110 studentów.
 Otrzymano 110 poprawnie
 wypełnionych ankiet. Średnia wartość testu oceniającego wiedzę
-wyniosła 10.3636364 (odchylenie
-standardowe 3.9970798)
+wyniosła 10.364 (odchylenie
+standardowe 3.997).
 
 Rozkład ankietowanych ze względu na status względem
-palenia przedstawiono na rysunku
+palenia przedstawiono na rysunku.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-83-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-83-1}
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-84-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-84-1}
 
 Rozład ankietowanych ze względu na staż pracy przedstawiono na rysunku
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-85-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-85-1}
 
 Rozkład ankietowanych ze względu na rodzaj miejsca pracy
 przedstawiono na rysunku
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-86-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-86-1}
 
 \hypertarget{weryfikacja-hipotezy-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1}}
 
 Palą lub paliło 62 respondentów
-( 56 \%).
-Żeby stwierdzić czy to jest dużo czy mało to np. można by porównać
+(56.36 \%).
+Żeby stwierdzić czy to jest dużo czy mało to na przykład można by porównać
 z jakąś średnią ogólnopolską.
 
 \hypertarget{weryfikacja-hipotezy-2}{%
 \subsection{Weryfikacja hipotezy 2}\label{weryfikacja-hipotezy-2}}
 
-Średnia wartość uzyskana w teście wyniosła 10.3636364
+Średnia wartość uzyskana w teście wyniosła 10.36
 (mediana 11); 3/4 respondentów nie uzyskało więcej niż
-13 (czyli 68.4 \%)
+13 (czyli 68.4 \%).
 
 \hypertarget{weryfikacja-hipotez-35}{%
 \subsection{Weryfikacja hipotez 3--5}\label{weryfikacja-hipotez-35}}
@@ -3849,7 +4010,7 @@ W dalszym ciągu palę & 19 & 4\\
 ## X-squared = 2.4228, df = 2, p-value = 0.2978
 \end{verbatim}
 
-Nie jest o czym świadczy wysoka wartość p (0.297776408873495)
+Nie jest o czym świadczy wysoka wartość p (0.2978)
 
 Czy palenie jest skorelowane ze stażem pracy?
 
@@ -3873,7 +4034,7 @@ W dalszym ciągu palę & 6 & 2 & 11 & 4\\
 ## X-squared = 1.7687, df = 6, p-value = 0.9397
 \end{verbatim}
 
-Nie jest o czym świadczy wysoka wartość p (0.939696703095865)
+Nie jest o czym świadczy wysoka wartość p (0.9397)
 
 Czy palenie jest skorelowane z miejscem pracy?
 
@@ -3897,7 +4058,7 @@ W dalszym ciągu palę & 3 & 20\\
 ## X-squared = 0.47674, df = 2, p-value = 0.7879
 \end{verbatim}
 
-Nie jest o czym świadczy wysoka wartość p (0.787909744644793)
+Nie jest o czym świadczy wysoka wartość p (0.7879)
 
 Czy wiedza na temat palenia jest skorelowana z płcią:
 
@@ -3917,9 +4078,9 @@ M & 9.272727 & 33\\
 \end{verbatim}
 
 Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
-Wartość p wynosi 0.0488329904354086 -- nie ma podstaw
-od odrzucenia hipotezy o braku korelacji na poziomie 0,05 (ale na poziomie
-0,1 już byśmy mogli przyjąć że takowa korelacji istnieje)
+Wartość p wynosi 0.04883299 zatem
+hipotezy o braku korelacji na poziomie 0,05 należy odrzucić.
+Istnieje zależność pomiędzy wiedzą na temat palenia a płcią.
 
 Czy wiedza na temat palenia jest skorelowana z miejscem pracy:
 
@@ -3939,7 +4100,7 @@ Szpital & 10.36364 & 99\\
 \end{verbatim}
 
 Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
-Wartość p wynosi 0.802632540470227 -- nie ma podstaw
+Wartość p wynosi 0.80263254 -- nie ma podstaw
 od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
 
 Czy wiedza na temat palenia jest skorelowana ze stażem:
@@ -3963,8 +4124,8 @@ staż & średnia & n\\
 ## [1] 0.6771844
 \end{verbatim}
 
-Porównujemy więcej niż dwie grupy zatem stosujemy test Kruskalla-Wallisa.
-Wartość p wynosi 0.677184413430638 -- nie ma podstaw
+Porównujemy więcej niż dwie grupy zatem stosujemy test Kruskala-Wallisa.
+Wartość p wynosi 0.67718441 -- nie ma podstaw
 od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
@@ -3981,7 +4142,7 @@ mała & 7 & 6 & 4\\
 \hline
 ogromna & 2 & 3 & 2\\
 \hline
-średna & 17 & 14 & 3\\
+średnia & 17 & 14 & 3\\
 \hline
 \end{tabular}
 
@@ -3994,10 +4155,10 @@ ogromna & 2 & 3 & 2\\
 \end{verbatim}
 
 Widza i status wzg. palenia nie jest skorelowana
-o czym świadczy wysoka wartość p (0.544402967451508)
+o czym świadczy wysoka wartość p (0.5444)
 
 Można to samo zweryfikować porównując średnie w grupach
-i stosując test Kruskalla-Wallisa
+i stosując test Kruskala-Wallisa
 
 \begin{tabular}{l|r|r}
 \hline
@@ -4016,21 +4177,24 @@ W dalszym ciągu palę & 10.95652 & 23\\
 ## [1] 0.7787663
 \end{verbatim}
 
-Wynik jest identyczny (wysoka wartość p 0.778766255069277)
+Wynik jest identyczny (wysoka wartość p 1).
 
 \hypertarget{wnioski}{%
 \subsection{Wnioski}\label{wnioski}}
 
 \begin{itemize}
 \item
-  Ponad połowa studentów pali lub paliła
+  Ponad połowa studentów pali lub paliła.
 \item
-  Nie ma związku pomiędzy statusem względem palenia/wiedzą o szkodliwości
-  palenia a płcią, miejscem pracy, stażem.
+  Istnieje zależność pomiędzy wiedzą o szkodliwości palenia a płcią.
+\item
+  Nie ma związku pomiędzy statusem względem palenia a płcią, miejscem pracy i stażem.
+\item
+  Nie ma związku pomiędzy wiedzą o szkodliwości palenia a miejscem pracy i stażem.
 \end{itemize}
 
-\hypertarget{przykux142ad-2-depresja-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}{%
-\section{Przykład 2: Depresja i jej uwarunkowania wśród studentów PSW}\label{przykux142ad-2-depresja-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}}
+\hypertarget{depresja-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}{%
+\section{Depresja i jej uwarunkowania wśród studentów PSW}\label{depresja-i-jej-uwarunkowania-wux15bruxf3d-studentuxf3w-psw}}
 
 \hypertarget{cel-1}{%
 \subsection{Cel}\label{cel-1}}
@@ -4048,50 +4212,61 @@ o rodzaj miejsca pracy, staż pracy i płeć.
 
 Test samooceny depresji Becka składa się z 21 pytań. W każdym pytaniu
 możliwe są 4 warianty odpowiedzi, odpowiadające zwiększonej intensywności objawów depresji,
-którym w związku z tym przypisuje się od zera do 3 punktów. Maksymalna liczba punktów
+którym w związku z tym przypisuje się wartości od zera do 3 punktów. Maksymalna liczba punktów
 w teście wynosi 63 a minimalna 0.
 
-Interpretacja wyników testu Becka 0--19 brak/łagodna depresja;
+Interpretacja wyników testu Becka: 0--19 brak/łagodna depresja;
 20--25 umiarkowana; 26--63 cieżka depresja.
 
-Postawiono następujące hipotezy badawcze
+Postawiono następujące hipotezy badawcze:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  depresja stanowi duży problem wśród studentów PSW
+  Depresja stanowi duży problem wśród studentów PSW.
 \item
-  problem depresji zależy od miejsca pracy
+  Problem depresji zależy od miejsca pracy.
 \item
-  problem depresji zależy od stażu pracy
+  Problem depresji zależy od stażu pracy.
 \item
-  problem depresji zależy od płci
+  Problem depresji zależy od płci.
 \end{enumerate}
 
-Sposoby weryfikacji:
+\hypertarget{zastosowane-metody-statystyczne-1}{%
+\subsection{Zastosowane metody statystyczne}\label{zastosowane-metody-statystyczne-1}}
 
 \begin{itemize}
 \item
-  Hipotezę 1. oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji;
+  Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 \item
-  Hipotezę 2--4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+  Hipotezy 2--4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
   oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
-  Kruskalla-Wallisa
+  Kruskala-Wallisa
 \end{itemize}
 
 \hypertarget{metryczka}{%
 \subsection{Metryczka}\label{metryczka}}
 
 W badaniu wzięło udział 103 studentów. Otrzymano 103 poprawnie
-wypełnionych ankiet. Średnia wartość testu Becka wyniosła 8.3786408 (odchylenie
-standardowe 8.5773488)
+wypełnionych ankiet. Średnia wartość testu Becka wyniosła 8.379 (odchylenie
+standardowe 8.577)
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-98-1.pdf} \includegraphics{_main_files/figure-latex/unnamed-chunk-98-2.pdf} \includegraphics{_main_files/figure-latex/unnamed-chunk-98-3.pdf}
+Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku.
+
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-98-1}
+
+Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku.
+
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-99-1}
+
+Rozkład ankietowanych ze względu na staż przedstawiono na rysunku.
+
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-100-1}
 
 \hypertarget{weryfikacja-hipotezy-1-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1-1}}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-99-1.pdf}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-101-1}
 
 Ciężką postać depresji wykazuje zaledwie 3\% studentów. Należy odrzucić hipotezę
 że depresja stanowi poważny problem wśród studentów RM/PO PSW.
@@ -4129,6 +4304,8 @@ C & 2 & 1\\
 ## X-squared = 0.028134, df = 2, p-value = 0.986
 \end{verbatim}
 
+Nie stwierdzono zależności pomiędzy depresją a płcią (p = 0.986).
+
 \hypertarget{depresja-a-staux17c}{%
 \subsection{Depresja a staż}\label{depresja-a-staux17c}}
 
@@ -4154,8 +4331,10 @@ C & 1 & 0 & 1 & 1\\
 ## X-squared = 4.719, df = 6, p-value = 0.5803
 \end{verbatim}
 
-albo jeżeli depresję mierzymy na skali liczbowej
-można porównać wartości średnie i zastosować test Kruskalla-Wallisa
+Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = 0.5803).
+
+Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
+można porównać wartości średnie i zastosować test Kruskala-Wallisa.
 
 \begin{tabular}{l|r|r}
 \hline
@@ -4203,7 +4382,10 @@ C & 0 & 3\\
 ## X-squared = 1.4605, df = 2, p-value = 0.4818
 \end{verbatim}
 
-Albo jeżeli depresję mierzymy na skali liczbowej
+Nie stwierdzono zależności pomiędzy depresją
+a miejscem pracy (p = 0.4818).
+
+Jeżeli depresję mierzymy na skali liczbowej
 można porównać wartości średnie i zastosować test Manna-Whitneya
 
 \begin{tabular}{l|r|r}
@@ -4228,13 +4410,13 @@ Wynik jest ten sam (brak zależności)
 
 \begin{itemize}
 \item
-  Depresja nie jest istotnym problemem wśród studentów RM/PO PSW
+  Depresja nie jest istotnym problemem wśród studentów RM/PO PSW.
 \item
-  Nie ma związku pomiędzy depresją a stażem, płcią i miejscem pracy
+  Nie ma związku pomiędzy depresją a stażem, płcią i miejscem pracy.
 \end{itemize}
 
-\hypertarget{przykux142ad-3}{%
-\section{Przykład 3:}\label{przykux142ad-3}}
+\hypertarget{satysfakcja-przywiux105zanie-i-zamiar-odejux15bcia}{%
+\section{Satysfakcja, przywiązanie i zamiar odejścia}\label{satysfakcja-przywiux105zanie-i-zamiar-odejux15bcia}}
 
 {W przygotowaniu na podstawie ankiety:
 \url{https://docs.google.com/forms/d/1bgNMhPEJMjiWeLfrmEAnPpns5U7Rooc-KOaeS7XlLV0/edit}
@@ -4243,11 +4425,10 @@ Wynik jest ten sam (brak zależności)
 \hypertarget{formularze-ankiet}{%
 \section{Formularze ankiet}\label{formularze-ankiet}}
 
-\hypertarget{ankieta-depresja-skala-depresji-becka}{%
-\subsection{Ankieta Depresja: Skala Depresji Becka}\label{ankieta-depresja-skala-depresji-becka}}
+\hypertarget{skala-depresji-becka}{%
+\subsection{Skala Depresji Becka}\label{skala-depresji-becka}}
 
-\hypertarget{pytania}{%
-\subsubsection{Pytania}\label{pytania}}
+\textbf{Pytania}
 
 Pytanie 1
 
@@ -4585,53 +4766,48 @@ Pytanie 21
   Utraciłem wszelkie zainteresowanie sprawami seksu
 \end{enumerate}
 
-\hypertarget{nazwy-pytaux144}{%
-\subsubsection{Nazwy pytań:}\label{nazwy-pytaux144}}
-
-Odczuwanie smutku i przygnębienia (1)
-Martwienie się o przyszłość (2)
-Uważasz, że zaniedbujesz swoje obowiązki? (3)
-Jesteś zadowolony z siebie? (4)
-Czy często masz poczucie winy? (5)
-Czy zasługujesz na karę? (6)
-Zadowolenie z siebie (7)
-Czy czujesz się gorszy od innych? (8)
-Czy masz myśli samobójcze? (9)
-Często chce Ci się płakać? (10)
-Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11)
-Czy zmieniło się coś w Twoim zainteresowaniu innymi ludźmi? (12)
-Czy ostatnio miewasz większe problemy z podejmowaniem różnych decyzji? (13)
-Czy uważasz, że wyglądasz gorzej i mniej atrakcyjnie niż kiedyś? (14)
-Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15)
-Masz kłopoty ze snem? (16)
-Czy męczysz się bardziej niż zwykle? (17)
-Czy masz kłopoty z apetytem? (18)
+**Treść pytań* (nie prezentowana ankietowanym):
+Odczuwanie smutku i przygnębienia (1),
+Martwienie się o przyszłość (2),
+Uważasz, że zaniedbujesz swoje obowiązki? (3),
+Jesteś zadowolony z siebie? (4),
+Czy często masz poczucie winy? (5),
+Czy zasługujesz na karę? (6),
+Zadowolenie z siebie (7),
+Czy czujesz się gorszy od innych? (8),
+Czy masz myśli samobójcze? (9),
+Często chce Ci się płakać? (10),
+Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11),
+Czy zmieniło się coś w Twoim zainteresowaniu innymi ludźmi? (12),
+Czy ostatnio miewasz większe problemy z podejmowaniem różnych decyzji? (13),
+Czy uważasz, że wyglądasz gorzej i mniej atrakcyjnie niż kiedyś? (14),
+Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15),
+Masz kłopoty ze snem? (16),
+Czy męczysz się bardziej niż zwykle? (17),
+Czy masz kłopoty z apetytem? (18),
 W ciągu ostatniego miesiąca nie stosowałem diety, aby schudnąć,
-lecz straciłem na wadze (19)
-Czy ostatnio bardziej martwisz się swoim stanem zdrowia? (20)
-Czy masz kłopoty z potencją? (21)
+lecz straciłem na wadze (19),
+Czy ostatnio bardziej martwisz się swoim stanem zdrowia? (20),
+Czy masz kłopoty z potencją? (21).
 
-\hypertarget{interpretacja-wynikuxf3w}{%
-\subsubsection{Interpretacja wyników}\label{interpretacja-wynikuxf3w}}
+\textbf{Interpretacja wyników}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  00--11 (brak depresji)
-\item
-  12--19 (depresja łagodna)
-\item
-  20--25 (depresja umiarkowana)
-\item
-  26--63 (depresja ciężka)
-\end{enumerate}
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Punkty & Depresja \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0--11 & Brak \\
+12--19 & Łagodna \\
+20--25 & Umiarkowana \\
+26--63 & Ciężka \\
+\end{longtable}
 
-\hypertarget{ux17aruxf3dux142o}{%
-\subsubsection{Źródło}\label{ux17aruxf3dux142o}}
-
+\textbf{Źródło}:
 \url{https://psychiatra.bydgoszcz.eu/publikacje-dla-pacjenta/depresja/skala-depresji-becka/}
-
+oraz
 \url{http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf}
 
 \hypertarget{ankieta-palenie}{%
@@ -4639,8 +4815,7 @@ Czy masz kłopoty z potencją? (21)
 
 Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 
-\hypertarget{pytania-1}{%
-\subsubsection{Pytania}\label{pytania-1}}
+\textbf{Pytania}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4775,6 +4950,14 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 
 (Prawidłowe odpowiedzi zaznaczono ☒)
 
+\textbf{Źródło}: Na podstawie ankiety z pracy Izabeli Marendowskiej
+\emph{Ocena poziomu wiedzy pielęgniarek na
+temat szkodliwości palenia papierosów} (promotor: dr Marzeny Barton);
+Kwidzyn 2022.
+
+\hypertarget{ankieta-satysfakcja-przywiux105zanie-i-zamiar-odejux15bcia}{%
+\subsection{Ankieta: satysfakcja, przywiązanie i zamiar odejścia}\label{ankieta-satysfakcja-przywiux105zanie-i-zamiar-odejux15bcia}}
+
 \hypertarget{intro2jamovi}{%
 \chapter{Łagodne wprowadzenie z Jamovi}\label{intro2jamovi}}
 
@@ -4790,11 +4973,17 @@ Jamovi jest oprogramowaniem rozpowszechnianym na licencji typu \emph{Open Source
 a więc można go używać za darmo. Program jest dostępny ze strony
 \url{https://www.jamovi.org/download.html}. Klikamy, ściągamy, uruchamiamy instalator.
 Program jest dość duży, ale to nie jest aż tak wielki problem w czasach kiedy
-pojemności dysków w domowym komputerze zaczynają się od 250 gigabajtów.
-Po zainstalowaniu uruchamiamy program, którego ekrano startowy wygląda jak
-na rysunku
+pojemności dysków w domowym komputerze zaczynają się od 250 gigabajtów. Jest
+też wersja Jamovi365, którą moża się posługiwać w przeglądarce i wtedy nic nie trzeba
+instalować na swoim komputerze.
 
-\includegraphics{./jamovi_main_screen.png}
+W naszym podręczniku pokazujemy jak uprawiać statystykę z tradycyjną wersją Jamovi.
+Po zainstalowaniu uruchamiamy program, którego ekrano startowy wygląda jak
+na rysunku \ref{fig:mainscreen}.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./jamovi_main_screen} \caption{Ekran startowy Jamovi}\label{fig:mainscreen}
+\end{figure}
 
 Menu akcji umożliwia wykonanie podstawowych akcji:
 
@@ -4817,44 +5006,45 @@ Typowa sesja w \textbf{Jamovi}:
 \def\labelenumi{\arabic{enumi}.}
 \item
   Wczytanie danych z pliku o praktycznie dowolnym formacie. Jeżeli przykładowo
-  dane są wynikiem wykonania badania ankietowego z wykorzystaniem Formularzy Google to zalecamy posługiwanie się formatem CSV.
+  dane są wynikiem wykonania badania ankietowego z wykorzystaniem Formularzy Google to
+  zalecamy posługiwanie się formatem CSV.
 \item
   Transformacja danych. Przekodowanie wartości nominalnych na rangi. Przekodowanie
   wartości liczbowych na nominalne.
   Odwrócenie pytań odwróconych. Obliczenie sum/srednich rang dla wielu zmiennych.
 \item
   Wykonanie obliczeń:
-\item
-  Analiza struktury (\textbf{Eksploracja}),
-\item
-  Analiza zależności między zmienną liczbową a nominalną (\emph{testy t}/\textbf{ANOVA}),
-\item
-  Analiza zależności między zmiennymi liczbowymi: współczynnik korelacji
-  liniowej/macierz korelacji (\emph{Regresja})
-  4 Analiza zależnosci między zmienną liczbową a zmiennymi liczbowymi/nominalnymi:
-  regresja liniowa i logistyczna (\textbf{Regresja})
-\item
-  Analiza zależności między zmiennymi nominalnymi: tablica wielodzielcza, test
-  chi-kwadrat zgodności (\emph{Częstości})
-\end{enumerate}
 
-Wykonanie obliczeń jest banalnie proste i sprowadza się do wybrania myszką odpowiednich
-zmiennych oraz procedury która ma być wykonana.
-Wynik obliczeń pojawia się natychmiast w \textbf{oknie wyników}. Jeżeli coś
-nam nie wyszło można procedurę poprawić a poprzedni wynik usunąć z okna wynikowego.
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Analiza struktury (\textbf{Eksploracja}),
+  \item
+    Analiza zależności między zmienną liczbową a nominalną (\emph{testy t}/\textbf{ANOVA}),
+  \item
+    Analiza zależności między zmiennymi liczbowymi: współczynnik korelacji
+    liniowej/macierz korelacji (\emph{Regresja})
+  \item
+    Analiza zależności między zmienną liczbową a zmiennymi liczbowymi/nominalnymi:
+    regresja liniowa i logistyczna (\textbf{Regresja})
+  \item
+    Analiza zależności między zmiennymi nominalnymi: tablica wielodzielcza, test
+    chi-kwadrat zgodności (\emph{Częstości})
+  \end{enumerate}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
+  Wykonanie obliczeń jest banalnie proste i sprowadza się do wybrania myszką odpowiednich
+  zmiennych oraz procedury która ma być wykonana.
+  Wynik obliczeń pojawia się natychmiast w \textbf{oknie wyników}. Jeżeli coś
+  nam nie wyszło można procedurę poprawić a poprzedni wynik usunąć z okna wynikowego.
 \item
   Zapisania danych (pozycja trzy poziome kreski). Po skończeniu pracy wynik można
   zapisać żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
   pracę kontynuuować bo wykładowca chciał żebyśmy coś poprawili.
 \end{enumerate}
 
-\hypertarget{przykux142ad-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejux15bcia}{%
-\section{Przykład: analiza ankiety satysfakcja--wiedza o paleniu--zamiar odejścia}\label{przykux142ad-analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejux15bcia}}
+\hypertarget{analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejux15bcia}{%
+\section{Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}\label{analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejux15bcia}}
 
 Przykład nieco absurdalny, ale za to w zwartej postaci ilustrujący
 praktyczne sposoby transformacji danych oraz
@@ -4867,9 +5057,12 @@ W wyniku przeprowadzenia badania ankietowego zebrano za pomocą Formularza Googl
 dane dotyczące
 satysfkacji/zamiaru odejścia oraz wiedzy nt. szkodliwości palenia tytoniu.
 Wyniki wyeksportowano do arkusza kalkulacyjnego, którego początek
-wygląda jakoś tak:
+wygląda jak na rysunku \ref{fig:GoogleFormsTestA}:
 
-\includegraphics{./GoogleFormsTestA.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./GoogleFormsTestA} \caption{Fragment przykładowej ankiety}\label{fig:GoogleFormsTestA}
+\end{figure}
+
 Ankieta składa się z 10 następujących pytań:
 
 \texttt{Ogólnie\ rzecz\ biorąc\ nie\ lubię\ swojej\ pracy} (kolumna \texttt{B}),
@@ -4900,12 +5093,15 @@ też zmieniamy nazwy na coś krótszego: \texttt{zo1}, \texttt{zo2}, \texttt{zo3
 \texttt{wiedza\_nt\_palenia} a kolumny \texttt{I}, \texttt{J} oraz \texttt{K} odpowiednio:
 \texttt{plec}, \texttt{wiek} oraz \texttt{staz}.
 
-Teraz arkusz wygląda jakoś tak:
+Teraz arkusz wygląda jak na rysunku \ref{fig:GoogleFormsTestHdr}.
 
-\includegraphics{./GoogleFormsTestHdr.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./GoogleFormsTestHdr} \caption{Fragment przykładowej ankiety}\label{fig:GoogleFormsTestHdr}
+\end{figure}
 
 Arkusz eksportujemy wybierając format CSV. Bez problemu powinniśmy
-go wczytać do Jamovi (trzy poziome kreski →\texttt{Otwórz})
+go wczytać do Jamovi (trzy poziome kreski →\texttt{Otwórz}). Jeżeli import
+się powiódł, to powinniśmy zobaczyć coś podobnego do tego co widać na rysunku \ref{fig:dataimport}.
 
 Reasumując:
 
@@ -4924,7 +5120,9 @@ Reasumując:
   Pierwsza kolumna nie jest potrzebna ale jest dodawana przez aplikację Formularze Google.
 \end{itemize}
 
-\includegraphics{./Jamovi_data_import.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./Jamovi_data_import} \caption{Import danych}\label{fig:dataimport}
+\end{figure}
 
 \hypertarget{przekodowanie-danych}{%
 \subsection{Przekodowanie danych}\label{przekodowanie-danych}}
@@ -4934,10 +5132,10 @@ W naszym przykładzie należy wykonać:
 
 \begin{itemize}
 \item
-  Zmienne s1--s3 oraz zo1--zo3 są mierzone w skali porządkowej. Wartości tych zmiennych
+  Zmienne \texttt{s1}--\texttt{s3} oraz \texttt{zo1}--\texttt{zo3} są mierzone w skali porządkowej. Wartości tych zmiennych
   chcemy zmienić (przekodować) na rangi wg schematu: \texttt{Zdecydowanie\ się\ nie\ zgadzam} = 1;
   \texttt{Nie\ zgadzam\ się} = 2; \texttt{Trudno\ powiedzieć} = 3 itd.
-  Dodatkowo zauważmy że s1 jest pytaniem odwróconym.
+  Dodatkowo zauważmy że \texttt{s1} jest pytaniem odwróconym.
   W takich pytaniach należy przeliczyć rangi wg prostej formuły s1r = 6 - s1.
 
   \begin{itemize}
@@ -4986,23 +5184,27 @@ Przekodowanie wykonujemy wybierając \textbf{Dane} w menu głównym.
   Klikamy w nazwę zmienną, którą zamierzamy przekodować. Niech to będzie \texttt{s1}.
   Kolumna po kliknięciu zmieni kolor.
 \item
-  Wybieramy ikonę \texttt{Przekształcenie}. Wypełniamy jak na rysunku poniżej:
+  Wybieramy ikonę \texttt{Przekształcenie}. Wypełniamy jak na rysunku \ref{fig:przeksztalcenie0}.
 \end{enumerate}
 
 Uwaga: Jamovi nie zmieni wartości zmiennej \texttt{s1} tylko utworzy nową zmienną
 z przekodowanymi wartościami. Zmienna na podstawie której jest tworzona
 nowa zmienna nazywa się źródłową (\texttt{s1} w naszym przykładzie jest źródłowa.)
 
-\includegraphics{./przeksztalcenie_0.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./przeksztalcenie_0} \caption{Przekształcenie}\label{fig:przeksztalcenie0}
+\end{figure}
 
 Wpisujemy sensowną nazwę (na przykład \texttt{s1p} od przekodowana). Jak będziemy
 używać sensownych nazwa łatwiej będzie nam się pracowało. Dobrze jest
 też podać w opisie co zawiera zmienna.
 
 Klikamy w pole wyboru na dole (obok napisu \texttt{za\ pomocą\ przekształcenia})
-Powinniśmy zobaczyć coś takiego:
+Powinniśmy zobaczyć coś podobnego do tego co widać na rysunku \ref{fig:przeksztalcenie1}.
 
-\includegraphics{./przeksztalcenie_1.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./przeksztalcenie_1} \caption{Przekształcenie}\label{fig:przeksztalcenie1}
+\end{figure}
 
 Wybieramy \texttt{Utwórz\ nowe\ przekształcenie}. Wpisujemy sensowną nazwę
 przekształcenia (na przykład \texttt{Likert2R5}) oraz formułę przekształcenia:
@@ -5047,9 +5249,11 @@ to wstaw \texttt{1}, jeżeli nie jest to wstaw \texttt{0}:
 Ponieważ w naszym przykładzie mamy do przekodowania nie dwie a 5 wartości
 musimy użyć 4 warunków, które
 są zagnieżdżone jeden w drugim. Można powyższe przepisać, można
-też skopiować z podręcznika i wkleić do Jamovi.
+też skopiować z podręcznika i wkleić do Jamovi (por. rys \ref{fig:przeksztalcenie1p}).
 
-\includegraphics{./przeksztalcenie_1p.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./przeksztalcenie_1p} \caption{Przekształcenie}\label{fig:przeksztalcenie1p}
+\end{figure}
 
 Naciskamy Enter i gotowe. Zostaje utworzona zmienna \texttt{s1p}
 zawierająca zamiast napisów rangi.
@@ -5063,9 +5267,11 @@ w pole wyboru przekształcenia. Poprzednio były tam tylko dwie pozycje
 \texttt{Likert2R5} czyli przekształcenie które zdefiniowaliśmy dla zmiennej s1p.
 Wybieramy \texttt{Likert2R5} bo zmienną \texttt{s2} chcemy przekodować dokładnie
 w ten sam sposób jak \texttt{s1}. Po wybraniu przekształcenia w oknie danych
-pojawia się nowa zmienna \texttt{s2p}
+pojawia się nowa zmienna \texttt{s2p} (por. rys \ref{fig:przeksztalcenie3}).
 
-\includegraphics{./przeksztalcenie_3.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./przeksztalcenie_3} \caption{Przekształcenie}\label{fig:przeksztalcenie3}
+\end{figure}
 
 W podobny łatwy sposób przekodowujemy \texttt{s3} oraz \texttt{zo1}, \texttt{zo2}, \texttt{zo3}
 
@@ -5099,15 +5305,22 @@ W arkuszu lub oknie danych Jamovi ta zmienna wygląda jakoś tak:
 Należy zsumować wystąpienia poprawne i wystąpienia błędne. W tym celu trzeba utworzyć tyle
 nowych zmiennych ile jest wariantów odpowiedzi, czyli w naszym przykładzie osiem. Każda
 nowa zmienna jest przekodowywana za pomocą prostej formuły wykorzystującą funkcję \texttt{CONTAINS} (zawiera).
-Przykładowo pierwsza (nazwijmy ją \texttt{wiedz1p}) powinna być utworzona w oparciu o następujące przekształcenie
+Przykładowo pierwsza (nazwijmy ją \texttt{wiedz1p}) powinna być utworzona w oparciu o następujące przekształcenie:
 
 \begin{verbatim}
 CONTAINS("Przewlekła obturacyjna choroba płuc", $source)
 \end{verbatim}
 
-\includegraphics{./przeksztalcenie_4.png}
+Jak to wygląda w oknie programu Jamovi przedstawiono na rysunkach \ref{fig:przeksztalcenie4}
+oraz \ref{fig:przeksztalcenieContains}.
 
-\includegraphics{./przeksztalcenie_contains.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./przeksztalcenie_4} \caption{Przekształcenie}\label{fig:przeksztalcenie4}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./przeksztalcenie_contains} \caption{Przekształcenie}\label{fig:przeksztalcenieContains}
+\end{figure}
 
 Funkcja CONTAINS wstawi 1 jeżeli \texttt{\$source} zawiera \texttt{Przewlekła\ obturacyjna\ choroba\ płuc}.
 Oczywiście następna zmienna powinna zawierać \texttt{Astma\ oskrzelowa}:
@@ -5170,14 +5383,17 @@ stosowną formułę matematyczną. W przypadku odwracania pytania \texttt{s1p} b
 6 - s1p
 \end{verbatim}
 
-W przypadku liczenia łącznej satysfakcji (przy założeniu,
-że wcześniej utworzyliśmy zmienną \texttt{s1pr}):
+W przypadku liczenia łącznej satysfakcji (por. rys. \ref{fig:zmiennaSatysfakcja}):
 
 \begin{verbatim}
 SUM(s1pr, s2p, s3p)
 \end{verbatim}
 
-\includegraphics{./zmienna_satysfakcja.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./zmienna_satysfakcja} \caption{Obliczanie nowej zmiennej}\label{fig:zmiennaSatysfakcja}
+\end{figure}
+
+Oczywiście wcześniej musimy utworzyliśmy zmienną \texttt{s1pr}, inaczej Jamovi zgłosi błąd.
 
 Jeżeli nie chcemy sumy ale np. średnią powinniśmy użyć
 
@@ -5203,25 +5419,31 @@ SUM(w1p, w2p, w3p, w6, w7) - SUM(w4p, w5p, w8p)
 Wybieramy \texttt{Analizy}→\texttt{Eksploracja}→\texttt{Statystyki\ opisowe}.
 
 W wyświetlonym oknie po lewej deklarujemy co ma być liczone. Wynik
-pojawi się po prawej (por rysunek)
+pojawi się po prawej (por rysunek \ref{fig:statystykiOpisoweOkno}).
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./statystyki_opisowe_okno} \caption{Statystyki opisowe}\label{fig:statystykiOpisoweOkno}
+\end{figure}
 
 Ustawiamy kursor na zmiennej która nas interesuje i klikamy w strzałkę górną.
 Jeżeli chcemy podzielić wartości zmiennej na grupy według jakiejś
 zmiennej nominalnej, to ustawiamy kursor na tej zmiennej nominalnej
 (na przykład \texttt{plec}) i klikamy strzałkę dolną.
 
-Można analizować wiele zmiennych na raz. Wystarczy w tym celu ustawić
+Można analizować wiele zmiennych na raz (por. rysunek ref(fig:statystykiSpisoweWynik)).
+Wystarczy w tym celu ustawić
 kursor na zmiennej i kliknąć w odpowiednią strzałkę. Zawartość okna
 wynikowego zostanie automagicznie uaktualniona.
 
-\includegraphics{./statystyki_opisowe_okno.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./statystyki_opisowe_wynik} \caption{Statystyki opisowe}\label{fig:statystykiSpisoweWynik}
+\end{figure}
+
 Poniżej okien wyboru zmiennych są zakładki określające
 precyzyjnie co ma być obliczone oraz jakie wykresy mają
 zostać wyrysowane. Przykładowo domyślny wydruk nie zawiera
 rozstępu kwartylowego. Żeby go dodać do wyniku należy
 w zakładce \texttt{Statystyki} zaznaczyć przycisk \texttt{IQR}.
-
-\includegraphics{./statystyki_opisowe_wynik.png}
 
 \hypertarget{analiza-zaleux17cnoux15bci-zmienne-nominalne}{%
 \subsection{Analiza zależności: zmienne nominalne}\label{analiza-zaleux17cnoux15bci-zmienne-nominalne}}
@@ -5233,9 +5455,11 @@ lista zmiennych oraz okna i strzałki pozwalające
 wygodnie wybrać to co ma być analizowane. Jest to tak proste
 że wystarczy przyjrzeć się przykładowemu rysunkowi żeby
 wiedzieć jak postępować. Przykładową analizę zależności
-pomiędzy zmiennymi nominalnymi \texttt{zamiarOklasa} oraz \texttt{staz.klasa} przedstawia rysunek.
+pomiędzy zmiennymi nominalnymi \texttt{zamiarOklasa} oraz \texttt{staz.klasa} przedstawia rysunek @(fig:tabeleKrzyzowe).
 
-\includegraphics{./tabele_krzyzowe.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./tabele_krzyzowe} \caption{Tabele krzyżowe}\label{fig:tabeleKrzyzowe}
+\end{figure}
 
 \hypertarget{analiza-zaleux17cnoux15bci-zmienna-liczbowazmienna-nominalna}{%
 \subsection{Analiza zależności: zmienna liczbowa/zmienna nominalna}\label{analiza-zaleux17cnoux15bci-zmienna-liczbowazmienna-nominalna}}
@@ -5244,9 +5468,11 @@ Wybieramy \texttt{Analizy}→\texttt{Testy\ t}→\texttt{Test\ t\ dla\ prób\ ni
 \texttt{Analizy}→\texttt{ANOVA}→\texttt{Jednoczynnikowa\ ANOVA}.
 
 Zostanie wyświetlony znajomy interfejs. Wybieramy
-co trzeba. Wynik automagicznie pojawia się w lewym oknie.
+co trzeba. Wynik automagicznie pojawia się w lewym oknie (por. rysunek \ref{fig:testyJamovi}).
 
-\includegraphics{./testy.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./testy} \caption{Test dla prób niezależnych}\label{fig:testyJamovi}
+\end{figure}
 
 \hypertarget{analiza-zaleux17cnoux15bci-zmienna-liczbowazmienna-liczbowa-lub-nominalna}{%
 \subsection{Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}\label{analiza-zaleux17cnoux15bci-zmienna-liczbowazmienna-liczbowa-lub-nominalna}}
@@ -5258,9 +5484,11 @@ zmienną zależną (musi oczywiście być liczbowa) klikając w górną strzłk�
 Zmienne niezależne mierzone w skali liczbowej
 klikając w środkową strzałkę. Zmienne niezależne mierzone
 w skali nominalnej klikając w dolną strzałkę.
-Wynik automagicznie pojawia się w lewym oknie.
+Wynik automagicznie pojawia się w lewym oknie (por. rysunek \ref{fig:regresjaLiniowa}).
 
-\includegraphics{./regresja_liniowa.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./regresja_liniowa} \caption{Regresja liniowa}\label{fig:regresjaLiniowa}
+\end{figure}
 
 \hypertarget{regresja-logistyczna}{%
 \subsection{Regresja logistyczna}\label{regresja-logistyczna}}
@@ -5273,9 +5501,21 @@ zmienną zależną klikając w górną strzłkę. Zmienna ta
 
 Zmienne niezależne mierzone w skali liczbowej
 wybieramy klikając w środkową strzałkę a zmienne niezależne mierzone
-w skali nominalnej klikając w dolną strzałkę.
+w skali nominalnej klikając w dolną strzałkę (por. rysunek \ref{fig:regresjaLogistyczna}).
 
-\includegraphics{./regresja_logistyczna.png}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./regresja_logistyczna} \caption{Regresja logistyczna}\label{fig:regresjaLogistyczna}
+\end{figure}
+
+\hypertarget{redagowanie-raportu}{%
+\subsection{Redagowanie raportu}\label{redagowanie-raportu}}
+
+Zwykle dobrze jest dodać jakieś dodatkowe objaśnienia do wyników
+obliczeń wygenerowanych
+przez program i Jamovi nam to umożliwia.
+Wybierając \texttt{Edytuj} przechodzimy do prostego edytora umożliwiającego redagowanie raportu
+w oknie wyników a obsługa tego menu jest tak banalnie prosta, że nie wymaga
+jakiś specjalnych objaśnień.
 
 \hypertarget{literatura}{%
 \chapter{Literatura}\label{literatura}}

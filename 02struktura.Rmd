@@ -1,3 +1,4 @@
+
 # Analiza jednej zmiennej {#analiza1z}
 
 **Statystyka opisowa** (opis statystyczny) to zbiór metod statystycznych służących do -- surprise, surprise -- opisu
@@ -16,15 +17,16 @@ i sprowadza się do opisania danych z wykorzystaniem:
 
 **Rozkład cechy** (zmiennej) to przyporządkowanie
 wartościom cechy zmiennej odpowiedniej **liczby wystąpień** (liczebności albo częstości 
-(czyli popularnych procentów).)
+(czyli popularnych procentów).
 
 **Analiza struktury** (dla jednej zmiennej) obejmuje:
 
-* **określenie tendencji centralnej** (tzw. **miary położenia** / wartość przeciętna, mediana, dominanta);
+* **określenie tendencji centralnej** (**miary położenia**:
+  wartość przeciętna, mediana, dominanta);
 
-* **zróżnicowanie wartości** (rozproszenie);
+* **zróżnicowanie wartości** (rozproszenie: odchylenie standardowe, rozstęp ćwiartkowy);
 
-* **asymetrię** (rozłożenie wartości wokół średniej);
+* **asymetrię** (rozłożenie wartości zmiennej wokół średniej);
 
 
 ## Tablice statystyczne
@@ -238,7 +240,7 @@ Wykres słupkowy (*bar chart*)
 **Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
 
 
-```{r, echo=F}
+```{r, echo=F, out.width="70%"}
 
 g2 <- g0 %>%
   filter (year == 2018 & isco08 == 'OC2221_3221' & unit == 'NR') %>%
@@ -275,7 +277,7 @@ Wykres kołowy (*pie chart*)
 :::{.example}
 **Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
 
-```{r, echo=F}
+```{r, echo=F, out.width="70%"}
 pc2 <- g1 %>%
   mutate(pct = values/sum(values)*100)  %>%
   ggplot(aes(x="", y=pct, fill=member)) + # pct used here so slices add to 100
@@ -306,7 +308,7 @@ wyróżniały):
 :::{.example}
 **Absolwenci studiów pielęgniarskich w krajach UE**
 
-```{r, echo=F}
+```{r, echo=F, out.width="70%"}
 pc21 <- g2 %>%
   mutate(pct = values/sum(values)*100)  %>%
   ggplot(aes(x="", y=pct, fill=member)) + # pct used here so slices add to 100
@@ -324,7 +326,7 @@ pc21
 
 Wykres słupkowy dalej jest natomiast OK:
 
-```{r, echo=F}
+```{r, echo=F, out.width="70%"}
 pc41 <- ggplot(g2, aes(x = reorder(member, values), y=values )) +
   geom_bar(stat="identity", fill='blue') +
   xlab(label="") + 
@@ -347,7 +349,7 @@ wariantów cechy są przedziały wartości.
 :::{.example}
 **Dzietność kobiet na świecie**
 
-```{r message=FALSE, echo=FALSE}
+```{r message=FALSE, echo=FALSE, out.width="70%"}
 h2018 <- ggplot(d2018, aes(x = frate)) + 
  geom_histogram(binwidth = 0.25, fill=default_cyan) +
  ylab("liczba krajów") +
@@ -406,14 +408,20 @@ Miary przeciętne (**położenia**) charakteryzują średni lub
 typowy poziom wartości cechy. Są to więc takie wartości, wokół których
 skupiają się wszystkie pozostałe wartości analizowanej cechy.
 
-![](./canvas_distr_11.png)
 
-Na rysunku po lewej mamy dwa rozkłady różniące się poziomem przeciętnym (czerwony ma przeciętnie mniejsze wartości
-niż turkusowy). Są to rozkłady **jednomodalne**, tj. wartości skupiają się wokół jednej wartości.
-Dla takich rozkładów ma sens obliczanie średniej arytmetycznej. 
+```{r distributions5, out.width="99%", fig.cap = "Rozkłady cechy a miary średnie"}
+knitr::include_graphics("./distributions.png")
+```
 
-Na rysunku po prawej mamy rozkłady **nietypowe**: **wielomodalne** (turkusowy)
-lub **niesymetryczne** (fioletowy.) W rozkładzie niesymetrycznym wartości skupiają się nie centralnie,
+Na rysunku \@ref(fig:distributions5) po lewej mamy dwa rozkłady różniące się poziomem przeciętnym. Rozkład 
+czerwony ma przeciętnie większe wartości
+niż turkusowy. Są to rozkłady **jednomodalne**, czyli takie, w których rozkład cechy skupia się 
+wokół jednej wartości.
+Dla takich rozkładów ma sens obliczanie średniej arytmetycznej. Te średnie wartości
+są zaznaczone na rysunku linią pionową.
+
+Na rysunku po prawej mamy rozkłady **nietypowe**: **wielomodalne** (czerwony)
+lub **niesymetryczne** (niebieski). W rozkładzie niesymetrycznym wartości skupiają się nie centralnie,
 ale po prawej/lewej od środka przedziału zmienności/wartości średniej).
 
 W świecie rzeczywistym zdecydowana większość rozkładów jest jednomodalna. 
@@ -464,14 +472,19 @@ Przykładowo wartość 99 centyla i mniejszą ma 99% jednostek w populacji.
 ::: {.example}
 **Współczynnik dzietności na świecie w roku 2018**
 
-Średnia wartość współczynnika `r sprintf ("%.2f", mean2018)`; mediana -- `r median2018`. 
-Interpretacja średniej:
-wartość współczynnika dzietności wyniosła `r sprintf ("%.2f", mean2018)` dziecka. Uwaga:
-średnia dzietność na świecie **nie wynosi** `r sprintf ("%.2f", mean2018)`
-(bo kraje różnią się liczbą ludności).
-Interpretacja mediany: dzietność kobiet w połowie krajów na świecie
-wynosiła `r median2018` i mniej. Uwaga: dzietność połowy kobiet na świecie wyniosła
-`r median2018` i mniej jest niepoprawną interpretacją (różne wielkości krajów.)
+Średnia: `r sprintf ("%.2f", mean2018)`.
+Interpretacja: średnia wartość współczynnika dzietności wyniosła
+`r sprintf ("%.2f", mean2018)` dziecka.
+Mediana: `r median2018`. Interpretacja mediany: współczynnik dzietności 
+w połowie krajów na świecie
+wynosiła `r median2018` dziecka i mniej.
+
+Uwaga: średnia dzietność na świecie **nie wynosi** `r sprintf ("%.2f", mean2018)` dziecka
+(bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
+Podobnie dzietność połowy kobiet na świecie wyniosła
+`r median2018` dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
+względów jak w przypadku średniej.)
+
 :::
 
 **Generalna uwaga**: interpretacja średniej-średnich często jest nieoczywista i należy uważać.
@@ -531,8 +544,9 @@ sd2018 <-  sd(d2018$frate)
 iqr2018 <- q3.2018 - q1.2018
 ```
 
-Średnie odchylenie od średniej wartości współczynnika wynosi `r sd2018` dziecka. 
-Wartość rozstępu ćwiartkowego wynosi `r iqr2018` dziecka.
+Średnie odchylenie od średniej wartości współczynnika
+wynosi `r sprintf("%.2f", sd2018)` dziecka. 
+Wartość rozstępu ćwiartkowego wynosi `r sprintf("%.2f", iqr2018)` dziecka.
 :::
 
 **Uwaga**: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
@@ -541,13 +555,15 @@ podać jednostkę miary.
 ### Miary asymetrii
 
 Asymetria (*skewness*), to odwrotność symetrii. Szereg jest symetryczny
-jeżeli jednostki są rozłożone ,,równomiernie'' wokół wartości średniej.
+jeżeli jednostki są rozłożone „równomiernie” wokół wartości średniej.
 W szeregu symetrycznym wartości średniej i mediany są sobie równe.
+Skośność może być dodatnia (*positive skew*) lub ujemna (*negative skew*). 
+Czym się różni jedna od drugiej widać na rysunku \@ref(fig:skeweness).
 
-![](./Negative_and_positive_skew.png)
+```{r skeweness, out.width="75%", fig.cap = "Rozkłady symetryczne i asymetryczne"}
+knitr::include_graphics("./neg_posit_screw.png")
+```
 
-Skośność może być dodatnia (*Positive Skew*) lub ujemna (*Negative Skew*). Czym się różni jedna
-od drugiej widać na rysunku.
 
 Miary asymetrii:
 
@@ -569,21 +585,6 @@ Miary asymetrii:
     formuły: $W_{sq} =  \frac{(Q_3 - Q_2) - (Q_2 - Q_1)}{Q_3 - Q_1}$
  
  
-### (Parametryczna) analiza struktury w jednym zdaniu
-
-Polega na obliczeniu
-
-  * średniej i mediany
-  
-  * odchylenia standardowego i rozstępu ćwiartkowego
-   
-  * współczynnika skośności $g$
-  
-Oraz
-  
-  *  zinterpretowaniu powyższych parametrów (patrz przykłady)
-
-
 ## Porównanie wielu rozkładów
 
 Często strukturę jednego rozkładu należy porównać z innym. Albo trzeba porównać
@@ -606,7 +607,7 @@ rozkład masy ciała zawodników obu formacji.
 
 **Zawodnicy ataku**
 
-```{r}
+```{r, out.width="70%"}
 backs <- c('BR', 'CE', 'FB', 'FH', 'WI', 'SH', 'HB', 'BB')
 forwards <- c('PR', 'SR', 'HK', 'FF')
 
@@ -650,7 +651,7 @@ wynosi `r iqr.b` kg)
 Histogram przy przyjęciu długości przedziału równej `r hw`kg 
 (linia zielona  oznacza poziom średniej):
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, out.width="70%"}
 h1.b <- ggplot(b, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
   ylab("N") +
@@ -662,7 +663,7 @@ h1.b
 
 **Zawodnicy młyna**
 
-```{r}
+```{r, out.width="70%"}
 f <- fb %>% filter (poscode == 'M' )
 
 mean.f <- mean(f$weight, na.rm=T)  
@@ -688,7 +689,7 @@ wynosi `r iqr.f` kg)
 Histogram przy przyjęciu długości przedziału równej `r hw`kg
 (linia zielona  oznacza poziom średniej):
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, out.width="70%"}
 h1.f <- ggplot(f, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
   ylab("N") +
@@ -719,48 +720,94 @@ ggarrange(h1.b, h1.f, ncol = 2, nrow = 1)
 
 ### Wykres pudełkowy
 
-Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (**box-plot**)
+Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (**box-plot**).
 
-Konstrukcja pudełka na wykresie: 
-górny/dolny bok równy kwartylom, a linia pozioma w środku pudełka równa medianie;
-linie pionowe (zwane wąsami) mają długość równą $Q_1 - 1,5 \textrm{IQR}$ 
-oraz $Q_3 + \textrm{IQR}$ (dla przypomnienia: $Q_1$, $Q_3$ to kwartyle, zaś $\textrm{IQR}$ to odstęp między kwartlowy); Linia pozioma w połowie pudełka określa przeciętny poziom zjawiska; wysokość pudełka/wąsów
-określa zmienność (im większe wąsy/wysokość tym większa zmienność).
-Obserwacje nietypowe (czyli takie których wartość jest albo mniejsza od $Q_1 - 1,5\textrm{IQR}$
-albo większa od $Q_3 + 1,5\textrm{IQR}$) są zaznaczane indywidualnie jako kropki nad/pod wąsami.
+Konstrukcja pudełka na wykresie (por rys. \@(fig:boxplot)):
 
-![](./box-plot-0.jpg)
+* górny dolny bok pudełka jest równy kwartylom;
+* linia pionowa w środku pudełka jest równa medianie;
+* linie poziome (zwane wąsami) mają długość równą $Q_1 - 1,5 \textrm{IQR}$ 
+  oraz $Q_3 + \textrm{IQR}$
+  (dla przypomnienia: $Q_1$, $Q_3$ to kwartyle, zaś $\textrm{IQR}$ to rozstęp ćwiartkowy);
+* kropki nad/pod wąsami to wartości zmiennej większe od
+  $Q_3 + 1,5 \textrm{IQR}$ lub mniejsze od $Q_1 - 1,5 \textrm{IQR}$.
+  
+Interpretacja pudełka:
 
-Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako (na przykład) górne/dolne
-1% wszystkich wartości (bo wtedy **każdy rozkład** miałby wartości nietypowe);
+* linia pozioma w środku pudełka określa przeciętny poziom zjawiska;
+* wysokość pudełka oraz wąsów określa zmienność (im większe wąsy/wysokość tym większa zmienność);
+* kropki nad/pod wąsami to **obserwacje nietypowe**.
+
+
+```{r boxplot, out.width="90%", fig.cap = "Wykres pudełkowy"}
+knitr::include_graphics("./box-plot-0.jpg")
+```
+
+Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako na przykład górne/dolne
+1% wszystkich wartości (bo wtedy **każdy rozkład** miałby wartości nietypowe),
 ale jako wartości mniejsze/większe od $Q_* \pm 1,5 \times \mathrm{IQR}$.
 Wszystkie wartości rozkładów o umiarkowanej zmienności mieszczą się wewnątrz czegoś takiego.
 
-Wykres pudełkowy dla zawodników rugby w podziale na formacie ataku i młyna. 
+Typowo wykres zawiera wiele pudełek a każde pudełko wizualizuje jeden rozkład. Pudełka
+mogą być umieszczone jedno pod drugim, tak jak na rysunku \@(fig:boxplot) lub
+jedno obok drugiego jak na przykładach poniżej.
 
-```{r}
+::: {.example}
+**Masa ciała rugbystów** 
+
+```{r, out.width="70%"}
 pow <- fb %>%
   na.omit() %>%  ggplot(aes(y=weight, x=poscode, fill=weight)) + 
   geom_boxplot() + 
-  ylab("#") + 
+  ylab("#") +
+  ggtitle("Masa ciała zawodników młyna wg formacji") +
   xlab('')
 pow
 ```
+:::
 
-Z wykresu od razu widać, który rozkład ma wyższą średnią a który większe rozproszenie.
+Z wykresu od razu widać, który rozkład ma wyższą średnią, który większe
+rozproszenie oraz w którym występują wartości nietypowe.
 
+Pudełek może być więcej niż dwa oczywiście. Następny przykład
+pokazuje
+porównanie rozkładów masy ciała zawodników rugby na poszczególnych turniejach.
 
-Pudełek może być więcej oczywiście. Przykładowo
-masa ciała zawodników na poszczególnych turniejach:
+::: {.example}
+**Masa ciała rugbystów**
 
-```{r}
+```{r, out.width="70%"}
 pox <- fb %>%
   na.omit() %>%  ggplot(aes(y=weight, x=as.factor(year), fill=weight)) + 
   geom_boxplot() + 
-  ylab("#") + 
+  ylab("#") +
+  ggtitle("Masa ciała zawodników w turniejach PŚ w rugby") +
   xlab('')
 pox
 ```
 
-Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019; największe zróżnicowanie masy
+:::
+
+Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019;
+największe zróżnicowanie masy
 ciała występowało na turnieju w roku 2023.
+
+## Zestawienie metod opisu statystycznego
+
+W rozdziale przedstawiono osiem sposobów opisania rozkładu zmiennej:
+
+1. Tablice statystyczne
+
+2. Wykres słupkowy
+
+3. Wykres kołowy (niezalecany)
+
+4. Histogram
+
+5. Wykres pudełkowy
+
+6. Miary tendencji centralnej: średnia, mediana, kwartyle
+
+7. Miary rozproszenia: odchylenie standardowe, rozstęp ćwiartkowy
+
+8. Miary asymetrii
