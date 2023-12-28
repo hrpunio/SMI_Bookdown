@@ -19,7 +19,8 @@ h3:macierz-korelacji Macierz korelacji
 h3:pomiar-siły-zależności-regresja-liniowa Pomiar siły zależności: regresja liniowa
 h3:regProsta Regresja prosta
 fig:KMNK Metody statystycznej weryfikacji zależności pomiędzy zmiennymi
-h3:zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne Zmienna liczbowa i zmienne liczbowe lub nominalne
+h2:zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne Zmienna liczbowa i zmienne liczbowe lub nominalne
+h3:regresja-wieloraka Regresja wieloraka
 h3:zmienne-zero-jedynkowe Zmienne zero-jedynkowe
 h2:przypadek-specjalny-regresja-logistyczna Przypadek specjalny: regresja logistyczna
 fig:ROCcurve Krzywa ROC

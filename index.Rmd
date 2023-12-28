@@ -3,8 +3,8 @@ title: "Łagodne wprowadzenie do statystyki"
 author:
 - name: Tomasz Przechlewski
   email: t.plata-przechlewski@psw.kwidzyn.edu.pl
-  affiliation: Powiślańska Szkoła Wyższa (Kwidzyn/Poland)
-date: "![Niedatowany/wersja robocza](./FN.jpg){width=50%} "
+  affiliation: Powiślańska Szkoła Wyższa (Kwidzyn-Gdańsk)
+date: "![Styczeń 2024/wersja robocza](./FN.jpg){width=50%} "
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

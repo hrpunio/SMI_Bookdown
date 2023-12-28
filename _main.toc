@@ -49,12 +49,13 @@
 \contentsline {subsection}{\numberline {4.3.3}Macierz korelacji}{49}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Pomiar siły zależności: regresja liniowa}{50}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Regresja prosta}{50}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Zmienna liczbowa i zmienne liczbowe lub nominalne}{55}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Zmienne zero-jedynkowe}{57}{subsection.4.3.7}%
-\contentsline {section}{\numberline {4.4}Przypadek specjalny: regresja logistyczna}{60}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Przypadek specjalny: dwie zmienne co najmniej porządkowe}{64}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Pomiar siły zależności: współczynnik korelacji rang}{64}{subsection.4.5.1}%
-\contentsline {section}{\numberline {4.6}Podsumowanie}{65}{section.4.6}%
+\contentsline {section}{\numberline {4.4}Zmienna liczbowa i zmienne liczbowe lub nominalne}{55}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Regresja wieloraka}{55}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Zmienne zero-jedynkowe}{57}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Przypadek specjalny: regresja logistyczna}{60}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Przypadek specjalny: dwie zmienne co najmniej porządkowe}{64}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Pomiar siły zależności: współczynnik korelacji rang}{64}{subsection.4.6.1}%
+\contentsline {section}{\numberline {4.7}Podsumowanie}{65}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Przykłady badań ankietowych}{66}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Jak zacząć badanie?}{66}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Mierzenie twardych faktów vs mierzenia przekonań}{66}{subsection.5.1.1}%
@@ -81,22 +82,25 @@
 \contentsline {subsection}{\numberline {5.3.7}Depresja a płeć}{77}{subsection.5.3.7}%
 \contentsline {subsection}{\numberline {5.3.8}Depresja a staż}{78}{subsection.5.3.8}%
 \contentsline {subsection}{\numberline {5.3.9}Depresja a rodzaj miejsca pracy}{78}{subsection.5.3.9}%
-\contentsline {section}{\numberline {5.4}Wnioski}{79}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Satysfakcja, przywiązanie i zamiar odejścia}{79}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Formularze ankiet}{79}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Skala Depresji Becka}{79}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Ankieta Palenie}{82}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Ankieta: satysfakcja, przywiązanie i zamiar odejścia}{83}{subsection.5.6.3}%
-\contentsline {chapter}{\numberline {6}Łagodne wprowadzenie z Jamovi}{84}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Podstawy pracy z Jamovi}{84}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}{85}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{85}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Przekodowanie danych}{87}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Wyliczenie nowych zmiennych}{91}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Analiza struktury}{92}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Analiza zależności: zmienne nominalne}{92}{subsection.6.2.5}%
-\contentsline {subsection}{\numberline {6.2.6}Analiza zależności: zmienna liczbowa/zmienna nominalna}{93}{subsection.6.2.6}%
-\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{94}{subsection.6.2.7}%
-\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{94}{subsection.6.2.8}%
-\contentsline {subsection}{\numberline {6.2.9}Redagowanie raportu}{95}{subsection.6.2.9}%
-\contentsline {chapter}{\numberline {7}Literatura}{96}{chapter.7}%
+\contentsline {subsection}{\numberline {5.3.10}Wnioski}{79}{subsection.5.3.10}%
+\contentsline {section}{\numberline {5.4}Satysfakcja, przywiązanie i zamiar odejścia}{79}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Cel}{79}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Metoda}{79}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Zastosowane metody statystyczne}{79}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}Formularze ankiet}{80}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Skala Depresji Becka}{80}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Ankieta Palenie}{83}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Ankieta satysfakcja, przywiązanie i zamiar odejścia}{84}{subsection.5.5.3}%
+\contentsline {chapter}{\numberline {6}Łagodne wprowadzenie z Jamovi}{87}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Podstawy pracy z Jamovi}{87}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}{88}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{88}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Przekodowanie danych}{90}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Wyliczenie nowych zmiennych}{94}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Analiza struktury}{95}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Analiza zależności: zmienne nominalne}{95}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Analiza zależności: zmienna liczbowa/zmienna nominalna}{96}{subsection.6.2.6}%
+\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{97}{subsection.6.2.7}%
+\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{97}{subsection.6.2.8}%
+\contentsline {subsection}{\numberline {6.2.9}Redagowanie raportu}{98}{subsection.6.2.9}%
+\contentsline {chapter}{\numberline {7}Literatura}{99}{chapter.7}%

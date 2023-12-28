@@ -1017,7 +1017,7 @@ wilcoxp['p.value']
 
 Wynik jest ten sam (brak zależności)
 
-## Wnioski
+### Wnioski
 
 * Depresja nie jest istotnym problemem wśród studentów RM/PO PSW.
 
@@ -1025,9 +1025,40 @@ Wynik jest ten sam (brak zależności)
 
 ## Satysfakcja, przywiązanie i zamiar odejścia
 
-<span style="color: red;">W przygotowaniu na podstawie ankiety:
-https://docs.google.com/forms/d/1bgNMhPEJMjiWeLfrmEAnPpns5U7Rooc-KOaeS7XlLV0/edit
-</span>
+### Cel
+
+Czy satysfakcja z pracy, satysfakcja z wynagrodzenia, 
+konflikt personalny ze współpracownikami oraz 
+konflikt personalny z przełożonym warunkują
+przywiązanie do miejsca
+pracy oraz zamiar zmiany miejsca pracy (zamiar odejścia) w środowisku
+pielęgniarek/pielęgniarzy.
+
+**Postawiono następujące hipotezy badawcze**:
+
+1. Wysoka satysfakcja z pracy oraz satysfakcja z wynagrodzenia zmniejszają
+   zamiar zmiany miejsca pracy.
+ 
+2. Konflikt personalny zmniejsza przywiązanie do miejsca pracy.
+3. Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.
+4. Płeć i wiek są skorelowane ze zmianą miejsca pracy.
+5. Płeć, wiek oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
+
+### Metoda
+
+Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w 2023/2024 roku.
+Zamiar zmiany pracy (ZZP), satysfakcja z pracy (SP)
+satysfakcja z wynagrodzenia (SW)
+konflikt personalny ze współpracownikami (KPW)
+oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
+odpowiednich skal pomiarowych.
+
+### Zastosowane metody statystyczne
+
+Do weryfikacji hipotez 1--4 wykorzystano model regresji liniowej.
+Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.
+
+
 
 ## Formularze ankiet
 
@@ -1358,7 +1389,135 @@ bezpośrednio przez palenie papierosów? (wielokrotnego)
 
 **Źródło**: Na podstawie ankiety z pracy Izabeli Marendowskiej
      *Ocena poziomu wiedzy pielęgniarek na
-temat szkodliwości palenia papierosów* (promotor: dr Marzeny Barton);
+temat szkodliwości palenia papierosów* (promotor: dr Marzena Barton);
 Kwidzyn 2022.
 
-### Ankieta: satysfakcja, przywiązanie i zamiar odejścia
+### Ankieta satysfakcja, przywiązanie i zamiar odejścia
+
+**Zamiar zmiany pracy**
+
+(Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)
+
+ 1. Często poważnie rozważam odejście z obecnej pracy
+ 2. Zamierzam rzucić obecną pracę
+ 3. Zacząłem szukać innej pracy
+ 
+**Satysfakcja z pracy** 
+
+(Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)
+
+ 4. Ogólnie rzecz biorąc nie lubię swojej pracy
+ 5. Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy
+ 6. Ogólnie rzecz biorąc, lubię tu pracować
+
+**Satysfakcja z pracy/alternatywna skala**
+
+(Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)
+ 
+ 7. Pod bardzo wieloma względami moja praca bliska jest ideału
+ 8. Mam świetne warunki pracy
+ 9. Jestem zadowolony z pracy
+10. Jak dotąd w pracy udawało mi się osiągać to, czego chciałem
+11. Gdybym miał decydować raz jeszcze, wybrałbym tę samą pracę
+
+**Satysfakcja z wynagrodzenia**
+
+(Zdecydowanie niesatysfakcjonująca-Niesatysfakcjonująca-TP-Satysfakcjonująca-Zdecydowanie niesatysfakcjonująca.)
+
+12. Moja pensja na rękę jest
+13. Wielkość mojej obecnej pensji jest
+14. Moje obecne wynagrodzenie jest
+15. Poziom mojego łącznego wynagrodzenia jest
+
+**Konflikt ze współpracownikami**
+
+(Raz na miesiąc lub mniej/1--2 razy w miesiącu/1--2 razy w tygodniu/1--2 razy dziennie/wiele razy dziennie.)
+
+16. Jak często w pracy kłócisz się z innymi osobami?
+17. Jak często inni ludzie krzyczą na Ciebie w pracy?
+18. Jak często ludzie są wobec Ciebie niemili w pracy?
+19. Jak często inni ludzie robią Ci nieprzyjemne rzeczy w pracy?
+
+**Konflikt z przełożonym**
+
+(Raz na miesiąc lub mniej/1--2 razy w miesiącu/1--2 razy w tygodniu/1--2 razy dziennie/wiele razy dziennie.)
+
+20. Jak często w pracy kłócisz się z przełożonym?
+21. Jak często twój przełożony krzyczy na ciebie?
+22. Jak często twój przełożony jest niemiły w pracy?
+23. Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?
+
+**Przywiązanie do ogranizacji** (`PO-1`--`PO-18`), składające się z następujących aspektów:
+przywiązanie afektywne (`PO-1`--`PO-6`), przywiązanie normatywne (`PO-7`--`PO-12`), 
+przywiązanie trwania (`PO-13`--`PO-18`).
+
+(Zdecydowanie się nie zgadzam/nie zgadzam się/raczej się nie zgadzam/
+trudno powiedzieć/raczej się zgadzam/zgadzam się/zdecydowanie się zgadzam.)
+
+24. Zakład pracy, w której pracuję ma dla mnie duże znaczenie osobiste. (PO-2)
+25. Czułbym się winny, gdybym teraz odszedł z mojego zakładu pracy (PO-18)
+26 .Zbyt wiele straciłbym w moim życiu, decydując się teraz na odejście z mojego zakładu pracy (PO-9)
+27. Mogę powiedzieć, że czuję się w moim zakładzie pracy jak w rodzinie (PO-5)
+28. Gdybym dostał ofertę lepszej pracy, czułbym się nie w porządku odchodząc z mojego zakładu pracy (PO-14)
+29. Byłbym bardzo zadowolony gdybym do emerytury mógł pracować w moim zakładzie pracy (PO-11)
+30. Wiele zawdzięczam mojemu zakładowi pracy (PO-4)
+31. Jednym z głównych powodów, dla których wciąż pracuję 
+    w tym zakładzie pracy  jest wiara w znaczenie lojalności  
+    dająca mi poczucie moralnego obowiązku pozostania (PO-16)
+32. Czuje, że problemy mojego zakładu pracy są rzeczywiście moimi własnymi problemami (PO-6)
+33. Nie odszedłbym teraz z mojego zakładu pracy, ponieważ mam zobowiązania 
+    w stosunku do ludzi, którzy w niej pracują (PO-17)
+34. Jedną z kilku negatywnych konsekwencji odejścia z mojego zakładu pracy 
+    mógłby być brak dostępnych możliwości zatrudnienia (PO-10)
+35. Byłoby mi bardzo ciężko odejść teraz z mojego zakładu pracy, nawet gdybym chciał (PO-3)
+36. Ten zakład pracy zasługuje na to, żebym był wobec niego w porządku (PO-15)
+37. Mam poczucie, że pozostanie w zakładzie pracy jest dla mnie koniecznością (PO-12)
+38. Sprawia mi przyjemność, kiedy mogę porozmawiać o moim  zakładzie pracy z ludźmi z zewnątrz (PO-1)
+39. Sądzę, że odchodząc z mojego zakładu  pracy, mam zbyt mało innych możliwości do wyboru (PO-8)
+40. Nawet, gdyby to było dla mnie korzystne, nie czułbym się w porządku odchodząc 
+    teraz z mojego zakładu pracy (PO-13)
+41. Lepiej było, kiedy ludzie większość swojego życia zawodowego wiązali z jedną firmą (PO-7)
+
+**Satysfakcja z pracy** (skala jednopozycyjna)
+
+42. W jakim stopniu jesteś ogólnie zadowolony ze swojej pracy?
+ 
+(Bardzo niezadowolony/Niezadowolony/Trudno powiedzieć/Zadowolony/Bardzo zadowolony)
+ 
+**Zamiar odejścia z pracy**  (skala jednopozycyjna)
+
+(Nigdy/Rzadko/Czasami/Często/Bardzo często)
+
+43. Jak często poważnie rozważałeś odejście z obecnej pracy?
+
+**„Metryczka”**
+
+44. Płeć (K/M)
+45. Rodzaj studiów
+46. Staż łączny (lata pracy)
+47. Ile razy zmieniałeś miejsce pracy?
+48. Praca na oddziale ratunkowym lub intensywnej terapii (T/N)
+
+
+**Źródło:**
+Liu Y i inni, *Turnover intention and its associated factors among nurses:  a multi-center cross-sectional study*
+(Zamiar zmiany pracy oraz czynniki z nim związane wśród pielęgniarek: badanie przekrojowe.)
+Front. Public Health 11:1141441 (2023)
+https://www.frontiersin.org/articles/10.3389/fpubh.2023.1141441/full
+oraz
+Bańka A., Bazińska R., Wołowska A., *Polska wersja Meyera i Allen Skali Przywiązania do Organizacji*, Czasopismo Psychologiczne 2002, nr 8 (1), s. 65--74.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

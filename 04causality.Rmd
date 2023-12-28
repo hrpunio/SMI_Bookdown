@@ -711,7 +711,6 @@ pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
 
 :::
 
-
 ###  Pomiar siły zależności: współczynnik korelacji liniowej Pearsona
 
 Kowariancja to średnia arytemtyczna iloczynów odchyleń wartości zmiennych $X$, $Y$
@@ -1095,7 +1094,9 @@ Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
 bo jest ona zbyt dużym uproszczeniem rzeczywistości. Jest to jednak
 dobry punkt startu do bardziej skomplikowanego modelu **regresji wielorakiej**.
 
-### Zmienna liczbowa i zmienne liczbowe lub nominalne
+## Zmienna liczbowa i zmienne liczbowe lub nominalne
+
+### Regresja wieloraka
 
 Jeżeli zmiennych niezależnych jest więcej niż jedna,
 to mówimy o **regresji wielorakiej**. Przykładowo
