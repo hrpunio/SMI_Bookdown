@@ -10,7 +10,28 @@
 %% Supress any other theorems (probably)
 \newtheorem{theorem}{}
 %%
-\AtBeginDocument{\author{Tomasz Przechlewski\\ Powiślańska Szkoła Wyższa\\(Kwidzyn-Gdańsk)}}
+%% https://github.com/jgm/pandoc/issues/4384
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+%%
+\AtBeginDocument{\AtBeginDocument{\let\maketitle\relax
+%% Insert title page
+\begin{titlepage}
+\begingroup
+\vbox to \textheight{\vss%
+\hbox to\textwidth{\hss\includegraphics[width=6in]{FN_sepia_cover.pdf}\hss} 
+\vss}
+\endgroup
+\end{titlepage}
+%%
+%%
+}%%
+\author{Tomasz Przechlewski\\ Powiślańska Szkoła Wyższa\\(Kwidzyn-Gdańsk)}%
+
+
+}
 
 \usepackage[most]{tcolorbox}
 \newtcolorbox{example}[1][]{%
@@ -21,7 +42,6 @@
     enhanced,
     breakable,
 }
-
 
 \font\chineseFont="NotoSansTC-Regular" at 10pt
 \def\chinese#1{{\chineseFont #1}}

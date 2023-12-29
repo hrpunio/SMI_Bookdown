@@ -87,20 +87,21 @@
 \contentsline {subsection}{\numberline {5.4.1}Cel}{79}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Metoda}{79}{subsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.4.3}Zastosowane metody statystyczne}{79}{subsection.5.4.3}%
-\contentsline {section}{\numberline {5.5}Formularze ankiet}{80}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Skala Depresji Becka}{80}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Ankieta Palenie}{83}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Ankieta satysfakcja, przywiązanie i zamiar odejścia}{84}{subsection.5.5.3}%
-\contentsline {chapter}{\numberline {6}Łagodne wprowadzenie z Jamovi}{87}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Podstawy pracy z Jamovi}{87}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}{88}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{88}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Przekodowanie danych}{90}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Wyliczenie nowych zmiennych}{94}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Analiza struktury}{95}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Analiza zależności: zmienne nominalne}{95}{subsection.6.2.5}%
-\contentsline {subsection}{\numberline {6.2.6}Analiza zależności: zmienna liczbowa/zmienna nominalna}{96}{subsection.6.2.6}%
-\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{97}{subsection.6.2.7}%
-\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{97}{subsection.6.2.8}%
-\contentsline {subsection}{\numberline {6.2.9}Redagowanie raportu}{98}{subsection.6.2.9}%
-\contentsline {chapter}{\numberline {7}Literatura}{99}{chapter.7}%
+\contentsline {subsection}{\numberline {5.4.4}Wyniki}{80}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Formularze ankiet}{81}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Skala Depresji Becka}{81}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Ankieta Palenie}{84}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Ankieta satysfakcja, przywiązanie i zamiar odejścia}{85}{subsection.5.5.3}%
+\contentsline {chapter}{\numberline {6}Łagodne wprowadzenie z Jamovi}{88}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Podstawy pracy z Jamovi}{88}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}{89}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{89}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Przekodowanie danych}{91}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Wyliczenie nowych zmiennych}{95}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Analiza struktury}{96}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Analiza zależności: zmienne nominalne}{96}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Analiza zależności: zmienna liczbowa/zmienna nominalna}{97}{subsection.6.2.6}%
+\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{98}{subsection.6.2.7}%
+\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{98}{subsection.6.2.8}%
+\contentsline {subsection}{\numberline {6.2.9}Redagowanie raportu}{99}{subsection.6.2.9}%
+\contentsline {chapter}{\numberline {7}Literatura}{100}{chapter.7}%

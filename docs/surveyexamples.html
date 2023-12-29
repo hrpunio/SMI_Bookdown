@@ -195,6 +195,7 @@
 <li><a href="surveyexamples.html#cel-2" id="toc-cel-2"><span class="toc-section-number">5.4.1</span> Cel</a></li>
 <li><a href="surveyexamples.html#metoda-2" id="toc-metoda-2"><span class="toc-section-number">5.4.2</span> Metoda</a></li>
 <li><a href="surveyexamples.html#zastosowane-metody-statystyczne-2" id="toc-zastosowane-metody-statystyczne-2"><span class="toc-section-number">5.4.3</span> Zastosowane metody statystyczne</a></li>
+<li><a href="surveyexamples.html#wyniki" id="toc-wyniki"><span class="toc-section-number">5.4.4</span> Wyniki</a></li>
 </ul></li>
 <li><a href="surveyexamples.html#formularze-ankiet" id="toc-formularze-ankiet"><span class="toc-section-number">5.5</span> Formularze ankiet</a>
 <ul>
@@ -1062,16 +1063,281 @@ zamiar zmiany miejsca pracy.</p></li>
 <div id="metoda-2" class="section level3" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Metoda</h3>
 <p>Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w 2023/2024 roku.
-Zamiar zmiany pracy (ZZP), satysfakcja z pracy (SP)
-satysfakcja z wynagrodzenia (SW)
+Zamiar zmiany pracy (ZZP),
+przywiązanie do miejsca pracy (przywiązanie organizacyjne PO),
+satysfakcja z pracy (SP),
+satysfakcja z wynagrodzenia (SW),
 konflikt personalny ze współpracownikami (KPW)
 oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
-odpowiednich skal pomiarowych.</p>
+stosownych skal pomiarowych. Ankietowani byli także pytani
+o płeć, staż oraz
+czy pracują na oddziale ratunkowym/intensywnej terapii (<code>roddzial</code>).</p>
 </div>
 <div id="zastosowane-metody-statystyczne-2" class="section level3" number="5.4.3">
 <h3><span class="header-section-number">5.4.3</span> Zastosowane metody statystyczne</h3>
-<p>Do weryfikacji hipotez 1–4 wykorzystano model regresji liniowej.
-Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.</p>
+<ul>
+<li><p>Do weryfikacji hipotez 1–4 wykorzystano model regresji liniowej.</p></li>
+<li><p>Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.</p></li>
+</ul>
+</div>
+<div id="wyniki" class="section level3" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> Wyniki</h3>
+<p>Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
+od razu do weryfikacji hipotez 1–5.</p>
+<p>Macierz korelacji dla zmiennych <code>zzp</code>, <code>sp</code>, <code>sw</code>, <code>kpw</code>, <code>kpp</code> oraz <code>po</code>:</p>
+<pre><code>##          zzp      sp      sw     kpw     kpp      po    staz
+## zzp   1.0000 -0.5095 -0.1644  0.3245  0.3796 -0.3325  0.0666
+## sp   -0.5095  1.0000  0.2815 -0.1041 -0.3446  0.3103 -0.0918
+## sw   -0.1644  0.2815  1.0000 -0.4524  0.0163  0.1801 -0.1994
+## kpw   0.3245 -0.1041 -0.4524  1.0000  0.4234 -0.1339  0.0030
+## kpp   0.3796 -0.3446  0.0163  0.4234  1.0000 -0.3380 -0.1015
+## po   -0.3325  0.3103  0.1801 -0.1339 -0.3380  1.0000  0.2808
+## staz  0.0666 -0.0918 -0.1994  0.0030 -0.1015  0.2808  1.0000</code></pre>
+<p>Można zaobserwować wiele obiecująco wysokich wartości współczynnika korelacji
+(<code>zpp</code>/<code>sp</code>, <code>zpp</code>/<code>kpw</code>, <code>pp</code>/<code>kpp</code>) ale też niektóre są beznadziejnie niskie (np. <code>zpp</code>/<code>staż</code>).</p>
+<p><strong>Regresja liniowa</strong></p>
+<p>Zakładamy, że <code>zzp</code> jest objaśniana przez <code>sp</code>, <code>sw</code>, <code>kpw</code>, <code>kpp</code>, <code>po</code>, <code>staz</code>, <code>plec</code> oraz <code>roddzial</code>.
+(Odważnie dołączamy <code>staz</code> mimo że w świetle analizy macierzy korelacji raczej nie jest to dobry pomysł.)
+Oszacowanie tego modelu daje następujące wyniki:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">13.035</td>
+<td align="right">3.706</td>
+<td align="right">3.517</td>
+<td align="right">0.001</td>
+<td align="left">NA</td>
+<td align="left">5.570 20.500</td>
+</tr>
+<tr class="even">
+<td align="left">sp</td>
+<td align="right">-1.099</td>
+<td align="right">0.331</td>
+<td align="right">-3.325</td>
+<td align="right">0.002</td>
+<td align="left">-0.480</td>
+<td align="left">-1.760 -0.430</td>
+</tr>
+<tr class="odd">
+<td align="left">sw</td>
+<td align="right">0.124</td>
+<td align="right">0.115</td>
+<td align="right">1.075</td>
+<td align="right">0.288</td>
+<td align="left">0.160</td>
+<td align="left">-0.110 0.360</td>
+</tr>
+<tr class="even">
+<td align="left">kpw</td>
+<td align="right">0.778</td>
+<td align="right">0.376</td>
+<td align="right">2.068</td>
+<td align="right">0.044</td>
+<td align="left">0.310</td>
+<td align="left">0.020 1.540</td>
+</tr>
+<tr class="odd">
+<td align="left">kpp</td>
+<td align="right">0.032</td>
+<td align="right">0.235</td>
+<td align="right">0.137</td>
+<td align="right">0.891</td>
+<td align="left">0.020</td>
+<td align="left">-0.440 0.500</td>
+</tr>
+<tr class="even">
+<td align="left">po</td>
+<td align="right">-0.040</td>
+<td align="right">0.026</td>
+<td align="right">-1.545</td>
+<td align="right">0.129</td>
+<td align="left">-0.210</td>
+<td align="left">-0.090 0.010</td>
+</tr>
+<tr class="odd">
+<td align="left">staz</td>
+<td align="right">0.045</td>
+<td align="right">0.047</td>
+<td align="right">0.953</td>
+<td align="right">0.346</td>
+<td align="left">0.130</td>
+<td align="left">-0.050 0.140</td>
+</tr>
+<tr class="even">
+<td align="left">plecM</td>
+<td align="right">0.624</td>
+<td align="right">2.437</td>
+<td align="right">0.256</td>
+<td align="right">0.799</td>
+<td align="left">0.040</td>
+<td align="left">-4.280 5.530</td>
+</tr>
+<tr class="odd">
+<td align="left">roddzialtak</td>
+<td align="right">1.138</td>
+<td align="right">0.896</td>
+<td align="right">1.270</td>
+<td align="right">0.211</td>
+<td align="left">0.150</td>
+<td align="left">-0.670 2.940</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 40.85%.
+Tylko dwie zmienne <code>sp</code> oraz <code>kpw</code> okazały się istotne.</p>
+<p>Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
+nieistotne. Kolejno należało wyeliminować <code>sw</code>, <code>kpp</code>, <code>po</code>, <code>staz</code>, <code>plec</code> oraz <code>roddzial</code>.
+W modelu ostatecznym <code>zzp</code> jest objaśniana przez <code>sp</code> oraz <code>kpw</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Zmienna</th>
+<th align="right">B</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">Beta</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">13.987</td>
+<td align="right">2.969</td>
+<td align="right">4.710</td>
+<td align="right">0.000</td>
+<td align="left">NA</td>
+<td align="left">8.030 19.950</td>
+</tr>
+<tr class="even">
+<td align="left">sp</td>
+<td align="right">-1.112</td>
+<td align="right">0.263</td>
+<td align="right">-4.226</td>
+<td align="right">0.000</td>
+<td align="left">-0.480</td>
+<td align="left">-1.640 -0.580</td>
+</tr>
+<tr class="odd">
+<td align="left">kpw</td>
+<td align="right">0.682</td>
+<td align="right">0.283</td>
+<td align="right">2.412</td>
+<td align="right">0.019</td>
+<td align="left">0.270</td>
+<td align="left">0.110 1.250</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik zbieżności wynosi 33.41%.
+Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).</p>
+<p><strong>Regresja logistyczna</strong></p>
+<p>Żeby zademonstrować przykład wykorzystania regresji logistycznej przyjmijmy, że jak ktoś bardzo chce
+zmienić pracę to ją zmieni.
+Niech to <strong>bardzo chce</strong> będzie wtedy kiedy wartość <code>zzp</code> wynosi co najmniej 12.
+Zmienną <code>zzp</code> należy przekodować na zmienną dwuwartościową (nazwijmy ją <code>zp</code>), która
+przymuje wartość 1 jeżeli <code>zzp</code> jest większe
+równe od 12 lub wartość 0 jeżeli <code>zzp</code> jest mniejsze od 12.
+Model nie objaśnia teraz zależności pomiędzy zamiarem a prognozuje
+zmianę miejsca pracy (zmieni=1, nie zmieni=0).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parametr</th>
+<th align="right">Ocena</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">OR</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">-4.309</td>
+<td align="right">2.896</td>
+<td align="right">-1.488</td>
+<td align="right">0.137</td>
+<td align="left">0.010</td>
+<td align="left">0.000 2.910</td>
+</tr>
+<tr class="even">
+<td align="left">sp</td>
+<td align="right">0.802</td>
+<td align="right">0.291</td>
+<td align="right">2.761</td>
+<td align="right">0.006</td>
+<td align="left">2.230</td>
+<td align="left">1.330 4.340</td>
+</tr>
+<tr class="odd">
+<td align="left">kpw</td>
+<td align="right">-0.221</td>
+<td align="right">0.301</td>
+<td align="right">-0.734</td>
+<td align="right">0.463</td>
+<td align="left">0.800</td>
+<td align="left">0.440 1.510</td>
+</tr>
+</tbody>
+</table>
+<p>Zmienna <code>kpw</code> okazała się nieistotna. Szacujemy model w którym odejście
+objaśnia tylko satysfakcja:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parametr</th>
+<th align="right">Ocena</th>
+<th align="right">Błąd stand</th>
+<th align="right">z</th>
+<th align="right">p</th>
+<th align="left">OR</th>
+<th align="left">CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">-5.448</td>
+<td align="right">2.460</td>
+<td align="right">-2.215</td>
+<td align="right">0.027</td>
+<td align="left">0.000</td>
+<td align="left">0.000 0.360</td>
+</tr>
+<tr class="even">
+<td align="left">sp</td>
+<td align="right">0.803</td>
+<td align="right">0.283</td>
+<td align="right">2.838</td>
+<td align="right">0.005</td>
+<td align="left">2.230</td>
+<td align="left">1.350 4.260</td>
+</tr>
+</tbody>
+</table>
+<p>Macierz pomyłek:</p>
+<pre><code>##         zp
+## Prognoza  0  1
+##        0  3  1
+##        1  6 45</code></pre>
+<p>Stąd: czułość 0.98; swoistość 0.33.</p>
+<p>Krzywą ROC przedstawiono na rysunku:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
 </div>
 </div>
 <div id="formularze-ankiet" class="section level2" number="5.5">
@@ -1401,21 +1667,21 @@ Kwidzyn 2022.</p>
 </div>
 <div id="ankieta-satysfakcja-przywiązanie-i-zamiar-odejścia" class="section level3" number="5.5.3">
 <h3><span class="header-section-number">5.5.3</span> Ankieta satysfakcja, przywiązanie i zamiar odejścia</h3>
-<p><strong>Zamiar zmiany pracy</strong></p>
+<p><strong>Zamiar zmiany pracy/ZZP</strong></p>
 <p>(Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)</p>
 <ol style="list-style-type: decimal">
 <li>Często poważnie rozważam odejście z obecnej pracy</li>
 <li>Zamierzam rzucić obecną pracę</li>
 <li>Zacząłem szukać innej pracy</li>
 </ol>
-<p><strong>Satysfakcja z pracy</strong></p>
+<p><strong>Satysfakcja z pracy/SP</strong></p>
 <p>(Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Ogólnie rzecz biorąc nie lubię swojej pracy</li>
 <li>Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy</li>
 <li>Ogólnie rzecz biorąc, lubię tu pracować</li>
 </ol>
-<p><strong>Satysfakcja z pracy/alternatywna skala</strong></p>
+<p><strong>Satysfakcja z pracy/SSP/alternatywna skala</strong></p>
 <p>(Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)</p>
 <ol start="7" style="list-style-type: decimal">
 <li>Pod bardzo wieloma względami moja praca bliska jest ideału</li>
@@ -1424,7 +1690,7 @@ Kwidzyn 2022.</p>
 <li>Jak dotąd w pracy udawało mi się osiągać to, czego chciałem</li>
 <li>Gdybym miał decydować raz jeszcze, wybrałbym tę samą pracę</li>
 </ol>
-<p><strong>Satysfakcja z wynagrodzenia</strong></p>
+<p><strong>Satysfakcja z wynagrodzenia/SW</strong></p>
 <p>(Zdecydowanie niesatysfakcjonująca-Niesatysfakcjonująca-TP-Satysfakcjonująca-Zdecydowanie niesatysfakcjonująca.)</p>
 <ol start="12" style="list-style-type: decimal">
 <li>Moja pensja na rękę jest</li>
@@ -1432,7 +1698,7 @@ Kwidzyn 2022.</p>
 <li>Moje obecne wynagrodzenie jest</li>
 <li>Poziom mojego łącznego wynagrodzenia jest</li>
 </ol>
-<p><strong>Konflikt ze współpracownikami</strong></p>
+<p><strong>Konflikt ze współpracownikami/KPW</strong></p>
 <p>(Raz na miesiąc lub mniej/1–2 razy w miesiącu/1–2 razy w tygodniu/1–2 razy dziennie/wiele razy dziennie.)</p>
 <ol start="16" style="list-style-type: decimal">
 <li>Jak często w pracy kłócisz się z innymi osobami?</li>
@@ -1440,7 +1706,7 @@ Kwidzyn 2022.</p>
 <li>Jak często ludzie są wobec Ciebie niemili w pracy?</li>
 <li>Jak często inni ludzie robią Ci nieprzyjemne rzeczy w pracy?</li>
 </ol>
-<p><strong>Konflikt z przełożonym</strong></p>
+<p><strong>Konflikt z przełożonym/KPP</strong></p>
 <p>(Raz na miesiąc lub mniej/1–2 razy w miesiącu/1–2 razy w tygodniu/1–2 razy dziennie/wiele razy dziennie.)</p>
 <ol start="20" style="list-style-type: decimal">
 <li>Jak często w pracy kłócisz się z przełożonym?</li>
@@ -1448,7 +1714,7 @@ Kwidzyn 2022.</p>
 <li>Jak często twój przełożony jest niemiły w pracy?</li>
 <li>Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?</li>
 </ol>
-<p><strong>Przywiązanie do ogranizacji</strong> (<code>PO-1</code>–<code>PO-18</code>), składające się z następujących aspektów:
+<p><strong>Przywiązanie do ogranizacji/PO</strong> (<code>PO-1</code>–<code>PO-18</code>), składające się z następujących aspektów:
 przywiązanie afektywne (<code>PO-1</code>–<code>PO-6</code>), przywiązanie normatywne (<code>PO-7</code>–<code>PO-12</code>),
 przywiązanie trwania (<code>PO-13</code>–<code>PO-18</code>).</p>
 <p>(Zdecydowanie się nie zgadzam/nie zgadzam się/raczej się nie zgadzam/
@@ -1478,12 +1744,12 @@ mógłby być brak dostępnych możliwości zatrudnienia (PO-10)</li>
 teraz z mojego zakładu pracy (PO-13)</li>
 <li>Lepiej było, kiedy ludzie większość swojego życia zawodowego wiązali z jedną firmą (PO-7)</li>
 </ol>
-<p><strong>Satysfakcja z pracy</strong> (skala jednopozycyjna)</p>
+<p><strong>Satysfakcja z pracy/SP0/skala jednopozycyjna</strong></p>
 <ol start="42" style="list-style-type: decimal">
 <li>W jakim stopniu jesteś ogólnie zadowolony ze swojej pracy?</li>
 </ol>
 <p>(Bardzo niezadowolony/Niezadowolony/Trudno powiedzieć/Zadowolony/Bardzo zadowolony)</p>
-<p><strong>Zamiar odejścia z pracy</strong> (skala jednopozycyjna)</p>
+<p><strong>Zamiar odejścia z pracy/ZZP0/skala jednopozycyjna</strong></p>
 <p>(Nigdy/Rzadko/Czasami/Często/Bardzo często)</p>
 <ol start="43" style="list-style-type: decimal">
 <li>Jak często poważnie rozważałeś odejście z obecnej pracy?</li>

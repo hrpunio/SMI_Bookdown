@@ -1,0 +1,49 @@
+numer;pytanie;skala
+1;Często poważnie rozważam odejście z obecnej pracy;ZZP1
+2;Zamierzam rzucić obecną pracę;ZZP2
+3;Zacząłem szukać innej pracy;ZZP3
+4;Ogólnie rzecz biorąc nie lubię swojej pracy;SP1
+6;Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy;SP2
+7;Ogólnie rzecz biorąc, lubię tu pracować;SP3
+10;Pod bardzo wieloma względami moja praca bliska jest ideału;SSP1
+11;Mam świetne warunki pracy;SSP2
+12;Jestem zadowolony z pracy;SSP3
+13;Jak dotąd w pracy udawało mi się osiągać to, czego chciałem;SSP4
+14;Gdybym miał decydować raz jeszcze, wybrałbym tę samą pracę;SSP5
+5;Moja pensja na rękę jest;SW1
+15;Wielkość mojej obecnej pensji jest;SW2
+24;Moje obecne wynagrodzenie jest;SW3
+25;Poziom mojego łącznego wynagrodzenia jest;SW4
+16;Jak często w pracy kłócisz się z innymi osobami?;KPW1
+18;Jak często inni ludzie krzyczą na Ciebie w pracy?;KPW2
+20;Jak często ludzie są wobec Ciebie niemili w pracy?;KPW3
+22;Jak często inni ludzie robią Ci nieprzyjemne rzeczy w pracy?;KPW4
+17;Jak często w pracy kłócisz się z przełożonym?;KPP1
+19;Jak często twój przełożony krzyczy na ciebie?;KPP2
+21;Jak często twój przełożony jest niemiły w pracy?;KPP3
+23;Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?;KPP4
+26;Zakład pracy, w której pracuję ma dla mnie duże znaczenie osobiste.;PO-2
+27;Czułbym się winny, gdybym teraz odszedł z mojego zakładu pracy;PO-18
+28;Zbyt wiele straciłbym w moim życiu, decydując się teraz na odejście z mojego zakładu pracy;PO-9
+29;Mogę powiedzieć, że czuję się w moim zakładzie pracy jak w rodzinie;PO-5
+30;Gdybym dostał ofertę lepszej pracy, czułbym się nie w porządku odchodząc z mojego zakładu pracy;PO-14
+31;Byłbym bardzo zadowolony gdybym do emerytury mógł pracować w moim zakładzie pracy;PO-11
+32;Wiele zawdzięczam mojemu zakładowi pracy;PO-4
+33;Jednym z głównych powodów, dla których wciąż pracuję w tym zakładzie pracy  jest wiara w znaczenie lojalności dająca mi poczucie moralnego obowiązku pozostania;PO-16
+34;Czuje, że problemy mojego zakładu pracy są rzeczywiście moimi własnymi problemami;PO-6
+35;Nie odszedłbym teraz z mojego zakładu pracy, ponieważ mam zobowiązania w stosunku do ludzi, którzy w niej pracują; PO-17
+36;Jedną z kilku negatywnych konsekwencji odejścia z mojego zakładu pracy mógłby być brak dostępnych możliwości zatrudnienia;PO-10
+37;Byłoby mi bardzo ciężko odejść teraz z mojego zakładu pracy, nawet gdybym chciał;PO-3
+38;Ten zakład pracy zasługuje na to, żebym był wobec niego w porządku;PO-15
+39;Mam poczucie, że pozostanie w zakładzie pracy jest dla mnie koniecznością;PO-12
+40;Sprawia mi przyjemność, kiedy mogę porozmawiać o moim  zakładzie pracy z ludźmi z zewnątrz;PO-1
+41;Sądzę, że odchodząc z mojego zakładu  pracy, mam zbyt mało innych możliwości do wyboru;PO-8
+42;Nawet, gdyby to było dla mnie korzystne, nie czułbym się w porządku odchodząc teraz z mojego zakładu pracy;PO-13
+43;Lepiej było, kiedy ludzie większość swojego życia zawodowego wiązali z jedną firmą;PO-7
+44;Płeć;
+45;Rodzaj studiów;
+46;Staż łączny (lata pracy);
+47;Ile razy zmieniałeś miejsce pracy?;
+48;Praca na oddziale ratunkowym lub intensywnej terapii;
+8;W jakim stopniu jesteś ogólnie zadowolony ze swojej pracy?;SP0
+9;Jak często poważnie rozważałeś odejście z obecnej pracy?;ZZP0

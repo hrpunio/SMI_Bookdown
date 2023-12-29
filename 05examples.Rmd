@@ -406,7 +406,7 @@ p.status
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku
 
-```{r, out.width=ex.out.width}
+```{r, out.width=ex.out.width, out.height="30%"}
 s0.sex <- s1 %>%
   select (plec) %>%
   group_by(plec)%>%
@@ -853,7 +853,7 @@ ex.p
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku.
 
-```{r, out.width=ex.out.width}
+```{r, out.width=ex.out.width, out.height="30%"}
 ###
 s0.sex <- s0 %>%
   select (plec) %>%
@@ -1047,18 +1047,191 @@ pielęgniarek/pielęgniarzy.
 ### Metoda
 
 Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w 2023/2024 roku.
-Zamiar zmiany pracy (ZZP), satysfakcja z pracy (SP)
-satysfakcja z wynagrodzenia (SW)
+Zamiar zmiany pracy (ZZP),
+przywiązanie do miejsca pracy (przywiązanie organizacyjne PO),
+satysfakcja z pracy (SP),
+satysfakcja z wynagrodzenia (SW),
 konflikt personalny ze współpracownikami (KPW)
 oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
-odpowiednich skal pomiarowych.
+stosownych skal pomiarowych. Ankietowani byli także pytani
+o płeć, staż oraz 
+czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
 
 ### Zastosowane metody statystyczne
 
-Do weryfikacji hipotez 1--4 wykorzystano model regresji liniowej.
-Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.
+* Do weryfikacji hipotez 1--4 wykorzystano model regresji liniowej.
+
+* Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.
+
+### Wyniki
+
+Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
+od razu do weryfikacji hipotez 1--5.
+
+Macierz korelacji dla zmiennych `zzp`, `sp`, `sw`, `kpw`, `kpp` oraz `po`:
+
+```{r}
+d1 <- read.csv("satisfaction_intention_commitment_PSW.csv",  sep = ';',  dec = ".", header=T, na.string="NA")
+## zzp sp ssp sw kpw kpp poA poN poT po plec staz kierunek zmiana roddzial staz.klasa
+
+## Macierz korelacji
+macierz.k <- d1 %>% select (zzp, sp, sw, kpw, kpp, po, staz) %>%
+  na.omit() %>% cor(use = "complete.obs")
+round(macierz.k,4)
+```
+
+Można zaobserwować wiele obiecująco wysokich wartości współczynnika korelacji
+(`zpp`/`sp`, `zpp`/`kpw`, `pp`/`kpp`) ale też niektóre są beznadziejnie niskie (np. `zpp`/`staż`).
 
 
+**Regresja liniowa**
+
+Zakładamy, że `zzp` jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz`, `plec` oraz `roddzial`.
+(Odważnie dołączamy `staz` mimo że w świetle analizy macierzy korelacji raczej nie jest to dobry pomysł.)
+Oszacowanie tego modelu daje następujące wyniki:
+
+```{r}
+lm.1 <- lm(data=d1, zzp ~ sp + sw + kpw + kpp + po + staz + plec + roddzial)
+##summary(lm1)
+lmsum1 <- summary(lm.1)
+lmr <- summary(lm.1)$r.squared
+
+lm.1.coef <- as.data.frame(coef(summary(lm.1)))
+## wielkości standaryzowane
+lm.1.std <- round(coef(lm.beta(lm.1)), 2)
+lm_std_txt <- sprintf ("%.3f", lm.1.std )
+## Przedziały ufności
+lm.1.ci <- round(confint(lm.1), 2)
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+## zestawienie tabelaryczne wyników
+lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
+  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+
+kable(lm.1.coef.df, row.names = F, digits=3,
+      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+
+```
+
+Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Tylko dwie zmienne `sp` oraz `kpw` okazały się istotne.
+
+Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
+nieistotne. Kolejno należało wyeliminować `sw`, `kpp`, `po`, `staz`, `plec` oraz `roddzial`.
+W modelu ostatecznym `zzp` jest objaśniana przez `sp` oraz `kpw`:
+
+```{r}
+lm.7 <- lm(data=d1, zzp ~ sp  + kpw )
+##summary(lm.7)
+lmsum1 <- summary(lm.7)
+lmr <- summary(lm.7)$r.squared
+
+lm.7.coef <- as.data.frame(coef(summary(lm.7)))
+## wielkości standaryzowane
+lm.7.std <- round(coef(lm.beta(lm.7)), 2)
+lm_std_txt <- sprintf ("%.3f", lm.7.std )
+## Przedziały ufności
+lm.7.ci <- round(confint(lm.7), 2)
+lm_ci_txt <- sprintf ("%.3f %.3f", lm.7.ci[,1], lm.7.ci[,2] )
+## zestawienie tabelaryczne wyników
+lm.7.coef.df <- tibble::rownames_to_column(lm.7.coef, "Parametr") %>%
+  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+
+kable(lm.7.coef.df, row.names = F, digits=3,
+      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+
+```
+
+Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
+
+**Regresja logistyczna**
+
+Żeby zademonstrować przykład wykorzystania regresji logistycznej przyjmijmy, że jak ktoś bardzo chce
+zmienić pracę to ją zmieni.
+Niech to **bardzo chce** będzie wtedy kiedy wartość `zzp` wynosi co najmniej 12.
+Zmienną `zzp` należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją `zp`), która 
+przymuje wartość 1 jeżeli `zzp` jest większe
+równe od 12 lub wartość 0 jeżeli `zzp` jest mniejsze od 12.
+Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
+zmianę miejsca pracy (zmieni=1, nie zmieni=0).
+
+```{r, message=FALSE, warning=FALSE}
+## Logistyczna
+e1 <- d1  %>% mutate (zp=case_when(zzp < 12 ~ 1,  TRUE ~ 0))
+
+glm.1 <- glm(zp ~ sp + kpw, data = e1, family = "binomial")
+##summary(glm.1)
+## oryginalne wartości współczynników
+gml.1.coef <- as.data.frame(coef(summary(glm.1)))
+## OR
+glm.1.or <- round(exp(coef(glm.1)), 2)
+glm_or_txt <- sprintf ("%.3f", glm.1.or )
+## Przedziały ufności
+glm.1.ci <- round(exp(confint(glm.1)), 2)
+glm_ci_txt <- sprintf ("%.3f %.3f", glm.1.ci[,1], glm.1.ci[,2] )
+
+## zestawienie tabelaryczne wyników
+gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
+  mutate(or=glm_or_txt,  ci=glm_ci_txt)
+
+kable(gml.1.coef.df, row.names = F, digits=3,
+      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
+```
+
+Zmienna `kpw` okazała się nieistotna. Szacujemy model, w którym odejście
+objaśnia tylko satysfakcja:
+
+```{r, message=F, warning=F}
+glm.2 <- glm(zp ~ sp , data = e1, family = "binomial")
+##summary(glm.2)
+##
+gml.2.coef <- as.data.frame(coef(summary(glm.2)))
+## OR
+glm.2.or <- round(exp(coef(glm.2)), 2)
+glm_or_txt <- sprintf ("%.3f", glm.2.or )
+## Przedziały ufności
+glm.2.ci <- round(exp(confint(glm.2)), 2)
+glm_ci_txt <- sprintf ("%.3f %.3f", glm.2.ci[,1], glm.2.ci[,2] )
+
+## zestawienie tabelaryczne wyników
+gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
+  mutate(or=glm_or_txt,  ci=glm_ci_txt)
+
+kable(gml.2.coef.df, row.names = F, digits=3,
+      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
+```
+
+Macierz pomyłek:
+
+```{r}
+pred.2 = predict(glm.2, type = "response")
+y.pred.2 = ifelse(pred.2 < 0.5, 0, 1)
+
+table <- table(y.pred.2, e1$zp)
+dimnames(table) <- list(
+  'Prognoza' = c("0", "1"),
+  'zp' = c("0", "1"))
+table
+
+czulosc <- table[4] / (table[3]+table[4])
+swoistosc <- table[1] / (table[1]+table[2])
+```
+
+Stąd: czułość `r sprintf("%.2f", czulosc)`; swoistość `r sprintf("%.2f", swoistosc)`.
+
+Krzywą ROC przedstawiono na rysunku:
+
+```{r, message=F, warning=F, out.width="70%"}
+roc_obj <- roc(e1$zp, pred.2, legacy.axes = T)
+##plot(roc_obj, main = "ROC Curve for the Logistic Regression Model", legacy.axes = T)
+auc<- auc_value <- auc(roc_obj)
+
+ggroc(roc_obj,
+      legacy.axes = T,
+      colour = 'steelblue', size = 2) +
+  geom_abline(intercept = 0, slope = 1) +
+  ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')'))
+```
 
 ## Formularze ankiet
 
@@ -1394,7 +1567,7 @@ Kwidzyn 2022.
 
 ### Ankieta satysfakcja, przywiązanie i zamiar odejścia
 
-**Zamiar zmiany pracy**
+**Zamiar zmiany pracy/ZZP**
 
 (Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)
 
@@ -1402,7 +1575,7 @@ Kwidzyn 2022.
  2. Zamierzam rzucić obecną pracę
  3. Zacząłem szukać innej pracy
  
-**Satysfakcja z pracy** 
+**Satysfakcja z pracy/SP** 
 
 (Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)
 
@@ -1410,7 +1583,7 @@ Kwidzyn 2022.
  5. Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy
  6. Ogólnie rzecz biorąc, lubię tu pracować
 
-**Satysfakcja z pracy/alternatywna skala**
+**Satysfakcja z pracy/SSP/alternatywna skala**
 
 (Zdecydowanie się nie zgadzam/Nie zgadzam się/Trudno powiedzieć/Zgadzam się/Zdecydowanie się zgadzam.)
  
@@ -1420,7 +1593,7 @@ Kwidzyn 2022.
 10. Jak dotąd w pracy udawało mi się osiągać to, czego chciałem
 11. Gdybym miał decydować raz jeszcze, wybrałbym tę samą pracę
 
-**Satysfakcja z wynagrodzenia**
+**Satysfakcja z wynagrodzenia/SW**
 
 (Zdecydowanie niesatysfakcjonująca-Niesatysfakcjonująca-TP-Satysfakcjonująca-Zdecydowanie niesatysfakcjonująca.)
 
@@ -1429,7 +1602,7 @@ Kwidzyn 2022.
 14. Moje obecne wynagrodzenie jest
 15. Poziom mojego łącznego wynagrodzenia jest
 
-**Konflikt ze współpracownikami**
+**Konflikt ze współpracownikami/KPW**
 
 (Raz na miesiąc lub mniej/1--2 razy w miesiącu/1--2 razy w tygodniu/1--2 razy dziennie/wiele razy dziennie.)
 
@@ -1438,7 +1611,7 @@ Kwidzyn 2022.
 18. Jak często ludzie są wobec Ciebie niemili w pracy?
 19. Jak często inni ludzie robią Ci nieprzyjemne rzeczy w pracy?
 
-**Konflikt z przełożonym**
+**Konflikt z przełożonym/KPP**
 
 (Raz na miesiąc lub mniej/1--2 razy w miesiącu/1--2 razy w tygodniu/1--2 razy dziennie/wiele razy dziennie.)
 
@@ -1447,7 +1620,7 @@ Kwidzyn 2022.
 22. Jak często twój przełożony jest niemiły w pracy?
 23. Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?
 
-**Przywiązanie do ogranizacji** (`PO-1`--`PO-18`), składające się z następujących aspektów:
+**Przywiązanie do ogranizacji/PO** (`PO-1`--`PO-18`), składające się z następujących aspektów:
 przywiązanie afektywne (`PO-1`--`PO-6`), przywiązanie normatywne (`PO-7`--`PO-12`), 
 przywiązanie trwania (`PO-13`--`PO-18`).
 
@@ -1478,13 +1651,13 @@ trudno powiedzieć/raczej się zgadzam/zgadzam się/zdecydowanie się zgadzam.)
     teraz z mojego zakładu pracy (PO-13)
 41. Lepiej było, kiedy ludzie większość swojego życia zawodowego wiązali z jedną firmą (PO-7)
 
-**Satysfakcja z pracy** (skala jednopozycyjna)
+**Satysfakcja z pracy/SP0/skala jednopozycyjna**
 
 42. W jakim stopniu jesteś ogólnie zadowolony ze swojej pracy?
  
 (Bardzo niezadowolony/Niezadowolony/Trudno powiedzieć/Zadowolony/Bardzo zadowolony)
  
-**Zamiar odejścia z pracy**  (skala jednopozycyjna)
+**Zamiar odejścia z pracy/ZZP0/skala jednopozycyjna**
 
 (Nigdy/Rzadko/Czasami/Często/Bardzo często)
 
@@ -1506,18 +1679,4 @@ Front. Public Health 11:1141441 (2023)
 https://www.frontiersin.org/articles/10.3389/fpubh.2023.1141441/full
 oraz
 Bańka A., Bazińska R., Wołowska A., *Polska wersja Meyera i Allen Skali Przywiązania do Organizacji*, Czasopismo Psychologiczne 2002, nr 8 (1), s. 65--74.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
