@@ -75,11 +75,12 @@
 %% Supress any other theorems (probably)
 \newtheorem{theorem}{}
 %%
+%% This is not working
 %% https://github.com/jgm/pandoc/issues/4384
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
+%%\makeatletter
+%%\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+%%\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+%%\makeatother
 %%
 \AtBeginDocument{\AtBeginDocument{\let\maketitle\relax
 %% Insert title page
@@ -1295,12 +1296,13 @@ Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu g
 
 Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (\textbf{box-plot}).
 
-Konstrukcja pudełka na wykresie (por rys. @(fig:boxplot)):
+Pudełka na wykresie pudełkowym są rysowane według następujących zasad
+(por rysunek \ref{fig:boxplot}):
 
 \begin{itemize}
 \tightlist
 \item
-  górny dolny bok pudełka jest równy kwartylom;
+  lewy i prawy bok pudełka jest równy kwartylom;
 \item
   linia pionowa w środku pudełka jest równa medianie;
 \item
@@ -1308,25 +1310,31 @@ Konstrukcja pudełka na wykresie (por rys. @(fig:boxplot)):
   oraz \(Q_3 + \textrm{IQR}\)
   (dla przypomnienia: \(Q_1\), \(Q_3\) to kwartyle, zaś \(\textrm{IQR}\) to rozstęp ćwiartkowy);
 \item
-  kropki nad/pod wąsami to wartości zmiennej większe od
+  kropki przed oraz za wąsami to wartości zmiennej większe od
   \(Q_3 + 1,5 \textrm{IQR}\) lub mniejsze od \(Q_1 - 1,5 \textrm{IQR}\).
 \end{itemize}
 
-Interpretacja pudełka:
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{./boxPlotExample} \caption{Wykres pudełkowy}\label{fig:boxplot}
+\end{figure}
+
+Interpretacja pudełek:
 
 \begin{itemize}
 \tightlist
 \item
   linia pozioma w środku pudełka określa przeciętny poziom zjawiska;
 \item
-  wysokość pudełka oraz wąsów określa zmienność (im większe wąsy/wysokość tym większa zmienność);
+  długość pudełka oraz wąsów określa zmienność (im większe wąsy/długość pudełka
+  tym większa zmienność);
 \item
-  kropki nad/pod wąsami to \textbf{obserwacje nietypowe}.
+  kropki przed oraz za wąsami
+  to \textbf{obserwacje nietypowe} (albo \textbf{wartości odstające}).
 \end{itemize}
 
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{./box-plot-0} \caption{Wykres pudełkowy}\label{fig:boxplot}
-\end{figure}
+Zatem dolny rozkład z rysunku \ref{fig:boxplot} ma mniejszą wartość
+średnią oraz większą zmienność od rozkładu górnego. Dolny
+rozkład posiada też wartości odstające, a górny nie.
 
 Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako na przykład górne/dolne
 1\% wszystkich wartości (bo wtedy \textbf{każdy rozkład} miałby wartości nietypowe),
@@ -4464,9 +4472,9 @@ pielęgniarek/pielęgniarzy.
 \item
   Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.
 \item
-  Płeć i wiek są skorelowane ze zmianą miejsca pracy.
+  Płeć i staż są skorelowane ze zmianą miejsca pracy.
 \item
-  Płeć, wiek oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
+  Płeć, staż oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
 \end{enumerate}
 
 \hypertarget{metoda-2}{%
@@ -5859,7 +5867,7 @@ lista zmiennych oraz okna i strzałki pozwalające
 wygodnie wybrać to co ma być analizowane. Jest to tak proste
 że wystarczy przyjrzeć się przykładowemu rysunkowi żeby
 wiedzieć jak postępować. Przykładową analizę zależności
-pomiędzy zmiennymi nominalnymi \texttt{zamiarOklasa} oraz \texttt{staz.klasa} przedstawia rysunek @(fig:tabeleKrzyzowe).
+pomiędzy zmiennymi nominalnymi \texttt{zamiarOklasa} oraz \texttt{staz.klasa} przedstawia rysunek \ref{fig:tabeleKrzyzowe}.
 
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{./tabele_krzyzowe} \caption{Tabele krzyżowe}\label{fig:tabeleKrzyzowe}

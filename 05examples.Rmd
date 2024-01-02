@@ -1041,8 +1041,8 @@ pielęgniarek/pielęgniarzy.
  
 2. Konflikt personalny zmniejsza przywiązanie do miejsca pracy.
 3. Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.
-4. Płeć i wiek są skorelowane ze zmianą miejsca pracy.
-5. Płeć, wiek oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
+4. Płeć i staż są skorelowane ze zmianą miejsca pracy.
+5. Płeć, staż oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
 
 ### Metoda
 

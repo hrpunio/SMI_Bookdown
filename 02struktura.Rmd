@@ -722,26 +722,32 @@ ggarrange(h1.b, h1.f, ncol = 2, nrow = 1)
 
 Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (**box-plot**).
 
-Konstrukcja pudełka na wykresie (por rys. \@(fig:boxplot)):
+Pudełka na wykresie pudełkowym są rysowane według następujących zasad 
+(por rysunek \@ref(fig:boxplot)):
 
-* górny dolny bok pudełka jest równy kwartylom;
+* lewy i prawy bok pudełka jest równy kwartylom;
 * linia pionowa w środku pudełka jest równa medianie;
 * linie poziome (zwane wąsami) mają długość równą $Q_1 - 1,5 \textrm{IQR}$ 
   oraz $Q_3 + \textrm{IQR}$
   (dla przypomnienia: $Q_1$, $Q_3$ to kwartyle, zaś $\textrm{IQR}$ to rozstęp ćwiartkowy);
-* kropki nad/pod wąsami to wartości zmiennej większe od
+* kropki przed oraz za wąsami to wartości zmiennej większe od
   $Q_3 + 1,5 \textrm{IQR}$ lub mniejsze od $Q_1 - 1,5 \textrm{IQR}$.
+
+```{r boxplot, out.width="80%", fig.cap = "Wykres pudełkowy"}
+knitr::include_graphics("./boxPlotExample.png")
+```
   
-Interpretacja pudełka:
+Interpretacja pudełek:
 
 * linia pozioma w środku pudełka określa przeciętny poziom zjawiska;
-* wysokość pudełka oraz wąsów określa zmienność (im większe wąsy/wysokość tym większa zmienność);
-* kropki nad/pod wąsami to **obserwacje nietypowe**.
+* długość pudełka oraz wąsów określa zmienność (im większe wąsy/długość pudełka
+  tym większa zmienność);
+* kropki przed oraz za wąsami 
+  to **obserwacje nietypowe** (albo **wartości odstające**).
 
-
-```{r boxplot, out.width="90%", fig.cap = "Wykres pudełkowy"}
-knitr::include_graphics("./box-plot-0.jpg")
-```
+Zatem dolny rozkład z rysunku \@ref(fig:boxplot) ma mniejszą wartość
+średnią oraz większą zmienność od rozkładu górnego. Dolny
+rozkład posiada też wartości odstające, a górny nie.
 
 Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako na przykład górne/dolne
 1% wszystkich wartości (bo wtedy **każdy rozkład** miałby wartości nietypowe),

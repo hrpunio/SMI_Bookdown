@@ -812,28 +812,34 @@ Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu g
 <div id="wykres-pudełkowy" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Wykres pudełkowy</h3>
 <p>Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (<strong>box-plot</strong>).</p>
-<p>Konstrukcja pudełka na wykresie (por rys. @(fig:boxplot)):</p>
+<p>Pudełka na wykresie pudełkowym są rysowane według następujących zasad
+(por rysunek <a href="analiza1z.html#fig:boxplot">2.4</a>):</p>
 <ul>
-<li>górny dolny bok pudełka jest równy kwartylom;</li>
+<li>lewy i prawy bok pudełka jest równy kwartylom;</li>
 <li>linia pionowa w środku pudełka jest równa medianie;</li>
 <li>linie poziome (zwane wąsami) mają długość równą <span class="math inline">\(Q_1 - 1,5 \textrm{IQR}\)</span>
 oraz <span class="math inline">\(Q_3 + \textrm{IQR}\)</span>
 (dla przypomnienia: <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_3\)</span> to kwartyle, zaś <span class="math inline">\(\textrm{IQR}\)</span> to rozstęp ćwiartkowy);</li>
-<li>kropki nad/pod wąsami to wartości zmiennej większe od
+<li>kropki przed oraz za wąsami to wartości zmiennej większe od
 <span class="math inline">\(Q_3 + 1,5 \textrm{IQR}\)</span> lub mniejsze od <span class="math inline">\(Q_1 - 1,5 \textrm{IQR}\)</span>.</li>
 </ul>
-<p>Interpretacja pudełka:</p>
-<ul>
-<li>linia pozioma w środku pudełka określa przeciętny poziom zjawiska;</li>
-<li>wysokość pudełka oraz wąsów określa zmienność (im większe wąsy/wysokość tym większa zmienność);</li>
-<li>kropki nad/pod wąsami to <strong>obserwacje nietypowe</strong>.</li>
-</ul>
 <div class="figure"><span style="display:block;" id="fig:boxplot"></span>
-<img src="box-plot-0.jpg" alt="Wykres pudełkowy" width="90%" />
+<img src="boxPlotExample.png" alt="Wykres pudełkowy" width="80%" />
 <p class="caption">
 Rysunek 2.4: Wykres pudełkowy
 </p>
 </div>
+<p>Interpretacja pudełek:</p>
+<ul>
+<li>linia pozioma w środku pudełka określa przeciętny poziom zjawiska;</li>
+<li>długość pudełka oraz wąsów określa zmienność (im większe wąsy/długość pudełka
+tym większa zmienność);</li>
+<li>kropki przed oraz za wąsami
+to <strong>obserwacje nietypowe</strong> (albo <strong>wartości odstające</strong>).</li>
+</ul>
+<p>Zatem dolny rozkład z rysunku <a href="analiza1z.html#fig:boxplot">2.4</a> ma mniejszą wartość
+średnią oraz większą zmienność od rozkładu górnego. Dolny
+rozkład posiada też wartości odstające, a górny nie.</p>
 <p>Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako na przykład górne/dolne
 1% wszystkich wartości (bo wtedy <strong>każdy rozkład</strong> miałby wartości nietypowe),
 ale jako wartości mniejsze/większe od <span class="math inline">\(Q_* \pm 1,5 \times \mathrm{IQR}\)</span>.

@@ -449,7 +449,7 @@ lista zmiennych oraz okna i strzałki pozwalające
 wygodnie wybrać to co ma być analizowane. Jest to tak proste
 że wystarczy przyjrzeć się przykładowemu rysunkowi żeby
 wiedzieć jak postępować. Przykładową analizę zależności
-pomiędzy zmiennymi nominalnymi `zamiarOklasa` oraz `staz.klasa` przedstawia rysunek \@(fig:tabeleKrzyzowe).
+pomiędzy zmiennymi nominalnymi `zamiarOklasa` oraz `staz.klasa` przedstawia rysunek \@ref(fig:tabeleKrzyzowe).
 
 ```{r tabeleKrzyzowe, out.width=jamovi.screen, fig.cap = "Tabele krzyżowe"}
 knitr::include_graphics("./tabele_krzyzowe.png")
