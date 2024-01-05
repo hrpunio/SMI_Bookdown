@@ -1039,10 +1039,19 @@ pielęgniarek/pielęgniarzy.
 1. Wysoka satysfakcja z pracy oraz satysfakcja z wynagrodzenia zmniejszają
    zamiar zmiany miejsca pracy.
  
-2. Konflikt personalny zmniejsza przywiązanie do miejsca pracy.
+2. Konflikt personalny zwiększa zamiar zmiany miejsca pracy.
+
 3. Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.
-4. Płeć i staż są skorelowane ze zmianą miejsca pracy.
-5. Płeć, staż oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
+
+4. Zamiar zmiany miejsca pracy zależy od płci i stażu pracy.
+
+5. Praca na oddziale ratunkowym lub intensywnej terapii zwiększa
+   zamiar zmiany miejsca pracy
+
+6. Zmianę miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia
+   konfliktu personalnego, przywiązania do miejsca pracy,
+   pracy na oddziale ratunkowym lub intensywnej terapii, 
+   stażu i poziom satysfakcji.
 
 ### Metoda
 
@@ -1059,14 +1068,14 @@ czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
 
 ### Zastosowane metody statystyczne
 
-* Do weryfikacji hipotez 1--4 wykorzystano model regresji liniowej.
+* Do weryfikacji hipotez 1--5 wykorzystano model regresji liniowej.
 
-* Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.
+* Do weryfikacji hipotezy 6 wykorzystano model regresji logistycznej.
 
 ### Wyniki
 
 Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
-od razu do weryfikacji hipotez 1--5.
+od razu do weryfikacji hipotez 1--6.
 
 Macierz korelacji dla zmiennych `zzp`, `sp`, `sw`, `kpw`, `kpp` oraz `po`:
 
@@ -1150,16 +1159,20 @@ Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
 zmienić pracę to ją zmieni.
 Niech to **bardzo chce** będzie wtedy kiedy wartość `zzp` wynosi co najmniej 12.
 Zmienną `zzp` należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją `zp`), która 
-przymuje wartość 1 jeżeli `zzp` jest większe
-równe od 12 lub wartość 0 jeżeli `zzp` jest mniejsze od 12.
+przymuje wartość 0 jeżeli `zzp` jest większe
+równe od 12 lub wartość 1 jeżeli `zzp` jest mniejsze od 12.
 Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
-zmianę miejsca pracy (zmieni=1, nie zmieni=0).
+zmianę miejsca pracy (zmieni=0, nie zmieni=1).
+
+Zakładamy, że `zp`, podobnie jak w przypadku zamiaru,
+jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz`, `plec` oraz `roddzial`.
 
 ```{r, message=FALSE, warning=FALSE}
 ## Logistyczna
 e1 <- d1  %>% mutate (zp=case_when(zzp < 12 ~ 1,  TRUE ~ 0))
 
-glm.1 <- glm(zp ~ sp + kpw, data = e1, family = "binomial")
+glm.1 <- glm(zp ~ sp + sw + kpw + kpp + po + staz + plec + roddzial, 
+             data = e1, family = "binomial")
 ##summary(glm.1)
 ## oryginalne wartości współczynników
 gml.1.coef <- as.data.frame(coef(summary(glm.1)))
@@ -1178,8 +1191,12 @@ kable(gml.1.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
 ```
 
-Zmienna `kpw` okazała się nieistotna. Szacujemy model, w którym odejście
-objaśnia tylko satysfakcja:
+Wartości większości współczynników okazały się nieistotne. Mówięc konkretniej na poziomie
+istotności 0,05 tylko `sp` jest istotna (`roddzialtak` jest także istotny ale na poziomie 0,1).
+
+Postępując podobnie jak w przypadku  „normalnej” regresji eliminujemy
+iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
+do modelu w którym odejście z pracy objaśnia tylko satysfakcja:
 
 ```{r, message=F, warning=F}
 glm.2 <- glm(zp ~ sp , data = e1, family = "binomial")
@@ -1232,6 +1249,16 @@ ggroc(roc_obj,
   geom_abline(intercept = 0, slope = 1) +
   ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')'))
 ```
+
+### Wnioski
+
+* Satysfakcja jest większym predyktorem zamiaru zmiany pracy niż konflikt personalny 
+  ze współpracownikami.
+  Pozostałe czynniki okazały się nieistotne (hipotezy 1--5).
+
+* Satysfakcja jest jedynym czynnikiem  istotnie wpływającym na zmianę miejsca pracy.
+  Pozostałe czynniki okazały się nieistotne (hipoteza 6).
+
 
 ## Formularze ankiet
 

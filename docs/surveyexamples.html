@@ -196,6 +196,7 @@
 <li><a href="surveyexamples.html#metoda-2" id="toc-metoda-2"><span class="toc-section-number">5.4.2</span> Metoda</a></li>
 <li><a href="surveyexamples.html#zastosowane-metody-statystyczne-2" id="toc-zastosowane-metody-statystyczne-2"><span class="toc-section-number">5.4.3</span> Zastosowane metody statystyczne</a></li>
 <li><a href="surveyexamples.html#wyniki" id="toc-wyniki"><span class="toc-section-number">5.4.4</span> Wyniki</a></li>
+<li><a href="surveyexamples.html#wnioski-2" id="toc-wnioski-2"><span class="toc-section-number">5.4.5</span> Wnioski</a></li>
 </ul></li>
 <li><a href="surveyexamples.html#formularze-ankiet" id="toc-formularze-ankiet"><span class="toc-section-number">5.5</span> Formularze ankiet</a>
 <ul>
@@ -1054,10 +1055,15 @@ pielęgniarek/pielęgniarzy.</p>
 <ol style="list-style-type: decimal">
 <li><p>Wysoka satysfakcja z pracy oraz satysfakcja z wynagrodzenia zmniejszają
 zamiar zmiany miejsca pracy.</p></li>
-<li><p>Konflikt personalny zmniejsza przywiązanie do miejsca pracy.</p></li>
+<li><p>Konflikt personalny zwiększa zamiar zmiany miejsca pracy.</p></li>
 <li><p>Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.</p></li>
-<li><p>Płeć i staż są skorelowane ze zmianą miejsca pracy.</p></li>
-<li><p>Płeć, staż oraz poziom satysfakcji wpływają na zmianę miejsca pracy.</p></li>
+<li><p>Zamiar zmiany miejsca pracy zależy od płci i stażu pracy.</p></li>
+<li><p>Praca na oddziale ratunkowym lub intensywnej terapii zwiększa
+zamiar zmiany miejsca pracy</p></li>
+<li><p>Zmianę miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia
+konfliktu personalnego, przywiązania do miejsca pracy,
+pracy na oddziale ratunkowym lub intensywnej terapii,
+stażu i poziom satysfakcji.</p></li>
 </ol>
 </div>
 <div id="metoda-2" class="section level3" number="5.4.2">
@@ -1076,14 +1082,14 @@ czy pracują na oddziale ratunkowym/intensywnej terapii (<code>roddzial</code>).
 <div id="zastosowane-metody-statystyczne-2" class="section level3" number="5.4.3">
 <h3><span class="header-section-number">5.4.3</span> Zastosowane metody statystyczne</h3>
 <ul>
-<li><p>Do weryfikacji hipotez 1–4 wykorzystano model regresji liniowej.</p></li>
-<li><p>Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.</p></li>
+<li><p>Do weryfikacji hipotez 1–5 wykorzystano model regresji liniowej.</p></li>
+<li><p>Do weryfikacji hipotezy 6 wykorzystano model regresji logistycznej.</p></li>
 </ul>
 </div>
 <div id="wyniki" class="section level3" number="5.4.4">
 <h3><span class="header-section-number">5.4.4</span> Wyniki</h3>
 <p>Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
-od razu do weryfikacji hipotez 1–5.</p>
+od razu do weryfikacji hipotez 1–6.</p>
 <p>Macierz korelacji dla zmiennych <code>zzp</code>, <code>sp</code>, <code>sw</code>, <code>kpw</code>, <code>kpp</code> oraz <code>po</code>:</p>
 <pre><code>##          zzp      sp      sw     kpw     kpp      po    staz
 ## zzp   1.0000 -0.5095 -0.1644  0.3245  0.3796 -0.3325  0.0666
@@ -1249,11 +1255,22 @@ Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).</p>
 zmienić pracę to ją zmieni.
 Niech to <strong>bardzo chce</strong> będzie wtedy kiedy wartość <code>zzp</code> wynosi co najmniej 12.
 Zmienną <code>zzp</code> należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją <code>zp</code>), która
-przymuje wartość 1 jeżeli <code>zzp</code> jest większe
-równe od 12 lub wartość 0 jeżeli <code>zzp</code> jest mniejsze od 12.
+przymuje wartość 0 jeżeli <code>zzp</code> jest większe
+równe od 12 lub wartość 1 jeżeli <code>zzp</code> jest mniejsze od 12.
 Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
-zmianę miejsca pracy (zmieni=1, nie zmieni=0).</p>
+zmianę miejsca pracy (zmieni=0, nie zmieni=1).</p>
+<p>Zakładamy, że <code>zp</code>, podobnie jak w przypadku zamiaru,
+jest objaśniana przez <code>sp</code>, <code>sw</code>, <code>kpw</code>, <code>kpp</code>, <code>po</code>, <code>staz</code>, <code>plec</code> oraz <code>roddzial</code>.</p>
 <table>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="16%" />
+<col width="10%" />
+<col width="8%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Parametr</th>
@@ -1268,35 +1285,92 @@ zmianę miejsca pracy (zmieni=1, nie zmieni=0).</p>
 <tbody>
 <tr class="odd">
 <td align="left">(Intercept)</td>
-<td align="right">-4.309</td>
-<td align="right">2.896</td>
-<td align="right">-1.488</td>
-<td align="right">0.137</td>
+<td align="right">-4.702</td>
+<td align="right">4.599</td>
+<td align="right">-1.022</td>
+<td align="right">0.307</td>
 <td align="left">0.010</td>
-<td align="left">0.000 2.910</td>
+<td align="left">0.000 82.270</td>
 </tr>
 <tr class="even">
 <td align="left">sp</td>
-<td align="right">0.802</td>
-<td align="right">0.291</td>
-<td align="right">2.761</td>
-<td align="right">0.006</td>
-<td align="left">2.230</td>
-<td align="left">1.330 4.340</td>
+<td align="right">1.082</td>
+<td align="right">0.480</td>
+<td align="right">2.254</td>
+<td align="right">0.024</td>
+<td align="left">2.950</td>
+<td align="left">1.300 9.150</td>
 </tr>
 <tr class="odd">
+<td align="left">sw</td>
+<td align="right">-0.082</td>
+<td align="right">0.143</td>
+<td align="right">-0.577</td>
+<td align="right">0.564</td>
+<td align="left">0.920</td>
+<td align="left">0.680 1.220</td>
+</tr>
+<tr class="even">
 <td align="left">kpw</td>
-<td align="right">-0.221</td>
-<td align="right">0.301</td>
-<td align="right">-0.734</td>
-<td align="right">0.463</td>
-<td align="left">0.800</td>
-<td align="left">0.440 1.510</td>
+<td align="right">-0.415</td>
+<td align="right">0.410</td>
+<td align="right">-1.013</td>
+<td align="right">0.311</td>
+<td align="left">0.660</td>
+<td align="left">0.280 1.510</td>
+</tr>
+<tr class="odd">
+<td align="left">kpp</td>
+<td align="right">0.154</td>
+<td align="right">0.386</td>
+<td align="right">0.399</td>
+<td align="right">0.690</td>
+<td align="left">1.170</td>
+<td align="left">0.620 2.530</td>
+</tr>
+<tr class="even">
+<td align="left">po</td>
+<td align="right">0.037</td>
+<td align="right">0.036</td>
+<td align="right">1.028</td>
+<td align="right">0.304</td>
+<td align="left">1.040</td>
+<td align="left">0.970 1.130</td>
+</tr>
+<tr class="odd">
+<td align="left">staz</td>
+<td align="right">-0.107</td>
+<td align="right">0.071</td>
+<td align="right">-1.512</td>
+<td align="right">0.130</td>
+<td align="left">0.900</td>
+<td align="left">0.760 1.020</td>
+</tr>
+<tr class="even">
+<td align="left">plecM</td>
+<td align="right">13.102</td>
+<td align="right">2596.962</td>
+<td align="right">0.005</td>
+<td align="right">0.996</td>
+<td align="left">489784.870</td>
+<td align="left">0.000 NA</td>
+</tr>
+<tr class="odd">
+<td align="left">roddzialtak</td>
+<td align="right">-1.817</td>
+<td align="right">1.074</td>
+<td align="right">-1.692</td>
+<td align="right">0.091</td>
+<td align="left">0.160</td>
+<td align="left">0.020 1.310</td>
 </tr>
 </tbody>
 </table>
-<p>Zmienna <code>kpw</code> okazała się nieistotna. Szacujemy model, w którym odejście
-objaśnia tylko satysfakcja:</p>
+<p>Wartości większości współczynników okazały się nieistotne. Mówięc konkretniej na poziomie
+istotności 0,05 tylko <code>sp</code> jest istotna (<code>roddzialtak</code> jest także istotny ale na poziomie 0,1).</p>
+<p>Postępując podobnie jak w przypadku „normalnej” regresji eliminujemy
+iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
+do modelu w którym odejście z pracy objaśnia tylko satysfakcja:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1338,6 +1412,16 @@ objaśnia tylko satysfakcja:</p>
 <p>Stąd: czułość 0.98; swoistość 0.33.</p>
 <p>Krzywą ROC przedstawiono na rysunku:</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="70%" /></p>
+</div>
+<div id="wnioski-2" class="section level3" number="5.4.5">
+<h3><span class="header-section-number">5.4.5</span> Wnioski</h3>
+<ul>
+<li><p>Satysfakcja jest większym predyktorem zamiaru zmiany pracy niż konflikt personalny
+ze współpracownikami.
+Pozostałe czynniki okazały się nieistotne (hipotezy 1–5).</p></li>
+<li><p>Satysfakcja jest jedynym czynnikiem istotnie wpływającym na zmianę miejsca pracy.
+Pozostałe czynniki okazały się nieistotne (hipoteza 6).</p></li>
+</ul>
 </div>
 </div>
 <div id="formularze-ankiet" class="section level2" number="5.5">

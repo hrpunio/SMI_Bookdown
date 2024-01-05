@@ -87,7 +87,7 @@
  \setkeys{Gin}{width=210mm,height=300mm}
  \vbox to \textheight{\vss%
    \hbox to\textwidth{\hss
-     \includegraphics[width=210mm]{FN_sepia_cover-crop.pdf}\hss}
+     \includegraphics[width=210mm]{Cover_02.png}\hss}
    \vss}
 \endgroup
 \end{titlepage}
@@ -4463,13 +4463,19 @@ pielęgniarek/pielęgniarzy.
   Wysoka satysfakcja z pracy oraz satysfakcja z wynagrodzenia zmniejszają
   zamiar zmiany miejsca pracy.
 \item
-  Konflikt personalny zmniejsza przywiązanie do miejsca pracy.
+  Konflikt personalny zwiększa zamiar zmiany miejsca pracy.
 \item
   Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.
 \item
-  Płeć i staż są skorelowane ze zmianą miejsca pracy.
+  Zamiar zmiany miejsca pracy zależy od płci i stażu pracy.
 \item
-  Płeć, staż oraz poziom satysfakcji wpływają na zmianę miejsca pracy.
+  Praca na oddziale ratunkowym lub intensywnej terapii zwiększa
+  zamiar zmiany miejsca pracy
+\item
+  Zmianę miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia
+  konfliktu personalnego, przywiązania do miejsca pracy,
+  pracy na oddziale ratunkowym lub intensywnej terapii,
+  stażu i poziom satysfakcji.
 \end{enumerate}
 
 \hypertarget{metoda-2}{%
@@ -4491,16 +4497,16 @@ czy pracują na oddziale ratunkowym/intensywnej terapii (\texttt{roddzial}).
 
 \begin{itemize}
 \item
-  Do weryfikacji hipotez 1--4 wykorzystano model regresji liniowej.
+  Do weryfikacji hipotez 1--5 wykorzystano model regresji liniowej.
 \item
-  Do weryfikacji hipotezy 5 wykorzystano model regresji logistycznej.
+  Do weryfikacji hipotezy 6 wykorzystano model regresji logistycznej.
 \end{itemize}
 
 \hypertarget{wyniki}{%
 \subsection{Wyniki}\label{wyniki}}
 
 Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
-od razu do weryfikacji hipotez 1--5.
+od razu do weryfikacji hipotez 1--6.
 
 Macierz korelacji dla zmiennych \texttt{zzp}, \texttt{sp}, \texttt{sw}, \texttt{kpw}, \texttt{kpp} oraz \texttt{po}:
 
@@ -4576,25 +4582,44 @@ Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
 zmienić pracę to ją zmieni.
 Niech to \textbf{bardzo chce} będzie wtedy kiedy wartość \texttt{zzp} wynosi co najmniej 12.
 Zmienną \texttt{zzp} należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją \texttt{zp}), która
-przymuje wartość 1 jeżeli \texttt{zzp} jest większe
-równe od 12 lub wartość 0 jeżeli \texttt{zzp} jest mniejsze od 12.
+przymuje wartość 0 jeżeli \texttt{zzp} jest większe
+równe od 12 lub wartość 1 jeżeli \texttt{zzp} jest mniejsze od 12.
 Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
-zmianę miejsca pracy (zmieni=1, nie zmieni=0).
+zmianę miejsca pracy (zmieni=0, nie zmieni=1).
+
+Zakładamy, że \texttt{zp}, podobnie jak w przypadku zamiaru,
+jest objaśniana przez \texttt{sp}, \texttt{sw}, \texttt{kpw}, \texttt{kpp}, \texttt{po}, \texttt{staz}, \texttt{plec} oraz \texttt{roddzial}.
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
 Parametr & Ocena & Błąd stand & z & p & OR & CI\\
 \hline
-(Intercept) & -4.309 & 2.896 & -1.488 & 0.137 & 0.010 & 0.000 2.910\\
+(Intercept) & -4.702 & 4.599 & -1.022 & 0.307 & 0.010 & 0.000 82.270\\
 \hline
-sp & 0.802 & 0.291 & 2.761 & 0.006 & 2.230 & 1.330 4.340\\
+sp & 1.082 & 0.480 & 2.254 & 0.024 & 2.950 & 1.300 9.150\\
 \hline
-kpw & -0.221 & 0.301 & -0.734 & 0.463 & 0.800 & 0.440 1.510\\
+sw & -0.082 & 0.143 & -0.577 & 0.564 & 0.920 & 0.680 1.220\\
+\hline
+kpw & -0.415 & 0.410 & -1.013 & 0.311 & 0.660 & 0.280 1.510\\
+\hline
+kpp & 0.154 & 0.386 & 0.399 & 0.690 & 1.170 & 0.620 2.530\\
+\hline
+po & 0.037 & 0.036 & 1.028 & 0.304 & 1.040 & 0.970 1.130\\
+\hline
+staz & -0.107 & 0.071 & -1.512 & 0.130 & 0.900 & 0.760 1.020\\
+\hline
+plecM & 13.102 & 2596.962 & 0.005 & 0.996 & 489784.870 & 0.000 NA\\
+\hline
+roddzialtak & -1.817 & 1.074 & -1.692 & 0.091 & 0.160 & 0.020 1.310\\
 \hline
 \end{tabular}
 
-Zmienna \texttt{kpw} okazała się nieistotna. Szacujemy model, w którym odejście
-objaśnia tylko satysfakcja:
+Wartości większości współczynników okazały się nieistotne. Mówięc konkretniej na poziomie
+istotności 0,05 tylko \texttt{sp} jest istotna (\texttt{roddzialtak} jest także istotny ale na poziomie 0,1).
+
+Postępując podobnie jak w przypadku „normalnej'' regresji eliminujemy
+iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
+do modelu w którym odejście z pracy objaśnia tylko satysfakcja:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
@@ -4620,6 +4645,19 @@ Stąd: czułość 0.98; swoistość 0.33.
 Krzywą ROC przedstawiono na rysunku:
 
 \includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-113-1}
+
+\hypertarget{wnioski-2}{%
+\subsection{Wnioski}\label{wnioski-2}}
+
+\begin{itemize}
+\item
+  Satysfakcja jest większym predyktorem zamiaru zmiany pracy niż konflikt personalny
+  ze współpracownikami.
+  Pozostałe czynniki okazały się nieistotne (hipotezy 1--5).
+\item
+  Satysfakcja jest jedynym czynnikiem istotnie wpływającym na zmianę miejsca pracy.
+  Pozostałe czynniki okazały się nieistotne (hipoteza 6).
+\end{itemize}
 
 \hypertarget{formularze-ankiet}{%
 \section{Formularze ankiet}\label{formularze-ankiet}}
