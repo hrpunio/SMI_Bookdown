@@ -1,32 +1,32 @@
 # Przykłady badań ankietowych {#surveyexamples}
 
 Uwaga: ankieta nie jest kolejną metodą statystyczną tylko techniką zbierania danych.
-Wszystkie metody już zostały przedstawione i żadna nowe nie będzie.
+Wszystkie metody już zostały przedstawione i żadnej nowej nie będzie.
 
 ## Jak zacząć badanie?
 
-Każde w tym ankietowe.
+Każde badanie, w tym ankietowe.
 
 Należy zastanowić się nad trzema sprawami: 
 
 1. Co chcemy ustalić? 
-2. Jakie dane są nam potrzebne żeby ustalić to co chcemy ustalić. 
+2. Jakie dane są nam potrzebne, żeby ustalić to co chcemy ustalić. 
 3. Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)
 
 
 **Co chcemy ustalić?**
 
-Najlepiej jakąś zależność. Na przykład: Stress a wypalenie zawodowe;
+Najlepiej jakąś zależność. Na przykład: stress a wypalenie zawodowe;
 satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej
 
 Może być od biedy opis czegoś lub porównanie czegoś z czymś. Przykłady:
-nadwaga wśród studentów wydziału zdrowia PSW; Analiza porównawcza
+nadwaga wśród studentów wydziału zdrowia PSW; analiza porównawcza
 wypalenia zawodowego pielęgniarek
 pracujących w różnych systemach opieki.
 
 **Co i jak mierzyć?**
 	
-Jeżeli mamy zamiar badań nadwagę, to powinniśmy zmierzyć masę ciała.
+Jeżeli mamy zamiar badać nadwagę, to powinniśmy zmierzyć masę ciała.
 Jeżeli celem jest ustalenie zależności pomiędzy stresem a wypaleniem
 zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenia.  Jak
 dotąd banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
@@ -78,31 +78,32 @@ Przykładowo chcemy się dowiedzieć czy i jak bardzo respondenci boją się COV
 W najprostszej wersji się po prostu pytamy: 
 **Czy pan/pani boi się COVID19?** i dajemy 
 respondentowi trzy możliwe  warianty odpowiedzi: Tak/Nie/Nie wiem. 
+Taki pomiar jest mocno zgrubny: ktoś 
+się może bać panicznie a ktoś inny dużo mniej. 
 
-Może też być pięć wariantów: bardzo się boję--boję się--ani/ani--nie boję się--zupełnie się nie boję.
+Subtelniejszy pomiar to wybór spośród pięciu wariantów: 
+bardzo się boję--boję się--trudno powiedzieć--nie boję się--zupełnie się nie boję.
 
 Taką skalę pomiarową określamy jak wiemy jako **porządkową**. Pomiary nie są liczbami,
 ale są uporządkowane.
-Rangi wartości są już liczbami (np 1--5 w drugim przykładzie), można je np. uśredniać
+Rangi wartości są już liczbami (np. 1--5 w przykładowej skali pięciowariantowej), 
+można je np. uśredniać
 Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali **Likerta**.
 Można sobie wymyślać skalę Likerta 7-punktową i więcej. 
 
 Naszym zdaniem powyżej 7 wariantów normalny respondent będzie miał problem 
-czy się bardziej-bardziej  czy bardziej-bardziej-bardziej boi.
+czy się bardziej-bardziej czy jednak bardziej-bardziej-bardziej boi.
 
 ### Skala pomiarowa czyli inwentarz albo kwestionariusz
 
-Ponieważ skala Likerta jest zgrubna to 
+Ponieważ skala Likerta, mimo że lepsza od pytań tak/nie,  jest ciągle zgrubna, to 
 uważa się powszechnie, że lepszy wynik da pomiar 
 wielokrotny. 
-W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej 
-precyzyjny. Tutaj pytamy się parę razy o to samo co
+W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej precyzyjny. Tutaj pytamy się parę razy o to samo co
 ma dać podobny efekt (mniejszy średni błąd pomiaru). 
 Taka seria pytań nosi też nazwę skali albo **inwentarza**.
 Nie pytamy się zatem **Czy pan/pani boi się COVID19?** tylko zadajemy serię
 pytań o strach względem COVID19:
-
-
 
 ::: {.example}
 **strach przed COVID19**
@@ -156,7 +157,7 @@ Odpowiadający ma do wyboru pięć wariantów odpowiedzi:
 ### Model pomiaru
 
 Ukryty czynnik (strach) kształtuje wartości indykatorów (odpowiedzi na pytania)
-Taki sposób pomiaru **ukrytego czynnika** (latent w języku) określa się
+Taki sposób pomiaru **ukrytego czynnika** (*latent* w języku angielskim) określa się
 mianem refleksyjnego (co jest kalką od *reflexive*). Na rysunku \@ref(fig:modelP)
 kierunek strzałki obrazuje zależność (czynnik→indykator)
 
@@ -182,8 +183,8 @@ dochody.
 Tylko jeden z trzech aspektów podwyższa mu SES;
 albo świetnie zarabiająca prostytutka bez matury.
 
-Jeżeli w czynniku refleksyjnym pominiemy z trzech indykatorów to nic się
-nie stanie oprócz tego że pomiar będzie mniej precyzyjny. Jeżeli
+Jeżeli w czynniku refleksyjnym pominiemy jeden z trzech indykatorów, to nic się
+nie stanie oprócz tego, że pomiar będzie mniej precyzyjny. Jeżeli
 w czynniku formatywnym pominiemy indykator, to popełniamy gruby błąd, bo pomijamy
 istotny składnik całości.
 
@@ -200,7 +201,7 @@ o strach przed COVID i w każdym pytaniu jak bardzo ktoś się boi, albo jak
 bardzo mu serce bije, ale w jednym z pytań zapytamy **nie boję się COVID**,
 to ranga 5 odpowiada uczuciu **braku strachu**. Rangi w pytaniach odwróconych
 należy przeliczyć (odwrócić): 1 zamienić na 5, 2 na 4 itd...
-Jeżeli używamy cudzych skal to w opisie powinno być wskazane które
+Jeżeli używamy cudzych skal to w opisie powinno być wskazane, które
 pytania są odwrócone.
 
 **Zalecany schemat postępowania jeżeli w ankiecie mają być mierzone

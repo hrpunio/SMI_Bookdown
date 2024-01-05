@@ -17,7 +17,7 @@ też wersja Jamovi365, którą moża się posługiwać w przeglądarce i wtedy n
 instalować na swoim komputerze.
 
 W naszym podręczniku pokazujemy jak uprawiać statystykę z tradycyjną wersją Jamovi.
-Po zainstalowaniu uruchamiamy program, którego ekrano startowy wygląda jak
+Po zainstalowaniu uruchamiamy program, którego ekran startowy wygląda jak
 na rysunku \@ref(fig:mainscreen).
 
 ```{r mainscreen, out.width=jamovi.screen, fig.cap = "Ekran startowy Jamovi"}
