@@ -156,8 +156,8 @@ Co więcej dobrym przybliżeniem zmienności średniej-w-próbie
 jest prosta formuła $s/\sqrt{n}$ gdzie $n$ jest liczebnością próby a $s$ jest odchyleniem
 standardowym w populacji z której pobrano próbę. 
 
-Jeżeli mamy dwa rózne estymatory służące do oszacowania parametru, 
-oba są **nieobciążone** oraz **zgodne**, to który wybrać?
+Jeżeli mamy dwa różne estymatory służące do oszacowania parametru
+i oba są **nieobciążone** oraz **zgodne**, to który wybrać?
 Ten która ma **mniejszą wariancję**. Taki estymator nazywa się **efektywny**.
 
 Estymator zatem powinien być **nieobciążony**, **zgodny** oraz **efektywny** (czyli mieć
@@ -177,7 +177,7 @@ w <- as.vector(na.omit(r$wiek))
 wN <- length(w)
 ```
 
-W wyborach samorządowychych w Polsce w roku 2018 o mandat radnego
+W wyborach samorządowych w Polsce w roku 2018 o mandat radnego
 sejmików wojewódzkich ubiegało się `r wN` kandydatów. 
 Znamy szczegółowe dane odnośnie wieku każdego kandydata,
 bo to zostało publicznie podane przez Państwową Komisję Wyborczą.
@@ -501,7 +501,7 @@ Dobrze by było wiedzieć jak bardzo wiarygodna jest ta wartość (zwana oceną 
 na podstawie konkretnego estymatora, inaczej mówiąc jak dużo mogliśmy się pomylić.
 
 Do oceny tej wiarygodności można użyć wariancji-średniej-z-próby (która nazywa się
-**wariancją błędu** albo **error variance**).
+**wariancją błędu** albo *error variance*).
 Jeżeli wariancja błędu jest duża, to w pojedynczej próbie mogą wystąpić wartości
 znacznie różniące się od prawdziwej średniej; jeżeli jest mała to takie bardzo różniące
 się od prawdziwej średniej wartości mają małe szanse na zaistnienie. Do tego w przypadku rozkładu

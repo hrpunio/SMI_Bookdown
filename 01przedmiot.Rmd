@@ -194,7 +194,7 @@ Zmienne ukryte określa się mianem **confunding factors** (**czynniki zakłóca
 Rysunek \@ref(fig:fluor) przedstawia zależność pomiędzy wynikiem (*outcome*), przyczyną
 oraz czynnikami zakłócającymi na przykładzie zależności dotyczącej domniemanego
 wpływu fluoryzowania wody na zwiększenie ryzyka zgonów z powodu nowotworów.
-W badaniu którego autor uważał, że udowodnił związek fluoryzowanie→nowotór
+W badaniu, którego autor uważał, że udowodnił związek fluoryzowanie→nowotwór
 porównał on współczynniki zgonów z miast fluoryzujących oraz
 nie fluoryzujących wodę. Okazało się, że przeciętnie współczynnik ten był wyższy
 w grupie miast fluoryzujących wodę. Czy to świadczy, że fluoryzowanie wody
@@ -246,7 +246,7 @@ gdzie: ATT oznacza ATE w grupie eksperymentalnej
 a ATC oznacza ATE w grupie kontrolnej.
 
 ::: {.example}
-**Kawa a ocena (kontynuuacja)**
+**Kawa a ocena (kontynuacja)**
 
 Można przypuszczać, że oprócz kawy na wynik egzaminu ma wpływ np. wrodzone predyspozycje
 w dziedzinie intelektualnej oraz czas poświęcony na naukę.
@@ -274,25 +274,25 @@ Badania analityczne dzielimy dalej na:
 
 * **przekrojowe**.
 
-Badanie **kohortowe** (**cohort study**): wieloletnie badania na dużej grupie jednostek.
+Badanie **kohortowe** (*cohort study*): wieloletnie badania na dużej grupie jednostek.
 Pomiar zaczynamy od ekspozycji kończymy na wyniku/chorobie/zgonie 
 (takie badanie nazywamy **prospektywnym**.
 Problem: koszty (np. choroby rzadkie wymagają ogromnych kohort).
 
-Badanie **kliniczno-kontrolne** (**case-control study**): **restrospektywna** ocena ekspozycji
+Badanie **kliniczno-kontrolne** (*case-control study*): **retrospektywna** ocena ekspozycji
 dla jednostek, u których stwierdzono wynik (chorobę). Grupę kontrolną tworzą **dopasowane** jednostki
 u których wyniku nie stwierdzono (dopasowane w sensie, że są podobne podobne.)
 W praktyce badanie kliniczno-kontrolne to badanie chorych, którzy zgłosili się do przychodni;
 grupą kontrolną są podobni chorzy (wiek, płeć) z innej przychodni :-)
 
-Problem1: błąd pamięci (**recall bias**) pacjenci -- zwłaszcza zdrowi -- słabo pamiętają
+Problem1: błąd pamięci (*recall bias*) pacjenci -- zwłaszcza zdrowi -- słabo pamiętają
 fakty które miały miejsce lata temu.
 Problem2: trudności z **dopasowaniem** grupy kontrolnej (łatwiej powiedzieć niż zrobić.)
 
-Badania **prospektywne**: od przyczyny do skutku (cohort); badanie **retrospektywne**:
+Badania **prospektywne**: od przyczyny do skutku (*cohort*); badanie **retrospektywne**:
 od skutku do przyczyny (case-control)
 
-Badanie przekrojowe (**cross-sectional study**): badanie związku między wynikiem a ekspozycją
+Badanie przekrojowe (*cross-sectional study*): badanie związku między wynikiem a ekspozycją
 bez podziału na grupę eksperymentalną i kontrolną.
 
 Problem: nie da się określić związku przyczyna-skutek w taki sposób jaki się stosuje w badaniach analitycznych,
@@ -310,7 +310,7 @@ tylko **kliniczno-kontrolne**.
 :::
 
 ::: {.example}
-**Kawa a ocena (kontynuuacja)**
+**Kawa a ocena (kontynuacja)**
 
 można oprócz pytania studentów o ilość kawy i wynik pytać ich jeszcze o czas poświęcony
 na naukę oraz o średnią ze studiów (wrodzone predyspozycje w dziedzinie intelektualnej). 
@@ -321,13 +321,13 @@ albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale \
 
 :::
 
-Badanie **ekologiczne**: badanie (przekrojowe) zależności pomiędzy danymi **zagregowanymi** a nie indywidualnymi.
-Przykładowo zależność pomiędzy przeciętną
+Badanie **ekologiczne**: badanie (przekrojowe) zależności pomiędzy wielkościami **zagregowanymi** a **indywidualnymi**.
+Przykładowo wielkości zagregowane, to zależność pomiędzy przeciętną
 wielkością dochodu narodowego, a przeciętną oczekiwaną długością życia np. na poziomie kraju.
 
 Problem: błąd ekologizmu (**ecological fallacy**.) Zależności na poziomie indywidualnym oraz zagregowanym
-mogą być różne. Można oczekiwać że im większy dochód tym osoba dłużej żyje (poziom indywidualny.) Jeżeli
-w kraju występują duże różnice w dochodach (na przykład USA) to przeciętnie dochód jest wysoki, ale jest
+mogą być różne. Można oczekiwać, że im większy dochód tym osoba dłużej żyje (poziom indywidualny.) Jeżeli
+w kraju występują duże różnice w dochodach (na przykład w USA) to przeciętnie dochód jest wysoki, ale jest
 dużo osób o niskich dochodach, o ograniczonym dostępie do służby zdrowia, i krótszej oczekiwanej długości życia.
 Przeciętna oczekiwana długość życia na poziomie całego kraju jest niższa (bo jest sumą wysokiej
 dla bogatych + niskiej dla biednych);
@@ -392,7 +392,7 @@ Badano 27,603 osoby.
 Podstawowym narzędziem badawczym jak się łatwo domyśleć była ankieta,
 a przyczyny WHC ustalono za pomocą metody regresji wielorakiej.
 
-Teraz porówajmy koszty badania #1, w którym jedynie starano się ustalić że sól szkodzi (lub nie)
+Teraz porównajmy koszty badania #1, w którym jedynie starano się ustalić że sól szkodzi (lub nie)
 z badaniem #2, w którym starano się ustalić przyczyny stanów psychicznych badanych-:)
 :::
 

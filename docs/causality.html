@@ -269,7 +269,7 @@ Rysunek 4.1: Metody statystycznej weryfikacji zależności pomiędzy zmiennymi
 </p>
 </div>
 <p>Optymistyczną informacją jest że metod (oznaczonych krojem pogrubionym na diagramie),
-które omawiamy dalej w rodziale, jest raptem siedem czyli niedużo.</p>
+które omawiamy dalej w rozdziale, jest raptem siedem czyli niedużo.</p>
 <div id="dwie-zmienne-nominalne" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Dwie zmienne nominalne</h2>
 <div id="oddsSec" class="section level3" number="4.1.1">
@@ -403,7 +403,7 @@ ryzyka względnego/ilorazu szans zaś ryzyko względne/iloraz szans z próby.</p
 <p>Standardem jest obliczanie dla ryzyka względnego oraz ilorazu szans
 oprócz ocen punktowych także
 przedziałów ufności czyli podawania dwóch wartości, pomiędzy którymi
-z zadanym prawdopodobieństem znajduje się nieznana wartość szacowanego
+z zadanym prawdopodobieństwem znajduje się nieznana wartość szacowanego
 parametru.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-23" class="example"><strong>4.4  </strong></span><strong>Narciarze Paulinga (przedziały ufności)</strong></p>
@@ -610,7 +610,7 @@ sprawdzić,
 <p>Proszę
 zwrócić uwagę że <strong>rozkłady brzegowe</strong> są identyczne, identyczna
 jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
-liczbami całkowitami ale tak ma być–nie jest to błąd)</p>
+liczbami całkowitymi, ale tak ma być i nie jest to błąd)</p>
 <p>Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
 tak dużych lub większych różnic. Wynosi ono 0.041864.
 Czyli wystąpienie tak dużych różnic
@@ -632,7 +632,7 @@ przez statystyka. Zwykle jest to 0,05 lub 0,01 (czasami 0,1)
 co oznacza że odrzucając założenie o braku związku pomiędzy
 katarem a braniem witaminy C pomylimy się pięć lub raz na 100.</p>
 <p><strong>Uwaga</strong>: proszę zwrócić uwagę że wniosek z testu niezależności jest
-słabszy niż z porówania ryzyk. Tam mamy informację że zależność istnieje
+słabszy niż z porównania ryzyk. Tam mamy informację że zależność istnieje
 i oszacowaną jej wielkość (np. za pomocą ryzyka względnego) tutaj tylko
 zweryfikowaliśmy fakt czy obie zmienne są niezależne czy też nie.</p>
 <div class="example">
@@ -733,7 +733,7 @@ ostatniej kolumny):</p>
 </tr>
 </tbody>
 </table>
-<p>Rozumowanie jest identyczne jak dla narciarzy Pauliga. Jeżeli nie ma zależności
+<p>Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
 pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
 być identyczne jak w wierszach 1–3 (nagłówka nie liczymy). Tym idealnym
 procentom odpowiadają następujące liczebności:</p>
@@ -804,9 +804,9 @@ o normalności rozkładów, to stosujemy test Kruskal-Wallisa.</p></li>
 </ul>
 <p>Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku <a href="causality.html#fig:testy">4.2</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:testy"></span>
-<img src="TestFlowChart.png" alt="Testowanie istotości różnicy pomiędzy średnimi" width="75%" />
+<img src="TestFlowChart.png" alt="Testowanie istotności różnicy pomiędzy średnimi" width="75%" />
 <p class="caption">
-Rysunek 4.2: Testowanie istotości różnicy pomiędzy średnimi
+Rysunek 4.2: Testowanie istotności różnicy pomiędzy średnimi
 </p>
 </div>
 <p>Każdy z testów jest interpretowany identycznie:</p>
@@ -816,7 +816,7 @@ Rysunek 4.2: Testowanie istotości różnicy pomiędzy średnimi
 statystykę testu <span class="math inline">\(t\)</span> równej lub większej od <span class="math inline">\(t_k\)</span> (co do wartości bezwzględnej).
 To prawdopodobieństwo zwyczajowo oznacza się literą p albo p-value (czyli wartość p).</p></li>
 <li><p>Jeżeli p jest mniejsze/równe od przyjętego poziomu istotności to hipotezę zerową odrzucamy;
-jezeli p jest większe od przyjętego poziomu istotności to nie ma podstaw do odrzucenia
+jeżeli p jest większe od przyjętego poziomu istotności to nie ma podstaw do odrzucenia
 hipotezy zerowej.</p></li>
 </ol>
 <p>Odrzucenie hipotezy zerowej oznacza, że istnieje związek pomiędzy jedną a drugą zmienną.
@@ -858,7 +858,7 @@ na rodzaj miejsca pracy (szpital/przychodnia).</p>
 </tr>
 </tbody>
 </table>
-<p>Kolumna n zawiera liczbność.</p>
+<p>Kolumna n zawiera liczebności.</p>
 <p>Średnie różnią się
 o 0.62.
 Pytanie czy to dużo czy mało?</p>
@@ -1119,7 +1119,7 @@ pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.</p>
 </div>
 <div id="pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</h3>
-<p>Kowariancja to średnia arytemtyczna iloczynów odchyleń wartości zmiennych <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>
+<p>Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>
 od ich wartości średnich. Dla <span class="math inline">\(n\)</span> obserwacji na zmiennych <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>
 można powyższe zapisać w postaci następującej formuły:</p>
 <p><span class="math display">\[\mathrm{cov} (xy) = \frac{1}{n} \left( (x_1 - \bar x) (y_1 - \bar y)  + ... +
@@ -1129,9 +1129,9 @@ ma też dziwną jednostkę (jednostkaX · jednostkaY) oraz zależy
 od wybranych skal (tony vs gramy na przykład.)</p>
 <p>Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji,
-zwanego <strong>współczynnikiem korelacji liniowej</strong>, (<em>Pearson linear
+zwanego <strong>współczynnikiem korelacji liniowej</strong>, (<em>linear
 correlation coefficient</em>). Standaryzacja polega na podzieleniu wartości
-kowariacji przez iloczyn odchyleń standardowych <span class="math inline">\(s_x\)</span> oraz <span class="math inline">\(s_y\)</span>.</p>
+kowariancji przez iloczyn odchyleń standardowych <span class="math inline">\(s_x\)</span> oraz <span class="math inline">\(s_y\)</span>.</p>
 <p><span class="math display">\[r_{xy} = \frac{\mathrm{cov}(xy) }{s_x \cdot s_y}\]</span></p>
 <p>Współczynnik jest miarą niemianowaną, przyjmującą wartości ze zbioru <span class="math inline">\([-1;1]\)</span>;
 Skrajne wartości <span class="math inline">\(\pm 1\)</span>
@@ -1284,7 +1284,7 @@ jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.</p>
 pomiędzy <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>.
 Wartości <span class="math inline">\(b_1\)</span> bliskie zero wskazują na słabą zależność
 pomiędzy cechami.</p>
-<p>Przypominamy, że <strong>estymator</strong> parametru <span class="math inline">\(b_1\)</span> ma średnią równą prawdziej wartości <span class="math inline">\(b_1\)</span>.
+<p>Przypominamy, że <strong>estymator</strong> parametru <span class="math inline">\(b_1\)</span> ma średnią równą prawdziwej wartości <span class="math inline">\(b_1\)</span>.
 Dodatkowo zakładamy, że rozkład tego estymatora jest normalny. To założenie
 pozwala wiarygodnie oszacować wariancję; w konsekwencji znamy dokładny
 rozkład (bo przypominamy, że rozkład
@@ -1443,7 +1443,7 @@ i podzielenie przez <span class="math inline">\(s_y\)</span>:</p>
 <p><span class="math display">\[\beta_i = b_i \frac{s_{xi}}{s_y}\]</span></p>
 <p>Dla przypomnienia <span class="math inline">\(s_{xi}\)</span>
 to odchylenie standardowe zmiennej <span class="math inline">\(X_i\)</span>, a <span class="math inline">\(s_y\)</span> to odchylenie standardowe zmiennej <span class="math inline">\(Y\)</span>.
-Interpretacja współczynnika standardyzowanego jest cokolwiek dziwaczna:
+Interpretacja współczynnika standaryzowanego jest cokolwiek dziwaczna:
 zmiana zmiennej <span class="math inline">\(X_i\)</span> o jedno odchylenie standardowe (<span class="math inline">\(s_{xi}\)</span>)
 skutkuje zmianą zmiennej <span class="math inline">\(Y\)</span> o <span class="math inline">\(b_i\)</span> jej odchylenia standardowego <span class="math inline">\(s_y\)</span>.
 Na szczęście współczynniki regresji standaryzuje się nie w celu lepszej interpretacji,
@@ -1634,7 +1634,7 @@ Przedział jest ponad 8 razy węższy…</p>
 </div>
 <div id="zmienne-zero-jedynkowe" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Zmienne zero-jedynkowe</h3>
-<p>Zamiast (celem wykazania związku między zmienną licznową a nominalną) porównywać
+<p>Zamiast (celem wykazania związku między zmienną liczbową a nominalną) porównywać
 średnie w grupach możemy wykorzystać metodę regresji
 wielorakiej. Zmienna nominalna jest zamieniana na jedną lub więcej
 zmiennych binarnych, które przyjmują tylko dwie wartości 0 lub 1.</p>
@@ -2092,7 +2092,7 @@ to zastosowanie regresji
 doprowadzi do obliczenia (teoretycznych) wartości <span class="math inline">\(Y\)</span> różnych od <span class="math inline">\(0\)</span> i <span class="math inline">\(1\)</span>.
 Taki wynik nie ma sensownej interpretacji…</p>
 <p>Ale zamiast szacować regresję <span class="math inline">\(Y\)</span> względem (<span class="math inline">\(X\)</span>/<span class="math inline">\(X\)</span>-ów) można szacować
-regresję względem ryzyka dla <span class="math inline">\(Y\)</span> (czyli prawdopodobieństwa że <span class="math inline">\(Y\)</span> przyjmnie wartość 1).
+regresję względem ryzyka dla <span class="math inline">\(Y\)</span> (czyli prawdopodobieństwa że <span class="math inline">\(Y\)</span> przyjmie wartość 1).
 Tutaj znowu pojawia się jednak trudność, bo ryzyko może przyjąć tylko wartości
 z przedziału <span class="math inline">\([0,1]\)</span>.
 Nie wchodząc w matematyczne zawiłości

@@ -13,7 +13,7 @@ a więc można go używać za darmo. Program jest dostępny ze strony
 https://www.jamovi.org/download.html. Klikamy, ściągamy, uruchamiamy instalator.
 Program jest dość duży, ale to nie jest aż tak wielki problem w czasach kiedy
 pojemności dysków w domowym komputerze zaczynają się od 250 gigabajtów. Jest
-też wersja Jamovi365, którą moża się posługiwać w przeglądarce i wtedy nic nie trzeba
+też wersja Jamovi365, którą można się posługiwać w przeglądarce i wtedy nic nie trzeba
 instalować na swoim komputerze.
 
 W naszym podręczniku pokazujemy jak uprawiać statystykę z tradycyjną wersją Jamovi.
@@ -45,7 +45,7 @@ Typowa sesja w **Jamovi**:
 
 2. Transformacja danych. Przekodowanie wartości nominalnych na rangi. Przekodowanie
    wartości liczbowych na nominalne. 
-   Odwrócenie pytań odwróconych. Obliczenie sum/srednich rang dla wielu zmiennych.
+   Odwrócenie pytań odwróconych. Obliczenie sum/średnich rang dla wielu zmiennych.
 
 3. Wykonanie obliczeń: 
 
@@ -65,7 +65,7 @@ Typowa sesja w **Jamovi**:
    
 4. Zapisania  danych (pozycja trzy poziome kreski). Po skończeniu pracy wynik można
    zapisać żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
-   pracę kontynuuować bo wykładowca chciał żebyśmy coś poprawili.
+   pracę kontynuować bo wykładowca chciał żebyśmy coś poprawili.
    
 ## Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia
 
@@ -77,7 +77,7 @@ wykorzystania wszystkich procedur omawianych w podręczniku.
 
 W wyniku przeprowadzenia badania ankietowego zebrano za pomocą Formularza Google
 dane dotyczące
-satysfkacji/zamiaru odejścia oraz wiedzy nt. szkodliwości palenia tytoniu.
+satysfakcji/zamiaru odejścia oraz wiedzy nt. szkodliwości palenia tytoniu.
 Wyniki wyeksportowano do arkusza kalkulacyjnego, którego początek
 wygląda jak na rysunku \@ref(fig:GoogleFormsTestA):
 
@@ -111,7 +111,7 @@ Jak widać
 pytania z kolumn `B`--`C` mierzą to samo (satysfakcję) 
 więc zmieniamy im nazwę na bardziej zwartą `s1`, `s2` oraz `s3` (`s` od satysfakcja). 
 Podobnie
-ponieważ pytania z kolumn `F`--`H` też mierzą to samo (zmiar odejścia), to
+ponieważ pytania z kolumn `F`--`H` też mierzą to samo (zamiar odejścia), to
 też zmieniamy nazwy na coś krótszego: `zo1`, `zo2`, `zo3`. Kolumnę `E` nazywamy
 `wiedza_nt_palenia` a kolumny `I`, `J` oraz `K` odpowiednio:
 `plec`, `wiek` oraz `staz`.
@@ -135,7 +135,7 @@ Reasumując:
 * Pytanie oznaczone jako `wiedza_nt_palenia` mierzy wiedzę na temat palenia tytoniu.
   Jest to przykład wykorzystania pytania z wielokrotnym wyborem.
 
-* Pytania `plec`, `wiek`, `staz` mierzą płeć (`kobieta`/`mężczyna`), wiek (lata ukończone)
+* Pytania `plec`, `wiek`, `staz` mierzą płeć (`kobieta`/`mężczyzna`), wiek (lata ukończone)
   oraz staż pracy (lata przepracowane)
   
 * Pierwsza kolumna nie jest potrzebna ale jest dodawana przez aplikację Formularze Google.
@@ -165,7 +165,7 @@ W naszym przykładzie należy wykonać:
   za wybranie poprawnej odpowiedzi plus jeden punkt; za wybranie błędnej odpowiedzi 
   minus jeden punkt.
   
-  * Miarą wiedzy nt. palenia będzy suma punktów uzyskanych za odpowiedzi prawidłowe
+  * Miarą wiedzy nt. palenia będzie suma punktów uzyskanych za odpowiedzi prawidłowe
     minus suma punktów uzyskanych za odpowiedzi nieprawidłowe.
   
 Uwaga: Sposób mierzenia wiedzy nt. palenia jest niepotrzebnie pokręcony; zamiast
@@ -368,7 +368,7 @@ nowej zmiennej, zwykle w oparciu o jakąś formułę matematyczną. Na przykład
 realizuje `s1pr = 6 - s1p`. Satysfakcja to suma rang z trzech pytań:
 `satysfakcja =  s1pr + s2p + s3p`.
 
-W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia sie okno
+W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia się okno
 zmiennej wyliczonej zatytułowane `ZMIENNA WYLICZONA`
 
 Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego, w przykładzie
@@ -397,10 +397,10 @@ Jeżeli nie chcemy sumy ale np. średnią powinniśmy użyć
 MEAN(s1pr, s2p, s3p)
 ```
 
-Inne funkcje matematyczne są dostępne po klinięciu w pole wyboru znajdujące się po lewej
+Inne funkcje matematyczne są dostępne po kliknięciu w pole wyboru znajdujące się po lewej
 stronie pola definiowania zmiennej.
 
-Powiedzieliśmy że miarą wiedzy nt. palenia będzy suma punktów uzyskanych za odpowiedzi prawidłowe minus
+Powiedzieliśmy że miarą wiedzy nt. palenia będzie suma punktów uzyskanych za odpowiedzi prawidłowe minus
 suma punktów uzyskanych za odpowiedzi nieprawidłowe. Odpowiedzi prawidłowe to
 `w1p`, `w2p`, `w3p`, `w6` oraz `w7`. Odpowiedzi błędne to `w4p`, `w5p`, `w8p`. Zatem
 w polu definiowania zmiennej wpisujemy:

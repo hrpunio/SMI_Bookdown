@@ -495,7 +495,7 @@ nie da nam odsetka ludności w wieku poprodukcyjnym w Polsce,
 bo powiaty różnią się liczbą ludności.)
 
 ::: {.example}
-**Współczynnik dzietności (kontynuuacja)**:
+**Współczynnik dzietności (kontynuacja)**:
 
 Pierwszy kwartyl: `r q1.2018`; trzeci kwartyl `r q3.2018` co oznacza że
 25% krajów miało wartość współczynnika dzietności nie większą niż `r q1.2018` dziecka

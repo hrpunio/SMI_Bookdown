@@ -30,7 +30,7 @@ knitr::include_graphics("./DiagramMetod.png")
 ```
 
 Optymistyczną informacją jest że metod (oznaczonych krojem pogrubionym na diagramie), 
-które omawiamy dalej w rodziale, jest raptem siedem czyli niedużo.
+które omawiamy dalej w rozdziale, jest raptem siedem czyli niedużo.
 
 
 
@@ -154,7 +154,7 @@ ryzyka względnego/ilorazu szans zaś ryzyko względne/iloraz szans z próby.
 Standardem jest obliczanie dla ryzyka względnego oraz ilorazu szans
 oprócz ocen punktowych także
 przedziałów ufności czyli podawania dwóch wartości, pomiędzy którymi
-z zadanym prawdopodobieństem znajduje się nieznana wartość szacowanego
+z zadanym prawdopodobieństwem znajduje się nieznana wartość szacowanego
 parametru.
 
 ::: {.example}
@@ -323,7 +323,7 @@ kable(digits=3, narciarze.ex.table)
 Proszę
 zwrócić uwagę że **rozkłady brzegowe** są identyczne, identyczna
 jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
-liczbami całkowitami ale tak ma być--nie jest to błąd)
+liczbami całkowitymi, ale tak ma być i nie jest to błąd)
 
 Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
 tak dużych lub większych różnic. Wynosi ono `r chipv.txt`.
@@ -351,7 +351,7 @@ co oznacza że odrzucając założenie o braku związku pomiędzy
 katarem a braniem witaminy C pomylimy się pięć lub raz na 100.
 
 **Uwaga**: proszę zwrócić uwagę że wniosek z testu niezależności jest
-słabszy niż z porówania ryzyk. Tam mamy informację że zależność istnieje 
+słabszy niż z porównania ryzyk. Tam mamy informację że zależność istnieje 
 i oszacowaną jej wielkość (np. za pomocą ryzyka względnego) tutaj tylko
 zweryfikowaliśmy fakt czy obie zmienne są niezależne czy też nie.
 
@@ -396,7 +396,7 @@ smoke.x <- cbind(rbind(smoke.p, n.m), c(1,1,1)) * 100
 kable(smoke.x)
 ```
 
-Rozumowanie jest identyczne jak dla narciarzy Pauliga. Jeżeli nie ma zależności
+Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
 pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
 być identyczne jak w wierszach 1--3 (nagłówka nie liczymy). Tym idealnym 
 procentom odpowiadają następujące liczebności:
@@ -441,7 +441,7 @@ więcej niż dwie). Stosujemy odpowiedni test statystyczny:
 
 Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku \@ref(fig:testy).
 
-```{r testy, out.width="75%", fig.cap = "Testowanie istotości różnicy pomiędzy średnimi"}
+```{r testy, out.width="75%", fig.cap = "Testowanie istotności różnicy pomiędzy średnimi"}
 knitr::include_graphics("./TestFlowChart.png")
 ```
 
@@ -453,7 +453,7 @@ Każdy z testów jest interpretowany identycznie:
    statystykę testu $t$  równej lub większej od $t_k$ (co do wartości bezwzględnej).
    To prawdopodobieństwo zwyczajowo oznacza się literą p albo p-value (czyli wartość p).
 3. Jeżeli p jest mniejsze/równe od przyjętego poziomu istotności to hipotezę zerową odrzucamy;
-   jezeli p jest większe od przyjętego poziomu istotności to nie ma podstaw do odrzucenia
+   jeżeli p jest większe od przyjętego poziomu istotności to nie ma podstaw do odrzucenia
    hipotezy zerowej.
 
 Odrzucenie hipotezy zerowej oznacza, że istnieje związek pomiędzy jedną a drugą zmienną.
@@ -493,7 +493,7 @@ s0.mp.przychodnia <- s0.mp %>% filter (praca == 'Przychodnia') %>%
 kable(s0.mp, col.names = c('m-pracy', 'średnia', 'n'))
 ```
 
-Kolumna n zawiera liczbność.
+Kolumna n zawiera liczebności.
 
 Średnie różnią się 
 o `r sprintf ("%.2f", s0.mp.szpital - s0.mp.przychodnia)`. 
@@ -713,7 +713,7 @@ pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
 
 ###  Pomiar siły zależności: współczynnik korelacji liniowej Pearsona
 
-Kowariancja to średnia arytemtyczna iloczynów odchyleń wartości zmiennych $X$, $Y$
+Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych $X$, $Y$
 od ich wartości średnich. Dla $n$ obserwacji na zmiennych $X$ oraz $Y$
 można powyższe zapisać w postaci następującej formuły:
 
@@ -726,9 +726,9 @@ od wybranych skal (tony vs gramy na przykład.)
 
 Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji, 
-zwanego **współczynnikiem korelacji liniowej**, (*Pearson linear
+zwanego **współczynnikiem korelacji liniowej**, (*linear
 correlation coefficient*). Standaryzacja polega na podzieleniu wartości
-kowariacji przez iloczyn odchyleń standardowych $s_x$ oraz $s_y$.
+kowariancji przez iloczyn odchyleń standardowych $s_x$ oraz $s_y$.
 
 $$r_{xy} = \frac{\mathrm{cov}(xy) }{s_x \cdot s_y}$$
 
@@ -937,7 +937,7 @@ pomiędzy $X$ oraz $Y$.
 Wartości $b_1$ bliskie zero wskazują na słabą zależność
 pomiędzy cechami.
 
-Przypominamy, że **estymator** parametru $b_1$ ma średnią równą prawdziej wartości $b_1$.
+Przypominamy, że **estymator** parametru $b_1$ ma średnią równą prawdziwej wartości $b_1$.
 Dodatkowo zakładamy, że rozkład tego estymatora jest normalny. To założenie
 pozwala wiarygodnie oszacować wariancję; w konsekwencji znamy dokładny 
 rozkład (bo przypominamy, że rozkład
@@ -1139,7 +1139,7 @@ $$\beta_i = b_i \frac{s_{xi}}{s_y}$$
 
 Dla przypomnienia $s_{xi}$
 to odchylenie standardowe zmiennej $X_i$, a $s_y$ to odchylenie standardowe zmiennej $Y$.
-Interpretacja współczynnika standardyzowanego jest cokolwiek dziwaczna:
+Interpretacja współczynnika standaryzowanego jest cokolwiek dziwaczna:
 zmiana zmiennej $X_i$ o jedno odchylenie standardowe ($s_{xi}$)
 skutkuje zmianą zmiennej $Y$ o $b_i$ jej odchylenia standardowego $s_y$.
 Na szczęście współczynniki regresji standaryzuje się nie w celu lepszej interpretacji,
@@ -1307,7 +1307,7 @@ Przedział jest ponad 8 razy węższy...
 
 ### Zmienne zero-jedynkowe
 
-Zamiast (celem wykazania związku między zmienną licznową a nominalną) porównywać 
+Zamiast (celem wykazania związku między zmienną liczbową a nominalną) porównywać 
 średnie w grupach możemy wykorzystać metodę regresji
 wielorakiej. Zmienna nominalna jest zamieniana na jedną lub więcej
 zmiennych binarnych, które przyjmują tylko dwie wartości 0 lub 1.
@@ -1529,7 +1529,7 @@ doprowadzi do obliczenia (teoretycznych) wartości $Y$ różnych od $0$ i $1$.
 Taki wynik nie ma sensownej interpretacji...
 
 Ale zamiast szacować regresję $Y$ względem ($X$/$X$-ów) można szacować
-regresję względem ryzyka dla $Y$ (czyli prawdopodobieństwa że $Y$ przyjmnie wartość 1).
+regresję względem ryzyka dla $Y$ (czyli prawdopodobieństwa że $Y$ przyjmie wartość 1).
 Tutaj znowu pojawia się jednak trudność, bo ryzyko może przyjąć tylko wartości
 z przedziału $[0,1]$.
 Nie wchodząc w matematyczne zawiłości

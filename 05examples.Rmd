@@ -69,7 +69,7 @@ samoskuteczność to
 **przekonanie**, iż *jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele*).
 **Definicja operacyjna** określa jak zmierzyć pojęcie
 (jak zmierzyć satysfakcję)
-Przejście od definicji koncepcyjnej do definicji operecyjnej bywa czasami mocno, hmm... arbitralne.
+Przejście od definicji koncepcyjnej do definicji operacyjnej bywa czasami mocno, hmm... arbitralne.
 
 ### Skala Likerta
 
@@ -425,7 +425,7 @@ p.1 <- s0.sex %>%
 p.1
 ```
 
-Rozład ankietowanych ze względu na staż pracy przedstawiono na rysunku
+Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku
 
 ```{r, out.width=ex.out.width}
 s0.staz <- s1 %>%
@@ -618,7 +618,7 @@ Można to samo zweryfikować porównując średnie w grupach
 i stosując test Kruskala-Wallisa
 
 ```{r}
-## albo średnia wiedzia w grupach wg statusu
+## albo średnia wiedza w grupach wg statusu
 
 s0.sw <- s1 %>%
   group_by(status) %>%
@@ -661,7 +661,7 @@ którym w związku z tym przypisuje się wartości od zera do 3 punktów. Maksym
 w teście wynosi 63 a minimalna 0.
 
 Interpretacja wyników testu Becka: 0--19 brak/łagodna depresja;
-20--25 umiarkowana; 26--63 cieżka depresja.
+20--25 umiarkowana; 26--63 ciężka depresja.
 
 Postawiono następujące hipotezy badawcze:
 
@@ -1160,7 +1160,7 @@ Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
 zmienić pracę to ją zmieni.
 Niech to **bardzo chce** będzie wtedy kiedy wartość `zzp` wynosi co najmniej 12.
 Zmienną `zzp` należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją `zp`), która 
-przymuje wartość 0 jeżeli `zzp` jest większe
+przyjmuje wartość 0 jeżeli `zzp` jest większe
 równe od 12 lub wartość 1 jeżeli `zzp` jest mniejsze od 12.
 Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
 zmianę miejsca pracy (zmieni=0, nie zmieni=1).
@@ -1192,7 +1192,7 @@ kable(gml.1.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
 ```
 
-Wartości większości współczynników okazały się nieistotne. Mówięc konkretniej na poziomie
+Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej na poziomie
 istotności 0,05 tylko `sp` jest istotna (`roddzialtak` jest także istotny ale na poziomie 0,1).
 
 Postępując podobnie jak w przypadku  „normalnej” regresji eliminujemy

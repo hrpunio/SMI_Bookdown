@@ -255,7 +255,7 @@ a więc można go używać za darmo. Program jest dostępny ze strony
 <a href="https://www.jamovi.org/download.html" class="uri">https://www.jamovi.org/download.html</a>. Klikamy, ściągamy, uruchamiamy instalator.
 Program jest dość duży, ale to nie jest aż tak wielki problem w czasach kiedy
 pojemności dysków w domowym komputerze zaczynają się od 250 gigabajtów. Jest
-też wersja Jamovi365, którą moża się posługiwać w przeglądarce i wtedy nic nie trzeba
+też wersja Jamovi365, którą można się posługiwać w przeglądarce i wtedy nic nie trzeba
 instalować na swoim komputerze.</p>
 <p>W naszym podręczniku pokazujemy jak uprawiać statystykę z tradycyjną wersją Jamovi.
 Po zainstalowaniu uruchamiamy program, którego ekran startowy wygląda jak
@@ -282,7 +282,7 @@ dane są wynikiem wykonania badania ankietowego z wykorzystaniem Formularzy Goog
 zalecamy posługiwanie się formatem CSV.</p></li>
 <li><p>Transformacja danych. Przekodowanie wartości nominalnych na rangi. Przekodowanie
 wartości liczbowych na nominalne.
-Odwrócenie pytań odwróconych. Obliczenie sum/srednich rang dla wielu zmiennych.</p></li>
+Odwrócenie pytań odwróconych. Obliczenie sum/średnich rang dla wielu zmiennych.</p></li>
 <li><p>Wykonanie obliczeń:</p>
 <ol style="list-style-type: decimal">
 <li>Analiza struktury (<strong>Eksploracja</strong>),</li>
@@ -300,7 +300,7 @@ Wynik obliczeń pojawia się natychmiast w <strong>oknie wyników</strong>. Jeż
 nam nie wyszło można procedurę poprawić a poprzedni wynik usunąć z okna wynikowego.</p></li>
 <li><p>Zapisania danych (pozycja trzy poziome kreski). Po skończeniu pracy wynik można
 zapisać żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
-pracę kontynuuować bo wykładowca chciał żebyśmy coś poprawili.</p></li>
+pracę kontynuować bo wykładowca chciał żebyśmy coś poprawili.</p></li>
 </ol>
 </div>
 <div id="analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia" class="section level2" number="6.2">
@@ -312,7 +312,7 @@ wykorzystania wszystkich procedur omawianych w podręczniku.</p>
 <h3><span class="header-section-number">6.2.1</span> Wczytanie danych</h3>
 <p>W wyniku przeprowadzenia badania ankietowego zebrano za pomocą Formularza Google
 dane dotyczące
-satysfkacji/zamiaru odejścia oraz wiedzy nt. szkodliwości palenia tytoniu.
+satysfakcji/zamiaru odejścia oraz wiedzy nt. szkodliwości palenia tytoniu.
 Wyniki wyeksportowano do arkusza kalkulacyjnego, którego początek
 wygląda jak na rysunku <a href="intro2jamovi.html#fig:GoogleFormsTestA">6.2</a>:</p>
 <div class="figure"><span style="display:block;" id="fig:GoogleFormsTestA"></span>
@@ -342,7 +342,7 @@ od razu było widać jakie dane zawiera zmienna.</p>
 pytania z kolumn <code>B</code>–<code>C</code> mierzą to samo (satysfakcję)
 więc zmieniamy im nazwę na bardziej zwartą <code>s1</code>, <code>s2</code> oraz <code>s3</code> (<code>s</code> od satysfakcja).
 Podobnie
-ponieważ pytania z kolumn <code>F</code>–<code>H</code> też mierzą to samo (zmiar odejścia), to
+ponieważ pytania z kolumn <code>F</code>–<code>H</code> też mierzą to samo (zamiar odejścia), to
 też zmieniamy nazwy na coś krótszego: <code>zo1</code>, <code>zo2</code>, <code>zo3</code>. Kolumnę <code>E</code> nazywamy
 <code>wiedza_nt_palenia</code> a kolumny <code>I</code>, <code>J</code> oraz <code>K</code> odpowiednio:
 <code>plec</code>, <code>wiek</code> oraz <code>staz</code>.</p>
@@ -363,7 +363,7 @@ się powiódł, to powinniśmy zobaczyć coś podobnego do tego co widać na rys
 z pracy</strong>. Pytania <code>s1</code>–<code>s3</code> oraz <code>zo1</code>–<code>zo3</code> są pytaniami jednokrotnego wyboru.</p></li>
 <li><p>Pytanie oznaczone jako <code>wiedza_nt_palenia</code> mierzy wiedzę na temat palenia tytoniu.
 Jest to przykład wykorzystania pytania z wielokrotnym wyborem.</p></li>
-<li><p>Pytania <code>plec</code>, <code>wiek</code>, <code>staz</code> mierzą płeć (<code>kobieta</code>/<code>mężczyna</code>), wiek (lata ukończone)
+<li><p>Pytania <code>plec</code>, <code>wiek</code>, <code>staz</code> mierzą płeć (<code>kobieta</code>/<code>mężczyzna</code>), wiek (lata ukończone)
 oraz staż pracy (lata przepracowane)</p></li>
 <li><p>Pierwsza kolumna nie jest potrzebna ale jest dodawana przez aplikację Formularze Google.</p></li>
 </ul>
@@ -393,7 +393,7 @@ W takich pytaniach należy przeliczyć rangi wg prostej formuły s1r = 6 - s1.</
 za wybranie poprawnej odpowiedzi plus jeden punkt; za wybranie błędnej odpowiedzi
 minus jeden punkt.</p>
 <ul>
-<li>Miarą wiedzy nt. palenia będzy suma punktów uzyskanych za odpowiedzi prawidłowe
+<li>Miarą wiedzy nt. palenia będzie suma punktów uzyskanych za odpowiedzi prawidłowe
 minus suma punktów uzyskanych za odpowiedzi nieprawidłowe.</li>
 </ul></li>
 </ul>
@@ -558,7 +558,7 @@ wykonuje dalszych porównań. Dlatego liczba 3 zostanie zamieniona na <code>M</c
 nowej zmiennej, zwykle w oparciu o jakąś formułę matematyczną. Na przykład odwrócenie pytanie s1p
 realizuje <code>s1pr = 6 - s1p</code>. Satysfakcja to suma rang z trzech pytań:
 <code>satysfakcja =  s1pr + s2p + s3p</code>.</p>
-<p>W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia sie okno
+<p>W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia się okno
 zmiennej wyliczonej zatytułowane <code>ZMIENNA WYLICZONA</code></p>
 <p>Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego, w przykładzie
 jest to litera <code>H</code>) W polu definiowania zmiennej należy wpisać
@@ -575,9 +575,9 @@ Rysunek 6.11: Obliczanie nowej zmiennej
 <p>Oczywiście wcześniej musimy utworzyliśmy zmienną <code>s1pr</code>, inaczej Jamovi zgłosi błąd.</p>
 <p>Jeżeli nie chcemy sumy ale np. średnią powinniśmy użyć</p>
 <pre><code>MEAN(s1pr, s2p, s3p)</code></pre>
-<p>Inne funkcje matematyczne są dostępne po klinięciu w pole wyboru znajdujące się po lewej
+<p>Inne funkcje matematyczne są dostępne po kliknięciu w pole wyboru znajdujące się po lewej
 stronie pola definiowania zmiennej.</p>
-<p>Powiedzieliśmy że miarą wiedzy nt. palenia będzy suma punktów uzyskanych za odpowiedzi prawidłowe minus
+<p>Powiedzieliśmy że miarą wiedzy nt. palenia będzie suma punktów uzyskanych za odpowiedzi prawidłowe minus
 suma punktów uzyskanych za odpowiedzi nieprawidłowe. Odpowiedzi prawidłowe to
 <code>w1p</code>, <code>w2p</code>, <code>w3p</code>, <code>w6</code> oraz <code>w7</code>. Odpowiedzi błędne to <code>w4p</code>, <code>w5p</code>, <code>w8p</code>. Zatem
 w polu definiowania zmiennej wpisujemy:</p>
