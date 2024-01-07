@@ -865,7 +865,7 @@ uzyskane **metodą najmniejszych kwadratów** posiadają obie właściwości.
 Graficznie **kryterium minimalizacyjne** przedstawia rysunek \@ref(fig:KMNK).
 
 
-```{r KMNK, out.width="80%", fig.cap = "Metody statystycznej weryfikacji zależności pomiędzy zmiennymi"}
+```{r KMNK, out.width="80%", fig.cap = "Metoda najmniejszych kwadratów"}
 knitr::include_graphics("./kmnk_roznice.png")
 ```
 

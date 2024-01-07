@@ -118,7 +118,7 @@ t3
 Cecha ciągła to taka cecha, która może przyjąć nieskończoną/nieprzeliczalną liczbę wartości.
 Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb rzeczywistych.
 
-Tablica zawiera klasy wartości (przedziały wartości)
+Tablica zawiera klasy (przedziały) wartości
 oraz odpowiadające im liczebności.
 
 Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
@@ -142,13 +142,12 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 ::: {.example}
 **Dzietność kobiet na świecie**
 
-Współczynnik dzietności (*fertility ratio* albo FR) -- przeciętna liczba urodzonych dzieci przypadających
+Współczynnik dzietności (*fertility ratio* albo FR) -- przeciętna liczba urodzonych dzieci przypadająca
 na jedną kobietę w wieku rozrodczym (15–49 lat).
 Przyjmuje się, iż FR między 2,10–2,15 zapewnia zastępowalność pokoleń.
 
-Dane dotyczące dzietności dla wszystkich krajów świata można
-znaleźć na stronie https://ourworldindata.org/grapher/fertility-rate-complete-gapminder)
-Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018
+Dane dotyczące dzietności dla wszystkich krajów świata pobrano
+ze strony https://ourworldindata.org/grapher/fertility-rate-complete-gapminder)
 
 ```{r, echo=F}
 dA <- read.csv("fertility_rate_2003_2018.csv", sep = ';',
@@ -166,7 +165,8 @@ q1.2018 <- quantile(d2018$frate, probs = 0.25)
 q3.2018 <- quantile(d2018$frate, probs = 0.75)
 ```
 
-Krajów jest `r N2018`. Wartość minimalna to `r min2018` a wartość
+Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018.
+Krajów jest `r N2018`. Wartość minimalna wynosi `r min2018` a wartość
 maksymalna to `r max2018`. Decydujemy się na rozpiętość przedziału równą 0,5;
 dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
 

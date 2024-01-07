@@ -106,7 +106,7 @@ Nie pytamy się zatem **Czy pan/pani boi się COVID19?** tylko zadajemy serię
 pytań o strach względem COVID19:
 
 ::: {.example}
-**strach przed COVID19**
+**Strach przed COVID19**
 
 The Fear of COVID-19 Scale: Development and Initial Validation. 
 International Journal of
@@ -611,11 +611,11 @@ chi_test <- chisq.test(wiedza.status.t)
 chi_test
 ```
 
-Widza i status wzg. palenia nie jest skorelowana
-o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
+Wiedza i status względem palenia nie są skorelowane
+o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
 
 Można to samo zweryfikować porównując średnie w grupach
-i stosując test Kruskala-Wallisa
+i stosując test Kruskala-Wallisa:
 
 ```{r}
 ## albo średnia wiedza w grupach wg statusu
@@ -629,7 +629,7 @@ kw<- kruskal.test(P.total ~ status, data = s1)
 kw["p.value"]
 ```
 
-Wynik jest identyczny (wysoka wartość p `r sprintf("%.f", kw["p.value"])`).
+Wynik jest identyczny (wysoka wartość p `r sprintf("%.4f", kw["p.value"])`).
 
 ### Wnioski
 
@@ -1452,7 +1452,7 @@ https://psychiatra.bydgoszcz.eu/publikacje-dla-pacjenta/depresja/skala-depresji-
 oraz
 http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf
 
-### Ankieta Palenie
+### Ankieta na temat szkodliwości palenia
 
 Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 
