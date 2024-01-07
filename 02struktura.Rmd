@@ -367,7 +367,7 @@ Podobnie jak tablice, rysunki powinny być opatrzone tytułem
 oraz zawierać źródło wskazujące na pochodzenie danych
 (zobacz przedstawione przykłady.)
 
-## Florence Nightingale
+## Florence Nightingale {#fnightingale}
 
 Nie każdy kto wie kim była Florence Nightingale, wie że
 była ona także statystykiem. W czasie wojny krymskiej nie tylko 

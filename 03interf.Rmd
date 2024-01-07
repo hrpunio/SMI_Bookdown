@@ -139,7 +139,7 @@ możemy jako metodę wykorzystać **średnią-z-próby**.
 
 W ogólności taką metodą, która formalnie jest funkcją elementów z próby, nazywa się
 w statystyce **estymatorem**. Warto to pojęcie zapamiętać. Wnioskujemy
-o wartości parametru w populacji posługując się estymatorem.
+o wartości nieznanego parametru w populacji posługując się estymatorem.
 
 Kontynuując wnioski z eksperymentu należy zauważyć, że
 wszystkie średnie-ze-średnich (bez względu na liczebność próby) są zbliżone do wartości
@@ -491,10 +491,10 @@ to i tak estymator tego parametru będzie normalny. Co najwyżej będziemy
 potrzebowali większej próby żeby „znormalniał” (jak w opisywanym przykładzie).
  
 
-## Wnioskowanie statystyczne (*interferance*)
+## Wnioskowanie statystyczne 
 
-Analizując dane uzyskane z próby celem jest ich **uogólnienie** na całą populację.
-Przypominamy, że wnioskujemy
+Analizując dane uzyskane z próby celem jest ich **uogólnienie** na całą populację. To uogólnienie
+nazywa się wnioskowaniem (*interferance*). Przypominamy, że **wnioskujemy**
 o wartości parametru w populacji posługując się **estymatorem**. W przypadku
 wnioskowania o średniej estymatorem jest średnia-z-próby.
 Dobrze by było wiedzieć jak bardzo wiarygodna jest ta wartość (zwana oceną parametru) uzyskana
@@ -625,6 +625,32 @@ Shapiro-Wilka (opisane w następnym rozdziale)
 Oczywiste, ale powtórzmy: przypuszczenia o charakterze nieparametrycznym 
 możemy tylko testować (sprawdzać hipotezy);
 nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
+
+## Carl Pearson
+
+W punkcie \@ref(fnightingale) przypomnieliśmy postać Florence Nightingale -- matki
+statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
+Ojców było więcej niż matek oczywiście, a wśród nich Francis Galton (regresja),
+Carl Pearson (korelacja, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
+Niestety wszyscy wymienieni byli
+zadeklarowanymi rasistami oraz wyznawcami społecznego darwninizmu
+i eugeniki. Pierwszymi zastosowaniami „nowoczesnych” metod statystycznych było
+naukowe udowodnienie, że biali ludzie są lepsi od innych:
+
+*Przez ile stuleci, ile tysięcy lat Kaffirowie [...] lub Murzyni rządzili w Afryce
+nie niepokojeni przez białych ludzi? Jednak ich walki międzyplemienne nie stworzyły  cywilizacji w najmniejszym stopniu
+porównywalnej z **aryjską**  [...]
+Historia pokazuje jeden i tylko jeden sposób, w jaki powstaje wysoka cywilizacja,
+a mianowicie **walka rasy** i przetrwanie rasy sprawniejszej fizycznie i psychicznie…*
+
+Powyższe to cytat z *National Life from the standpoint of science* Carla Pearsona (Londyn 1905).
+
+Naszym zdaniem dobrze jest pamiętać o tym fatalnym starcie „nowoczesnej statystyki”, bo chociaż
+jest mało prawdopodobne, że zostanie ona  znowu wykorzystania do równie odrażających celów, to
+jest raczej więcej niż pewne, że będzie użyta do mniejszych szwindli.
+Jeszcze jeden argument żeby nie traktować
+wyników analiz statystycznych jako wiedzy
+absolutnie pewnej i 100% prawdziwej (por. uwagę w punkcie \@ref(przedmiotS)).
 
 ## Słownik terminów które warto znać
 

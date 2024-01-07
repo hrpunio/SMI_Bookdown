@@ -1,6 +1,6 @@
 # Przedmiot i metody badań statystycznych {#przedmiotbadan}
 
-## Przedmiot statystyki
+## Przedmiot statystyki {#przedmiotS}
 
 Wyraz statystyka ma wiele znaczeń: **statystyki zgonów** albo **statystyki
 alkoholizmu** czyli **dane** dotyczące zgonów lub alkoholizmu.
