@@ -367,7 +367,7 @@ Podobnie jak tablice, rysunki powinny być opatrzone tytułem
 oraz zawierać źródło wskazujące na pochodzenie danych
 (zobacz przedstawione przykłady.)
 
-## Florence Nightingale {#fnightingale}
+## Statystyczka Florence Nightingale {#fnightingale}
 
 Nie każdy kto wie kim była Florence Nightingale, wie że
 była ona także statystykiem. W czasie wojny krymskiej nie tylko 
@@ -794,7 +794,7 @@ pox
 
 :::
 
-Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019;
+Od razu widać, że przeciętnie najciężsi zawodnicy byli na turnieju w roku 2019;
 największe zróżnicowanie masy
 ciała występowało na turnieju w roku 2023.
 

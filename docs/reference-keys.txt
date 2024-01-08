@@ -99,7 +99,7 @@ estymacja-punktowa
 estymacja-przedziałowa
 testowanie-hipotez
 testy-nieparametryczne
-carl-pearson
+statystyk-carl-pearson
 słownik-terminów-które-warto-znać
 causality
 dwie-zmienne-nominalne

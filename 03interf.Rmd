@@ -626,7 +626,7 @@ Oczywiste, ale powtórzmy: przypuszczenia o charakterze nieparametrycznym
 możemy tylko testować (sprawdzać hipotezy);
 nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
 
-## Carl Pearson
+## Statystyk Carl Pearson
 
 W punkcie \@ref(fnightingale) przypomnieliśmy postać Florence Nightingale -- matki
 statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
@@ -647,9 +647,9 @@ Powyższe to cytat z *National Life from the standpoint of science* Carla Pearso
 
 Naszym zdaniem dobrze jest pamiętać o tym fatalnym starcie „nowoczesnej statystyki”, bo chociaż
 jest mało prawdopodobne, że zostanie ona  znowu wykorzystania do równie odrażających celów, to
-jest raczej więcej niż pewne, że będzie użyta do mniejszych szwindli.
+jest raczej więcej niż pewne, że będzie użyta do innych szwindli.
 Jeszcze jeden argument żeby nie traktować
-wyników analiz statystycznych jako wiedzy
+wyników analiz statystycznych jako wiedzy objawionej,
 absolutnie pewnej i 100% prawdziwej (por. uwagę w punkcie \@ref(przedmiotS)).
 
 ## Słownik terminów które warto znać
