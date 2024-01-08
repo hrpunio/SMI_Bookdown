@@ -253,7 +253,6 @@ to najmniejsza możliwa tabela wielodzielcza.
 
 Zamiast liczebności można posługiwać się odsetkami (procentami):
 
-
 ```{r}
 narciarze.total <- sum(narciarze)
 narciarze.p <- narciarze/narciarze.total *100
@@ -308,7 +307,6 @@ element poniższej „idealnej” tablicy to `r narciarze.table[3,1]` pomnożone
 `r narciarze.table[1,3]` i podzielone przez `r narciarze.table[3,3]`; proszę
 sprawdzić,
 że jest to `r sprintf("%.3f", narciarze.table[3,1] * narciarze.table[1,3] / narciarze.table[3,3])`):
-
 
 ```{r, message=FALSE, echo=FALSE}
 chi_skiers <- chisq.test(narciarze)
@@ -400,7 +398,6 @@ Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależno�
 pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
 być identyczne jak w wierszach 1--3 (nagłówka nie liczymy). Tym idealnym 
 procentom odpowiadają następujące liczebności:
-
 
 ```{r, message=FALSE, echo=FALSE}
 chi_smokers <- chisq.test(smoke)
@@ -555,7 +552,6 @@ Wizualne obserwacja można potwierdzić stosując test Shapiro-Wilka (S-W).
 Interpretacja tego testu jest „standardowa“, mianowicie małe wartości $p$
 świadczą przeciwko hipotezie zerowej (że rozkład jest normalny).
 
-
 ```{r, echo=F}
 sw.table <- s0 %>%
   group_by(praca) %>%
@@ -692,7 +688,6 @@ udostępnia dane dotyczące dochodu narodowego (https://data.worldbank.org/).
 Konsumpcja mięsa jest mierzona jako średnia konsumpcja w kilogramach w każdym kraju (*per capita* się mówi);
 Dochód podobnie jako średnia wielkość dochodu narodowego *per capita*. 
 Dane dotyczą roku 2013.
-
 
 ```{r message=FALSE, echo=FALSE, out.width="90%"}
 ## Dane FAO/WorldBank
@@ -984,12 +979,13 @@ Oszacowanie tego równania na próbie `r n0` uczestników
 Pucharu Świata w rugby w 2023 roku
 daje następujące wyniki:
 
-
 ```{r, warning=F, message=F, out.width="75%"}
 
 ggplot(rwc, aes(x = weight, y = height)) + geom_point() +
   geom_smooth(method='lm', se=F)
+```
 
+```{r, warning=F, message=F}
 #
 lm.0 <- lm(data=rwc, height ~ weight ); 
 lmc <- coef(lm.0)
@@ -1047,12 +1043,13 @@ Model oszacowano dla `r nrow(n0)` krajów świata w roku 2013 na podstawie danyc
 pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
 następujące wyniki:
 
-
 ```{r, message=F, out.width="75%"}
 meatCons <- meatCons %>% mutate (gdp2013 = gdp2013 / 1000)
 ggplot(meatCons, aes(x = gdp2013, y = y2013)) + geom_point() +
   geom_smooth(method='lm', se=F)
+```
 
+```{r, message=F, warning=F}
 lm.0 <- lm(data=meatCons, y2013 ~ gdp2013 ); 
 ##summary(lm.0)
 
@@ -1078,8 +1075,6 @@ kable(lm.0.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'CI95') )
 
 ```
-
-
 
 Każdy tysiąc USD *per capita* więcej dochodu narodowego (GDP) oznacza przeciętny 
 wzrost spożycia mięsa o `r sprintf("%.3f", coeff_b)`  kg.  Przeciętna różnica wartości teoretycznych
@@ -1192,7 +1187,6 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 
 Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
-
 ```{r}
 ##s0 <- read.csv("RC_Health_Care_samples.csv", sep = ';', header = T )
 s0 <- read.csv("RC_Health_Care_samples.csv", sep = ';', header = T ) %>%
@@ -1275,7 +1269,6 @@ co wynika z większej liczebności próby.
 Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
 wyniki:
 
-
 ```{r}
 lm.3 <- lm(data=s3, SBP ~ BMI + age  ); 
 lmsum3 <- summary(lm.3)
@@ -1303,7 +1296,6 @@ z 95% prawdopodobieństwem znajduje się w przedziale [0.290 0.350]
 a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0.240 0.730].
 Przedział jest ponad 8 razy węższy...
 :::
-
 
 ### Zmienne zero-jedynkowe
 
@@ -1457,7 +1449,6 @@ W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, pa
 przy zmiennej `ever.drinker` ma wartość $p$ równą 0,309 zaś przy zmiennej
 `ever.smoker` ma wartość 0,05324. Usuwamy zmienną `ever.drinker` (bo wartość $p$ jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
-
 
 ```{r}
 lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + current.smoker + ever.smoker + current.drinker );
@@ -1771,7 +1762,6 @@ $$\ln(o) = b_0 + b_1 \textrm{kobieta} + b_2 \textrm{wiek} + b_3 \textrm{poziomD}
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo
 
-
 ```{r, message=F, out.width="75%"}
 glm.2 = glm(osteoporosis ~ d + age + genderF, data = vd0, family = "binomial")
 ## oryginalne wartości współczynników
@@ -1839,7 +1829,6 @@ ggroc(roc_obj,
   ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')'))
 
 ```
-
 :::
 
 ## Przypadek specjalny: dwie zmienne co najmniej porządkowe

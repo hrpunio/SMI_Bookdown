@@ -237,11 +237,8 @@ będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 Wykres słupkowy (*bar chart*)
 
 :::{.example}
-**Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
-
 
 ```{r, echo=F, out.width="70%"}
-
 g2 <- g0 %>%
   filter (year == 2018 & isco08 == 'OC2221_3221' & unit == 'NR') %>%
   filter (geo %in%  members.codes) %>%
@@ -264,18 +261,16 @@ pc4 <- ggplot(g1, aes(x = reorder(member, values), y=values )) +
   ylab(label="") +
   theme(legend.position = "none") +
   coord_flip()+ 
-  ggtitle("Rysunek: Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
-  theme(plot.title = element_text(hjust = 0.5, size=8)) +
+  ggtitle("Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
+  theme(plot.title = element_text(hjust = 0.5, size=12)) +
   labs(caption="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc4
 ```
-
 :::
 
 Wykres kołowy (*pie chart*)
 
 :::{.example}
-**Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
 
 ```{r, echo=F, out.width="70%"}
 pc2 <- g1 %>%
@@ -284,11 +279,11 @@ pc2 <- g1 %>%
   geom_bar(stat="identity", width=1) +
   coord_polar("y", start=0) +
   geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
-  ggtitle("Rysunek: Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
+  ggtitle("Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
   ##facet_wrap(~pie, ncol = 2) +
   theme_void() +
   theme(legend.position = "right") +
-  theme(plot.title = element_text(hjust = 0.5, size=8)) +
+  theme(plot.title = element_text(hjust = 0.5, size=12)) +
   labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc2
 ```
@@ -306,7 +301,6 @@ Jeżeli zwiększymy liczbę krajów wykres kołowy staje się zupełnie nieczyte
 wyróżniały):
 
 :::{.example}
-**Absolwenci studiów pielęgniarskich w krajach UE**
 
 ```{r, echo=F, out.width="70%"}
 pc21 <- g2 %>%
@@ -317,8 +311,8 @@ pc21 <- g2 %>%
   geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
   ##facet_wrap(~pie, ncol = 2) +
   theme_void() +
-  theme(plot.title = element_text(hjust = 0.5, size=8)) +
-  ggtitle("Rysunek: Absolwenci studiów pielęgniarskich w krajach UE w roku 2018") +
+  theme(plot.title = element_text(hjust = 0.5, size=12)) +
+  ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018") +
   theme(legend.position = "right") +
   labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc21
@@ -334,11 +328,10 @@ pc41 <- ggplot(g2, aes(x = reorder(member, values), y=values )) +
   theme(legend.position = "none") +
   coord_flip()+ 
   ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018") +
-  theme(plot.title = element_text(hjust = 0.5, size=8) ) +
+  theme(plot.title = element_text(hjust = 0.5, size=12) ) +
   labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc41
 ```
-
 :::
 
 ### Skala liczbowa
@@ -347,7 +340,6 @@ Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
 wariantów cechy są przedziały wartości.
 
 :::{.example}
-**Dzietność kobiet na świecie**
 
 ```{r message=FALSE, echo=FALSE, out.width="70%"}
 h2018 <- ggplot(d2018, aes(x = frate)) + 
@@ -355,12 +347,12 @@ h2018 <- ggplot(d2018, aes(x = frate)) +
  ylab("liczba krajów") +
  xlab("współczynnik dzietności") +
  ggtitle("Kraje świata według współczynnika dzietności (2018)") +
+ theme(plot.title = element_text(hjust = 0.5, size=12) ) +
  labs(caption="źródło: https://ourworldindata.org/grapher/fertility-rate-complete-gapminder") +
  coord_cartesian(ylim = c(0, 30), xlim=c(0, 8))
 h2018
 
 ```
-
 :::
 
 Podobnie jak tablice, rysunki powinny być opatrzone tytułem
@@ -584,7 +576,6 @@ Miary asymetrii:
   + Obliczany jest według następującej 
     formuły: $W_{sq} =  \frac{(Q_3 - Q_2) - (Q_2 - Q_1)}{Q_3 - Q_1}$
  
- 
 ## Porównanie wielu rozkładów
 
 Często strukturę jednego rozkładu należy porównać z innym. Albo trzeba porównać
@@ -791,7 +782,6 @@ pox <- fb %>%
   xlab('')
 pox
 ```
-
 :::
 
 Od razu widać, że przeciętnie najciężsi zawodnicy byli na turnieju w roku 2019;

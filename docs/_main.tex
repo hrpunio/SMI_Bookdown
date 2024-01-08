@@ -95,7 +95,7 @@
 }
 
 \usepackage[most]{tcolorbox}
-\newtcolorbox{example}[1][]{%
+\newtcolorbox{TPexample}[1][]{%
     colback=black!5,
     colframe=black!5,
     notitle,
@@ -103,6 +103,8 @@
     enhanced,
     breakable,
 }
+\newenvironment{example}{\begin{TPexample}\parskip1ex}{\end{TPexample}}
+
 
 \font\chineseFont="NotoSansTC-Regular" at 10pt
 \def\chinese#1{{\chineseFont #1}}
@@ -117,6 +119,8 @@
 \def□{\chinese{\bbChar}} %% ballot box
 \def→{\chinese{\bbArrowR}} %% right arrow
 
+
+\newenvironment{tof}{\begingroup\medskip }{\par\medskip\endgroup}
 %%%
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -152,8 +156,8 @@
 \hypertarget{przedmiotbadan}{%
 \chapter{Przedmiot i metody badań statystycznych}\label{przedmiotbadan}}
 
-\hypertarget{przedmiot-statystyki}{%
-\section{Przedmiot statystyki}\label{przedmiot-statystyki}}
+\hypertarget{przedmiotS}{%
+\section{Przedmiot statystyki}\label{przedmiotS}}
 
 Wyraz statystyka ma wiele znaczeń: \textbf{statystyki zgonów} albo \textbf{statystyki
 alkoholizmu} czyli \textbf{dane} dotyczące zgonów lub alkoholizmu.
@@ -759,7 +763,7 @@ razem & 585 & 100.0000000\\
 Cecha ciągła to taka cecha, która może przyjąć nieskończoną/nieprzeliczalną liczbę wartości.
 Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb rzeczywistych.
 
-Tablica zawiera klasy wartości (przedziały wartości)
+Tablica zawiera klasy (przedziały) wartości
 oraz odpowiadające im liczebności.
 
 Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
@@ -785,15 +789,15 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 \begin{example}
 \textbf{Dzietność kobiet na świecie}
 
-Współczynnik dzietności (\emph{fertility ratio} albo FR) -- przeciętna liczba urodzonych dzieci przypadających
+Współczynnik dzietności (\emph{fertility ratio} albo FR) -- przeciętna liczba urodzonych dzieci przypadająca
 na jedną kobietę w wieku rozrodczym (15--49 lat).
 Przyjmuje się, iż FR między 2,10--2,15 zapewnia zastępowalność pokoleń.
 
-Dane dotyczące dzietności dla wszystkich krajów świata można
-znaleźć na stronie \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder})
-Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018
+Dane dotyczące dzietności dla wszystkich krajów świata pobrano
+ze strony \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder})
 
-Krajów jest 201. Wartość minimalna to 1.22 a wartość
+Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018.
+Krajów jest 201. Wartość minimalna wynosi 1.22 a wartość
 maksymalna to 7.13. Decydujemy się na rozpiętość przedziału równą 0,5;
 dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
 
@@ -901,16 +905,12 @@ będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 Wykres słupkowy (\emph{bar chart})
 
 \begin{example}
-\textbf{Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE}
-
 \includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-6-1}
 \end{example}
 
 Wykres kołowy (\emph{pie chart})
 
 \begin{example}
-\textbf{Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE}
-
 \includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-7-1}
 \end{example}
 
@@ -926,8 +926,6 @@ Jeżeli zwiększymy liczbę krajów wykres kołowy staje się zupełnie nieczyte
 wyróżniały):
 
 \begin{example}
-\textbf{Absolwenci studiów pielęgniarskich w krajach UE}
-
 \includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-8-1}
 
 Wykres słupkowy dalej jest natomiast OK:
@@ -942,8 +940,6 @@ Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
 wariantów cechy są przedziały wartości.
 
 \begin{example}
-\textbf{Dzietność kobiet na świecie}
-
 \includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-10-1}
 \end{example}
 
@@ -951,8 +947,8 @@ Podobnie jak tablice, rysunki powinny być opatrzone tytułem
 oraz zawierać źródło wskazujące na pochodzenie danych
 (zobacz przedstawione przykłady.)
 
-\hypertarget{florence-nightingale}{%
-\section{Florence Nightingale}\label{florence-nightingale}}
+\hypertarget{fnightingale}{%
+\section{Statystyczka Florence Nightingale}\label{fnightingale}}
 
 Nie każdy kto wie kim była Florence Nightingale, wie że
 była ona także statystykiem. W czasie wojny krymskiej nie tylko
@@ -1359,7 +1355,7 @@ porównanie rozkładów masy ciała zawodników rugby na poszczególnych turniej
 \includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-19-1}
 \end{example}
 
-Od razu widać, że przeciętnie najcięższy zawodnicy byli na turnieju w roku 2019;
+Od razu widać, że przeciętnie najciężsi zawodnicy byli na turnieju w roku 2019;
 największe zróżnicowanie masy
 ciała występowało na turnieju w roku 2023.
 
@@ -1479,7 +1475,7 @@ możemy jako metodę wykorzystać \textbf{średnią-z-próby}.
 
 W ogólności taką metodą, która formalnie jest funkcją elementów z próby, nazywa się
 w statystyce \textbf{estymatorem}. Warto to pojęcie zapamiętać. Wnioskujemy
-o wartości parametru w populacji posługując się estymatorem.
+o wartości nieznanego parametru w populacji posługując się estymatorem.
 
 Kontynuując wnioski z eksperymentu należy zauważyć, że
 wszystkie średnie-ze-średnich (bez względu na liczebność próby) są zbliżone do wartości
@@ -1725,11 +1721,11 @@ do normalnego (jak w przypadku zmiennej, która przyjmuje tylko dwie wartości)
 to i tak estymator tego parametru będzie normalny. Co najwyżej będziemy
 potrzebowali większej próby żeby „znormalniał'' (jak w opisywanym przykładzie).
 
-\hypertarget{wnioskowanie-statystyczne-interferance}{%
-\section{\texorpdfstring{Wnioskowanie statystyczne (\emph{interferance})}{Wnioskowanie statystyczne (interferance)}}\label{wnioskowanie-statystyczne-interferance}}
+\hypertarget{wnioskowanie-statystyczne}{%
+\section{Wnioskowanie statystyczne}\label{wnioskowanie-statystyczne}}
 
-Analizując dane uzyskane z próby celem jest ich \textbf{uogólnienie} na całą populację.
-Przypominamy, że wnioskujemy
+Analizując dane uzyskane z próby celem jest ich \textbf{uogólnienie} na całą populację. To uogólnienie
+nazywa się wnioskowaniem (\emph{interferance}). Przypominamy, że \textbf{wnioskujemy}
 o wartości parametru w populacji posługując się \textbf{estymatorem}. W przypadku
 wnioskowania o średniej estymatorem jest średnia-z-próby.
 Dobrze by było wiedzieć jak bardzo wiarygodna jest ta wartość (zwana oceną parametru) uzyskana
@@ -1871,6 +1867,33 @@ Shapiro-Wilka (opisane w następnym rozdziale)
 Oczywiste, ale powtórzmy: przypuszczenia o charakterze nieparametrycznym
 możemy tylko testować (sprawdzać hipotezy);
 nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
+
+\hypertarget{statystyk-carl-pearson}{%
+\section{Statystyk Carl Pearson}\label{statystyk-carl-pearson}}
+
+W punkcie \ref{fnightingale} przypomnieliśmy postać Florence Nightingale -- matki
+statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
+Ojców było więcej niż matek oczywiście, a wśród nich Francis Galton (regresja),
+Carl Pearson (korelacja, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
+Niestety wszyscy wymienieni byli
+zadeklarowanymi rasistami oraz wyznawcami społecznego darwninizmu
+i eugeniki. Pierwszymi zastosowaniami „nowoczesnych'' metod statystycznych było
+naukowe udowodnienie, że biali ludzie są lepsi od innych:
+
+\emph{Przez ile stuleci, ile tysięcy lat Kaffirowie {[}\ldots{]} lub Murzyni rządzili w Afryce
+nie niepokojeni przez białych ludzi? Jednak ich walki międzyplemienne nie stworzyły cywilizacji w najmniejszym stopniu
+porównywalnej z \textbf{aryjską} {[}\ldots{]}
+Historia pokazuje jeden i tylko jeden sposób, w jaki powstaje wysoka cywilizacja,
+a mianowicie \textbf{walka rasy} i przetrwanie rasy sprawniejszej fizycznie i psychicznie\ldots{}}
+
+Powyższe to cytat z \emph{National Life from the standpoint of science} Carla Pearsona (Londyn 1905).
+
+Naszym zdaniem dobrze jest pamiętać o tym fatalnym starcie „nowoczesnej statystyki'', bo chociaż
+jest mało prawdopodobne, że zostanie ona znowu wykorzystania do równie odrażających celów, to
+jest raczej więcej niż pewne, że będzie użyta do innych szwindli.
+Jeszcze jeden argument żeby nie traktować
+wyników analiz statystycznych jako wiedzy objawionej,
+absolutnie pewnej i 100\% prawdziwej (por. uwagę w punkcie \ref{przedmiotS}).
 
 \hypertarget{sux142ownik-terminuxf3w-ktuxf3re-warto-znaux107}{%
 \section{Słownik terminów które warto znać}\label{sux142ownik-terminuxf3w-ktuxf3re-warto-znaux107}}
@@ -2804,7 +2827,7 @@ uzyskane \textbf{metodą najmniejszych kwadratów} posiadają obie właściwośc
 Graficznie \textbf{kryterium minimalizacyjne} przedstawia rysunek \ref{fig:KMNK}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./kmnk_roznice} \caption{Metody statystycznej weryfikacji zależności pomiędzy zmiennymi}\label{fig:KMNK}
+\includegraphics[width=0.8\linewidth]{./kmnk_roznice} \caption{Metoda najmniejszych kwadratów}\label{fig:KMNK}
 \end{figure}
 
 Suma podniesionych do kwadratu odległości pomiędzy czerwonymi
@@ -2953,7 +2976,7 @@ Model oszacowano dla krajów świata w roku 2013 na podstawie danych
 pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
 następujące wyniki:
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-63-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-64-1}
 
 \begin{tabular}{l|r|r|r|r|l}
 \hline
@@ -3501,7 +3524,7 @@ Parametr & Ocena & Błąd stand & z & p\\
 Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
 wyniosło 0.0663265. Krzywa ROC dla modelu zerowego wygląda następująco:
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-73-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-75-1}
 
 Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
 z bardziej skomplikowanymi modelami.
@@ -3572,7 +3595,7 @@ Dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = 0)
 
 Krzywa ROC
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-79-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-81-1}
 \end{example}
 
 \hypertarget{przypadek-specjalny-dwie-zmienne-co-najmniej-porzux105dkowe}{%
@@ -3773,7 +3796,7 @@ Nie pytamy się zatem \textbf{Czy pan/pani boi się COVID19?} tylko zadajemy ser
 pytań o strach względem COVID19:
 
 \begin{example}
-\textbf{strach przed COVID19}
+\textbf{Strach przed COVID19}
 
 The Fear of COVID-19 Scale: Development and Initial Validation.
 International Journal of
@@ -3974,7 +3997,7 @@ Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 Rozkład ankietowanych wg wyniku testu
 na znajomość szkodliwości palenia przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-82-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-84-1}
 
 W badaniu wzięło udział 110 studentów.
 Otrzymano 110 poprawnie
@@ -3985,20 +4008,20 @@ standardowe 3.997).
 Rozkład ankietowanych ze względu na status względem
 palenia przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-83-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-85-1}
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku
 
-\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-84-1}
+\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-86-1}
 
 Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-85-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-87-1}
 
 Rozkład ankietowanych ze względu na rodzaj miejsca pracy
 przedstawiono na rysunku
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-86-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-88-1}
 
 \hypertarget{weryfikacja-hipotezy-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1}}
@@ -4184,11 +4207,11 @@ ogromna & 2 & 3 & 2\\
 ## X-squared = 4.9954, df = 6, p-value = 0.5444
 \end{verbatim}
 
-Widza i status wzg. palenia nie jest skorelowana
-o czym świadczy wysoka wartość p (0.5444)
+Wiedza i status względem palenia nie są skorelowane
+o czym świadczy wysoka wartość p (0.5444).
 
 Można to samo zweryfikować porównując średnie w grupach
-i stosując test Kruskala-Wallisa
+i stosując test Kruskala-Wallisa:
 
 \begin{tabular}{l|r|r}
 \hline
@@ -4207,7 +4230,7 @@ W dalszym ciągu palę & 10.95652 & 23\\
 ## [1] 0.7787663
 \end{verbatim}
 
-Wynik jest identyczny (wysoka wartość p 1).
+Wynik jest identyczny (wysoka wartość p 0.7788).
 
 \hypertarget{wnioski}{%
 \subsection{Wnioski}\label{wnioski}}
@@ -4283,20 +4306,20 @@ standardowe 8.577)
 
 Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-98-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-100-1}
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-99-1}
+\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-101-1}
 
 Rozkład ankietowanych ze względu na staż przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-100-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-102-1}
 
 \hypertarget{weryfikacja-hipotezy-1-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1-1}}
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-101-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-103-1}
 
 Ciężką postać depresji wykazuje zaledwie 3\% studentów. Należy odrzucić hipotezę
 że depresja stanowi poważny problem wśród studentów RM/PO PSW.
@@ -4647,7 +4670,7 @@ Stąd: czułość 0.98; swoistość 0.33.
 
 Krzywą ROC przedstawiono na rysunku:
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-113-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-115-1}
 
 \hypertarget{wnioski-2}{%
 \subsection{Wnioski}\label{wnioski-2}}
@@ -5050,8 +5073,8 @@ Punkty & Depresja \\
 oraz
 \url{http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf}
 
-\hypertarget{ankieta-palenie}{%
-\subsection{Ankieta Palenie}\label{ankieta-palenie}}
+\hypertarget{ankieta-na-temat-szkodliwoux15bci-palenia}{%
+\subsection{Ankieta na temat szkodliwości palenia}\label{ankieta-na-temat-szkodliwoux15bci-palenia}}
 
 Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 

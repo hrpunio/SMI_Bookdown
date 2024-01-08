@@ -30,7 +30,7 @@
 }
 
 \usepackage[most]{tcolorbox}
-\newtcolorbox{example}[1][]{%
+\newtcolorbox{TPexample}[1][]{%
     colback=black!5,
     colframe=black!5,
     notitle,
@@ -38,6 +38,8 @@
     enhanced,
     breakable,
 }
+\newenvironment{example}{\begin{TPexample}\parskip1ex}{\end{TPexample}}
+
 
 \font\chineseFont="NotoSansTC-Regular" at 10pt
 \def\chinese#1{{\chineseFont #1}}
@@ -52,4 +54,6 @@
 \def□{\chinese{\bbChar}} %% ballot box
 \def→{\chinese{\bbArrowR}} %% right arrow
 
+
+\newenvironment{tof}{\begingroup\medskip }{\par\medskip\endgroup}
 %%%
