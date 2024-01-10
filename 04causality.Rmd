@@ -510,7 +510,7 @@ kable(ttest.mp, col.names = c('Grupa1', 'Grupa2', 'n1', 'n2', 't', 'p'))
 Kolumna t  zawiera wartość statystyki testu $t_k$. Kolumna p
 zawiera oczywiście wartość prawdopodobieństwa p.
 
-Ponieważ wartość $p$ równa `r pval.mp`` jest większa od każdego zwyczajowo
+Ponieważ wartość $p$ równa `r pval.mp` jest większa od każdego zwyczajowo
 przyjmowanego poziomu istotności (0,05 na przykład, albo 0,1) nie ma podstaw 
 do odrzucenia hipotezy, że średnie w obu grupach są równe. Skoro tak, to
 w konsekwencji stwierdzamy że pomiędzy poziomem depresji 
@@ -1857,7 +1857,7 @@ korelacji liniowej Pearsona -- miara niemianowana, o wartościach
 ze zbioru [-1;1];
 
 ::: {.example}
-**Przykład: spożycie mięsa**
+**Spożycie mięsa**
 
 Współczynnik Pearsona i Spearmana dla zależności między spożyciem mięsa w 1980
 a spożyciem mięsa w 2013 roku (zmienna objaśniana):
