@@ -44,7 +44,7 @@ Rozdział trzeci przedstawia ideę **wnioskowania statystycznego**.
 Najbardziej
 obszerny rozdział czwarty opisuje metody **analizy zależności**.
 
-Pozostałem rozdziały poświęcono praktyce. Rozdział piąty zawiera
+Pozostałe rozdziały poświęcono praktyce. Rozdział piąty zawiera
 przykładowe analizy trzech badań ankietowych a rozdział szósty
 opisuje
 jak uprawiać statystykę z wykorzystaniem programu Jamovi.
