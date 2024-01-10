@@ -1118,7 +1118,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 
 ```
 
@@ -1147,7 +1147,7 @@ lm.7.coef.df <- tibble::rownames_to_column(lm.7.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.7.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 
 ```
 
@@ -1189,7 +1189,7 @@ gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
 ```
 
 Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej na poziomie
@@ -1216,7 +1216,7 @@ gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
 ```
 
 Macierz pomyłek:

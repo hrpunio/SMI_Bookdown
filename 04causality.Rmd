@@ -706,7 +706,7 @@ pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
 
 :::
 
-###  Pomiar siły zależności: współczynnik korelacji liniowej Pearsona
+###  Pomiar siły zależności: współczynnik korelacji liniowej Pearsona {#PearsonCoeff}
 
 Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych $X$, $Y$
 od ich wartości średnich. Dla $n$ obserwacji na zmiennych $X$ oraz $Y$
@@ -721,7 +721,7 @@ od wybranych skal (tony vs gramy na przykład.)
 
 Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji, 
-zwanego **współczynnikiem korelacji liniowej**, (*linear
+zwanego **współczynnikiem korelacji liniowej Pearsona**, (*Pearson
 correlation coefficient*). Standaryzacja polega na podzieleniu wartości
 kowariancji przez iloczyn odchyleń standardowych $s_x$ oraz $s_y$.
 
@@ -933,10 +933,11 @@ Wartości $b_1$ bliskie zero wskazują na słabą zależność
 pomiędzy cechami.
 
 Przypominamy, że **estymator** parametru $b_1$ ma średnią równą prawdziwej wartości $b_1$.
-Dodatkowo zakładamy, że rozkład tego estymatora jest normalny. To założenie
-pozwala wiarygodnie oszacować wariancję; w konsekwencji znamy dokładny 
-rozkład (bo przypominamy, że rozkład
-normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję)
+Dodatkowo zakładamy, że rozkład tego estymatora jest normalny, co 
+pozwala wiarygodnie oszacować wariancję tegoż estymatora.
+W konsekwencji znamy jego dokładny rozkład, bo przypominamy, że rozkład
+normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję (lub
+odchylenie standardowe czyli pierwiastek z wariancji).
 
 Można teraz zadać pytanie jeżeli faktycznie $b_1=0$, to jakie jest prawdopodobieństwo, że
 współczynnik $\hat b_1$ oszacowany
@@ -955,6 +956,10 @@ W każdym programie komputerowym na wydruku wyników linii regresji są podane w
 prawdopodobieństwa $b_1 > b_e$ (co do wartości bezwzględnej). Jeżeli jest
 ono mniejsze
 niż ustalony **poziom istotności** to $b_1$ ma wartość istotnie różną od zera.
+Oprócz wartości prawdopodobieństwa drukowana jest także wartość
+błędu standardowego  parametru zwykle oznaczana jako `SE` (*standard error*). Wartość
+`SE` nie jest wprawdzie potrzebna do oceny istotności (wystarczy prawdopodobieństwo), ale
+dobry zwyczaj nakazuje podawać także tę wartość w raporcie.
 
 Testowanie istotności współczynnika regresji jest ważnym kryterium oceny
 jakości dopasowania.
@@ -1007,13 +1012,13 @@ lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
   mutate(ci=lm_ci_txt)
 
 kable(lm.0.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'CI95') )
 
 ```
 
 Pierwsza kolumna `Zmienna` zawiera nazwy zmiennych (`(Intercept)` oznacza wyraz wolny).
 Druga kolumna oznaczona jako `B` zawiera oszacowane wartości (oceny) parametrów linii regresji.
-Kolumna `Błąd stand` zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
+Kolumna `SE` zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
 Kolumna `p` zawiera prawdopodobieństwo $b>b_e$.
 
 Wzrost wagi zawodnika o 1kg
@@ -1024,7 +1029,7 @@ oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p < 0,05). 
 
 Kolumna `CI95` zawiera 95% przedziały ufności: z 95% prawdopodobieństwem wartość współczynnika nachylenia
-prostej znajduje się w przedziale 0,24--0,32.
+prostej znajduje się w przedziale `r  sprintf ("%.3f--%.3f", lm.0.ci[2,1], lm.0.ci[2,2])`.
 :::
 
 ::: {.example}
@@ -1072,7 +1077,7 @@ lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
   mutate(ci=lm_ci_txt)
 
 kable(lm.0.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'CI95') )
 
 ```
 
@@ -1224,7 +1229,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95') )
 
 ```
 
@@ -1259,7 +1264,7 @@ lm.2.coef.df <- tibble::rownames_to_column(lm.2.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.2.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95') )
 ```
 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
@@ -1287,7 +1292,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 ```
 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
@@ -1385,7 +1390,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 
 ```
 
@@ -1420,7 +1425,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 
 ```
 
@@ -1470,7 +1475,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 
 ```
 
@@ -1497,7 +1502,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'Błąd stand', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
 
 ```
 
@@ -1676,7 +1681,7 @@ prob0 <- exp(logit)/(1+exp(logit))
 ## Dodanie kolumny zamiast nazw wierszy
 gml.0.coef.df <- tibble::rownames_to_column(gml.0.coef, "Parametr")
 kable(gml.0.coef.df, row.names = F,
-      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p') )
 ```
 
 Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
@@ -1730,7 +1735,7 @@ gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
 ```
 
 Znając wartości współczynników równania można obliczyć wartości $\ln(o)$
@@ -1779,7 +1784,7 @@ gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
          ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'Błąd stand', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
 ```
 
 Macierz pomyłek (*confussion matrix*)

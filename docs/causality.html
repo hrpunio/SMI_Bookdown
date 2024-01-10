@@ -71,6 +71,7 @@
 <li><a href="https://hrpunio.github.io/SMI_Bookdown/przedmiotbadan.html">Łagodne wprowadzenie do statystyki</a></li>
 
 <li class="divider"></li>
+<li><a href="wstęp.html#wstęp" id="toc-wstęp">Wstęp</a></li>
 <li><a href="przedmiotbadan.html#przedmiotbadan" id="toc-przedmiotbadan"><span class="toc-section-number">1</span> Przedmiot i metody badań statystycznych</a>
 <ul>
 <li><a href="przedmiotbadan.html#przedmiotS" id="toc-przedmiotS"><span class="toc-section-number">1.1</span> Przedmiot statystyki</a></li>
@@ -140,7 +141,7 @@
 <li><a href="causality.html#dwie-zmienne-liczbowe" id="toc-dwie-zmienne-liczbowe"><span class="toc-section-number">4.3</span> Dwie zmienne liczbowe</a>
 <ul>
 <li><a href="causality.html#korelacyjny-wykres-rozrzutu" id="toc-korelacyjny-wykres-rozrzutu"><span class="toc-section-number">4.3.1</span> Korelacyjny wykres rozrzutu</a></li>
-<li><a href="causality.html#pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" id="toc-pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona"><span class="toc-section-number">4.3.2</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</a></li>
+<li><a href="causality.html#PearsonCoeff" id="toc-PearsonCoeff"><span class="toc-section-number">4.3.2</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</a></li>
 <li><a href="causality.html#macierz-korelacji" id="toc-macierz-korelacji"><span class="toc-section-number">4.3.3</span> Macierz korelacji</a></li>
 <li><a href="causality.html#pomiar-siły-zależności-regresja-liniowa" id="toc-pomiar-siły-zależności-regresja-liniowa"><span class="toc-section-number">4.3.4</span> Pomiar siły zależności: regresja liniowa</a></li>
 <li><a href="causality.html#regProsta" id="toc-regProsta"><span class="toc-section-number">4.3.5</span> Regresja prosta</a></li>
@@ -222,7 +223,7 @@
 <li><a href="intro2jamovi.html#redagowanie-raportu" id="toc-redagowanie-raportu"><span class="toc-section-number">6.2.9</span> Redagowanie raportu</a></li>
 </ul></li>
 </ul></li>
-<li><a href="literatura.html#literatura" id="toc-literatura"><span class="toc-section-number">7</span> Literatura</a></li>
+<li><a href="literatura.html#literatura" id="toc-literatura">Literatura</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -1118,7 +1119,7 @@ Liniowa czy nieliniowa, relacja jest na pewno mocno przybliżona co jest najbard
 pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.</p>
 </div>
 </div>
-<div id="pomiar-siły-zależności-współczynnik-korelacji-liniowej-pearsona" class="section level3" number="4.3.2">
+<div id="PearsonCoeff" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Pomiar siły zależności: współczynnik korelacji liniowej Pearsona</h3>
 <p>Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>
 od ich wartości średnich. Dla <span class="math inline">\(n\)</span> obserwacji na zmiennych <span class="math inline">\(X\)</span> oraz <span class="math inline">\(Y\)</span>
@@ -1130,7 +1131,7 @@ ma też dziwną jednostkę (jednostkaX · jednostkaY) oraz zależy
 od wybranych skal (tony vs gramy na przykład.)</p>
 <p>Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji,
-zwanego <strong>współczynnikiem korelacji liniowej</strong>, (<em>linear
+zwanego <strong>współczynnikiem korelacji liniowej Pearsona</strong>, (<em>Pearson
 correlation coefficient</em>). Standaryzacja polega na podzieleniu wartości
 kowariancji przez iloczyn odchyleń standardowych <span class="math inline">\(s_x\)</span> oraz <span class="math inline">\(s_y\)</span>.</p>
 <p><span class="math display">\[r_{xy} = \frac{\mathrm{cov}(xy) }{s_x \cdot s_y}\]</span></p>
@@ -1286,10 +1287,11 @@ pomiędzy <span class="math inline">\(X\)</span> oraz <span class="math inline">
 Wartości <span class="math inline">\(b_1\)</span> bliskie zero wskazują na słabą zależność
 pomiędzy cechami.</p>
 <p>Przypominamy, że <strong>estymator</strong> parametru <span class="math inline">\(b_1\)</span> ma średnią równą prawdziwej wartości <span class="math inline">\(b_1\)</span>.
-Dodatkowo zakładamy, że rozkład tego estymatora jest normalny. To założenie
-pozwala wiarygodnie oszacować wariancję; w konsekwencji znamy dokładny
-rozkład (bo przypominamy, że rozkład
-normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję)</p>
+Dodatkowo zakładamy, że rozkład tego estymatora jest normalny, co
+pozwala wiarygodnie oszacować wariancję tegoż estymatora.
+W konsekwencji znamy jego dokładny rozkład, bo przypominamy, że rozkład
+normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję (lub
+odchylenie standardowe czyli pierwiastek z wariancji).</p>
 <p>Można teraz zadać pytanie jeżeli faktycznie <span class="math inline">\(b_1=0\)</span>, to jakie jest prawdopodobieństwo, że
 współczynnik <span class="math inline">\(\hat b_1\)</span> oszacowany
 na podstawie <span class="math inline">\(n\)</span> obserwacji będzie (co do wartości bezwzględnej) większy niż <span class="math inline">\(b_e\)</span>.
@@ -1304,7 +1306,11 @@ to <strong>poziom istotności</strong></p>
 <p>W każdym programie komputerowym na wydruku wyników linii regresji są podane wartości
 prawdopodobieństwa <span class="math inline">\(b_1 &gt; b_e\)</span> (co do wartości bezwzględnej). Jeżeli jest
 ono mniejsze
-niż ustalony <strong>poziom istotności</strong> to <span class="math inline">\(b_1\)</span> ma wartość istotnie różną od zera.</p>
+niż ustalony <strong>poziom istotności</strong> to <span class="math inline">\(b_1\)</span> ma wartość istotnie różną od zera.
+Oprócz wartości prawdopodobieństwa drukowana jest także wartość
+błędu standardowego parametru zwykle oznaczana jako <code>SE</code> (<em>standard error</em>). Wartość
+<code>SE</code> nie jest wprawdzie potrzebna do oceny istotności (wystarczy prawdopodobieństwo), ale
+dobry zwyczaj nakazuje podawać także tę wartość w raporcie.</p>
 <p>Testowanie istotności współczynnika regresji jest ważnym kryterium oceny
 jakości dopasowania.
 Regresja z <strong>nieistotnym</strong> współczynnikiem nie
@@ -1322,7 +1328,7 @@ daje następujące wyniki:</p>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">CI95</th>
@@ -1349,7 +1355,7 @@ daje następujące wyniki:</p>
 </table>
 <p>Pierwsza kolumna <code>Zmienna</code> zawiera nazwy zmiennych (<code>(Intercept)</code> oznacza wyraz wolny).
 Druga kolumna oznaczona jako <code>B</code> zawiera oszacowane wartości (oceny) parametrów linii regresji.
-Kolumna <code>Błąd stand</code> zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
+Kolumna <code>SE</code> zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
 Kolumna <code>p</code> zawiera prawdopodobieństwo <span class="math inline">\(b&gt;b_e\)</span>.</p>
 <p>Wzrost wagi zawodnika o 1kg
 skutkuje przeciętnie większym wzrostem o 0.294 cm. Współczynnik determinacji
@@ -1358,7 +1364,7 @@ Współczynnik nachylenia prostej jest istotny ponieważ wartość <span class="
 oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p &lt; 0,05).</p>
 <p>Kolumna <code>CI95</code> zawiera 95% przedziały ufności: z 95% prawdopodobieństwem wartość współczynnika nachylenia
-prostej znajduje się w przedziale 0,24–0,32.</p>
+prostej znajduje się w przedziale 0.260–0.330.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-35" class="example"><strong>4.16  </strong></span><strong>Zamożność a konsumpcja mięsa</strong></p>
@@ -1374,7 +1380,7 @@ następujące wyniki:</p>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">CI95</th>
@@ -1489,7 +1495,7 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -1542,7 +1548,7 @@ wyniki:</p>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -1589,7 +1595,7 @@ wyniki:</p>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -1688,19 +1694,19 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <p>Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:</p>
 <table>
 <colgroup>
+<col width="24%" />
+<col width="12%" />
+<col width="10%" />
+<col width="10%" />
+<col width="9%" />
+<col width="10%" />
 <col width="22%" />
-<col width="11%" />
-<col width="15%" />
-<col width="10%" />
-<col width="8%" />
-<col width="10%" />
-<col width="21%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -1791,20 +1797,11 @@ i nie jest to przypadek.</p>
 <p>Oszacowanie tego samego równania dla próba o wielkości 4490 obserwacji daje następujące
 wyniki:</p>
 <table>
-<colgroup>
-<col width="23%" />
-<col width="10%" />
-<col width="15%" />
-<col width="11%" />
-<col width="8%" />
-<col width="10%" />
-<col width="20%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -1909,20 +1906,11 @@ przy zmiennej <code>ever.drinker</code> ma wartość <span class="math inline">\
 <code>ever.smoker</code> ma wartość 0,05324. Usuwamy zmienną <code>ever.drinker</code> (bo wartość <span class="math inline">\(p\)</span> jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:</p>
 <table>
-<colgroup>
-<col width="23%" />
-<col width="10%" />
-<col width="15%" />
-<col width="11%" />
-<col width="8%" />
-<col width="10%" />
-<col width="20%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -1998,20 +1986,11 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <p>Współczynnik przy zmiennej <code>ever.smoker</code> dalej uparcie jest nieistotny. Usuwamy
 teraz tę zmienną. Otrzymujemy:</p>
 <table>
-<colgroup>
-<col width="23%" />
-<col width="10%" />
-<col width="16%" />
-<col width="11%" />
-<col width="7%" />
-<col width="10%" />
-<col width="20%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Zmienna</th>
 <th align="right">B</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">Beta</th>
@@ -2207,7 +2186,7 @@ oraz prawdopodobieństwo</p>
 <tr class="header">
 <th align="left">Parametr</th>
 <th align="right">Ocena</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 </tr>
@@ -2241,7 +2220,7 @@ oraz prawdopodobieństwo</p>
 <tr class="header">
 <th align="left">Parametr</th>
 <th align="right">Ocena</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">OR</th>
@@ -2281,7 +2260,7 @@ oraz prawdopodobieństwo</p>
 <tr class="header">
 <th align="left">Parametr</th>
 <th align="right">Ocena</th>
-<th align="right">Błąd stand</th>
+<th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
 <th align="left">OR</th>

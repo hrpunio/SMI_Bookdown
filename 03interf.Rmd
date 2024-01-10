@@ -631,7 +631,7 @@ nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
 W punkcie \@ref(fnightingale) przypomnieliśmy postać Florence Nightingale -- matki
 statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
 Ojców było więcej niż matek oczywiście, a wśród nich Francis Galton (regresja),
-Carl Pearson (korelacja, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
+Carl Pearson (współczynnik korelacji liniowej, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
 Niestety wszyscy wymienieni byli
 zadeklarowanymi rasistami oraz wyznawcami społecznego darwninizmu
 i eugeniki. Pierwszymi zastosowaniami „nowoczesnych” metod statystycznych było

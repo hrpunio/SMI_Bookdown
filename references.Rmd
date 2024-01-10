@@ -1,4 +1,4 @@
-# Literatura
+# Literatura {-}
 
 Beaglehole, Robert, Ruth Bonita, and Tord Kjellstrom. 1996. *Podstawy Epidemiologii*. Instytut Medycyny Pracy.
 

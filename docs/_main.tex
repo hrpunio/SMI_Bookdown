@@ -153,6 +153,64 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\hypertarget{wstux119p}{%
+\chapter*{Wstęp}\label{wstux119p}}
+\addcontentsline{toc}{chapter}{Wstęp}
+
+Przygotowując się kilka lat temu do zajęć z przedmiotu Statystyka Medyczna
+ze zdumieniem odkryłem, że
+nie istnieje coś takiego jak polski podręcznik do statystyki medycznej
+powszechnie dostępny w księgarni, który mogę polecić
+swoim studentom. Byłem tym tym bardziej zdziwiony, że wiedziałem już wtedy
+co oznacza akronim EBM.
+W tamtym czasie prawdę mówiąc była tylko jedna
+książka ze statystyką medyczną w tytule -- absolutnie moim zdaniem
+nie nadająca się do polecenia jej komukolwiek kto chciałby się
+nauczyć statystyki.
+Jest to książka tak \textbf{beznadziejna}, że nie wymienię nawet jej tytułu --
+tłumaczenie
+z języka angielskiego zresztą.
+
+W trakcie zajęć odkryłem także, że studenci w ogromnej większości
+są przekonani, że przedmiot ten jest trudny i mają w związku z tym
+ogromną -- graniczącą z pewnością -- obawę, że nie są w stanie go opanować.
+
+W moim przekonaniu żeby ten stan rzeczy zmienić należy zademonstrować
+-- teoretycznie oraz praktycznie -- że statystyka nie jest
+wcale aż taka trudna. Teoretycznie oznaczałoby,
+że cześć matematyczna powinna być zredukowana do absolutnego minimum,
+a praktycznie, że należy pokazać jak i czym da się łatwo statystkę uprawiać
+czyli liczyć. Przez \textbf{czym} oczywiście współcześnie należy
+rozumieć konkretny program komputerowy i niekoniecznie tym programem musi być
+arkusz kalkulacyjny.
+
+Sposobem na lepsze zrozumienie statystyki nie może być zasypanie
+studenta wielopiętrowymi formułami matematycznymi (co dyskwalifikuje
+część podręczników), ale raczej zastąpienie formalnej ścisłości
+przykładami i odwołanie się do zdrowego rozsądku, który przecież
+jest istotą wielu procedur statystycznych, takich jak na przykład
+testy istotności.
+
+Kierując się tym założeniem całość teorii wyłożono w czterech pierwszych
+rozdziałach podręcznika.
+W pierwszym jak to zwykle bywa przedstawiono czym jest statystyka,
+czym się zajmuje oraz wyjaśniono \textbf{podstawowe pojęcia}, którymi
+statystyka się posługuje, takie jak populacja, próba czy pomiar.
+W rozdziale drugim przedstawiono metody \textbf{opisu statystycznego}.
+Rozdział trzeci przedstawia ideę \textbf{wnioskowania statystycznego}.
+Najbardziej
+obszerny rozdział czwarty opisuje metody \textbf{analizy zależności}.
+
+Pozostałem rozdziały poświęcono praktyce. Rozdział piąty zawiera
+przykładowe analizy trzech badań ankietowych a rozdział szósty
+opisuje
+jak uprawiać statystykę z wykorzystaniem programu Jamovi.
+
+Podręcznik został napisany dla studentów Wydziału Nauk o Zdrowiu
+Powiślańskiej Szkoły Wyższej, których uczę od kilku lat
+statystyki medycznej, ale mam nadzieję że może być przydatny
+także dla studentów innych kierunków zwłaszcza kierunków medycznych.
+
 \hypertarget{przedmiotbadan}{%
 \chapter{Przedmiot i metody badań statystycznych}\label{przedmiotbadan}}
 
@@ -1874,7 +1932,7 @@ nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
 W punkcie \ref{fnightingale} przypomnieliśmy postać Florence Nightingale -- matki
 statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
 Ojców było więcej niż matek oczywiście, a wśród nich Francis Galton (regresja),
-Carl Pearson (korelacja, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
+Carl Pearson (współczynnik korelacji liniowej, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
 Niestety wszyscy wymienieni byli
 zadeklarowanymi rasistami oraz wyznawcami społecznego darwninizmu
 i eugeniki. Pierwszymi zastosowaniami „nowoczesnych'' metod statystycznych było
@@ -2678,8 +2736,8 @@ Liniowa czy nieliniowa, relacja jest na pewno mocno przybliżona co jest najbard
 pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
 \end{example}
 
-\hypertarget{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-liniowej-pearsona}{%
-\subsection{Pomiar siły zależności: współczynnik korelacji liniowej Pearsona}\label{pomiar-siux142y-zaleux17cnoux15bci-wspuxf3ux142czynnik-korelacji-liniowej-pearsona}}
+\hypertarget{PearsonCoeff}{%
+\subsection{Pomiar siły zależności: współczynnik korelacji liniowej Pearsona}\label{PearsonCoeff}}
 
 Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych \(X\), \(Y\)
 od ich wartości średnich. Dla \(n\) obserwacji na zmiennych \(X\) oraz \(Y\)
@@ -2694,7 +2752,7 @@ od wybranych skal (tony vs gramy na przykład.)
 
 Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji,
-zwanego \textbf{współczynnikiem korelacji liniowej}, (\emph{linear
+zwanego \textbf{współczynnikiem korelacji liniowej Pearsona}, (\emph{Pearson
 correlation coefficient}). Standaryzacja polega na podzieleniu wartości
 kowariancji przez iloczyn odchyleń standardowych \(s_x\) oraz \(s_y\).
 
@@ -2899,10 +2957,11 @@ Wartości \(b_1\) bliskie zero wskazują na słabą zależność
 pomiędzy cechami.
 
 Przypominamy, że \textbf{estymator} parametru \(b_1\) ma średnią równą prawdziwej wartości \(b_1\).
-Dodatkowo zakładamy, że rozkład tego estymatora jest normalny. To założenie
-pozwala wiarygodnie oszacować wariancję; w konsekwencji znamy dokładny
-rozkład (bo przypominamy, że rozkład
-normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję)
+Dodatkowo zakładamy, że rozkład tego estymatora jest normalny, co
+pozwala wiarygodnie oszacować wariancję tegoż estymatora.
+W konsekwencji znamy jego dokładny rozkład, bo przypominamy, że rozkład
+normalny jest określony przez dwa parametry: średnią oraz właśnie wariancję (lub
+odchylenie standardowe czyli pierwiastek z wariancji).
 
 Można teraz zadać pytanie jeżeli faktycznie \(b_1=0\), to jakie jest prawdopodobieństwo, że
 współczynnik \(\hat b_1\) oszacowany
@@ -2921,6 +2980,10 @@ W każdym programie komputerowym na wydruku wyników linii regresji są podane w
 prawdopodobieństwa \(b_1 > b_e\) (co do wartości bezwzględnej). Jeżeli jest
 ono mniejsze
 niż ustalony \textbf{poziom istotności} to \(b_1\) ma wartość istotnie różną od zera.
+Oprócz wartości prawdopodobieństwa drukowana jest także wartość
+błędu standardowego parametru zwykle oznaczana jako \texttt{SE} (\emph{standard error}). Wartość
+\texttt{SE} nie jest wprawdzie potrzebna do oceny istotności (wystarczy prawdopodobieństwo), ale
+dobry zwyczaj nakazuje podawać także tę wartość w raporcie.
 
 Testowanie istotności współczynnika regresji jest ważnym kryterium oceny
 jakości dopasowania.
@@ -2941,7 +3004,7 @@ daje następujące wyniki:
 
 \begin{tabular}{l|r|r|r|r|l}
 \hline
-Zmienna & B & Błąd stand & z & p & CI95\\
+Zmienna & B & SE & z & p & CI95\\
 \hline
 (Intercept) & 155.926 & 1.753 & 88.969 & 0 & 152.480 159.370\\
 \hline
@@ -2951,7 +3014,7 @@ weight & 0.294 & 0.017 & 17.305 & 0 & 0.260 0.330\\
 
 Pierwsza kolumna \texttt{Zmienna} zawiera nazwy zmiennych (\texttt{(Intercept)} oznacza wyraz wolny).
 Druga kolumna oznaczona jako \texttt{B} zawiera oszacowane wartości (oceny) parametrów linii regresji.
-Kolumna \texttt{Błąd\ stand} zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
+Kolumna \texttt{SE} zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
 Kolumna \texttt{p} zawiera prawdopodobieństwo \(b>b_e\).
 
 Wzrost wagi zawodnika o 1kg
@@ -2962,7 +3025,7 @@ oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p \textless{} 0,05).
 
 Kolumna \texttt{CI95} zawiera 95\% przedziały ufności: z 95\% prawdopodobieństwem wartość współczynnika nachylenia
-prostej znajduje się w przedziale 0,24--0,32.
+prostej znajduje się w przedziale 0.260--0.330.
 \end{example}
 
 \begin{example}
@@ -2980,7 +3043,7 @@ następujące wyniki:
 
 \begin{tabular}{l|r|r|r|r|l}
 \hline
-Zmienna & B & Błąd stand & z & p & CI95\\
+Zmienna & B & SE & z & p & CI95\\
 \hline
 (Intercept) & 34.085 & 2.232 & 15.268 & 0 & 29.680 38.490\\
 \hline
@@ -3103,7 +3166,7 @@ Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące w
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI95\\
+Zmienna & B & SE & z & p & Beta & CI95\\
 \hline
 (Intercept) & 59.698 & 11.965 & 4.990 & 0.000 & NA & 35.920 83.480\\
 \hline
@@ -3128,7 +3191,7 @@ wyniki:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI95\\
+Zmienna & B & SE & z & p & Beta & CI95\\
 \hline
 (Intercept) & 79.061 & 4.378 & 18.057 & 0 & NA & 70.460 87.660\\
 \hline
@@ -3147,7 +3210,7 @@ wyniki:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 74.011 & 1.530 & 48.358 & 0 & NA & 71.010 77.010\\
 \hline
@@ -3235,7 +3298,7 @@ Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następuj�
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 90.332 & 15.745 & 5.737 & 0.000 & NA & 59.010 121.650\\
 \hline
@@ -3267,7 +3330,7 @@ wyniki:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 80.089 & 1.623 & 49.334 & 0.000 & NA & 76.910 83.270\\
 \hline
@@ -3315,7 +3378,7 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 80.108 & 1.622 & 49.387 & 0.000 & NA & 76.930 83.290\\
 \hline
@@ -3338,7 +3401,7 @@ teraz tę zmienną. Otrzymujemy:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 79.865 & 1.618 & 49.375 & 0.00 & NA & 76.690 83.040\\
 \hline
@@ -3515,7 +3578,7 @@ oraz prawdopodobieństwo
 
 \begin{tabular}{l|r|r|r|r}
 \hline
-Parametr & Ocena & Błąd stand & z & p\\
+Parametr & Ocena & SE & z & p\\
 \hline
 (Intercept) & -2.644537 & 0.2029618 & -13.02973 & 0\\
 \hline
@@ -3544,7 +3607,7 @@ oraz prawdopodobieństwo
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Parametr & Ocena & Błąd stand & z & p & OR & CI\\
+Parametr & Ocena & SE & z & p & OR & CI\\
 \hline
 (Intercept) & -3.367 & 0.455 & -7.403 & 0.000 & 0.030 & 0.010 0.080\\
 \hline
@@ -3566,7 +3629,7 @@ oraz prawdopodobieństwo
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Parametr & Ocena & Błąd stand & z & p & OR & CI\\
+Parametr & Ocena & SE & z & p & OR & CI\\
 \hline
 (Intercept) & -12.183 & 1.766 & -6.898 & 0.000 & 0.000 & 0.000 0.000\\
 \hline
@@ -4558,7 +4621,7 @@ Oszacowanie tego modelu daje następujące wyniki:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 13.035 & 3.706 & 3.517 & 0.001 & NA & 5.570 20.500\\
 \hline
@@ -4589,7 +4652,7 @@ W modelu ostatecznym \texttt{zzp} jest objaśniana przez \texttt{sp} oraz \textt
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Zmienna & B & Błąd stand & z & p & Beta & CI\\
+Zmienna & B & SE & z & p & Beta & CI\\
 \hline
 (Intercept) & 13.987 & 2.969 & 4.710 & 0.000 & NA & 8.030 19.950\\
 \hline
@@ -4618,7 +4681,7 @@ jest objaśniana przez \texttt{sp}, \texttt{sw}, \texttt{kpw}, \texttt{kpp}, \te
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Parametr & Ocena & Błąd stand & z & p & OR & CI\\
+Parametr & Ocena & SE & z & p & OR & CI\\
 \hline
 (Intercept) & -4.702 & 4.599 & -1.022 & 0.307 & 0.010 & 0.000 82.270\\
 \hline
@@ -4649,7 +4712,7 @@ do modelu w którym odejście z pracy objaśnia tylko satysfakcja:
 
 \begin{tabular}{l|r|r|r|r|l|l}
 \hline
-Parametr & Ocena & Błąd stand & z & p & OR & CI\\
+Parametr & Ocena & SE & z & p & OR & CI\\
 \hline
 (Intercept) & -5.448 & 2.460 & -2.215 & 0.027 & 0.000 & 0.000 0.360\\
 \hline
@@ -5989,7 +6052,8 @@ w oknie wyników a obsługa tego menu jest tak banalnie prosta, że nie wymaga
 jakiś specjalnych objaśnień.
 
 \hypertarget{literatura}{%
-\chapter{Literatura}\label{literatura}}
+\chapter*{Literatura}\label{literatura}}
+\addcontentsline{toc}{chapter}{Literatura}
 
 Beaglehole, Robert, Ruth Bonita, and Tord Kjellstrom. 1996. \emph{Podstawy Epidemiologii}. Instytut Medycyny Pracy.
 
