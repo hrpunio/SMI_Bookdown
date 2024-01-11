@@ -340,8 +340,11 @@ Jest ustalony szablon artykułu naukowego, który powinien być podzielony na
 następujące części:
 
 1. **Wprowadzenie**: określenie problemu badawczego, celu badania.
+
 2. **Materiał i metoda**: Opis danych i zastosowanych metod statystycznych.
+
 3. **Wyniki**: Rezultaty analiz.
+
 4. **Dyskusja**: Znaczenie uzyskanych wyników; jeżeli we wstępie postawiono hipotezy
    to tutaj należy przedstawić wyniki ich weryfikacji.
    

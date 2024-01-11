@@ -55,7 +55,7 @@ g1 <- g0 %>%
   left_join(members, by='geo') %>%
   select (member, values)
 
-t1 <- kable(g1, col.names = c('kraj', 'liczba'))
+t1 <- kable(g1, col.names = c('kraj', 'liczba'), booktabs = TRUE)
 ```
 
 Tablica: Absolwenci studiów pielęgniarskich w ośmiu największych
@@ -106,7 +106,7 @@ n.s <- c(230, 280, 70, 5, 585)
 samochody.L <- tibble(l.s, n.s) %>%
   mutate (p = n.s/585 * 100 )
 
-t3 <- kable(samochody.L, col.names = c('liczba samochodów', 'liczba gospodarstw', '%'))
+t3 <- kable(samochody.L, col.names = c('liczba samochodów', 'liczba gospodarstw', '%'), booktabs = TRUE)
 t3
 ```
 
@@ -180,7 +180,7 @@ d2018 <- d2018 %>% mutate(frateClass = cut(frate, breaks=seq(1, 8, by=.5)))
 
 d2018s <- d2018 %>% group_by(frateClass) %>% summarise(n=n())
 
-t2 <- kable(d2018s, col.names = c('Wsp. dzietności', 'liczba krajów'))
+t2 <- kable(d2018s, col.names = c('Wsp. dzietności', 'liczba krajów'), booktabs = TRUE)
 t2
 ```
 

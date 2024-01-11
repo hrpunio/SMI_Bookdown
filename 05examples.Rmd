@@ -493,7 +493,7 @@ t.sex.f <- s1 %>%
   select (status, plec) %>% 
   table()
 
-t.sex.t <- kable(t.sex.f)
+t.sex.t <- kable(t.sex.f, booktabs = TRUE)
 t.sex.t
 
 chi_test <- chisq.test(t.sex.f)
@@ -511,7 +511,7 @@ t.staz.f <- s1 %>%
   select (status, staz) %>% 
   table()
 
-t.staz.t <- kable(t.staz.f)
+t.staz.t <- kable(t.staz.f, booktabs = TRUE)
 t.staz.t
 
 chi_test <- chisq.test(t.staz.f)
@@ -530,7 +530,7 @@ t.praca.f <- s1 %>%
   select (status, miejsce.pracy) %>% 
   table()
 
-t.praca.t <- kable(t.praca.f)
+t.praca.t <- kable(t.praca.f, booktabs = TRUE)
 t.praca.t
 
 chi_test <- chisq.test(t.praca.f)
@@ -548,7 +548,7 @@ Czy wiedza na temat palenia jest skorelowana z płcią:
 s0.pl <- s1 %>%
   group_by(plec) %>%
   summarise(m = mean(P.total), n=n())
-kable(s0.pl, col.names = c('płeć', 'średnia', 'n'))
+kable(s0.pl, col.names = c('płeć', 'średnia', 'n'), booktabs = TRUE)
 wilcoxp <- wilcox.test(P.total ~ plec, data=s1)
 wilcoxp['p.value']
 ```
@@ -564,7 +564,7 @@ Czy wiedza na temat palenia jest skorelowana z miejscem pracy:
 s0.mp <- s1 %>%
   group_by(miejsce.pracy) %>%
   summarise(m = mean(P.total), n=n())
-kable(s0.mp, col.names = c('m.pracy', 'średnia', 'n'))
+kable(s0.mp, col.names = c('m.pracy', 'średnia', 'n'), booktabs = TRUE)
 wilcoxp <- wilcox.test(P.total ~ miejsce.pracy, data=s1)
 wilcoxp['p.value']
 ```
@@ -579,7 +579,7 @@ Czy wiedza na temat palenia jest skorelowana ze stażem:
 s0.st <- s1 %>%
   group_by(staz) %>%
   summarise(m = mean(P.total), n=n())
-kable(s0.st, col.names = c('staż', 'średnia', 'n'))
+kable(s0.st, col.names = c('staż', 'średnia', 'n'), booktabs = TRUE)
 kw<- kruskal.test(P.total ~ staz, data = s1)
 kw["p.value"]
 #wilcoxp <- wilcox.test(P.total ~ staz, data=s1)
@@ -604,7 +604,7 @@ wiedza.status.t <- s1 %>%
                          TRUE ~ "ogromna") ) %>%
   table()
 
-ws.t <- kable(wiedza.status.t)
+ws.t <- kable(wiedza.status.t, booktabs = TRUE)
 ws.t
 
 chi_test <- chisq.test(wiedza.status.t)
@@ -623,7 +623,7 @@ i stosując test Kruskala-Wallisa:
 s0.sw <- s1 %>%
   group_by(status) %>%
   summarise(m = mean(P.total), n=n())
-kable(s0.sw, col.names = c('status', 'średnia', 'n'))
+kable(s0.sw, col.names = c('status', 'średnia', 'n'), booktabs = TRUE)
 
 kw<- kruskal.test(P.total ~ status, data = s1)
 kw["p.value"]
@@ -936,7 +936,7 @@ dep.sex.f <- s0 %>%
   select (Depresja, plec) %>% 
   table()
 
-dep.sex.t <- kable(dep.sex.f)
+dep.sex.t <- kable(dep.sex.f, booktabs = TRUE)
 dep.sex.t
 
 chi_test <- chisq.test(dep.sex.f)
@@ -957,7 +957,7 @@ dep.staz.f <- s0 %>%
   select (Depresja, staz) %>% 
   table()
 
-dep.staz.t <- kable(dep.staz.f)
+dep.staz.t <- kable(dep.staz.f, booktabs = TRUE)
 dep.staz.t
 
 chi_test <- chisq.test(dep.staz.f)
@@ -973,7 +973,7 @@ można porównać wartości średnie i zastosować test Kruskala-Wallisa.
 s0.staz <- s0 %>%
   group_by(staz) %>%
   summarise(m = mean(P), n=n())
-kable(s0.staz, col.names = c('staż', 'średnia', 'n'))
+kable(s0.staz, col.names = c('staż', 'średnia', 'n'), booktabs = TRUE)
 
 
 kw<- kruskal.test(P ~ staz, data = s0)
@@ -992,7 +992,7 @@ dep.praca.f <- s0 %>%
   select (Depresja, praca) %>% 
   table()
 
-dep.praca.t <- kable(dep.praca.f)
+dep.praca.t <- kable(dep.praca.f, booktabs = TRUE)
 dep.praca.t
 
 chi_test <- chisq.test(dep.praca.f)
@@ -1011,7 +1011,7 @@ można porównać wartości średnie i zastosować test Manna-Whitneya
 s0.mp <- s0 %>%
   group_by(praca) %>%
   summarise(m = mean(P), n=n())
-kable(s0.mp, col.names = c('m-pracy', 'średnia', 'n'))
+kable(s0.mp, col.names = c('m-pracy', 'średnia', 'n'), booktabs = TRUE)
 wilcoxp <- wilcox.test(P ~ praca, data=s0)
 wilcoxp['p.value']
 ```
@@ -1118,7 +1118,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
@@ -1147,7 +1147,7 @@ lm.7.coef.df <- tibble::rownames_to_column(lm.7.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.7.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
@@ -1189,7 +1189,7 @@ gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
 ```
 
 Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej na poziomie
@@ -1216,7 +1216,7 @@ gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
 ```
 
 Macierz pomyłek:

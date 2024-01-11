@@ -228,7 +228,7 @@ czy zachorował czy nie zachorował na katar):
 vitC <- read.csv(file='vit_C.csv',sep=';',header=T)
 narciarze <- table(vitC)
 narciarze.table <- addmargins(narciarze)
-kable(narciarze.table, col.names = c('nocold', 'cold', 'razem'))
+kable(narciarze.table, col.names = c('nocold', 'cold', 'razem'), booktabs = TRUE)
 ```
 
 Taka tabela składa się z wierszy i kolumn. Dolny wiersz (Sum czyli Razem
@@ -258,7 +258,7 @@ narciarze.total <- sum(narciarze)
 narciarze.p <- narciarze/narciarze.total *100
 
 narciarze.table.p <- addmargins(narciarze.p)
-kable(digits=2, narciarze.table.p)
+kable(digits=2, narciarze.table.p, booktabs = TRUE)
 ```
 
 Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
@@ -275,7 +275,7 @@ narciarze.p <- proportions(narciarze, margin = 1)
 narciarze.p.m <- addmargins(narciarze.p, margin = 1)
 n.m <- margin.table(narciarze,2) /narciarze.total
 narciarze.x <- cbind(rbind(narciarze.p, n.m), c(1,1,1)) * 100
-kable(digits=2, narciarze.x)
+kable(digits=2, narciarze.x, booktabs = TRUE)
 ```
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
@@ -315,7 +315,7 @@ narciarze.ex.table <- addmargins(narciarze.expected)
 
 chipv <- chi_skiers$p.value
 chipv.txt <- sprintf("%f", chipv)
-kable(digits=3, narciarze.ex.table)
+kable(digits=3, narciarze.ex.table, booktabs = TRUE)
 ```
 
 Proszę
@@ -371,7 +371,7 @@ smokerData <- read.csv(file='smoker.csv',sep=';',header=T)
 smoke <- table(smokerData)
 
 smoke.table <- addmargins(smoke)
-kable(smoke.table)
+kable(smoke.table, booktabs = TRUE)
 ```
 
 Uwaga: status-społeczno-ekonomiczny to powiedzmy miara prestiżu używana w socjologii
@@ -391,7 +391,7 @@ smoke.p <- proportions(smoke, margin = 1)
 smoke.p.m <- addmargins(smoke.p, margin = 1)
 n.m <- margin.table(smoke,2) /smoke.total
 smoke.x <- cbind(rbind(smoke.p, n.m), c(1,1,1)) * 100
-kable(smoke.x)
+kable(smoke.x, booktabs = TRUE)
 ```
 
 Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
@@ -406,7 +406,7 @@ smokers.ex.table <- addmargins(smokers.expected)
 
 chipv <- chi_smokers$p.value
 chipv.txt <- sprintf("%f", chipv)
-kable(smokers.ex.table)
+kable(smokers.ex.table, booktabs = TRUE)
 ```
 
 Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi 
@@ -487,7 +487,7 @@ s0.mp.szpital <- s0.mp %>% filter (praca == 'Szpital') %>%
 s0.mp.przychodnia <- s0.mp %>% filter (praca == 'Przychodnia') %>% 
   select (m) %>% unlist() %>% unname ()
 
-kable(s0.mp, col.names = c('m-pracy', 'średnia', 'n'))
+kable(s0.mp, col.names = c('m-pracy', 'średnia', 'n'), booktabs = TRUE)
 ```
 
 Kolumna n zawiera liczebności.
@@ -504,7 +504,7 @@ normalne. Można zatem zastosować test $t$-Studenta
 ttest.mp <- s0 %>%  t_test(P ~ praca) %>%
   select(group1, group2, n1, n2, statistic, p)
 pval.mp <- ttest.mp$p
-kable(ttest.mp, col.names = c('Grupa1', 'Grupa2', 'n1', 'n2', 't', 'p'))
+kable(ttest.mp, col.names = c('Grupa1', 'Grupa2', 'n1', 'n2', 't', 'p'), booktabs = TRUE)
 ```
 
 Kolumna t  zawiera wartość statystyki testu $t_k$. Kolumna p
@@ -557,7 +557,7 @@ sw.table <- s0 %>%
   group_by(praca) %>%
   shapiro_test(P) %>% select(praca, statistic, p)
 
-kable(sw.table, col.names = c('m-pracy', 'S-W', 'p'))
+kable(sw.table, col.names = c('m-pracy', 'S-W', 'p'), booktabs = TRUE)
 ## małe wartości świadczą przeciw $H_0$
 ```
 
@@ -580,7 +580,7 @@ Ponieważ grup jest dokładnie 2 a rozkład nie jest normalny, stosujemy test U 
 ```{r, echo=F}
 wilcoxp.table <- wilcox_test(P ~ praca, data=s0) %>%
   select(group1, group2, n1, n2, statistic, p)
-kable(wilcoxp.table, col.names = c('Grupa1', 'Grupa2', 'n1', 'n2', 'U', 'p'))
+kable(wilcoxp.table, col.names = c('Grupa1', 'Grupa2', 'n1', 'n2', 'U', 'p'), booktabs = TRUE)
 pval.u <- wilcoxp.table$p
 ```
 
@@ -609,7 +609,7 @@ oraz `>19` (19 i więcej lat.)
 s0.staz <- s0 %>%
   group_by(staz) %>%
   summarise(m = mean(P), n=n())
-kable(s0.staz, col.names = c('staż (kategoria)', 'średnia', 'n'))
+kable(s0.staz, col.names = c('staż (kategoria)', 'średnia', 'n'), booktabs = TRUE)
 ```
 
 Zakładając, że rozkłady w grupach są normalne, do weryfikacji hipotezy o równości wszystkich
@@ -633,7 +633,7 @@ sw.table.staz <- s0 %>%
   group_by(staz) %>%
   shapiro_test(P) %>% select(staz, statistic, p)
 ##sw.table.staz
-kable(sw.table.staz, col.names = c('m-pracy', 'S-W', 'p'))
+kable(sw.table.staz, col.names = c('m-pracy', 'S-W', 'p'), booktabs = TRUE)
 ```
 
 Wobec takiego wyniku testu do oceny istotności różnic
@@ -1012,7 +1012,7 @@ lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
   mutate(ci=lm_ci_txt)
 
 kable(lm.0.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1077,7 +1077,7 @@ lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
   mutate(ci=lm_ci_txt)
 
 kable(lm.0.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1229,7 +1229,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1264,7 +1264,7 @@ lm.2.coef.df <- tibble::rownames_to_column(lm.2.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.2.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 ```
 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
@@ -1292,7 +1292,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 ```
 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
@@ -1390,7 +1390,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
@@ -1425,7 +1425,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
@@ -1475,7 +1475,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
@@ -1502,7 +1502,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm_std_txt,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI') )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
@@ -1681,7 +1681,7 @@ prob0 <- exp(logit)/(1+exp(logit))
 ## Dodanie kolumny zamiast nazw wierszy
 gml.0.coef.df <- tibble::rownames_to_column(gml.0.coef, "Parametr")
 kable(gml.0.coef.df, row.names = F,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p'), booktabs = TRUE )
 ```
 
 Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
@@ -1735,7 +1735,7 @@ gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm_or_txt,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
 ```
 
 Znając wartości współczynników równania można obliczyć wartości $\ln(o)$
@@ -1784,7 +1784,7 @@ gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
          ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI') )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
 ```
 
 Macierz pomyłek (*confussion matrix*)

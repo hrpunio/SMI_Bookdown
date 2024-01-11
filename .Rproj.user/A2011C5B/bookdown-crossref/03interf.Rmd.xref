@@ -1,8 +1,14 @@
 h1:interference Łagodne wprowadzenie do wnioskowanie statystycznego
 h2:masa-ciała-uczestników-pś-w-rugby Masa ciała uczestników PŚ w rugby
+fig:rwcWeight Rozkład wagi zawodników
+fig:wagaSrednia Rozkład średniej wagi rugbystów w zależności od wielkości próby
 h2:wiek-kandydatów-na-radnych Wiek kandydatów na radnych
+fig:wiekKnR Rozkład wieku kandydatów na radnych
+fig:wiekSredni Rozkład średniej wieku kandydatów w zależności od wielkości próby
 h2:rozkład-normalny Rozkład normalny
+fig:normalApprox Rozkład normalny
 h2:odsetek-kobiet-wśród-kandydatów-na-radnych Odsetek kobiet wśród kandydatów na radnych
+fig:rozkladP Rozkład wielkości p dla różnej wielkości próby
 h2:wnioskowanie-statystyczne Wnioskowanie statystyczne
 h3:estymacja-punktowa Estymacja punktowa
 h3:estymacja-przedziałowa Estymacja przedziałowa

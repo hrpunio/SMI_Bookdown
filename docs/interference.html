@@ -263,9 +263,14 @@ i współczynnik zmienności masy ciała:</p>
 <p>Czyli średnio rugbysta na turnieju RWC’2015 ważył
 102.80 kg (<code>Mean</code> na wydruku powyżej)
 a odchylenie standardowe (<em>s</em>) wyniosło 12.92 kg.</p>
-<p>Wykres (rozkład jest dwumodalny; bo w rugby są dwie grupy zawodników, wcale
-nie wszyscy &gt; 110 kg):</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>Rozkład, pokazany na rysunku <a href="interference.html#fig:rwcWeight">3.1</a>, jest dwumodalny, bo w rugby są dwie grupy zawodników
+i wcale nie wszyscy ważą ponad 110 kilogramów.</p>
+<div class="figure"><span style="display:block;" id="fig:rwcWeight"></span>
+<img src="_main_files/figure-html/rwcWeight-1.png" alt="Rozkład wagi zawodników" width="672" />
+<p class="caption">
+Rysunek 3.1: Rozkład wagi zawodników
+</p>
+</div>
 <p><strong>Szacujemy średnią na podstawie 2 zawodników pobranych losowo</strong></p>
 <p>Powtarzamy eksperyment 1000 razy (dwóch bo dla jednego nie obliczymy
 wariancji)</p>
@@ -300,9 +305,13 @@ Wartość <span class="math inline">\(s/\sqrt{40}\)</span> jest równa 2.04.</p>
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o 5.73 kilogramów
 na minus lub 6.97 kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.</p>
-<p><strong>Wykres</strong></p>
-<p>Podsumujmy eksperyment wykresem rozkładu wartości średnich.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Podsumujmy eksperyment wykresem rozkładu wartości średnich (por. rysunek <a href="interference.html#fig:wagaSrednia">3.2</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:wagaSrednia"></span>
+<img src="_main_files/figure-html/wagaSrednia-1.png" alt="Rozkład średniej wagi rugbystów w zależności od wielkości próby" width="672" />
+<p class="caption">
+Rysunek 3.2: Rozkład średniej wagi rugbystów w zależności od wielkości próby
+</p>
+</div>
 <p><strong>Wnioski z eksperymentu</strong></p>
 <p>Wartość średnią wyznaczamy na podstawie jakiejś konkretnej <strong>metody</strong>.
 Wydaje się na podstawie powyższych eksperymentów, że z dobrym skutkiem
@@ -345,8 +354,13 @@ i współczynnik zmienności wieku kandydatów:</p>
 ##   18.00   34.00   46.00   46.24   58.00   91.00</code></pre>
 <p>Czyli średnio kandydat miał 46.24 lat
 a odchylenie standardowe wieku wyniosło 14.61 lat.</p>
-<p>Wykres (rozkład znowu jest dwumodalny z jakiś powodów):</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Rozkład znowu jest dwumodalny z jakiś powodów (por. rysunek <a href="interference.html#fig:wiekKnR">3.3</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:wiekKnR"></span>
+<img src="_main_files/figure-html/wiekKnR-1.png" alt="Rozkład wieku kandydatów na radnych" width="672" />
+<p class="caption">
+Rysunek 3.3: Rozkład wieku kandydatów na radnych
+</p>
+</div>
 <p><strong>Szacujemy średnią na podstawie 2 kandydatów pobranych losowo</strong></p>
 <p>Powtarzamy eksperyment 1000 razy</p>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -384,9 +398,13 @@ Wartość <span class="math inline">\(s/\sqrt{70}\)</span> jest równa 1.75.</p>
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
 już tylko o 6.03 lat
 na minus lub 6.27 lat na plus.</p>
-<p><strong>Wykres</strong></p>
-<p>Podsumujmy eksperyment wykresem rozkładu wartości średnich.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p>Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek <a href="interference.html#fig:wiekSredni">3.4</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:wiekSredni"></span>
+<img src="_main_files/figure-html/wiekSredni-1.png" alt="Rozkład średniej wieku kandydatów w zależności od wielkości próby" width="672" />
+<p class="caption">
+Rysunek 3.4: Rozkład średniej wieku kandydatów w zależności od wielkości próby
+</p>
+</div>
 <p>Obserwujemy to samo co w przypadku wagi rugbystów: im większa próba tym
 dokładniejsza wartość średniej wieku. Bez względu na wielkość próby przeciętnie
 otrzymujemy prawdziwą wartość średniej.</p>
@@ -415,10 +433,20 @@ Ten rozkład (zwany <strong>normalnym</strong>)
 zależy tylko od dwóch parametrów: średniej i odchylenia standardowego, gdzie średnia będzie
 równa (prawdziwej) średniej w populacji a odchylenie standardowe
 równe odchyleniu standardowemu w populacji podzielonemu przez pierwiastek z wielkości próby.</p>
-<p>Dla próby 40-elementowej (wiek kandydatów) wygląda to tak:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
-<p>dla próby 70-elementowej tak:</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p>Dla próby 40-elementowej rozkład średniego wieku kandydatów wygląda to tak jak na rysunku <a href="interference.html#fig:normalApproxA">3.5</a>
+dla próby 70-elementowej tak jak na rysunku <a href="interference.html#fig:normalApproxB">3.6</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:normalApproxA"></span>
+<img src="_main_files/figure-html/normalApproxA-1.png" alt="Rozkład normalny" width="672" />
+<p class="caption">
+Rysunek 3.5: Rozkład normalny
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:normalApproxB"></span>
+<img src="_main_files/figure-html/normalApproxB-1.png" alt="Inny rozkład normalny" width="672" />
+<p class="caption">
+Rysunek 3.6: Inny rozkład normalny
+</p>
+</div>
 <p>Prawda, że wynik jest całkiem dobry? Teoretyczność czerwonej krzywej
 polega na tym, że ona zawsze będzie identyczna, podczas gdy histogram będzie różny.
 Gdybyśmy powtórzyli nasz
@@ -480,8 +508,14 @@ kandydat jest kobietą i empirycznie sprawdźmy czy możemy szacować
 o prawdziwej wartości tego parametru
 używając (jako estymatora żeby się przyzwyczajać do nowych terminów) proporcji z próby.
 Tradycyjnie powtarzamy eksperyment 1000 razy
-dla trzech różnych wielkości próby. Rozkład otrzymanych wartości przedstawia rysunek.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+dla trzech różnych wielkości próby.
+Rozkład otrzymanych wartości przedstawia rysunek <a href="interference.html#fig:rozkladP">3.7</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:rozkladP"></span>
+<img src="_main_files/figure-html/rozkladP-1.png" alt="Rozkład wielkości p dla różnej wielkości próby" width="672" />
+<p class="caption">
+Rysunek 3.7: Rozkład wielkości p dla różnej wielkości próby
+</p>
+</div>
 <p>Wnioski:</p>
 <ul>
 <li><p>Dla próby 20 elementowej rozkład nie przypomina rozkładu normalnego.</p></li>

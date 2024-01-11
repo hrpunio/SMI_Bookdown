@@ -41,14 +41,14 @@ Czyli średnio rugbysta na turnieju RWC'2015 ważył
 `r sprintf ("%.2f", true.mean.w)` kg (`Mean` na wydruku powyżej)
 a odchylenie standardowe (*s*) wyniosło `r sprintf("%.2f", max.err.sd)` kg.
 
-Wykres (rozkład jest dwumodalny; bo w rugby są dwie grupy zawodników, wcale
-nie wszyscy > 110 kg):
+Rozkład, pokazany na rysunku \@ref(fig:rwcWeight), jest dwumodalny, bo w rugby są dwie grupy zawodników
+i wcale nie wszyscy ważą ponad 110 kilogramów.
 
-```{r}
+```{r rwcWeight, fig.cap="Rozkład wagi zawodników"}
 q1 <- ggplot(r, aes(x=weight)) +
   geom_vline(xintercept = true.mean.w, colour="forestgreen", size=.4) +
-  geom_histogram(binwidth=2, alpha=.5, fill="steelblue") +
-  ggtitle("Rozkład wagi zawodników")
+  geom_histogram(binwidth=2, alpha=.5, fill="steelblue")
+  ##ggtitle("Rozkład wagi zawodników")
 q1
 ```
 
@@ -118,12 +118,9 @@ Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy 
 na minus lub `r  round(max(s40) - mean.s40, 2)` kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.
 
+Podsumujmy eksperyment wykresem rozkładu wartości średnich (por. rysunek \@ref(fig:wagaSrednia)).
 
-**Wykres**
-
-Podsumujmy eksperyment wykresem rozkładu wartości średnich.
-
-```{r}
+```{r wagaSrednia, fig.cap="Rozkład średniej wagi rugbystów w zależności od wielkości próby"}
 all.samples <- data.frame(s02, s10, s40)
 
 error10 <- true.mean.w  * 0.1
@@ -137,8 +134,8 @@ p1 <- all.samples %>%
   geom_vline(xintercept = true.mean.w + max.err.sd, colour="red", size=.4) +
   geom_vline(xintercept = true.mean.w - error10, colour="orange", size=.4) +
   geom_vline(xintercept = true.mean.w + error10, colour="orange", size=.4) +
-  geom_histogram(binwidth=1, alpha=.5, fill="steelblue") +
-  ggtitle("rozkład średniej wagi rugbystów w zależności od wielkości próby")
+  geom_histogram(binwidth=1, alpha=.5, fill="steelblue")
+  ##ggtitle("rozkład średniej wagi rugbystów w zależności od wielkości próby")
 p1
 ```
 
@@ -207,13 +204,13 @@ max.err.sd <- sd(w)
 Czyli średnio kandydat miał `r round(true.mean.w, 2)` lat
 a odchylenie standardowe wieku wyniosło `r round(max.err.sd, 2)` lat.
 
-Wykres (rozkład znowu jest dwumodalny z jakiś powodów):
+Rozkład znowu jest dwumodalny z jakiś powodów (por. rysunek \@ref(fig:wiekKnR)).
 
-```{r}
+```{r wiekKnR, fig.cap='Rozkład wieku kandydatów na radnych'}
 q1 <- ggplot(r, aes(x=wiek)) +
   geom_vline(xintercept = true.mean.w, colour="forestgreen", size=.4) +
-  geom_histogram(binwidth=2, alpha=.5, fill="steelblue") +
-  ggtitle("Rozkład wieku kandydatów")
+  geom_histogram(binwidth=2, alpha=.5, fill="steelblue")
+  ##ggtitle("Rozkład wieku kandydatów")
 q1
 ```
 
@@ -299,12 +296,9 @@ Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy 
 już tylko o `r round(mean.s70 - min(k70), 2)` lat
 na minus lub `r  round(max(k70) - mean.s70, 2)` lat na plus.
 
+Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek \@ref(fig:wiekSredni)).
 
-**Wykres**
-
-Podsumujmy eksperyment wykresem rozkładu wartości średnich.
-
-```{r}
+```{r wiekSredni, fig.cap="Rozkład średniej wieku kandydatów w zależności od wielkości próby"}
 all.samples <- data.frame(k02, k10, k40, k70)
 
 error10 <- true.mean.w  * 0.1
@@ -318,8 +312,8 @@ ggplot(aes(x=v)) +
   geom_vline(xintercept = true.mean.w + max.err.sd, colour="red", size=.4) +
   geom_vline(xintercept = true.mean.w - error10, colour="red", size=.4) +
   geom_vline(xintercept = true.mean.w + error10, colour="red", size=.4) +
-  geom_histogram(binwidth=1, alpha=.5, fill="steelblue") +
-  ggtitle("rozkład średniej wieku kandydatów w zależności od wielkości próby")
+  geom_histogram(binwidth=1, alpha=.5, fill="steelblue")
+  ##ggtitle("rozkład średniej wieku kandydatów w zależności od wielkości próby")
 p1
 ```
 
@@ -356,36 +350,34 @@ zależy tylko od dwóch parametrów: średniej i odchylenia standardowego, gdzie
 równa (prawdziwej) średniej w populacji a odchylenie standardowe 
 równe odchyleniu standardowemu w populacji podzielonemu przez pierwiastek z wielkości próby.
 
-Dla próby 40-elementowej (wiek kandydatów) wygląda to tak:
+Przybliżenie za pomocą rozkładu normalnego średniego rozkładu wieku kandydatów na radnych
+dla próby 40-elementowej oraz 70-elementowej pokazuje rysunek \@ref(fig:normalApprox).
 
-```{r}
+```{r normalApprox, fig.cap="Rozkład normalny", out.width="99%"}
 this.sample.size <- 40
 k1000m <- true.mean.w
 k1000sd <- max.err.sd / sqrt(this.sample.size)
 this.binwd <- .25
-p1b <- data.frame(k40) %>%
+p1b40 <- data.frame(k40) %>%
   ggplot(aes(x=k40)) +
   geom_histogram(binwidth= this.binwd, alpha=.5, fill="steelblue") +
   stat_function(fun = function(x) 
   {dnorm(x, mean = k1000m, sd = k1000sd) * sample.size * this.binwd},
   color="red")
-p1b
-```
+##p1b40
 
-dla próby 70-elementowej tak:
-
-```{r}
 this.sample.size <- 70
 k1000m <- true.mean.w
 k1000sd <- max.err.sd / sqrt(this.sample.size)
 this.binwd <- .25
-p1b <- data.frame(k70) %>%
+p1b70 <- data.frame(k70) %>%
   ggplot(aes(x=k70)) +
   geom_histogram(binwidth= this.binwd, alpha=.5, fill="steelblue") +
   stat_function(fun = function(x) 
   {dnorm(x, mean = k1000m, sd = k1000sd) * sample.size * this.binwd},
   color="red")
-p1b
+##p1b70
+ggarrange(p1b40, p1b70, ncol = 1, nrow = 2)
 ```
 
 Prawda, że wynik jest całkiem dobry? Teoretyczność czerwonej krzywej
@@ -476,11 +468,12 @@ kandydat jest kobietą i empirycznie sprawdźmy czy możemy szacować
 o prawdziwej wartości tego parametru 
 używając (jako estymatora żeby się przyzwyczajać do nowych terminów) proporcji z próby.
 Tradycyjnie powtarzamy eksperyment 1000 razy 
-dla trzech różnych wielkości próby. Rozkład otrzymanych wartości przedstawia rysunek.
+dla trzech różnych wielkości próby. 
+Rozkład otrzymanych wartości przedstawia rysunek \@ref(fig:rozkladP).
 
 
 
-```{r}
+```{r rozkladP, fig.cap='Rozkład wielkości p dla różnej wielkości próby'}
 all.samples <- data.frame(x020, x120, x420)
 
 p1 <- all.samples %>%
@@ -488,8 +481,8 @@ p1 <- all.samples %>%
   ggplot(aes(x=v)) +
   facet_wrap(~ k) +
   geom_histogram(binwidth=.02, fill="steelblue") +
-  geom_vline(xintercept = p.k, colour="forestgreen", size=.4) +
-  ggtitle("rozkład wielkości p dla różnej wielkości próby")
+  geom_vline(xintercept = p.k, colour="forestgreen", size=.4)
+  ##ggtitle("rozkład wielkości p dla różnej wielkości próby")
 p1
 
 ```

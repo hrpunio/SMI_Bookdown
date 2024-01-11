@@ -64,7 +64,8 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 %%%
-\usepackage[a4paper, total={6in, 8.6in}]{geometry}
+%\usepackage[a4paper, total={6in, 8.6in}]{geometry}
+\usepackage[a4paper, total={125mm, 200mm}]{geometry}
 %%
 \usepackage{polyglossia}  \setdefaultlanguage{polish}
 %%
@@ -78,6 +79,51 @@
 %% This is not working
 %% https://github.com/jgm/pandoc/issues/4384
 %%
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\raggedright \normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\raggedright \normalfont\large\bfseries}}
+
+\def\@makechapterhead#1{%
+  %%\vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \large\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        %\vskip 5\p@
+        %\medskip
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \LARGE \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\def\@schapter#1{\if@twocolumn
+                   \@topnewpage[\@makeschapterhead{#1}]%
+                 \else
+                   \@makeschapterhead{#1}%
+                   \@afterheading
+                 \fi}
+\def\@makeschapterhead#1{%
+  %%\vspace*{50\p@}%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \huge \bfseries  #1\par\nobreak
+    \vskip 20\p@
+  }}
+
+
+\makeatother
+%%%
 \AtBeginDocument{%%
  \let\maketitle\relax
   %% Insert title page
@@ -85,10 +131,14 @@
  \begingroup  
  %% reset
  \setkeys{Gin}{width=210mm,height=300mm}
- \vbox to \textheight{\vss%
+\vbox to \textheight{\vss%
    \hbox to\textwidth{\hss
      \includegraphics[width=210mm]{Cover_02.png}\hss}
    \vss}
+\vbox to \textheight{\vskip20mm%
+   Na okładce: Florence Nightingale i jej statystyki
+  \vss
+}
 \endgroup
 \end{titlepage}
 \author{Tomasz Przechlewski\\ Powiślańska Szkoła Wyższa\\(Kwidzyn-Gdańsk)}%
@@ -569,7 +619,6 @@ następujące części:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   \textbf{Wprowadzenie}: określenie problemu badawczego, celu badania.
 \item
@@ -738,26 +787,20 @@ wartości cechy oraz odpowiadające tym wartościom liczebności.
 Tablica: Absolwenci studiów pielęgniarskich w ośmiu największych
 krajach UE w roku 2018
 
-\begin{tabular}{l|r}
-\hline
+\begin{tabular}{lr}
+\toprule
 kraj & liczba\\
-\hline
+\midrule
 Belgium & 7203\\
-\hline
 Germany & 35742\\
-\hline
 Spain & 9936\\
-\hline
 France & 25757\\
-\hline
 Italy & 11207\\
-\hline
+\addlinespace
 Netherlands & 9920\\
-\hline
 Poland & 9070\\
-\hline
 Romania & 18664\\
-\hline
+\bottomrule
 \end{tabular}
 
 Źródło: Eurostat, tablica Health graduates (HLTH\_RS\_GRD)
@@ -797,20 +840,16 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
 Tablica: Gospodarstwa domowe we wsi X wg liczby samochodów w roku 2022
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 liczba samochodów & liczba gospodarstw & \%\\
-\hline
+\midrule
 0 & 230 & 39.3162393\\
-\hline
 1 & 280 & 47.8632479\\
-\hline
 2 & 70 & 11.9658120\\
-\hline
 3 i więcej & 5 & 0.8547009\\
-\hline
 razem & 585 & 100.0000000\\
-\hline
+\bottomrule
 \end{tabular}
 
 Źródło: obliczenia własne
@@ -861,34 +900,25 @@ dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
 
 Tablica: Kraje świata według współczynnika dzietności (2018)
 
-\begin{tabular}{l|r}
-\hline
+\begin{tabular}{lr}
+\toprule
 Wsp. dzietności & liczba krajów\\
-\hline
+\midrule
 (1,1.5] & 24\\
-\hline
 (1.5,2] & 61\\
-\hline
 (2,2.5] & 40\\
-\hline
 (2.5,3] & 17\\
-\hline
 (3,3.5] & 8\\
-\hline
+\addlinespace
 (3.5,4] & 15\\
-\hline
 (4,4.5] & 11\\
-\hline
 (4.5,5] & 12\\
-\hline
 (5,5.5] & 6\\
-\hline
 (5.5,6] & 5\\
-\hline
+\addlinespace
 (6,6.5] & 1\\
-\hline
 (7,7.5] & 1\\
-\hline
+\bottomrule
 \end{tabular}
 
 Źródło: \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder}
@@ -1470,10 +1500,14 @@ Czyli średnio rugbysta na turnieju RWC'2015 ważył
 102.80 kg (\texttt{Mean} na wydruku powyżej)
 a odchylenie standardowe (\emph{s}) wyniosło 12.92 kg.
 
-Wykres (rozkład jest dwumodalny; bo w rugby są dwie grupy zawodników, wcale
-nie wszyscy \textgreater{} 110 kg):
+Rozkład, pokazany na rysunku \ref{fig:rwcWeight}, jest dwumodalny, bo w rugby są dwie grupy zawodników
+i wcale nie wszyscy ważą ponad 110 kilogramów.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-22-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/rwcWeight-1.pdf}
+\caption{\label{fig:rwcWeight}Rozkład wagi zawodników}
+\end{figure}
 
 \textbf{Szacujemy średnią na podstawie 2 zawodników pobranych losowo}
 
@@ -1529,11 +1563,13 @@ Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy 
 na minus lub 6.97 kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.
 
-\textbf{Wykres}
+Podsumujmy eksperyment wykresem rozkładu wartości średnich (por. rysunek \ref{fig:wagaSrednia}).
 
-Podsumujmy eksperyment wykresem rozkładu wartości średnich.
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-26-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/wagaSrednia-1.pdf}
+\caption{\label{fig:wagaSrednia}Rozkład średniej wagi rugbystów w zależności od wielkości próby}
+\end{figure}
 
 \textbf{Wnioski z eksperymentu}
 
@@ -1590,9 +1626,13 @@ i współczynnik zmienności wieku kandydatów:
 Czyli średnio kandydat miał 46.24 lat
 a odchylenie standardowe wieku wyniosło 14.61 lat.
 
-Wykres (rozkład znowu jest dwumodalny z jakiś powodów):
+Rozkład znowu jest dwumodalny z jakiś powodów (por. rysunek \ref{fig:wiekKnR}).
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-29-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/wiekKnR-1.pdf}
+\caption{\label{fig:wiekKnR}Rozkład wieku kandydatów na radnych}
+\end{figure}
 
 \textbf{Szacujemy średnią na podstawie 2 kandydatów pobranych losowo}
 
@@ -1657,11 +1697,13 @@ Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy 
 już tylko o 6.03 lat
 na minus lub 6.27 lat na plus.
 
-\textbf{Wykres}
+Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek \ref{fig:wiekSredni}).
 
-Podsumujmy eksperyment wykresem rozkładu wartości średnich.
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-34-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/wiekSredni-1.pdf}
+\caption{\label{fig:wiekSredni}Rozkład średniej wieku kandydatów w zależności od wielkości próby}
+\end{figure}
 
 Obserwujemy to samo co w przypadku wagi rugbystów: im większa próba tym
 dokładniejsza wartość średniej wieku. Bez względu na wielkość próby przeciętnie
@@ -1699,13 +1741,12 @@ zależy tylko od dwóch parametrów: średniej i odchylenia standardowego, gdzie
 równa (prawdziwej) średniej w populacji a odchylenie standardowe
 równe odchyleniu standardowemu w populacji podzielonemu przez pierwiastek z wielkości próby.
 
-Dla próby 40-elementowej (wiek kandydatów) wygląda to tak:
+Przybliżenie za pomocą rozkładu normalnego średniego rozkładu wieku kandydatów na radnych
+dla próby 40-elementowej oraz 70-elementowej pokazuje rysunek \ref{fig:normalApprox}.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-35-1.pdf}
-
-dla próby 70-elementowej tak:
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-36-1.pdf}
+\begin{figure}
+\includegraphics[width=0.99\linewidth]{_main_files/figure-latex/normalApprox-1} \caption{Rozkład normalny}\label{fig:normalApprox}
+\end{figure}
 
 Prawda, że wynik jest całkiem dobry? Teoretyczność czerwonej krzywej
 polega na tym, że ona zawsze będzie identyczna, podczas gdy histogram będzie różny.
@@ -1774,9 +1815,14 @@ kandydat jest kobietą i empirycznie sprawdźmy czy możemy szacować
 o prawdziwej wartości tego parametru
 używając (jako estymatora żeby się przyzwyczajać do nowych terminów) proporcji z próby.
 Tradycyjnie powtarzamy eksperyment 1000 razy
-dla trzech różnych wielkości próby. Rozkład otrzymanych wartości przedstawia rysunek.
+dla trzech różnych wielkości próby.
+Rozkład otrzymanych wartości przedstawia rysunek \ref{fig:rozkladP}.
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-38-1.pdf}
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/rozkladP-1.pdf}
+\caption{\label{fig:rozkladP}Rozkład wielkości p dla różnej wielkości próby}
+\end{figure}
 
 Wnioski:
 
@@ -2230,16 +2276,14 @@ Eksperyment Paulinga można przedstawić w postaci tablicy dwudzielczej
 (\texttt{P}/\texttt{C} oznacza czy narciarz zażywał witaminę czy placebo; \texttt{cold}/\texttt{nocold}
 czy zachorował czy nie zachorował na katar):
 
-\begin{tabular}{l|r|r|r}
-\hline
+\begin{tabular}{lrrr}
+\toprule
   & nocold & cold & razem\\
-\hline
+\midrule
 C & 122 & 17 & 139\\
-\hline
 P & 109 & 31 & 140\\
-\hline
 Sum & 231 & 48 & 279\\
-\hline
+\bottomrule
 \end{tabular}
 
 Taka tabela składa się z wierszy i kolumn. Dolny wiersz (Sum czyli Razem
@@ -2264,16 +2308,14 @@ to najmniejsza możliwa tabela wielodzielcza.
 
 Zamiast liczebności można posługiwać się odsetkami (procentami):
 
-\begin{tabular}{l|r|r|r}
-\hline
+\begin{tabular}{lrrr}
+\toprule
   & N & Y & Sum\\
-\hline
+\midrule
 C & 43.73 & 6.09 & 49.82\\
-\hline
 P & 39.07 & 11.11 & 50.18\\
-\hline
 Sum & 82.80 & 17.20 & 100.00\\
-\hline
+\bottomrule
 \end{tabular}
 
 Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
@@ -2284,16 +2326,14 @@ Ciekawsze jest obliczenie procentów każdego wiersza osobno, tj. dzielimy
 liczebności w każdej kolumnie przez liczebności rozkładu brzegowego (wartości
 ostatniej kolumny):
 
-\begin{tabular}{l|r|r|r}
-\hline
+\begin{tabular}{lrrr}
+\toprule
   & N & Y & \\
-\hline
+\midrule
 C & 87.77 & 12.23 & 100\\
-\hline
 P & 77.86 & 22.14 & 100\\
-\hline
 n.m & 82.80 & 17.20 & 100\\
-\hline
+\bottomrule
 \end{tabular}
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
@@ -2326,16 +2366,14 @@ element poniższej „idealnej'' tablicy to 231 pomnożone przez
 sprawdzić,
 że jest to 115.086):
 
-\begin{tabular}{l|r|r|r}
-\hline
+\begin{tabular}{lrrr}
+\toprule
   & N & Y & Sum\\
-\hline
+\midrule
 C & 115.086 & 23.914 & 139\\
-\hline
 P & 115.914 & 24.086 & 140\\
-\hline
 Sum & 231.000 & 48.000 & 279\\
-\hline
+\bottomrule
 \end{tabular}
 
 Proszę
@@ -2385,18 +2423,15 @@ oraz status-względem-palenia
 Obie zmienne są nominalne, obie mają po trzy wartości. Można
 poklasyfikować wszystkich badanych w następujący sposób:
 
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
   & High & Low & Middle & Sum\\
-\hline
+\midrule
 current & 51 & 43 & 22 & 116\\
-\hline
 former & 92 & 28 & 21 & 141\\
-\hline
 never & 68 & 22 & 9 & 99\\
-\hline
 Sum & 211 & 93 & 52 & 356\\
-\hline
+\bottomrule
 \end{tabular}
 
 Uwaga: status-społeczno-ekonomiczny to powiedzmy miara prestiżu używana w socjologii
@@ -2410,18 +2445,15 @@ dla każdego wiersza osobno do 100\% (tj. dzielimy
 liczebności w każdej kolumnie przez liczebności rozkładu brzegowego (wartości
 ostatniej kolumny):
 
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
   & High & Low & Middle & \\
-\hline
+\midrule
 current & 43.96552 & 37.06897 & 18.965517 & 100\\
-\hline
 former & 65.24823 & 19.85816 & 14.893617 & 100\\
-\hline
 never & 68.68687 & 22.22222 & 9.090909 & 100\\
-\hline
 n.m & 59.26966 & 26.12360 & 14.606742 & 100\\
-\hline
+\bottomrule
 \end{tabular}
 
 Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
@@ -2429,18 +2461,15 @@ pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
 być identyczne jak w wierszach 1--3 (nagłówka nie liczymy). Tym idealnym
 procentom odpowiadają następujące liczebności:
 
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
   & High & Low & Middle & Sum\\
-\hline
+\midrule
 current & 68.75281 & 30.30337 & 16.94382 & 116\\
-\hline
 former & 83.57022 & 36.83427 & 20.59551 & 141\\
-\hline
 never & 58.67697 & 25.86236 & 14.46067 & 99\\
-\hline
 Sum & 211.00000 & 93.00000 & 52.00000 & 356\\
-\hline
+\bottomrule
 \end{tabular}
 
 Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi
@@ -2520,14 +2549,13 @@ oraz pytanie o rodzaj miejsca pracy (skala nominalna). Poniżej
 zestawiono średnie wartości \textbf{poziomu depresji} w podziale
 na rodzaj miejsca pracy (szpital/przychodnia).
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 m-pracy & średnia & n\\
-\hline
+\midrule
 Przychodnia & 7.833333 & 12\\
-\hline
 Szpital & 8.450549 & 91\\
-\hline
+\bottomrule
 \end{tabular}
 
 Kolumna n zawiera liczebności.
@@ -2540,12 +2568,12 @@ Przyjmijmy (na razie bez sprawdzania), że rozkłady wartości poziomu depresji
 w obu grupach są (w przybliżeniu)
 normalne. Można zatem zastosować test \(t\)-Studenta
 
-\begin{tabular}{l|l|r|r|r|r}
-\hline
+\begin{tabular}{llrrrr}
+\toprule
 Grupa1 & Grupa2 & n1 & n2 & t & p\\
-\hline
+\midrule
 Przychodnia & Szpital & 12 & 91 & -0.3241142 & 0.749\\
-\hline
+\bottomrule
 \end{tabular}
 
 Kolumna t zawiera wartość statystyki testu \(t_k\). Kolumna p
@@ -2573,7 +2601,7 @@ posługując się testem Shapiro-Wilka
 Wykres kwantylowy dla \textbf{poziomu depresji}
 wygląda jak na poniższym rysunku
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-49-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-42-1.pdf}
 
 Prosta odpowiada teoretycznym wartościom kwantyli rozkładu poziomu depresji przy założeniu
 że mają one rozkład normalny. Punkty odpowiadają zaobserwowanym wartościom kwantyli.
@@ -2588,14 +2616,13 @@ Wizualne obserwacja można potwierdzić stosując test Shapiro-Wilka (S-W).
 Interpretacja tego testu jest „standardowa``, mianowicie małe wartości \(p\)
 świadczą przeciwko hipotezie zerowej (że rozkład jest normalny).
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 m-pracy & S-W & p\\
-\hline
+\midrule
 Przychodnia & 0.9256178 & 0.3359655\\
-\hline
 Szpital & 0.7865090 & 0.0000000\\
-\hline
+\bottomrule
 \end{tabular}
 
 Rozkład w grupie \texttt{szpital} nie jest normalny (o czym świadczy niska wartość p).
@@ -2614,12 +2641,12 @@ Kolumna S-W zawiera wartości statystki testu S-W oczywiście.
 
 Ponieważ grup jest dokładnie 2 a rozkład nie jest normalny, stosujemy test U Manna-Whitneya.
 
-\begin{tabular}{l|l|r|r|r|r}
-\hline
+\begin{tabular}{llrrrr}
+\toprule
 Grupa1 & Grupa2 & n1 & n2 & U & p\\
-\hline
+\midrule
 Przychodnia & Szpital & 12 & 91 & 564.5 & 0.853\\
-\hline
+\bottomrule
 \end{tabular}
 
 Prawdopodobieństwo wystąpienia tak dużej różnicy przy założeniu, że
@@ -2644,18 +2671,15 @@ staż zamieniono na zmienną w skali nominalnej o następujących
 czterech wartościach: \texttt{\textless{}6} (oznacza od 0 do 6 lat stażu pracy), \texttt{07-12} (7--12 lat), \texttt{13-18} (13--18 lat)
 oraz \texttt{\textgreater{}19} (19 i więcej lat.)
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 staż (kategoria) & średnia & n\\
-\hline
+\midrule
 07-12 & 7.857143 & 7\\
-\hline
 13-18 & 7.666667 & 12\\
-\hline
 <06 & 8.512821 & 39\\
-\hline
 >19 & 8.533333 & 45\\
-\hline
+\bottomrule
 \end{tabular}
 
 Zakładając, że rozkłady w grupach są normalne, do weryfikacji hipotezy o równości wszystkich
@@ -2675,18 +2699,15 @@ Wartość p równa 0.988 świadczy że nie istotnych różnic pomiędzy średnim
 Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
 zastosować (znowu) test Shapiro-Wilka:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 m-pracy & S-W & p\\
-\hline
+\midrule
 07-12 & 0.8565271 & 0.1408865\\
-\hline
 13-18 & 0.7596157 & 0.0033736\\
-\hline
 <06 & 0.9008198 & 0.0023292\\
-\hline
 >19 & 0.6780397 & 0.0000000\\
-\hline
+\bottomrule
 \end{tabular}
 
 Wobec takiego wyniku testu do oceny istotności różnic
@@ -2747,7 +2768,7 @@ Konsumpcja mięsa jest mierzona jako średnia konsumpcja w kilogramach w każdym
 Dochód podobnie jako średnia wielkość dochodu narodowego \emph{per capita}.
 Dane dotyczą roku 2013.
 
-\includegraphics[width=0.9\linewidth]{_main_files/figure-latex/unnamed-chunk-56-1}
+\includegraphics[width=0.9\linewidth]{_main_files/figure-latex/unnamed-chunk-49-1}
 
 Przy dużej dozie wyobraźni można dostrzec relację liniową pomiędzy
 konsumpcją mięsa a GDP co oznaczono na wykresie linią prostą. Można też założyć, że
@@ -2826,7 +2847,7 @@ Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, sz
 
 Albo w bardziej efektownej postaci tekstowo-graficznej:
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-59-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-52-1}
 
 Ze wszystkich zmiennych analizowanych w badaniu Mohammadiego i innych
 jedynie zależność pomiędzy wiekiem a wykształceniem
@@ -3020,16 +3041,15 @@ Oszacowanie tego równania na próbie 635 uczestników
 Pucharu Świata w rugby w 2023 roku
 daje następujące wyniki:
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-61-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-54-1}
 
-\begin{tabular}{l|r|r|r|r|l}
-\hline
+\begin{tabular}{lrrrrl}
+\toprule
 Zmienna & B & SE & z & p & CI95\\
-\hline
+\midrule
 (Intercept) & 155.926 & 1.753 & 88.969 & 0 & 152.480 159.370\\
-\hline
 weight & 0.294 & 0.017 & 17.305 & 0 & 0.260 0.330\\
-\hline
+\bottomrule
 \end{tabular}
 
 Pierwsza kolumna \texttt{Zmienna} zawiera nazwy zmiennych (\texttt{(Intercept)} oznacza wyraz wolny).
@@ -3059,16 +3079,15 @@ Model oszacowano dla krajów świata w roku 2013 na podstawie danych
 pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
 następujące wyniki:
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-64-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-57-1}
 
-\begin{tabular}{l|r|r|r|r|l}
-\hline
+\begin{tabular}{lrrrrl}
+\toprule
 Zmienna & B & SE & z & p & CI95\\
-\hline
+\midrule
 (Intercept) & 34.085 & 2.232 & 15.268 & 0 & 29.680 38.490\\
-\hline
 gdp2013 & 1.108 & 0.100 & 11.124 & 0 & 0.910 1.300\\
-\hline
+\bottomrule
 \end{tabular}
 
 Każdy tysiąc USD \emph{per capita} więcej dochodu narodowego (GDP) oznacza przeciętny
@@ -3184,16 +3203,14 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 
 Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI95\\
-\hline
+\midrule
 (Intercept) & 59.698 & 11.965 & 4.990 & 0.000 & NA & 35.920 83.480\\
-\hline
 BMI & 1.742 & 0.486 & 3.583 & 0.001 & 0.330 & 0.780 2.710\\
-\hline
 age & 0.484 & 0.124 & 3.906 & 0.000 & 0.360 & 0.240 0.730\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 26.24\%.
@@ -3209,16 +3226,14 @@ Wpływ \texttt{BMI} na wielkość ciśnienia jest nieco niższy niż \texttt{age
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
 wyniki:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI95\\
-\hline
+\midrule
 (Intercept) & 79.061 & 4.378 & 18.057 & 0 & NA & 70.460 87.660\\
-\hline
 BMI & 1.213 & 0.183 & 6.637 & 0 & 0.280 & 0.850 1.570\\
-\hline
 age & 0.259 & 0.053 & 4.856 & 0 & 0.210 & 0.150 0.360\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 14.97\%.
@@ -3228,16 +3243,14 @@ co wynika z większej liczebności próby.
 Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
 wyniki:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 74.011 & 1.530 & 48.358 & 0 & NA & 71.010 77.010\\
-\hline
 BMI & 1.375 & 0.064 & 21.404 & 0 & 0.300 & 1.250 1.500\\
-\hline
 age & 0.320 & 0.018 & 18.270 & 0 & 0.250 & 0.290 0.350\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 18.54\%.
@@ -3316,26 +3329,20 @@ SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \t
 
 Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 90.332 & 15.745 & 5.737 & 0.000 & NA & 59.010 121.650\\
-\hline
 BMI & 0.778 & 0.592 & 1.314 & 0.193 & 0.150 & -0.400 1.960\\
-\hline
 age & 0.441 & 0.121 & 3.658 & 0.000 & 0.330 & 0.200 0.680\\
-\hline
 genderF & -13.820 & 4.399 & -3.141 & 0.002 & -0.400 & -22.570 -5.070\\
-\hline
 current.smoker & -6.890 & 3.972 & -1.735 & 0.087 & -0.180 & -14.790 1.010\\
-\hline
+\addlinespace
 ever.smoker & 7.626 & 6.882 & 1.108 & 0.271 & 0.110 & -6.070 21.320\\
-\hline
 current.drinker & -3.959 & 8.523 & -0.465 & 0.643 & -0.040 & -20.910 13.000\\
-\hline
 ever.drinker & -4.001 & 4.575 & -0.875 & 0.384 & -0.080 & -13.100 5.100\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 38.11\%. Tylko dwie na siedem zmiennych
@@ -3348,26 +3355,20 @@ i nie jest to przypadek.
 Oszacowanie tego samego równania dla próba o wielkości 4490 obserwacji daje następujące
 wyniki:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 80.089 & 1.623 & 49.334 & 0.000 & NA & 76.910 83.270\\
-\hline
 BMI & 1.192 & 0.066 & 18.009 & 0.000 & 0.260 & 1.060 1.320\\
-\hline
 age & 0.336 & 0.018 & 19.087 & 0.000 & 0.260 & 0.300 0.370\\
-\hline
 genderF & -5.329 & 0.508 & -10.496 & 0.000 & -0.160 & -6.320 -4.330\\
-\hline
 current.smoker & -2.752 & 0.583 & -4.717 & 0.000 & -0.070 & -3.900 -1.610\\
-\hline
+\addlinespace
 ever.smoker & -2.021 & 1.045 & -1.933 & 0.053 & -0.030 & -4.070 0.030\\
-\hline
 current.drinker & 3.621 & 1.535 & 2.360 & 0.018 & 0.030 & 0.610 6.630\\
-\hline
 ever.drinker & 0.193 & 0.623 & 0.310 & 0.757 & 0.000 & -1.030 1.410\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 20.72\%. Zwiększenie
@@ -3396,45 +3397,36 @@ przy zmiennej \texttt{ever.drinker} ma wartość \(p\) równą 0,309 zaś przy z
 \texttt{ever.smoker} ma wartość 0,05324. Usuwamy zmienną \texttt{ever.drinker} (bo wartość \(p\) jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 80.108 & 1.622 & 49.387 & 0.000 & NA & 76.930 83.290\\
-\hline
 BMI & 1.193 & 0.066 & 18.056 & 0.000 & 0.260 & 1.060 1.320\\
-\hline
 age & 0.335 & 0.018 & 19.097 & 0.000 & 0.260 & 0.300 0.370\\
-\hline
 genderF & -5.358 & 0.499 & -10.740 & 0.000 & -0.160 & -6.340 -4.380\\
-\hline
 current.smoker & -2.740 & 0.582 & -4.708 & 0.000 & -0.070 & -3.880 -1.600\\
-\hline
+\addlinespace
 ever.smoker & -1.980 & 1.037 & -1.910 & 0.056 & -0.030 & -4.010 0.050\\
-\hline
 current.drinker & 3.579 & 1.528 & 2.342 & 0.019 & 0.030 & 0.580 6.580\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik przy zmiennej \texttt{ever.smoker} dalej uparcie jest nieistotny. Usuwamy
 teraz tę zmienną. Otrzymujemy:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 79.865 & 1.618 & 49.375 & 0.00 & NA & 76.690 83.040\\
-\hline
 BMI & 1.195 & 0.066 & 18.075 & 0.00 & 0.260 & 1.070 1.320\\
-\hline
 age & 0.336 & 0.018 & 19.100 & 0.00 & 0.260 & 0.300 0.370\\
-\hline
 genderF & -5.155 & 0.488 & -10.572 & 0.00 & -0.160 & -6.110 -4.200\\
-\hline
 current.smoker & -2.540 & 0.573 & -4.435 & 0.00 & -0.060 & -3.660 -1.420\\
-\hline
+\addlinespace
 current.drinker & 3.551 & 1.529 & 2.323 & 0.02 & 0.030 & 0.550 6.550\\
-\hline
+\bottomrule
 \end{tabular}
 
 Wszystkie współczynniki mają istotnie różnie od zera wartości. Wartość
@@ -3596,18 +3588,18 @@ Odpowiada to następującemu równaniu:
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo
 
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
 Parametr & Ocena & SE & z & p\\
-\hline
+\midrule
 (Intercept) & -2.644537 & 0.2029618 & -13.02973 & 0\\
-\hline
+\bottomrule
 \end{tabular}
 
 Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
 wyniosło 0.0663265. Krzywa ROC dla modelu zerowego wygląda następująco:
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-75-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-68-1}
 
 Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
 z bardziej skomplikowanymi modelami.
@@ -3625,14 +3617,13 @@ Dla przypomnienia \(o\) jest szansą wystąpienia osteoporozy.
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
-\hline
+\midrule
 (Intercept) & -3.367 & 0.455 & -7.403 & 0.000 & 0.030 & 0.010 0.080\\
-\hline
 genderF & 1.014 & 0.509 & 1.992 & 0.046 & 2.760 & 1.090 8.400\\
-\hline
+\bottomrule
 \end{tabular}
 
 Znając wartości współczynników równania można obliczyć wartości \(\ln(o)\)
@@ -3647,18 +3638,15 @@ można opisać następującym równaniem regresji:
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
-\hline
+\midrule
 (Intercept) & -12.183 & 1.766 & -6.898 & 0.000 & 0.000 & 0.000 0.000\\
-\hline
 d & 0.005 & 0.009 & 0.536 & 0.592 & 1.000 & 0.990 1.020\\
-\hline
 age & 0.156 & 0.026 & 5.930 & 0.000 & 1.170 & 1.120 1.240\\
-\hline
 genderF & 2.463 & 0.662 & 3.722 & 0.000 & 11.740 & 3.540 48.760\\
-\hline
+\bottomrule
 \end{tabular}
 
 Macierz pomyłek (\emph{confussion matrix})
@@ -3678,7 +3666,7 @@ Dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = 0)
 
 Krzywa ROC
 
-\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-81-1}
+\includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-74-1}
 \end{example}
 
 \hypertarget{przypadek-specjalny-dwie-zmienne-co-najmniej-porzux105dkowe}{%
@@ -4080,7 +4068,7 @@ Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 Rozkład ankietowanych wg wyniku testu
 na znajomość szkodliwości palenia przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-84-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-77-1}
 
 W badaniu wzięło udział 110 studentów.
 Otrzymano 110 poprawnie
@@ -4091,20 +4079,20 @@ standardowe 3.997).
 Rozkład ankietowanych ze względu na status względem
 palenia przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-85-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-78-1}
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku
 
-\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-86-1}
+\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-79-1}
 
 Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-87-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-80-1}
 
 Rozkład ankietowanych ze względu na rodzaj miejsca pracy
 przedstawiono na rysunku
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-88-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-81-1}
 
 \hypertarget{weryfikacja-hipotezy-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1}}
@@ -4126,16 +4114,14 @@ z jakąś średnią ogólnopolską.
 
 Czy palenie jest skorelowane z płcią?
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
   & K & M\\
-\hline
+\midrule
 Nigdy nie paliłem/am & 31 & 17\\
-\hline
 Paliłem/łam & 27 & 12\\
-\hline
 W dalszym ciągu palę & 19 & 4\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4150,16 +4136,14 @@ Nie jest o czym świadczy wysoka wartość p (0.2978)
 
 Czy palenie jest skorelowane ze stażem pracy?
 
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
   & 0-4 & 10-14 & 15 i więcej & 5-9\\
-\hline
+\midrule
 Nigdy nie paliłem/am & 14 & 4 & 24 & 6\\
-\hline
 Paliłem/łam & 8 & 2 & 23 & 6\\
-\hline
 W dalszym ciągu palę & 6 & 2 & 11 & 4\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4174,16 +4158,14 @@ Nie jest o czym świadczy wysoka wartość p (0.9397)
 
 Czy palenie jest skorelowane z miejscem pracy?
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
   & Przychodnia & Szpital\\
-\hline
+\midrule
 Nigdy nie paliłem/am & 5 & 43\\
-\hline
 Paliłem/łam & 3 & 36\\
-\hline
 W dalszym ciągu palę & 3 & 20\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4198,14 +4180,13 @@ Nie jest o czym świadczy wysoka wartość p (0.7879)
 
 Czy wiedza na temat palenia jest skorelowana z płcią:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 płeć & średnia & n\\
-\hline
+\midrule
 K & 10.831169 & 77\\
-\hline
 M & 9.272727 & 33\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4220,14 +4201,13 @@ Istnieje zależność pomiędzy wiedzą na temat palenia a płcią.
 
 Czy wiedza na temat palenia jest skorelowana z miejscem pracy:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 m.pracy & średnia & n\\
-\hline
+\midrule
 Przychodnia & 10.36364 & 11\\
-\hline
 Szpital & 10.36364 & 99\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4241,18 +4221,15 @@ od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
 
 Czy wiedza na temat palenia jest skorelowana ze stażem:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 staż & średnia & n\\
-\hline
+\midrule
 0-4 & 9.928571 & 28\\
-\hline
 10-14 & 9.875000 & 8\\
-\hline
 15 i więcej & 10.793103 & 58\\
-\hline
 5-9 & 9.812500 & 16\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4268,18 +4245,15 @@ Czy wiedza o szkodliwości palenia jest skorelowana
 ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
 0--5 mała; 6--10 średnia; 11--15 duża, 16--19 ogromna:
 
-\begin{tabular}{l|r|r|r}
-\hline
+\begin{tabular}{lrrr}
+\toprule
   & Nigdy nie paliłem/am & Paliłem/łam & W dalszym ciągu palę\\
-\hline
+\midrule
 duża & 22 & 16 & 14\\
-\hline
 mała & 7 & 6 & 4\\
-\hline
 ogromna & 2 & 3 & 2\\
-\hline
 średnia & 17 & 14 & 3\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4296,16 +4270,14 @@ o czym świadczy wysoka wartość p (0.5444).
 Można to samo zweryfikować porównując średnie w grupach
 i stosując test Kruskala-Wallisa:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 status & średnia & n\\
-\hline
+\midrule
 Nigdy nie paliłem/am & 10.31250 & 48\\
-\hline
 Paliłem/łam & 10.07692 & 39\\
-\hline
 W dalszym ciągu palę & 10.95652 & 23\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4389,20 +4361,20 @@ standardowe 8.577)
 
 Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-100-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-93-1}
 
 Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-101-1}
+\includegraphics[width=0.7\linewidth,height=0.3\textheight]{_main_files/figure-latex/unnamed-chunk-94-1}
 
 Rozkład ankietowanych ze względu na staż przedstawiono na rysunku.
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-102-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-95-1}
 
 \hypertarget{weryfikacja-hipotezy-1-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1-1}}
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-103-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-96-1}
 
 Ciężką postać depresji wykazuje zaledwie 3\% studentów. Należy odrzucić hipotezę
 że depresja stanowi poważny problem wśród studentów RM/PO PSW.
@@ -4420,16 +4392,14 @@ na skalę porządkową: 0--19 brak/łagodna depresja (B);
 
 Tablica wielodzielcza i test chi-kwadrat:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
   & K & M\\
-\hline
+\midrule
 B & 64 & 29\\
-\hline
 C & 2 & 1\\
-\hline
 Ł & 5 & 2\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4447,16 +4417,14 @@ Nie stwierdzono zależności pomiędzy depresją a płcią (p = 0.986).
 
 Tablica wielodzielcza i test chi-kwadrat:
 
-\begin{tabular}{l|r|r|r|r}
-\hline
+\begin{tabular}{lrrrr}
+\toprule
   & 06 i mniej & 07-12 & 13-18 & 19 i więcej\\
-\hline
+\midrule
 B & 36 & 6 & 9 & 42\\
-\hline
 C & 1 & 0 & 1 & 1\\
-\hline
 Ł & 2 & 1 & 2 & 2\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4472,18 +4440,15 @@ Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = 0.5803).
 Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
 można porównać wartości średnie i zastosować test Kruskala-Wallisa.
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 staż & średnia & n\\
-\hline
+\midrule
 06 i mniej & 8.512821 & 39\\
-\hline
 07-12 & 7.857143 & 7\\
-\hline
 13-18 & 7.666667 & 12\\
-\hline
 19 i więcej & 8.533333 & 45\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4498,16 +4463,14 @@ Wynik jest ten sam (brak zależności)
 
 Tablica wielodzielcza i test chi-kwadrat:
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
   & Przychodnia & Szpital\\
-\hline
+\midrule
 B & 12 & 81\\
-\hline
 C & 0 & 3\\
-\hline
 Ł & 0 & 7\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4524,14 +4487,13 @@ a miejscem pracy (p = 0.4818).
 Jeżeli depresję mierzymy na skali liczbowej
 można porównać wartości średnie i zastosować test Manna-Whitneya
 
-\begin{tabular}{l|r|r}
-\hline
+\begin{tabular}{lrr}
+\toprule
 m-pracy & średnia & n\\
-\hline
+\midrule
 Przychodnia & 7.833333 & 12\\
-\hline
 Szpital & 8.450549 & 91\\
-\hline
+\bottomrule
 \end{tabular}
 
 \begin{verbatim}
@@ -4639,28 +4601,21 @@ Zakładamy, że \texttt{zzp} jest objaśniana przez \texttt{sp}, \texttt{sw}, \t
 (Odważnie dołączamy \texttt{staz} mimo że w świetle analizy macierzy korelacji raczej nie jest to dobry pomysł.)
 Oszacowanie tego modelu daje następujące wyniki:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 13.035 & 3.706 & 3.517 & 0.001 & NA & 5.570 20.500\\
-\hline
 sp & -1.099 & 0.331 & -3.325 & 0.002 & -0.480 & -1.760 -0.430\\
-\hline
 sw & 0.124 & 0.115 & 1.075 & 0.288 & 0.160 & -0.110 0.360\\
-\hline
 kpw & 0.778 & 0.376 & 2.068 & 0.044 & 0.310 & 0.020 1.540\\
-\hline
 kpp & 0.032 & 0.235 & 0.137 & 0.891 & 0.020 & -0.440 0.500\\
-\hline
+\addlinespace
 po & -0.040 & 0.026 & -1.545 & 0.129 & -0.210 & -0.090 0.010\\
-\hline
 staz & 0.045 & 0.047 & 0.953 & 0.346 & 0.130 & -0.050 0.140\\
-\hline
 plecM & 0.624 & 2.437 & 0.256 & 0.799 & 0.040 & -4.280 5.530\\
-\hline
 roddzialtak & 1.138 & 0.896 & 1.270 & 0.211 & 0.150 & -0.670 2.940\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 40.85\%.
@@ -4670,16 +4625,14 @@ Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystki
 nieistotne. Kolejno należało wyeliminować \texttt{sw}, \texttt{kpp}, \texttt{po}, \texttt{staz}, \texttt{plec} oraz \texttt{roddzial}.
 W modelu ostatecznym \texttt{zzp} jest objaśniana przez \texttt{sp} oraz \texttt{kpw}:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Zmienna & B & SE & z & p & Beta & CI\\
-\hline
+\midrule
 (Intercept) & 13.987 & 2.969 & 4.710 & 0.000 & NA & 8.030 19.950\\
-\hline
 sp & -1.112 & 0.263 & -4.226 & 0.000 & -0.480 & -1.640 -0.580\\
-\hline
 kpw & 0.682 & 0.283 & 2.412 & 0.019 & 0.270 & 0.110 1.250\\
-\hline
+\bottomrule
 \end{tabular}
 
 Współczynnik zbieżności wynosi 33.41\%.
@@ -4699,28 +4652,21 @@ zmianę miejsca pracy (zmieni=0, nie zmieni=1).
 Zakładamy, że \texttt{zp}, podobnie jak w przypadku zamiaru,
 jest objaśniana przez \texttt{sp}, \texttt{sw}, \texttt{kpw}, \texttt{kpp}, \texttt{po}, \texttt{staz}, \texttt{plec} oraz \texttt{roddzial}.
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
-\hline
+\midrule
 (Intercept) & -4.702 & 4.599 & -1.022 & 0.307 & 0.010 & 0.000 82.270\\
-\hline
 sp & 1.082 & 0.480 & 2.254 & 0.024 & 2.950 & 1.300 9.150\\
-\hline
 sw & -0.082 & 0.143 & -0.577 & 0.564 & 0.920 & 0.680 1.220\\
-\hline
 kpw & -0.415 & 0.410 & -1.013 & 0.311 & 0.660 & 0.280 1.510\\
-\hline
 kpp & 0.154 & 0.386 & 0.399 & 0.690 & 1.170 & 0.620 2.530\\
-\hline
+\addlinespace
 po & 0.037 & 0.036 & 1.028 & 0.304 & 1.040 & 0.970 1.130\\
-\hline
 staz & -0.107 & 0.071 & -1.512 & 0.130 & 0.900 & 0.760 1.020\\
-\hline
 plecM & 13.102 & 2596.962 & 0.005 & 0.996 & 489784.870 & 0.000 NA\\
-\hline
 roddzialtak & -1.817 & 1.074 & -1.692 & 0.091 & 0.160 & 0.020 1.310\\
-\hline
+\bottomrule
 \end{tabular}
 
 Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej na poziomie
@@ -4730,14 +4676,13 @@ Postępując podobnie jak w przypadku „normalnej'' regresji eliminujemy
 iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
 do modelu w którym odejście z pracy objaśnia tylko satysfakcja:
 
-\begin{tabular}{l|r|r|r|r|l|l}
-\hline
+\begin{tabular}{lrrrrll}
+\toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
-\hline
+\midrule
 (Intercept) & -5.448 & 2.460 & -2.215 & 0.027 & 0.000 & 0.000 0.360\\
-\hline
 sp & 0.803 & 0.283 & 2.838 & 0.005 & 2.230 & 1.350 4.260\\
-\hline
+\bottomrule
 \end{tabular}
 
 Macierz pomyłek:
@@ -4753,7 +4698,7 @@ Stąd: czułość 0.98; swoistość 0.33.
 
 Krzywą ROC przedstawiono na rysunku:
 
-\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-115-1}
+\includegraphics[width=0.7\linewidth]{_main_files/figure-latex/unnamed-chunk-108-1}
 
 \hypertarget{wnioski-2}{%
 \subsection{Wnioski}\label{wnioski-2}}
