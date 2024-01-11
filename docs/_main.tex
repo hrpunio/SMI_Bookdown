@@ -201,7 +201,7 @@ Rozdział trzeci przedstawia ideę \textbf{wnioskowania statystycznego}.
 Najbardziej
 obszerny rozdział czwarty opisuje metody \textbf{analizy zależności}.
 
-Pozostałem rozdziały poświęcono praktyce. Rozdział piąty zawiera
+Pozostałe rozdziały poświęcono praktyce. Rozdział piąty zawiera
 przykładowe analizy trzech badań ankietowych a rozdział szósty
 opisuje
 jak uprawiać statystykę z wykorzystaniem programu Jamovi.
@@ -334,9 +334,9 @@ przyjmują dowolne wartości liczbowe z pewnego przedziału liczbowego, np. ciś
 \item
   Przekrojowe (zmarli w Kwidzynie)
 \item
-  Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000--20222)
+  Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000--2022)
 \item
-  Przestrzenne : każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne)
+  Przestrzenne: każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne)
 \end{itemize}
 
 \hypertarget{rodzaje-i-sposoby-analizy-danych}{%
@@ -571,14 +571,14 @@ następujące części:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{Wprowadzenie}: określenie problemu badawczego, celu badania;
+  \textbf{Wprowadzenie}: określenie problemu badawczego, celu badania.
 \item
-  \textbf{Materiał i metoda}: Opis danych i zastosowanych metod statystycznych
+  \textbf{Materiał i metoda}: Opis danych i zastosowanych metod statystycznych.
 \item
-  \textbf{Wyniki}: Rezultaty analiz
+  \textbf{Wyniki}: Rezultaty analiz.
 \item
-  \textbf{Dyskusja}: Znaczenie uzyskanych wyników, jeżeli we wstępie postawiono hipotezy
-  to tutaj należy
+  \textbf{Dyskusja}: Znaczenie uzyskanych wyników; jeżeli we wstępie postawiono hipotezy
+  to tutaj należy przedstawić wyniki ich weryfikacji.
 \end{enumerate}
 
 Żeby się zorientować jakie dane (jakie zmienne i jak mierzone) oraz jakie metody statystyczne zostały
@@ -1485,12 +1485,17 @@ wariancji)
 ##    77.0    97.5   103.0   103.1   109.0   131.0
 \end{verbatim}
 
-średnia (średnich z próby) ma wartość 103.11
-a odchylenie standardowe 8.71.
+Średnia (średnich z próby) ma wartość 103.11 kilogramów
+a odchylenie standardowe 8.71 kilogramów.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
 z liczebności próby) jest równa 9.14. Zauważmy że ta wartość
 jest zbliżona do odchylenia standardowego uzyskanego
-w eksperymencie (8.71 vs 9.14)
+w eksperymencie (8.71 vs 9.14).
+
+Zauważmy też że wartość najniższej średniej wyniosła 77 kilogramów zaś najwyższej 131 kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
+o 26.11 kilogramów
+na minus lub 27.89 kilogramów na plus.
 
 \textbf{szacujemy średnią na podstawie 10 zawodników pobranych losowo}
 
@@ -1501,8 +1506,8 @@ Powtarzamy eksperyment 1000 razy
 ##    90.9    99.9   102.7   102.8   105.6   115.2
 \end{verbatim}
 
-średnia wyszła 102.81 a odchylenie standardowe
-4.07.
+średnia wyszła 102.81 kilogramów a odchylenie standardowe
+4.07 kilogramów.
 Wartość \(s/\sqrt{10}\) jest równa 4.09.
 
 \textbf{szacujemy średnią na podstawie 40 zawodników pobranych losowo}
@@ -1516,8 +1521,13 @@ Powtarzamy eksperyment 1000 razy
 ##   97.05  101.38  102.72  102.78  104.12  109.75
 \end{verbatim}
 
-średnia jest równa 102.78 a odchylenie standardowe 1.99.
+średnia jest równa 102.78 kilogramów a odchylenie standardowe 1.99 kilogramów.
 Wartość \(s/\sqrt{40}\) jest równa 2.04.
+
+Zauważmy też że wartość najniższej średniej wyniosła 97.05 kilogramów zaś najwyższej 109.75 kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o 5.73 kilogramów
+na minus lub 6.97 kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
+dwuelementowej.
 
 \textbf{Wykres}
 
@@ -1597,6 +1607,11 @@ Powtarzamy eksperyment 1000 razy
 Odchylenie standardowe wyniosło 10.31.
 Wartość \(s/\sqrt{2}\) jest równa 10.33.
 
+Wartość najniższej średniej wyniosła 19 lat zaś najwyższej 75.5 lat.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
+o 27.07 lat
+na minus lub 29.43 lat na plus.
+
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}
 
 Powtarzamy eksperyment 1000 razy.
@@ -1621,8 +1636,8 @@ Powtarzamy eksperyment 1000 razy.
 \end{verbatim}
 
 Średnia średnich z próby ma wartość 46.21 lat.
-Odchylenie standardowe wyniosło 2.2234115.
-Wartość \(s/\sqrt{40}\) jest równa 2.3105373.
+Odchylenie standardowe wyniosło 2.22.
+Wartość \(s/\sqrt{40}\) jest równa 2.31.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}
 
@@ -1634,8 +1649,13 @@ Uwaga: 70 kandydatów to około ok 1\% całości (1000 powtórzeń)
 \end{verbatim}
 
 Średnia średnich z próby ma wartość 46.26 lat.
-Odchylenie standardowe wyniosło 1.7003089
-Wartość \(s/\sqrt{70}\) jest równa 1.746602.
+Odchylenie standardowe wyniosło 1.7
+Wartość \(s/\sqrt{70}\) jest równa 1.75.
+
+Wartość najniższej średniej wyniosła 40.23 lat zaś najwyższej 52.53 lat.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
+już tylko o 6.03 lat
+na minus lub 6.27 lat na plus.
 
 \textbf{Wykres}
 
@@ -2531,7 +2551,7 @@ Przychodnia & Szpital & 12 & 91 & -0.3241142 & 0.749\\
 Kolumna t zawiera wartość statystyki testu \(t_k\). Kolumna p
 zawiera oczywiście wartość prawdopodobieństwa p.
 
-Ponieważ wartość \(p\) równa 0.749` jest większa od każdego zwyczajowo
+Ponieważ wartość \(p\) równa 0.749 jest większa od każdego zwyczajowo
 przyjmowanego poziomu istotności (0,05 na przykład, albo 0,1) nie ma podstaw
 do odrzucenia hipotezy, że średnie w obu grupach są równe. Skoro tak, to
 w konsekwencji stwierdzamy że pomiędzy poziomem depresji
@@ -3684,7 +3704,7 @@ korelacji liniowej Pearsona -- miara niemianowana, o wartościach
 ze zbioru {[}-1;1{]};
 
 \begin{example}
-\textbf{Przykład: spożycie mięsa}
+\textbf{Spożycie mięsa}
 
 Współczynnik Pearsona i Spearmana dla zależności między spożyciem mięsa w 1980
 a spożyciem mięsa w 2013 roku (zmienna objaśniana):

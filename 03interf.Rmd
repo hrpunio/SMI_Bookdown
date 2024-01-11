@@ -66,12 +66,17 @@ mean.s02 <- mean(s02)
 sd.s02 <- sd(s02)
 ```
 
-średnia (średnich z próby) ma wartość `r sprintf("%.2f", mean.s02)` 
-a odchylenie standardowe `r sprintf("%.2f", sd.s02)`.
+Średnia (średnich z próby) ma wartość `r sprintf("%.2f", mean.s02)` kilogramów
+a odchylenie standardowe `r sprintf("%.2f", sd.s02)` kilogramów.
 Wartość $s/\sqrt{2}$ (odchylenie standardowe podzielone przez pierwiastek kwadratowy 
 z liczebności próby) jest równa `r sprintf("%.2f", max.err.sd/sqrt(2)) `. Zauważmy że ta wartość
 jest zbliżona do odchylenia standardowego uzyskanego 
-w eksperymencie (`r sprintf("%.2f", sd.s02)` vs `r sprintf ("%.2f", max.err.sd/sqrt(2)) `)
+w eksperymencie (`r sprintf("%.2f", sd.s02)` vs `r sprintf ("%.2f", max.err.sd/sqrt(2)) `).
+
+Zauważmy też że wartość najniższej średniej wyniosła `r min(s02)` kilogramów zaś najwyższej `r max (s02)` kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
+o `r round(mean.s02 - min(s02), 2)` kilogramów
+na minus lub `r  round(max(s02) - mean.s02, 2)` kilogramów na plus.
 
 **szacujemy średnią na podstawie 10 zawodników pobranych losowo**
 
@@ -86,8 +91,8 @@ mean.s10 <- mean(s10)
 sd.s10 <- sd(s10)
 ```
 
-średnia wyszła `r round(mean.s10, 2)` a odchylenie standardowe 
-`r round(sd.s10, 2)`.
+średnia wyszła `r round(mean.s10, 2)` kilogramów a odchylenie standardowe 
+`r round(sd.s10, 2)` kilogramów.
 Wartość $s/\sqrt{10}$ jest równa `r round(max.err.sd/sqrt(10), 2)`.
 
 **szacujemy średnią na podstawie 40 zawodników pobranych losowo**
@@ -105,8 +110,14 @@ sd.s40 <- sd(s40)
 
 ```
 
-średnia jest równa `r round(mean.s40, 2)` a odchylenie standardowe `r round(sd.s40, 2)`.
+średnia jest równa `r round(mean.s40, 2)` kilogramów a odchylenie standardowe `r round(sd.s40, 2)` kilogramów.
 Wartość $s/\sqrt{40}$ jest równa `r round(max.err.sd/sqrt(40), 2)`.
+
+Zauważmy też że wartość najniższej średniej wyniosła `r min(s40)` kilogramów zaś najwyższej `r max (s40)` kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o `r round(mean.s40 - min(s40), 2)` kilogramów
+na minus lub `r  round(max(s40) - mean.s40, 2)` kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
+dwuelementowej.
+
 
 **Wykres**
 
@@ -224,6 +235,11 @@ mean.s02 <- mean(k02)
 Odchylenie standardowe wyniosło `r  round(sd02, 2)`.
 Wartość $s/\sqrt{2}$ jest równa `r round(max.err.sd/sqrt(2), 2) `.
 
+Wartość najniższej średniej wyniosła `r min(k02)` lat zaś najwyższej `r max (k02)` lat.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
+o `r round(mean.s02 - min(k02), 2)` lat
+na minus lub `r  round(max(k02) - mean.s02, 2)` lat na plus.
+
 **Szacujemy średnią na podstawie 10 kandydatów pobranych losowo**
 
 Powtarzamy eksperyment `r sample.size` razy.
@@ -257,8 +273,8 @@ mean.s40 <- mean(k40)
 ```
 
 Średnia średnich z próby ma wartość `r round(mean.s40, 2)` lat.
-Odchylenie standardowe wyniosło `r sd40`.
-Wartość $s/\sqrt{40}$ jest równa `r max.err.sd/sqrt(40) `.
+Odchylenie standardowe wyniosło `r round(sd40, 2)`.
+Wartość $s/\sqrt{40}$ jest równa `r round(max.err.sd/sqrt(40), 2)`.
 
 **Szacujemy średnią na podstawie 70 kandydatów pobranych losowo**
 
@@ -275,8 +291,14 @@ mean.s70 <- mean(k70)
 ```
 
 Średnia średnich z próby ma wartość `r round(mean.s70, 2)` lat.
-Odchylenie standardowe wyniosło `r  sd70`
-Wartość $s/\sqrt{70}$ jest równa `r max.err.sd/sqrt(70) `.
+Odchylenie standardowe wyniosło `r  round(sd70, 2)`
+Wartość $s/\sqrt{70}$ jest równa `r round(max.err.sd/sqrt(70), 2)`.
+
+Wartość najniższej średniej wyniosła `r round(min(k70), 2)` lat zaś najwyższej `r round(max(k70), 2)` lat.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
+już tylko o `r round(mean.s70 - min(k70), 2)` lat
+na minus lub `r  round(max(k70) - mean.s70, 2)` lat na plus.
+
 
 **Wykres**
 

@@ -112,9 +112,9 @@ przyjmują dowolne wartości liczbowe z pewnego przedziału liczbowego, np. ciś
 
 * Przekrojowe (zmarli w Kwidzynie)
 
-* Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000--20222)
+* Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000--2022)
 
-* Przestrzenne : każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne)
+* Przestrzenne: każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne)
 
 ## Rodzaje i sposoby analizy danych
 
@@ -339,11 +339,11 @@ od tej na poziomie indywidualnym.
 Jest ustalony szablon artykułu naukowego, który powinien być podzielony na
 następujące części:
 
-1. **Wprowadzenie**: określenie problemu badawczego, celu badania;
-2. **Materiał i metoda**: Opis danych i zastosowanych metod statystycznych
-3. **Wyniki**: Rezultaty analiz
-4. **Dyskusja**: Znaczenie uzyskanych wyników, jeżeli we wstępie postawiono hipotezy
-   to tutaj należy 
+1. **Wprowadzenie**: określenie problemu badawczego, celu badania.
+2. **Materiał i metoda**: Opis danych i zastosowanych metod statystycznych.
+3. **Wyniki**: Rezultaty analiz.
+4. **Dyskusja**: Znaczenie uzyskanych wyników; jeżeli we wstępie postawiono hipotezy
+   to tutaj należy przedstawić wyniki ich weryfikacji.
    
 Żeby się zorientować jakie dane (jakie zmienne i jak mierzone) oraz jakie metody statystyczne zostały
 wykorzystane w pracy wystarczy zapoznać się z treścią punktu **materiał i metoda**. W szczególności
