@@ -1,4 +1,4 @@
-# Łagodne wprowadzenie do wnioskowanie statystycznego {#interference}
+# Łagodne wprowadzenie do wnioskowania statystycznego {#interference}
 
 **Chcemy się dowiedzieć czegoś na temat populacji (całości)
 na podstawie próby (części tej całości).**
