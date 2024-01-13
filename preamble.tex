@@ -91,7 +91,9 @@
     enhanced,
     breakable,
 }
-\newenvironment{example}{\begin{TPexample}\parskip1ex}{\end{TPexample}}
+\newenvironment{example}{\begin{TPexample}%
+\setlength{\abovedisplayskip}{0pt plus 3pt}%
+\parskip1ex}{\end{TPexample}}
 
 
 \font\chineseFont="NotoSansTC-Regular" at 10pt
@@ -107,6 +109,11 @@
 \def□{\chinese{\bbChar}} %% ballot box
 \def→{\chinese{\bbArrowR}} %% right arrow
 
+%%\newenvironment{tof}{\begingroup\medskip }{\par\medskip\endgroup}
 
-\newenvironment{tof}{\begingroup\medskip }{\par\medskip\endgroup}
+%%\setlength{\abovedisplayskip}{0pt plus 6pt}
+%%\setlength{\belowdisplayskip}{1em}
+%%\setlength{\abovedisplayshortskip}{0em}
+
+
 %%%

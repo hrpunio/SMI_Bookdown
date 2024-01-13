@@ -156,7 +156,9 @@
     enhanced,
     breakable,
 }
-\newenvironment{example}{\begin{TPexample}\parskip1ex}{\end{TPexample}}
+\newenvironment{example}{\begin{TPexample}%
+\setlength{\abovedisplayskip}{0pt plus 3pt}%
+\parskip1ex}{\end{TPexample}}
 
 
 \font\chineseFont="NotoSansTC-Regular" at 10pt
@@ -172,8 +174,13 @@
 \def□{\chinese{\bbChar}} %% ballot box
 \def→{\chinese{\bbArrowR}} %% right arrow
 
+%%\newenvironment{tof}{\begingroup\medskip }{\par\medskip\endgroup}
 
-\newenvironment{tof}{\begingroup\medskip }{\par\medskip\endgroup}
+%%\setlength{\abovedisplayskip}{0pt plus 6pt}
+%%\setlength{\belowdisplayskip}{1em}
+%%\setlength{\abovedisplayshortskip}{0em}
+
+
 %%%
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -3314,7 +3321,9 @@ Należy każdą zamienić na dwie zmienne binarne, wg schematu:
 
 \texttt{CS} (\emph{current smoker}/pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
 
-\texttt{PS} (\emph{past smoker}/kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+\texttt{PS} (\emph{past smoker}/palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+
+\texttt{CD} (\emph{current drinker}/pije) oraz \texttt{PD} (\emph{past drinker}/pił) \emph{per analogiam} do \texttt{CS}/\texttt{CD}
 
 Zmienna płeć \texttt{genderF} = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
 dwuwartościowej wskazuje która wartość jest zakodowana jako 1. Przykładowo \texttt{genderF} (\emph{female} żeby się
@@ -3330,7 +3339,7 @@ SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \t
 &+  b_5 \textrm{PS} + b_6 \textrm{CD} + b_7 \textrm{PD} \nonumber
 \end{align}
 
-Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
+Oszacowanie dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
 \begin{tabular}{lrrrrll}
 \toprule

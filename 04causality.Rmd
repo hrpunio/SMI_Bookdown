@@ -1347,7 +1347,9 @@ Należy każdą zamienić na dwie zmienne binarne, wg schematu:
 
 `CS` (*current smoker*/pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
 
-`PS` (*past smoker*/kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+`PS` (*past smoker*/palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+
+`CD` (*current drinker*/pije) oraz `PD` (*past drinker*/pił) *per analogiam* do `CS`/`CD`
 
 Zmienna płeć `genderF` = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
 dwuwartościowej wskazuje która wartość jest zakodowana jako 1. Przykładowo `genderF` (*female* żeby się
@@ -1363,7 +1365,7 @@ SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \t
 &+  b_5 \textrm{PS} + b_6 \textrm{CD} + b_7 \textrm{PD} \nonumber
 \end{align}
 
-Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
+Oszacowanie dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
 ```{r}
 lm.1 <- lm(data=s1, SBP ~ BMI + age + genderF + CS + PS + CD + PD );
