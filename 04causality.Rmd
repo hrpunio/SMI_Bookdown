@@ -774,7 +774,7 @@ https://doi.org/10.1371/journal.pone.0265914)
 h0 <- read.csv("iran_happiness.csv", sep = ',', dec = ".",  header=T, na.string="NA" ) %>%
   select (age, edu, Happiness, Health) %>%
   na.omit()
-cor(h0, use = "complete.obs")
+round(cor(h0, use = "complete.obs"), 4)
 ```
 
 Albo w bardziej efektownej postaci tekstowo-graficznej: 
@@ -1197,17 +1197,12 @@ Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące w
 s0 <- read.csv("RC_Health_Care_samples.csv", sep = ';', header = T ) %>%
   mutate (
       genderF = case_when (gender == 2 ~ 1, TRUE ~ 0 ),
-      current.smoker = case_when(smoking.status == 1 ~ 1,  
-                         TRUE ~ 0),
-      ever.smoker = case_when(smoking.status == 2 ~ 1,  
-                                     TRUE ~ 0),
-          current.drinker = case_when(drinking.status == 1 ~ 1,  
-                                     TRUE ~ 0),
-          ever.drinker = case_when(drinking.status == 2 ~ 1,  
-                                  TRUE ~ 0)
-          )
-
-###
+      CS = case_when(smoking.status == 1 ~ 1, TRUE ~ 0),
+      PS = case_when(smoking.status == 2 ~ 1, TRUE ~ 0),
+      CD = case_when(drinking.status == 1 ~ 1, TRUE ~ 0),
+      PD = case_when(drinking.status == 2 ~ 1, TRUE ~ 0)
+  )
+  
 s1 <- s0 %>% filter (sample == 's')
 s2 <- s0 %>% filter (sample == 'm')
 s3 <- s0 %>% filter (sample == 'b')
@@ -1350,9 +1345,9 @@ oraz status względem palenia (palił, pali, nigdy nie palił).
 Zwróćmy uwagę że zmienne mierzące status względem palenia/picia mają nie dwie a trzy wartości. 
 Należy każdą zamienić na dwie zmienne binarne, wg schematu:
 
-`current.smoker` (pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
+`CS` (*current smoker*/pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
 
-`ever.smoker` (kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+`PS` (*past smoker*/kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
 
 Zmienna płeć `genderF` = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
 dwuwartościowej wskazuje która wartość jest zakodowana jako 1. Przykładowo `genderF` (*female* żeby się
@@ -1364,14 +1359,14 @@ interpretować parametr stojący przy tej zmiennej: zmiana wielkości ciśnienia
 Rozważany model ma postać:
 
 \begin{align}
-SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{current.smoker} + \\
-&+  b_5 \textrm{ever.smoker} + b_6 \textrm{current.drinker} + b_7 \textrm{ever.drinker}
+SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{CS} +\nonumber\\
+&+  b_5 \textrm{PS} + b_6 \textrm{CD} + b_7 \textrm{PD} \nonumber
 \end{align}
 
 Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
 ```{r}
-lm.1 <- lm(data=s1, SBP ~ BMI + age + genderF + current.smoker + ever.smoker + current.drinker + ever.drinker );
+lm.1 <- lm(data=s1, SBP ~ BMI + age + genderF + CS + PS + CD + PD );
 lmsum1 <- summary(lm.1)
 ##lmsum1
 ##lm.beta(lm1)
@@ -1405,7 +1400,7 @@ Oszacowanie tego samego równania dla próba o wielkości 4490 obserwacji daje n
 wyniki:
 
 ```{r}
-lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + current.smoker + ever.smoker + current.drinker + ever.drinker );
+lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + CS + PS + CD + PD );
 lmsum3 <- summary(lm.3)
 lmr <- summary(lm.3)$r.squared
 lmr7 <- lmr
@@ -1450,13 +1445,13 @@ wykracza poza ramy tego podręcznika.
 **Regresja krokowa**
 
 W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem
-(próba 4490) zmienne `ever.drinker` oraz `ever.smoker` są nieistotne przy czym współczynnik
-przy zmiennej `ever.drinker` ma wartość $p$ równą 0,309 zaś przy zmiennej
-`ever.smoker` ma wartość 0,05324. Usuwamy zmienną `ever.drinker` (bo wartość $p$ jest większa)
+(próba 4490) zmienne `PD` oraz `PS` są nieistotne przy czym współczynnik
+przy zmiennej `PD` ma wartość $p$ równą 0,309 zaś przy zmiennej
+`PS` ma wartość 0,05324. Usuwamy zmienną `PD` (bo wartość $p$ jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 
 ```{r}
-lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + current.smoker + ever.smoker + current.drinker );
+lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + CS + PS + CD );
 lmsum3 <- summary(lm.3)
 lmr <- summary(lm.3)$r.squared
 ##lmsum1
@@ -1479,11 +1474,11 @@ kable(lm.3.coef.df, row.names = F, digits=3,
 
 ```
 
-Współczynnik przy zmiennej `ever.smoker` dalej uparcie jest nieistotny. Usuwamy
+Współczynnik przy zmiennej `PS` dalej uparcie jest nieistotny. Usuwamy
 teraz tę zmienną. Otrzymujemy:
 
 ```{r}
-lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + current.smoker + current.drinker );
+lm.3 <- lm(data=s3, SBP ~ BMI + age + genderF + CS + CD );
 lmsum3 <- summary(lm.3)
 lmr <- summary(lm.3)$r.squared
 ##lmsum1

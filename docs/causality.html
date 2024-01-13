@@ -106,7 +106,7 @@
 </ul></li>
 <li><a href="analiza1z.html#zestawienie-metod-opisu-statystycznego" id="toc-zestawienie-metod-opisu-statystycznego"><span class="toc-section-number">2.6</span> Zestawienie metod opisu statystycznego</a></li>
 </ul></li>
-<li><a href="interference.html#interference" id="toc-interference"><span class="toc-section-number">3</span> Łagodne wprowadzenie do wnioskowanie statystycznego</a>
+<li><a href="interference.html#interference" id="toc-interference"><span class="toc-section-number">3</span> Łagodne wprowadzenie do wnioskowania statystycznego</a>
 <ul>
 <li><a href="interference.html#masa-ciała-uczestników-pś-w-rugby" id="toc-masa-ciała-uczestników-pś-w-rugby"><span class="toc-section-number">3.1</span> Masa ciała uczestników PŚ w rugby</a></li>
 <li><a href="interference.html#wiek-kandydatów-na-radnych" id="toc-wiek-kandydatów-na-radnych"><span class="toc-section-number">3.2</span> Wiek kandydatów na radnych</a></li>
@@ -1167,11 +1167,11 @@ hurtowa ocena współczynników korelacji w postaci kwadratowej <strong>macierzy
 <p>Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, szczęściem a stanem zdrowia.
 (The relationship between happiness and self-rated health: A population-based study of 19499 Iranian adults;
 <a href="https://doi.org/10.1371/journal.pone.0265914" class="uri">https://doi.org/10.1371/journal.pone.0265914</a>)</p>
-<pre><code>##                   age            edu  Happiness         Health
-## age        1.00000000 -0.18341325501 0.04491863  0.00125622963
-## edu       -0.18341326  1.00000000000 0.07418519 -0.00003728405
-## Happiness  0.04491863  0.07418519038 1.00000000  0.17863069296
-## Health     0.00125623 -0.00003728405 0.17863069  1.00000000000</code></pre>
+<pre><code>##               age     edu Happiness Health
+## age        1.0000 -0.1834    0.0449 0.0013
+## edu       -0.1834  1.0000    0.0742 0.0000
+## Happiness  0.0449  0.0742    1.0000 0.1786
+## Health     0.0013  0.0000    0.1786 1.0000</code></pre>
 <p>Albo w bardziej efektownej postaci tekstowo-graficznej:</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="75%" /></p>
 <p>Ze wszystkich zmiennych analizowanych w badaniu Mohammadiego i innych
@@ -1678,8 +1678,8 @@ status względem picia alkoholu (pije, pił, nigdy nie pił)
 oraz status względem palenia (palił, pali, nigdy nie palił).
 Zwróćmy uwagę że zmienne mierzące status względem palenia/picia mają nie dwie a trzy wartości.
 Należy każdą zamienić na dwie zmienne binarne, wg schematu:</p>
-<p><code>current.smoker</code> (pali) = 1 jeżeli pali, 0 w przeciwnym przypadku</p>
-<p><code>ever.smoker</code> (kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku</p>
+<p><code>CS</code> (<em>current smoker</em>/pali) = 1 jeżeli pali, 0 w przeciwnym przypadku</p>
+<p><code>PS</code> (<em>past smoker</em>/kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku</p>
 <p>Zmienna płeć <code>genderF</code> = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
 dwuwartościowej wskazuje która wartość jest zakodowana jako 1. Przykładowo <code>genderF</code> (<em>female</em> żeby się
 trzymać języka angielskiego) wskazuje że jedynką jest kobieta.
@@ -1688,20 +1688,11 @@ rzut oka nie było by wiadomo co zakodowano jako jeden. A tak wiadomo od razu ja
 interpretować parametr stojący przy tej zmiennej: zmiana wielkości ciśnienia u kobiet w porównaniu do mężczyzn.</p>
 <p>Rozważany model ma postać:</p>
 <p><span class="math display">\[\begin{align}
-SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{current.smoker} + \\
-&amp;+  b_5 \textrm{ever.smoker} + b_6 \textrm{current.drinker} + b_7 \textrm{ever.drinker}
+SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{CS} +\nonumber\\
+&amp;+  b_5 \textrm{PS} + b_6 \textrm{CD} + b_7 \textrm{PD} \nonumber
 \end{align}\]</span></p>
 <p>Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:</p>
 <table>
-<colgroup>
-<col width="24%" />
-<col width="12%" />
-<col width="10%" />
-<col width="10%" />
-<col width="9%" />
-<col width="10%" />
-<col width="22%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Zmienna</th>
@@ -1751,7 +1742,7 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="left">-22.570 -5.070</td>
 </tr>
 <tr class="odd">
-<td align="left">current.smoker</td>
+<td align="left">CS</td>
 <td align="right">-6.890</td>
 <td align="right">3.972</td>
 <td align="right">-1.735</td>
@@ -1760,7 +1751,7 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="left">-14.790 1.010</td>
 </tr>
 <tr class="even">
-<td align="left">ever.smoker</td>
+<td align="left">PS</td>
 <td align="right">7.626</td>
 <td align="right">6.882</td>
 <td align="right">1.108</td>
@@ -1769,7 +1760,7 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="left">-6.070 21.320</td>
 </tr>
 <tr class="odd">
-<td align="left">current.drinker</td>
+<td align="left">CD</td>
 <td align="right">-3.959</td>
 <td align="right">8.523</td>
 <td align="right">-0.465</td>
@@ -1778,7 +1769,7 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="left">-20.910 13.000</td>
 </tr>
 <tr class="even">
-<td align="left">ever.drinker</td>
+<td align="left">PD</td>
 <td align="right">-4.001</td>
 <td align="right">4.575</td>
 <td align="right">-0.875</td>
@@ -1846,7 +1837,7 @@ wyniki:</p>
 <td align="left">-6.320 -4.330</td>
 </tr>
 <tr class="odd">
-<td align="left">current.smoker</td>
+<td align="left">CS</td>
 <td align="right">-2.752</td>
 <td align="right">0.583</td>
 <td align="right">-4.717</td>
@@ -1855,7 +1846,7 @@ wyniki:</p>
 <td align="left">-3.900 -1.610</td>
 </tr>
 <tr class="even">
-<td align="left">ever.smoker</td>
+<td align="left">PS</td>
 <td align="right">-2.021</td>
 <td align="right">1.045</td>
 <td align="right">-1.933</td>
@@ -1864,7 +1855,7 @@ wyniki:</p>
 <td align="left">-4.070 0.030</td>
 </tr>
 <tr class="odd">
-<td align="left">current.drinker</td>
+<td align="left">CD</td>
 <td align="right">3.621</td>
 <td align="right">1.535</td>
 <td align="right">2.360</td>
@@ -1873,7 +1864,7 @@ wyniki:</p>
 <td align="left">0.610 6.630</td>
 </tr>
 <tr class="even">
-<td align="left">ever.drinker</td>
+<td align="left">PD</td>
 <td align="right">0.193</td>
 <td align="right">0.623</td>
 <td align="right">0.310</td>
@@ -1901,9 +1892,9 @@ wykracza poza ramy tego podręcznika.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-38" class="example"><strong>4.19  </strong></span><strong>Regresja krokowa</strong></p>
 <p>W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem
-(próba 4490) zmienne <code>ever.drinker</code> oraz <code>ever.smoker</code> są nieistotne przy czym współczynnik
-przy zmiennej <code>ever.drinker</code> ma wartość <span class="math inline">\(p\)</span> równą 0,309 zaś przy zmiennej
-<code>ever.smoker</code> ma wartość 0,05324. Usuwamy zmienną <code>ever.drinker</code> (bo wartość <span class="math inline">\(p\)</span> jest większa)
+(próba 4490) zmienne <code>PD</code> oraz <code>PS</code> są nieistotne przy czym współczynnik
+przy zmiennej <code>PD</code> ma wartość <span class="math inline">\(p\)</span> równą 0,309 zaś przy zmiennej
+<code>PS</code> ma wartość 0,05324. Usuwamy zmienną <code>PD</code> (bo wartość <span class="math inline">\(p\)</span> jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:</p>
 <table>
 <thead>
@@ -1955,7 +1946,7 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="left">-6.340 -4.380</td>
 </tr>
 <tr class="odd">
-<td align="left">current.smoker</td>
+<td align="left">CS</td>
 <td align="right">-2.740</td>
 <td align="right">0.582</td>
 <td align="right">-4.708</td>
@@ -1964,7 +1955,7 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="left">-3.880 -1.600</td>
 </tr>
 <tr class="even">
-<td align="left">ever.smoker</td>
+<td align="left">PS</td>
 <td align="right">-1.980</td>
 <td align="right">1.037</td>
 <td align="right">-1.910</td>
@@ -1973,7 +1964,7 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="left">-4.010 0.050</td>
 </tr>
 <tr class="odd">
-<td align="left">current.drinker</td>
+<td align="left">CD</td>
 <td align="right">3.579</td>
 <td align="right">1.528</td>
 <td align="right">2.342</td>
@@ -1983,7 +1974,7 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 </tr>
 </tbody>
 </table>
-<p>Współczynnik przy zmiennej <code>ever.smoker</code> dalej uparcie jest nieistotny. Usuwamy
+<p>Współczynnik przy zmiennej <code>PS</code> dalej uparcie jest nieistotny. Usuwamy
 teraz tę zmienną. Otrzymujemy:</p>
 <table>
 <thead>
@@ -2035,7 +2026,7 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="left">-6.110 -4.200</td>
 </tr>
 <tr class="odd">
-<td align="left">current.smoker</td>
+<td align="left">CS</td>
 <td align="right">-2.540</td>
 <td align="right">0.573</td>
 <td align="right">-4.435</td>
@@ -2044,7 +2035,7 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="left">-3.660 -1.420</td>
 </tr>
 <tr class="even">
-<td align="left">current.drinker</td>
+<td align="left">CD</td>
 <td align="right">3.551</td>
 <td align="right">1.529</td>
 <td align="right">2.323</td>

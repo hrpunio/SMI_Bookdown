@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {2.5}Porównanie wielu rozkładów}{26}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Wykres pudełkowy}{28}{subsection.2.5.1}%
 \contentsline {section}{\numberline {2.6}Zestawienie metod opisu statystycznego}{30}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Łagodne wprowadzenie do wnioskowanie statystycznego}{31}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Łagodne wprowadzenie do wnioskowania statystycznego}{31}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Masa ciała uczestników PŚ w rugby}{31}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Wiek kandydatów na radnych}{34}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Rozkład normalny}{36}{section.3.3}%
@@ -98,13 +98,13 @@
 \contentsline {chapter}{\numberline {6}Łagodne wprowadzenie z Jamovi}{102}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Podstawy pracy z Jamovi}{102}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}{103}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{103}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{104}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Przekodowanie danych}{105}{subsection.6.2.2}%
 \contentsline {subsection}{\numberline {6.2.3}Wyliczenie nowych zmiennych}{110}{subsection.6.2.3}%
 \contentsline {subsection}{\numberline {6.2.4}Analiza struktury}{111}{subsection.6.2.4}%
 \contentsline {subsection}{\numberline {6.2.5}Analiza zależności: zmienne nominalne}{112}{subsection.6.2.5}%
 \contentsline {subsection}{\numberline {6.2.6}Analiza zależności: zmienna liczbowa/zmienna nominalna}{112}{subsection.6.2.6}%
-\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{112}{subsection.6.2.7}%
-\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{113}{subsection.6.2.8}%
+\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{114}{subsection.6.2.7}%
+\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{114}{subsection.6.2.8}%
 \contentsline {subsection}{\numberline {6.2.9}Redagowanie raportu}{114}{subsection.6.2.9}%
 \contentsline {chapter}{Literatura}{115}{chapter*.3}%

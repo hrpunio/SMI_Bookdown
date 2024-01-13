@@ -137,6 +137,9 @@
    \vss}
 \vbox to \textheight{\vskip20mm%
    Na okładce: Florence Nightingale i jej statystyki
+   \vskip20mm
+   Kolorowa wersja podręcznika znajduje się pod adresem:\\
+   \url{https://hrpunio.github.io/SMI_Bookdown/wstęp.html}
   \vss
 }
 \endgroup
@@ -1258,7 +1261,7 @@ Skośność może być dodatnia (\emph{positive skew}) lub ujemna (\emph{negativ
 Czym się różni jedna od drugiej widać na rysunku \ref{fig:skeweness}.
 
 \begin{figure}
-\includegraphics[width=0.75\linewidth]{./neg_posit_screw} \caption{Rozkłady symetryczne i asymetryczne}\label{fig:skeweness}
+\includegraphics[width=0.8\linewidth]{./neg_posit_screw} \caption{Rozkłady symetryczne i asymetryczne}\label{fig:skeweness}
 \end{figure}
 
 Miary asymetrii:
@@ -1473,7 +1476,7 @@ W rozdziale przedstawiono osiem sposobów opisania rozkładu zmiennej:
 \end{enumerate}
 
 \hypertarget{interference}{%
-\chapter{Łagodne wprowadzenie do wnioskowanie statystycznego}\label{interference}}
+\chapter{Łagodne wprowadzenie do wnioskowania statystycznego}\label{interference}}
 
 \textbf{Chcemy się dowiedzieć czegoś na temat populacji (całości)
 na podstawie próby (części tej całości).}
@@ -2838,11 +2841,11 @@ Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, sz
 \url{https://doi.org/10.1371/journal.pone.0265914})
 
 \begin{verbatim}
-##                   age            edu  Happiness         Health
-## age        1.00000000 -0.18341325501 0.04491863  0.00125622963
-## edu       -0.18341326  1.00000000000 0.07418519 -0.00003728405
-## Happiness  0.04491863  0.07418519038 1.00000000  0.17863069296
-## Health     0.00125623 -0.00003728405 0.17863069  1.00000000000
+##               age     edu Happiness Health
+## age        1.0000 -0.1834    0.0449 0.0013
+## edu       -0.1834  1.0000    0.0742 0.0000
+## Happiness  0.0449  0.0742    1.0000 0.1786
+## Health     0.0013  0.0000    0.1786 1.0000
 \end{verbatim}
 
 Albo w bardziej efektownej postaci tekstowo-graficznej:
@@ -3309,9 +3312,9 @@ oraz status względem palenia (palił, pali, nigdy nie palił).
 Zwróćmy uwagę że zmienne mierzące status względem palenia/picia mają nie dwie a trzy wartości.
 Należy każdą zamienić na dwie zmienne binarne, wg schematu:
 
-\texttt{current.smoker} (pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
+\texttt{CS} (\emph{current smoker}/pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
 
-\texttt{ever.smoker} (kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+\texttt{PS} (\emph{past smoker}/kiedyś palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
 
 Zmienna płeć \texttt{genderF} = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
 dwuwartościowej wskazuje która wartość jest zakodowana jako 1. Przykładowo \texttt{genderF} (\emph{female} żeby się
@@ -3323,8 +3326,8 @@ interpretować parametr stojący przy tej zmiennej: zmiana wielkości ciśnienia
 Rozważany model ma postać:
 
 \begin{align}
-SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{current.smoker} + \\
-&+  b_5 \textrm{ever.smoker} + b_6 \textrm{current.drinker} + b_7 \textrm{ever.drinker}
+SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \textrm{CS} +\nonumber\\
+&+  b_5 \textrm{PS} + b_6 \textrm{CD} + b_7 \textrm{PD} \nonumber
 \end{align}
 
 Oszacowanie tego równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
@@ -3337,11 +3340,11 @@ Zmienna & B & SE & z & p & Beta & CI\\
 BMI & 0.778 & 0.592 & 1.314 & 0.193 & 0.150 & -0.400 1.960\\
 age & 0.441 & 0.121 & 3.658 & 0.000 & 0.330 & 0.200 0.680\\
 genderF & -13.820 & 4.399 & -3.141 & 0.002 & -0.400 & -22.570 -5.070\\
-current.smoker & -6.890 & 3.972 & -1.735 & 0.087 & -0.180 & -14.790 1.010\\
+CS & -6.890 & 3.972 & -1.735 & 0.087 & -0.180 & -14.790 1.010\\
 \addlinespace
-ever.smoker & 7.626 & 6.882 & 1.108 & 0.271 & 0.110 & -6.070 21.320\\
-current.drinker & -3.959 & 8.523 & -0.465 & 0.643 & -0.040 & -20.910 13.000\\
-ever.drinker & -4.001 & 4.575 & -0.875 & 0.384 & -0.080 & -13.100 5.100\\
+PS & 7.626 & 6.882 & 1.108 & 0.271 & 0.110 & -6.070 21.320\\
+CD & -3.959 & 8.523 & -0.465 & 0.643 & -0.040 & -20.910 13.000\\
+PD & -4.001 & 4.575 & -0.875 & 0.384 & -0.080 & -13.100 5.100\\
 \bottomrule
 \end{tabular}
 
@@ -3363,11 +3366,11 @@ Zmienna & B & SE & z & p & Beta & CI\\
 BMI & 1.192 & 0.066 & 18.009 & 0.000 & 0.260 & 1.060 1.320\\
 age & 0.336 & 0.018 & 19.087 & 0.000 & 0.260 & 0.300 0.370\\
 genderF & -5.329 & 0.508 & -10.496 & 0.000 & -0.160 & -6.320 -4.330\\
-current.smoker & -2.752 & 0.583 & -4.717 & 0.000 & -0.070 & -3.900 -1.610\\
+CS & -2.752 & 0.583 & -4.717 & 0.000 & -0.070 & -3.900 -1.610\\
 \addlinespace
-ever.smoker & -2.021 & 1.045 & -1.933 & 0.053 & -0.030 & -4.070 0.030\\
-current.drinker & 3.621 & 1.535 & 2.360 & 0.018 & 0.030 & 0.610 6.630\\
-ever.drinker & 0.193 & 0.623 & 0.310 & 0.757 & 0.000 & -1.030 1.410\\
+PS & -2.021 & 1.045 & -1.933 & 0.053 & -0.030 & -4.070 0.030\\
+CD & 3.621 & 1.535 & 2.360 & 0.018 & 0.030 & 0.610 6.630\\
+PD & 0.193 & 0.623 & 0.310 & 0.757 & 0.000 & -1.030 1.410\\
 \bottomrule
 \end{tabular}
 
@@ -3392,9 +3395,9 @@ wykracza poza ramy tego podręcznika.
 \textbf{Regresja krokowa}
 
 W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem
-(próba 4490) zmienne \texttt{ever.drinker} oraz \texttt{ever.smoker} są nieistotne przy czym współczynnik
-przy zmiennej \texttt{ever.drinker} ma wartość \(p\) równą 0,309 zaś przy zmiennej
-\texttt{ever.smoker} ma wartość 0,05324. Usuwamy zmienną \texttt{ever.drinker} (bo wartość \(p\) jest większa)
+(próba 4490) zmienne \texttt{PD} oraz \texttt{PS} są nieistotne przy czym współczynnik
+przy zmiennej \texttt{PD} ma wartość \(p\) równą 0,309 zaś przy zmiennej
+\texttt{PS} ma wartość 0,05324. Usuwamy zmienną \texttt{PD} (bo wartość \(p\) jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 
 \begin{tabular}{lrrrrll}
@@ -3405,14 +3408,14 @@ Zmienna & B & SE & z & p & Beta & CI\\
 BMI & 1.193 & 0.066 & 18.056 & 0.000 & 0.260 & 1.060 1.320\\
 age & 0.335 & 0.018 & 19.097 & 0.000 & 0.260 & 0.300 0.370\\
 genderF & -5.358 & 0.499 & -10.740 & 0.000 & -0.160 & -6.340 -4.380\\
-current.smoker & -2.740 & 0.582 & -4.708 & 0.000 & -0.070 & -3.880 -1.600\\
+CS & -2.740 & 0.582 & -4.708 & 0.000 & -0.070 & -3.880 -1.600\\
 \addlinespace
-ever.smoker & -1.980 & 1.037 & -1.910 & 0.056 & -0.030 & -4.010 0.050\\
-current.drinker & 3.579 & 1.528 & 2.342 & 0.019 & 0.030 & 0.580 6.580\\
+PS & -1.980 & 1.037 & -1.910 & 0.056 & -0.030 & -4.010 0.050\\
+CD & 3.579 & 1.528 & 2.342 & 0.019 & 0.030 & 0.580 6.580\\
 \bottomrule
 \end{tabular}
 
-Współczynnik przy zmiennej \texttt{ever.smoker} dalej uparcie jest nieistotny. Usuwamy
+Współczynnik przy zmiennej \texttt{PS} dalej uparcie jest nieistotny. Usuwamy
 teraz tę zmienną. Otrzymujemy:
 
 \begin{tabular}{lrrrrll}
@@ -3423,9 +3426,9 @@ Zmienna & B & SE & z & p & Beta & CI\\
 BMI & 1.195 & 0.066 & 18.075 & 0.00 & 0.260 & 1.070 1.320\\
 age & 0.336 & 0.018 & 19.100 & 0.00 & 0.260 & 0.300 0.370\\
 genderF & -5.155 & 0.488 & -10.572 & 0.00 & -0.160 & -6.110 -4.200\\
-current.smoker & -2.540 & 0.573 & -4.435 & 0.00 & -0.060 & -3.660 -1.420\\
+CS & -2.540 & 0.573 & -4.435 & 0.00 & -0.060 & -3.660 -1.420\\
 \addlinespace
-current.drinker & 3.551 & 1.529 & 2.323 & 0.02 & 0.030 & 0.550 6.550\\
+CD & 3.551 & 1.529 & 2.323 & 0.02 & 0.030 & 0.550 6.550\\
 \bottomrule
 \end{tabular}
 
@@ -5481,7 +5484,7 @@ Po zainstalowaniu uruchamiamy program, którego ekran startowy wygląda jak
 na rysunku \ref{fig:mainscreen}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./jamovi_main_screen} \caption{Ekran startowy Jamovi}\label{fig:mainscreen}
+\includegraphics[width=0.95\linewidth]{./jamovi_main_screen} \caption{Ekran startowy Jamovi}\label{fig:mainscreen}
 \end{figure}
 
 Menu akcji umożliwia wykonanie podstawowych akcji:
@@ -5559,7 +5562,7 @@ Wyniki wyeksportowano do arkusza kalkulacyjnego, którego początek
 wygląda jak na rysunku \ref{fig:GoogleFormsTestA}:
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./GoogleFormsTestA} \caption{Fragment przykładowej ankiety}\label{fig:GoogleFormsTestA}
+\includegraphics[width=0.95\linewidth]{./GoogleFormsTestA} \caption{Fragment przykładowej ankiety}\label{fig:GoogleFormsTestA}
 \end{figure}
 
 Ankieta składa się z 10 następujących pytań:
@@ -5595,7 +5598,7 @@ też zmieniamy nazwy na coś krótszego: \texttt{zo1}, \texttt{zo2}, \texttt{zo3
 Teraz arkusz wygląda jak na rysunku \ref{fig:GoogleFormsTestHdr}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./GoogleFormsTestHdr} \caption{Fragment przykładowej ankiety}\label{fig:GoogleFormsTestHdr}
+\includegraphics[width=0.95\linewidth]{./GoogleFormsTestHdr} \caption{Fragment przykładowej ankiety}\label{fig:GoogleFormsTestHdr}
 \end{figure}
 
 Arkusz eksportujemy wybierając format CSV. Bez problemu powinniśmy
@@ -5620,7 +5623,7 @@ Reasumując:
 \end{itemize}
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./Jamovi_data_import} \caption{Import danych}\label{fig:dataimport}
+\includegraphics[width=0.95\linewidth]{./Jamovi_data_import} \caption{Import danych}\label{fig:dataimport}
 \end{figure}
 
 \hypertarget{przekodowanie-danych}{%
@@ -5691,7 +5694,7 @@ z przekodowanymi wartościami. Zmienna na podstawie której jest tworzona
 nowa zmienna nazywa się źródłową (\texttt{s1} w naszym przykładzie jest źródłowa.)
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./przeksztalcenie_0} \caption{Przekształcenie}\label{fig:przeksztalcenie0}
+\includegraphics[width=0.95\linewidth]{./przeksztalcenie_0} \caption{Przekształcenie}\label{fig:przeksztalcenie0}
 \end{figure}
 
 Wpisujemy sensowną nazwę (na przykład \texttt{s1p} od przekodowana). Jak będziemy
@@ -5702,7 +5705,7 @@ Klikamy w pole wyboru na dole (obok napisu \texttt{za\ pomocą\ przekształcenia
 Powinniśmy zobaczyć coś podobnego do tego co widać na rysunku \ref{fig:przeksztalcenie1}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./przeksztalcenie_1} \caption{Przekształcenie}\label{fig:przeksztalcenie1}
+\includegraphics[width=0.95\linewidth]{./przeksztalcenie_1} \caption{Przekształcenie}\label{fig:przeksztalcenie1}
 \end{figure}
 
 Wybieramy \texttt{Utwórz\ nowe\ przekształcenie}. Wpisujemy sensowną nazwę
@@ -5751,7 +5754,7 @@ są zagnieżdżone jeden w drugim. Można powyższe przepisać, można
 też skopiować z podręcznika i wkleić do Jamovi (por. rys \ref{fig:przeksztalcenie1p}).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./przeksztalcenie_1p} \caption{Przekształcenie}\label{fig:przeksztalcenie1p}
+\includegraphics[width=0.95\linewidth]{./przeksztalcenie_1p} \caption{Przekształcenie}\label{fig:przeksztalcenie1p}
 \end{figure}
 
 Naciskamy Enter i gotowe. Zostaje utworzona zmienna \texttt{s1p}
@@ -5769,7 +5772,7 @@ w ten sam sposób jak \texttt{s1}. Po wybraniu przekształcenia w oknie danych
 pojawia się nowa zmienna \texttt{s2p} (por. rys \ref{fig:przeksztalcenie3}).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./przeksztalcenie_3} \caption{Przekształcenie}\label{fig:przeksztalcenie3}
+\includegraphics[width=0.95\linewidth]{./przeksztalcenie_3} \caption{Przekształcenie}\label{fig:przeksztalcenie3}
 \end{figure}
 
 W podobny łatwy sposób przekodowujemy \texttt{s3} oraz \texttt{zo1}, \texttt{zo2}, \texttt{zo3}
@@ -5814,11 +5817,11 @@ Jak to wygląda w oknie programu Jamovi przedstawiono na rysunkach \ref{fig:prze
 oraz \ref{fig:przeksztalcenieContains}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./przeksztalcenie_4} \caption{Przekształcenie}\label{fig:przeksztalcenie4}
+\includegraphics[width=0.95\linewidth]{./przeksztalcenie_4} \caption{Przekształcenie}\label{fig:przeksztalcenie4}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./przeksztalcenie_contains} \caption{Przekształcenie}\label{fig:przeksztalcenieContains}
+\includegraphics[width=0.95\linewidth]{./przeksztalcenie_contains} \caption{Przekształcenie}\label{fig:przeksztalcenieContains}
 \end{figure}
 
 Funkcja CONTAINS wstawi 1 jeżeli \texttt{\$source} zawiera \texttt{Przewlekła\ obturacyjna\ choroba\ płuc}.
@@ -5889,7 +5892,7 @@ SUM(s1pr, s2p, s3p)
 \end{verbatim}
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./zmienna_satysfakcja} \caption{Obliczanie nowej zmiennej}\label{fig:zmiennaSatysfakcja}
+\includegraphics[width=0.95\linewidth]{./zmienna_satysfakcja} \caption{Obliczanie nowej zmiennej}\label{fig:zmiennaSatysfakcja}
 \end{figure}
 
 Oczywiście wcześniej musimy utworzyliśmy zmienną \texttt{s1pr}, inaczej Jamovi zgłosi błąd.
@@ -5921,7 +5924,7 @@ W wyświetlonym oknie po lewej deklarujemy co ma być liczone. Wynik
 pojawi się po prawej (por rysunek \ref{fig:statystykiOpisoweOkno}).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./statystyki_opisowe_okno} \caption{Statystyki opisowe}\label{fig:statystykiOpisoweOkno}
+\includegraphics[width=0.95\linewidth]{./statystyki_opisowe_okno} \caption{Statystyki opisowe}\label{fig:statystykiOpisoweOkno}
 \end{figure}
 
 Ustawiamy kursor na zmiennej która nas interesuje i klikamy w strzałkę górną.
@@ -5935,7 +5938,7 @@ kursor na zmiennej i kliknąć w odpowiednią strzałkę. Zawartość okna
 wynikowego zostanie automagicznie uaktualniona.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./statystyki_opisowe_wynik} \caption{Statystyki opisowe}\label{fig:statystykiSpisoweWynik}
+\includegraphics[width=0.95\linewidth]{./statystyki_opisowe_wynik} \caption{Statystyki opisowe}\label{fig:statystykiSpisoweWynik}
 \end{figure}
 
 Poniżej okien wyboru zmiennych są zakładki określające
@@ -5957,7 +5960,7 @@ wiedzieć jak postępować. Przykładową analizę zależności
 pomiędzy zmiennymi nominalnymi \texttt{zamiarOklasa} oraz \texttt{staz.klasa} przedstawia rysunek \ref{fig:tabeleKrzyzowe}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./tabele_krzyzowe} \caption{Tabele krzyżowe}\label{fig:tabeleKrzyzowe}
+\includegraphics[width=0.95\linewidth]{./tabele_krzyzowe} \caption{Tabele krzyżowe}\label{fig:tabeleKrzyzowe}
 \end{figure}
 
 \hypertarget{analiza-zaleux17cnoux15bci-zmienna-liczbowazmienna-nominalna}{%
@@ -5970,7 +5973,7 @@ Zostanie wyświetlony znajomy interfejs. Wybieramy
 co trzeba. Wynik automagicznie pojawia się w lewym oknie (por. rysunek \ref{fig:testyJamovi}).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./testy} \caption{Test dla prób niezależnych}\label{fig:testyJamovi}
+\includegraphics[width=0.95\linewidth]{./testy} \caption{Test dla prób niezależnych}\label{fig:testyJamovi}
 \end{figure}
 
 \hypertarget{analiza-zaleux17cnoux15bci-zmienna-liczbowazmienna-liczbowa-lub-nominalna}{%
@@ -5986,7 +5989,7 @@ w skali nominalnej klikając w dolną strzałkę.
 Wynik automagicznie pojawia się w lewym oknie (por. rysunek \ref{fig:regresjaLiniowa}).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{./regresja_liniowa} \caption{Regresja liniowa}\label{fig:regresjaLiniowa}
+\includegraphics[width=0.95\linewidth]{./regresja_liniowa} \caption{Regresja liniowa}\label{fig:regresjaLiniowa}
 \end{figure}
 
 \hypertarget{regresja-logistyczna}{%
@@ -5994,17 +5997,13 @@ Wynik automagicznie pojawia się w lewym oknie (por. rysunek \ref{fig:regresjaLi
 
 Wybieramy \texttt{Analizy}→\texttt{Regresja}→\texttt{Regresja\ logistyczna}→\texttt{Dwie\ wartości}
 
-Interfejs podobny do analizy regresji. Wybieramy
-zmienną zależną klikając w górną strzłkę. Zmienna ta
+Interfejs łudząco podobny do analizy regresji. Wybieramy
+zmienną zależną klikając w górną strzałkę. Zmienna ta
 \textbf{musi} być zmienną dwuwartościową.
 
 Zmienne niezależne mierzone w skali liczbowej
-wybieramy klikając w środkową strzałkę a zmienne niezależne mierzone
-w skali nominalnej klikając w dolną strzałkę (por. rysunek \ref{fig:regresjaLogistyczna}).
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{./regresja_logistyczna} \caption{Regresja logistyczna}\label{fig:regresjaLogistyczna}
-\end{figure}
+wybieramy klikając w środkową strzałkę, a zmienne niezależne mierzone
+w skali nominalnej klikając w dolną strzałkę.
 
 \hypertarget{redagowanie-raportu}{%
 \subsection{Redagowanie raportu}\label{redagowanie-raportu}}

@@ -62,7 +62,7 @@ diffMx <- function (s, t)  {
 #    x <- x[-c(from:to)]
 #  })
 
-jamovi.screen <- "80%"
+jamovi.screen <- "95%"
 ex.out.width <- "70%"
 ```
 

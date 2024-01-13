@@ -487,17 +487,13 @@ knitr::include_graphics("./regresja_liniowa.png")
 
 Wybieramy  `Analizy`→`Regresja`→`Regresja logistyczna`→`Dwie wartości`
 
-Interfejs podobny do analizy regresji. Wybieramy
-zmienną zależną klikając w górną strzłkę. Zmienna ta
+Interfejs łudząco podobny do analizy regresji. Wybieramy
+zmienną zależną klikając w górną strzałkę. Zmienna ta
 **musi** być zmienną dwuwartościową.
 
 Zmienne niezależne mierzone w skali liczbowej
-wybieramy klikając w środkową strzałkę a zmienne niezależne mierzone
-w skali nominalnej klikając w dolną strzałkę (por. rysunek \@ref(fig:regresjaLogistyczna)).
-
-```{r regresjaLogistyczna, out.width=jamovi.screen, fig.cap = "Regresja logistyczna"}
-knitr::include_graphics("./regresja_logistyczna.png")
-```
+wybieramy klikając w środkową strzałkę, a zmienne niezależne mierzone
+w skali nominalnej klikając w dolną strzałkę.
 
 ### Redagowanie raportu
 

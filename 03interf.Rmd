@@ -377,7 +377,7 @@ p1b70 <- data.frame(k70) %>%
   {dnorm(x, mean = k1000m, sd = k1000sd) * sample.size * this.binwd},
   color="red")
 ##p1b70
-ggarrange(p1b40, p1b70, ncol = 1, nrow = 2)
+ggarrange(p1b40, p1b70, ncol = 2, nrow = 1)
 ```
 
 Prawda, że wynik jest całkiem dobry? Teoretyczność czerwonej krzywej

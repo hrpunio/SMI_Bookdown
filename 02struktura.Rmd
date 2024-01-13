@@ -552,7 +552,7 @@ W szeregu symetrycznym wartości średniej i mediany są sobie równe.
 Skośność może być dodatnia (*positive skew*) lub ujemna (*negative skew*). 
 Czym się różni jedna od drugiej widać na rysunku \@ref(fig:skeweness).
 
-```{r skeweness, out.width="75%", fig.cap = "Rozkłady symetryczne i asymetryczne"}
+```{r skeweness, out.width="80%", fig.cap = "Rozkłady symetryczne i asymetryczne"}
 knitr::include_graphics("./neg_posit_screw.png")
 ```
 

@@ -171,6 +171,9 @@ p7 <- df %>%
         axis.ticks.x=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank()) +
+  annotate("text", x=4, y=.6, label= "czerwony") +
+  annotate("text", x=2, y=.45, label= "niebieski") +
+  annotate("text", x=0, y=.6, label= "zielony") +
   theme(legend.position="top") +
   geom_vline(data = df_mean, aes(xintercept = Mean,  color=DataType,
                                  linetype=DataType), size = .4)
@@ -209,20 +212,20 @@ p8 <- df %>%
   ggplot(aes(x = Value, color=DataType, linetype=DataType)) +
   geom_density(alpha = 0.2, size=1) +
   xlab("") + ylab("") +
-  theme(axis.text.x=element_blank(),
-        axis.ticks.x=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(),
+        axis.text.y=element_blank(), axis.ticks.y=element_blank()) +
   theme(legend.position="top") +
   #theme(legend.position="none") +
   scale_linetype(guide=FALSE) +
   labs(color = "Rozkład", linetype="") +
+  annotate("text", x=8, y=.09, label= "czerwony") +
+  annotate("text", x=4, y=.09, label= "turkusowy") +
   #ggtitle("Rozkład dwumodalny i asymetryczny")+
   geom_vline(data = df_mean, aes(xintercept = Mean, linetype=DataType, color=DataType), size = .4)
 p8
 
 
-https://stackoverflow.com/questions/28099590/create-sample-vector-data-in-r-with-a-skewed-distribution-with-limited-range
+#https://stackoverflow.com/questions/28099590/create-sample-vector-data-in-r-with-a-skewed-distribution-with-limited-range
 
 
 ### ####################################################
@@ -278,6 +281,8 @@ p9 <- df %>%
   scale_color_manual( breaks = c("czerwony", "zielony", "niebieski"),
                       values=c("red", "darkgreen", "blue")) +
   scale_linetype(guide=FALSE) +
+  annotate("text", x=6.5, y=.19, label= "czerwony") +
+  annotate("text", x=8.0, y=.01, label= "niebieski") +
   labs(color = "Rozkład: ", linetype="") +
   geom_vline(data = df_mean, aes(xintercept = Mean, linetype=DataType, color=DataType), size = .4)
 p9
@@ -287,5 +292,5 @@ p101
 ggsave(p101, file="distributions.png", width=8.5)
 
 
-https://stackoverflow.com/questions/28099590/create-sample-vector-data-in-r-with-a-skewed-distribution-with-limited-range
+##https://stackoverflow.com/questions/28099590/create-sample-vector-data-in-r-with-a-skewed-distribution-with-limited-range
 
