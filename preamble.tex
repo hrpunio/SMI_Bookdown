@@ -6,6 +6,7 @@
 %%
 \usepackage{booktabs}
 \usepackage{fontspec}
+%\setmainfont[Ligatures=TeX]{Cambria}
 \setmainfont{Cambria}
 \setmathfont{Cambria Math}
 %% Supress any other theorems (probably)
@@ -56,7 +57,34 @@
     \vskip 20\p@
   }}
 
-
+%%%
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+        \@mkboth{\contentsname}{\contentsname}}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi
+    }
+%% default latex figure options
+\renewcommand*{\fps@figure}{!htb}
+\setlength\parskip{0\p@ \@plus \p@}
+\setlength\parindent{15\p@}
+%%
+%% Already defined
+\RequirePackage{etoolbox}
+%%%\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
+\AtBeginEnvironment{tabular}{\medskip}
+\AfterEndEnvironment{tabular}{\par\medskip}
+%%
+\AtBeginEnvironment{verbatim}{\medskip}
+\AfterEndEnvironment{verbatim}{\par\medskip}
+%%
+%%
+%%
 \makeatother
 %%%
 \AtBeginDocument{%%
@@ -68,11 +96,23 @@
  \setkeys{Gin}{width=210mm,height=300mm}
 \vbox to \textheight{\vss%
    \hbox to\textwidth{\hss
-     \includegraphics[width=210mm]{Cover_02.png}\hss}
+     \includegraphics[width=210mm]{Cover_03.png}\hss}
    \vss}
-\vbox to \textheight{\vskip20mm%
-   Na okładce: Florence Nightingale i jej statystyki
+\vbox to \textheight{%
+  \vskip20mm
+  \noindent
+   Na okładce: Statystyki zdrowia armii brytyjskiej z okresu wojny krymskiej\\
+   Notes on matters affecting the health, efficiency,\\
+   and hospital administration of the British Army\\
+   by Nightingale, Florence, 1820-1910\\
+   \url{https://archive.org/details/b20387118/}
    \vskip20mm
+   \noindent
+   Książka została zredagowana w formacie Rmarkdown/bookdown
+.
+
+   \vskip20mm
+   \noindent
    Kolorowa wersja podręcznika znajduje się pod adresem:\\
    \url{https://hrpunio.github.io/SMI_Bookdown/wstęp.html}
   \vss
@@ -84,10 +124,12 @@
 
 \usepackage[most]{tcolorbox}
 \newtcolorbox{TPexample}[1][]{%
-    colback=black!5,
-    colframe=black!5,
+    colback=white,
+    colframe=blue!50!black,
+    %%boxsep=0pt,
+    left=3pt,right=3pt, top=2pt, bottom=2pt,
     notitle,
-    sharp corners,
+    %%sharp corners,
     enhanced,
     breakable,
 }
@@ -116,4 +158,14 @@
 %%\setlength{\abovedisplayshortskip}{0em}
 
 
-%%%
+%%% Redefine headers
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+%%% Excessive skip
+\setlength{\abovedisplayskip}{6pt plus 6pt}
+\setlength{\belowdisplayskip}{6pt plus 6pt}
+\setlength{\abovedisplayshortskip}{0pt plus 3pt}
+\setlength{\belowdisplayshortskip}{0pt plus 3pt}
+\parindent12pt
+\parskip0pt
+%%% end-of-preamble

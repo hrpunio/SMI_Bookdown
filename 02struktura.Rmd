@@ -1,7 +1,7 @@
 
 # Analiza jednej zmiennej {#analiza1z}
 
-**Statystyka opisowa** (opis statystyczny) to zbiór metod statystycznych służących do -- surprise, surprise -- opisu
+**Statystyka opisowa** (opis statystyczny) to zbiór metod statystycznych służących do — surprise, surprise — opisu
 (w sensie przedstawienia sumarycznego) zbioru danych;
 w zależności od typu danych (przekrojowe, czasowe, przestrzenne) oraz sposobu pomiaru
 (dane nominalne, porządkowe liczbowe) należy używać różnych metod.
@@ -9,15 +9,15 @@ w zależności od typu danych (przekrojowe, czasowe, przestrzenne) oraz sposobu 
 W przypadku **danych przekrojowych** opis statystyczny nazywany jest **analizą struktury**
 i sprowadza się do opisania danych z wykorzystaniem:
 
-* tablic (statystycznych)
+* tablic (statystycznych);
 
-* wykresów
+* wykresów;
 
-* parametrów (takich jak średnia czy mediana)
+* parametrów (takich jak średnia czy mediana).
 
-**Rozkład cechy** (zmiennej) to przyporządkowanie
-wartościom cechy zmiennej odpowiedniej **liczby wystąpień** (liczebności albo częstości 
-(czyli popularnych procentów).
+**Rozkład zmiennej** (cechy) to przyporządkowanie
+wartościom zmiennej odpowiedniej **liczby wystąpień** w postaci **liczebności** albo **częstości**
+(popularnych procentów).
 
 **Analiza struktury** (dla jednej zmiennej) obejmuje:
 
@@ -26,15 +26,15 @@ wartościom cechy zmiennej odpowiedniej **liczby wystąpień** (liczebności alb
 
 * **zróżnicowanie wartości** (rozproszenie: odchylenie standardowe, rozstęp ćwiartkowy);
 
-* **asymetrię** (rozłożenie wartości zmiennej wokół średniej);
+* **asymetrię** (rozłożenie wartości zmiennej wokół średniej).
 
 
 ## Tablice statystyczne
 
 **Tablica statystyczna** to (w podstawowej formie) dwukolumnowa tabela zawierająca
-wartości cechy oraz odpowiadające tym wartościom liczebności.
+wartości zmiennej oraz odpowiadające tym wartościom liczebności (i/lub częstości).
 
-**Tablica dla cechy niemierzalnej (nominalnej albo porządkowej)**
+**Tablica dla zmiennej niemierzalnej (nominalnej albo porządkowej)**
 
 ::: {.example}
 **Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
@@ -55,7 +55,7 @@ g1 <- g0 %>%
   left_join(members, by='geo') %>%
   select (member, values)
 
-t1 <- kable(g1, col.names = c('kraj', 'liczba'), booktabs = TRUE)
+t1 <- kable(g1, col.names = c('kraj', 'liczba absolwentów'), booktabs = TRUE)
 ```
 
 Tablica: Absolwenci studiów pielęgniarskich w ośmiu największych
@@ -68,71 +68,77 @@ t1
 Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)
 :::
 
-W przykładzie **jednostką badania** jest absolwent studiów pielęgniarskich w roku 2018, 
-**badaną cechą** zaś **kraj w którym ukończył studia** (cecha nominalna).
+W przykładzie **jednostką statystyczną** jest absolwent studiów pielęgniarskich
+w roku 2018, 
+badaną **zmienną** zaś **kraj w którym ukończył studia**.
 
 
-**Tablica dla cechy mierzalnej liczbowej skokowej**
+**Tablica dla zmiennej mierzalnej liczbowej skokowej**
 
-Cecha skokowa to taka cecha, która może przyjąć skończoną liczbę wartości.
-Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb całkowitych.
+Przypomnijmy, że zmienna skokowa to taka zmienna, która
+może przyjąć skończoną (przeliczalną) liczbę wartości.
 
-Jeżeli tych wartości jest mało tablica zawiera wyliczenie
-wartości cechy i odpowiadających im liczebności. Jeżeli liczba wariantów
-cechy jest duża tablica zawiera klasy wartości (przedziały wartości)
+Jeżeli tych wartości jest mało, to tablica zawiera wyliczenie
+wartości zmiennej i odpowiadających im liczebności. Jeżeli liczba wariantów
+zmiennej jest duża, to tablica zawiera klasy wartości (przedziały wartości)
 oraz odpowiadające im liczebności.
 
 Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
-* przedziały wartości powinny być jednakowej rozpiętości.
+* przedziały wartości były jednakowej rozpiętości;
 
 * Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
-  były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**
+  były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**;
 
-* nie było przedziałów z zerową liczebnością
+* nie było przedziałów z zerową liczebnością;
 
-* przedziałów nie było za dużo ani za mało (typowo 8--15)
+* przedziałów nie było za dużo ani za mało (typowo 5—15);
 
-* większość populacji nie znajdowała się w jednej czy dwóch przedziałach
+* większość populacji nie znajdowała się w jednym albo dwóch przedziałach.
 
 ::: {.example}
-**Gospodarstwa domowe wg liczby samochodów**
+**Gospodarstwa domowe wg liczby osób**
 
-Tablica: Gospodarstwa domowe we wsi X wg liczby samochodów w roku 2022
+Tablica: Gospodarstwa domowe w mieście Kwidzyn wg liczby osób w roku 2021
 
 ```{r, echo=F}
-l.s <- c('0', '1', '2', '3 i więcej', 'razem')
-n.s <- c(230, 280, 70, 5, 585)
-samochody.L <- tibble(l.s, n.s) %>%
-  mutate (p = n.s/585 * 100 )
+l.s <- c('1', '2', '3', '4', '5 i więcej', 'razem')
+n.s <- c(2790, 3420, 2618, 2246, 1813, 12887)
+osoby.L <- tibble(l.s, n.s) %>%
+  mutate (p = n.s/12887 * 100 )
 
-t3 <- kable(samochody.L, col.names = c('liczba samochodów', 'liczba gospodarstw', '%'), booktabs = TRUE)
+t3 <- kable(osoby.L, col.names = c('liczba osób', 'liczba gospodarstw', '%'), booktabs = TRUE)
 t3
 ```
 
-Źródło: obliczenia własne
+Źródło: Bank danych lokalnych GUS, podgrupa P4287/Gospodarstwa domowe według liczby osób osób
+
 :::
 
-**Tablica dla cechy mierzalnej liczbowej ciągłej**
+W powyższym przykładzie druga kolumna tablicy zawiera liczebności a trzecia częstości (udziały procentowe).
+W 1813 gospodarstwach domowych mieszkało 5 i więcej osób co stanowiło 14,1% wszystkich
+gospodarstw domowych w mieście Kwidzyn.
 
-Cecha ciągła to taka cecha, która może przyjąć nieskończoną/nieprzeliczalną liczbę wartości.
-Matematycznym odpowiednikiem cechy skokowej jest zbiór liczb rzeczywistych.
+**Tablica dla zmiennej mierzalnej liczbowej ciągłej**
+
+Przypomnijmy, że zmienna ciągła to taka zmienna, która może przyjąć nieskończoną i nieprzeliczalną
+liczbę wartości.
 
 Tablica zawiera klasy (przedziały) wartości
 oraz odpowiadające im liczebności.
 
 Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
-* przedziały wartości powinny być jednakowej rozpiętości.
+* przedziały wartości były jednakowej rozpiętości;
 
 * Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
-  były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**
+  były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**;
 
-* nie było przedziałów z zerową liczebnością
+* nie było przedziałów z zerową liczebnością;
 
-* przedziałów nie było za dużo ani za mało (typowo 8--15)
+* przedziałów nie było za dużo ani za mało (typowo 8—15);
 
-* większość populacji nie znajdowała się w jednej czy dwóch przedziałach
+* większość populacji nie znajdowała się w jednej czy dwóch przedziałach;
 
 * zwykle przyjmuje się za końce przedziałów **okrągłe liczby**
   bo dziwnie 
@@ -142,9 +148,9 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 ::: {.example}
 **Dzietność kobiet na świecie**
 
-Współczynnik dzietności (*fertility ratio* albo FR) -- przeciętna liczba urodzonych dzieci przypadająca
-na jedną kobietę w wieku rozrodczym (15–49 lat).
-Przyjmuje się, iż FR między 2,10–2,15 zapewnia zastępowalność pokoleń.
+Współczynnik dzietności (*fertility ratio* albo FR) — przeciętna liczba urodzonych dzieci przypadająca
+na jedną kobietę w wieku rozrodczym (15—49 lat).
+Przyjmuje się, iż FR między 2,10—2,15 zapewnia zastępowalność pokoleń.
 
 Dane dotyczące dzietności dla wszystkich krajów świata pobrano
 ze strony https://ourworldindata.org/grapher/fertility-rate-complete-gapminder)
@@ -160,13 +166,17 @@ srednia2018 <- s2018[["Mean"]]
 min2018 <- s2018[["Min."]]
 max2018 <- s2018[["Max."]]
 N2018 <-nrow(d2018)
+##
+dominanta2018 <- Mode(d2018$frate)
+dominanta2018Attr <- attributes(dominanta2018)
+dominanta2018N <- dominanta2018Attr$freq
 
 q1.2018 <- quantile(d2018$frate, probs = 0.25)
 q3.2018 <- quantile(d2018$frate, probs = 0.75)
 ```
 
 Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018.
-Krajów jest `r N2018`. Wartość minimalna wynosi `r min2018` a wartość
+Wszystkich krajów jest `r N2018`. Wartość minimalna współczynnika wynosi `r min2018`, a wartość
 maksymalna to `r max2018`. Decydujemy się na rozpiętość przedziału równą 0,5;
 dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
 
@@ -188,6 +198,9 @@ t2
 
 :::
 
+Zapis `(1,1.5]` oznacza przedział od 1,0 do 1,5 prz czym dolny koniec nie należy
+do przedziału a górny 1,5 należy. Który koniec „wchodzi“, a który nie powinien być
+jasno oznaczony. Zwykle jest tak jak w przykładzie: górny „wchodzi, dolny „nie wchodzi“.
 
 Każda tablica statystyczna **musi** mieć:
 
@@ -205,8 +218,7 @@ Każda tablica statystyczna **musi** mieć:
    + ewentualne uwagi odnoszące się do danych liczb.
 
 Pominięcie czegokolwiek z powyższego jest **ciężkim błędem**. Jeżeli
-nie ma danych (a często nie ma--z różnych powodów -- należy to zaznaczyć a nie
-pozostawiać pustą rubrykę)
+nie ma danych (a często — z różnych powodów — nie ma, należy to zaznaczyć a nie pozostawiać pustą rubrykę).
 
 ## Wykresy
 
@@ -214,7 +226,7 @@ pozostawiać pustą rubrykę)
 statystycznego, są mniej precyzyjne i szczegółowe niż tablice,
 natomiast bardziej sugestywne.
 
-Celem jest pokazanie rozkładu wartości cechy w populacji: jakie wartości występują
+Celem jest pokazanie rozkładu wartości zmiennej w populacji: jakie wartości występują
 często a jakie rzadko, jak bardzo wartości różnią się między sobą. Jak różnią
 się rozkłady dla różnych, ale logicznie powiązanych populacji
 (np rozkład czegoś-tam w kraju A i B albo w roku X, Y i Z).
@@ -232,13 +244,23 @@ zdecydowanie gorszy od wykresu słupkowego i nie jest zalecany.
 **Każdy** wykres kołowy można wykreślić jako słupkowy i w takiej postaci
 będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 
-### Skala nominalna
+Podobnie jak tablice, rysunki powinny być opatrzone tytułem
+oraz zawierać źródło wskazujące na pochodzenie danych
+(zobacz przedstawione przykłady.)
 
-Wykres słupkowy (*bar chart*)
+### Skala nominalna i porządkowa
+
+**Wykres słupkowy (*bar chart*)**
+
+Na wykresie słupkowym długość każdego prostokąta (**słupka**) jest proporcjonalna
+do liczebności, którą reprezentuje. Wartości zmiennej (etykiety) są umieszczane pod lub obok słupka.
+Słupki można rysować pionowo lub poziomo (jako na powyższym przykładzie). Jeżeli etykiety są długie,
+to należy słupki rysować poziomo,
+bo wtedy można zmieścić etykiety bez potrzeby ich obracania o 90° czy skracania.
 
 :::{.example}
 
-```{r, echo=F, out.width="70%"}
+```{r, echo=F, out.width="85%"}
 g2 <- g0 %>%
   filter (year == 2018 & isco08 == 'OC2221_3221' & unit == 'NR') %>%
   filter (geo %in%  members.codes) %>%
@@ -261,48 +283,52 @@ pc4 <- ggplot(g1, aes(x = reorder(member, values), y=values )) +
   ylab(label="") +
   theme(legend.position = "none") +
   coord_flip()+ 
-  ggtitle("Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
+  ggtitle("Absolwenci studiów pielęgniarskich w wybranych krajach UE w roku 2018") +
   theme(plot.title = element_text(hjust = 0.5, size=12)) +
   labs(caption="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc4
 ```
 :::
 
-Wykres kołowy (*pie chart*)
+
+**Wykres kołowy (*pie chart*)**
+
+Na wykresie kołowym długość łuku każdego wycinka (a także kąt środkowy oraz pole wycinka) 
+jest proporcjonalna do liczebności,
+którą reprezentuje. Łącznie wszystkie wycinki tworzą pełne koło. 
 
 :::{.example}
 
-```{r, echo=F, out.width="70%"}
+```{r, echo=F, out.width="85%"}
 pc2 <- g1 %>%
   mutate(pct = values/sum(values)*100)  %>%
   ggplot(aes(x="", y=pct, fill=member)) + # pct used here so slices add to 100
   geom_bar(stat="identity", width=1) +
   coord_polar("y", start=0) +
   geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
-  ggtitle("Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE w roku 2018") +
+  ggtitle("Absolwenci studiów pielęgniarskich w wybranych krajach UE w roku 2018",
+          subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
   ##facet_wrap(~pie, ncol = 2) +
   theme_void() +
   theme(legend.position = "right") +
-  theme(plot.title = element_text(hjust = 0.5, size=12)) +
-  labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
+  theme(plot.title = element_text(hjust = 0.5, size=12)) 
+  #labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc2
 ```
 :::
 
-Wykres słupkowy i kołowy przedstawiają dokładnie to samo.
 
-Wykres kołowy wygląda zapewne efektowniej (z uwagi na paletę kolorów)
-ale jest mniej efektywny. Wymaga legendy w szczególności, która utrudnia 
-interpretację treści (nieustannie trzeba porównywać koło z legendą żeby ustalić
-który kolor to który kraj.)
+Wykres słupkowy i kołowy przedstawiają dokładnie to samo, zatem który wybrać?
 
-Jeżeli zwiększymy liczbę krajów wykres kołowy staje się zupełnie nieczytelny
-(brakuje rozróżnialnych kolorów a wycinki koła są zbyt wąskie żeby cokolwiek
-wyróżniały):
+Wykres kołowy wygląda zapewne efektowniej (z uwagi na paletę kolorów),
+ale jest mniej efektywny. Wymaga dodania legendy, która utrudnia 
+interpretację treści.
+Jeżeli zwiększymy liczbę krajów, to wykres kołowy staje się zupełnie nieczytelny,
+bo brakuje rozróżnialnych kolorów, a wycinki koła są zbyt wąskie żeby cokolwiek wyróżniały:
 
 :::{.example}
 
-```{r, echo=F, out.width="70%"}
+```{r, echo=F, out.width="85%"}
 pc21 <- g2 %>%
   mutate(pct = values/sum(values)*100)  %>%
   ggplot(aes(x="", y=pct, fill=member)) + # pct used here so slices add to 100
@@ -312,36 +338,38 @@ pc21 <- g2 %>%
   ##facet_wrap(~pie, ncol = 2) +
   theme_void() +
   theme(plot.title = element_text(hjust = 0.5, size=12)) +
-  ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018") +
-  theme(legend.position = "right") +
-  labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
+  ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018",
+          subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
+  theme(legend.position = "right") 
+  #labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc21
 ```
 
 Wykres słupkowy dalej jest natomiast OK:
 
-```{r, echo=F, out.width="70%"}
+```{r, echo=F, out.width="85%"}
 pc41 <- ggplot(g2, aes(x = reorder(member, values), y=values )) +
   geom_bar(stat="identity", fill='blue') +
   xlab(label="") + 
   ylab(label="") +
   theme(legend.position = "none") +
   coord_flip()+ 
-  ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018") +
-  theme(plot.title = element_text(hjust = 0.5, size=12) ) +
-  labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
+  ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018",
+          subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
+  theme(plot.title = element_text(hjust = 0.5, size=12) ) 
+  ##labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc41
 ```
 :::
 
 ### Skala liczbowa
 
-Histogram to coś w rodzaju wykresu słupkowego tylko na jednej osi zamiast
-wariantów cechy są przedziały wartości.
+Histogram to coś w rodzaju wykresu słupkowego tylko na osi OX zamiast
+wariantów zmiennej są przedziały wartości.
 
 :::{.example}
 
-```{r message=FALSE, echo=FALSE, out.width="70%"}
+```{r message=FALSE, echo=FALSE, out.width="85%"}
 h2018 <- ggplot(d2018, aes(x = frate)) + 
  geom_histogram(binwidth = 0.25, fill=default_cyan) +
  ylab("liczba krajów") +
@@ -355,17 +383,18 @@ h2018
 ```
 :::
 
-Podobnie jak tablice, rysunki powinny być opatrzone tytułem
-oraz zawierać źródło wskazujące na pochodzenie danych
-(zobacz przedstawione przykłady.)
+Im więcej przedziałów (mniejsza rozpiętość przedziału) tym histogram jest bardziej szczegółowy co niekoniecznie
+jest pożądane bo zaciemnia ogólny obraz. Nie ma złotych recept na to ile powinno być przedziałów,
+a ich liczba determinuje kształt oraz optyczną wielkość histogramu.
+Im mniej przedziałów tym histogram będzie optycznie większy.
 
 ## Statystyczka Florence Nightingale {#fnightingale}
 
-Nie każdy kto wie kim była Florence Nightingale, wie że
+Nie każdy, kto wie kim była Florence Nightingale, wie że
 była ona także statystykiem. W czasie wojny krymskiej nie tylko 
 zorganizowała opiekę nad rannymi żołnierzami, ale również
--- aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe 
--- prowadziła staranną ewidencję szpitalną oraz 
+— aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe 
+— prowadziła staranną ewidencję szpitalną oraz 
 zgromadzone dane potrafiła analizować, używając wykresów własnego projektu.
 
 W szczególności słynny jest diagram Nightingale zwane także 
@@ -397,17 +426,18 @@ mierzonych na skali liczbowej.
 ### Miary położenia
 
 Miary przeciętne (**położenia**) charakteryzują średni lub
-typowy poziom wartości cechy. Są to więc takie wartości, wokół których
-skupiają się wszystkie pozostałe wartości analizowanej cechy.
+typowy poziom wartości zmiennej. Są to więc takie wartości, wokół których
+skupiają się wszystkie pozostałe wartości analizowanej zmiennej.
 
 
-```{r distributions5, out.width="99%", fig.cap = "Rozkłady cechy a miary średnie"}
+```{r distributions5, out.width="99%", fig.cap = "Rozkłady zmiennej a miary średnie"}
 knitr::include_graphics("./distributions.png")
 ```
 
 Na rysunku \@ref(fig:distributions5) po lewej mamy dwa rozkłady różniące się poziomem przeciętnym. Rozkład 
 czerwony ma przeciętnie większe wartości
-niż turkusowy. Są to rozkłady **jednomodalne**, czyli takie, w których rozkład cechy skupia się 
+niż turkusowy. Są to rozkłady **jednomodalne**,
+czyli takie, w których rozkład zmiennej skupia się 
 wokół jednej wartości.
 Dla takich rozkładów ma sens obliczanie średniej arytmetycznej. Te średnie wartości
 są zaznaczone na rysunku linią pionową.
@@ -426,34 +456,43 @@ Rodzaje miar położenia
 
 * klasyczne 
   + **średnia arytmetyczna**
+
 * pozycyjne 
   + **mediana**
   + **dominanta**
   + **kwartyle**
   + ewentualnie kwantyle, decyle, centyle (rzadziej używane)
 
-**Średnia arytmetyczna** (*Mean*, *Arithmetic mean*) to łączna suma
+**Średnia arytmetyczna** (*mean*, *arithmetic mean*), to łączna suma
 wartości podzielona przez liczbę sumowanych jednostek. Jeżeli
-wartość jednostki $i$ w $N$-elementowym zbiorze oznaczymy 
-jako $x_i$ (gdzie: $i=1,\ldots,N$) to
-średnią można zapisać jako $\bar x = (x_1 + \cdots + x_N)/N$
+wartość $i$-tej jednostki w zbiorowości o liczebności $N$ oznaczymy 
+jako $x_i$ (gdzie: $i=1,\ldots, N$), to średnią można zapisać jako:
+
+$$\bar x = (x_1 + x_2 + \cdots + x_N)/N$$
 
 Uwaga: we wzorach statystycznych zmienne zwykle oznacza się małymi literami
 a średnią dla zmiennej przez umieszczenie nad nią kreski poziomej czyli
 $\bar x$ to średnia wartość zmiennej $x$.
 
-**Mediana** (*Median*, kwartyl drugi) dzieli **uporządkowaną** zbiorowość na dwie równe części;
-połowa jednostek ma wartości cechy mniejsze lub równe medianie, a połowa
-wartości cechy równe lub większe od mediany. 
+**Mediana** (*median*, kwartyl drugi) dzieli **uporządkowaną** zbiorowość na dwie równe części;
+połowa jednostek ma wartości zmiennej mniejsze lub równe medianie, a połowa
+wartości zmiennej równe lub większe od mediany. 
 Stąd też mediana bywa nazywana wartością środkową.
+Mediana jest oznaczana symbolem Me.
 
 Własności mediany: odporna na wartości nietypowe (w przeciwieństwie do średniej)
 
-**Kwartyle**: coś jak mediana tylko bardziej szczegółowo. Kwartyli jest trzy i dzielą
-one zbiorowość na 4 równe części, każda zawierająca 25% całości. 
+**Dominanta** (*mode*), wartość najczęściej występująca. Jeżeli rozkład jest
+wielomodalny to dominanta jest nieokreślona. W szczególności w zbiorowościach
+o małej liczebności mogą być problemy z ustaleniem dominanty. Dominanta jest oznaczana
+symbolem D lub Mo.
 
-Pierwszy kwartyl dzieli **uporządkowaną** zbiorowość w proporcji 25%--75%.
-Trzeci dzieli **uporządkowaną** zbiorowość w proporcji 75%--25%. 
+**Kwartyle** (*quartile*): coś jak mediana tylko bardziej szczegółowo. Kwartyli jest trzy i dzielą
+one zbiorowość na 4 równe części, każda zawierająca 25% całości. Kwartyle oznaczne
+są symbolami $Q_1$, $Q_2$, $Q_3$, $Q_4$.
+
+Pierwszy kwartyl dzieli **uporządkowaną** zbiorowość w proporcji 25%—75%.
+Trzeci dzieli **uporządkowaną** zbiorowość w proporcji 75%—25%. 
 Drugi kwartyl to mediana.
 
 **Kwantyle** (D, wartości dziesiętne), podobnie jak kwartyle, tyle że dzielą na 10 części.
@@ -470,6 +509,9 @@ Interpretacja: średnia wartość współczynnika dzietności wyniosła
 Mediana: `r median2018`. Interpretacja mediany: współczynnik dzietności 
 w połowie krajów na świecie
 wynosiła `r median2018` dziecka i mniej.
+Dominanta: `r dominanta2018`. Interpretacja dominanty: najwięcej krajów wykazuje współczynnik dzietności 
+równy `r dominanta2018`. Wartość cokolwiek przypadkowa, bowiem krajów wykazujących
+współczynnik równy `r dominanta2018`, jest raptem `r dominanta2018N`.
 
 Uwaga: średnia dzietność na świecie **nie wynosi** `r sprintf ("%.2f", mean2018)` dziecka
 (bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
@@ -497,29 +539,31 @@ nie większą niż `r q3.2018` dziecka.
 
 ### Miary zmienności
 
-Miary zmienności określają zmienność (dyspersję albo rozproszenie) w zbiorowości
+Miary zmienności określają zmienność (dyspersję albo rozproszenie) w zbiorowości.
 
 Rodzaje miar zmienności:
 
 * Klasyczne
-  + Wariancja i odchylenie standardowe
+  + wariancja i odchylenie standardowe
 
 * Pozycyjne
   + rozstęp
   + rozstęp ćwiartkowy
 
 **Wariancja** (*variance*) jest to średnia arytmetyczna kwadratów
-odchyleń poszczególnych wartości cechy od średniej arytmetycznej
-zbiorowości. Co można zapisać
+odchyleń poszczególnych wartości zmiennej od średniej arytmetycznej
+zbiorowości. Co można zapisać jako ($\bar x$ oznacza średnią, $N$ liczebność zbiorowości,
+a $x_i$ wartość $i$-tej jednostki):
 
 $$s^2 = \frac{1}{N} \left( (x_1 - \bar x)^2 + (x_2 - \bar x)^2 + 
-\cdots +  (x_N - \bar x)^N \right)$$ 
+\cdots +  (x_N - \bar x)^2 \right)$$ 
 
-Przy czym często zamiast dzielenie przez $N$ dzielimy przez $N-1$.
+Przy czym często zamiast dzielenia przez $N$ dzielimy przez $N-1$.
 
-**Odchylenie standardowe** (*standard deviation*, sd) jest
+**Odchylenie standardowe** (*standard deviation*) jest
 pierwiastkiem kwadratowym z wariancji. Parametr ten określa
-przeciętną różnicą wartości cechy od średniej arytmetycznej.
+przeciętną różnicę wartości zmiennej od średniej arytmetycznej.
+Odchylenie standardowe jest oznaczane symbolem $s$.
 
 **Rozstęp ćwiartkowy** (*interquartile range*, IQR) ma banalnie prostą definicję:
 
@@ -546,36 +590,61 @@ podać jednostkę miary.
 
 ### Miary asymetrii
 
-Asymetria (*skewness*), to odwrotność symetrii. Szereg jest symetryczny
+Asymetria albo skośność (*skewness*), to odwrotność symetrii. Szereg jest symetryczny
 jeżeli jednostki są rozłożone „równomiernie” wokół wartości średniej.
 W szeregu symetrycznym wartości średniej i mediany są sobie równe.
-Skośność może być dodatnia (*positive skew*) lub ujemna (*negative skew*). 
-Czym się różni jedna od drugiej widać na rysunku \@ref(fig:skeweness).
+Skośność może być dodatnia (*positive skew*) lub ujemna (*negative skew*).
+W przypadku asymetrii prawostronnej większa część zbiorowości przyjmuje wartości
+poniżej średniej. W przypadku asymetrii lewostronnej jest odwrotnie.
+Rysunek \@ref(fig:skeweness) przedstawia rozkład symetryczny oraz rozkłady skośne.
 
-```{r skeweness, out.width="80%", fig.cap = "Rozkłady symetryczne i asymetryczne"}
+```{r skeweness, out.width="99%", fig.cap = "Rozkłady symetryczne i asymetryczne"}
 knitr::include_graphics("./neg_posit_screw.png")
 ```
-
 
 Miary asymetrii:
 
 * klasyczny współczynnik asymetrii ($g$)
 
   + przyjmuje wartości ujemne dla asymetrii lewostronnej; a dodatnie
-    dla prawostronnej. Teoretycznie może przyjąć dowolnie dużą wartość
-    ale w praktyce rzadko przekracza 3 do do wartości bezwzględnej.
-  + wartości większe od 2 świadczą o dużej a większe od 3 o bardzo dużej
+    dla prawostronnej. Teoretycznie może przyjąć dowolnie dużą wartość,
+    ale w praktyce rzadko przekracza 3 co do wartości bezwzględnej.
+
+  + wartości większe od 2 świadczą o dużej, a większe od 3 o bardzo dużej
     asymetrii
 
 * współczynniki asymetrii Pearsona ($W_s$)
-  + wykorzystuje różnice między średnia Medianą: $W_s = (\bar x - Me)/s$
+  + wykorzystuje różnice między średnią a dominantą: $W_s = (\bar x - D)/s$
+  + wykorzystuje różnice między średnią a medianą: $W_s = 3(\bar x - Me)/s$
 
-* Współczynnik asymetrii (skośności) oparty na odległościach 
-  między kwartylami lub decylami:
+* Współczynnik asymetrii oparty na odległościach między kwartylami:
   
   + Obliczany jest według następującej 
-    formuły: $W_{sq} =  \frac{(Q_3 - Q_2) - (Q_2 - Q_1)}{Q_3 - Q_1}$
- 
+    formuły: $W_{sq} =  ((Q_3 - Q_2) - (Q_2 - Q_1))/ (Q_3 - Q_1)$
+
+```{r message=FALSE, echo=FALSE, out.width="70%"}
+skewness2018 <- Skew(d2018$frate)
+skewness2018WS_d <- (mean2018 - dominanta2018) / sd2018 
+skewness2018WS_m <- 3 * (mean2018 - median2018) / sd2018
+skewness2018WS_q <- ((q3.2018 - median2018) - (median2018  - q1.2018)) / (q3.2018 -  q1.2018)
+```
+
+:::{.example}
+**Współczynnik dzietności (kontynuacja)**
+
+Współczynnik asymetrii $g$ wynosi `r sprintf("%.2f", skewness2018)`; Współczynnik
+Pearsona wykorzystujący dominantę wynosi `r sprintf("%.2f", skewness2018WS_d)`
+a wykorzystujący medianę `r sprintf("%.2f", skewness2018WS_m)`.
+Wreszcie wartość współczynnika opartego o kwartle
+wynosi `r sprintf("%.2f", skewness2018WS_q)`. Wszystkie współczynniki wskazują
+prawostronną (dodatnią) asymetrię. Współczynniki oparte
+o dominantę i kwartle wskazują słabą asymetrię, a oparte o medianę
+oraz klasyczny umiarkowaną. Jest całkowicie normalne, że różne miary
+wykazują różne wartości asymetrii. 
+
+:::
+
+
 ## Porównanie wielu rozkładów
 
 Często strukturę jednego rozkładu należy porównać z innym. Albo trzeba porównać
@@ -592,9 +661,9 @@ fb <- read.csv("rwc-2015-2023.csv", sep = ';', dec = ".",  header=T, na.string="
 ::: {.example}
 **Masa ciała uczestników Pucharu Świata w Rugby**
 
-W turniejach o puchar świata w Rugby w latach 2015, 2019 i 2023 uczestniczyło łącznie `r nrow(fb)` zawodników.
-W grze w rugby drużyna jest podzielona na dwie **formacje**: ataku i młyna. Należy scharakteryzować
-rozkład masy ciała zawodników obu formacji.
+W grze w rugby drużyna jest podzielona na dwie **formacje**: ataku i młyna. Należy porównać
+rozkład masy ciała zawodników obu formacji uczestniczących w turniejach o puchar świata w Rugby 
+w latach 2015, 2019 i 2023.
 
 **Zawodnicy ataku**
 
@@ -618,31 +687,23 @@ fb <- fb %>% mutate (poscode = recode(poscode,
                                     ) )
 
 b <- fb %>% filter (poscode == 'A')
-
-mean.b <- mean(b$weight, na.rm = T)  
-median.b <- median(b$weight, na.rm=T) 
+n.b <- nrow(b)
+mean.b <- mean(b$weight, na.rm = TRUE)  
+median.b <- median(b$weight, na.rm=TRUE) 
 q1.b <- quantile(b$weight, probs=.25, na.rm  =TRUE)
 q3.b <- quantile(b$weight, probs=.75, na.rm =TRUE) 
-iqr.b <- IQR(b$weight, na.rm = T)
-sd.b <- sd(b$weight, na.rm=T)
+iqr.b <- IQR(b$weight, na.rm = TRUE)
+sd.b <- sd(b$weight, na.rm=TRUE)
+## skośność
+skewness.b <- Skew(b$weight, na.rm=TRUE)
+skewness.b_m <- 3 * (mean.b - median.b) / sd.b
+skewness.b_q <- ((q3.b - median.b) - (median.b  - q1.b)) / (q3.b -  q1.b)
 ```
 
-Przeciętnie zawodnik ataku ważył `r sprintf ("%.1f", mean.b)` kg; 
-mediana `r sprintf("%.1f", median.b)` kg (połowa
-zawodników ataku ważyła `r sprintf ("%.1f", median.b)` kg i mniej);
-pierwszy/trzeci kwartyl `r q1.b`/`r q3.b` kg (1/4 zawodników
-ataku ważyła `r q1.b` kg i mniej; 
-1/4 zawodników ataku ważyła `r q3.b` kg i więcej;
-
-Odchylenie standardowe `r sprintf("%.1f", sd.b)` kg (przeciętnie
-odchylenie od średniej arytmetycznej wynosi `r sprintf("%.1f", sd.b)` kg);
-rozstęp ćwiartkowy wynosi `r iqr.b` kg (rozstęp 50% środkowych wartości 
-wynosi `r iqr.b` kg)
-
 Histogram przy przyjęciu długości przedziału równej `r hw`kg 
-(linia zielona  oznacza poziom średniej):
+(pionowa linia zielona  oznacza poziom średniej):
 
-```{r, warning=FALSE, out.width="70%"}
+```{r, warning=FALSE, out.width="85%"}
 h1.b <- ggplot(b, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
   ylab("N") +
@@ -652,35 +713,45 @@ h1.b <- ggplot(b, aes(x = weight)) +
 h1.b
 ```
 
+Liczba zawodników ataku wyniosła `r n.b`.
+Przeciętnie zawodnik ataku ważył `r sprintf ("%.1f", mean.b)` kg.
+Wartość mediany wyniosła `r sprintf("%.1f", median.b)` kg (połowa
+zawodników ataku ważyła `r sprintf ("%.1f", median.b)` kg i mniej).
+Wartości pierwszego i trzeciego kwartyla wyniosły odpowiednio `r q1.b` oraz `r q3.b` kg (1/4 zawodników
+ataku ważyła `r q1.b` kg i mniej; 
+1/4 zawodników ataku ważyła `r q3.b` kg i więcej).
+
+Odchylenie standardowe jest równe `r sprintf("%.1f", sd.b)` kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi `r sprintf("%.1f", sd.b)` kg).
+Rozstęp ćwiartkowy wynosi `r iqr.b` kg (rozstęp 50% środkowych wartości 
+wynosi `r iqr.b` kg).
+
+Wartość klasycznego współczynnika skośności jest równa `r sprintf ("%.2f", skewness.b)`.
+Wartość współczynnika skośności opartego o kwartle wynosi `r  sprintf ("%.2f", skewness.b_q)`,
+a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r  sprintf ("%.2f", skewness.b_m)`.
+
 **Zawodnicy młyna**
 
-```{r, out.width="70%"}
+```{r, out.width="85%"}
 f <- fb %>% filter (poscode == 'M' )
 
-mean.f <- mean(f$weight, na.rm=T)  
-median.f <- median(f$weight, na.rm=T) 
-q1.f <- quantile(f$weight, probs=.25, na.rm =T)
-q3.f <- quantile(f$weight, probs=.75, na.rm =T)
-iqr.f <- IQR(f$weight, na.rm = T)
-sd.f <- sd(f$weight, na.rm=T)
+n.f <- nrow(f)
+mean.f <- mean(f$weight, na.rm=TRUE)  
+median.f <- median(f$weight, na.rm=TRUE) 
+q1.f <- quantile(f$weight, probs=.25, na.rm =TRUE)
+q3.f <- quantile(f$weight, probs=.75, na.rm =TRUE)
+iqr.f <- IQR(f$weight, na.rm = TRUE)
+sd.f <- sd(f$weight, na.rm=TRUE)
+## skośność
+skewness.f <- Skew(f$weight, na.rm=TRUE)
+skewness.f_m <- 3 * (mean.f - median.f) / sd.f
+skewness.f_q <- ((q3.f - median.f) - (median.f  - q1.f)) / (q3.f -  q1.f)
 ```
 
-Średnio zawodnik młyna ważył `r sprintf ("%.1f", mean.f)` kg; 
-mediana `r sprintf("%.1f", median.f)` kg (połowa zawodników
-młyna ważyło `r median.f` kg i mniej);
-pierwszy/trzeci kwartyl `r q1.f`/`r q3.f` kg (1/4 zawodników
-młyna ważyło `r q1.f` kg i mniej; 
-1/4 zawodników młyna ważyło `r q3.f` kg i więcej;
-
-Odchylenie standardowe `r sprintf("%.1f", sd.f)` kg (przeciętnie
-odchylenie od średniej arytmetycznej wynosi `r sprintf("%.1f", sd.f)` kg);
-rozstęp ćwiartkowy wynosi `r iqr.f` kg (rozstęp 50% środkowych wartości 
-wynosi `r iqr.f` kg)
-
 Histogram przy przyjęciu długości przedziału równej `r hw`kg
-(linia zielona  oznacza poziom średniej):
+(pionowa linia zielona  oznacza poziom średniej):
 
-```{r, warning=FALSE, out.width="70%"}
+```{r, warning=FALSE, out.width="85%"}
 h1.f <- ggplot(f, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
   ylab("N") +
@@ -690,19 +761,46 @@ h1.f <- ggplot(f, aes(x = weight)) +
 h1.f
 ```
 
+Liczba zawodników młyna wyniosła `r n.f`.
+Średnio zawodnik młyna ważył `r sprintf ("%.1f", mean.f)` kg.
+Wartość mediany wyniosła `r sprintf("%.1f", median.f)` kg (połowa zawodników
+młyna ważyło `r median.f` kg i mniej). Wartości
+pierwszego i trzeciego kwartyla wyniosły odpowiednio `r q1.f` oraz `r q3.f` kg (1/4 zawodników
+młyna ważyło `r q1.f` kg i mniej; 
+1/4 zawodników młyna ważyło `r q3.f` kg i więcej).
+
+Odchylenie standardowe jest równe `r sprintf("%.1f", sd.f)` kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi `r sprintf("%.1f", sd.f)` kg).
+Rozstęp ćwiartkowy wynosi `r iqr.f` kg (rozstęp 50% środkowych wartości 
+wynosi `r iqr.f` kg).
+
+Wartość klasycznego współczynnika skośności jest równa `r sprintf ("%.2f", skewness.f)`.
+Wartość współczynnika skośności opartego o kwartle wynosi `r  sprintf ("%.2f", skewness.f_q)`,
+a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r  sprintf ("%.2f", skewness.f_m)`.
+
+
 **Porównanie atak vs młyn**
 
+```{r}
+#| Miara      | Atak         |  Młyn        |
+#|------------|--------------|--------------|
+#| średnia    | `r mean.b`   | `r mean.f`   |
+#| mediana    | `r median.b` | `r median.f` |
+#| odchyl.st  | `r sd.b`     | `r sd.f`     |
+#| iqr        | `r iqr.b`    | `r iqr.f`    |
+#| g          | `r iqr.b`    | `r iqr.f`    |
+miara <- c('średnia', 'mediana', 'odchyl.st', 'iqr', 'skośność')
+atak <- c(mean.b, median.b, sd.b, iqr.b, skewness.b)
+mlyn <- c(mean.f, median.f, sd.f, iqr.f, skewness.f)
+porownanie <- data.frame(miara, atak, mlyn)
+t122 <- kable(porownanie, digits = 2, col.names = c('miara', 'atak', 'młyn'), booktabs = TRUE)
+t122
+```
 
-| Miara      | Atak         |  Młyn        |
-|------------|--------------|--------------|
-| średnia    | `r mean.b`   | `r mean.f`   |
-| mediana    | `r median.b` | `r median.f` |
-| odchyl.st  | `r sd.b`     | `r sd.f`     |
-| iqr        | `r iqr.b`    | `r iqr.f`    |
-
-średnio zawodnik młyna ważył prawie 20 kg więcej od zawodnika ataku (w przypadku mediany
+Średnio zawodnik młyna ważył prawie 20 kg więcej od zawodnika ataku (w przypadku mediany
 jest to dokładnie 20 kg więcej). 
 Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu grupach podobna.
+Oba rozkłady są zbliżone do rozkładu symetrycznego.
 
 ```{r}
 ggarrange(h1.b, h1.f, ncol = 2, nrow = 1)
@@ -711,7 +809,7 @@ ggarrange(h1.b, h1.f, ncol = 2, nrow = 1)
 
 ### Wykres pudełkowy
 
-Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (**box-plot**).
+Do porównania wielu rozkładów szczególnie użyteczny jest wykres zwany pudełkowym (*box-plot*).
 
 Pudełka na wykresie pudełkowym są rysowane według następujących zasad 
 (por rysunek \@ref(fig:boxplot)):
@@ -719,12 +817,12 @@ Pudełka na wykresie pudełkowym są rysowane według następujących zasad
 * lewy i prawy bok pudełka jest równy kwartylom;
 * linia pionowa w środku pudełka jest równa medianie;
 * linie poziome (zwane wąsami) mają długość równą $Q_1 - 1,5 \textrm{IQR}$ 
-  oraz $Q_3 + \textrm{IQR}$
+  oraz $Q_3 + 1,5 \textrm{IQR}$
   (dla przypomnienia: $Q_1$, $Q_3$ to kwartyle, zaś $\textrm{IQR}$ to rozstęp ćwiartkowy);
 * kropki przed oraz za wąsami to wartości zmiennej większe od
   $Q_3 + 1,5 \textrm{IQR}$ lub mniejsze od $Q_1 - 1,5 \textrm{IQR}$.
 
-```{r boxplot, out.width="80%", fig.cap = "Wykres pudełkowy"}
+```{r boxplot, out.width="99%", fig.cap = "Wykres pudełkowy"}
 knitr::include_graphics("./boxPlotExample.png")
 ```
   
@@ -740,31 +838,31 @@ Zatem dolny rozkład z rysunku \@ref(fig:boxplot) ma mniejszą wartość
 średnią oraz większą zmienność od rozkładu górnego. Dolny
 rozkład posiada też wartości odstające, a górny nie.
 
-Zwróć uwagę na sztuczkę: wartości nietypowe nie są definiowane jako na przykład górne/dolne
-1% wszystkich wartości (bo wtedy **każdy rozkład** miałby wartości nietypowe),
-ale jako wartości mniejsze/większe od $Q_* \pm 1,5 \times \mathrm{IQR}$.
-Wszystkie wartości rozkładów o umiarkowanej zmienności mieszczą się wewnątrz czegoś takiego.
+Zwróć uwagę na następującą sztuczkę. Wartości nietypowe nie są definiowane jako na przykład górne/dolne
+1% wszystkich wartości, bo wtedy **każdy rozkład** miałby wartości nietypowe,
+ale jako wartości mniejsze lub większe od $Q_{1,3} \pm 1,5 \cdot \mathrm{IQR}$.
+Wszystkie wartości rozkładów o umiarkowanej zmienności mieszczą się wewnątrz tak zdefiniowanego przedziału.
 
-Typowo wykres zawiera wiele pudełek a każde pudełko wizualizuje jeden rozkład. Pudełka
-mogą być umieszczone jedno pod drugim, tak jak na rysunku \@(fig:boxplot) lub
+Typowo wykres zawiera wiele pudełek, a każde pudełko wizualizuje jeden rozkład. Pudełka
+mogą być umieszczone jedno pod drugim, tak jak na rysunku \@ref(fig:boxplot) lub
 jedno obok drugiego jak na przykładach poniżej.
 
 ::: {.example}
 **Masa ciała rugbystów** 
 
-```{r, out.width="70%"}
+```{r, out.width="95%"}
 pow <- fb %>%
   na.omit() %>%  ggplot(aes(y=weight, x=poscode, fill=weight)) + 
   geom_boxplot() + 
   ylab("#") +
-  ggtitle("Masa ciała zawodników młyna wg formacji") +
+  ggtitle("Masa ciała zawodników wg formacji") +
   xlab('')
 pow
 ```
 :::
 
-Z wykresu od razu widać, który rozkład ma wyższą średnią, który większe
-rozproszenie oraz w którym występują wartości nietypowe.
+Z wykresu od razu widać, który rozkład ma wyższą średnią (M), który większe
+rozproszenie (A), oraz w którym występują wartości nietypowe.
 
 Pudełek może być więcej niż dwa oczywiście. Następny przykład
 pokazuje
@@ -773,7 +871,7 @@ porównanie rozkładów masy ciała zawodników rugby na poszczególnych turniej
 ::: {.example}
 **Masa ciała rugbystów**
 
-```{r, out.width="70%"}
+```{r, out.width="90%"}
 pox <- fb %>%
   na.omit() %>%  ggplot(aes(y=weight, x=as.factor(year), fill=weight)) + 
   geom_boxplot() + 
@@ -806,4 +904,4 @@ W rozdziale przedstawiono osiem sposobów opisania rozkładu zmiennej:
 
 7. Miary rozproszenia: odchylenie standardowe, rozstęp ćwiartkowy
 
-8. Miary asymetrii
+8. Miary asymetrii.

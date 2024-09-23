@@ -27,6 +27,7 @@ library("ggpubr")
 library("rstatix")
 library ("lm.beta")
 library ("pROC")
+require("DescTools")
 ##
 ## options(bookdown.theorem.preamble = FALSE)
 ##
@@ -63,7 +64,7 @@ diffMx <- function (s, t)  {
 #  })
 
 jamovi.screen <- "95%"
-ex.out.width <- "70%"
+ex.out.width <- "85%"
 ```
 
 

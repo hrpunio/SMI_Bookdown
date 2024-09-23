@@ -34,9 +34,9 @@ przedmiotem badania statystycznego. Na przykład zgony w Polsce w roku 2022.
 
 Każdy **obiekt** w populacji to 
 **obserwacja** (zwana także **jednostką statystyczną** albo **pomiarem**)
-na jednej lub więcej **zmiennych**.
+na jednej lub więcej **zmiennych** (albo **cech**).
 Jeżeli interesującym zjawiskiem są zgony, obserwacją jest osoba zmarła
-a zmiennymi wiek,
+a zmiennymi (cechami) wiek,
 płeć, przyczyna zgonu oraz dzień tygodnia (w którym nastąpił zgon) zmarłej osoby.
 
 **Próba** to część **populacji**.
@@ -70,14 +70,10 @@ się z wybranymi osobami (jak?). Dlatego też badania w oparciu o próbę nielos
 popularne (bo są tanie); należy jednakże mieć świadomość ich ograniczeń, w tym a zwłaszcza
 uogólnienia uzyskanych wyników.
 
-**Mądrość statystyczna** nt liczebności próby i wnioskowania z próby niereprezentatywnej:
-badano czy nowy preparat podnosi
-nośność kur, w 33,3% przypadków podniósł w 33,3% przypadków nie
-podniósł, a na 33,3 nie wiadomo, bo kura uciekła.
 
 ## Pomiar
 
-Potocznie kojarzy się z linijką i wagą ale w statystyce używany jest w szerszym
+Potocznie kojarzy się z linijką i wagą, ale w statystyce używany jest w szerszym
 znaczeniu. Ustalenie płci albo przyczyny zgonu to też pomiar.
 
 **Pomiar** to przyporządkowanie wariantom **zmiennej** liczb lub symboli z pewnej **skali pomiarowej**.
@@ -101,18 +97,23 @@ w którym nastąpił zgon (po poniedziałku jest wtorek);
 Mówimy **zmienna mierzalna** albo **zmienna ilościowa** dla zmiennych mierzonych
 za pomocą skali liczbowej.  Mówimy **zmienna niemierzalna** albo
 **zmienna jakościowa** dla zmiennych mierzonych za pomocą skali
-nominalnej/porządkowej.
+nominalnej lub porządkowej.
 
 Zmienne mierzalne dzielą się na **skokowe**
-oraz **ciągłe**.  Skokowe są to cechy, które przyjmują skończoną liczbę
-wartości, zwykle są to liczby całkowite; Ciągłe są to cechy, które
-przyjmują dowolne wartości liczbowe z pewnego przedziału liczbowego, np. ciśnienie krwi.
+oraz **ciągłe**.  Skokowe są to zmienne, które przyjmują skończoną (albo przeliczalną) liczbę
+wartości. Matematycznym odpowiednikiem zmiennej skokowej jest zbiór liczb całkowitych. Przykładem
+zmiennej skokowej jest liczba dzieci w gospodarstwie domowym albo
+liczba dni do pierwszego nawrotu choroby po zakończeniu leczenia.
+Zmienna ciągła to taka zmienna, która może przyjąć nieskończoną/nieprzeliczalną
+liczbę wartości.
+Matematycznym odpowiednikiem zmiennej ciągłej jest zbiór liczb rzeczywistych.
+Przykładem może być ciśnienie krwi lub waga noworodka.
 
 **Rodzaje danych**
 
 * Przekrojowe (zmarli w Kwidzynie)
 
-* Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000--2022)
+* Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000—2022)
 
 * Przestrzenne: każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne)
 
@@ -130,9 +131,9 @@ Rodzaje **analizy statystycznej** zależą od rodzaju danych
 
 Sposoby analizy danych zależą od sposobu pomiaru (populacja/próba/generalizacja):
 
-**Opis statystyczny** -- (proste) przedstawienie badanych zbiorowości/zmiennych
+**Opis statystyczny** — (proste) przedstawienie badanych zbiorowości/zmiennych
  tabel, wykresów lub parametrów (np. średnia, mediana) ;
- Opis statystyczny może dotyczyć: -- struktury zbiorowości; -- współzależności; --
+ Opis statystyczny może dotyczyć: — struktury zbiorowości; — współzależności; —
  zmian zjawiska w czasie.
 
 **Wnioskowanie statystyczne**: wnioskowanie na temat całości na podstawie próby;
@@ -202,9 +203,9 @@ powoduje raka? Nie...
 
 W innym badaniu tych samych miast okazało się, że
 w grupie miast fluoryzujących wodę przeciętnie mieszkają starsi ludzie. 
-A ponieważ współczynniki zgonów rosną wraz ze wzrostem wieku, to nie można
+A ponieważ współczynniki zgonów rosną wraz z wiekiem, to nie można
 wykluczyć, że prawdziwą przyczyną obserwowanego zwiększenia wartości
-współczynników zgonów jest wiek a nie fluoryzacja wody.
+współczynników zgonów jest wiek a nie fluoryzacja.
 
 ```{r fluor, fig.cap = "Fluoryzacja, wiek a nowotwór"}
 knitr::include_graphics("./Model1_cropped.png")
@@ -285,7 +286,7 @@ u których wyniku nie stwierdzono (dopasowane w sensie, że są podobne podobne.
 W praktyce badanie kliniczno-kontrolne to badanie chorych, którzy zgłosili się do przychodni;
 grupą kontrolną są podobni chorzy (wiek, płeć) z innej przychodni :-)
 
-Problem1: błąd pamięci (*recall bias*) pacjenci -- zwłaszcza zdrowi -- słabo pamiętają
+Problem1: błąd pamięci (*recall bias*) pacjenci — zwłaszcza zdrowi — słabo pamiętają
 fakty które miały miejsce lata temu.
 Problem2: trudności z **dopasowaniem** grupy kontrolnej (łatwiej powiedzieć niż zrobić.)
 
@@ -305,7 +306,7 @@ Badamy grupę pacjentów przychodni onkologicznej. Stwierdzamy że 90% z nich pa
 papierosy. Czy z tego wynika że palenie powoduje raka? Niekoniecznie. Możemy **dopasować**
 pacjentów o podobnym profilu demograficzno-społecznym z innej przychodni (którzy nie chorują na raka)
 i stwierdzić że 20% z nich paliło. 
-To już jest konkretny argument -- ale takie badanie nie jest już **przekrojowe**
+To już jest konkretny argument — ale takie badanie nie jest już **przekrojowe**
 tylko **kliniczno-kontrolne**.
 :::
 
@@ -316,7 +317,7 @@ można oprócz pytania studentów o ilość kawy i wynik pytać ich jeszcze o cz
 na naukę oraz o średnią ze studiów (wrodzone predyspozycje w dziedzinie intelektualnej). 
 Za pomocą metody regresji możemy ustalić czy i jak bardzo kawa, czas i predyspozycje
 wpływają na ocenę. Teoretycznie zamiast eksperymentu można używać regresji, ale jest to w większości
-przypadków trudne--albo zmienne nie da się zmierzyć (czy średnia ze studiów jest dobrą miarą predyspozycji?)
+przypadków trudne — albo zmienne nie da się zmierzyć (czy średnia ze studiów jest dobrą miarą predyspozycji?)
 albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale \@ref(causality).
 
 :::
@@ -436,7 +437,7 @@ i mamy w tym zakresie trzy możliwości:
 
 1. Arkusz kalkulacyjny. Przydatny na etapie zbierania danych i ich wstępnej
    analizy, później już niekoniecznie. Policzenie niektórych rzeczy jest niemożliwe
-   (brak stosownych procedur) lub czasochłonne (w porównaniu do 2--3)
+   (brak stosownych procedur) lub czasochłonne (w porównaniu do 2—3)
   
 2. Oprogramowanie specjalistyczne komercyjne takie jak programy STATA czy SPSS.
    Wady: cena i czas niezbędny na ich poznanie. 
@@ -447,5 +448,5 @@ i mamy w tym zakresie trzy możliwości:
 W większości podręczników opisuje się **procedury** 
 oraz **program**, w którym te procedury można zastosować jednocześnie. 
 My zdecydowaliśmy się oddzielnie przestawić teorię 
-statystyki (rozdziały \@ref(przedmiotbadan)--\@ref(surveyexamples))
+statystyki (rozdziały \@ref(przedmiotbadan)—\@ref(surveyexamples))
 a oddzielnie opis posługiwania się konkretnym programem (rozdział \@ref(intro2jamovi))

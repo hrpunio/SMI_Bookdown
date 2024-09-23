@@ -1,0 +1,110 @@
+\selectlanguage *{polish}
+\contentsline {chapter}{Wstęp}{5}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Przedmiot i metody badań statystycznych}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Przedmiot statystyki}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Podstawowe pojęcia}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Pomiar}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Rodzaje i sposoby analizy danych}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Sposoby pomiaru danych i organizacja badania}{8}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Przykłady badań}{12}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}Miary częstości chorób}{13}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Oprogramowanie}{14}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Analiza jednej zmiennej}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Tablice statystyczne}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Wykresy}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Skala nominalna}{19}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Skala liczbowa}{19}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Statystyczka Florence Nightingale}{19}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Analiza parametryczna}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Miary położenia}{21}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Miary zmienności}{23}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Miary asymetrii}{23}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Porównanie wielu rozkładów}{24}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Wykres pudełkowy}{26}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Zestawienie metod opisu statystycznego}{27}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Łagodne wprowadzenie do wnioskowania statystycznego}{28}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Masa ciała uczestników PŚ w rugby}{28}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Wiek kandydatów na radnych}{30}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Rozkład normalny}{32}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Odsetek kobiet wśród kandydatów na radnych}{33}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Wnioskowanie statystyczne}{34}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Estymacja punktowa}{35}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Estymacja przedziałowa}{35}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Testowanie hipotez}{35}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Testy nieparametryczne}{36}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Statystyk Carl Pearson}{37}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Słownik terminów które warto znać}{37}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Analiza współzależności pomiędzy zmiennymi}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dwie zmienne nominalne}{40}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Ryzyko względne oraz iloraz szans}{40}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Przedziały ufności dla ryzyka względnego oraz ilorazu szans}{41}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Tabele wielodzielcze}{42}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Zmienna liczbowa i zmienna nominalna}{45}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Test \(t\)-Studenta}{47}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Testowanie normalności}{47}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Test U Manna-Whitneya}{48}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Test ANOVA}{49}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Test Kruskala-Wallisa}{50}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Dwie zmienne liczbowe}{50}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Korelacyjny wykres rozrzutu}{50}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Pomiar siły zależności: współczynnik korelacji liniowej Pearsona}{51}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Macierz korelacji}{51}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Pomiar siły zależności: regresja liniowa}{53}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Regresja prosta}{53}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Zmienna liczbowa i zmienne liczbowe lub nominalne}{57}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Regresja wieloraka}{57}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Zmienne zero-jedynkowe}{60}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Przypadek specjalny: regresja logistyczna}{63}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Przypadek specjalny: dwie zmienne co najmniej porządkowe}{68}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Pomiar siły zależności: współczynnik korelacji rang}{68}{subsection.4.6.1}%
+\contentsline {section}{\numberline {4.7}Podsumowanie}{69}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Przykłady badań ankietowych}{70}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Jak zacząć badanie?}{70}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Mierzenie twardych faktów vs mierzenia przekonań}{70}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Pomiar przekonań, wartości i postaw}{71}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Skala Likerta}{71}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Skala pomiarowa czyli inwentarz albo kwestionariusz}{71}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Model pomiaru}{72}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW}{74}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Cel}{74}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Metoda}{74}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Zastosowane metody statystyczne}{74}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Metryczka (analiza respondentów)}{75}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Weryfikacja hipotezy 1}{75}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Weryfikacja hipotezy 2}{75}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Weryfikacja hipotez 3--5}{75}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.8}Wnioski}{78}{subsection.5.2.8}%
+\contentsline {section}{\numberline {5.3}Depresja i jej uwarunkowania wśród studentów PSW}{78}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Cel}{78}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Metoda}{78}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Zastosowane metody statystyczne}{79}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Metryczka}{79}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Weryfikacja hipotezy 1}{79}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Weryfikacja hipotez 2--4}{79}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Depresja a płeć}{79}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.8}Depresja a staż}{80}{subsection.5.3.8}%
+\contentsline {subsection}{\numberline {5.3.9}Depresja a rodzaj miejsca pracy}{80}{subsection.5.3.9}%
+\contentsline {subsection}{\numberline {5.3.10}Wnioski}{81}{subsection.5.3.10}%
+\contentsline {section}{\numberline {5.4}Satysfakcja, przywiązanie i zamiar odejścia}{81}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Cel}{81}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Metoda}{82}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Zastosowane metody statystyczne}{82}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Wyniki}{82}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5}Wnioski}{84}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5}Formularze ankiet}{85}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Skala Depresji Becka}{85}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Ankieta na temat szkodliwości palenia}{88}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Ankieta satysfakcja, przywiązanie i zamiar odejścia}{89}{subsection.5.5.3}%
+\contentsline {chapter}{\numberline {6}Łagodne wprowadzenie z Jamovi}{93}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Podstawy pracy z Jamovi}{93}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia}{94}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Wczytanie danych}{95}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Przekodowanie danych}{96}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Wyliczenie nowych zmiennych}{101}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Analiza struktury}{102}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Analiza zależności: zmienne nominalne}{103}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Analiza zależności: zmienna liczbowa/zmienna nominalna}{103}{subsection.6.2.6}%
+\contentsline {subsection}{\numberline {6.2.7}Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna}{105}{subsection.6.2.7}%
+\contentsline {subsection}{\numberline {6.2.8}Regresja logistyczna}{105}{subsection.6.2.8}%
+\contentsline {subsection}{\numberline {6.2.9}Redagowanie raportu}{105}{subsection.6.2.9}%
+\contentsline {chapter}{Literatura}{106}{chapter*.3}%

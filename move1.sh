@@ -1,0 +1,16 @@
+mv ./jamovi_main_screen.png ./jamovi_screens/
+mv ./GoogleFormsTestA.png ./jamovi_screens/
+mv ./GoogleFormsTestHdr.png ./jamovi_screens/
+mv ./Jamovi_data_import.png ./jamovi_screens/
+mv ./przeksztalcenie_0.png ./jamovi_screens/
+mv ./przeksztalcenie_1.png ./jamovi_screens/
+mv ./przeksztalcenie_1p.png ./jamovi_screens/
+mv ./przeksztalcenie_3.png ./jamovi_screens/
+mv ./przeksztalcenie_4.png ./jamovi_screens/
+mv ./przeksztalcenie_contains.png ./jamovi_screens/
+mv ./zmienna_satysfakcja.png ./jamovi_screens/
+mv ./statystyki_opisowe_okno.png ./jamovi_screens/
+mv ./statystyki_opisowe_wynik.png ./jamovi_screens/
+mv ./tabele_krzyzowe.png ./jamovi_screens/
+mv ./testy.png ./jamovi_screens/
+mv ./regresja_liniowa.png ./jamovi_screens/

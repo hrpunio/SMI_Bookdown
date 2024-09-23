@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/Debian)  (format=lualatex 2023.1.22)  22 DEC 2023 10:30
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/Debian)  (format=lualatex 2024.2.25)  18 SEP 2024 12:19
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -387,187 +387,225 @@ Package graphics Info: Driver file: luatex.def on input line 105.
 \Gin@req@height=\dimen171
 \Gin@req@width=\dimen172
 )
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count290
+\Gm@cntv=\count291
+\c@Gm@tempcnt=\count292
+\Gm@bindingoffset=\dimen173
+\Gm@wd@mp=\dimen174
+\Gm@odd@mp=\dimen175
+\Gm@even@mp=\dimen176
+\Gm@layoutwidth=\dimen177
+\Gm@layoutheight=\dimen178
+\Gm@layouthoffset=\dimen179
+\Gm@layoutvoffset=\dimen180
+\Gm@dimlist=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2020/12/08 v1.51 Modern multilingual typesetting with XeLaT
+eX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/makecmds/makecmds.sty
+Package: makecmds 2009/09/03 v1.0a extra command making commands
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+)
+\XKV@depth=\count293
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(/usr/share/texlive/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count294
+)
+\CatcodeTableOther=\catcodetable12
+\CatcodeTableExpl=\catcodetable13
+)
+Lua module: polyglossia 2013/05/11 1.3 Polyglossia
+(/usr/share/texlive/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
+File: gloss-latex.ldf polyglossia: module for default language
+The property list \polyglossia@langsetup contains the pairs (without outer
+braces):
+>  {latex/script}  =>  {latin}
+>  {latex/lcscript}  =>  {latin}
+>  {latex/scripttag}  =>  {}
+>  {latex/language}  =>  {Latex}
+>  {latex/langtag}  =>  {ENG}
+>  {latex/bcp47}  =>  {}
+>  {latex/hyphennames}  =>  {english}
+>  {latex/direction}  =>  {LR}
+>  {latex/hyphenmins}  =>  {2,3}
+>  {latex/frenchspacing}  =>  {false}
+>  {latex/indentfirst}  =>  {false}
+>  {latex/fontsetup}  =>  {true}
+>  {latex/envname}  =>  {latex}
+>  {latex/babelname}  =>  {latex}
+>  {latex/localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {latex/Localnumeral}  =>  {polyglossia@C@localnumeral}.
+)
+Package polyglossia Info: Default language is latex.
+Package polyglossia Info: Setting LuaTeX font renderer to Harfbuzz.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/polyglossia/gloss-polish.ldf
+File: gloss-polish.ldf polyglossia: module for polish
+The property list \polyglossia@langsetup contains the pairs (without outer
+braces):
+>  {latex/script}  =>  {latin}
+>  {latex/lcscript}  =>  {latin}
+>  {latex/scripttag}  =>  {}
+>  {latex/language}  =>  {Latex}
+>  {latex/langtag}  =>  {ENG}
+>  {latex/bcp47}  =>  {}
+>  {latex/hyphennames}  =>  {english}
+>  {latex/direction}  =>  {LR}
+>  {latex/hyphenmins}  =>  {2,3}
+>  {latex/frenchspacing}  =>  {false}
+>  {latex/indentfirst}  =>  {false}
+>  {latex/fontsetup}  =>  {true}
+>  {latex/envname}  =>  {latex}
+>  {latex/babelname}  =>  {latex}
+>  {latex/localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {latex/Localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {polish/script}  =>  {latin}
+>  {polish/lcscript}  =>  {latin}
+>  {polish/scripttag}  =>  {}
+>  {polish/language}  =>  {Polish}
+>  {polish/langtag}  =>  {PLK}
+>  {polish/bcp47}  =>  {pl}
+>  {polish/hyphennames}  =>  {polish}
+>  {polish/direction}  =>  {LR}
+>  {polish/hyphenmins}  =>  {2,2}
+>  {polish/frenchspacing}  =>  {true}
+>  {polish/indentfirst}  =>  {false}
+>  {polish/fontsetup}  =>  {true}
+>  {polish/envname}  =>  {polish}
+>  {polish/babelname}  =>  {polish}
+>  {polish/localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {polish/Localnumeral}  =>  {polyglossia@C@localnumeral}.
+Module polyglossia Info: Language data for polish
+(polyglossia)            loader	loadhyph-pl.tex
+(polyglossia)            righthyphenmin	2
+(polyglossia)            hyphenation	hyph-pl.hyp.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            patterns	hyph-pl.pat.txt
+(polyglossia)            synonyms	 on input line 9
+Module polyglossia Info: Language polish was not yet loaded; created with id 2 o
+n input line 9
+)
+Package polyglossia Info: Default language is polish.
 luaotfload | cache : Lookup cache loaded from /home/tomek/.texlive2020/texmf-var
 /luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 
-Package fontspec Info: Cambria scale = 0.9233102663759599.
-
-
-Package fontspec Info: Cambria scale = 0.9233102663759599.
-
-
-Package fontspec Info: Cambria scale = 0.9233102663759599.
-
-
-Package fontspec Info: Cambria/B scale = 0.8898031445213442.
-
-
-Package fontspec Info: Cambria/B scale = 0.8898031445213442.
-
-
-Package fontspec Info: Cambria/I scale = 0.9233102663759599.
-
-
-Package fontspec Info: Cambria/I scale = 0.9233102663759599.
-
-
-Package fontspec Info: Cambria/BI scale = 0.8898031445213442.
-
-
-Package fontspec Info: Cambria/BI scale = 0.8898031445213442.
-
-
 Package fontspec Info: Font family 'Cambria(0)' created for font 'Cambria'
-(fontspec)             with options
-(fontspec)             [Scale=MatchLowercase,Ligatures=TeX,Scale=1].
+(fontspec)             with options [Renderer=Harfbuzz,Ligatures=TeX,Scale=1].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria:mode=node;script=latn;language=dflt;+tli
+(fontspec)             <->s*[1]"Cambria:mode=harf;script=latn;language=dflt;+tli
 g;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria:mode=node;script=latn;language=dflt;+tli
+(fontspec)             <->s*[1]"Cambria:mode=harf;script=latn;language=dflt;+tli
 g;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria/B:mode=node;script=latn;language=dflt;+t
+(fontspec)             <->s*[1]"Cambria/B:mode=harf;script=latn;language=dflt;+t
 lig;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria/B:mode=node;script=latn;language=dflt;+t
+(fontspec)             <->s*[1]"Cambria/B:mode=harf;script=latn;language=dflt;+t
 lig;+smcp;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria/I:mode=node;script=latn;language=dflt;+t
+(fontspec)             <->s*[1]"Cambria/I:mode=harf;script=latn;language=dflt;+t
 lig;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria/I:mode=node;script=latn;language=dflt;+t
+(fontspec)             <->s*[1]"Cambria/I:mode=harf;script=latn;language=dflt;+t
 lig;+smcp;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria/BI:mode=node;script=latn;language=dflt;+
+(fontspec)             <->s*[1]"Cambria/BI:mode=harf;script=latn;language=dflt;+
 tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[1]"Cambria/BI:mode=node;script=latn;language=dflt;+
+(fontspec)             <->s*[1]"Cambria/BI:mode=harf;script=latn;language=dflt;+
 tlig;+smcp;"
-
-LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 70.
-
-Package fontspec Info: Cambria scale = 0.9999967311822334.
-
-
-Package fontspec Info: Cambria scale = 0.9999967311822334.
-
-
-Package fontspec Info: Cambria scale = 0.9999967311822334.
-
-
-Package fontspec Info: Cambria/B scale = 0.9637066415491384.
-
-
-Package fontspec Info: Cambria/B scale = 0.9637066415491384.
-
-
-Package fontspec Info: Cambria/I scale = 0.9999967311822334.
-
-
-Package fontspec Info: Cambria/I scale = 0.9999967311822334.
-
-
-Package fontspec Info: Cambria/BI scale = 0.9637066415491384.
-
-
-Package fontspec Info: Cambria/BI scale = 0.9637066415491384.
 
 
 Package fontspec Info: Font family 'Cambria(1)' created for font 'Cambria'
-(fontspec)             with options [Scale=MatchLowercase,Renderer=Basic].
+(fontspec)             with options [Renderer=Harfbuzz,Renderer=Basic].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9999967311822334]"Cambria:mode=base;script=latn;l
-anguage=dflt;"
+(fontspec)             <->"Cambria:mode=base;script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
-(fontspec)             <->s*[0.9999967311822334]"Cambria:mode=base;script=latn;l
-anguage=dflt;+smcp;"
+(fontspec)             <->"Cambria:mode=base;script=latn;language=dflt;+smcp;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.9637066415491384]"Cambria/B:mode=base;script=latn
-;language=dflt;"
+(fontspec)             <->"Cambria/B:mode=base;script=latn;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
-(fontspec)             <->s*[0.9637066415491384]"Cambria/B:mode=base;script=latn
-;language=dflt;+smcp;"
+(fontspec)             <->"Cambria/B:mode=base;script=latn;language=dflt;+smcp;"
+
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.9999967311822334]"Cambria/I:mode=base;script=latn
-;language=dflt;"
+(fontspec)             <->"Cambria/I:mode=base;script=latn;language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
-(fontspec)             <->s*[0.9999967311822334]"Cambria/I:mode=base;script=latn
-;language=dflt;+smcp;"
+(fontspec)             <->"Cambria/I:mode=base;script=latn;language=dflt;+smcp;"
+
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.9637066415491384]"Cambria/BI:mode=base;script=lat
-n;language=dflt;"
+(fontspec)             <->"Cambria/BI:mode=base;script=latn;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
-(fontspec)             <->s*[0.9637066415491384]"Cambria/BI:mode=base;script=lat
-n;language=dflt;+smcp;"
+(fontspec)             <->"Cambria/BI:mode=base;script=latn;language=dflt;+smcp;
+"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/Cambria(1)/m/n on input line 70.
+(Font)                  OT1/lmr/m/n --> TU/Cambria(1)/m/n on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/Cambria(1)/m/it on input line 70.
+(Font)                  OT1/lmr/m/it --> TU/Cambria(1)/m/it on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/Cambria(1)/b/n on input line 70.
-
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
+(Font)                  OT1/lmr/bx/n --> TU/Cambria(1)/b/n on input line 75.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 75.
 
 Package fontspec Info: Could not resolve font "CambriaMath/B" (it probably
 (fontspec)             doesn't exist).
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
 Package fontspec Info: Font family 'CambriaMath(0)' created for font 'Cambria
 (fontspec)             Math' with options
-(fontspec)             [Scale=MatchLowercase,Renderer=Basic,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,FontAdjustment={\__um_luatex_copy_fontd
-imens:
+(fontspec)             [Renderer=Harfbuzz,Renderer=Basic,BoldItalicFont={},Itali
+cFont={},SmallCapsFont={},Script=Math,FontAdjustment={\__um_luatex_copy_fontdime
+ns:
 (fontspec)             }].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9999967311822334]"CambriaMath:mode=base;script=ma
-th;language=dflt;"
+(fontspec)             <->"CambriaMath:mode=base;script=math;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \__um_luatex_copy_fontdimens: 
-
-LaTeX Font Info:    Font shape `TU/CambriaMath(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 71.
-
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
 
 
 Package fontspec Info: Could not resolve font "CambriaMath/B" (it probably
 (fontspec)             doesn't exist).
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
 Package fontspec Info: Font family 'CambriaMath(1)' created for font 'Cambria
 (fontspec)             Math' with options
-(fontspec)             [Scale=MatchLowercase,Renderer=Basic,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8
-.65,Font=Cambria
+(fontspec)             [Renderer=Harfbuzz,Renderer=Basic,BoldItalicFont={},Itali
+cFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8.65
+,Font=Cambria
 (fontspec)             Math,Style=MathScript},{Size=-6.65,Font=Cambria
 (fontspec)             Math,Style=MathScriptScript}},FontAdjustment={\__um_luate
 x_copy_fontdimens:
@@ -577,59 +615,44 @@ x_copy_fontdimens:
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <8.65->s*[0.9999967311822334]"CambriaMath:mode=base;scrip
-t=math;language=dflt;"<6.65-8.65>s*[0.9999967311822334]"CambriaMath:mode=base;sc
-ript=math;language=dflt;+ssty=0;"<-6.65>s*[0.9999967311822334]"CambriaMath:mode=
-base;script=math;language=dflt;+ssty=1;"
+(fontspec)             <8.65->"CambriaMath:mode=base;script=math;language=dflt;"
+<6.65-8.65>"CambriaMath:mode=base;script=math;language=dflt;+ssty=0;"<-6.65>"Cam
+briaMath:mode=base;script=math;language=dflt;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
-LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 71.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 71.
+(Font)              `operators' in the math version `normal' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/CambriaMath(1)/m/n on input line 71.
+(Font)                  OT1/lmr/m/n --> TU/CambriaMath(1)/m/n on input line 77.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 71.
+(Font)              `operators' in the math version `bold' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/CambriaMath(1)/b/n on input line 71.
+(Font)                  OT1/lmr/bx/n --> TU/CambriaMath(1)/b/n on input line 77.
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 1.000096730855352.
+Package fontspec Info: CambriaMath scale = 1.0001.
 
 
 Package fontspec Info: Could not resolve font "CambriaMath/B" (it probably
 (fontspec)             doesn't exist).
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
+Package fontspec Info: CambriaMath scale = 1.0001.
 
 
-Package fontspec Info: CambriaMath scale = 1.000096730855352.
+Package fontspec Info: CambriaMath scale = 1.0001.
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 1.000096730855352.
-
-
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 1.000096730855352.
+Package fontspec Info: CambriaMath scale = 1.0001.
 
 
 Package fontspec Info: Font family 'CambriaMath(2)' created for font 'Cambria
 (fontspec)             Math' with options
-(fontspec)             [Scale=MatchLowercase,Renderer=Basic,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8
-.65,Font=Cambria
+(fontspec)             [Renderer=Harfbuzz,Renderer=Basic,BoldItalicFont={},Itali
+cFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8.65
+,Font=Cambria
 (fontspec)             Math,Style=MathScript},{Size=-6.65,Font=Cambria
 (fontspec)             Math,Style=MathScriptScript}},FontAdjustment={\__um_luate
 x_copy_fontdimens:
@@ -649,10 +672,10 @@ x_copy_fontdimens:
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <8.65->s*[1.000096730855352]"CambriaMath:mode=base;script
-=math;language=dflt;"<6.65-8.65>s*[1.000096730855352]"CambriaMath:mode=base;scri
-pt=math;language=dflt;+ssty=0;"<-6.65>s*[1.000096730855352]"CambriaMath:mode=bas
-e;script=math;language=dflt;+ssty=1;"
+(fontspec)             <8.65->s*[1.0001]"CambriaMath:mode=base;script=math;langu
+age=dflt;"<6.65-8.65>s*[1.0001]"CambriaMath:mode=base;script=math;language=dflt;
++ssty=0;"<-6.65>s*[1.0001]"CambriaMath:mode=base;script=math;language=dflt;+ssty
+=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \__um_luatex_copy_fontdimens: \fontdimen 8\font
@@ -668,49 +691,37 @@ e;script=math;language=dflt;+ssty=1;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 71.
+(Font)              `symbols' in the math version `normal' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/CambriaMath(2)/m/n on input line 71.
+(Font)                  OMS/lmsy/m/n --> TU/CambriaMath(2)/m/n on input line 77.
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 71.
+(Font)              `symbols' in the math version `bold' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/CambriaMath(2)/b/n on input line 71.
+(Font)                  OMS/lmsy/b/n --> TU/CambriaMath(2)/b/n on input line 77.
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 0.9998967315091152.
+Package fontspec Info: CambriaMath scale = 0.9999.
 
 
 Package fontspec Info: Could not resolve font "CambriaMath/B" (it probably
 (fontspec)             doesn't exist).
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
+Package fontspec Info: CambriaMath scale = 0.9999.
 
 
-Package fontspec Info: CambriaMath scale = 0.9998967315091152.
+Package fontspec Info: CambriaMath scale = 0.9999.
 
 
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 0.9998967315091152.
-
-
-Package fontspec Info: CambriaMath scale = 0.9999967311822334.
-
-
-Package fontspec Info: CambriaMath scale = 0.9998967315091152.
+Package fontspec Info: CambriaMath scale = 0.9999.
 
 
 Package fontspec Info: Font family 'CambriaMath(3)' created for font 'Cambria
 (fontspec)             Math' with options
-(fontspec)             [Scale=MatchLowercase,Renderer=Basic,BoldItalicFont={},It
-alicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8
-.65,Font=Cambria
+(fontspec)             [Renderer=Harfbuzz,Renderer=Basic,BoldItalicFont={},Itali
+cFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8.65
+,Font=Cambria
 (fontspec)             Math,Style=MathScript},{Size=-6.65,Font=Cambria
 (fontspec)             Math,Style=MathScriptScript}},FontAdjustment={\__um_luate
 x_copy_fontdimens:
@@ -724,10 +735,10 @@ x_copy_fontdimens:
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <8.65->s*[0.9998967315091152]"CambriaMath:mode=base;scrip
-t=math;language=dflt;"<6.65-8.65>s*[0.9998967315091152]"CambriaMath:mode=base;sc
-ript=math;language=dflt;+ssty=0;"<-6.65>s*[0.9998967315091152]"CambriaMath:mode=
-base;script=math;language=dflt;+ssty=1;"
+(fontspec)             <8.65->s*[0.9999]"CambriaMath:mode=base;script=math;langu
+age=dflt;"<6.65-8.65>s*[0.9999]"CambriaMath:mode=base;script=math;language=dflt;
++ssty=0;"<-6.65>s*[0.9999]"CambriaMath:mode=base;script=math;language=dflt;+ssty
+=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
 (fontspec)             \__um_luatex_copy_fontdimens: \fontdimen 8\font
@@ -737,224 +748,45 @@ base;script=math;language=dflt;+ssty=1;"
 (fontspec)             \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 71
+(Font)              `largesymbols' in the math version `normal' on input line 77
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/CambriaMath(3)/m/n on input line 71.
+(Font)                  OMX/lmex/m/n --> TU/CambriaMath(3)/m/n on input line 77.
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 71.
+(Font)              `largesymbols' in the math version `bold' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/CambriaMath(3)/b/n on input line 71.
+(Font)                  OMX/lmex/m/n --> TU/CambriaMath(3)/b/n on input line 77.
 
-LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 7.3pt on input line 71.
-LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 71.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 71
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 77
 .
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 71.
+(Font)              scaled to size 10.00107pt on input line 77.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 7.30066pt on input line 71.
+(Font)              scaled to size 7.30078pt on input line 77.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 71.
+(Font)              scaled to size 6.00064pt on input line 77.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 71.
+(Font)              scaled to size 9.99893pt on input line 77.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.29921pt on input line 71.
+(Font)              scaled to size 7.29921pt on input line 77.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 71.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+(Font)              scaled to size 5.99936pt on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(/usr/share/texlive/texmf-dist/tex/lualatex/selnolig/selnolig.sty
-=== Package selnolig, Version 0.302, Date 2015/10/26 ===
-Package: selnolig 2015/10/26
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(/usr/share/texlive/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
-Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
-
-(/usr/share/texlive/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
-Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count290
-)
-\CatcodeTableOther=\catcodetable12
-\CatcodeTableExpl=\catcodetable13
-)
-Inserting `Suppress ligatures selectively' at position 1 in `ligaturing'.)
-(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip62
-\bibsep=\skip63
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count291
-)
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
-Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
-
-
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks25
-)
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-\@linkdim=\dimen173
-\Hy@linkcounter=\count292
-\Hy@pagecounter=\count293
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count294
-Package hyperref Info: Option `unicode' set `true' on input line 4338.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
-)
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing OFF on input line 4484.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count295
-
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen174
-
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
-
-))
-\Fld@menulength=\count296
-\Field@Width=\dimen175
-\Fld@charsize=\dimen176
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing OFF on input line 6362.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packag
-e
-with kernel methods
-)
-\Hy@abspage=\count297
-\c@Item=\count298
-\c@Hfootnote=\count299
-)
-Package hyperref Info: Driver (autodetected): hluatex.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
-File: hluatex.def 2020-05-15 v7.00e Hyperref driver for luaTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
-
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
-
-with kernel methods
-)
-\Fld@listcount=\count300
-\c@bookmark@seq@number=\count301
-
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
-)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
-6.
-)
-\Hy@SectionHShift=\skip64
-)
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
-File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count302
-))
-(/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
-Package: xurl 2020/12/30 v 0.09a modify URL breaks
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks26
-\thm@bodyfont=\toks27
-\thm@headfont=\toks28
-\thm@notefont=\toks29
-\thm@headpunct=\toks30
-\thm@preskip=\skip65
-\thm@postskip=\skip66
-\thm@headsep=\skip67
-\dth@everypar=\toks31
-)
-\c@theorem=\count303
-\c@lemma=\count304
-\c@corollary=\count305
-\c@proposition=\count306
-\c@conjecture=\count307
-\c@definition=\count308
-\c@exercise=\count309
-\c@hypothesis=\count310
+\c@theorem=\count295
 
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2020/10/09 version 4.42 text color boxes
@@ -962,9 +794,9 @@ Package: tcolorbox 2020/10/09 version 4.42 text color boxes
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks32
-\pgfutil@tempdima=\dimen177
-\pgfutil@tempdimb=\dimen178
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen181
+\pgfutil@tempdimb=\dimen182
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -981,33 +813,33 @@ Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
 Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks33
-\pgfkeys@temptoks=\toks34
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks35
+\pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen179
-\pgf@y=\dimen180
-\pgf@xa=\dimen181
-\pgf@ya=\dimen182
-\pgf@xb=\dimen183
-\pgf@yb=\dimen184
-\pgf@xc=\dimen185
-\pgf@yc=\dimen186
-\pgf@xd=\dimen187
-\pgf@yd=\dimen188
+\pgf@x=\dimen183
+\pgf@y=\dimen184
+\pgf@xa=\dimen185
+\pgf@ya=\dimen186
+\pgf@xb=\dimen187
+\pgf@yb=\dimen188
+\pgf@xc=\dimen189
+\pgf@yc=\dimen190
+\pgf@xd=\dimen191
+\pgf@yd=\dimen192
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count311
-\c@pgf@countb=\count312
-\c@pgf@countc=\count313
-\c@pgf@countd=\count314
-\t@pgf@toka=\toks36
-\t@pgf@tokb=\toks37
-\t@pgf@tokc=\toks38
-\pgf@sys@id@count=\count315
+\c@pgf@counta=\count296
+\c@pgf@countb=\count297
+\c@pgf@countc=\count298
+\c@pgf@countd=\count299
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+\pgf@sys@id@count=\count300
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
 )
@@ -1023,8 +855,8 @@ File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfsyssoftpath@smallbuffer@items=\count316
-\pgfsyssoftpath@bigbuffer@items=\count317
+\pgfsyssoftpath@smallbuffer@items=\count301
+\pgfsyssoftpath@bigbuffer@items=\count302
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -1037,12 +869,12 @@ Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen189
-\pgfmath@count=\count318
+\pgfmath@dimen=\dimen193
+\pgfmath@count=\count303
 \pgfmath@box=\box58
-\pgfmath@toks=\toks39
-\pgfmath@stack@operand=\toks40
-\pgfmath@stack@operation=\toks41
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -1062,38 +894,38 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count319
+\c@pgfmathroundto@lastzeros=\count304
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@picminx=\dimen190
-\pgf@picmaxx=\dimen191
-\pgf@picminy=\dimen192
-\pgf@picmaxy=\dimen193
-\pgf@pathminx=\dimen194
-\pgf@pathmaxx=\dimen195
-\pgf@pathminy=\dimen196
-\pgf@pathmaxy=\dimen197
-\pgf@xx=\dimen198
-\pgf@xy=\dimen199
-\pgf@yx=\dimen256
-\pgf@yy=\dimen257
-\pgf@zx=\dimen258
-\pgf@zy=\dimen259
+\pgf@picminx=\dimen194
+\pgf@picmaxx=\dimen195
+\pgf@picminy=\dimen196
+\pgf@picmaxy=\dimen197
+\pgf@pathminx=\dimen198
+\pgf@pathmaxx=\dimen199
+\pgf@pathminy=\dimen256
+\pgf@pathmaxy=\dimen257
+\pgf@xx=\dimen258
+\pgf@xy=\dimen259
+\pgf@yx=\dimen260
+\pgf@yy=\dimen261
+\pgf@zx=\dimen262
+\pgf@zy=\dimen263
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@path@lastx=\dimen260
-\pgf@path@lasty=\dimen261
+\pgf@path@lastx=\dimen264
+\pgf@path@lasty=\dimen265
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@shorten@end@additional=\dimen262
-\pgf@shorten@start@additional=\dimen263
+\pgf@shorten@end@additional=\dimen266
+\pgf@shorten@start@additional=\dimen267
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
@@ -1101,19 +933,19 @@ File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \pgfpic=\box59
 \pgf@hbox=\box60
 \pgf@layerbox@main=\box61
-\pgf@picture@serial@count=\count320
+\pgf@picture@serial@count=\count305
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgflinewidth=\dimen264
+\pgflinewidth=\dimen268
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@pt@x=\dimen265
-\pgf@pt@y=\dimen266
-\pgf@pt@temp=\dimen267
+\pgf@pt@x=\dimen269
+\pgf@pt@y=\dimen270
+\pgf@pt@temp=\dimen271
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
@@ -1129,13 +961,13 @@ File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfarrowsep=\dimen268
+\pgfarrowsep=\dimen272
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@max=\dimen269
-\pgf@sys@shading@range@num=\count321
-\pgf@shadingcount=\count322
+\pgf@max=\dimen273
+\pgf@sys@shading@range@num=\count306
+\pgf@shadingcount=\count307
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
@@ -1169,16 +1001,16 @@ File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@nodesepstart=\dimen270
-\pgf@nodesepend=\dimen271
+\pgf@nodesepstart=\dimen274
+\pgf@nodesepend=\dimen275
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
 Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
 )) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks42
-\verbatim@line=\toks43
+\every@verbatim=\toks38
+\verbatim@line=\toks39
 \verbatim@in@stream=\read3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
@@ -1191,9 +1023,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box65
 \tcb@lowerbox=\box66
 \tcb@phantombox=\box67
-\c@tcbbreakpart=\count323
-\c@tcblayer=\count324
-\c@tcolorbox@number=\count325
+\c@tcbbreakpart=\count308
+\c@tcblayer=\count309
+\c@tcolorbox@number=\count310
 \tcb@temp=\box68
 \tcb@temp=\box69
 \tcb@temp=\box70
@@ -1203,9 +1035,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '4.42'
-\c@tcbrastercolumn=\count326
-\c@tcbrasterrow=\count327
-\c@tcbraster=\count328
+\c@tcbrastercolumn=\count311
+\c@tcbrasterrow=\count312
+\c@tcbraster=\count313
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '4.42'
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -1218,10 +1050,10 @@ Library (tcolorbox): 'tcbskins.code.tex' version '4.42'
 Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen272
-\pgffor@skip=\dimen273
-\pgffor@stack=\toks44
-\pgffor@toks=\toks45
+\pgffor@iter=\dimen276
+\pgffor@skip=\dimen277
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
@@ -1229,33 +1061,33 @@ Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count329
-\pgfplotmarksize=\dimen274
+\pgf@plot@mark@count=\count314
+\pgfplotmarksize=\dimen278
 )
-\tikz@lastx=\dimen275
-\tikz@lasty=\dimen276
-\tikz@lastxsaved=\dimen277
-\tikz@lastysaved=\dimen278
-\tikz@lastmovetox=\dimen279
-\tikz@lastmovetoy=\dimen280
-\tikzleveldistance=\dimen281
-\tikzsiblingdistance=\dimen282
+\tikz@lastx=\dimen279
+\tikz@lasty=\dimen280
+\tikz@lastxsaved=\dimen281
+\tikz@lastysaved=\dimen282
+\tikz@lastmovetox=\dimen283
+\tikz@lastmovetoy=\dimen284
+\tikzleveldistance=\dimen285
+\tikzsiblingdistance=\dimen286
 \tikz@figbox=\box72
 \tikz@figbox@bg=\box73
 \tikz@tempbox=\box74
 \tikz@tempbox@bg=\box75
-\tikztreelevel=\count330
-\tikznumberofchildren=\count331
-\tikznumberofcurrentchild=\count332
-\tikz@fig@count=\count333
+\tikztreelevel=\count315
+\tikznumberofchildren=\count316
+\tikznumberofcurrentchild=\count317
+\tikz@fig@count=\count318
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count334
-\pgfmatrixcurrentcolumn=\count335
-\pgf@matrix@numberofcolumns=\count336
+\pgfmatrixcurrentrow=\count319
+\pgfmatrixcurrentcolumn=\count320
+\pgf@matrix@numberofcolumns=\count321
 )
-\tikz@expandcount=\count337
+\tikz@expandcount=\count322
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -1269,22 +1101,28 @@ Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.42'
 Library (tcolorbox): 'tcbbreakable.code.tex' version '4.42'
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdfcol.sty
 Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
-)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+))
 Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
 \tcb@testbox=\box77
 \tcb@totalupperbox=\box78
 \tcb@totallowerbox=\box79
-)
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+))
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
 Library (tcolorbox): 'tcbhooks.code.tex' version '4.42'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.42'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '4.42'
-\tcbfitdim=\dimen283
-\tcb@lowerfitdim=\dimen284
-\tcb@upperfitdim=\dimen285
-\tcb@cur@hbadness=\count338
+\tcbfitdim=\dimen287
+\tcb@lowerfitdim=\dimen288
+\tcb@upperfitdim=\dimen289
+\tcb@cur@hbadness=\count323
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.42'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
@@ -1292,23 +1130,23 @@ Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.42'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '4.42'
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count339
+\lst@mode=\count324
 \lst@gtempboxa=\box80
-\lst@token=\toks46
-\lst@length=\count340
-\lst@currlwidth=\dimen286
-\lst@column=\count341
-\lst@pos=\count342
-\lst@lostspace=\dimen287
-\lst@width=\dimen288
-\lst@newlines=\count343
-\lst@lineno=\count344
-\lst@maxwidth=\dimen289
+\lst@token=\toks42
+\lst@length=\count325
+\lst@currlwidth=\dimen290
+\lst@column=\count326
+\lst@pos=\count327
+\lst@lostspace=\dimen291
+\lst@width=\dimen292
+\lst@newlines=\count328
+\lst@lineno=\count329
+\lst@maxwidth=\dimen293
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count345
-\lst@skipnumbers=\count346
+\c@lstnumber=\count330
+\lst@skipnumbers=\count331
 \lst@framebox=\box81
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -1320,11 +1158,19 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 Library (tcolorbox): 'tcblistingscore.code.tex' version '4.42'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.42'
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks43
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 ))
-\c@tcblisting=\count347
+\c@tcblisting=\count332
 ))
 Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. L
 ibrary `listings` is loaded instead. on input line 29.
@@ -1345,46 +1191,179 @@ File: tikzlibraryfadings.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 File: pgflibraryfadings.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '4.42'
-))
-No file _main.aux.
+)) (/usr/share/texlive/texmf-dist/tex/lualatex/selnolig/selnolig.sty
+=== Package selnolig, Version 0.302, Date 2015/10/26 ===
+Package: selnolig 2015/10/26
+Inserting `Suppress ligatures selectively' at position 1 in `ligaturing'.) (/us
+r/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip62
+\bibsep=\skip63
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count333
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen294
+\Hy@linkcounter=\count334
+\Hy@pagecounter=\count335
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count336
+Package hyperref Info: Option `unicode' set `true' on input line 4338.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count337
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen295
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+))
+\Fld@menulength=\count338
+\Field@Width=\dimen296
+\Fld@charsize=\dimen297
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packag
+e
+with kernel methods
+)
+\Hy@abspage=\count339
+\c@Item=\count340
+\c@Hfootnote=\count341
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2020-05-15 v7.00e Hyperref driver for luaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
+
+with kernel methods
+)
+\Fld@listcount=\count342
+\c@bookmark@seq@number=\count343
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+6.
+)
+\Hy@SectionHShift=\skip64
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count344
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2020/12/30 v 0.09a modify URL breaks
+) (./_main.aux
+LaTeX Info: Redefining \rmfamily on input line 21.
+LaTeX Info: Redefining \sffamily on input line 21.
+LaTeX Info: Redefining \ttfamily on input line 21.
+)
 \openout1 = _main.aux
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 213.
+LaTeX Font Info:    ... okay on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 128.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 128.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 128.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 213.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 128.
-LaTeX Info: Redefining \microtypecontext on input line 128.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 213.
+LaTeX Info: Redefining \microtypecontext on input line 213.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 128.
+LaTeX Info: Redefining \showhyphens on input line 213.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -1392,19 +1371,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Cambria' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count348
-\scratchdimen=\dimen290
+\scratchcounter=\count345
+\scratchdimen=\dimen298
 \scratchbox=\box82
-\nofMPsegments=\count349
-\nofMParguments=\count350
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count351
-\MPscratchDim=\dimen291
-\MPnumerator=\count352
-\makeMPintoPDFobject=\count353
-\everyMPtoPDFconversion=\toks48
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen299
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
@@ -1414,8 +1394,42 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-Package hyperref Info: Link coloring OFF on input line 128.
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(96.73935pt, 355.65944pt, 145.10909pt)
+* v-part:(T,H,B)=(110.39667pt, 569.05511pt, 165.59506pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=355.65944pt
+* \textheight=569.05511pt
+* \oddsidemargin=24.46936pt
+* \evensidemargin=72.8391pt
+* \topmargin=8.05919pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\c@lstlisting=\count351
+Package hyperref Info: Link coloring OFF on input line 213.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1425,28 +1439,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count354
+\c@section@level=\count352
 )
-LaTeX Info: Redefining \ref on input line 128.
-LaTeX Info: Redefining \pageref on input line 128.
-LaTeX Info: Redefining \nameref on input line 128.
-\c@lstlisting=\count355
-LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 130.
-LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 130.
-LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 130.
-LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 130.
-LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 130.
-LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 130.
-LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 130.
-LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 130.
+LaTeX Info: Redefining \ref on input line 213.
+LaTeX Info: Redefining \pageref on input line 213.
+LaTeX Info: Redefining \nameref on input line 213.
+<Cover_02.png, id=43, 476.982pt x 653.3208pt>
+File: Cover_02.png Graphic file (type png)
+<use Cover_02.png>
+Package luatex.def Info: Cover_02.png  used on input line 213.
+(luatex.def)             Requested size: 597.55792pt x 818.4733pt.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1454,158 +1456,1051 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<./FN.jpg, id=43, 1981.4025pt x 2659.9375pt>
-File: ./FN.jpg Graphic file (type jpg)
-<use ./FN.jpg>
-Package luatex.def Info: ./FN.jpg  used on input line 130.
-(luatex.def)             Requested size: 172.48341pt x 231.55069pt.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
+(Font)              scaled to size 7.3pt on input line 213.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 213.
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./FN.jpg>]
+<./Cover_02.png>]
 LaTeX Font Info:    Font shape `TU/Cambria(0)/m/sl' in size <10> not available
 (Font)              Font shape `TU/Cambria(0)/m/it' tried instead on input line 
-133.
+213.
 LaTeX Font Info:    Font shape `TU/Cambria(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 133.
- [2
-
-]
+(Font)              scaled to size 10.0pt on input line 213.
+ [2{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Info: Redefining \rmfamily on input line 213.
+LaTeX Info: Redefining \sffamily on input line 213.
+LaTeX Info: Redefining \ttfamily on input line 213.
 LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 133.
+(Font)              scaled to size 20.74pt on input line 218.
 LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
-(Font)              scaled to size 24.88pt on input line 133.
+(Font)              scaled to size 20.74pt on input line 218.
+ (./_main.toc
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 2.
+
+[3
+
+])
 \tf@toc=\write6
 
 \openout6 = _main.toc
- [3] [4
-
-]
-Chapter 1.
-LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 136.
-LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
-(Font)              scaled to size 20.74pt on input line 136.
-LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 139.
-LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 139.
-LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 141.
-[5
-Missing character: There is no → (U+2192) in font Cambria:mode=node;script=lat
-n;language=dflt;+tlig;!
-] [6] [7]
-Underfull \hbox (badness 1902) in paragraph at lines 302--310
-[]\TU/Cambria(0)/m/n/10 Chcemy ustalić czy spoży-wanie kawy w cza-sie sesji eg
-za-m-i-na-cyjnej
+ [4]
+Overfull \hbox (12.17961pt too wide) in paragraph at lines 258--267
+\TU/Cambria(0)/m/n/10 czym się zaj-mu-je oraz wy-ja-śnio-no \TU/Cambria(0)/b/
+n/10 pod-sta-wowewo-we po-ję-cia\TU/Cambria(0)/m/n/10 , któ-ry-mi sta-ty-sty-k
+a się po-słu-gu-je,
  []
 
+[5
 
-LaTeX Warning: Reference `fig:fluor' on page 8 undefined on input line 341.
-
-[8
-Missing character: There is no → (U+2192) in font Cambria:mode=node;script=lat
-n;language=dflt;+tlig;!
 ]
-<./Model1_cropped.png, id=93, 299.1978pt x 154.4169pt>
+Rozdział 1.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 279.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 279.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
+(Font)              scaled to size 17.28pt on input line 279.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 282.
+LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 282.
+[6
+
+] [7] [8]
+<./Model1_cropped.png, id=180, 299.1978pt x 154.4169pt>
 File: ./Model1_cropped.png Graphic file (type png)
 <use ./Model1_cropped.png>
-Package luatex.def Info: ./Model1_cropped.png  used on input line 357.
+Package luatex.def Info: ./Model1_cropped.png  used on input line 500.
 (luatex.def)             Requested size: 299.2153pt x 154.42592pt.
- [9<./Model1_cropped.png>] [10]
+ [9] [10<./Model1_cropped.png>] [11] [12] [13] [14]
+Rozdział 2.
 
-LaTeX Warning: Reference `causality' on page 11 undefined on input line 469.
+Underfull \vbox (badness 2671) has occurred while \output is active []
 
-LaTeX Font Info:    Font shape `TU/Cambria(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 486.
-[11]
-Underfull \hbox (badness 1400) in paragraph at lines 531--536
-\TU/Cambria(0)/m/n/10 Group Int J Oc-cup En-v-i-ron Health 2004 Oct-Dec;10(4):38
-4-91. doi:
- []
-
-[12]
-Underfull \hbox (badness 4872) in paragraph at lines 570--571
-[]\TU/Cambria(0)/b/n/10 Współczyn-nik za-padal-ności \TU/Cambria(0)/m/n/10 (\TU/Cambria(0)/m/it/10 in-ci-dence rate\TU/Cambria(0)/m/n/10 ): liczba nowych chorych w
- []
-
-
-Underfull \hbox (badness 2435) in paragraph at lines 583--585
-[]\TU/Cambria(0)/b/n/10 Współczyn-nik zgonów \TU/Cambria(0)/m/n/10 standary-z
-owany według wieku to ważona śred-nia
- []
-
-
-LaTeX Warning: Reference `przedmiotbadan' on page 13 undefined on input line 609
-.
-
-
-LaTeX Warning: Reference `surveyexamples' on page 13 undefined on input line 609
-.
-
-
-LaTeX Warning: Reference `intro2jamovi' on page 13 undefined on input line 610.
-
-[13] [14]
-Chapter 2.
-[15
+ [15
 
 ]
-Underfull \vbox (badness 1342) has occurred while \output is active []
+[16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-[17] [18]
+ [17]
+[18]
 
-LaTeX Warning: File `_main_files/figure-latex/unnamed-chunk-6-1.pdf' not found o
-n input line 885.
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-6-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1010 ...main_files/figure-latex/unnamed-chunk-6-1}
+                                                  
+? s
+OK, entering \scrollmode...
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-7-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1016 ...main_files/figure-latex/unnamed-chunk-7-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-! Package luatex.def Error: File `_main_files/figure-latex/unnamed-chunk-6-1.pd
-f' not found: using draft setting.
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-8-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1031 ...main_files/figure-latex/unnamed-chunk-8-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-9-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1035 ...main_files/figure-latex/unnamed-chunk-9-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-10-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1045 ...ain_files/figure-latex/unnamed-chunk-10-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[19]
+<./FN_diagram.jpg, id=269, 1636.1125pt x 1027.84pt>
+File: ./FN_diagram.jpg Graphic file (type jpg)
+<use ./FN_diagram.jpg>
+Package luatex.def Info: ./FN_diagram.jpg  used on input line 1068.
+(luatex.def)             Requested size: 320.0767pt x 201.07886pt.
+ [20<./FN_diagram.jpg>]
+<./distributions.png, id=280, 614.295pt x 366.4089pt>
+File: ./distributions.png Graphic file (type png)
+<use ./distributions.png>
+Package luatex.def Info: ./distributions.png  used on input line 1096.
+(luatex.def)             Requested size: 352.11081pt x 210.02374pt.
+ [21<./distributions.png>] [22]
+<./neg_posit_screw.png, id=295, 450.0012pt x 366.4089pt>
+File: ./neg_posit_screw.png Graphic file (type png)
+<use ./neg_posit_screw.png>
+Package luatex.def Info: ./neg_posit_screw.png  used on input line 1275.
+(luatex.def)             Requested size: 284.52534pt x 231.67188pt.
+ [23]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-14-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1344 ...ain_files/figure-latex/unnamed-chunk-14-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-16-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1363 ...ain_files/figure-latex/unnamed-chunk-16-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `_main_files/figure-latex/unnamed-chunk-17-1.pdf' not found 
+on input line 1384.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/unnamed-chunk-17-1.p
+df' not found: using draft setting.
 
 See the luatex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.885 ...n_files/figure-latex/unnamed-chunk-6-1.pdf}
+l.1384 ...files/figure-latex/unnamed-chunk-17-1.pdf}
                                                   
-? 
-
-LaTeX Warning: File `_main_files/figure-latex/unnamed-chunk-7-1.pdf' not found o
-n input line 889.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-! Package luatex.def Error: File `_main_files/figure-latex/unnamed-chunk-7-1.pd
-f' not found: using draft setting.
+Underfull \vbox (badness 1132) has occurred while \output is active []
+
+ [24<./neg_posit_screw.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+<./boxPlotExample.png, id=319, 742.775pt x 304.13625pt>
+File: ./boxPlotExample.png Graphic file (type png)
+<use ./boxPlotExample.png>
+Package luatex.def Info: ./boxPlotExample.png  used on input line 1411.
+(luatex.def)             Requested size: 284.53552pt x 116.50575pt.
+
+[26<./boxPlotExample.png>]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-18-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1444 ...ain_files/figure-latex/unnamed-chunk-18-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-19-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1457 ...ain_files/figure-latex/unnamed-chunk-19-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[27]
+Rozdział 3.
+
+LaTeX Warning: File `_main_files/figure-latex/rwcWeight-1.pdf' not found on inpu
+t line 1522.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/rwcWeight-1.pdf' not
+ found: using draft setting.
 
 See the luatex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.889 ...n_files/figure-latex/unnamed-chunk-7-1.pdf}
+l.1522 ...{_main_files/figure-latex/rwcWeight-1.pdf}
                                                   
-? x
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
+
+Overfull \hbox (1.95374pt too wide) in paragraph at lines 1543--1547
+\TU/Cambria(0)/m/n/10 131 ki-lo-gra-mów. Gdy-byśby-śmy mie-li pe-cha i wy-lo-
+so-wa-li te skraj-nie nie-praw-dzi-we war-to-ści
+ []
+
+[28
+
+]
+
+LaTeX Warning: File `_main_files/figure-latex/wagaSrednia-1.pdf' not found on in
+put line 1584.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/wagaSrednia-1.pdf' n
+ot found: using draft setting.
+
+See the luatex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1584 ...main_files/figure-latex/wagaSrednia-1.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[29]
+
+LaTeX Warning: File `_main_files/figure-latex/wiekKnR-1.pdf' not found on input 
+line 1647.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/wiekKnR-1.pdf' not f
+ound: using draft setting.
+
+See the luatex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1647 ...cs{_main_files/figure-latex/wiekKnR-1.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[30]
+
+LaTeX Warning: File `_main_files/figure-latex/wiekSredni-1.pdf' not found on inp
+ut line 1718.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/wiekSredni-1.pdf' no
+t found: using draft setting.
+
+See the luatex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1718 ..._main_files/figure-latex/wiekSredni-1.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (11.53734pt too wide) in paragraph at lines 1722--1725
+[]\TU/Cambria(0)/m/n/10 Ob-ser-wu-je-my to sa-mo co w przy-pad-ku wa-gi rug-bysb
+y-stów: im więk-sza pró-ba tym do-kład-niej-
+ []
+
+[31]
+
+! LaTeX Error: File `_main_files/figure-latex/normalApprox-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1762 ...]{_main_files/figure-latex/normalApprox-1}
+                                                   \caption{Rozkład normaln...
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[32]
+
+LaTeX Warning: File `_main_files/figure-latex/rozkladP-1.pdf' not found on input
+ line 1837.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/rozkladP-1.pdf' not 
+found: using draft setting.
+
+See the luatex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1837 ...s{_main_files/figure-latex/rozkladP-1.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[33] [34] [35] [36]
+LaTeX Font Info:    Font shape `TU/Cambria(0)/b/it' will be
+(Font)              scaled to size 10.0pt on input line 2025.
+ [37] [38]
+Rozdział 4.
+<./DiagramMetod.png, id=432, 693.59125pt x 273.02pt>
+File: ./DiagramMetod.png Graphic file (type png)
+<use ./DiagramMetod.png>
+Package luatex.def Info: ./DiagramMetod.png  used on input line 2088.
+(luatex.def)             Requested size: 320.10359pt x 126.00314pt.
+[39
+
+<./DiagramMetod.png>] [40] [41] [42] [43]
+Underfull \vbox (badness 3068) has occurred while \output is active []
+
+ [44]
+[45]
+<./TestFlowChart.png, id=476, 502.87875pt x 296.10625pt>
+File: ./TestFlowChart.png Graphic file (type png)
+<use ./TestFlowChart.png>
+Package luatex.def Info: ./TestFlowChart.png  used on input line 2523.
+(luatex.def)             Requested size: 266.73932pt x 157.06206pt.
+LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 2551.
+LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 2551.
+LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 2551.
+LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 2551.
+ [46<./TestFlowChart.png>]
+
+LaTeX Warning: File `_main_files/figure-latex/unnamed-chunk-42-1.pdf' not found 
+on input line 2618.
+
+
+! Package luatex.def Error: File `_main_files/figure-latex/unnamed-chunk-42-1.p
+df' not found: using draft setting.
+
+See the luatex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2618 ...files/figure-latex/unnamed-chunk-42-1.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \vbox (badness 3849) has occurred while \output is active []
+
+ [47]
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 2745--2745
+[]\TU/lmtt/m/n/10 ## Kruskal-Wallis chi-squared = 1.5145, df = 3, p-
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 2748--2752
+[]\TU/Cambria(0)/m/n/10 Praw-do-po-do-bień-stwo tak du-żych róż-nic w war-to
+-ściach śred-nich przy
+ []
+
+
+Underfull \hbox (badness 6808) in paragraph at lines 2748--2752
+\TU/Cambria(0)/m/n/10 za-ło-że-niu, że śred-nie we wszyst-kich gru-pach s
+ą iden-tycz-ne wy-no-si
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-49-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2785 ...ain_files/figure-latex/unnamed-chunk-49-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[50]
+<./correlation_expl.png, id=521, 794.97pt x 578.16pt>
+File: ./correlation_expl.png Graphic file (type png)
+<use ./correlation_expl.png>
+Package luatex.def Info: ./correlation_expl.png  used on input line 2823.
+(luatex.def)             Requested size: 352.11688pt x 256.085pt.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-52-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2864 ...ain_files/figure-latex/unnamed-chunk-52-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[51]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52<./correlation_expl.png>] [53]
+<./kmnk_roznice.png, id=550, 441.90094pt x 343.2825pt>
+File: ./kmnk_roznice.png Graphic file (type png)
+<use ./kmnk_roznice.png>
+Package luatex.def Info: ./kmnk_roznice.png  used on input line 2943.
+(luatex.def)             Requested size: 284.54181pt x 221.04099pt.
+ [54<./kmnk_roznice.png>] [55]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-54-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3058 ...ain_files/figure-latex/unnamed-chunk-54-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[56]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-57-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3096 ...ain_files/figure-latex/unnamed-chunk-57-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[57] [58] [59] [60]
+Overfull \hbox (15.73724pt too wide) in paragraph at lines 3348--3363
+[][] 
+ []
+
+
+Overfull \hbox (6.87982pt too wide) in paragraph at lines 3374--3389
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [61]
+Overfull \hbox (6.87982pt too wide) in paragraph at lines 3416--3430
+[][] 
+ []
+
+
+Overfull \hbox (1.34271pt too wide) in paragraph at lines 3434--3447
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
+[63] [64]
+<./ROCcurve.png, id=614, 649.42625pt x 609.27625pt>
+File: ./ROCcurve.png Graphic file (type png)
+<use ./ROCcurve.png>
+Package luatex.def Info: ./ROCcurve.png  used on input line 3587.
+(luatex.def)             Requested size: 266.75204pt x 250.2604pt.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-68-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3618 ...ain_files/figure-latex/unnamed-chunk-68-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (1.34271pt too wide) in paragraph at lines 3657--3667
+[][] 
+ []
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-74-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3685 ...ain_files/figure-latex/unnamed-chunk-74-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[65] [66<./ROCcurve.png>] [67] [68] [69]
+Rozdział 5.
+[70
+
+] [71]
+<./pomiar_ses-cropped.png, id=680, 1276.77pt x 511.9125pt>
+File: ./pomiar_ses-cropped.png Graphic file (type png)
+<use ./pomiar_ses-cropped.png>
+Package luatex.def Info: ./pomiar_ses-cropped.png  used on input line 3949.
+(luatex.def)             Requested size: 320.08789pt x 128.33711pt.
+ [72]
+Underfull \vbox (badness 2205) has occurred while \output is active []
+
+ [73<./pomiar_ses-cropped.png>] [74]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-77-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4087 ...ain_files/figure-latex/unnamed-chunk-77-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-78-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4098 ...ain_files/figure-latex/unnamed-chunk-78-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-79-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4102 ...ain_files/figure-latex/unnamed-chunk-79-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-80-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4106 ...ain_files/figure-latex/unnamed-chunk-80-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-81-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4111 ...ain_files/figure-latex/unnamed-chunk-81-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (5.53627pt too wide) has occurred while \output is active
+\TU/Cambria(0)/m/sl/10 5.2. Wiedza na tem-at szkodli-woś-ci pale-nia i jej uwar
+unk-owa-nia wśród stu-den-tów PSW \TU/Cambria(0)/m/n/10 75
+ []
+
+[75] [76]
+Overfull \hbox (5.53627pt too wide) has occurred while \output is active
+\TU/Cambria(0)/m/sl/10 5.2. Wiedza na tem-at szkodli-woś-ci pale-nia i jej uwar
+unk-owa-nia wśród stu-den-tów PSW \TU/Cambria(0)/m/n/10 77
+ []
+
+[77]
+Overfull \hbox (4.12439pt too wide) in paragraph at lines 4342--4344
+[]\TU/Cambria(0)/m/n/10 In-ter-pre-ta-cja wy-ni-ków te-stu Bec-ka: 0--19 bra-k/
+ła-god-na de-pre-sja; 20--25 umiar-kowako-wa-na;
+ []
+
+[78]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-93-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4380 ...ain_files/figure-latex/unnamed-chunk-93-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-94-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4384 ...ain_files/figure-latex/unnamed-chunk-94-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-95-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4388 ...ain_files/figure-latex/unnamed-chunk-95-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-96-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4393 ...ain_files/figure-latex/unnamed-chunk-96-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[79] [80] [81] [82]
+Overfull \hbox (7.452pt too wide) in paragraph at lines 4671--4687
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83]
+
+! LaTeX Error: File `_main_files/figure-latex/unnamed-chunk-108-1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4717 ...in_files/figure-latex/unnamed-chunk-108-1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \vbox (badness 2635) has occurred while \output is active []
+
+ [84]
+[85] [86] [87]
+Overfull \hbox (17.14333pt too wide) in paragraph at lines 5153--5158
+[]\TU/Cambria(0)/m/n/10 Miej-sce pra-cy \chineseFont □ \TU/Cambria(0)/m/n/10 
+Od-dział za-bie-go-wy \chineseFont □ \TU/Cambria(0)/m/n/10 Od-dział za-cho-w
+awcwaw-czy \chineseFont □ \TU/Cambria(0)/m/n/10 Przy-chod-nia-/po-rad-
+ []
+
+[88
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+] [89
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+Missing character: There is no ☒ (U+2612) in font NotoSansTC-Regular!
+]
+Underfull \hbox (badness 10000) in paragraph at lines 5321--5322
+[]\TU/Cambria(0)/m/n/10 (Zde-cy-do-wa-nie niesatysfakcjonująca-Niesatysfakcjonu
+jąca-TP-Satysfakcjonująca-
+ []
+
+[90] [91] [92]
+Rozdział 6.
+<./jamovi_main_screen.png, id=1024, 965.85844pt x 625.58719pt>
+File: ./jamovi_main_screen.png Graphic file (type png)
+<use ./jamovi_main_screen.png>
+Package luatex.def Info: ./jamovi_main_screen.png  used on input line 5500.
+(luatex.def)             Requested size: 337.87866pt x 218.84424pt.
+[93
+
+<./jamovi_main_screen.png>] [94]
+<./GoogleFormsTestA.png, id=1050, 938.75719pt x 257.46187pt>
+File: ./GoogleFormsTestA.png Graphic file (type png)
+<use ./GoogleFormsTestA.png>
+Package luatex.def Info: ./GoogleFormsTestA.png  used on input line 5578.
+(luatex.def)             Requested size: 337.86638pt x 92.66261pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5583--5593
+\TU/lmtt/m/n/10 biorąc jestem zadowolony ze swojej pracy \TU/Cambria(0)/m/n/10
+ (\TU/lmtt/m/n/10 C\TU/Cambria(0)/m/n/10 ), \TU/lmtt/m/n/10 Ogólnie rzecz bior
+ąc,
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 5583--5593
+\TU/lmtt/m/n/10 lubię tu pracować \TU/Cambria(0)/m/n/10 (\TU/lmtt/m/n/10 D\TU
+/Cambria(0)/m/n/10 ), \TU/lmtt/m/n/10 Jakie według Ciebie choroby układu oddec
+howego
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5583--5593
+\TU/lmtt/m/n/10 mogą być spowodowane bezpośrednio przez palenie papierosów? \TU/Cambria(0)/m/n/10 (\TU/lmtt/m/n/10 E\TU/Cambria(0)/m/n/10 ),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5583--5593
+\TU/lmtt/m/n/10 Często poważnie rozważam odejście z obecnej pracy \TU/Cambr
+ia(0)/m/n/10 (\TU/lmtt/m/n/10 F\TU/Cambria(0)/m/n/10 ), \TU/lmtt/m/n/10 Zamierza
+m
+ []
+
+<./GoogleFormsTestHdr.png, id=1052, 956.82469pt x 204.765pt>
+File: ./GoogleFormsTestHdr.png Graphic file (type png)
+<use ./GoogleFormsTestHdr.png>
+Package luatex.def Info: ./GoogleFormsTestHdr.png  used on input line 5614.
+(luatex.def)             Requested size: 337.87204pt x 72.3062pt.
+
+Underfull \hbox (badness 2600) in paragraph at lines 5625--5629
+[]\TU/Cambria(0)/m/n/10 Py-ta-nia ozna-czo-ne ja-ko \TU/lmtt/m/n/10 s1\TU/Cambr
+ia(0)/m/n/10 /\TU/lmtt/m/n/10 s2\TU/Cambria(0)/m/n/10 /\TU/lmtt/m/n/10 s3 \TU/C
+ambria(0)/m/n/10 mie-rzą \TU/Cambria(0)/b/n/10 sa-tys-fak-cję z pra-cy\TU/Cam
+bria(0)/m/n/10 ; py-ta-nia
+ []
+
+[95<./GoogleFormsTestA.png>]
+<./Jamovi_data_import.png, id=1063, 966.61125pt x 524.71031pt>
+File: ./Jamovi_data_import.png Graphic file (type png)
+<use ./Jamovi_data_import.png>
+Package luatex.def Info: ./Jamovi_data_import.png  used on input line 5639.
+(luatex.def)             Requested size: 337.87653pt x 183.41116pt.
+
+Underfull \hbox (badness 2205) in paragraph at lines 5650--5655
+\TU/Cambria(0)/m/n/10 tych zmien-nych chce-my zmie-nić (prze-ko-do-wać) na ran
+-gi wg sche-ma-tu:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5650--5655
+\TU/lmtt/m/n/10 Zdecydowanie się nie zgadzam \TU/Cambria(0)/m/n/10 = 1; \TU/lm
+tt/m/n/10 Nie zgadzam się \TU/Cambria(0)/m/n/10 = 2; \TU/lmtt/m/n/10 Trudno
+ []
+
+[96<./GoogleFormsTestHdr.png><./Jamovi_data_import.png>]
+Underfull \hbox (badness 1199) in paragraph at lines 5688--5692
+[]\TU/Cambria(0)/m/n/10 War-to-ści zmien-nych \TU/lmtt/m/n/10 wiek \TU/Cambria
+(0)/m/n/10 oraz \TU/lmtt/m/n/10 staz \TU/Cambria(0)/m/n/10 są licz-ba-mi. Mo-g
+ą być ana-li-zo-wa-ne
+ []
+
+<./przeksztalcenie_0.png, id=1072, 964.35281pt x 310.91156pt>
+File: ./przeksztalcenie_0.png Graphic file (type png)
+<use ./przeksztalcenie_0.png>
+Package luatex.def Info: ./przeksztalcenie_0.png  used on input line 5710.
+(luatex.def)             Requested size: 337.86699pt x 108.92978pt.
+[97<./przeksztalcenie_0.png>]
+<./przeksztalcenie_1.png, id=1084, 951.555pt x 308.65312pt>
+File: ./przeksztalcenie_1.png Graphic file (type png)
+<use ./przeksztalcenie_1.png>
+Package luatex.def Info: ./przeksztalcenie_1.png  used on input line 5721.
+(luatex.def)             Requested size: 337.86972pt x 109.59381pt.
+<./przeksztalcenie_1p.png, id=1086, 951.555pt x 318.43968pt>
+File: ./przeksztalcenie_1p.png Graphic file (type png)
+<use ./przeksztalcenie_1p.png>
+Package luatex.def Info: ./przeksztalcenie_1p.png  used on input line 5770.
+(luatex.def)             Requested size: 337.86972pt x 113.06874pt.
+ [98<./przeksztalcenie_1.png>]
+<./przeksztalcenie_3.png, id=1096, 947.79094pt x 315.42844pt>
+File: ./przeksztalcenie_3.png Graphic file (type png)
+<use ./przeksztalcenie_3.png>
+Package luatex.def Info: ./przeksztalcenie_3.png  used on input line 5788.
+(luatex.def)             Requested size: 337.86374pt x 112.44232pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5796--5807
+\TU/lmtt/m/n/10 płuc \TU/Cambria(0)/m/n/10 (B), \TU/lmtt/m/n/10 Przewlekłe zap
+alenie oskrzeli\TU/Cambria(0)/m/n/10 , \TU/lmtt/m/n/10 Infekcje dróg oddechowyc
+h\TU/Cambria(0)/m/n/10 ,
+ []
+
+
+Overfull \hbox (326.84056pt too wide) in paragraph at lines 5814--5814
+[]\TU/lmtt/m/n/10 ...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;Ale
+rgie wziewne;Gruźlica;Zapalenie płuc;Przewlekłe zapalenie oskrzeli,...[] 
+ []
+
+[99<./przeksztalcenie_1p.png><./przeksztalcenie_3.png>]
+Overfull \hbox (95.84056pt too wide) in paragraph at lines 5817--5817
+[]\TU/lmtt/m/n/10 ...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;Inf
+ekcje dróg oddechowych,...[] 
+ []
+
+<./przeksztalcenie_4.png, id=1107, 948.54375pt x 261.97874pt>
+File: ./przeksztalcenie_4.png Graphic file (type png)
+<use ./przeksztalcenie_4.png>
+Package luatex.def Info: ./przeksztalcenie_4.png  used on input line 5833.
+(luatex.def)             Requested size: 337.87157pt x 93.3169pt.
+<./przeksztalcenie_contains.png, id=1108, 942.52126pt x 286.82156pt>
+File: ./przeksztalcenie_contains.png Graphic file (type png)
+<use ./przeksztalcenie_contains.png>
+Package luatex.def Info: ./przeksztalcenie_contains.png  used on input line 5837
+.
+(luatex.def)             Requested size: 337.86923pt x 102.81802pt.
+[100<./przeksztalcenie_4.png><./przeksztalcenie_contains.png>]
+<./zmienna_satysfakcja.png, id=1118, 948.54375pt x 234.1247pt>
+File: ./zmienna_satysfakcja.png Graphic file (type png)
+<use ./zmienna_satysfakcja.png>
+Package luatex.def Info: ./zmienna_satysfakcja.png  used on input line 5908.
+(luatex.def)             Requested size: 337.87157pt x 83.39528pt.
+ [101]
+<./statystyki_opisowe_okno.png, id=1129, 948.54375pt x 519.44063pt>
+File: ./statystyki_opisowe_okno.png Graphic file (type png)
+<use ./statystyki_opisowe_okno.png>
+Package luatex.def Info: ./statystyki_opisowe_okno.png  used on input line 5940.
+
+(luatex.def)             Requested size: 337.87157pt x 185.0249pt.
+ [102<./zmienna_satysfakcja.png><./statystyki_opisowe_okno.png>]
+<./statystyki_opisowe_wynik.png, id=1139, 942.52126pt x 536.75531pt>
+File: ./statystyki_opisowe_wynik.png Graphic file (type png)
+<use ./statystyki_opisowe_wynik.png>
+Package luatex.def Info: ./statystyki_opisowe_wynik.png  used on input line 5954
+.
+(luatex.def)             Requested size: 337.86923pt x 192.41273pt.
+<./tabele_krzyzowe.png, id=1141, 950.80219pt x 559.33969pt>
+File: ./tabele_krzyzowe.png Graphic file (type png)
+<use ./tabele_krzyzowe.png>
+Package luatex.def Info: ./tabele_krzyzowe.png  used on input line 5976.
+(luatex.def)             Requested size: 337.87808pt x 198.76755pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5982--5984
+\TU/Cambria(0)/m/n/10 Wy-bie-ra-my \TU/lmtt/m/n/10 Analizy\chineseFont →\TU/l
+mtt/m/n/10 Testy t\chineseFont →\TU/lmtt/m/n/10 Test t dla prób niezależnych
+ \TU/Cambria(0)/m/n/10 i/lub
+ []
+
+<./testy.png, id=1143, 950.04938pt x 540.51938pt>
+File: ./testy.png Graphic file (type png)
+<use ./testy.png>
+Package luatex.def Info: ./testy.png  used on input line 5989.
+(luatex.def)             Requested size: 337.87149pt x 192.228pt.
+
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+ [103<./statystyki_opisowe_wynik.png>] [104<./tabele_krzyzowe.png><./testy.png>]
+<./regresja_liniowa.png, id=1162, 947.79094pt x 540.51938pt>
+File: ./regresja_liniowa.png Graphic file (type png)
+<use ./regresja_liniowa.png>
+Package luatex.def Info: ./regresja_liniowa.png  used on input line 6005.
+(luatex.def)             Requested size: 337.86374pt x 192.68161pt.
+ [105<./regresja_liniowa.png>]
+The property list \polyglossia@langsetup contains the pairs (without outer
+braces):
+>  {latex/script}  =>  {latin}
+>  {latex/lcscript}  =>  {latin}
+>  {latex/scripttag}  =>  {}
+>  {latex/language}  =>  {Latex}
+>  {latex/langtag}  =>  {ENG}
+>  {latex/bcp47}  =>  {}
+>  {latex/hyphennames}  =>  {english}
+>  {latex/direction}  =>  {LR}
+>  {latex/hyphenmins}  =>  {2,3}
+>  {latex/frenchspacing}  =>  {false}
+>  {latex/indentfirst}  =>  {false}
+>  {latex/fontsetup}  =>  {true}
+>  {latex/envname}  =>  {latex}
+>  {latex/babelname}  =>  {latex}
+>  {latex/localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {latex/Localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {polish/script}  =>  {latin}
+>  {polish/lcscript}  =>  {latin}
+>  {polish/scripttag}  =>  {}
+>  {polish/language}  =>  {Polish}
+>  {polish/langtag}  =>  {PLK}
+>  {polish/bcp47}  =>  {pl}
+>  {polish/hyphennames}  =>  {polish}
+>  {polish/direction}  =>  {LR}
+>  {polish/hyphenmins}  =>  {2,2}
+>  {polish/frenchspacing}  =>  {true}
+>  {polish/indentfirst}  =>  {false}
+>  {polish/fontsetup}  =>  {true}
+>  {polish/envname}  =>  {polish}
+>  {polish/babelname}  =>  {polish}
+>  {polish/localnumeral}  =>  {polyglossia@C@localnumeral}
+>  {polish/Localnumeral}  =>  {polyglossia@C@localnumeral}.
+ [106
+
+] (./_main.aux
+LaTeX Info: Redefining \rmfamily on input line 21.
+LaTeX Info: Redefining \sffamily on input line 21.
+LaTeX Info: Redefining \ttfamily on input line 21.
+))
 
 Here is how much of LuaTeX's memory you used:
- 36183 strings out of 478824
- 125086,1373583 words of node,token memory allocated 7510 words of node memory still in use:
-   56 hlist, 2 vlist, 18 rule, 39 disc, 9 local_par, 1 dir, 129 glue, 97 kern, 2
-3 penalty, 7 margin_kern, 524 glyph, 138 attribute, 63 glue_spec, 138 attribute_
-list, 1 temp, 7 if_stack, 2 write, 1 user_defined, 24 pdf_literal, 2 pdf_dest, 3
- pdf_action, 30 pdf_colorstack nodes
-   avail lists: 1:3,2:697,3:452,4:80,5:688,6:31,7:5980,8:68,9:401,10:19,11:361
- 54404 multiletter control sequences out of 65536+600000
- 92 fonts using 31840463 bytes
- 101i,7n,125p,509b,1051s stack positions out of 5000i,500n,10000p,200000b,200000s
-</home/tomek/.fonts/cambria.ttc></home/tomek/.fonts/cambria.ttc></home/tomek/.fo
-nts/cambriai.ttf></home/tomek/.fonts/cambriab.ttf></home/tomek/.fonts/cambria.tt
-c>
-Output written on _main.pdf (18 pages, 761748 bytes).
+ 40486 strings out of 478824
+ 125086,1648299 words of node,token memory allocated
+ 1551 words of node memory still in use:
+   30 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 119 attribute, 62 glue_s
+pec, 119 attribute_list, 2 write, 1 user_defined, 24 pdf_literal, 11 pdf_action,
+ 24 pdf_colorstack nodes
+   avail lists: 1:4,2:1268,3:648,4:170,5:1224,6:107,7:10603,8:113,9:648,10:28,11
+:1344
+ 56529 multiletter control sequences out of 65536+600000
+ 99 fonts using 41530207 bytes
+ 101i,11n,116p,1001b,1077s stack positions out of 5000i,500n,10000p,200000b,200000s
+</home/tomek/.fonts/cambriaz.ttf></home/tomek/.fonts/cambria.ttc></usr/share/tex
+mf/fonts/opentype/public/lm/lmmono10-regular.otf></home/tomek/.fonts/cambria.ttc
+></home/tomek/.fonts/cambria.ttc></home/tomek/.fonts/cambria.ttc></home/tomek/.f
+onts/NotoSansTC-Regular.otf></home/tomek/.fonts/cambriai.ttf></home/tomek/.fonts
+/cambriab.ttf></home/tomek/.fonts/cambria.ttc>
+Output written on _main.pdf (106 pages, 3466324 bytes).
 
-PDF statistics: 208 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
- 54 named destinations out of 1000 (max. 131072)
- 241 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1394 PDF objects out of 1440 (max. 8388607)
+ 1178 compressed objects within 12 object streams
+ 591 named destinations out of 1000 (max. 131072)
+ 592 words of extra memory for PDF output out of 10000 (max. 100000000)
 

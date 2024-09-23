@@ -1,9 +1,9 @@
-# Łagodne wprowadzenie z Jamovi {#intro2jamovi}
+# Praca z programem Jamovi {#intro2jamovi}
 
 Jak wspomniano w rozdziale 1, statystkę można uprawiać (tj. liczyć statystyki w drugim tego słowa znaczeniu :-))
 wykorzystując różne programy. My zdecydowaliśmy się promować **Jamovi**, program 
-który naszym zdaniem jest najlepszym -- z punktu widzenia większości
-studentów Nauk o Zdrowiu -- połączeniem ceny, możliwości, prostoty i łatwości nauki.
+który naszym zdaniem jest najlepszym – z punktu widzenia większości
+studentów Nauk o Zdrowiu – połączeniem ceny, możliwości, prostoty i łatwości nauki.
 
 
 ## Podstawy pracy z Jamovi 
@@ -27,14 +27,14 @@ knitr::include_graphics("./jamovi_main_screen.png")
 Menu akcji umożliwia wykonanie podstawowych akcji: 
 
 * wczytanie danych i zapisanie danych (pierwsza pozycja menu oznaczona jako
-  trzy poziome kreski)
+  trzy poziome kreski);
 
 * podgląd (w sensie skontrolowania wartości zmiennych) i modyfikację 
-  danych (pozycje **Zmienne** oraz **Dane**)
+  danych (pozycje **Zmienne** oraz **Dane**);
 
-* wykonanie obliczeń (pozycja **Analizy**)
+* wykonanie obliczeń (pozycja **Analizy**);
 
-* modyfikowanie raportu (pozycja **Edit**)
+* modyfikowanie raportu (pozycja **Edit**).
 
 
 Typowa sesja w **Jamovi**:
@@ -49,25 +49,25 @@ Typowa sesja w **Jamovi**:
 
 3. Wykonanie obliczeń: 
 
-   1. Analiza struktury (**Eksploracja**), 
-   2. Analiza zależności między zmienną liczbową a nominalną (*testy t*/**ANOVA**),
+   1. Analiza struktury (**Eksploracja**).
+   2. Analiza zależności między zmienną liczbową a nominalną (*testy t*/**ANOVA**).
    3. Analiza zależności między zmiennymi liczbowymi: współczynnik korelacji
-      liniowej/macierz korelacji (*Regresja*)
+      liniowej/macierz korelacji (*Regresja*).
    4. Analiza zależności między zmienną liczbową a zmiennymi liczbowymi/nominalnymi:
-      regresja liniowa i logistyczna (**Regresja**)
+      regresja liniowa i logistyczna (**Regresja**).
    5. Analiza zależności między zmiennymi nominalnymi: tablica wielodzielcza, test
-      chi-kwadrat zgodności (*Częstości*)
+      chi-kwadrat zgodności (*Częstości*).
     
    Wykonanie obliczeń jest banalnie proste i sprowadza się do wybrania myszką odpowiednich
-   zmiennych oraz procedury która ma być wykonana. 
+   zmiennych oraz procedury, która ma być wykonana. 
    Wynik obliczeń pojawia się natychmiast w **oknie wyników**. Jeżeli coś 
    nam nie wyszło można procedurę poprawić a poprzedni wynik usunąć z okna wynikowego.
    
 4. Zapisania  danych (pozycja trzy poziome kreski). Po skończeniu pracy wynik można
-   zapisać żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
-   pracę kontynuować bo wykładowca chciał żebyśmy coś poprawili.
+   zapisać, żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
+   pracę kontynuować, bo wykładowca chciał żebyśmy coś poprawili.
    
-## Analiza ankiety: satysfakcja--wiedza o paleniu--zamiar odejścia
+## Analiza ankiety: satysfakcja – wiedza o paleniu – zamiar odejścia
 
 Przykład nieco absurdalny, ale za to w zwartej postaci ilustrujący 
 praktyczne sposoby transformacji danych oraz
@@ -87,17 +87,17 @@ knitr::include_graphics("./GoogleFormsTestA.png")
 
 Ankieta składa się z 10 następujących pytań:
 
-`Ogólnie rzecz biorąc nie lubię swojej pracy`	(kolumna `B`),
-`Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy` (`C`),
-`Ogólnie rzecz biorąc, lubię tu pracować`	(`D`),
-`Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
-bezpośrednio przez palenie papierosów?` (`E`),
-`Często poważnie rozważam odejście z obecnej pracy` (`F`),
-`Zamierzam rzucić obecną pracę`	(`G`),
-`Zacząłem szukać innej pracy` (`H`),
-`Płeć`	(`I`),
-`Wiek (w latach)`	 (`J`),
-oraz `Staż pracy` (`K`).
+Ogólnie rzecz biorąc nie lubię swojej pracy (kolumna `B`),
+Ogólnie rzecz biorąc jestem zadowolony ze swojej pracy (`C`),
+Ogólnie rzecz biorąc, lubię tu pracować	(`D`),
+Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
+  bezpośrednio przez palenie papierosów? (`E`),
+Często poważnie rozważam odejście z obecnej pracy (`F`),
+Zamierzam rzucić obecną pracę	(`G`),
+Zacząłem szukać innej pracy (`H`),
+Płeć (`I`),
+Wiek (w latach) (`J`),
+oraz Staż pracy (`K`).
 
 Ponadto Formularz Googla dodał automatycznie sygnaturę czasową
 jako zawartość pierwszej kolumny (`A`).
@@ -108,10 +108,10 @@ można nimi wygodnie posługiwać. Jednocześnie nie powinny być za krótkie ż
 od razu było widać jakie dane zawiera zmienna.
 
 Jak widać
-pytania z kolumn `B`--`C` mierzą to samo (satysfakcję) 
+pytania z kolumn `B`–`D` mierzą to samo (satysfakcję) 
 więc zmieniamy im nazwę na bardziej zwartą `s1`, `s2` oraz `s3` (`s` od satysfakcja). 
 Podobnie
-ponieważ pytania z kolumn `F`--`H` też mierzą to samo (zamiar odejścia), to
+ponieważ pytania z kolumn `F`–`H` też mierzą to samo (zamiar odejścia), to
 też zmieniamy nazwy na coś krótszego: `zo1`, `zo2`, `zo3`. Kolumnę `E` nazywamy
 `wiedza_nt_palenia` a kolumny `I`, `J` oraz `K` odpowiednio:
 `plec`, `wiek` oraz `staz`.
@@ -130,19 +130,19 @@ Reasumując:
 
 * Pytania oznaczone jako `s1`/`s2`/`s3` mierzą
   **satysfakcję z pracy**; pytania `zo1`/`zo2`/`zo3` mierzą **zamiar odejścia
-  z pracy**. Pytania `s1`--`s3` oraz `zo1`--`zo3` są pytaniami jednokrotnego wyboru.
+  z pracy**. Pytania `s1`–`s3` oraz `zo1`–`zo3` są pytaniami jednokrotnego wyboru.
   
 * Pytanie oznaczone jako `wiedza_nt_palenia` mierzy wiedzę na temat palenia tytoniu.
   Jest to przykład wykorzystania pytania z wielokrotnym wyborem.
 
 * Pytania `plec`, `wiek`, `staz` mierzą płeć (`kobieta`/`mężczyzna`), wiek (lata ukończone)
-  oraz staż pracy (lata przepracowane)
+  oraz staż pracy (lata przepracowane).
   
-* Pierwsza kolumna nie jest potrzebna ale jest dodawana przez aplikację Formularze Google.
+* Pierwsza kolumna nie jest potrzebna, ale jest dodawana przez aplikację Formularze Google.
 
 
 ```{r dataimport, out.width=jamovi.screen, fig.cap = "Import danych"}
-knitr::include_graphics("./Jamovi_data_import.png")
+knitr::include_graphics("./jamovi_data_import_small.png")
 ```
 
 ### Przekodowanie danych
@@ -150,7 +150,7 @@ knitr::include_graphics("./Jamovi_data_import.png")
 Zwykle zawartość arkusza zawierającego wyniki ankiety wymaga przekodowania.
 W naszym przykładzie należy wykonać:
 
-* Zmienne `s1`--`s3` oraz `zo1`--`zo3` są mierzone w skali porządkowej. Wartości tych zmiennych
+* Zmienne `s1`–`s3` oraz `zo1`–`zo3` są mierzone w skali porządkowej. Wartości tych zmiennych
   chcemy zmienić (przekodować) na rangi wg schematu: `Zdecydowanie się nie zgadzam` = 1;
   `Nie zgadzam się` = 2; `Trudno powiedzieć` = 3 itd.
   Dodatkowo zauważmy że `s1` jest pytaniem odwróconym. 
@@ -176,7 +176,7 @@ My o tym wiemy, że tak jest bez sensu ale pokazujemy jako przykład przekodowan
 pytania z wielokrotnym wyborem.
 
 * Wartości zmiennych `wiek` oraz `staz` są liczbami. Mogą być analizowane tak-jak-są
-(regresja/korelacja) ale można też je przekodować na wartości nominalne
+(regresja/korelacja), ale można też je przekodować na wartości nominalne
 (mały-średni-duży staż) i zastosować metody z grupy zmienna-liczbowa/zmienna nominalna
 (takie jak test ANOVA czy Kruskala-Wallisa)
 
@@ -192,18 +192,18 @@ z przekodowanymi wartościami. Zmienna na podstawie której jest tworzona
 nowa zmienna nazywa się źródłową (`s1` w naszym przykładzie jest źródłowa.)
 
 ```{r przeksztalcenie0, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
-knitr::include_graphics("./przeksztalcenie_0.png")
+knitr::include_graphics("./jamovi_przeksztalcenie_0_small.png")
 ```
 
 Wpisujemy sensowną nazwę (na przykład `s1p` od przekodowana). Jak będziemy
 używać sensownych nazwa łatwiej będzie nam się pracowało. Dobrze jest
 też podać w opisie co zawiera zmienna.
 
-Klikamy w pole wyboru na dole (obok napisu `za pomocą przekształcenia`)
+Klikamy w pole wyboru na dole (obok napisu `za pomocą przekształcenia`).
 Powinniśmy zobaczyć coś podobnego do tego co widać na rysunku \@ref(fig:przeksztalcenie1).
 
 ```{r przeksztalcenie1, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
-knitr::include_graphics("./przeksztalcenie_1.png")
+knitr::include_graphics("./jamovi_przeksztalcenie_1.png")
 ```
 
 Wybieramy `Utwórz nowe przekształcenie`. Wpisujemy sensowną nazwę
@@ -224,10 +224,10 @@ IF (warunek, jeżeli-prawda, jeżeli-fałsz)
 
 `Warunek` to fragment `$source=="Zdecydowanie się nie zgadzam"`:
 
-* `$source` oznacza bieżącą wartość zmiennej źródłowej
+* `$source` oznacza bieżącą wartość zmiennej źródłowej;
 
 * `==` to **operator** równości; jest więcej operatorów, które można
-  wybrać z menu
+  wybrać z menu;
 
 * `$source=="Zdecydowanie się nie zgadzam"` oznacza, że jeżeli 
   bieżącą wartością w kolumnie źródłowej jest `Zdecydowanie się nie zgadzam`
@@ -246,10 +246,10 @@ bieżącą wartością w kolumnie źródłowej jest `Zdecydowanie się nie zgadz
 Ponieważ w naszym przykładzie mamy do przekodowania nie dwie a 5 wartości 
 musimy użyć 4 warunków, które
 są zagnieżdżone jeden w drugim. Można powyższe przepisać, można 
-też skopiować z podręcznika i wkleić do Jamovi (por. rys \@ref(fig:przeksztalcenie1p)).
+też skopiować z podręcznika i wkleić do Jamovi (por. rys. \@ref(fig:przeksztalcenie1p)).
 
 ```{r przeksztalcenie1p, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
-knitr::include_graphics("./przeksztalcenie_1p.png")
+knitr::include_graphics("./jamovi_przeksztalcenie_1p.png")
 ```
 
 Naciskamy Enter i gotowe. Zostaje utworzona zmienna `s1p`
@@ -257,27 +257,27 @@ zawierająca zamiast napisów rangi.
 
 Jeżeli uporaliśmy się z przekodowaniem `s1` 
 ustawiamy kursor na `s2` w okno danych. Naciskamy ikonę `Przekształcenie`.
-Upewniamy się że zmienną źródłową jest `s2`.
+Upewniamy się, że zmienną źródłową jest `s2`.
 Zmieniamy nazwę nowej zmiennej na `s2p`. Klikamy
 w pole wyboru przekształcenia. Poprzednio były tam tylko dwie pozycje
 `Brak` oraz `Utwórz nowe przekształcenie` teraz jest trzecia pozycja
-`Likert2R5` czyli przekształcenie które zdefiniowaliśmy dla zmiennej s1p.
+`Likert2R5` czyli przekształcenie, które zdefiniowaliśmy dla zmiennej `s1p`.
 Wybieramy `Likert2R5` bo zmienną `s2` chcemy przekodować dokładnie
 w ten sam sposób jak `s1`. Po wybraniu przekształcenia w oknie danych
-pojawia się nowa zmienna `s2p` (por. rys \@ref(fig:przeksztalcenie3)).
+pojawia się nowa zmienna `s2p` (por. rys. \@ref(fig:przeksztalcenie3)).
 
 
 ```{r przeksztalcenie3, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
-knitr::include_graphics("./przeksztalcenie_3.png")
+knitr::include_graphics("./jamovi_przeksztalcenie_3.png")
 ```
 
-W podobny łatwy sposób przekodowujemy `s3` oraz `zo1`, `zo2`, `zo3`
+W podobny łatwy sposób przekodowujemy `s3` oraz `zo1`, `zo2`, `zo3`.
 
 **Uwaga**: polecenie `IF` wpisujemy używając dużych liter. Słowo
 `$source` wpisujemy tak jak jest to zademonstrowane (`$Source` jest błędem.)
 
-Przekodowanie pytanie z możliwością wielokrotnego wyboru jest równie
-proste tyle że pisania jest więcej. Zmienna `wiedza_na_temat_palenia` może zawierać
+Przekodowanie pytania z możliwością wielokrotnego wyboru jest równie
+proste, tyle że pisania jest więcej. Zmienna `wiedza_na_temat_palenia` może zawierać
 do ośmiu następujących napisów oddzielonych średnikami:
 `Przewlekła obturacyjna choroba płuc`,
 `Astma oskrzelowa`,
@@ -294,10 +294,10 @@ W arkuszu lub oknie danych Jamovi ta zmienna wygląda jakoś tak:
 
 ```
 ...,Przewlekła obturacyjna choroba płuc,...
-...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;Alergie wziewne;Gruźlica;Zapalenie płuc;Przewlekłe zapalenie oskrzeli,...
+...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;...
 ...,Astma oskrzelowa,
 ...,Astma oskrzelowa;Gruźlica;Przewlekłe zapalenie oskrzeli,...
-...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;Infekcje dróg oddechowych,...
+...,Przewlekła obturacyjna choroba płuc;Astma oskrzelowa;...
 ```
 
 Należy zsumować wystąpienia poprawne i wystąpienia błędne. W tym celu trzeba utworzyć tyle
@@ -313,11 +313,11 @@ Jak to wygląda w oknie programu Jamovi przedstawiono na rysunkach \@ref(fig:prz
 oraz \@ref(fig:przeksztalcenieContains).
 
 ```{r przeksztalcenie4, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
-knitr::include_graphics("./przeksztalcenie_4.png")
+knitr::include_graphics("./jamovi_przeksztalcenie_4.png")
 ```
 
 ```{r przeksztalcenieContains, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
-knitr::include_graphics("./przeksztalcenie_contains.png")
+knitr::include_graphics("./jamovi_przeksztalcenie_contains_small.png")
 ```
 
 Funkcja CONTAINS wstawi 1 jeżeli `$source` zawiera `Przewlekła obturacyjna choroba płuc`.
@@ -341,7 +341,7 @@ Każda zmienna `wiedza1`...`wiedza8` zawiera 1 jeżeli ankietowany wskazał dany
 nie wskazał.
 
 Ostatnia sprawa to przekodowanie liczb na wartości nominalne. Przykładowo chcemy podzielić
-ankietowanych na grupy stażowe: mały (do pięciu lat), średni (5--15 lat), duży (16 i więcej) staż pracy.
+ankietowanych na grupy stażowe: mały (do pięciu lat), średni (5–15 lat), duży (16 i więcej) staż pracy.
 
 Wartości liczbowe stażu pracy zawiera zmienna `staz`. Aby ją przekodować
 należy użyć następującego przekształcenia:
@@ -371,7 +371,8 @@ realizuje `s1pr = 6 - s1p`. Satysfakcja to suma rang z trzech pytań:
 W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia się okno
 zmiennej wyliczonej zatytułowane `ZMIENNA WYLICZONA`
 
-Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego, w przykładzie
+Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego,
+w przykładzie
 jest to litera `H`) W polu definiowania zmiennej należy wpisać
 stosowną formułę matematyczną. W przypadku odwracania pytania `s1p` będzie to:
 
@@ -386,12 +387,12 @@ SUM(s1pr, s2p, s3p)
 ```
 
 ```{r zmiennaSatysfakcja, out.width=jamovi.screen, fig.cap = "Obliczanie nowej zmiennej"}
-knitr::include_graphics("./zmienna_satysfakcja.png")
+knitr::include_graphics("./jamovi_zmienna_satysfakcja.png")
 ```
 
-Oczywiście wcześniej musimy utworzyliśmy zmienną `s1pr`, inaczej Jamovi zgłosi błąd.
+Oczywiście wcześniej musimy utworzyć zmienną `s1pr`, inaczej Jamovi zgłosi błąd.
 
-Jeżeli nie chcemy sumy ale np. średnią powinniśmy użyć
+Jeżeli nie chcemy sumy, ale np. średnią powinniśmy użyć:
 
 ```
 MEAN(s1pr, s2p, s3p)
@@ -400,13 +401,13 @@ MEAN(s1pr, s2p, s3p)
 Inne funkcje matematyczne są dostępne po kliknięciu w pole wyboru znajdujące się po lewej
 stronie pola definiowania zmiennej.
 
-Powiedzieliśmy że miarą wiedzy nt. palenia będzie suma punktów uzyskanych za odpowiedzi prawidłowe minus
+Powiedzieliśmy, że miarą wiedzy nt. palenia będzie suma punktów uzyskanych za odpowiedzi prawidłowe minus
 suma punktów uzyskanych za odpowiedzi nieprawidłowe. Odpowiedzi prawidłowe to
-`w1p`, `w2p`, `w3p`, `w6` oraz `w7`. Odpowiedzi błędne to `w4p`, `w5p`, `w8p`. Zatem
+`w1p`, `w2p`, `w3p`, `w6p` oraz `w7p`. Odpowiedzi błędne to `w4p`, `w5p`, `w8p`. Zatem
 w polu definiowania zmiennej wpisujemy:
 
 ```
-SUM(w1p, w2p, w3p, w6, w7) - SUM(w4p, w5p, w8p)
+SUM(w1p, w2p, w3p, w6p, w7p) - SUM(w4p, w5p, w8p)
 ```
 
 ### Analiza struktury
@@ -414,29 +415,29 @@ SUM(w1p, w2p, w3p, w6, w7) - SUM(w4p, w5p, w8p)
 Wybieramy `Analizy`→`Eksploracja`→`Statystyki opisowe`.
 
 W wyświetlonym oknie po lewej deklarujemy co ma być liczone. Wynik
-pojawi się po prawej (por rysunek \@ref(fig:statystykiOpisoweOkno)).
+pojawi się po prawej (por. rys. \@ref(fig:statystykiOpisoweOkno)).
 
 ```{r statystykiOpisoweOkno, out.width=jamovi.screen, fig.cap = "Statystyki opisowe"}
-knitr::include_graphics("./statystyki_opisowe_okno.png")
+knitr::include_graphics("./jamovi_statystyki_opisowe_okno.png")
 ```
 
-Ustawiamy kursor na zmiennej która nas interesuje i klikamy w strzałkę górną.
+Ustawiamy kursor na zmiennej, która nas interesuje i klikamy w strzałkę górną.
 Jeżeli chcemy podzielić wartości zmiennej na grupy według jakiejś 
 zmiennej nominalnej, to ustawiamy kursor na tej zmiennej nominalnej
 (na przykład `plec`) i klikamy strzałkę dolną.
 
-Można analizować wiele zmiennych na raz (por. rysunek ref(fig:statystykiSpisoweWynik)).
+Można analizować wiele zmiennych na raz (por. rys. \@ref(fig:statystykiSpisoweWynik)).
 Wystarczy w tym celu ustawić
 kursor na zmiennej i kliknąć w odpowiednią strzałkę. Zawartość okna
 wynikowego zostanie automagicznie uaktualniona.
 
 ```{r statystykiSpisoweWynik, out.width=jamovi.screen, fig.cap = "Statystyki opisowe"}
-knitr::include_graphics("./statystyki_opisowe_wynik.png")
+knitr::include_graphics("./jamovi_statystyki_opisowe_wynik.png")
 ```
 
-Poniżej okien wyboru zmiennych są zakładki określające
-precyzyjnie co ma być obliczone oraz jakie wykresy mają
-zostać wyrysowane. Przykładowo domyślny wydruk nie zawiera
+Poniżej okien wyboru zmiennych są zakładki określające precyzyjnie, co ma
+być obliczone oraz jakie wykresy mają zostać wyrysowane.
+Przykładowo domyślny wydruk nie zawiera
 rozstępu kwartylowego. Żeby go dodać do wyniku należy
 w zakładce `Statystyki` zaznaczyć przycisk `IQR`.
 
@@ -452,42 +453,60 @@ wiedzieć jak postępować. Przykładową analizę zależności
 pomiędzy zmiennymi nominalnymi `zamiarOklasa` oraz `staz.klasa` przedstawia rysunek \@ref(fig:tabeleKrzyzowe).
 
 ```{r tabeleKrzyzowe, out.width=jamovi.screen, fig.cap = "Tabele krzyżowe"}
-knitr::include_graphics("./tabele_krzyzowe.png")
+knitr::include_graphics("./jamovi_tabele_krzyzowe.png")
 ```
 
 ### Analiza zależności: zmienna liczbowa/zmienna nominalna
 
-Wybieramy `Analizy`→`Testy t`→`Test t dla prób niezależnych` i/lub
-`Analizy`→`ANOVA`→`Jednoczynnikowa ANOVA`.
+Jeżeli zmienna nominalna (zwana grupującą) przyjmuje dwie wartości
+wybieramy `Analizy`→`Testy t`→`Test t dla prób niezależnych`. 
+Zmienne zależne to zmienne, których wartości zostaną podzielone na grupy.
+Ustawiamy kursor kolejno na zmiennej, która nas interesuje i klikamy w strzałkę górną.
+Ustawiamy kursor na zmiennej grupującej 
+(na przykład `plec`) i klikamy strzałkę dolną (por. rys. \@ref(fig:testyJamovi)).
 
-Zostanie wyświetlony znajomy interfejs. Wybieramy
-co trzeba. Wynik automagicznie pojawia się w lewym oknie (por. rysunek \@ref(fig:testyJamovi)).
+Zaznaczamy przyciski `Test Welcha`, `U Manna-Whitneya` (w sekcji **Testy**) oraz `Test normalności`
+(w sekcji **Weryfikacja założeń**)
+
+Jeżeli zmienna nominalna więcej niż dwie wartości
+wybieramy `Analizy`→​`ANOVA`→​`Jednoczynnikowa ANOVA`. Zmienne zależne
+i grupujące wybieramy w identyczny sposób jak w przypadku testu Welcha (por. rys. \@ref(fig:anovaJamovi)).
+Zaznaczamy przyciski `Nie zakładaj równości (Test Welcha)` (w sekcji **Wariancje**) oraz `Test normalności`
+(w sekcji **Weryfikacja założeń**) i `Tabela statystyk opisowych` (w sekcji **Dodatkowe statystyki**).
+
+Jeżeli wynik testu Shapiro-Wilka wskaże, że rozkład zmiennej zależnej nie jest normalny należy
+wykonać test Kruskala-Wallisa wybierając `Jednoczynnikowa ANOVA Test Kruskala-Wallisa`.
 
 
 ```{r testyJamovi, out.width=jamovi.screen, fig.cap = "Test dla prób niezależnych"}
-knitr::include_graphics("./testy.png")
+knitr::include_graphics("./jamovi_testy_welch.png")
 ```
+
+```{r anovaJamovi, out.width=jamovi.screen, fig.cap = "Jednoczynnikowa ANOVA"}
+knitr::include_graphics("./jamovi_anova.png")
+```
+
 
 ### Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna
  
-Wybieramy `Analizy`→`Regresja`→`Regresja liniowa`
+Wybieramy `Analizy`→`Regresja`→`Regresja liniowa`.
 
-Interfejs podobny do poprzednio opisywanych. Wybieramy
-zmienną zależną (musi oczywiście być liczbowa) klikając w górną strzłkę. 
+Interfejs jest podobny do poprzednio opisywanych. Wybieramy
+zmienną zależną (musi oczywiście być liczbowa) klikając w górną strzałkę. 
 Zmienne niezależne mierzone w skali liczbowej
 klikając w środkową strzałkę. Zmienne niezależne mierzone
 w skali nominalnej klikając w dolną strzałkę.
-Wynik automagicznie pojawia się w lewym oknie (por. rysunek \@ref(fig:regresjaLiniowa)).
+Wynik automagicznie pojawia się w lewym oknie (por. rys. \@ref(fig:regresjaLiniowa)).
 
 ```{r regresjaLiniowa, out.width=jamovi.screen, fig.cap = "Regresja liniowa"}
-knitr::include_graphics("./regresja_liniowa.png")
+knitr::include_graphics("./jamovi_regresja_liniowa.png")
 ```
 
 ### Regresja logistyczna
 
-Wybieramy  `Analizy`→`Regresja`→`Regresja logistyczna`→`Dwie wartości`
+Wybieramy  `Analizy`→`Regresja`→`Regresja logistyczna`→`Dwie wartości`.
 
-Interfejs łudząco podobny do analizy regresji. Wybieramy
+Interfejs jest łudząco podobny do analizy regresji. Wybieramy
 zmienną zależną klikając w górną strzałkę. Zmienna ta
 **musi** być zmienną dwuwartościową.
 

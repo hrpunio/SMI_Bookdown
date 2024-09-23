@@ -1,7 +1,7 @@
-h1:intro2jamovi Łagodne wprowadzenie z Jamovi
+h1:intro2jamovi Praca z programem Jamovi
 h2:podstawy-pracy-z-jamovi Podstawy pracy z Jamovi
 fig:mainscreen Ekran startowy Jamovi
-h2:analiza-ankiety-satysfakcjawiedza-o-paleniuzamiar-odejścia Analiza ankiety: satysfakcja–wiedza o paleniu–zamiar odejścia
+h2:analiza-ankiety-satysfakcja-wiedza-o-paleniu-zamiar-odejścia Analiza ankiety: satysfakcja – wiedza o paleniu – zamiar odejścia
 h3:wczytanie-danych Wczytanie danych
 fig:GoogleFormsTestA Fragment przykładowej ankiety
 fig:GoogleFormsTestHdr Fragment przykładowej ankiety
@@ -22,6 +22,7 @@ h3:analiza-zależności-zmienne-nominalne Analiza zależności: zmienne nominaln
 fig:tabeleKrzyzowe Tabele krzyżowe
 h3:analiza-zależności-zmienna-liczbowazmienna-nominalna Analiza zależności: zmienna liczbowa/zmienna nominalna
 fig:testyJamovi Test dla prób niezależnych
+fig:anovaJamovi Jednoczynnikowa ANOVA
 h3:analiza-zależności-zmienna-liczbowazmienna-liczbowa-lub-nominalna Analiza zależności: zmienna liczbowa/zmienna liczbowa lub nominalna
 fig:regresjaLiniowa Regresja liniowa
 h3:regresja-logistyczna Regresja logistyczna

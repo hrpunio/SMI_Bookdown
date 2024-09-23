@@ -10,8 +10,10 @@ Każde badanie, w tym ankietowe.
 Należy zastanowić się nad trzema sprawami: 
 
 1. Co chcemy ustalić? 
-2. Jakie dane są nam potrzebne, żeby ustalić to co chcemy ustalić. 
-3. Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)
+
+2. Jakie dane są nam potrzebne, żeby ustalić to co chcemy ustalić?
+
+3. Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)?
 
 
 **Co chcemy ustalić?**
@@ -60,7 +62,7 @@ abstrakcyjne. Często (albo zawsze) definiowane w obszarze psychologii,
 nauk o zarządzaniu itp.
 
 Pomiar *przekonań* jest dokonywany w specyficzny sposób.
-**Definicja koncepcyjna** definiuje pojęcie 
+**Definicja konceptualna** definiuje pojęcie 
 (zaufanie do kogoś/czegoś to **przekonanie**, że 
 *działania tego kogoś/czegoś okażą się zgodne z naszymi
 oczekiwaniami*; satysfakcja to
@@ -69,7 +71,8 @@ samoskuteczność to
 **przekonanie**, iż *jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele*).
 **Definicja operacyjna** określa jak zmierzyć pojęcie
 (jak zmierzyć satysfakcję)
-Przejście od definicji koncepcyjnej do definicji operacyjnej bywa czasami mocno, hmm... arbitralne.
+Przejście od definicji konceptualnej do definicji operacyjnej
+bywa czasami mocno, hmm... arbitralne.
 
 ### Skala Likerta
 
@@ -82,12 +85,12 @@ Taki pomiar jest mocno zgrubny: ktoś
 się może bać panicznie a ktoś inny dużo mniej. 
 
 Subtelniejszy pomiar to wybór spośród pięciu wariantów: 
-bardzo się boję--boję się--trudno powiedzieć--nie boję się--zupełnie się nie boję.
+bardzo się boję — boję się — trudno powiedzieć — nie boję się — zupełnie się nie boję.
 
 Taką skalę pomiarową określamy jak wiemy jako **porządkową**. Pomiary nie są liczbami,
 ale są uporządkowane.
-Rangi wartości są już liczbami (np. 1--5 w przykładowej skali pięciowariantowej), 
-można je np. uśredniać
+Rangi wartości są już liczbami (np. 1—5 w przykładowej skali pięciowariantowej), 
+można je np. uśredniać.
 Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali **Likerta**.
 Można sobie wymyślać skalę Likerta 7-punktową i więcej. 
 
@@ -110,56 +113,56 @@ pytań o strach względem COVID19:
 
 The Fear of COVID-19 Scale: Development and Initial Validation. 
 International Journal of
-Mental Health and Addiction, 1–9. 
+Mental Health and Addiction, 1—9. 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/
 
 Lęk przed koronawirusem COVID-19
-i lęk przed śmiercią – polskie adaptacje narzędzi
+i lęk przed śmiercią — polskie adaptacje narzędzi
 https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html
 
 
-1. I am most afraid of Corona
+1. I am most afraid of Corona.
 
-2. It makes me uncomfortable to think about Corona
+2. It makes me uncomfortable to think about Corona.
 
-3. My hands become clammy when I think about Corona
+3. My hands become clammy when I think about Corona.
 
-4. I am afraid of losing my life because of Corona
+4. I am afraid of losing my life because of Corona.
 
 5. When I watch news and stories about Corona on social media, I become nervous or anxious.
 
 6. I cannot sleep because I’m worrying about getting Corona.
 
-7. My heart races or palpitates when I think about getting Corona
+7. My heart races or palpitates when I think about getting Corona.
 
 albo:
 
-1. Boję się koronawirusa
+1. Boję się koronawirusa.
 
-2. Czuję dyskomfort, gdy myślę o koronawirusie
+2. Czuję dyskomfort, gdy myślę o koronawirusie.
 
-3. Pocą mi się dłonie, gdy myślę o koronawirusie
+3. Pocą mi się dłonie, gdy myślę o koronawirusie.
 
-4. Boję się, że mogę stracić życie z powodu koronawirusa
+4. Boję się, że mogę stracić życie z powodu koronawirusa.
 
 5. Gdy oglądam wiadomości i czytam o koronawirusie w mediach
-   społecznościowych, robię się nerwowy i niespokojny
+   społecznościowych, robię się nerwowy i niespokojny.
 
-6. Nie mogę spać, ponieważ martwię się, że ja lub moi bliscy zarażą się
+6. Nie mogę spać, ponieważ martwię się, że ja lub moi bliscy zarażą się.
 
 7. Dostaję palpitacji serca, gdy myślę o tym, że mógłbym się zarazić.
 
 Odpowiadający ma do wyboru pięć wariantów odpowiedzi:
-**zdecydowanie nie**/**nie**/**nie mam zdania**/**tak**/**zdecydowanie tak**
+**zdecydowanie nie**/**nie**/**nie mam zdania**/**tak**/**zdecydowanie tak**.
 
 :::
 
 ### Model pomiaru
 
-Ukryty czynnik (strach) kształtuje wartości indykatorów (odpowiedzi na pytania)
+**Ukryty czynnik** (strach) kształtuje wartości **indykatorów** (odpowiedzi na pytania)
 Taki sposób pomiaru **ukrytego czynnika** (*latent* w języku angielskim) określa się
 mianem refleksyjnego (co jest kalką od *reflexive*). Na rysunku \@ref(fig:modelP)
-kierunek strzałki obrazuje zależność (czynnik→indykator)
+kierunek strzałki obrazuje zależność (czynnik→indykator).
 
 ```{r modelP, out.width="90%", fig.cap = "Modele pomiaru czynnika ukrytego"}
 knitr::include_graphics("./pomiar_ses-cropped.png")
@@ -190,9 +193,9 @@ istotny składnik całości.
 
 Dobrą wiadomością jest, że najprostszy sposób pomiaru traktuje czynniki
 refleksyjne i formatywne jednakowo: wartością czynnika jest suma albo ewentualnie średnia 
-wartości indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta
+wartość indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta
 suma (albo średnia) wartości rang po prostu. W skali strachu przed COVID ten kto się najbardziej
-boi powinien odpowiedzieć 7 razy **zdecydowanie tak** co odpowiada 
+boi powinien odpowiedzieć 7 razy **zdecydowanie tak**, co odpowiada 
 sumie 35 rang (jeżeli rangujemy od 1 do 5). 
 Ten który się wcale nie boi zaś będzie miał 7.
 
@@ -207,16 +210,16 @@ pytania są odwrócone.
 **Zalecany schemat postępowania jeżeli w ankiecie mają być mierzone
 przekonania** (strach, samoskuteczność, wypalenie zawodowe, stress czy satysfakcja):
 
-* Dokształcamy się nieco z psychologii mimo wszystko.
+* Dokształcamy się nieco z psychologii mimo wszystko;
 
 * Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił żeby
-  mierzyć to co my chcemy zmierzyć, bo **raczej nie należy wymyślać własnych skal**.
+  mierzyć to co my chcemy zmierzyć, bo **raczej nie należy wymyślać własnych skal**;
 
-* Robimy ankietę (w Internecie) i zbieramy dane.
+* Robimy ankietę (w Internecie) i zbieramy dane;
 
 * Wykonujemy analizę statystyczną.
 
-Banalnie proste co udowodnimy na przykładach
+Banalnie proste co udowodnimy na przykładach.
 
 ## Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW
 
@@ -310,7 +313,7 @@ mutate (
 Celem jest ocena wielkości zjawiska palenia tytoniu oraz
 poziom wiedzy na temat szkodliwości palenia tytoniu
 wśród
-studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących ten nałóg.
+studentów PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących ten nałóg.
 
 **Postawiono następujące hipotezy badawcze**:
 
@@ -327,23 +330,26 @@ studentów RM/PO PSW oraz zweryfikowanie wpływu wybranych czynników warunkują
 
 ### Metoda
 
-Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w styczniu 2023.
+Badanie ankietowe wśród studentów Ratownictwa Medycznego (RM) oraz Pielęgniarstwa (PO)
+przeprowadzono w styczniu 2023.
 Ankieta zawierała pytania dotyczące palenia tytoniu (pali/nie pali/palił, jak długo pali itd),
 test wiedzy na temat szkodliwości palenia oraz pytania
 o rodzaj miejsca pracy, staż pracy i płeć itd.
 
 Pięć następujących pytań oceniało wiedzę ankietowanego na temat szkodliwości palenia:
 
-* Czy bardziej szkodliwe dla zdrowia jest czynne czy bierne palenie? (JW),
+* Czy bardziej szkodliwe dla zdrowia jest czynne czy bierne palenie? (JW);
 * Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
-  bezpośrednio przez palenie papierosów? (WW)
-* Czy palenie papierosów powoduje choroby układu pokarmowego? (JW)
+  bezpośrednio przez palenie papierosów? (WW);
+* Czy palenie papierosów powoduje choroby układu pokarmowego? (JW);
 * Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
-  bezpośrednio przez palenie papierosów? (WW)
-* Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (WW)
+  bezpośrednio przez palenie papierosów? (WW);
+* Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (WW).
 
-W przypadku pytań jednokrotnego wyboru (JW), za wskazanie poprawnej odpowiedzi respondent otrzymywał 1 punkt.
-W przypadku pytań wielokrotnego wyboru (WW) za wskazanie prawidłowej odpowiedzi respondent otrzymywał 1 punkt, ale
+W przypadku pytań jednokrotnego wyboru (JW), za wskazanie poprawnej
+odpowiedzi respondent otrzymywał 1 punkt.
+W przypadku pytań wielokrotnego wyboru (WW) za wskazanie prawidłowej odpowiedzi
+respondent otrzymywał 1 punkt, ale
 za wskazanie nieprawidłowej
 otrzymywał (minus) -1 punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
 Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
@@ -353,9 +359,9 @@ Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 * Hipotezę 1 weryfikowano na podstawie wielkości odsetka respondentów palących.
 
 * Hipotezę 2 weryfikowano na podstawie wielkości odsetka respondentów wykazujących się
-  dobrą i bardzo dobrą wiedzą na temat palenia
+  dobrą i bardzo dobrą wiedzą na temat palenia.
 
-* Hipotezy 3--5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
+* Hipotezy 3—5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
   oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
   Kruskala-Wallisa.
 
@@ -363,9 +369,9 @@ Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 ### Metryczka (analiza respondentów)
 
 Rozkład ankietowanych wg wyniku testu 
-na znajomość szkodliwości palenia przedstawiono na rysunku.
+na znajomość szkodliwości palenia przedstawiono na rysunku \@ref(fig:rysunek51).
 
-```{r, echo=F, out.width=ex.out.width}
+```{r rysunek51, fig.cap="Studenci wg wyniku testu na znajomość szkodliwości palenia", echo=F, out.width=ex.out.width}
 P.total.mean <- mean (s1$P.total)
 P.total.sd <- sd (s1$P.total)
 P.total.median <- median(s1$P.total)
@@ -374,8 +380,8 @@ P.total.N <- nrow(s1)
 ex.p <- ggplot(s1, aes(x = P.total)) + 
   geom_histogram(binwidth = 2, fill='steelblue', color='navyblue') +
   ylab("liczba respondentów") +
-  xlab("Wynik testu") +
-  ggtitle("Studenci wg wyniku testu na znajomość szkodliwości palenia") 
+  xlab("Wynik testu") 
+  ##ggtitle("Studenci wg wyniku testu na znajomość szkodliwości palenia") 
 ex.p
 ```
 
@@ -386,10 +392,10 @@ wyniosła `r sprintf ("%.3f", P.total.mean)` (odchylenie
 standardowe `r sprintf ("%.3f", P.total.sd)`).
 
 Rozkład ankietowanych ze względu na status względem
-palenia przedstawiono na rysunku.
+palenia przedstawiono na rysunku \@ref(fig:rysunek52).
 
 
-```{r, out.width=ex.out.width}
+```{r rysunek52, fig.cap="Studenci wg statusu palenia (%)", out.width=ex.out.width}
 s0.status <- s1 %>%
   select (status) %>%
   group_by(status)%>%
@@ -398,36 +404,16 @@ s0.status <- s1 %>%
 
 p.status <- s0.status %>%
   ggplot(aes(x = status, y = prop )) +
-  ggtitle("Studenci wg statusu palenia (%)") +
+  ##ggtitle("Studenci wg statusu palenia (%)") +
   xlab("") + ylab("%") +
   geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
   geom_text(data=s0.status, aes(label=sprintf("%.2f", prop), y= prop), vjust=1.5, color="white" ) 
 p.status
 ```
 
-Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku
+Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku \@ref(fig:rysunek54)
 
-```{r, out.width=ex.out.width, out.height="30%"}
-s0.sex <- s1 %>%
-  select (plec) %>%
-  group_by(plec)%>%
-  summarize(n=n())%>%
-  mutate(prop=n/sum(n) * 100 )
-
-p.1 <- s0.sex %>%
-  ggplot(aes(x = reorder(plec, prop), y = prop )) +
-  ggtitle("Studenci wg płci (%)") +
-  xlab("") + ylab("%") +
-  geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
-  geom_text(data=s0.sex, aes(label=sprintf("%.2f", prop), y= prop), hjust=1.5, color="white" ) +
-  #scale_x_discrete (breaks=var.names,  labels=var.labels) +
-  coord_flip()
-p.1
-```
-
-Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku
-
-```{r, out.width=ex.out.width}
+```{r rysunek54, fig.cap="Studenci wg stażu pracy (%)", out.width=ex.out.width}
 s0.staz <- s1 %>%
   select (staz) %>%
   group_by(staz)%>%
@@ -436,7 +422,7 @@ s0.staz <- s1 %>%
 
 p.3 <- s0.staz %>%
   ggplot(aes(x = staz, y = prop )) +
-  ggtitle("Studenci wg stażu pracy (%)") +
+  ##ggtitle("Studenci wg stażu pracy (%)") +
   xlab("") + ylab("%") +
   geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
   geom_text(data=s0.staz, aes(label=sprintf("%.2f", prop), y= prop), vjust=1.5, color="white" ) 
@@ -445,26 +431,28 @@ p.3 <- s0.staz %>%
 p.3
 ```
 
-Rozkład ankietowanych ze względu na rodzaj miejsca pracy
-przedstawiono na rysunku
+Zmienna płeć i miejsce pracy są dwuwartościowe, więc (oszczędzając lasy) 
+proponujemy zamiast wykresu
+poprzestanie na podaniu odsetka kobiet/mężczyzn oraz pracowników szpitali/przychodni.
 
-```{r, out.width=ex.out.width}
-s0.miejsce <- s1 %>%
+```{r}
+s1.plec.K.prop <- s1 %>%
+  select (plec) %>%
+  group_by(plec)%>%
+  summarize(n=n())%>%
+  mutate(prop=n/sum(n) * 100 ) |> filter (plec == 'K') |>
+  select (prop) |> unlist() |> unname ()
+s1.praca.S.prop <- s1 %>%
   select (miejsce.pracy) %>%
   group_by(miejsce.pracy)%>%
   summarize(n=n())%>%
-  mutate(prop=n/sum(n) * 100 )
-
-p.4 <- s0.miejsce %>%
-  ggplot(aes(x = miejsce.pracy, y = prop )) +
-  ggtitle("Studenci wg miejsca pracy (%)") +
-  xlab("") + ylab("%") +
-  geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
-  geom_text(data=s0.miejsce, aes(label=sprintf("%.2f", prop), y= prop), vjust=1.5, color="white" ) 
-#scale_x_discrete (breaks=var.names,  labels=var.labels) +
-##coord_flip()
-p.4
+  mutate(prop=n/sum(n) * 100 ) |> filter (miejsce.pracy == 'Szpital') |>
+  select (prop) |> unlist() |> unname ()
 ```
+
+Zatem wśród respondentów było `r s1.plec.K.prop`% kobiet i `r 100 - s1.plec.K.prop`% mężczyzn.
+Pracę w szpitalu zadeklarowało `r s1.praca.S.prop`% respondentów a w przychodni 
+`r 100 - s1.praca.S.prop`% respondentów.
 
 ### Weryfikacja hipotezy 1
 
@@ -484,7 +472,7 @@ z jakąś średnią ogólnopolską.
 (mediana `r P.total.median`); 3/4 respondentów nie uzyskało więcej niż
 `r P.total.q3` (czyli `r sprintf("%.1f", P.total.q3/19 *100)` %).
 
-### Weryfikacja hipotez 3--5
+### Weryfikacja hipotez 3—5
 
 Czy palenie jest skorelowane z płcią?
 
@@ -520,7 +508,6 @@ chi_test
 
 Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
 
-
 Czy palenie jest skorelowane z miejscem pracy?
 
 ```{r}
@@ -539,7 +526,7 @@ chi_test
 
 Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
 
-Czy wiedza na temat palenia jest skorelowana z płcią:
+Czy wiedza na temat palenia jest skorelowana z płcią?
 
 ```{r}
 ##########################
@@ -547,52 +534,93 @@ Czy wiedza na temat palenia jest skorelowana z płcią:
 
 s0.pl <- s1 %>%
   group_by(plec) %>%
-  summarise(m = mean(P.total), n=n())
-kable(s0.pl, col.names = c('płeć', 'średnia', 'n'), booktabs = TRUE)
+  summarise(m = mean(P.total), me=median(P.total), n=n())
+kable(s0.pl, col.names = c('płeć', 'średnia', 'mediana', 'n'), booktabs = TRUE)
+```
+Sprawdzamy czy rozkłady są normalne:
+
+```{r}
+sw.s1.table.plec <- s1 %>%
+  group_by(plec) %>%
+  shapiro_test(P.total) %>% select(plec, statistic, p)
+
+kable(sw.s1.table.plec, col.names = c('płeć', 'S-W', 'p'), booktabs = TRUE)
+```
+Nie są. Należy zastosować test U Manna-Whitneya:
+
+```{r}
 wilcoxp <- wilcox.test(P.total ~ plec, data=s1)
 wilcoxp['p.value']
 ```
 
-Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
-Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` zatem
-hipotezy o braku korelacji na poziomie 0,05 należy odrzucić.
-Istnieje zależność pomiędzy wiedzą na temat palenia a płcią.
+Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])`, zatem
+hipotezę o braku zależności na poziomie 0,05 należy odrzucić.
+Istnieje zależność pomiędzy wiedzą na temat palenia a płcią. Kobiety
+wykazują się wyższą wiedzą na temat szkodliwości palenia od mężczyzn.
 
-Czy wiedza na temat palenia jest skorelowana z miejscem pracy:
+Czy wiedza na temat palenia jest skorelowana z miejscem pracy?
 
 ```{r}
 s0.mp <- s1 %>%
   group_by(miejsce.pracy) %>%
-  summarise(m = mean(P.total), n=n())
-kable(s0.mp, col.names = c('m.pracy', 'średnia', 'n'), booktabs = TRUE)
+  summarise(m = mean(P.total), me=median(P.total), n=n())
+kable(s0.mp, col.names = c('m.pracy', 'średnia', 'mediana', 'n'), booktabs = TRUE)
+```
+
+Sprawdzamy czy rozkłady są normalne:
+
+```{r}
+sw.s1.table.praca <- s1 %>%
+  group_by(miejsce.pracy) %>%
+  shapiro_test(P.total) %>% select(miejsce.pracy, statistic, p)
+
+kable(sw.s1.table.praca, col.names = c('m.pracy', 'S-W', 'p'), booktabs = TRUE)
+```
+
+Nie są. Należy zastosować test U Manna-Whitneya:
+
+```{r}
 wilcoxp <- wilcox.test(P.total ~ miejsce.pracy, data=s1)
 wilcoxp['p.value']
 ```
 
-Porównujemy dwie grupy zatem stosujemy test Manna-Whitneya.
-Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` -- nie ma podstaw
-od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
+Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` — nie ma podstaw
+od odrzucenia hipotezy o identyczności rozkładów  na poziomie p = 0,05. Nie ma różnicy
+w poziomie wiedzy wśród pracowników przychodni i szpitali.
 
-Czy wiedza na temat palenia jest skorelowana ze stażem:
+Czy wiedza na temat palenia jest skorelowana ze stażem?
 
 ```{r}
-s0.st <- s1 %>%
+s1.st <- s1 %>%
   group_by(staz) %>%
-  summarise(m = mean(P.total), n=n())
-kable(s0.st, col.names = c('staż', 'średnia', 'n'), booktabs = TRUE)
-kw<- kruskal.test(P.total ~ staz, data = s1)
-kw["p.value"]
-#wilcoxp <- wilcox.test(P.total ~ staz, data=s1)
-#wilcoxp['p.value']
+  summarise(m = mean(P.total), me= median(P.total), n=n())
+kable(s1.st, col.names = c('staż', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 ```
 
-Porównujemy więcej niż dwie grupy zatem stosujemy test Kruskala-Wallisa.
-Wartość p wynosi `r sprintf("%.8f", kw["p.value"])` -- nie ma podstaw
-od odrzucenia hipotezy o braku korelacji na poziomie 0,05.
+Sprawdzamy czy rozkłady są normalne:
+
+```{r}
+sw.s1.table.staz <- s1 %>%
+  group_by(staz) %>%
+  shapiro_test(P.total) %>% select(staz, statistic, p)
+
+kable(sw.s1.table.staz, col.names = c('staż', 'S-W', 'p'), booktabs = TRUE)
+```
+
+Nie są. Należy zastosować test Kruskala-Wallisa:
+
+```{r}
+kw<- kruskal.test(P.total ~ staz, data = s1)
+kw["p.value"]
+```
+
+Wartość p wynosi `r sprintf("%.8f", kw["p.value"])` — nie ma podstaw
+od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
+różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
 ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej  mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
-0--5 mała; 6--10 średnia; 11--15 duża, 16--19 ogromna:
+0—5 mała; 6—10 średnia; 11—15 duża, 16—19 ogromna:
 
 ```{r}
 ## Wiedza a palenie
@@ -614,16 +642,15 @@ chi_test
 Wiedza i status względem palenia nie są skorelowane
 o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
 
-Można to samo zweryfikować porównując średnie w grupach
-i stosując test Kruskala-Wallisa:
+Można to samo zweryfikować stosując test Kruskala-Wallisa:
 
 ```{r}
 ## albo średnia wiedza w grupach wg statusu
 
 s0.sw <- s1 %>%
   group_by(status) %>%
-  summarise(m = mean(P.total), n=n())
-kable(s0.sw, col.names = c('status', 'średnia', 'n'), booktabs = TRUE)
+  summarise(m = mean(P.total), me=median(P.total),  n=n())
+kable(s0.sw, col.names = c('status', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 
 kw<- kruskal.test(P.total ~ status, data = s1)
 kw["p.value"]
@@ -646,12 +673,12 @@ Wynik jest identyczny (wysoka wartość p `r sprintf("%.4f", kw["p.value"])`).
 ### Cel
 
 Celem jest ustalenie czy depresja jest istotnym problemem wśród
-studentów RM/PO PSW oraz 
-zweryfikowanie wybranych czynników warunkujących depresję.
+studentów PSW oraz zweryfikowanie wybranych czynników warunkujących depresję.
 
 ### Metoda
 
-Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w styczniu 2023.
+Badanie ankietowe wśród studentów Ratownictwa Medycznego (RM) oraz Pielęgniarstwa (PO)
+przeprowadzono w styczniu 2023.
 Ankieta zawierała test samooceny depresji Becka oraz pytania
 o rodzaj miejsca pracy, staż pracy i płeć.
 
@@ -660,8 +687,8 @@ możliwe są 4 warianty odpowiedzi, odpowiadające zwiększonej intensywności o
 którym w związku z tym przypisuje się wartości od zera do 3 punktów. Maksymalna liczba punktów
 w teście wynosi 63 a minimalna 0.
 
-Interpretacja wyników testu Becka: 0--19 brak/łagodna depresja;
-20--25 umiarkowana; 26--63 ciężka depresja.
+Interpretacja wyników testu Becka: 0—19 brak/łagodna depresja;
+20—25 umiarkowana; 26—63 ciężka depresja.
 
 Postawiono następujące hipotezy badawcze:
 
@@ -677,9 +704,9 @@ Postawiono następujące hipotezy badawcze:
 
 * Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 
-* Hipotezy 2--4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
-  oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
-  Kruskala-Wallisa
+* Hipotezy 2—4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+  oraz porównania poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
+  Kruskala-Wallisa.
 
 
 ```{r, echo=F}
@@ -833,50 +860,30 @@ P21=recode(P21,
 ```{r, echo=F}
 s0.N <- nrow(s0)
 ##summary(s0$P)
-s0.mean <- mean(s0$P)
-s0.sd <- sd(s0$P)
+s0.mean <- mean(s0$P, na.rm=TRUE)
+s0.sd <- sd(s0$P, na.rm=TRUE)
 ```
 
 W badaniu wzięło udział `r s0.N` studentów. Otrzymano `r s0.N` poprawnie
 wypełnionych ankiet. Średnia wartość testu Becka wyniosła `r sprintf ("%.3f", s0.mean)` (odchylenie
-standardowe `r sprintf ("%.3f",  s0.sd)`)
+standardowe `r sprintf ("%.3f",  s0.sd)`).
 
-Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku.
+Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku \@ref(fig:rysunek56).
 
-```{r, out.width=ex.out.width}
+
+```{r rysunek56, fig.cap="Studenci wg wyniku testu Becka", out.width=ex.out.width}
 ex.p <- ggplot(s0, aes(x = P)) + 
   geom_histogram(binwidth = 2, fill='steelblue', color='navyblue') +
   ylab("liczba respondentów") +
-  xlab("Wynik testu") +
-  ggtitle("Studenci wg wyniku testu Becka") 
+  xlab("Wynik testu") 
+  ##ggtitle("Studenci wg wyniku testu Becka") 
 ex.p
 ```
 
-Rozkład ankietowanych ze względu na płeć przedstawiono na rysunku.
 
-```{r, out.width=ex.out.width, out.height="30%"}
-###
-s0.sex <- s0 %>%
-  select (plec) %>%
-  group_by(plec)%>%
-  summarize(n=n())%>%
-  mutate(prop=n/sum(n) * 100 )
+Rozkład ankietowanych ze względu na staż przedstawiono na rysunku \@ref(fig:rysunek57).
 
-
-p.1 <- s0.sex %>%
-  ggplot(aes(x = reorder(plec, prop), y = prop )) +
-  ggtitle("Studenci wg płci (%)") +
-  xlab("") + ylab("%") +
-  geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
-  geom_text(data=s0.sex, aes(label=sprintf("%.2f", prop), y= prop), hjust=1.5, color="white" ) +
-  #scale_x_discrete (breaks=var.names,  labels=var.labels) +
-  coord_flip()
-p.1
-```
-
-Rozkład ankietowanych ze względu na staż przedstawiono na rysunku.
-
-```{r, out.width=ex.out.width}
+```{r rysunek57, fig.cap="Studenci wg stażu pracy (%)", out.width=ex.out.width}
 ##
 s0.staz <- s0 %>%
   select (staz) %>%
@@ -886,7 +893,7 @@ s0.staz <- s0 %>%
 
 p.3 <- s0.staz %>%
   ggplot(aes(x = staz, y = prop )) +
-  ggtitle("Studenci wg stażu pracy (%)") +
+  ##ggtitle("Studenci wg stażu pracy (%)") +
   xlab("") + ylab("%") +
   geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
   geom_text(data=s0.staz, aes(label=sprintf("%.2f", prop), y= prop), vjust=1.5, color="white" ) 
@@ -898,7 +905,9 @@ p.3
 
 ### Weryfikacja hipotezy 1
 
-```{r, echo=F, out.width=ex.out.width}
+Rozkład studentów wg stanu psychicznego przedstawiono na wykresie \@ref(fig:rysunek58).
+
+```{r rysunek58, fig.cap="Studenci wg stanu psychicznego (%)", echo=F, out.width=ex.out.width}
 s0.dep <- s0 %>%
   select (Depresja) %>%
   group_by(Depresja)%>%
@@ -908,7 +917,7 @@ s0.dep <- s0 %>%
 
 p.2 <- s0.dep %>%
   ggplot(aes(x = reorder(Depresja, prop), y = prop )) +
-  ggtitle("Studenci wg stanu psychicznego (%)") +
+  ##ggtitle("Studenci wg stanu psychicznego (%)") +
   xlab("") + ylab("%") +
   geom_bar(position = 'dodge', stat = 'identity', fill = "steelblue") +
   geom_text(data=s0.dep, aes(label=sprintf("%.2f", prop), y= prop), hjust=1.5, color="white" ) +
@@ -920,12 +929,12 @@ p.2
 Ciężką postać depresji wykazuje zaledwie 3% studentów. Należy odrzucić hipotezę
 że depresja stanowi poważny problem wśród studentów RM/PO PSW.
 
-### Weryfikacja hipotez 2--4
+### Weryfikacja hipotez 2—4
 
 Aby móc zastosować metody tablicy wielodzielczej i testu chi-kwadrat
 oryginalne wartości liczbowe depresji zamieniono
-na skalę porządkową: 0--19 brak/łagodna depresja (B);
-20--25 umiarkowana (Ł); 26--63 ciężka depresja (C).
+na skalę porządkową: 0—19 brak/łagodna depresja (B);
+20—25 umiarkowana (Ł); 26—63 ciężka depresja (C).
 
 ### Depresja a płeć 
 
@@ -967,20 +976,33 @@ chi_test
 Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = `r sprintf ("%.4f", chi_test["p.value"])`).
 
 Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
-można porównać wartości średnie i zastosować test Kruskala-Wallisa.
+można zastosować test ANOVA lub Kruskala-Wallisa.
 
 ```{r}
 s0.staz <- s0 %>%
   group_by(staz) %>%
-  summarise(m = mean(P), n=n())
-kable(s0.staz, col.names = c('staż', 'średnia', 'n'), booktabs = TRUE)
+  summarise(m = mean(P), me=median(P), n=n())
+kable(s0.staz, col.names = c('staż', 'średnia', 'mediana', 'n'), booktabs = TRUE)
+```
 
+Sprawdzamy czy rozkłady są normalne:
 
+```{r}
+sw.s0.table.staz <- s0 %>%
+  group_by(staz) %>%
+  shapiro_test(P) %>% select(staz, statistic, p)
+kable(sw.s0.table.staz, col.names = c('staż', 'S-W', 'p'), booktabs = TRUE)
+```
+
+Nie są. Należy zastosować test Kruskala-Wallisa:
+
+```{r}
 kw<- kruskal.test(P ~ staz, data = s0)
 kw["p.value"]
 ```
 
-Wynik jest ten sam (brak zależności)
+Wynik jest ten sam (brak zależności). Nie ma
+różnicy w poziomie depresji wśród pracowników o różnym stażu pracy.
 
 ### Depresja a rodzaj miejsca pracy  
 
@@ -1003,24 +1025,39 @@ Nie stwierdzono zależności pomiędzy depresją
 a miejscem pracy (p = `r sprintf ("%.4f", chi_test["p.value"])`).
 
 
-Jeżeli depresję mierzymy na skali liczbowej
-można porównać wartości średnie i zastosować test Manna-Whitneya
+Jeżeli depresję mierzymy na skali liczbowej można zastosować test Welcha lub test Manna-Whitneya.
 
 ```{r, echo=F}
 ## Depresja ~ praca
 s0.mp <- s0 %>%
   group_by(praca) %>%
-  summarise(m = mean(P), n=n())
-kable(s0.mp, col.names = c('m-pracy', 'średnia', 'n'), booktabs = TRUE)
+  summarise(m = mean(P), me=median(P), n=n())
+kable(s0.mp, col.names = c('m-pracy', 'średnia', 'mediana', 'n'), booktabs = TRUE)
+```
+
+Sprawdzamy czy rozkłady są normalne:
+
+```{r}
+sw.s0.table.mp <- s0 %>%
+  group_by(praca) %>%
+  shapiro_test(P) %>% select(praca, statistic, p)
+kable(sw.s0.table.mp, col.names = c('m-pracy.', 'S-W', 'p'), booktabs = TRUE)
+```
+
+Nie są. Należy zastosować test Manna-Whitneya:
+
+
+```{r}
 wilcoxp <- wilcox.test(P ~ praca, data=s0)
 wilcoxp['p.value']
 ```
 
-Wynik jest ten sam (brak zależności)
+Wynik jest ten sam (brak zależności). Nie ma
+różnicy w poziomie depresji wśród pracowników szpitali i przychodni.
 
 ### Wnioski
 
-* Depresja nie jest istotnym problemem wśród studentów RM/PO PSW.
+* Depresja nie jest istotnym problemem wśród studentów PSW.
 
 * Nie ma związku pomiędzy depresją a stażem, płcią i miejscem pracy.
 
@@ -1049,14 +1086,15 @@ pielęgniarek/pielęgniarzy.
 5. Praca na oddziale ratunkowym lub intensywnej terapii zwiększa
    zamiar zmiany miejsca pracy
 
-6. Zmianę miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia
-   konfliktu personalnego, przywiązania do miejsca pracy,
+6. Zmianę miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia,
+   konfliktu personalnego,
+   przywiązania do miejsca pracy,
    pracy na oddziale ratunkowym lub intensywnej terapii, 
    stażu i poziom satysfakcji.
 
 ### Metoda
 
-Badanie ankietowe wśród studentów RM oraz PO przeprowadzono w 2023/2024 roku.
+Badanie ankietowe wśród studentów PSW przeprowadzono w 2023/2024 roku.
 Zamiar zmiany pracy (ZZP),
 przywiązanie do miejsca pracy (przywiązanie organizacyjne PO),
 satysfakcja z pracy (SP),
@@ -1069,14 +1107,14 @@ czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
 
 ### Zastosowane metody statystyczne
 
-* Do weryfikacji hipotez 1--5 wykorzystano model regresji liniowej.
+* Do weryfikacji hipotez 1—5 wykorzystano model regresji liniowej.
 
 * Do weryfikacji hipotezy 6 wykorzystano model regresji logistycznej.
 
 ### Wyniki
 
 Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
-od razu do weryfikacji hipotez 1--6.
+od razu do weryfikacji hipotez 1—6.
 
 Macierz korelacji dla zmiennych `zzp`, `sp`, `sw`, `kpw`, `kpp` oraz `po`:
 
@@ -1090,8 +1128,8 @@ macierz.k <- d1 %>% select (zzp, sp, sw, kpw, kpp, po, staz) %>%
 round(macierz.k,4)
 ```
 
-Można zaobserwować wiele obiecująco wysokich wartości współczynnika korelacji
-(`zpp`/`sp`, `zpp`/`kpw`, `pp`/`kpp`) ale też niektóre są beznadziejnie niskie (np. `zpp`/`staż`).
+Można zaobserwować wiele wysokich wartości współczynnika korelacji
+(`zpp`/`sp`, `zpp`/`kpw`, `pp`/`kpp`), ale też niektóre są beznadziejnie niskie (np. `zpp`/`staż`).
 
 
 **Regresja liniowa**
@@ -1255,7 +1293,7 @@ ggroc(roc_obj,
 
 * Satysfakcja jest większym predyktorem zamiaru zmiany pracy niż konflikt personalny 
   ze współpracownikami.
-  Pozostałe czynniki okazały się nieistotne (hipotezy 1--5).
+  Pozostałe czynniki okazały się nieistotne (hipotezy 1—5).
 
 * Satysfakcja jest jedynym czynnikiem  istotnie wpływającym na zmianę miejsca pracy.
   Pozostałe czynniki okazały się nieistotne (hipoteza 6).
@@ -1376,7 +1414,7 @@ Pytanie 16
 
 0. Sypiam dobrze, jak zwykle
 1. Sypiam gorzej niż dawniej
-2. Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć
+2. Rano budzę się 1—2 godziny za wcześnie i trudno jest mi ponownie usnąć
 3. Budzę się kilka godzin za wcześnie i nie mogę usnąć
 
 Pytanie 17
@@ -1632,7 +1670,7 @@ Kwidzyn 2022.
 
 **Konflikt ze współpracownikami/KPW**
 
-(Raz na miesiąc lub mniej/1--2 razy w miesiącu/1--2 razy w tygodniu/1--2 razy dziennie/wiele razy dziennie.)
+(Raz na miesiąc lub mniej/1—2 razy w miesiącu/1—2 razy w tygodniu/1—2 razy dziennie/wiele razy dziennie.)
 
 16. Jak często w pracy kłócisz się z innymi osobami?
 17. Jak często inni ludzie krzyczą na Ciebie w pracy?
@@ -1641,16 +1679,16 @@ Kwidzyn 2022.
 
 **Konflikt z przełożonym/KPP**
 
-(Raz na miesiąc lub mniej/1--2 razy w miesiącu/1--2 razy w tygodniu/1--2 razy dziennie/wiele razy dziennie.)
+(Raz na miesiąc lub mniej/1—2 razy w miesiącu/1—2 razy w tygodniu/1—2 razy dziennie/wiele razy dziennie.)
 
 20. Jak często w pracy kłócisz się z przełożonym?
 21. Jak często twój przełożony krzyczy na ciebie?
 22. Jak często twój przełożony jest niemiły w pracy?
 23. Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?
 
-**Przywiązanie do ogranizacji/PO** (`PO-1`--`PO-18`), składające się z następujących aspektów:
-przywiązanie afektywne (`PO-1`--`PO-6`), przywiązanie normatywne (`PO-7`--`PO-12`), 
-przywiązanie trwania (`PO-13`--`PO-18`).
+**Przywiązanie do ogranizacji/PO** (`PO-1`—`PO-18`), składające się z następujących aspektów:
+przywiązanie afektywne (`PO-1`—`PO-6`), przywiązanie normatywne (`PO-7`—`PO-12`), 
+przywiązanie trwania (`PO-13`—`PO-18`).
 
 (Zdecydowanie się nie zgadzam/nie zgadzam się/raczej się nie zgadzam/
 trudno powiedzieć/raczej się zgadzam/zgadzam się/zdecydowanie się zgadzam.)
@@ -1706,5 +1744,5 @@ Liu Y i inni, *Turnover intention and its associated factors among nurses:  a mu
 Front. Public Health 11:1141441 (2023)
 https://www.frontiersin.org/articles/10.3389/fpubh.2023.1141441/full
 oraz
-Bańka A., Bazińska R., Wołowska A., *Polska wersja Meyera i Allen Skali Przywiązania do Organizacji*, Czasopismo Psychologiczne 2002, nr 8 (1), s. 65--74.
+Bańka A., Bazińska R., Wołowska A., *Polska wersja Meyera i Allen Skali Przywiązania do Organizacji*, Czasopismo Psychologiczne 2002, nr 8 (1), s. 65—74.
 
