@@ -53,3 +53,11 @@ Podręcznik został napisany dla studentów Wydziału Nauk o Zdrowiu
 Powiślańskiej Szkoły Wyższej, których uczę od kilku lat
 statystyki medycznej, ale mam nadzieję że może być przydatny
 także dla studentów innych kierunków zwłaszcza kierunków medycznych.
+
+Elektroniczne wersje podręcznika w formatach HTML, PDF oraz EPUB znajdują
+się pod adresem:
+[hrpunio.github.io/SMI_Bookdown/wstęp.html](https://hrpunio.github.io/SMI_Bookdown/wstęp.html).
+Wykorzystane
+w omawianych w książce przykładach zbiory danych można znaleźć
+pod adresem: [github.com/hrpunio/SMBook](https://github.com/hrpunio/SMBook).
+

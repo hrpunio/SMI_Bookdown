@@ -425,9 +425,8 @@ przedziałów ufności, przecież obliczenia i tak koniec-końców wykona
 program komputerowy.</p>
 <p>Przedział ufności dla ilorazu szans nie zawiera 1;
 zatem branie witaminy C zmniejsza szanse na zachorowanie;
-albo zwiększa na niezachorowanie od <span class="math inline">\(1/25 = 4\)</span> do <span class="math inline">\(1/0,9 = 1,1\)</span>. Żeby
-to zabrzmiało ładnie i po polsku.
-Zwiększa na niezachorowanie od 300% do 10%.</p>
+albo zwiększa na niezachorowanie od <span class="math inline">\(1/0,25 = 4\)</span> do <span class="math inline">\(1/0,9 \approx 1,1\)</span>. Żeby
+to zabrzmiało ładnie i po polsku: zwiększa na niezachorowanie od 10% do 300%.</p>
 <p>Dlaczego taka znacząca rozpiętość? Bo próba jest względnie mała. Gdyby
 Pauling zwerbował nie 280 a 2800 narciarzy mógłby weryfikować działanie
 swojej witaminy z większą pewnością.</p>
@@ -525,7 +524,7 @@ to najmniejsza możliwa tabela wielodzielna.</p>
 </tbody>
 </table>
 <p>Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
-43.73%
+43,73%
 wszystkich narciarzy. Mało przydatne…</p>
 <p>Ciekawsze jest obliczenie procentów każdego wiersza osobno, tj. dzielimy
 liczebności w każdej kolumnie przez liczebności rozkładu brzegowego (wartości
@@ -562,15 +561,15 @@ ostatniej kolumny):</p>
 </table>
 <p>Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
 zachorowania dla całej grupy wynosi
-17.20% a nie zachorowania
-82.80%. Jest przyznajmy całkiem <strong>zdroworozsądkowym założeniem</strong>
+17,2% a nie zachorowania
+82,8%. Jest przyznajmy całkiem <strong>zdroworozsądkowym założeniem</strong>
 (uczenie hipotezą statystyczną), że jeżeli przyjmowanie witaminy nie ma związku
 z zachorowaniem lub nie na katar, to w grupie tych co brali i tych co nie brali
 powinniśmy mieć identyczne rozkłady warunkowe równe rozkładowi brzegowemu.
 Czyli powinno przykładowo zachorować
-17.20% narciarzy, którzy
+17,2% narciarzy, którzy
 brali witaminę C a widzimy , że zachorowało
-jedynie 12.23%.</p>
+jedynie 12,23%.</p>
 <p>Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się
 czy ta różnica jest na tyle duża, że (z założonym prawdopodobieństwem)
 można wykluczyć działanie przypadku.</p>
@@ -585,7 +584,7 @@ a następnie podzieleniu tego przez łączną liczebność (czyli przykładowo p
 element poniższej „idealnej” tablicy to 231 pomnożone przez
 139 i podzielone przez 279; proszę
 sprawdzić,
-że jest to 115.086):</p>
+że jest to 115,086):</p>
 <table>
 <thead>
 <tr class="header">
@@ -621,7 +620,7 @@ zwrócić uwagę że <strong>rozkłady brzegowe</strong> są identyczne, identyc
 jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
 liczbami całkowitymi, ale tak ma być i nie jest to błąd).</p>
 <p>Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
-tak dużych lub większych różnic. Wynosi ono 0.041864.
+tak dużych lub większych różnic. Wynosi ono 0,0419.
 Czyli wystąpienie tak dużych różnic
 pomiędzy <strong>oczekiwanymi</strong> (przy założeniu o niezależności zmiennych)
 a obserwowanymi liczebnościami zdarza się około 4 razy na 100.</p>
@@ -787,9 +786,9 @@ procentom odpowiadają następujące liczebności:</p>
 </tbody>
 </table>
 <p>Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi
-(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi 0.000981.
+(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi 0,001.
 Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
-statusu i palenia (myląc się w przybliżeniu 0.000981 ≈ raz na tysiąc).</p>
+statusu i palenia (myląc się w przybliżeniu 0,001 ≈ raz na tysiąc).</p>
 </div>
 </div>
 </div>
@@ -875,7 +874,7 @@ na rodzaj miejsca pracy (szpital/przychodnia).</p>
 </table>
 <p>Kolumna n zawiera liczebności.</p>
 <p>Średnie różnią się
-o 5.42.
+o 5,42.
 Pytanie czy to dużo czy mało?</p>
 <p>Przyjmijmy (na razie bez sprawdzania), że rozkłady wartości poziomu depresji
 w obu grupach są
@@ -1058,7 +1057,7 @@ wartość statystki testu ANOVA, a kolumna p jak zwykle wartość prawdopodobie�
 ## 
 ## data:  P and staz
 ## F = 0,14844, num df = 3,000, denom df = 20,847, p-value = 0,9295</code></pre>
-<p>Wartość p równa 0.9295 świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
+<p>Wartość p równa 0,9295 świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
 że pomiędzy poziomem depresji a kategoriami stażu pracy nie ma zależności.</p>
 <p>Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
 zastosować (znowu) test Shapiro-Wilka:</p>
@@ -1112,7 +1111,7 @@ w grupach są identyczne.</p>
 ## Kruskal-Wallis chi-squared = 2,6982, df = 3, p-value = 0,4405</code></pre>
 <p>Prawdopodobieństwo tak dużej wartości statystyki testu
 przy założeniu, że rozkłady wartości zmiennej we wszystkich grupach są identyczne wynosi
-0.4405 (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).</p>
+0,4405 (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).</p>
 </div>
 </div>
 </div>
@@ -1367,7 +1366,7 @@ daje następujące wyniki:</p>
 <td align="right">1,753</td>
 <td align="right">88,969</td>
 <td align="right">0</td>
-<td align="left">152.480 159.370</td>
+<td align="left">152,48 159,37</td>
 </tr>
 <tr class="even">
 <td align="left">weight</td>
@@ -1375,7 +1374,7 @@ daje następujące wyniki:</p>
 <td align="right">0,017</td>
 <td align="right">17,305</td>
 <td align="right">0</td>
-<td align="left">0.260 0.330</td>
+<td align="left">0,26 0,33</td>
 </tr>
 </tbody>
 </table>
@@ -1384,8 +1383,8 @@ Druga kolumna oznaczona jako <code>B</code> zawiera oszacowane wartości (oceny)
 Kolumna <code>SE</code> zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
 Kolumna <code>p</code> zawiera prawdopodobieństwo <span class="math inline">\(b&gt;b_e\)</span>.</p>
 <p>Wzrost wagi zawodnika o 1kg
-skutkuje przeciętnie większym wzrostem o 0.294 cm. Współczynnik determinacji
-wynosi 32.86%.
+skutkuje przeciętnie większym wzrostem o 0,294 cm. Współczynnik determinacji
+wynosi 32,86%.
 Współczynnik nachylenia prostej jest istotny ponieważ wartość <span class="math inline">\(p\)</span> (tak mała, że w tabeli
 oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p &lt; 0,05).</p>
@@ -1420,7 +1419,7 @@ następujące wyniki:</p>
 <td align="right">2,232</td>
 <td align="right">15,268</td>
 <td align="right">0</td>
-<td align="left">29.680 38.490</td>
+<td align="left">29,68 38,5</td>
 </tr>
 <tr class="even">
 <td align="left">gdp2013</td>
@@ -1428,16 +1427,16 @@ następujące wyniki:</p>
 <td align="right">0,100</td>
 <td align="right">11,124</td>
 <td align="right">0</td>
-<td align="left">0.910 1.300</td>
+<td align="left">0,91 1,3</td>
 </tr>
 </tbody>
 </table>
 <p>Każdy tysiąc USD <em>per capita</em> więcej dochodu narodowego (GDP) oznacza przeciętny
-wzrost spożycia mięsa o 1.108 kg. Przeciętna różnica wartości teoretycznych
+wzrost spożycia mięsa o 1,108 kg. Przeciętna różnica wartości teoretycznych
 od empirycznych wynosi 21,04 kg (średni błąd szacunku).
-Współczynnik zbieżności wynosi 40.88%.
+Współczynnik zbieżności wynosi 40,88%.
 Współczynnik nachylenia prostej (którego wartość
-wynosi 1.108) jest statystycznie istotny.</p>
+wynosi 1,108) jest statystycznie istotny.</p>
 </div>
 <p>Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
 bo jest ona zbyt dużym uproszczeniem rzeczywistości. Jest to jednak
@@ -1525,7 +1524,7 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI95</th>
 </tr>
 </thead>
@@ -1536,8 +1535,8 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 <td align="right">11,965</td>
 <td align="right">4,990</td>
 <td align="right">0,000</td>
-<td align="left">NA</td>
-<td align="left">35.920 83.480</td>
+<td align="right">NA</td>
+<td align="left">35,92 83,48</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -1545,8 +1544,8 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 <td align="right">0,486</td>
 <td align="right">3,583</td>
 <td align="right">0,001</td>
-<td align="left">0.330</td>
-<td align="left">0.780 2.710</td>
+<td align="right">0,33</td>
+<td align="left">0,78 2,71</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -1554,12 +1553,12 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 <td align="right">0,124</td>
 <td align="right">3,906</td>
 <td align="right">0,000</td>
-<td align="left">0.360</td>
-<td align="left">0.240 0.730</td>
+<td align="right">0,36</td>
+<td align="left">0,24 0,73</td>
 </tr>
 </tbody>
 </table>
-<p>Współczynnik zbieżności wynosi 26.24%.
+<p>Współczynnik zbieżności wynosi 26,24%.
 Kolumna <code>Beta</code> zawiera standaryzowane
 oceny parametrów regresji. Tej kolumny na poprzednich wydrukach
 (punkt <a href="causality.html#regProsta">4.3.5</a>)
@@ -1578,7 +1577,7 @@ wyniki:</p>
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI95</th>
 </tr>
 </thead>
@@ -1589,8 +1588,8 @@ wyniki:</p>
 <td align="right">4,378</td>
 <td align="right">18,057</td>
 <td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">70.460 87.660</td>
+<td align="right">NA</td>
+<td align="left">70,46 87,66</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -1598,8 +1597,8 @@ wyniki:</p>
 <td align="right">0,183</td>
 <td align="right">6,637</td>
 <td align="right">0</td>
-<td align="left">0.280</td>
-<td align="left">0.850 1.570</td>
+<td align="right">0,28</td>
+<td align="left">0,85 1,57</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -1607,12 +1606,12 @@ wyniki:</p>
 <td align="right">0,053</td>
 <td align="right">4,856</td>
 <td align="right">0</td>
-<td align="left">0.210</td>
-<td align="left">0.150 0.360</td>
+<td align="right">0,21</td>
+<td align="left">0,15 0,36</td>
 </tr>
 </tbody>
 </table>
-<p>Współczynnik zbieżności wynosi 14.97%.
+<p>Współczynnik zbieżności wynosi 14,97%.
 Wpływ <code>BMI</code> na wielkość ciśnienia jest teraz wyższy niż <code>age</code>. Przedziały ufności są węższe
 co wynika z większej liczebności próby.</p>
 <p>Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
@@ -1625,7 +1624,7 @@ wyniki:</p>
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -1636,8 +1635,8 @@ wyniki:</p>
 <td align="right">1,530</td>
 <td align="right">48,358</td>
 <td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">71.010 77.010</td>
+<td align="right">NA</td>
+<td align="left">71,01 77,01</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -1645,8 +1644,8 @@ wyniki:</p>
 <td align="right">0,064</td>
 <td align="right">21,404</td>
 <td align="right">0</td>
-<td align="left">0.300</td>
-<td align="left">1.250 1.500</td>
+<td align="right">0,30</td>
+<td align="left">1,25 1,50</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -1654,12 +1653,12 @@ wyniki:</p>
 <td align="right">0,018</td>
 <td align="right">18,270</td>
 <td align="right">0</td>
-<td align="left">0.250</td>
-<td align="left">0.290 0.350</td>
+<td align="right">0,25</td>
+<td align="left">0,29 0,35</td>
 </tr>
 </tbody>
 </table>
-<p>Współczynnik zbieżności wynosi 18.54%.
+<p>Współczynnik zbieżności wynosi 18,54%.
 Przedziały ufności są jeszcze węższe. Ocena <code>age</code>
 z 95% prawdopodobieństwem znajduje się w przedziale [0.290 0.350]
 a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0.240 0.730].
@@ -1728,7 +1727,7 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -1739,8 +1738,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">15,745</td>
 <td align="right">5,737</td>
 <td align="right">0,000</td>
-<td align="left">NA</td>
-<td align="left">59.010 121.650</td>
+<td align="right">NA</td>
+<td align="left">59,01 121,65</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -1748,8 +1747,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">0,592</td>
 <td align="right">1,314</td>
 <td align="right">0,193</td>
-<td align="left">0.150</td>
-<td align="left">-0.400 1.960</td>
+<td align="right">0,15</td>
+<td align="left">-0,40 1,96</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -1757,8 +1756,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">0,121</td>
 <td align="right">3,658</td>
 <td align="right">0,000</td>
-<td align="left">0.330</td>
-<td align="left">0.200 0.680</td>
+<td align="right">0,33</td>
+<td align="left">0,20 0,68</td>
 </tr>
 <tr class="even">
 <td align="left">genderF</td>
@@ -1766,8 +1765,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">4,399</td>
 <td align="right">-3,141</td>
 <td align="right">0,002</td>
-<td align="left">-0.400</td>
-<td align="left">-22.570 -5.070</td>
+<td align="right">-0,40</td>
+<td align="left">-22,57 -5,07</td>
 </tr>
 <tr class="odd">
 <td align="left">CS</td>
@@ -1775,8 +1774,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">3,972</td>
 <td align="right">-1,735</td>
 <td align="right">0,087</td>
-<td align="left">-0.180</td>
-<td align="left">-14.790 1.010</td>
+<td align="right">-0,18</td>
+<td align="left">-14,79 1,01</td>
 </tr>
 <tr class="even">
 <td align="left">PS</td>
@@ -1784,8 +1783,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">6,882</td>
 <td align="right">1,108</td>
 <td align="right">0,271</td>
-<td align="left">0.110</td>
-<td align="left">-6.070 21.320</td>
+<td align="right">0,11</td>
+<td align="left">-6,07 21,32</td>
 </tr>
 <tr class="odd">
 <td align="left">CD</td>
@@ -1793,8 +1792,8 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">8,523</td>
 <td align="right">-0,465</td>
 <td align="right">0,643</td>
-<td align="left">-0.040</td>
-<td align="left">-20.910 13.000</td>
+<td align="right">-0,04</td>
+<td align="left">-20,91 13,00</td>
 </tr>
 <tr class="even">
 <td align="left">PD</td>
@@ -1802,12 +1801,12 @@ SBP &amp;= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_
 <td align="right">4,575</td>
 <td align="right">-0,875</td>
 <td align="right">0,384</td>
-<td align="left">-0.080</td>
-<td align="left">-13.100 5.100</td>
+<td align="right">-0,08</td>
+<td align="left">-13,10 5,10</td>
 </tr>
 </tbody>
 </table>
-<p>Współczynnik zbieżności wynosi 38.11%. Tylko dwie na siedem zmiennych
+<p>Współczynnik zbieżności wynosi 38,11%. Tylko dwie na siedem zmiennych
 są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
 z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie – nie mamy
 nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
@@ -1822,7 +1821,7 @@ i nie jest to przypadek.</p>
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -1833,8 +1832,8 @@ i nie jest to przypadek.</p>
 <td align="right">1,623</td>
 <td align="right">49,334</td>
 <td align="right">0,000</td>
-<td align="left">NA</td>
-<td align="left">76.910 83.270</td>
+<td align="right">NA</td>
+<td align="left">76,91 83,27</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -1842,8 +1841,8 @@ i nie jest to przypadek.</p>
 <td align="right">0,066</td>
 <td align="right">18,009</td>
 <td align="right">0,000</td>
-<td align="left">0.260</td>
-<td align="left">1.060 1.320</td>
+<td align="right">0,26</td>
+<td align="left">1,06 1,32</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -1851,8 +1850,8 @@ i nie jest to przypadek.</p>
 <td align="right">0,018</td>
 <td align="right">19,087</td>
 <td align="right">0,000</td>
-<td align="left">0.260</td>
-<td align="left">0.300 0.370</td>
+<td align="right">0,26</td>
+<td align="left">0,30 0,37</td>
 </tr>
 <tr class="even">
 <td align="left">genderF</td>
@@ -1860,8 +1859,8 @@ i nie jest to przypadek.</p>
 <td align="right">0,508</td>
 <td align="right">-10,496</td>
 <td align="right">0,000</td>
-<td align="left">-0.160</td>
-<td align="left">-6.320 -4.330</td>
+<td align="right">-0,16</td>
+<td align="left">-6,32 -4,33</td>
 </tr>
 <tr class="odd">
 <td align="left">CS</td>
@@ -1869,8 +1868,8 @@ i nie jest to przypadek.</p>
 <td align="right">0,583</td>
 <td align="right">-4,717</td>
 <td align="right">0,000</td>
-<td align="left">-0.070</td>
-<td align="left">-3.900 -1.610</td>
+<td align="right">-0,07</td>
+<td align="left">-3,90 -1,61</td>
 </tr>
 <tr class="even">
 <td align="left">PS</td>
@@ -1878,8 +1877,8 @@ i nie jest to przypadek.</p>
 <td align="right">1,045</td>
 <td align="right">-1,933</td>
 <td align="right">0,053</td>
-<td align="left">-0.030</td>
-<td align="left">-4.070 0.030</td>
+<td align="right">-0,03</td>
+<td align="left">-4,07 0,03</td>
 </tr>
 <tr class="odd">
 <td align="left">CD</td>
@@ -1887,8 +1886,8 @@ i nie jest to przypadek.</p>
 <td align="right">1,535</td>
 <td align="right">2,360</td>
 <td align="right">0,018</td>
-<td align="left">0.030</td>
-<td align="left">0.610 6.630</td>
+<td align="right">0,03</td>
+<td align="left">0,61 6,63</td>
 </tr>
 <tr class="even">
 <td align="left">PD</td>
@@ -1896,12 +1895,12 @@ i nie jest to przypadek.</p>
 <td align="right">0,623</td>
 <td align="right">0,310</td>
 <td align="right">0,757</td>
-<td align="left">0.000</td>
-<td align="left">-1.030 1.410</td>
+<td align="right">0,00</td>
+<td align="left">-1,03 1,41</td>
 </tr>
 </tbody>
 </table>
-<p>Współczynnik zbieżności wynosi 20.72%. Zwiększenie
+<p>Współczynnik zbieżności wynosi 20,72%. Zwiększenie
 liczebności próby z 90 do 4490 obserwacji spowodowało, że tylko dwie z siedmiu zmiennych
 mają nieistotne wartości. Analizując wartości standaryzowane możemy ustalić
 które zmienne mają największy wpływ na wielkość ciśnienia krwi.</p>
@@ -1931,7 +1930,7 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -1942,8 +1941,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">1,622</td>
 <td align="right">49,387</td>
 <td align="right">0,000</td>
-<td align="left">NA</td>
-<td align="left">76.930 83.290</td>
+<td align="right">NA</td>
+<td align="left">76,93 83,29</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -1951,8 +1950,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">0,066</td>
 <td align="right">18,056</td>
 <td align="right">0,000</td>
-<td align="left">0.260</td>
-<td align="left">1.060 1.320</td>
+<td align="right">0,26</td>
+<td align="left">1,06 1,32</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -1960,8 +1959,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">0,018</td>
 <td align="right">19,097</td>
 <td align="right">0,000</td>
-<td align="left">0.260</td>
-<td align="left">0.300 0.370</td>
+<td align="right">0,26</td>
+<td align="left">0,30 0,37</td>
 </tr>
 <tr class="even">
 <td align="left">genderF</td>
@@ -1969,8 +1968,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">0,499</td>
 <td align="right">-10,740</td>
 <td align="right">0,000</td>
-<td align="left">-0.160</td>
-<td align="left">-6.340 -4.380</td>
+<td align="right">-0,16</td>
+<td align="left">-6,34 -4,38</td>
 </tr>
 <tr class="odd">
 <td align="left">CS</td>
@@ -1978,8 +1977,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">0,582</td>
 <td align="right">-4,708</td>
 <td align="right">0,000</td>
-<td align="left">-0.070</td>
-<td align="left">-3.880 -1.600</td>
+<td align="right">-0,07</td>
+<td align="left">-3,88 -1,60</td>
 </tr>
 <tr class="even">
 <td align="left">PS</td>
@@ -1987,8 +1986,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">1,037</td>
 <td align="right">-1,910</td>
 <td align="right">0,056</td>
-<td align="left">-0.030</td>
-<td align="left">-4.010 0.050</td>
+<td align="right">-0,03</td>
+<td align="left">-4,01 0,05</td>
 </tr>
 <tr class="odd">
 <td align="left">CD</td>
@@ -1996,8 +1995,8 @@ i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 <td align="right">1,528</td>
 <td align="right">2,342</td>
 <td align="right">0,019</td>
-<td align="left">0.030</td>
-<td align="left">0.580 6.580</td>
+<td align="right">0,03</td>
+<td align="left">0,58 6,58</td>
 </tr>
 </tbody>
 </table>
@@ -2011,7 +2010,7 @@ teraz tę zmienną. Otrzymujemy:</p>
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">Beta</th>
+<th align="right">Beta</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -2022,8 +2021,8 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="right">1,618</td>
 <td align="right">49,375</td>
 <td align="right">0,00</td>
-<td align="left">NA</td>
-<td align="left">76.690 83.040</td>
+<td align="right">NA</td>
+<td align="left">76,69 83,04</td>
 </tr>
 <tr class="even">
 <td align="left">BMI</td>
@@ -2031,8 +2030,8 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="right">0,066</td>
 <td align="right">18,075</td>
 <td align="right">0,00</td>
-<td align="left">0.260</td>
-<td align="left">1.070 1.320</td>
+<td align="right">0,26</td>
+<td align="left">1,07 1,32</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -2040,8 +2039,8 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="right">0,018</td>
 <td align="right">19,100</td>
 <td align="right">0,00</td>
-<td align="left">0.260</td>
-<td align="left">0.300 0.370</td>
+<td align="right">0,26</td>
+<td align="left">0,30 0,37</td>
 </tr>
 <tr class="even">
 <td align="left">genderF</td>
@@ -2049,8 +2048,8 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="right">0,488</td>
 <td align="right">-10,572</td>
 <td align="right">0,00</td>
-<td align="left">-0.160</td>
-<td align="left">-6.110 -4.200</td>
+<td align="right">-0,16</td>
+<td align="left">-6,11 -4,20</td>
 </tr>
 <tr class="odd">
 <td align="left">CS</td>
@@ -2058,8 +2057,8 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="right">0,573</td>
 <td align="right">-4,435</td>
 <td align="right">0,00</td>
-<td align="left">-0.060</td>
-<td align="left">-3.660 -1.420</td>
+<td align="right">-0,06</td>
+<td align="left">-3,66 -1,42</td>
 </tr>
 <tr class="even">
 <td align="left">CD</td>
@@ -2067,13 +2066,13 @@ teraz tę zmienną. Otrzymujemy:</p>
 <td align="right">1,529</td>
 <td align="right">2,323</td>
 <td align="right">0,02</td>
-<td align="left">0.030</td>
-<td align="left">0.550 6.550</td>
+<td align="right">0,03</td>
+<td align="left">0,55 6,55</td>
 </tr>
 </tbody>
 </table>
 <p>Wszystkie współczynniki mają istotnie różnie od zera wartości. Wartość
-współczynnika zbieżności ostatecznego modelu wynosi 20.66%.
+współczynnika zbieżności ostatecznego modelu wynosi 20,66%.
 Usuwając nieistotne zmienne z modelu obniżyliśmy wartość
 współczynnika zmienności o
 20,72% - 20,66% = 0,07%, czyli
@@ -2241,7 +2240,7 @@ oraz prawdopodobieństwo.</p>
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">OR</th>
+<th align="right">OR</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -2252,8 +2251,8 @@ oraz prawdopodobieństwo.</p>
 <td align="right">0,455</td>
 <td align="right">-7,403</td>
 <td align="right">0,000</td>
-<td align="left">0.030</td>
-<td align="left">0.010 0.080</td>
+<td align="right">0,03</td>
+<td align="left">0,01 0,08</td>
 </tr>
 <tr class="even">
 <td align="left">genderF</td>
@@ -2261,8 +2260,8 @@ oraz prawdopodobieństwo.</p>
 <td align="right">0,509</td>
 <td align="right">1,992</td>
 <td align="right">0,046</td>
-<td align="left">2.760</td>
-<td align="left">1.090 8.400</td>
+<td align="right">2,76</td>
+<td align="left">1,09 8,40</td>
 </tr>
 </tbody>
 </table>
@@ -2281,7 +2280,7 @@ oraz prawdopodobieństwo.</p>
 <th align="right">SE</th>
 <th align="right">z</th>
 <th align="right">p</th>
-<th align="left">OR</th>
+<th align="right">OR</th>
 <th align="left">CI</th>
 </tr>
 </thead>
@@ -2292,8 +2291,8 @@ oraz prawdopodobieństwo.</p>
 <td align="right">1,766</td>
 <td align="right">-6,898</td>
 <td align="right">0,000</td>
-<td align="left">0.000</td>
-<td align="left">0.000 0.000</td>
+<td align="right">0,00</td>
+<td align="left">0,00 0,00</td>
 </tr>
 <tr class="even">
 <td align="left">d</td>
@@ -2301,8 +2300,8 @@ oraz prawdopodobieństwo.</p>
 <td align="right">0,009</td>
 <td align="right">0,536</td>
 <td align="right">0,592</td>
-<td align="left">1.000</td>
-<td align="left">0.990 1.020</td>
+<td align="right">1,00</td>
+<td align="left">0,99 1,02</td>
 </tr>
 <tr class="odd">
 <td align="left">age</td>
@@ -2310,8 +2309,8 @@ oraz prawdopodobieństwo.</p>
 <td align="right">0,026</td>
 <td align="right">5,930</td>
 <td align="right">0,000</td>
-<td align="left">1.170</td>
-<td align="left">1.120 1.240</td>
+<td align="right">1,17</td>
+<td align="left">1,12 1,24</td>
 </tr>
 <tr class="even">
 <td align="left">genderF</td>
@@ -2319,8 +2318,8 @@ oraz prawdopodobieństwo.</p>
 <td align="right">0,662</td>
 <td align="right">3,722</td>
 <td align="right">0,000</td>
-<td align="left">11.740</td>
-<td align="left">3.540 48.760</td>
+<td align="right">11,74</td>
+<td align="left">3,54 48,76</td>
 </tr>
 </tbody>
 </table>
@@ -2357,17 +2356,17 @@ ze zbioru [-1;1].</p>
 <p>Współczynnik Pearsona i Spearmana dla zależności między spożyciem mięsa w 1980
 a spożyciem mięsa w 2013 roku (zmienna objaśniana):</p>
 <ul>
-<li><p>współczynnik Pearsona: 0.68;</p></li>
-<li><p>współczynnik Spearmana: 0.68.</p></li>
+<li><p>współczynnik Pearsona: 0,68;</p></li>
+<li><p>współczynnik Spearmana: 0,68.</p></li>
 </ul>
 <p>Nie ma sensu liczenia współczynnika korelacji rang w przypadku kiedy obie
 cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
 Ale nie jest to też błędem więc w powyższym przykładzie go liczymy.</p>
 <p>Współczynnik korelacji liniowej Spearmana
-wynosi 0.68 (umiarkowana korelacja).</p>
+wynosi 0,68 (umiarkowana korelacja).</p>
 <p>Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
 test statystyczny, który sprowadza się do określenia jakie jest
-prawdopodobieństwo otrzymania <span class="math inline">\(r_s\)</span> = 0.68 przy założeniu że
+prawdopodobieństwo otrzymania <span class="math inline">\(r_s\)</span> = 0,68 przy założeniu że
 prawdziwa wartość <span class="math inline">\(r_s\)</span> wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi 2.302116e-26
 (czyli jest ekstremalnie małe – współczynnik jest istotnie różny od zera).</p>
