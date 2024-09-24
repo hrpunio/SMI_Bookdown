@@ -208,9 +208,8 @@ program komputerowy.
 
 Przedział ufności dla ilorazu szans nie zawiera 1; 
 zatem branie witaminy C zmniejsza szanse na zachorowanie;
-albo zwiększa na niezachorowanie od $1/25 = 4$ do $1/0,9 = 1,1$. Żeby
-to zabrzmiało ładnie i po polsku. 
-Zwiększa na niezachorowanie od 300% do 10%.
+albo zwiększa na niezachorowanie od $1/0,25 = 4$ do $1/0,9 \approx 1,1$. Żeby
+to zabrzmiało ładnie i po polsku: zwiększa na niezachorowanie od 10% do 300%.
 
 Dlaczego taka znacząca rozpiętość? Bo próba jest względnie mała. Gdyby
 Pauling zwerbował nie 280 a 2800 narciarzy mógłby weryfikować działanie
@@ -271,7 +270,7 @@ kable(digits=2, narciarze.table.p, col.names = c('nocold', 'cold', 'razem'), boo
 ```
 
 Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
-`r  sprintf ("%.2f", narciarze.table.p[1,1])`%
+`r round(narciarze.table.p[1,1], 2)`%
 wszystkich narciarzy. Mało przydatne...
 
 Ciekawsze jest obliczenie procentów każdego wiersza osobno, tj. dzielimy
@@ -289,15 +288,15 @@ kable(digits=2, narciarze.x, col.names = c('nocold', 'cold', 'razem'), booktabs 
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
 zachorowania dla całej grupy wynosi
-`r sprintf("%.2f", narciarze.x[3,2])`% a nie zachorowania
-`r sprintf("%.2f", narciarze.x[3,1])`%. Jest przyznajmy całkiem **zdroworozsądkowym założeniem**
+`r round(narciarze.x[3,2], 2)`% a nie zachorowania
+`r round(narciarze.x[3,1], 2)`%. Jest przyznajmy całkiem **zdroworozsądkowym założeniem**
 (uczenie hipotezą statystyczną), że jeżeli przyjmowanie witaminy nie ma związku
 z zachorowaniem lub nie na katar, to w grupie tych co brali i tych co nie brali
 powinniśmy mieć identyczne rozkłady warunkowe równe rozkładowi brzegowemu.
 Czyli powinno przykładowo zachorować
-`r  sprintf("%.2f", narciarze.x[3,2])`% narciarzy, którzy
+`r  round(narciarze.x[3,2], 2)`% narciarzy, którzy
 brali witaminę C a widzimy , że zachorowało
-jedynie `r sprintf("%.2f", narciarze.x[1,2])`%.
+jedynie `r round(narciarze.x[1,2], 2)`%.
 
 Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się 
 czy ta różnica jest na tyle duża, że (z założonym prawdopodobieństwem) 
@@ -315,7 +314,7 @@ a następnie podzieleniu tego przez łączną liczebność (czyli przykładowo p
 element poniższej „idealnej” tablicy to `r narciarze.table[3,1]` pomnożone przez
 `r narciarze.table[1,3]` i podzielone przez `r narciarze.table[3,3]`; proszę
 sprawdzić,
-że jest to `r sprintf("%.3f", narciarze.table[3,1] * narciarze.table[1,3] / narciarze.table[3,3])`):
+że jest to `r round(narciarze.table[3,1] * narciarze.table[1,3] / narciarze.table[3,3], 3)`):
 
 ```{r, message=FALSE, echo=FALSE}
 chi_skiers <- chisq.test(narciarze)
@@ -323,7 +322,7 @@ narciarze.expected <- chi_skiers$expected
 narciarze.ex.table <- addmargins(narciarze.expected)
 
 chipv <- chi_skiers$p.value
-chipv.txt <- sprintf("%f", chipv)
+##chipv.txt <- sprintf("%f", chipv)
 kable(digits=3, narciarze.ex.table, booktabs = TRUE)
 ```
 
@@ -333,7 +332,7 @@ jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (któr
 liczbami całkowitymi, ale tak ma być i nie jest to błąd).
 
 Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
-tak dużych lub większych różnic. Wynosi ono `r chipv.txt`.
+tak dużych lub większych różnic. Wynosi ono `r round(chipv, 4)`.
 Czyli wystąpienie tak dużych różnic
 pomiędzy **oczekiwanymi** (przy założeniu o niezależności zmiennych)
 a obserwowanymi liczebnościami zdarza się około 4 razy na 100.
@@ -413,14 +412,14 @@ smokers.expected <- chi_smokers$expected
 smokers.ex.table <- addmargins(smokers.expected)
 
 chipv <- chi_smokers$p.value
-chipv.txt <- sprintf("%f", chipv)
+##chipv.txt <- sprintf("%f", chipv)
 kable(smokers.ex.table, booktabs = TRUE)
 ```
 
 Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi 
-(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi `r chipv.txt`.
+(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi `r round(chipv, 4)`.
 Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
-statusu i palenia (myląc się w przybliżeniu `r chipv.txt` ≈ raz na tysiąc).
+statusu i palenia (myląc się w przybliżeniu `r round(chipv, 4)` ≈ raz na tysiąc).
 
 :::
 
@@ -510,7 +509,7 @@ kable(s0.mp, col.names = c('m-pracy', 'średnia', 'mediana', 'n'), booktabs = TR
 Kolumna n zawiera liczebności.
 
 Średnie różnią się 
-o `r sprintf ("%.2f", s0.mp.szpital - s0.mp.przychodnia)`. 
+o `r round(s0.mp.szpital - s0.mp.przychodnia, 2)`. 
 Pytanie czy to dużo czy mało?
 
 Przyjmijmy (na razie bez sprawdzania), że rozkłady wartości poziomu depresji
@@ -652,7 +651,7 @@ anova.test
 p.anova <- anova.test$p.value
 ```
 
-Wartość p równa `r sprintf("%.4f", p.anova)` świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
+Wartość p równa `r round(p.anova, 4)` świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
 że pomiędzy poziomem depresji a kategoriami stażu pracy nie ma zależności.
 
 Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
@@ -683,12 +682,12 @@ Na poniższym wydruku wartość statystyki testu jest oznaczona jako
 ```{r, echo=F}
 kw <- kruskal.test(P ~ staz, data = s0)
 kw
-pval <- kw['p.value']
+pval <- kw$p.value
 ```
 
 Prawdopodobieństwo tak dużej wartości statystyki testu
 przy założeniu, że  rozkłady wartości zmiennej we wszystkich grupach są identyczne wynosi
-`r sprintf("%.4f", pval)` (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).
+`r round(pval, 4)` (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).
 
 :::
 
@@ -777,7 +776,7 @@ Interpretacja opisowa: wartości powyżej 0,9 świadczą o silnej zależności.
 ```{r, results=F, echo=F, message=F}
 rpm <- cor(meatCons$y1980, meatCons$y2013, method = "pearson")
 rpm.out <- cor.test(meatCons$y1980, meatCons$y2013, method="pearson")
-rpm.p <- rpm.out["p.value"]
+rpm.p <- rpm.out$p.value
 ```
 
 Współczynnik korelacji liniowej wynosi `r rpm` (umiarkowana korelacja).
@@ -1030,7 +1029,9 @@ lm.0.coef <- as.data.frame(coef(summary(lm.0)))
 ##lm_std_txt <- sprintf ("%f", lm.0.std )
 ## Przedziały ufności
 lm.0.ci <- round(confint(lm.0), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.0.ci[,1], lm.0.ci[,2] )
+## sprintf("%s",format(1.5,decimal.mark=",", digits=3))
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.0.ci[,1], lm.0.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.0.ci[,1], decimal.mark=",", digits=3), format(lm.0.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
@@ -1047,8 +1048,8 @@ Kolumna `SE` zawiera oceny błędu standardowego estymatorów parametrów linii 
 Kolumna `p` zawiera prawdopodobieństwo $b>b_e$.
 
 Wzrost wagi zawodnika o 1kg
-skutkuje przeciętnie większym wzrostem o `r sprintf("%.3f", coeff_b)` cm. Współczynnik determinacji
-wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+skutkuje przeciętnie większym wzrostem o `r round(coeff_b, 3)` cm. Współczynnik determinacji
+wynosi `r round(lmr * 100, 2)`%. 
 Współczynnik nachylenia prostej jest istotny ponieważ wartość $p$ (tak mała, że w tabeli
 oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p < 0,05). 
@@ -1103,7 +1104,8 @@ lm.0.coef <- as.data.frame(coef(summary(lm.0)))
 ##lm_std_txt <- sprintf ("%f", lm.0.std )
 ## Przedziały ufności
 lm.0.ci <- round(confint(lm.0), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.0.ci[,1], lm.0.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.0.ci[,1], lm.0.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.0.ci[,1], decimal.mark=",", digits=3), format(lm.0.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.0.coef.df <- tibble::rownames_to_column(lm.0.coef, "Parametr") %>%
@@ -1115,11 +1117,11 @@ kable(lm.0.coef.df, row.names = F, digits=3,
 ```
 
 Każdy tysiąc USD *per capita* więcej dochodu narodowego (GDP) oznacza przeciętny 
-wzrost spożycia mięsa o `r sprintf("%.3f", coeff_b)`  kg.  Przeciętna różnica wartości teoretycznych
+wzrost spożycia mięsa o `r round(coeff_b, 3)`  kg.  Przeciętna różnica wartości teoretycznych
 od empirycznych wynosi 21,04 kg (średni błąd szacunku). 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%.
 Współczynnik nachylenia prostej (którego wartość 
-wynosi `r sprintf("%.3f", coeff_b)`) jest statystycznie istotny.
+wynosi `r round(coeff_b, 3)`) jest statystycznie istotny.
 
 :::
 
@@ -1246,21 +1248,21 @@ lmr <- summary(lm.1)$r.squared
 
 ## wielkości standaryzowane
 lm.1.std <- round(coef(lm.beta(lm.1)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.1.std )
 ## Przedziały ufności
 lm.1.ci <- round(confint(lm.1), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.1.ci[,1], decimal.mark=",", digits=3), format(lm.1.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.1.std,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. 
 Kolumna `Beta` zawiera standaryzowane
 oceny parametrów regresji. Tej kolumny na poprzednich wydrukach
 (punkt \@ref(regProsta))
@@ -1281,20 +1283,20 @@ lm.2.coef <- as.data.frame(coef(summary(lm.2)))
 lmr <- summary(lm.2)$r.squared
 ## wielkości standaryzowane
 lm.2.std <- round(coef(lm.beta(lm.2)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.2.std )
 ## Przedziały ufności
 lm.2.ci <- round(confint(lm.2), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.2.ci[,1], lm.2.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.2.ci[,1], lm.2.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.2.ci[,1], decimal.mark=",", digits=3), format(lm.2.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.2.coef.df <- tibble::rownames_to_column(lm.2.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.2.std,  ci=lm_ci_txt)
 
 kable(lm.2.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. 
 Wpływ `BMI` na wielkość ciśnienia jest teraz wyższy niż `age`. Przedziały ufności są węższe
 co wynika z większej liczebności próby.
 
@@ -1309,20 +1311,20 @@ lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 lmr <- summary(lm.3)$r.squared
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.3.ci[,1], decimal.mark=",", digits=3), format(lm.3.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%.
 Przedziały ufności są jeszcze węższe. Ocena `age` 
 z 95% prawdopodobieństwem znajduje się w przedziale [0.290 0.350]
 a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0.240 0.730].
@@ -1411,21 +1413,21 @@ lmr <- summary(lm.1)$r.squared
 lm.1.coef <- as.data.frame(coef(summary(lm.1)))
 ## wielkości standaryzowane
 lm.1.std <- round(coef(lm.beta(lm.1)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.1.std )
 ## Przedziały ufności
 lm.1.ci <- round(confint(lm.1), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.1.ci[,1], decimal.mark=",", digits=3), format(lm.1.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.1.std,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. Tylko dwie na siedem zmiennych
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. Tylko dwie na siedem zmiennych
 są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
 z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie – nie mamy
 nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
@@ -1445,21 +1447,21 @@ lmr7 <- lmr
 lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.3.ci[,1], decimal.mark=",", digits=3), format(lm.3.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. Zwiększenie
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. Zwiększenie
 liczebności próby z 90 do 4490 obserwacji spowodowało, że tylko dwie z siedmiu zmiennych 
 mają nieistotne wartości. Analizując wartości standaryzowane możemy ustalić
 które zmienne mają największy wpływ na wielkość ciśnienia krwi.
@@ -1496,14 +1498,14 @@ lmr <- summary(lm.3)$r.squared
 lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.3.ci[,1], decimal.mark=",", digits=3), format(lm.3.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
@@ -1523,14 +1525,14 @@ lmr <- summary(lm.3)$r.squared
 lm.3.coef <- as.data.frame(coef(summary(lm.3)))
 ## wielkości standaryzowane
 lm.3.std <- round(coef(lm.beta(lm.3)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.3.std )
 ## Przedziały ufności
 lm.3.ci <- round(confint(lm.3), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.3.ci[,1], lm.3.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.3.ci[,1], decimal.mark=",", digits=3), format(lm.3.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
@@ -1538,7 +1540,7 @@ kable(lm.3.coef.df, row.names = F, digits=3,
 ```
 
 Wszystkie współczynniki mają istotnie różnie od zera wartości. Wartość
-współczynnika zbieżności ostatecznego modelu wynosi `r sprintf ("%.2f", lmr * 100)`%.
+współczynnika zbieżności ostatecznego modelu wynosi `r round(lmr * 100, 2)`%.
 Usuwając nieistotne zmienne z modelu obniżyliśmy wartość
 współczynnika zmienności o 
 `r round(lmr7, 4) * 100`%  -  `r round(lmr, 4) * 100`%  =  `r round(lmr7 - lmr, 4) * 100`%, czyli
@@ -1757,14 +1759,14 @@ glm.1 = glm(osteoporosis ~ genderF, data = vd0, family = "binomial")
 gml.1.coef <- as.data.frame(coef(summary(glm.1)))
 ## OR
 glm.1.or <- round(exp(coef(glm.1)), 2)
-glm_or_txt <- sprintf ("%.3f", glm.1.or )
 ## Przedziały ufności
 glm.1.ci <- round(exp(confint(glm.1)), 2)
-glm_ci_txt <- sprintf ("%.3f %.3f", glm.1.ci[,1], glm.1.ci[,2] )
+##glm_ci_txt <- sprintf ("%.3f %.3f", glm.1.ci[,1], glm.1.ci[,2] )
+glm_ci_txt <- sprintf ("%s %s", format(glm.1.ci[,1], decimal.mark=",", digits=3), format(glm.1.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
-  mutate(or=glm_or_txt,  ci=glm_ci_txt)
+  mutate(or=glm.1.or,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
@@ -1805,14 +1807,14 @@ glm.2 = glm(osteoporosis ~ d + age + genderF, data = vd0, family = "binomial")
 gml.2.coef <- as.data.frame(coef(summary(glm.2)))
 ## OR
 glm.2.or <- round(exp(coef(glm.2)), 2)
-glm_or_txt <- sprintf ("%.3f", glm.2.or )
 ## Przedziały ufności
 glm.2.ci <- round(exp(confint(glm.2)), 2)
-glm_ci_txt <- sprintf ("%.3f %.3f", glm.2.ci[,1], glm.2.ci[,2] )
+##glm_ci_txt <- sprintf ("%.3f %.3f", glm.2.ci[,1], glm.2.ci[,2] )
+glm_ci_txt <- sprintf ("%s %s", format(glm.2.ci[,1], decimal.mark=",", digits=3), format(glm.2.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
-  mutate(or=glm_or_txt,
+  mutate(or=glm.2.or,
          ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
@@ -1898,13 +1900,13 @@ rpm <- cor(meatCons$y1980, meatCons$y2013, method = "pearson")
 rsm <- cor(meatCons$y1980, meatCons$y2013, method = "spearman")
 ```
 
-* współczynnik Pearsona: `r sprintf ("%.2f", rpm)`;
+* współczynnik Pearsona: `r round(rpm, 2)`;
 
-* współczynnik Spearmana: `r sprintf ("%.2f", rsm)`.
+* współczynnik Spearmana: `r round(rsm, 2)`.
 
 ```{r}
 rsm.out <- cor.test(meatCons$y1980, meatCons$y2013, method="spearman")
-rsm.p <- rsm.out["p.value"]
+rsm.p <- rsm.out$p.value
 ```
 
 Nie ma sensu liczenia współczynnika korelacji rang w przypadku kiedy obie
@@ -1912,11 +1914,11 @@ cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
 Ale nie jest to też błędem więc w powyższym przykładzie go liczymy.
 
 Współczynnik korelacji liniowej Spearmana 
-wynosi `r sprintf("%.2f", rsm)` (umiarkowana korelacja).
+wynosi `r round(rsm, 2)` (umiarkowana korelacja).
 
 Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
 test statystyczny, który sprowadza się do określenia jakie jest
-prawdopodobieństwo otrzymania $r_s$ = `r sprintf("%.2f", rsm)` przy założeniu że 
+prawdopodobieństwo otrzymania $r_s$ = `r round(rsm, 2)` przy założeniu że 
 prawdziwa wartość $r_s$ wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi `r sprintf ("%e", rsm.p)` 
 (czyli jest ekstremalnie małe – współczynnik jest istotnie różny od zera).

@@ -220,6 +220,23 @@ s1 <- s0 %>%
       P10A + P10B + P10C + P10D + P10E + P10F + P10G + P10H + P10I +
       P11 +
       P12A + P12B + P12C + P12D + P12E + P12F )
+###
+
+t.sex.f <- s1 %>%
+  select (status, plec) %>%
+  table()
+
+t.sex.t <- kable(t.sex.f, booktabs = TRUE)
+t.sex.t
+
+chi_test <- chisq.test(t.sex.f)
+chi_test
+qq <- chi_test["p.value"]
+qq2 <- chi_test$p.value
+print (qq)
+print (qq2)
+round(chi_test["p.value"], 4)
+
 
 s1.plec <- s1 %>%
   select (plec) %>%

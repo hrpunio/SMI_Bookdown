@@ -207,7 +207,7 @@ A ponieważ współczynniki zgonów rosną wraz z wiekiem, to nie można
 wykluczyć, że prawdziwą przyczyną obserwowanego zwiększenia wartości
 współczynników zgonów jest wiek a nie fluoryzacja.
 
-```{r fluor, fig.cap = "Fluoryzacja, wiek a nowotwór"}
+```{r fluor, out.width="99%", fig.cap = "Fluoryzacja, wiek a nowotwór"}
 knitr::include_graphics("./Model1_cropped.png")
 ```
 

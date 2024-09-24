@@ -80,8 +80,8 @@
 \contentsline {subsection}{\numberline {5.3.3}Zastosowane metody statystyczne}{83}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}Metryczka}{83}{subsection.5.3.4}%
 \contentsline {subsection}{\numberline {5.3.5}Weryfikacja hipotezy 1}{83}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Weryfikacja hipotez 2--4}{84}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Depresja a płeć}{85}{subsection.5.3.7}%
+\contentsline {subsection}{\numberline {5.3.6}Weryfikacja hipotez 2--4}{83}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Depresja a płeć}{84}{subsection.5.3.7}%
 \contentsline {subsection}{\numberline {5.3.8}Depresja a staż}{85}{subsection.5.3.8}%
 \contentsline {subsection}{\numberline {5.3.9}Depresja a rodzaj miejsca pracy}{86}{subsection.5.3.9}%
 \contentsline {subsection}{\numberline {5.3.10}Wnioski}{86}{subsection.5.3.10}%

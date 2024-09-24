@@ -198,7 +198,7 @@ t2
 
 :::
 
-Zapis `(1,1.5]` oznacza przedział od 1,0 do 1,5 prz czym dolny koniec nie należy
+Zapis `(1,1.5]` oznacza przedział od 1,0 do 1,5 przy czym dolny koniec nie należy
 do przedziału a górny 1,5 należy. Który koniec „wchodzi“, a który nie powinien być
 jasno oznaczony. Zwykle jest tak jak w przykładzie: górny „wchodzi“, dolny „nie wchodzi“.
 
@@ -505,9 +505,9 @@ Przykładowo wartość 99 centyla i mniejszą ma 99% jednostek w populacji.
 ::: {.example}
 **Współczynnik dzietności na świecie w roku 2018**
 
-Średnia: `r sprintf ("%.2f", mean2018)`.
+Średnia: `r round(mean2018, 2)`.
 Interpretacja: średnia wartość współczynnika dzietności wyniosła
-`r sprintf ("%.2f", mean2018)` dziecka.
+`r round(mean2018, 2)` dziecka.
 Mediana: `r median2018`. Interpretacja mediany: współczynnik dzietności 
 w połowie krajów na świecie
 wynosiła `r median2018` dziecka i mniej.
@@ -515,7 +515,7 @@ Dominanta: `r dominanta2018`. Interpretacja dominanty: najwięcej krajów wykazu
 równy `r dominanta2018`. Wartość cokolwiek przypadkowa, bowiem krajów wykazujących
 współczynnik równy `r dominanta2018`, jest raptem `r dominanta2018N`.
 
-Uwaga: średnia dzietność na świecie **nie wynosi** `r sprintf ("%.2f", mean2018)` dziecka
+Uwaga: średnia dzietność na świecie **nie wynosi** `r round(mean2018, 2)` dziecka
 (bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
 Podobnie dzietność połowy kobiet na świecie wyniosła
 `r median2018` dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
@@ -583,8 +583,8 @@ iqr2018 <- q3.2018 - q1.2018
 ```
 
 Średnie odchylenie od średniej wartości współczynnika
-wynosi `r sprintf("%.2f", sd2018)` dziecka. 
-Wartość rozstępu ćwiartkowego wynosi `r sprintf("%.2f", iqr2018)` dziecka.
+wynosi `r round(sd2018, 2)` dziecka. 
+Wartość rozstępu ćwiartkowego wynosi `r round(iqr2018, 2)` dziecka.
 :::
 
 **Uwaga**: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
@@ -636,11 +636,11 @@ skewness2018WS_q <- ((q3.2018 - median2018) - (median2018  - q1.2018)) / (q3.201
 :::{.example}
 **Współczynnik dzietności (kontynuacja)**
 
-Współczynnik asymetrii $g$ wynosi `r sprintf("%.2f", skewness2018)`; Współczynnik
-Pearsona wykorzystujący dominantę wynosi `r sprintf("%.2f", skewness2018WS_d)`
-a wykorzystujący medianę `r sprintf("%.2f", skewness2018WS_m)`.
+Współczynnik asymetrii $g$ wynosi `r round(skewness2018, 2)`; Współczynnik
+Pearsona wykorzystujący dominantę wynosi `r round(skewness2018WS_d, 2)`
+a wykorzystujący medianę `r round(skewness2018WS_m, 2)`.
 Wreszcie wartość współczynnika opartego o kwartle
-wynosi `r sprintf("%.2f", skewness2018WS_q)`. Wszystkie współczynniki wskazują
+wynosi `r round(skewness2018WS_q, 2)`. Wszystkie współczynniki wskazują
 prawostronną (dodatnią) asymetrię. Współczynniki oparte
 o dominantę i kwartle wskazują słabą asymetrię, a oparte o medianę
 oraz klasyczny umiarkowaną. Jest całkowicie normalne, że różne miary
@@ -718,21 +718,21 @@ h1.b
 ```
 
 Liczba zawodników ataku wyniosła `r n.b`.
-Przeciętnie zawodnik ataku ważył `r sprintf ("%.1f", mean.b)` kg.
-Wartość mediany wyniosła `r sprintf("%.1f", median.b)` kg (połowa
-zawodników ataku ważyła `r sprintf ("%.1f", median.b)` kg i mniej).
+Przeciętnie zawodnik ataku ważył `r round(mean.b, 1)` kg.
+Wartość mediany wyniosła `r round(median.b, 1)` kg (połowa
+zawodników ataku ważyła `r round(median.b, 1)` kg i mniej).
 Wartości pierwszego i trzeciego kwartyla wyniosły odpowiednio `r q1.b` oraz `r q3.b` kg (1/4 zawodników
 ataku ważyła `r q1.b` kg i mniej; 
 1/4 zawodników ataku ważyła `r q3.b` kg i więcej).
 
-Odchylenie standardowe jest równe `r sprintf("%.1f", sd.b)` kg (przeciętnie
-odchylenie od średniej arytmetycznej wynosi `r sprintf("%.1f", sd.b)` kg).
+Odchylenie standardowe jest równe `r round(sd.b, 1)` kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi `r round(sd.b, 1)` kg).
 Rozstęp ćwiartkowy wynosi `r iqr.b` kg (rozstęp 50% środkowych wartości 
 wynosi `r iqr.b` kg).
 
-Wartość klasycznego współczynnika skośności jest równa `r sprintf ("%.2f", skewness.b)`.
-Wartość współczynnika skośności opartego o kwartle wynosi `r  sprintf ("%.2f", skewness.b_q)`,
-a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r  sprintf ("%.2f", skewness.b_m)`.
+Wartość klasycznego współczynnika skośności jest równa `r round(skewness.b, 2)`.
+Wartość współczynnika skośności opartego o kwartle wynosi `r round(skewness.b_q, 2)`,
+a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r round(skewness.b_m, 2)`.
 
 **Zawodnicy młyna**
 
@@ -766,21 +766,21 @@ h1.f
 ```
 
 Liczba zawodników młyna wyniosła `r n.f`.
-Średnio zawodnik młyna ważył `r sprintf ("%.1f", mean.f)` kg.
-Wartość mediany wyniosła `r sprintf("%.1f", median.f)` kg (połowa zawodników
+Średnio zawodnik młyna ważył `r round(mean.f, 1)` kg.
+Wartość mediany wyniosła `r round(median.f, 1)` kg (połowa zawodników
 młyna ważyło `r median.f` kg i mniej). Wartości
 pierwszego i trzeciego kwartyla wyniosły odpowiednio `r q1.f` oraz `r q3.f` kg (1/4 zawodników
 młyna ważyło `r q1.f` kg i mniej; 
 1/4 zawodników młyna ważyło `r q3.f` kg i więcej).
 
-Odchylenie standardowe jest równe `r sprintf("%.1f", sd.f)` kg (przeciętnie
-odchylenie od średniej arytmetycznej wynosi `r sprintf("%.1f", sd.f)` kg).
+Odchylenie standardowe jest równe `r round(sd.f, 1)` kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi `r round(sd.f, 1)` kg).
 Rozstęp ćwiartkowy wynosi `r iqr.f` kg (rozstęp 50% środkowych wartości 
 wynosi `r iqr.f` kg).
 
-Wartość klasycznego współczynnika skośności jest równa `r sprintf ("%.2f", skewness.f)`.
-Wartość współczynnika skośności opartego o kwartle wynosi `r  sprintf ("%.2f", skewness.f_q)`,
-a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r  sprintf ("%.2f", skewness.f_m)`.
+Wartość klasycznego współczynnika skośności jest równa `r round(skewness.f, 2)`.
+Wartość współczynnika skośności opartego o kwartle wynosi `r  round(skewness.f_q, 2)`,
+a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r round(skewness.f_m, 2)`.
 
 
 **Porównanie atak vs młyn**

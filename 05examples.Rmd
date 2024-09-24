@@ -376,8 +376,8 @@ ex.p
 W badaniu wzięło udział `r P.total.N` studentów. 
 Otrzymano `r P.total.N` poprawnie
 wypełnionych ankiet. Średnia wartość testu oceniającego wiedzę
-wyniosła `r sprintf ("%.3f", P.total.mean)` (odchylenie
-standardowe `r sprintf ("%.3f", P.total.sd)`).
+wyniosła `r round(P.total.mean, 3)` (odchylenie
+standardowe `r round(P.total.sd, 3)`).
 
 Rozkład ankietowanych ze względu na status względem
 palenia przedstawiono na rysunku \@ref(fig:rysunek52).
@@ -450,15 +450,15 @@ pala_lub_palili <- s0 %>% filter (status != 'Nigdy nie paliłem/am') %>%
 ```
 
 Palą lub paliło `r pala_lub_palili` respondentów 
-(`r sprintf("%.2f", pala_lub_palili/ P.total.N *100)` %).
+(`r round(pala_lub_palili/ P.total.N *100, 2)` %).
 Żeby stwierdzić czy to jest dużo czy mało to na przykład można by porównać
 z jakąś średnią ogólnopolską.
 
 ### Weryfikacja hipotezy 2
 
-Średnia wartość uzyskana w teście wyniosła `r sprintf("%.2f", P.total.mean)`
+Średnia wartość uzyskana w teście wyniosła `r round(P.total.mean, 2)`
 (mediana `r P.total.median`); 3/4 respondentów nie uzyskało więcej niż
-`r P.total.q3` (czyli `r sprintf("%.1f", P.total.q3/19 *100)` %).
+`r P.total.q3` (czyli `r round(P.total.q3/19 *100, 1)` %).
 
 ### Weryfikacja hipotez 3–5
 
@@ -476,7 +476,7 @@ chi_test <- chisq.test(t.sex.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
+Nie jest o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Czy palenie jest skorelowane ze stażem pracy?
 
@@ -494,7 +494,7 @@ chi_test <- chisq.test(t.staz.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
+Nie jest o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Czy palenie jest skorelowane z miejscem pracy?
 
@@ -512,7 +512,7 @@ chi_test <- chisq.test(t.praca.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
+Nie jest o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Czy wiedza na temat palenia jest skorelowana z płcią?
 
@@ -541,7 +541,7 @@ wilcoxp <- wilcox.test(P.total ~ plec, data=s1)
 wilcoxp['p.value']
 ```
 
-Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])`, zatem
+Wartość p wynosi `r round(wilcoxp$p.value, 8)`, zatem
 hipotezę o braku zależności na poziomie 0,05 należy odrzucić.
 Istnieje zależność pomiędzy wiedzą na temat palenia a płcią. Kobiety
 wykazują się wyższą wiedzą na temat szkodliwości palenia od mężczyzn.
@@ -569,10 +569,10 @@ Nie są. Należy zastosować test U Manna-Whitneya:
 
 ```{r}
 wilcoxp <- wilcox.test(P.total ~ miejsce.pracy, data=s1)
-wilcoxp['p.value']
+wilcoxp$p.value
 ```
 
-Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` – nie ma podstaw
+Wartość p wynosi `r round(wilcoxp$p.value, 8)` – nie ma podstaw
 od odrzucenia hipotezy o identyczności rozkładów  na poziomie p = 0,05. Nie ma różnicy
 w poziomie wiedzy wśród pracowników przychodni i szpitali.
 
@@ -599,10 +599,10 @@ Nie są. Należy zastosować test Kruskala-Wallisa:
 
 ```{r}
 kw<- kruskal.test(P.total ~ staz, data = s1)
-kw["p.value"]
+kw$p.value
 ```
 
-Wartość p wynosi `r sprintf("%.8f", kw["p.value"])` – nie ma podstaw
+Wartość p wynosi `r round(kw$p.value, 8)` – nie ma podstaw
 od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
 różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
@@ -628,7 +628,7 @@ chi_test
 ```
 
 Wiedza i status względem palenia nie są skorelowane
-o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
+o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Można to samo zweryfikować stosując test Kruskala-Wallisa:
 
@@ -641,10 +641,10 @@ s0.sw <- s1 %>%
 kable(s0.sw, col.names = c('status', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 
 kw<- kruskal.test(P.total ~ status, data = s1)
-kw["p.value"]
+kw$p.value
 ```
 
-Wynik jest identyczny (wysoka wartość p `r sprintf("%.4f", kw["p.value"])`).
+Wynik jest identyczny (wysoka wartość p `r round(kw$p.value, 4)`).
 
 ### Wnioski
 
@@ -855,8 +855,8 @@ s0.sd <- sd(s0$P, na.rm=TRUE)
 ```
 
 W badaniu wzięło udział `r s0.N` studentów. Otrzymano `r s0.N` poprawnie
-wypełnionych ankiet. Średnia wartość testu Becka wyniosła `r sprintf ("%.3f", s0.mean)` (odchylenie
-standardowe `r sprintf ("%.3f",  s0.sd)`).
+wypełnionych ankiet. Średnia wartość testu Becka wyniosła `r round(s0.mean, 3)` (odchylenie
+standardowe `r round(s0.sd, 3)`).
 
 Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku \@ref(fig:rysunek56).
 
@@ -942,7 +942,7 @@ chi_test <- chisq.test(dep.sex.f)
 chi_test
 ```
 
-Nie stwierdzono zależności pomiędzy depresją a płcią (p = `r sprintf ("%.3f", chi_test["p.value"])`).
+Nie stwierdzono zależności pomiędzy depresją a płcią (p = `r round(chi_test$p.value, 3)`).
 
 ### Depresja a staż 
 
@@ -963,7 +963,7 @@ chi_test <- chisq.test(dep.staz.f)
 chi_test
 ```
 
-Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = `r sprintf ("%.4f", chi_test["p.value"])`).
+Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = `r round(chi_test$p.value, 4)`).
 
 Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
 można zastosować test ANOVA lub Kruskala-Wallisa.
@@ -988,7 +988,7 @@ Nie są. Należy zastosować test Kruskala-Wallisa:
 
 ```{r}
 kw<- kruskal.test(P ~ staz, data = s0)
-kw["p.value"]
+kw$p.value
 ```
 
 Wynik jest ten sam (brak zależności). Nie ma
@@ -1012,7 +1012,7 @@ chi_test
 ```
 
 Nie stwierdzono zależności pomiędzy depresją
-a miejscem pracy (p = `r sprintf ("%.4f", chi_test["p.value"])`).
+a miejscem pracy (p = `r round(chi_test$p.value, 4)`).
 
 
 Jeżeli depresję mierzymy na skali liczbowej można zastosować test Welcha lub test Manna-Whitneya.
@@ -1137,20 +1137,20 @@ lmr <- summary(lm.1)$r.squared
 lm.1.coef <- as.data.frame(coef(summary(lm.1)))
 ## wielkości standaryzowane
 lm.1.std <- round(coef(lm.beta(lm.1)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.1.std )
 ## Przedziały ufności
 lm.1.ci <- round(confint(lm.1), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.1.ci[,1], lm.1.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.1.ci[,1], decimal.mark=",", digits=3), format(lm.1.ci[,2], decimal.mark=",", digits=3) )
 ## zestawienie tabelaryczne wyników
 lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.1.std,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. 
 Tylko dwie zmienne `sp` oraz `kpw` okazały się istotne.
 
 Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
@@ -1166,20 +1166,20 @@ lmr <- summary(lm.7)$r.squared
 lm.7.coef <- as.data.frame(coef(summary(lm.7)))
 ## wielkości standaryzowane
 lm.7.std <- round(coef(lm.beta(lm.7)), 2)
-lm_std_txt <- sprintf ("%.3f", lm.7.std )
 ## Przedziały ufności
 lm.7.ci <- round(confint(lm.7), 2)
-lm_ci_txt <- sprintf ("%.3f %.3f", lm.7.ci[,1], lm.7.ci[,2] )
+##lm_ci_txt <- sprintf ("%.3f %.3f", lm.7.ci[,1], lm.7.ci[,2] )
+lm_ci_txt <- sprintf ("%s %s", format(lm.7.ci[,1], decimal.mark=",", digits=3), format(lm.7.ci[,2], decimal.mark=",", digits=3) )
 ## zestawienie tabelaryczne wyników
 lm.7.coef.df <- tibble::rownames_to_column(lm.7.coef, "Parametr") %>%
-  mutate(std=lm_std_txt,  ci=lm_ci_txt)
+  mutate(std=lm.7.std,  ci=lm_ci_txt)
 
 kable(lm.7.coef.df, row.names = F, digits=3,
       col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
 
 ```
 
-Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. 
+Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. 
 Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
 
 **Regresja logistyczna**
@@ -1207,14 +1207,13 @@ glm.1 <- glm(zp ~ sp + sw + kpw + kpp + po + staz + plec + roddzial,
 gml.1.coef <- as.data.frame(coef(summary(glm.1)))
 ## OR
 glm.1.or <- round(exp(coef(glm.1)), 2)
-glm_or_txt <- sprintf ("%.3f", glm.1.or )
 ## Przedziały ufności
 glm.1.ci <- round(exp(confint(glm.1)), 2)
-glm_ci_txt <- sprintf ("%.3f %.3f", glm.1.ci[,1], glm.1.ci[,2] )
+glm_ci_txt <- sprintf ("%s %s", format(glm.1.ci[,1], decimal.mark=",", digits=3), format(glm.1.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
-  mutate(or=glm_or_txt,  ci=glm_ci_txt)
+  mutate(or=glm.1.or,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
@@ -1234,14 +1233,13 @@ glm.2 <- glm(zp ~ sp , data = e1, family = "binomial")
 gml.2.coef <- as.data.frame(coef(summary(glm.2)))
 ## OR
 glm.2.or <- round(exp(coef(glm.2)), 2)
-glm_or_txt <- sprintf ("%.3f", glm.2.or )
 ## Przedziały ufności
 glm.2.ci <- round(exp(confint(glm.2)), 2)
-glm_ci_txt <- sprintf ("%.3f %.3f", glm.2.ci[,1], glm.2.ci[,2] )
+glm_ci_txt <- sprintf ("%s %s", format(glm.2.ci[,1], decimal.mark=",", digits=3), format(glm.2.ci[,2], decimal.mark=",", digits=3) )
 
 ## zestawienie tabelaryczne wyników
 gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
-  mutate(or=glm_or_txt,  ci=glm_ci_txt)
+  mutate(or=glm.2.or,  ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
@@ -1263,7 +1261,7 @@ czulosc <- table[4] / (table[3]+table[4])
 swoistosc <- table[1] / (table[1]+table[2])
 ```
 
-Stąd: czułość `r sprintf("%.2f", czulosc)`; swoistość `r sprintf("%.2f", swoistosc)`.
+Stąd: czułość `r round(czulosc, 2)`; swoistość `r round(swoistosc, 2)`.
 
 Krzywą ROC przedstawiono na rysunku:
 

@@ -1,0 +1,21 @@
+Dodać do index.Rmd
+
+```
+options(OutDec = ",")
+```
+
+Powyższe spowoduje że na wydruku R będzie wstawiał przecinek zamiast kropki dziesiętnej.
+
+W związku z tym: nie należy używać `sprintf` tylko `round`
+
+Wstawiając rysunki zawsze dodaj out.width
+
+```{r fluor, out.width="99%", fig.cap = "Fluoryzacja, wiek a nowotwór"}
+knitr::include_graphics("./Model1_cropped.png")
+```
+
+bo inaczej bookdown coś tam wyliczy i wstawi wynik z przecinkiem.
+luaLaTeX się na tym wywali.
+
+
+

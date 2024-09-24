@@ -248,11 +248,11 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Łagodne wprowadzenie do statystyki},
+  pdftitle={Podstawy statystyki},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Łagodne wprowadzenie do statystyki}
+\title{Podstawy statystyki}
 \usepackage{etoolbox}
 \makeatletter
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
@@ -550,7 +550,7 @@ wykluczyć, że prawdziwą przyczyną obserwowanego zwiększenia wartości
 współczynników zgonów jest wiek a nie fluoryzacja.
 
 \begin{figure}
-\includegraphics[width=17.25in]{./Model1_cropped} \caption{Fluoryzacja, wiek a nowotwór}\label{fig:fluor}
+\includegraphics[width=0.99\linewidth]{./Model1_cropped} \caption{Fluoryzacja, wiek a nowotwór}\label{fig:fluor}
 \end{figure}
 
 \textbf{Efekt przyczynowy} to \textbf{ilościowe} określenie wpływu
@@ -912,13 +912,13 @@ Tablica: Gospodarstwa domowe w mieście Kwidzyn wg liczby osób w roku 2021
 \toprule
 liczba osób & liczba gospodarstw & \%\\
 \midrule
-1 & 2790 & 21.64972\\
-2 & 3420 & 26.53837\\
-3 & 2618 & 20.31505\\
-4 & 2246 & 17.42842\\
-5 i więcej & 1813 & 14.06844\\
+1 & 2790 & 21,64972\\
+2 & 3420 & 26,53837\\
+3 & 2618 & 20,31505\\
+4 & 2246 & 17,42842\\
+5 i więcej & 1813 & 14,06844\\
 \addlinespace
-razem & 12887 & 100.00000\\
+razem & 12887 & 100,00000\\
 \bottomrule
 \end{tabular}
 
@@ -968,8 +968,8 @@ Dane dotyczące dzietności dla wszystkich krajów świata pobrano
 ze strony \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder}).
 
 Zbudujmy tablicę przedstawiającą rozkład współczynników dzietności w roku 2018.
-Wszystkich krajów jest 201. Wartość minimalna współczynnika wynosi 1.22, a wartość
-maksymalna to 7.13. Decydujemy się na rozpiętość przedziału równą 0,5;
+Wszystkich krajów jest \text{201}. Wartość minimalna współczynnika wynosi \text{1,22}, a wartość
+maksymalna to \text{7,13}. Decydujemy się na rozpiętość przedziału równą 0,5;
 dolny koniec pierwszego przedziału przyjmujemy jako 1,0.
 
 Tablica: Kraje świata według współczynnika dzietności (2018)
@@ -978,27 +978,27 @@ Tablica: Kraje świata według współczynnika dzietności (2018)
 \toprule
 Wsp. dzietności & liczba krajów\\
 \midrule
-(1,1.5] & 24\\
-(1.5,2] & 61\\
-(2,2.5] & 40\\
-(2.5,3] & 17\\
-(3,3.5] & 8\\
+(1,1,5] & 24\\
+(1,5,2] & 61\\
+(2,2,5] & 40\\
+(2,5,3] & 17\\
+(3,3,5] & 8\\
 \addlinespace
-(3.5,4] & 15\\
-(4,4.5] & 11\\
-(4.5,5] & 12\\
-(5,5.5] & 6\\
-(5.5,6] & 5\\
+(3,5,4] & 15\\
+(4,4,5] & 11\\
+(4,5,5] & 12\\
+(5,5,5] & 6\\
+(5,5,6] & 5\\
 \addlinespace
-(6,6.5] & 1\\
-(7,7.5] & 1\\
+(6,6,5] & 1\\
+(7,7,5] & 1\\
 \bottomrule
 \end{tabular}
 
 Źródło: \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder}
 \end{example}
 
-Zapis \texttt{(1,1.5{]}} oznacza przedział od 1,0 do 1,5 prz czym dolny koniec nie należy
+Zapis \texttt{(1,1.5{]}} oznacza przedział od 1,0 do 1,5 przy czym dolny koniec nie należy
 do przedziału a górny 1,5 należy. Który koniec „wchodzi``, a który nie powinien być
 jasno oznaczony. Zwykle jest tak jak w przykładzie: górny „wchodzi``, dolny „nie wchodzi``.
 
@@ -1258,20 +1258,20 @@ Przykładowo wartość 99 centyla i mniejszą ma 99\% jednostek w populacji.
 \begin{example}
 \textbf{Współczynnik dzietności na świecie w roku 2018}
 
-Średnia: 2.68.
+Średnia: \text{2,68}.
 Interpretacja: średnia wartość współczynnika dzietności wyniosła
-2.68 dziecka.
-Mediana: 2.2. Interpretacja mediany: współczynnik dzietności
+\text{2,68} dziecka.
+Mediana: \text{2,2}. Interpretacja mediany: współczynnik dzietności
 w połowie krajów na świecie
-wynosiła 2.2 dziecka i mniej.
-Dominanta: 1.98. Interpretacja dominanty: najwięcej krajów wykazuje współczynnik dzietności
-równy 1.98. Wartość cokolwiek przypadkowa, bowiem krajów wykazujących
-współczynnik równy 1.98, jest raptem 4.
+wynosiła \text{2,2} dziecka i mniej.
+Dominanta: \text{1,98}. Interpretacja dominanty: najwięcej krajów wykazuje współczynnik dzietności
+równy \text{1,98}. Wartość cokolwiek przypadkowa, bowiem krajów wykazujących
+współczynnik równy \text{1,98}, jest raptem \text{4}.
 
-Uwaga: średnia dzietność na świecie \textbf{nie wynosi} 2.68 dziecka
+Uwaga: średnia dzietność na świecie \textbf{nie wynosi} \text{2,68} dziecka
 (bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
 Podobnie dzietność połowy kobiet na świecie wyniosła
-2.2 dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
+\text{2,2} dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
 względów jak w przypadku średniej).
 \end{example}
 
@@ -1285,10 +1285,10 @@ bo powiaty różnią się liczbą ludności).
 \begin{example}
 \textbf{Współczynnik dzietności (kontynuacja)}:
 
-Pierwszy kwartyl: 1.75; trzeci kwartyl 3.56 co oznacza że
-25\% krajów miało wartość współczynnika dzietności nie większą niż 1.75 dziecka
+Pierwszy kwartyl: \text{1,75}; trzeci kwartyl \text{3,56} co oznacza że
+25\% krajów miało wartość współczynnika dzietności nie większą niż \text{1,75} dziecka
 a 75\% krajów miało wartość współczynnika dzietności
-nie większą niż 3.56 dziecka.
+nie większą niż \text{3,56} dziecka.
 \end{example}
 
 \hypertarget{miary-zmiennoux15bci}{%
@@ -1346,8 +1346,8 @@ gdzie: \(Q_1\), \(Q_3\) oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 \textbf{Współczynnik dzietności (kontynuacja)}
 
 Średnie odchylenie od średniej wartości współczynnika
-wynosi 1.26 dziecka.
-Wartość rozstępu ćwiartkowego wynosi 1.81 dziecka.
+wynosi \text{1,26} dziecka.
+Wartość rozstępu ćwiartkowego wynosi \text{1,81} dziecka.
 \end{example}
 
 \textbf{Uwaga}: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
@@ -1406,11 +1406,11 @@ Miary asymetrii:
 \begin{example}
 \textbf{Współczynnik dzietności (kontynuacja)}
 
-Współczynnik asymetrii \(g\) wynosi 1.10; Współczynnik
-Pearsona wykorzystujący dominantę wynosi 0.55
-a wykorzystujący medianę 1.14.
+Współczynnik asymetrii \(g\) wynosi \text{1,1}; Współczynnik
+Pearsona wykorzystujący dominantę wynosi \text{0,55}
+a wykorzystujący medianę \text{1,14}.
 Wreszcie wartość współczynnika opartego o kwartle
-wynosi 0.50. Wszystkie współczynniki wskazują
+wynosi \text{0,5}. Wszystkie współczynniki wskazują
 prawostronną (dodatnią) asymetrię. Współczynniki oparte
 o dominantę i kwartle wskazują słabą asymetrię, a oparte o medianę
 oraz klasyczny umiarkowaną. Jest całkowicie normalne, że różne miary
@@ -1432,51 +1432,51 @@ w latach 2015, 2019 i 2023.
 
 \textbf{Zawodnicy ataku}
 
-Histogram przy przyjęciu długości przedziału równej 4kg
+Histogram przy przyjęciu długości przedziału równej \text{4}kg
 (pionowa linia zielona oznacza poziom średniej):
 
 \includegraphics[width=0.85\linewidth]{_main_files/figure-latex/unnamed-chunk-15-1}
 
-Liczba zawodników ataku wyniosła 936.
-Przeciętnie zawodnik ataku ważył 92.7 kg.
-Wartość mediany wyniosła 92.0 kg (połowa
-zawodników ataku ważyła 92.0 kg i mniej).
-Wartości pierwszego i trzeciego kwartyla wyniosły odpowiednio 85.5 oraz 99 kg (1/4 zawodników
-ataku ważyła 85.5 kg i mniej;
-1/4 zawodników ataku ważyła 99 kg i więcej).
+Liczba zawodników ataku wyniosła \text{936}.
+Przeciętnie zawodnik ataku ważył \text{92,7} kg.
+Wartość mediany wyniosła \text{92} kg (połowa
+zawodników ataku ważyła \text{92} kg i mniej).
+Wartości pierwszego i trzeciego kwartyla wyniosły odpowiednio \text{85,5} oraz \text{99} kg (1/4 zawodników
+ataku ważyła \text{85,5} kg i mniej;
+1/4 zawodników ataku ważyła \text{99} kg i więcej).
 
-Odchylenie standardowe jest równe 10.1 kg (przeciętnie
-odchylenie od średniej arytmetycznej wynosi 10.1 kg).
-Rozstęp ćwiartkowy wynosi 13.5 kg (rozstęp 50\% środkowych wartości
-wynosi 13.5 kg).
+Odchylenie standardowe jest równe \text{10,1} kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi \text{10,1} kg).
+Rozstęp ćwiartkowy wynosi \text{13,5} kg (rozstęp 50\% środkowych wartości
+wynosi \text{13,5} kg).
 
-Wartość klasycznego współczynnika skośności jest równa 0.34.
-Wartość współczynnika skośności opartego o kwartle wynosi 0.04,
-a współczynnika skośności Pearsona wykorzystującego medianę wynosi 0.21.
+Wartość klasycznego współczynnika skośności jest równa \text{0,34}.
+Wartość współczynnika skośności opartego o kwartle wynosi \text{0,04},
+a współczynnika skośności Pearsona wykorzystującego medianę wynosi \text{0,21}.
 
 \textbf{Zawodnicy młyna}
 
-Histogram przy przyjęciu długości przedziału równej 4kg
+Histogram przy przyjęciu długości przedziału równej \text{4}kg
 (pionowa linia zielona oznacza poziom średniej):
 
 \includegraphics[width=0.85\linewidth]{_main_files/figure-latex/unnamed-chunk-17-1}
 
-Liczba zawodników młyna wyniosła 943.
-Średnio zawodnik młyna ważył 112.3 kg.
-Wartość mediany wyniosła 112.0 kg (połowa zawodników
-młyna ważyło 112 kg i mniej). Wartości
-pierwszego i trzeciego kwartyla wyniosły odpowiednio 106 oraz 118 kg (1/4 zawodników
-młyna ważyło 106 kg i mniej;
-1/4 zawodników młyna ważyło 118 kg i więcej).
+Liczba zawodników młyna wyniosła \text{943}.
+Średnio zawodnik młyna ważył \text{112,3} kg.
+Wartość mediany wyniosła \text{112} kg (połowa zawodników
+młyna ważyło \text{112} kg i mniej). Wartości
+pierwszego i trzeciego kwartyla wyniosły odpowiednio \text{106} oraz \text{118} kg (1/4 zawodników
+młyna ważyło \text{106} kg i mniej;
+1/4 zawodników młyna ważyło \text{118} kg i więcej).
 
-Odchylenie standardowe jest równe 9.2 kg (przeciętnie
-odchylenie od średniej arytmetycznej wynosi 9.2 kg).
-Rozstęp ćwiartkowy wynosi 12 kg (rozstęp 50\% środkowych wartości
-wynosi 12 kg).
+Odchylenie standardowe jest równe \text{9,2} kg (przeciętnie
+odchylenie od średniej arytmetycznej wynosi \text{9,2} kg).
+Rozstęp ćwiartkowy wynosi \text{12} kg (rozstęp 50\% środkowych wartości
+wynosi \text{12} kg).
 
-Wartość klasycznego współczynnika skośności jest równa 0.17.
-Wartość współczynnika skośności opartego o kwartle wynosi 0.00,
-a współczynnika skośności Pearsona wykorzystującego medianę wynosi 0.11.
+Wartość klasycznego współczynnika skośności jest równa \text{0,17}.
+Wartość współczynnika skośności opartego o kwartle wynosi \text{0},
+a współczynnika skośności Pearsona wykorzystującego medianę wynosi \text{0,11}.
 
 \textbf{Porównanie atak vs młyn}
 
@@ -1484,11 +1484,11 @@ a współczynnika skośności Pearsona wykorzystującego medianę wynosi 0.11.
 \toprule
 miara & atak & młyn\\
 \midrule
-średnia & 92.71 & 112.33\\
-mediana & 92.00 & 112.00\\
-odchyl.st & 10.07 & 9.24\\
-iqr & 13.50 & 12.00\\
-skośność & 0.34 & 0.17\\
+średnia & 92,71 & 112,33\\
+mediana & 92,00 & 112,00\\
+odchyl.st & 10,07 & 9,24\\
+iqr & 13,50 & 12,00\\
+skośność & 0,34 & 0,17\\
 \bottomrule
 \end{tabular}
 
@@ -1617,18 +1617,18 @@ na całym polu z dobrą dokładnością.
 \section{Masa ciała uczestników PŚ w rugby}\label{masa-ciaux142a-uczestnikuxf3w-pux15b-w-rugby}}
 
 W turnieju o Puchar Świata w rugby w 2015 roku uczestniczyło
-623 rugbystów. Znamy szczegółowe dane odnośnie wzrostu i wagi każdego
+\text{623} rugbystów. Znamy szczegółowe dane odnośnie wzrostu i wagi każdego
 uczestnika turnieju. Obliczamy (prawdziwą) średnią, odchylenie standardowe
 i współczynnik zmienności masy ciała:
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    65.0    93.0   103.0   102.8   113.0   145.0
+##    65,0    93,0   103,0   102,8   113,0   145,0
 \end{verbatim}
 
 Czyli średnio rugbysta na turnieju ważył
-102.80 kg (\texttt{Mean} na wydruku powyżej)
-a odchylenie standardowe (\emph{s}) wyniosło 12.92 kg.
+\text{102,8} kg (\texttt{Mean} na wydruku powyżej)
+a odchylenie standardowe (\emph{s}) wyniosło \text{12,92} kg.
 
 Rozkład, pokazany na rysunku \ref{fig:rwcWeight}, jest dwumodalny, bo w rugby są dwie grupy zawodników
 i wcale nie wszyscy ważą ponad 110 kilogramów.
@@ -1641,55 +1641,55 @@ i wcale nie wszyscy ważą ponad 110 kilogramów.
 
 \textbf{Szacujemy średnią na podstawie 2 zawodników pobranych losowo}.
 
-Powtarzamy eksperyment 1000 razy
+Powtarzamy eksperyment \text{1000} razy
 (dwóch bo dla jednego nie obliczymy wariancji).
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    76.0    96.0   103.5   103.0   109.5   131.0
+##    76,0    96,0   103,5   103,0   109,5   131,0
 \end{verbatim}
 
-Średnia (średnich z próby) ma wartość 102.97 kilogramów
-a odchylenie standardowe 9.44 kilogramów.
+Średnia (średnich z próby) ma wartość \text{102,97} kilogramów
+a odchylenie standardowe \text{9,44} kilogramów.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
-z liczebności próby) jest równa 9.14. Zauważmy, że ta wartość
+z liczebności próby) jest równa \text{9,14}. Zauważmy, że ta wartość
 jest zbliżona do wartości odchylenia standardowego uzyskanego
-w eksperymencie (9.44 vs 9.14).
+w eksperymencie (\text{9,44} vs \text{9,14}).
 
-Zauważmy też, że wartość najniższej średniej wyniosła 76 kilogramów zaś najwyższej 131 kilogramów.
+Zauważmy też, że wartość najniższej średniej wyniosła \text{76} kilogramów zaś najwyższej \text{131} kilogramów.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-o 26.97 kilogramów
-na minus lub 28.03 kilogramów na plus.
+o \text{26,97} kilogramów
+na minus lub \text{28,03} kilogramów na plus.
 
 \textbf{Szacujemy średnią na podstawie 10 zawodników pobranych losowo}.
 
-Powtarzamy eksperyment 1000 razy.
+Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    89.9    99.6   102.6   102.6   105.6   123.0
+##    89,9    99,6   102,6   102,6   105,6   123,0
 \end{verbatim}
 
-Średnia ma wartość 102.62 kilogramów, a odchylenie standardowe
-4.22 kilogramów.
-Wartość \(s/\sqrt{10}\) jest równa 4.09.
+Średnia ma wartość \text{102,62} kilogramów, a odchylenie standardowe
+\text{4,22} kilogramów.
+Wartość \(s/\sqrt{10}\) jest równa \text{4,09}.
 
 \textbf{Szacujemy średnią na podstawie 40 zawodników pobranych losowo}.
 
-Uwaga: 40 zawodników to 6.4\%
-całości. Powtarzamy eksperyment 1000 razy.
+Uwaga: 40 zawodników to \text{6,4}\%
+całości. Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    96.5   101.5   102.9   102.9   104.3   109.4
+##    96,5   101,5   102,9   102,9   104,3   109,4
 \end{verbatim}
 
-Średnia jest równa 102.86 kilogramów, a odchylenie standardowe 2.06 kilogramów.
-Wartość \(s/\sqrt{40}\) jest równa 2.04.
+Średnia jest równa \text{102,86} kilogramów, a odchylenie standardowe \text{2,06} kilogramów.
+Wartość \(s/\sqrt{40}\) jest równa \text{2,04}.
 
-Zauważmy też, że wartość najniższej średniej wyniosła 96.5 kilogramów zaś najwyższej 109.425 kilogramów.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o 6.36 kilogramów
-na minus lub 6.57 kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
+Zauważmy też, że wartość najniższej średniej wyniosła \text{96,5} kilogramów zaś najwyższej \text{109,425} kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o \text{6,36} kilogramów
+na minus lub \text{6,57} kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (por. rysunek \ref{fig:wagaSrednia}).
@@ -1741,7 +1741,7 @@ Konkretną wartość estymatora dla konkretnych wartości próby nazywamy \textb
 \section{Wiek kandydatów na radnych}\label{wiek-kandydatuxf3w-na-radnych}}
 
 W wyborach samorządowych w Polsce w roku 2018 o mandat radnego
-sejmików wojewódzkich ubiegało się 7076 kandydatów.
+sejmików wojewódzkich ubiegało się \text{7076} kandydatów.
 Znamy szczegółowe dane odnośnie wieku każdego kandydata,
 bo to zostało publicznie podane przez Państwową Komisję Wyborczą.
 Obliczamy (prawdziwą) średnią, odchylenie standardowe
@@ -1749,11 +1749,11 @@ i współczynnik zmienności wieku kandydatów:
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   18.00   34.00   46.00   46.24   58.00   91.00
+##   18,00   34,00   46,00   46,24   58,00   91,00
 \end{verbatim}
 
-Czyli średnio kandydat miał 46.24 lat
-a odchylenie standardowe wieku wyniosło 14.61 lat.
+Czyli średnio kandydat miał \text{46,24} lat
+a odchylenie standardowe wieku wyniosło \text{14,61} lat.
 
 Rozkład znowu jest dwumodalny z jakiś powodów (por. rysunek \ref{fig:wiekKnR}).
 
@@ -1765,66 +1765,66 @@ Rozkład znowu jest dwumodalny z jakiś powodów (por. rysunek \ref{fig:wiekKnR}
 
 \textbf{Szacujemy średnią na podstawie 2 kandydatów pobranych losowo}.
 
-Powtarzamy eksperyment 1000 razy.
+Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   18.50   39.50   47.00   46.61   54.00   74.00
+##   18,50   39,50   47,00   46,61   54,00   74,00
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.61 lat.
-Odchylenie standardowe wyniosło 10.23.
-Wartość \(s/\sqrt{2}\) jest równa 10.33.
+Średnia średnich z próby ma wartość \text{46,61} lat.
+Odchylenie standardowe wyniosło \text{10,23}.
+Wartość \(s/\sqrt{2}\) jest równa \text{10,33}.
 
-Wartość najniższej średniej wyniosła 18.5 lat zaś najwyższej 74 lat.
+Wartość najniższej średniej wyniosła \text{18,5} lat zaś najwyższej \text{74} lat.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-o 28.11 lat
-na minus lub 27.39 lat na plus.
+o \text{28,11} lat
+na minus lub \text{27,39} lat na plus.
 
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}.
 
-Powtarzamy eksperyment 1000 razy.
+Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   30.80   43.10   46.30   46.28   49.40   61.10
+##   30,80   43,10   46,30   46,28   49,40   61,10
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.28 lat.
-Odchylenie standardowe wyniosło 4.68.
-Wartość \(s/\sqrt{10}\) jest równa 4.62.
+Średnia średnich z próby ma wartość \text{46,28} lat.
+Odchylenie standardowe wyniosło \text{4,68}.
+Wartość \(s/\sqrt{10}\) jest równa \text{4,62}.
 
 \textbf{Szacujemy średnią na podstawie 40 kandydatów pobranych losowo}
 
 Uwaga: 40 kandydatów to ok 0.6\% całości.
-Powtarzamy eksperyment 1000 razy.
+Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39.17   44.75   46.16   46.20   47.62   53.50
+##   39,17   44,75   46,16   46,20   47,62   53,50
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.2 lat.
-Odchylenie standardowe wyniosło 2.21.
-Wartość \(s/\sqrt{40}\) jest równa 2.31.
+Średnia średnich z próby ma wartość \text{46,2} lat.
+Odchylenie standardowe wyniosło \text{2,21}.
+Wartość \(s/\sqrt{40}\) jest równa \text{2,31}.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}.
 
-Uwaga: 70 kandydatów to około ok 1\% całości (1000 powtórzeń).
+Uwaga: 70 kandydatów to około ok 1\% całości (\text{1000} powtórzeń).
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   41.11   45.01   46.24   46.24   47.44   51.56
+##   41,11   45,01   46,24   46,24   47,44   51,56
 \end{verbatim}
 
-Średnia średnich z próby ma wartość 46.24 lat.
-Odchylenie standardowe wyniosło 1.76
-Wartość \(s/\sqrt{70}\) jest równa 1.75.
+Średnia średnich z próby ma wartość \text{46,24} lat.
+Odchylenie standardowe wyniosło \text{1,76}
+Wartość \(s/\sqrt{70}\) jest równa \text{1,75}.
 
-Wartość najniższej średniej wyniosła 41.11 lat zaś najwyższej 51.56 lat.
+Wartość najniższej średniej wyniosła \text{41,11} lat zaś najwyższej \text{51,56} lat.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-już tylko o 5.13 lat
-na minus lub 5.32 lat na plus.
+już tylko o \text{5,13} lat
+na minus lub \text{5,32} lat na plus.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek \ref{fig:wiekSredni}).
 
@@ -1889,11 +1889,11 @@ dla próby 40- oraz 70-elementowej pokazuje rysunek \ref{fig:normalApprox}.
 Prawda, że wynik jest całkiem dobry? Teoretyczność czerwonej (w kolorowej wersji podręcznika) krzywej
 polega na tym, że ona zawsze będzie identyczna, podczas gdy histogram będzie różny.
 Gdybyśmy powtórzyli nasz
-eksperyment (generowania 1000 losowych prób przypominam),
+eksperyment (generowania \text{1000} losowych prób przypominam),
 to zapewne trochę by się różnił, bo byśmy wylosowali inne wartości do prób.
 Ta \textbf{teoretyczna abstrakcja} określana jest
-\textbf{prawdopodobieństwem}. Rzucając monetą 1000 razy spodziewamy
-się po 500 orłów i reszek,
+\textbf{prawdopodobieństwem}. Rzucając monetą \text{1000} razy spodziewamy
+się po \text{500} orłów i reszek,
 co w modelu matematycznym będzie opisane jak:
 prawdopodobieństwo wyrzucenia orła wynosi 0,5.
 Rzucanie monetą to bardzo prosty eksperyment; nasz z liczeniem średniej
@@ -1906,17 +1906,17 @@ błąd był nie większy niż 0,1 lat.
 Interpretacja wartości rozkładu empirycznego zwykle jest w kategoriach ryzyka/szansy czy
 prawdopodobieństwa. Przykładowo interesuje nas prawdopodobieństwo, że kandydat ma
 mniej niż 30 lat.
-Takich kandydatów jest 1091
+Takich kandydatów jest \text{1091}
 a wszystkich kandydatów dla przypomnienia
-jest 7076. Iloraz tych wartości będzie interpretowany
+jest \text{7076}. Iloraz tych wartości będzie interpretowany
 jako ryzyko/szansa/prawdopodobieństwo
-(wynosi ono 15.42\%).
+(wynosi ono \text{15,42}\%).
 
 Podobnie można obliczyć prawdopodobieństwo, że wiek kandydata będzie się
 zawierał w przedziale 50--60 lat.
-Ponieważ kandydatów w wieku 50--60 lat jest 1570,
+Ponieważ kandydatów w wieku 50--60 lat jest \text{1570},
 to szukane prawdopodobieństwo
-jest równe: 22.19\%).
+jest równe: \text{22,19}\%).
 
 Jeżeli zamiast rozkładu empirycznego będziemy używać rozkład normalnego, który jak widzimy
 jest jego dobrym przybliżeniem, to nie musimy liczyć empirycznych liczebności. Wystarczy że
@@ -1947,8 +1947,8 @@ Matematycznym modelem jest \textbf{zmienna dwuwartościowa}, która
 z określonym prawdopodobieństwem przyjmuje wartość \texttt{kobieta}.
 Obliczmy
 empiryczną wartość tego prawdopodobieństwa jako liczbę kobiet do liczby
-wszystkich kandydatów. Wartość tego parametru wynosi 0.4587 (albo
-45.87\%).
+wszystkich kandydatów. Wartość tego parametru wynosi \text{0,4587} (albo
+\text{45,87}\%).
 Potraktujmy to jako prawdziwą wartość prawdopodobieństwa (p), że
 kandydat jest kobietą i empirycznie sprawdźmy czy możemy szacować
 o prawdziwej wartości tego parametru
@@ -2382,9 +2382,9 @@ parametru.
 \begin{example}
 \textbf{Narciarze Paulinga (przedziały ufności)}
 
-Końce przedziałów ufności dla ilorazu szans (ocena punktowa 0.4899524) wynoszą:
-{[}0.2569389; 0.934282{]} zaś dla
-ryzyka względnego (ocena punktowa 0.5523323) przedział ufności wynosi {[}0.3209146; 0.9506298{]}.
+Końce przedziałów ufności dla ilorazu szans (ocena punktowa \text{0,4899524}) wynoszą:
+{[}\text{0,2569389}; \text{0,934282}{]} zaś dla
+ryzyka względnego (ocena punktowa \text{0,5523323}) przedział ufności wynosi {[}\text{0,3209146}; \text{0,9506298}{]}.
 \end{example}
 
 \textbf{Uwaga}: nie jest specjalnie istotne jaka jest konkretna formuła obliczania
@@ -2393,9 +2393,8 @@ program komputerowy.
 
 Przedział ufności dla ilorazu szans nie zawiera 1;
 zatem branie witaminy C zmniejsza szanse na zachorowanie;
-albo zwiększa na niezachorowanie od \(1/25 = 4\) do \(1/0,9 = 1,1\). Żeby
-to zabrzmiało ładnie i po polsku.
-Zwiększa na niezachorowanie od 300\% do 10\%.
+albo zwiększa na niezachorowanie od \(1/0,25 = 4\) do \(1/0,9 \approx 1,1\). Żeby
+to zabrzmiało ładnie i po polsku: zwiększa na niezachorowanie od 10\% do 300\%.
 
 Dlaczego taka znacząca rozpiętość? Bo próba jest względnie mała. Gdyby
 Pauling zwerbował nie 280 a 2800 narciarzy mógłby weryfikować działanie
@@ -2438,14 +2437,14 @@ są \textbf{rozkładami warunkowymi}. Rozkładów warunkowych jest tyle ile
 wynosi suma \(r + c\) gdzie \(r\) to liczba wariantów jednej cechy
 a \(c\) to liczba wariantów drugiej cechy.
 
-Przy warunku że narciarz brał witaminę C, 122 takich osób
-nie zachorowało (\textbf{nocold}) a 17 zachorowało (\textbf{cold}).
-Drugi rozkład warunkowy: 109 narciarzy, którzy brali placebo
-nie zachorowało, a 31 zachorowało. Są także rozkłady
+Przy warunku że narciarz brał witaminę C, \text{122} takich osób
+nie zachorowało (\textbf{nocold}) a \text{17} zachorowało (\textbf{cold}).
+Drugi rozkład warunkowy: \text{109} narciarzy, którzy brali placebo
+nie zachorowało, a \text{31} zachorowało. Są także rozkłady
 warunkowe dla drugiej cechy. W grupie narciarzy, którzy zachorowali
-122 brało witaminę C, a 109 brało placebo.
+\text{122} brało witaminę C, a \text{109} brało placebo.
 Wreszcie w grupie narciarzy, którzy nie zachorowali
-109 brało witaminę C, a 31 brało placebo.
+\text{109} brało witaminę C, a \text{31} brało placebo.
 Rozkładów warunkowych jest 4 bo obie cechy mają po dwa warianty. Jest
 to najmniejsza możliwa tabela wielodzielna.
 
@@ -2455,14 +2454,14 @@ Zamiast liczebności można posługiwać się odsetkami (procentami):
 \toprule
   & nocold & cold & razem\\
 \midrule
-C & 43.73 & 6.09 & 49.82\\
-P & 39.07 & 11.11 & 50.18\\
-Sum & 82.80 & 17.20 & 100.00\\
+C & 43,73 & 6,09 & 49,82\\
+P & 39,07 & 11,11 & 50,18\\
+Sum & 82,80 & 17,20 & 100,00\\
 \bottomrule
 \end{tabular}
 
 Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
-43.73\%
+\text{43,73}\%
 wszystkich narciarzy. Mało przydatne\ldots{}
 
 Ciekawsze jest obliczenie procentów każdego wiersza osobno, tj. dzielimy
@@ -2473,23 +2472,23 @@ ostatniej kolumny):
 \toprule
   & nocold & cold & razem\\
 \midrule
-C & 87.77 & 12.23 & 100\\
-P & 77.86 & 22.14 & 100\\
-Sum & 82.80 & 17.20 & 100\\
+C & 87,77 & 12,23 & 100\\
+P & 77,86 & 22,14 & 100\\
+Sum & 82,80 & 17,20 & 100\\
 \bottomrule
 \end{tabular}
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
 zachorowania dla całej grupy wynosi
-17.20\% a nie zachorowania
-82.80\%. Jest przyznajmy całkiem \textbf{zdroworozsądkowym założeniem}
+\text{17,2}\% a nie zachorowania
+\text{82,8}\%. Jest przyznajmy całkiem \textbf{zdroworozsądkowym założeniem}
 (uczenie hipotezą statystyczną), że jeżeli przyjmowanie witaminy nie ma związku
 z zachorowaniem lub nie na katar, to w grupie tych co brali i tych co nie brali
 powinniśmy mieć identyczne rozkłady warunkowe równe rozkładowi brzegowemu.
 Czyli powinno przykładowo zachorować
-17.20\% narciarzy, którzy
+\text{17,2}\% narciarzy, którzy
 brali witaminę C a widzimy , że zachorowało
-jedynie 12.23\%.
+jedynie \text{12,23}\%.
 
 Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się
 czy ta różnica jest na tyle duża, że (z założonym prawdopodobieństwem)
@@ -2504,18 +2503,18 @@ Test chi-kwadrat porównuje liczebności tablicy wielodzielnej z idealną-tablic
 Można udowodnić, że taka idealna tablica powstanie przez przemnożenie dla
 każdego elementu tablicy odpowiadających mu wartości brzegowych
 a następnie podzieleniu tego przez łączną liczebność (czyli przykładowo pierwszy
-element poniższej „idealnej'' tablicy to 231 pomnożone przez
-139 i podzielone przez 279; proszę
+element poniższej „idealnej'' tablicy to \text{231} pomnożone przez
+\text{139} i podzielone przez \text{279}; proszę
 sprawdzić,
-że jest to 115.086):
+że jest to \text{115,086}):
 
 \begin{tabular}{lrrr}
 \toprule
   & N & Y & Sum\\
 \midrule
-C & 115.086 & 23.914 & 139\\
-P & 115.914 & 24.086 & 140\\
-Sum & 231.000 & 48.000 & 279\\
+C & 115,086 & 23,914 & 139\\
+P & 115,914 & 24,086 & 140\\
+Sum & 231,000 & 48,000 & 279\\
 \bottomrule
 \end{tabular}
 
@@ -2525,7 +2524,7 @@ jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (któr
 liczbami całkowitymi, ale tak ma być i nie jest to błąd).
 
 Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
-tak dużych lub większych różnic. Wynosi ono 0.041864.
+tak dużych lub większych różnic. Wynosi ono \text{0,0419}.
 Czyli wystąpienie tak dużych różnic
 pomiędzy \textbf{oczekiwanymi} (przy założeniu o niezależności zmiennych)
 a obserwowanymi liczebnościami zdarza się około 4 razy na 100.
@@ -2591,10 +2590,10 @@ ostatniej kolumny):
 \toprule
   & High & Low & Middle & Sum\\
 \midrule
-current & 43.96552 & 37.06897 & 18.965517 & 100\\
-former & 65.24823 & 19.85816 & 14.893617 & 100\\
-never & 68.68687 & 22.22222 & 9.090909 & 100\\
-Sum & 59.26966 & 26.12360 & 14.606742 & 100\\
+current & 43,96552 & 37,06897 & 18,965517 & 100\\
+former & 65,24823 & 19,85816 & 14,893617 & 100\\
+never & 68,68687 & 22,22222 & 9,090909 & 100\\
+Sum & 59,26966 & 26,12360 & 14,606742 & 100\\
 \bottomrule
 \end{tabular}
 
@@ -2607,17 +2606,17 @@ procentom odpowiadają następujące liczebności:
 \toprule
   & High & Low & Middle & Sum\\
 \midrule
-current & 68.75281 & 30.30337 & 16.94382 & 116\\
-former & 83.57022 & 36.83427 & 20.59551 & 141\\
-never & 58.67697 & 25.86236 & 14.46067 & 99\\
-Sum & 211.00000 & 93.00000 & 52.00000 & 356\\
+current & 68,75281 & 30,30337 & 16,94382 & 116\\
+former & 83,57022 & 36,83427 & 20,59551 & 141\\
+never & 58,67697 & 25,86236 & 14,46067 & 99\\
+Sum & 211,00000 & 93,00000 & 52,00000 & 356\\
 \bottomrule
 \end{tabular}
 
 Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi
-(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi 0.000981.
+(porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi \text{0,001}.
 Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
-statusu i palenia (myląc się w przybliżeniu 0.000981 ≈ raz na tysiąc).
+statusu i palenia (myląc się w przybliżeniu \text{0,001} ≈ raz na tysiąc).
 \end{example}
 
 \hypertarget{zmienna-liczbowa-i-zmienna-nominalna}{%
@@ -2700,15 +2699,15 @@ na rodzaj miejsca pracy (szpital/przychodnia).
 \toprule
 m-pracy & średnia & mediana & n\\
 \midrule
-Przychodnia & 7.833333 & 7 & 12\\
-Szpital & 13.252747 & 11 & 91\\
+Przychodnia & 7,833333 & 7 & 12\\
+Szpital & 13,252747 & 11 & 91\\
 \bottomrule
 \end{tabular}
 
 Kolumna n zawiera liczebności.
 
 Średnie różnią się
-o 5.42.
+o \text{5,42}.
 Pytanie czy to dużo czy mało?
 
 Przyjmijmy (na razie bez sprawdzania), że rozkłady wartości poziomu depresji
@@ -2719,14 +2718,14 @@ normalne. Można zatem zastosować test \(t\) Welcha.
 \toprule
 Grupa1 & Grupa2 & n1 & n2 & t & p\\
 \midrule
-Przychodnia & Szpital & 12 & 91 & -2.895988 & 0.00978\\
+Przychodnia & Szpital & 12 & 91 & -2,895988 & 0,00978\\
 \bottomrule
 \end{tabular}
 
 Kolumna t zawiera wartość statystyki testu \(t_k\). Kolumna p
 zawiera oczywiście wartość prawdopodobieństwa p.
 
-Ponieważ wartość \(p\) równa 0.00978 jest mniejsza od każdego zwyczajowo
+Ponieważ wartość \(p\) równa \text{0,00978} jest mniejsza od każdego zwyczajowo
 przyjmowanego poziomu istotności (0,05 na przykład, albo 0,1) hipotezę, że średnie w obu grupach są równe należy odrzucić.
 W konsekwencji stwierdzamy, że poziom depresji pracujących w Szpitalu
 był istotnie wyższy od pracujących w Przychodni.
@@ -2753,8 +2752,8 @@ Interpretacja tego testu jest „standardowa``, mianowicie małe wartości \(p\)
 \toprule
 m-pracy & S-W & p\\
 \midrule
-Przychodnia & 0.9256178 & 0.3359655\\
-Szpital & 0.8191903 & 0.0000000\\
+Przychodnia & 0,9256178 & 0,3359655\\
+Szpital & 0,8191903 & 0,0000000\\
 \bottomrule
 \end{tabular}
 
@@ -2795,13 +2794,13 @@ Ponieważ grup jest dokładnie 2 a rozkład nie jest normalny, stosujemy test U 
 \toprule
 Grupa1 & Grupa2 & n1 & n2 & U & p\\
 \midrule
-Przychodnia & Szpital & 12 & 91 & 317 & 0.0185\\
+Przychodnia & Szpital & 12 & 91 & 317 & 0,0185\\
 \bottomrule
 \end{tabular}
 
 Prawdopodobieństwo wystąpienia tak dużej wartości statystyki testu (U) przy założeniu, że
 rozkłady zmiennej w obu grupach
-są identyczne wynosi 0.0185. Różnica jest zatem istotna na każdym zwyczajowo
+są identyczne wynosi \text{0,0185}. Różnica jest zatem istotna na każdym zwyczajowo
 przyjmowanym poziomie istotności (0,05 na przykład, albo 0,1); oba rozkłady różnią się.
 Kolumna U zawiera wartość statystyki testu U. Przypominamy, że
 dobry zwyczaj nakazuje podawać tę wartość omawiając wynik testu (więc ją podajemy).
@@ -2832,10 +2831,10 @@ oraz \texttt{\textgreater{}19} (19 i więcej lat).
 \toprule
 staż (kategoria) & średnia & mediana & n\\
 \midrule
-<06 & 12.84615 & 11.0 & 39\\
-07-12 & 12.14286 & 9.0 & 7\\
-13-18 & 10.91667 & 6.5 & 12\\
->19 & 12.95556 & 11.0 & 45\\
+<06 & 12,84615 & 11,0 & 39\\
+07-12 & 12,14286 & 9,0 & 7\\
+13-18 & 10,91667 & 6,5 & 12\\
+>19 & 12,95556 & 11,0 & 45\\
 \bottomrule
 \end{tabular}
 
@@ -2848,10 +2847,10 @@ wartość statystki testu ANOVA, a kolumna p jak zwykle wartość prawdopodobie�
 ##  One-way analysis of means (not assuming equal variances)
 ## 
 ## data:  P and staz
-## F = 0.14844, num df = 3.000, denom df = 20.847, p-value = 0.9295
+## F = 0,14844, num df = 3,000, denom df = 20,847, p-value = 0,9295
 \end{verbatim}
 
-Wartość p równa 0.9295 świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
+Wartość p równa \text{0,9295} świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
 że pomiędzy poziomem depresji a kategoriami stażu pracy nie ma zależności.
 
 Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
@@ -2861,10 +2860,10 @@ zastosować (znowu) test Shapiro-Wilka:
 \toprule
 m-pracy & S-W & p\\
 \midrule
-<06 & 0.9127826 & 0.0052385\\
-07-12 & 0.8939017 & 0.2956402\\
-13-18 & 0.8138678 & 0.0135286\\
->19 & 0.7239373 & 0.0000001\\
+<06 & 0,9127826 & 0,0052385\\
+07-12 & 0,8939017 & 0,2956402\\
+13-18 & 0,8138678 & 0,0135286\\
+>19 & 0,7239373 & 0,0000001\\
 \bottomrule
 \end{tabular}
 
@@ -2889,12 +2888,12 @@ Na poniższym wydruku wartość statystyki testu jest oznaczona jako
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  P by staz
-## Kruskal-Wallis chi-squared = 2.6982, df = 3, p-value = 0.4405
+## Kruskal-Wallis chi-squared = 2,6982, df = 3, p-value = 0,4405
 \end{verbatim}
 
 Prawdopodobieństwo tak dużej wartości statystyki testu
 przy założeniu, że rozkłady wartości zmiennej we wszystkich grupach są identyczne wynosi
-0.4405 (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).
+\text{0,4405} (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).
 \end{example}
 
 \hypertarget{dwie-zmienne-liczbowe}{%
@@ -2974,11 +2973,11 @@ Interpretacja opisowa: wartości powyżej 0,9 świadczą o silnej zależności.
 \begin{example}
 \textbf{Zamożność a konsumpcja mięsa (kontynuacja)}
 
-Współczynnik korelacji liniowej wynosi 0.6823158 (umiarkowana korelacja).
+Współczynnik korelacji liniowej wynosi \text{0,6823158} (umiarkowana korelacja).
 
 Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
 test statystyczny, który sprowadza się do określenia jakie jest
-prawdopodobieństwo otrzymania r = 0.6823158 przy założeniu że
+prawdopodobieństwo otrzymania r = \text{0,6823158} przy założeniu że
 prawdziwa wartość r wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi 3.850676e-26
 (czyli jest ekstremalnie małe -- r jest istotnie różne od zera).
@@ -2999,10 +2998,10 @@ Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, sz
 
 \begin{verbatim}
 ##               age     edu Happiness Health
-## age        1.0000 -0.1834    0.0449 0.0013
-## edu       -0.1834  1.0000    0.0742 0.0000
-## Happiness  0.0449  0.0742    1.0000 0.1786
-## Health     0.0013  0.0000    0.1786 1.0000
+## age        1,0000 -0,1834    0,0449 0,0013
+## edu       -0,1834  1,0000    0,0742 0,0000
+## Happiness  0,0449  0,0742    1,0000 0,1786
+## Health     0,0013  0,0000    0,1786 1,0000
 \end{verbatim}
 
 Albo w bardziej efektownej postaci tekstowo-graficznej:
@@ -3196,7 +3195,7 @@ może być podstawą do interpretowania zależności pomiędzy \(X\) oraz \(Y\).
 Zależność między wagą (\texttt{weight}) a wzrostem (\texttt{height}):
 
 \[ \textrm{height} = b_0 + b_1 \textrm{weight}\]
-Oszacowanie tego równania na próbie 635 uczestników
+Oszacowanie tego równania na próbie \text{635} uczestników
 Pucharu Świata w rugby w 2023 roku
 daje następujące wyniki:
 
@@ -3204,8 +3203,8 @@ daje następujące wyniki:
 \toprule
 Zmienna & B & SE & z & p & CI95\\
 \midrule
-(Intercept) & 155.926 & 1.753 & 88.969 & 0 & 152.480 159.370\\
-weight & 0.294 & 0.017 & 17.305 & 0 & 0.260 0.330\\
+(Intercept) & 155,926 & 1,753 & 88,969 & 0 & 152,48 159,37\\
+weight & 0,294 & 0,017 & 17,305 & 0 & 0,26   0,33\\
 \bottomrule
 \end{tabular}
 
@@ -3215,8 +3214,8 @@ Kolumna \texttt{SE} zawiera oceny błędu standardowego estymatorów parametrów
 Kolumna \texttt{p} zawiera prawdopodobieństwo \(b>b_e\).
 
 Wzrost wagi zawodnika o 1kg
-skutkuje przeciętnie większym wzrostem o 0.294 cm. Współczynnik determinacji
-wynosi 32.86\%.
+skutkuje przeciętnie większym wzrostem o \text{0,294} cm. Współczynnik determinacji
+wynosi \text{32,86}\%.
 Współczynnik nachylenia prostej jest istotny ponieważ wartość \(p\) (tak mała, że w tabeli
 oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p \textless{} 0,05).
@@ -3245,17 +3244,17 @@ następujące wyniki:
 \toprule
 Zmienna & B & SE & z & p & CI95\\
 \midrule
-(Intercept) & 34.085 & 2.232 & 15.268 & 0 & 29.680 38.490\\
-gdp2013 & 1.108 & 0.100 & 11.124 & 0 & 0.910 1.300\\
+(Intercept) & 34,085 & 2,232 & 15,268 & 0 & 29,68 38,5\\
+gdp2013 & 1,108 & 0,100 & 11,124 & 0 & 0,91  1,3\\
 \bottomrule
 \end{tabular}
 
 Każdy tysiąc USD \emph{per capita} więcej dochodu narodowego (GDP) oznacza przeciętny
-wzrost spożycia mięsa o 1.108 kg. Przeciętna różnica wartości teoretycznych
+wzrost spożycia mięsa o \text{1,108} kg. Przeciętna różnica wartości teoretycznych
 od empirycznych wynosi 21,04 kg (średni błąd szacunku).
-Współczynnik zbieżności wynosi 40.88\%.
+Współczynnik zbieżności wynosi \text{40,88}\%.
 Współczynnik nachylenia prostej (którego wartość
-wynosi 1.108) jest statystycznie istotny.
+wynosi \text{1,108}) jest statystycznie istotny.
 \end{example}
 
 Nie ma przykładów zastosowania regresji prostej w literaturze przedmiotu,
@@ -3363,17 +3362,17 @@ oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacow
 
 Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI95\\
 \midrule
-(Intercept) & 59.698 & 11.965 & 4.990 & 0.000 & NA & 35.920 83.480\\
-BMI & 1.742 & 0.486 & 3.583 & 0.001 & 0.330 & 0.780 2.710\\
-age & 0.484 & 0.124 & 3.906 & 0.000 & 0.360 & 0.240 0.730\\
+(Intercept) & 59,698 & 11,965 & 4,990 & 0,000 & NA & 35,92 83,48\\
+BMI & 1,742 & 0,486 & 3,583 & 0,001 & 0,33 & 0,78  2,71\\
+age & 0,484 & 0,124 & 3,906 & 0,000 & 0,36 & 0,24  0,73\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 26.24\%.
+Współczynnik zbieżności wynosi \text{26,24}\%.
 Kolumna \texttt{Beta} zawiera standaryzowane
 oceny parametrów regresji. Tej kolumny na poprzednich wydrukach
 (punkt \ref{regProsta})
@@ -3386,34 +3385,34 @@ Wpływ \texttt{BMI} na wielkość ciśnienia jest nieco niższy niż \texttt{age
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
 wyniki:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI95\\
 \midrule
-(Intercept) & 79.061 & 4.378 & 18.057 & 0 & NA & 70.460 87.660\\
-BMI & 1.213 & 0.183 & 6.637 & 0 & 0.280 & 0.850 1.570\\
-age & 0.259 & 0.053 & 4.856 & 0 & 0.210 & 0.150 0.360\\
+(Intercept) & 79,061 & 4,378 & 18,057 & 0 & NA & 70,46 87,66\\
+BMI & 1,213 & 0,183 & 6,637 & 0 & 0,28 & 0,85  1,57\\
+age & 0,259 & 0,053 & 4,856 & 0 & 0,21 & 0,15  0,36\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 14.97\%.
+Współczynnik zbieżności wynosi \text{14,97}\%.
 Wpływ \texttt{BMI} na wielkość ciśnienia jest teraz wyższy niż \texttt{age}. Przedziały ufności są węższe
 co wynika z większej liczebności próby.
 
 Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
 wyniki:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 74.011 & 1.530 & 48.358 & 0 & NA & 71.010 77.010\\
-BMI & 1.375 & 0.064 & 21.404 & 0 & 0.300 & 1.250 1.500\\
-age & 0.320 & 0.018 & 18.270 & 0 & 0.250 & 0.290 0.350\\
+(Intercept) & 74,011 & 1,530 & 48,358 & 0 & NA & 71,01 77,01\\
+BMI & 1,375 & 0,064 & 21,404 & 0 & 0,30 & 1,25  1,50\\
+age & 0,320 & 0,018 & 18,270 & 0 & 0,25 & 0,29  0,35\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 18.54\%.
+Współczynnik zbieżności wynosi \text{18,54}\%.
 Przedziały ufności są jeszcze węższe. Ocena \texttt{age}
 z 95\% prawdopodobieństwem znajduje się w przedziale {[}0.290 0.350{]}
 a w pierwszym oszacowaniu dla znacznie mniejszej próby było to {[}0.240 0.730{]}.
@@ -3492,23 +3491,23 @@ SBP &= b_0 + b_1 \textrm{BMI} + b_2 \textrm{age} + b_3 \textrm{genderF} + b_4 \t
 
 Oszacowanie dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 90.332 & 15.745 & 5.737 & 0.000 & NA & 59.010 121.650\\
-BMI & 0.778 & 0.592 & 1.314 & 0.193 & 0.150 & -0.400 1.960\\
-age & 0.441 & 0.121 & 3.658 & 0.000 & 0.330 & 0.200 0.680\\
-genderF & -13.820 & 4.399 & -3.141 & 0.002 & -0.400 & -22.570 -5.070\\
-CS & -6.890 & 3.972 & -1.735 & 0.087 & -0.180 & -14.790 1.010\\
+(Intercept) & 90,332 & 15,745 & 5,737 & 0,000 & NA & 59,01 121,65\\
+BMI & 0,778 & 0,592 & 1,314 & 0,193 & 0,15 & -0,40   1,96\\
+age & 0,441 & 0,121 & 3,658 & 0,000 & 0,33 & 0,20   0,68\\
+genderF & -13,820 & 4,399 & -3,141 & 0,002 & -0,40 & -22,57  -5,07\\
+CS & -6,890 & 3,972 & -1,735 & 0,087 & -0,18 & -14,79   1,01\\
 \addlinespace
-PS & 7.626 & 6.882 & 1.108 & 0.271 & 0.110 & -6.070 21.320\\
-CD & -3.959 & 8.523 & -0.465 & 0.643 & -0.040 & -20.910 13.000\\
-PD & -4.001 & 4.575 & -0.875 & 0.384 & -0.080 & -13.100 5.100\\
+PS & 7,626 & 6,882 & 1,108 & 0,271 & 0,11 & -6,07  21,32\\
+CD & -3,959 & 8,523 & -0,465 & 0,643 & -0,04 & -20,91  13,00\\
+PD & -4,001 & 4,575 & -0,875 & 0,384 & -0,08 & -13,10   5,10\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 38.11\%. Tylko dwie na siedem zmiennych
+Współczynnik zbieżności wynosi \text{38,11}\%. Tylko dwie na siedem zmiennych
 są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
 z 95\% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie -- nie mamy
 nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
@@ -3517,23 +3516,23 @@ i nie jest to przypadek.
 
 Wyniki oszacowania równania dla próby o wielkości 4490 obserwacji:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 80.089 & 1.623 & 49.334 & 0.000 & NA & 76.910 83.270\\
-BMI & 1.192 & 0.066 & 18.009 & 0.000 & 0.260 & 1.060 1.320\\
-age & 0.336 & 0.018 & 19.087 & 0.000 & 0.260 & 0.300 0.370\\
-genderF & -5.329 & 0.508 & -10.496 & 0.000 & -0.160 & -6.320 -4.330\\
-CS & -2.752 & 0.583 & -4.717 & 0.000 & -0.070 & -3.900 -1.610\\
+(Intercept) & 80,089 & 1,623 & 49,334 & 0,000 & NA & 76,91 83,27\\
+BMI & 1,192 & 0,066 & 18,009 & 0,000 & 0,26 & 1,06  1,32\\
+age & 0,336 & 0,018 & 19,087 & 0,000 & 0,26 & 0,30  0,37\\
+genderF & -5,329 & 0,508 & -10,496 & 0,000 & -0,16 & -6,32 -4,33\\
+CS & -2,752 & 0,583 & -4,717 & 0,000 & -0,07 & -3,90 -1,61\\
 \addlinespace
-PS & -2.021 & 1.045 & -1.933 & 0.053 & -0.030 & -4.070 0.030\\
-CD & 3.621 & 1.535 & 2.360 & 0.018 & 0.030 & 0.610 6.630\\
-PD & 0.193 & 0.623 & 0.310 & 0.757 & 0.000 & -1.030 1.410\\
+PS & -2,021 & 1,045 & -1,933 & 0,053 & -0,03 & -4,07  0,03\\
+CD & 3,621 & 1,535 & 2,360 & 0,018 & 0,03 & 0,61  6,63\\
+PD & 0,193 & 0,623 & 0,310 & 0,757 & 0,00 & -1,03  1,41\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 20.72\%. Zwiększenie
+Współczynnik zbieżności wynosi \text{20,72}\%. Zwiększenie
 liczebności próby z 90 do 4490 obserwacji spowodowało, że tylko dwie z siedmiu zmiennych
 mają nieistotne wartości. Analizując wartości standaryzowane możemy ustalić
 które zmienne mają największy wpływ na wielkość ciśnienia krwi.
@@ -3559,43 +3558,43 @@ przy zmiennej \texttt{PD} ma wartość \(p\) równą 0,309 zaś przy zmiennej
 \texttt{PS} ma wartość 0,05324. Usuwamy zmienną \texttt{PD} (bo wartość \(p\) jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 80.108 & 1.622 & 49.387 & 0.000 & NA & 76.930 83.290\\
-BMI & 1.193 & 0.066 & 18.056 & 0.000 & 0.260 & 1.060 1.320\\
-age & 0.335 & 0.018 & 19.097 & 0.000 & 0.260 & 0.300 0.370\\
-genderF & -5.358 & 0.499 & -10.740 & 0.000 & -0.160 & -6.340 -4.380\\
-CS & -2.740 & 0.582 & -4.708 & 0.000 & -0.070 & -3.880 -1.600\\
+(Intercept) & 80,108 & 1,622 & 49,387 & 0,000 & NA & 76,93 83,29\\
+BMI & 1,193 & 0,066 & 18,056 & 0,000 & 0,26 & 1,06  1,32\\
+age & 0,335 & 0,018 & 19,097 & 0,000 & 0,26 & 0,30  0,37\\
+genderF & -5,358 & 0,499 & -10,740 & 0,000 & -0,16 & -6,34 -4,38\\
+CS & -2,740 & 0,582 & -4,708 & 0,000 & -0,07 & -3,88 -1,60\\
 \addlinespace
-PS & -1.980 & 1.037 & -1.910 & 0.056 & -0.030 & -4.010 0.050\\
-CD & 3.579 & 1.528 & 2.342 & 0.019 & 0.030 & 0.580 6.580\\
+PS & -1,980 & 1,037 & -1,910 & 0,056 & -0,03 & -4,01  0,05\\
+CD & 3,579 & 1,528 & 2,342 & 0,019 & 0,03 & 0,58  6,58\\
 \bottomrule
 \end{tabular}
 
 Współczynnik przy zmiennej \texttt{PS} dalej uparcie jest nieistotny. Usuwamy
 teraz tę zmienną. Otrzymujemy:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 79.865 & 1.618 & 49.375 & 0.00 & NA & 76.690 83.040\\
-BMI & 1.195 & 0.066 & 18.075 & 0.00 & 0.260 & 1.070 1.320\\
-age & 0.336 & 0.018 & 19.100 & 0.00 & 0.260 & 0.300 0.370\\
-genderF & -5.155 & 0.488 & -10.572 & 0.00 & -0.160 & -6.110 -4.200\\
-CS & -2.540 & 0.573 & -4.435 & 0.00 & -0.060 & -3.660 -1.420\\
+(Intercept) & 79,865 & 1,618 & 49,375 & 0,00 & NA & 76,69 83,04\\
+BMI & 1,195 & 0,066 & 18,075 & 0,00 & 0,26 & 1,07  1,32\\
+age & 0,336 & 0,018 & 19,100 & 0,00 & 0,26 & 0,30  0,37\\
+genderF & -5,155 & 0,488 & -10,572 & 0,00 & -0,16 & -6,11 -4,20\\
+CS & -2,540 & 0,573 & -4,435 & 0,00 & -0,06 & -3,66 -1,42\\
 \addlinespace
-CD & 3.551 & 1.529 & 2.323 & 0.02 & 0.030 & 0.550 6.550\\
+CD & 3,551 & 1,529 & 2,323 & 0,02 & 0,03 & 0,55  6,55\\
 \bottomrule
 \end{tabular}
 
 Wszystkie współczynniki mają istotnie różnie od zera wartości. Wartość
-współczynnika zbieżności ostatecznego modelu wynosi 20.66\%.
+współczynnika zbieżności ostatecznego modelu wynosi \text{20,66}\%.
 Usuwając nieistotne zmienne z modelu obniżyliśmy wartość
 współczynnika zmienności o
-20.72\% - 20.66\% = 0.07\%, czyli
+\text{20,72}\% - \text{20,66}\% = \text{0,07}\%, czyli
 tyle co nic.
 \end{example}
 
@@ -3738,7 +3737,7 @@ ma wartość AUC równą 50\% (por. rysunek \ref{fig:ROCcurve}).
 Al Zarooni A.A.R i inni badali wpływ różnych czynników na ryzyka na
 wystąpienie osteoporozy (Risk factors for vitamin D deficiency
 in Abu Dhabi Emirati population; \url{https://doi.org/10.1371/journal.pone.0264064}),
-takich jak deficyt witaminy D, wiek oraz płeć w grupie 392 osób.
+takich jak deficyt witaminy D, wiek oraz płeć w grupie \text{392} osób.
 
 Zacznijmy od modelu zerowego tj. takiego w którym ryzyko/prawdopodobieństwo/szansa
 wystąpienia osteoporozy jest takie same bez względu na wielkości innych zmiennych.
@@ -3753,12 +3752,12 @@ oraz prawdopodobieństwo.
 \toprule
 Parametr & Ocena & SE & z & p\\
 \midrule
-(Intercept) & -2.644537 & 0.2029618 & -13.02973 & 0\\
+(Intercept) & -2,644537 & 0,2029618 & -13,02973 & 0\\
 \bottomrule
 \end{tabular}
 
 Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
-wyniosło 0.0663265. Krzywa ROC dla modelu zerowego wygląda następująco:
+wyniosło \text{0,0663265}. Krzywa ROC dla modelu zerowego wygląda następująco:
 
 \includegraphics[width=0.75\linewidth]{_main_files/figure-latex/unnamed-chunk-70-1}
 
@@ -3778,18 +3777,18 @@ Dla przypomnienia \(o\) jest szansą wystąpienia osteoporozy.
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo.
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
 \midrule
-(Intercept) & -3.367 & 0.455 & -7.403 & 0.000 & 0.030 & 0.010 0.080\\
-genderF & 1.014 & 0.509 & 1.992 & 0.046 & 2.760 & 1.090 8.400\\
+(Intercept) & -3,367 & 0,455 & -7,403 & 0,000 & 0,03 & 0,01 0,08\\
+genderF & 1,014 & 0,509 & 1,992 & 0,046 & 2,76 & 1,09 8,40\\
 \bottomrule
 \end{tabular}
 
 Znając wartości współczynników równania można obliczyć wartości \(\ln(o)\).
 
-Dewiancja modelu jest istotnie mniejsza od modelu zerowego (wartość \(p\) wynosi bowiem 0.0303521).
+Dewiancja modelu jest istotnie mniejsza od modelu zerowego (wartość \(p\) wynosi bowiem \text{0,0303521}).
 
 Zależność pomiędzy wystąpieniem osteoporozy a płcią, wiekiem oraz poziomem witaminy D
 można opisać następującym równaniem regresji:
@@ -3799,14 +3798,14 @@ można opisać następującym równaniem regresji:
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
 oraz prawdopodobieństwo.
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
 \midrule
-(Intercept) & -12.183 & 1.766 & -6.898 & 0.000 & 0.000 & 0.000 0.000\\
-d & 0.005 & 0.009 & 0.536 & 0.592 & 1.000 & 0.990 1.020\\
-age & 0.156 & 0.026 & 5.930 & 0.000 & 1.170 & 1.120 1.240\\
-genderF & 2.463 & 0.662 & 3.722 & 0.000 & 11.740 & 3.540 48.760\\
+(Intercept) & -12,183 & 1,766 & -6,898 & 0,000 & 0,00 & 0,00  0,00\\
+d & 0,005 & 0,009 & 0,536 & 0,592 & 1,00 & 0,99  1,02\\
+age & 0,156 & 0,026 & 5,930 & 0,000 & 1,17 & 1,12  1,24\\
+genderF & 2,463 & 0,662 & 3,722 & 0,000 & 11,74 & 3,54 48,76\\
 \bottomrule
 \end{tabular}
 
@@ -3819,10 +3818,10 @@ Macierz pomyłek (\emph{confussion matrix})
 ##        1   4   4
 \end{verbatim}
 
-Stąd: czułość 0.1538462; swoistość 0.989071.
+Stąd: czułość \text{0,1538462}; swoistość \text{0,989071}.
 
 Istotność modelu:
-dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = 0).
+dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = \text{0}).
 
 Krzywa ROC
 
@@ -3859,9 +3858,9 @@ a spożyciem mięsa w 2013 roku (zmienna objaśniana):
 
 \begin{itemize}
 \item
-  współczynnik Pearsona: 0.68;
+  współczynnik Pearsona: \text{0,68};
 \item
-  współczynnik Spearmana: 0.68.
+  współczynnik Spearmana: \text{0,68}.
 \end{itemize}
 
 Nie ma sensu liczenia współczynnika korelacji rang w przypadku kiedy obie
@@ -3869,11 +3868,11 @@ cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
 Ale nie jest to też błędem więc w powyższym przykładzie go liczymy.
 
 Współczynnik korelacji liniowej Spearmana
-wynosi 0.68 (umiarkowana korelacja).
+wynosi \text{0,68} (umiarkowana korelacja).
 
 Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
 test statystyczny, który sprowadza się do określenia jakie jest
-prawdopodobieństwo otrzymania \(r_s\) = 0.68 przy założeniu że
+prawdopodobieństwo otrzymania \(r_s\) = \text{0,68} przy założeniu że
 prawdziwa wartość \(r_s\) wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi 2.302116e-26
 (czyli jest ekstremalnie małe -- współczynnik jest istotnie różny od zera).
@@ -4233,11 +4232,11 @@ na znajomość szkodliwości palenia przedstawiono na rysunku \ref{fig:rysunek51
 \includegraphics[width=0.85\linewidth]{_main_files/figure-latex/rysunek51-1} \caption{Studenci wg wyniku testu na znajomość szkodliwości palenia}\label{fig:rysunek51}
 \end{figure}
 
-W badaniu wzięło udział 110 studentów.
-Otrzymano 110 poprawnie
+W badaniu wzięło udział \text{110} studentów.
+Otrzymano \text{110} poprawnie
 wypełnionych ankiet. Średnia wartość testu oceniającego wiedzę
-wyniosła 10.364 (odchylenie
-standardowe 3.997).
+wyniosła \text{10,364} (odchylenie
+standardowe \text{3,997}).
 
 Rozkład ankietowanych ze względu na status względem
 palenia przedstawiono na rysunku \ref{fig:rysunek52}.
@@ -4256,9 +4255,9 @@ Zmienna płeć i miejsce pracy są dwuwartościowe, więc (oszczędzając lasy)
 proponujemy zamiast wykresu
 poprzestanie na podaniu odsetka kobiet/mężczyzn oraz pracowników szpitali/przychodni.
 
-Zatem wśród respondentów było 70\% kobiet i 30\% mężczyzn.
-Pracę w szpitalu zadeklarowało 90\% respondentów a w przychodni
-10\% respondentów.
+Zatem wśród respondentów było \text{70}\% kobiet i \text{30}\% mężczyzn.
+Pracę w szpitalu zadeklarowało \text{90}\% respondentów a w przychodni
+\text{10}\% respondentów.
 
 \hypertarget{weryfikacja-hipotezy-1}{%
 \subsection{Weryfikacja hipotezy 1}\label{weryfikacja-hipotezy-1}}
@@ -4271,9 +4270,9 @@ z jakąś średnią ogólnopolską.
 \hypertarget{weryfikacja-hipotezy-2}{%
 \subsection{Weryfikacja hipotezy 2}\label{weryfikacja-hipotezy-2}}
 
-Średnia wartość uzyskana w teście wyniosła 10.36
-(mediana 11); 3/4 respondentów nie uzyskało więcej niż
-13 (czyli 68.4 \%).
+Średnia wartość uzyskana w teście wyniosła \text{10,36}
+(mediana \text{11}); 3/4 respondentów nie uzyskało więcej niż
+\text{13} (czyli \text{68,4} \%).
 
 \hypertarget{weryfikacja-hipotez-35}{%
 \subsection{Weryfikacja hipotez 3--5}\label{weryfikacja-hipotez-35}}
@@ -4295,10 +4294,10 @@ W dalszym ciągu palę & 19 & 4\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  t.sex.f
-## X-squared = 2.4228, df = 2, p-value = 0.2978
+## X-squared = 2,4228, df = 2, p-value = 0,2978
 \end{verbatim}
 
-Nie jest o czym świadczy wysoka wartość p (0.2978).
+Nie jest o czym świadczy wysoka wartość p (\text{0,2978}).
 
 Czy palenie jest skorelowane ze stażem pracy?
 
@@ -4317,10 +4316,10 @@ W dalszym ciągu palę & 6 & 4 & 2 & 11\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  t.staz.f
-## X-squared = 1.7687, df = 6, p-value = 0.9397
+## X-squared = 1,7687, df = 6, p-value = 0,9397
 \end{verbatim}
 
-Nie jest o czym świadczy wysoka wartość p (0.9397).
+Nie jest o czym świadczy wysoka wartość p (\text{0,9397}).
 
 Czy palenie jest skorelowane z miejscem pracy?
 
@@ -4339,10 +4338,10 @@ W dalszym ciągu palę & 3 & 20\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  t.praca.f
-## X-squared = 0.47674, df = 2, p-value = 0.7879
+## X-squared = 0,47674, df = 2, p-value = 0,7879
 \end{verbatim}
 
-Nie jest o czym świadczy wysoka wartość p (0.7879).
+Nie jest o czym świadczy wysoka wartość p (\text{0,7879}).
 
 Czy wiedza na temat palenia jest skorelowana z płcią?
 
@@ -4350,8 +4349,8 @@ Czy wiedza na temat palenia jest skorelowana z płcią?
 \toprule
 płeć & średnia & mediana & n\\
 \midrule
-K & 10.831169 & 12 & 77\\
-M & 9.272727 & 10 & 33\\
+K & 10,831169 & 12 & 77\\
+M & 9,272727 & 10 & 33\\
 \bottomrule
 \end{tabular}
 
@@ -4361,8 +4360,8 @@ Sprawdzamy czy rozkłady są normalne:
 \toprule
 płeć & S-W & p\\
 \midrule
-K & 0.9325443 & 0.0005147\\
-M & 0.9295526 & 0.0339828\\
+K & 0,9325443 & 0,0005147\\
+M & 0,9295526 & 0,0339828\\
 \bottomrule
 \end{tabular}
 
@@ -4370,10 +4369,10 @@ Nie są. Należy zastosować test U Manna-Whitneya:
 
 \begin{verbatim}
 ## $p.value
-## [1] 0.04883299
+## [1] 0,04883299
 \end{verbatim}
 
-Wartość p wynosi 0.04883299, zatem
+Wartość p wynosi \text{0,048833}, zatem
 hipotezę o braku zależności na poziomie 0,05 należy odrzucić.
 Istnieje zależność pomiędzy wiedzą na temat palenia a płcią. Kobiety
 wykazują się wyższą wiedzą na temat szkodliwości palenia od mężczyzn.
@@ -4384,8 +4383,8 @@ Czy wiedza na temat palenia jest skorelowana z miejscem pracy?
 \toprule
 m.pracy & średnia & mediana & n\\
 \midrule
-Przychodnia & 10.36364 & 10 & 11\\
-Szpital & 10.36364 & 11 & 99\\
+Przychodnia & 10,36364 & 10 & 11\\
+Szpital & 10,36364 & 11 & 99\\
 \bottomrule
 \end{tabular}
 
@@ -4395,19 +4394,18 @@ Sprawdzamy czy rozkłady są normalne:
 \toprule
 m.pracy & S-W & p\\
 \midrule
-Przychodnia & 0.9272191 & 0.3834099\\
-Szpital & 0.9590504 & 0.0036563\\
+Przychodnia & 0,9272191 & 0,3834099\\
+Szpital & 0,9590504 & 0,0036563\\
 \bottomrule
 \end{tabular}
 
 Nie są. Należy zastosować test U Manna-Whitneya:
 
 \begin{verbatim}
-## $p.value
-## [1] 0.8026325
+## [1] 0,8026325
 \end{verbatim}
 
-Wartość p wynosi 0.80263254 -- nie ma podstaw
+Wartość p wynosi \text{0,8026325} -- nie ma podstaw
 od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma różnicy
 w poziomie wiedzy wśród pracowników przychodni i szpitali.
 
@@ -4417,10 +4415,10 @@ Czy wiedza na temat palenia jest skorelowana ze stażem?
 \toprule
 staż & średnia & mediana & n\\
 \midrule
-0-4 & 9.928571 & 10.0 & 28\\
-5-9 & 9.812500 & 11.0 & 16\\
-10-14 & 9.875000 & 11.0 & 8\\
-15 i więcej & 10.793103 & 11.5 & 58\\
+0-4 & 9,928571 & 10,0 & 28\\
+5-9 & 9,812500 & 11,0 & 16\\
+10-14 & 9,875000 & 11,0 & 8\\
+15 i więcej & 10,793103 & 11,5 & 58\\
 \bottomrule
 \end{tabular}
 
@@ -4430,21 +4428,20 @@ Sprawdzamy czy rozkłady są normalne:
 \toprule
 staż & S-W & p\\
 \midrule
-0-4 & 0.9644460 & 0.4418353\\
-5-9 & 0.8847339 & 0.0460152\\
-10-14 & 0.8985547 & 0.2804097\\
-15 i więcej & 0.9409402 & 0.0071265\\
+0-4 & 0,9644460 & 0,4418353\\
+5-9 & 0,8847339 & 0,0460152\\
+10-14 & 0,8985547 & 0,2804097\\
+15 i więcej & 0,9409402 & 0,0071265\\
 \bottomrule
 \end{tabular}
 
 Nie są. Należy zastosować test Kruskala-Wallisa:
 
 \begin{verbatim}
-## $p.value
-## [1] 0.6771844
+## [1] 0,6771844
 \end{verbatim}
 
-Wartość p wynosi 0.67718441 -- nie ma podstaw
+Wartość p wynosi \text{0,6771844} -- nie ma podstaw
 od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
 różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
@@ -4468,11 +4465,11 @@ ogromna & 2 & 3 & 2\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  wiedza.status.t
-## X-squared = 4.9954, df = 6, p-value = 0.5444
+## X-squared = 4,9954, df = 6, p-value = 0,5444
 \end{verbatim}
 
 Wiedza i status względem palenia nie są skorelowane
-o czym świadczy wysoka wartość p (0.5444).
+o czym świadczy wysoka wartość p (\text{0,5444}).
 
 Można to samo zweryfikować stosując test Kruskala-Wallisa:
 
@@ -4480,18 +4477,17 @@ Można to samo zweryfikować stosując test Kruskala-Wallisa:
 \toprule
 status & średnia & mediana & n\\
 \midrule
-Nigdy nie paliłem/am & 10.31250 & 10.5 & 48\\
-Paliłem/łam & 10.07692 & 10.0 & 39\\
-W dalszym ciągu palę & 10.95652 & 12.0 & 23\\
+Nigdy nie paliłem/am & 10,31250 & 10,5 & 48\\
+Paliłem/łam & 10,07692 & 10,0 & 39\\
+W dalszym ciągu palę & 10,95652 & 12,0 & 23\\
 \bottomrule
 \end{tabular}
 
 \begin{verbatim}
-## $p.value
-## [1] 0.7787663
+## [1] 0,7787663
 \end{verbatim}
 
-Wynik jest identyczny (wysoka wartość p 0.7788).
+Wynik jest identyczny (wysoka wartość p \text{0,7788}).
 
 \hypertarget{wnioski}{%
 \subsection{Wnioski}\label{wnioski}}
@@ -4561,9 +4557,9 @@ Postawiono następujące hipotezy badawcze:
 \hypertarget{metryczka}{%
 \subsection{Metryczka}\label{metryczka}}
 
-W badaniu wzięło udział 103 studentów. Otrzymano 103 poprawnie
-wypełnionych ankiet. Średnia wartość testu Becka wyniosła 8.379 (odchylenie
-standardowe 8.577).
+W badaniu wzięło udział \text{103} studentów. Otrzymano \text{103} poprawnie
+wypełnionych ankiet. Średnia wartość testu Becka wyniosła \text{8,379} (odchylenie
+standardowe \text{8,577}).
 
 Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku \ref{fig:rysunek56}.
 
@@ -4617,10 +4613,10 @@ Ciężka & 2 & 1\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  dep.sex.f
-## X-squared = 0.028134, df = 2, p-value = 0.986
+## X-squared = 0,028134, df = 2, p-value = 0,986
 \end{verbatim}
 
-Nie stwierdzono zależności pomiędzy depresją a płcią (p = 0.986).
+Nie stwierdzono zależności pomiędzy depresją a płcią (p = \text{0,986}).
 
 \hypertarget{depresja-a-staux17c}{%
 \subsection{Depresja a staż}\label{depresja-a-staux17c}}
@@ -4642,10 +4638,10 @@ Ciężka & 1 & 0 & 1 & 1\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  dep.staz.f
-## X-squared = 4.719, df = 6, p-value = 0.5803
+## X-squared = 4,719, df = 6, p-value = 0,5803
 \end{verbatim}
 
-Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = 0.5803).
+Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = \text{0,5803}).
 
 Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
 można zastosować test ANOVA lub Kruskala-Wallisa.
@@ -4654,10 +4650,10 @@ można zastosować test ANOVA lub Kruskala-Wallisa.
 \toprule
 staż & średnia & mediana & n\\
 \midrule
-06 i mniej & 8.512821 & 7 & 39\\
-07-12 & 7.857143 & 4 & 7\\
-13-18 & 7.666667 & 3 & 12\\
-19 i więcej & 8.533333 & 6 & 45\\
+06 i mniej & 8,512821 & 7 & 39\\
+07-12 & 7,857143 & 4 & 7\\
+13-18 & 7,666667 & 3 & 12\\
+19 i więcej & 8,533333 & 6 & 45\\
 \bottomrule
 \end{tabular}
 
@@ -4667,18 +4663,17 @@ Sprawdzamy czy rozkłady są normalne:
 \toprule
 staż & S-W & p\\
 \midrule
-06 i mniej & 0.9008198 & 0.0023292\\
-07-12 & 0.8565271 & 0.1408865\\
-13-18 & 0.7596157 & 0.0033736\\
-19 i więcej & 0.6780397 & 0.0000000\\
+06 i mniej & 0,9008198 & 0,0023292\\
+07-12 & 0,8565271 & 0,1408865\\
+13-18 & 0,7596157 & 0,0033736\\
+19 i więcej & 0,6780397 & 0,0000000\\
 \bottomrule
 \end{tabular}
 
 Nie są. Należy zastosować test Kruskala-Wallisa:
 
 \begin{verbatim}
-## $p.value
-## [1] 0.678923
+## [1] 0,678923
 \end{verbatim}
 
 Wynik jest ten sam (brak zależności). Nie ma
@@ -4704,11 +4699,11 @@ Ciężka & 0 & 3\\
 ##  Pearson's Chi-squared test
 ## 
 ## data:  dep.praca.f
-## X-squared = 1.4605, df = 2, p-value = 0.4818
+## X-squared = 1,4605, df = 2, p-value = 0,4818
 \end{verbatim}
 
 Nie stwierdzono zależności pomiędzy depresją
-a miejscem pracy (p = 0.4818).
+a miejscem pracy (p = \text{0,4818}).
 
 Jeżeli depresję mierzymy na skali liczbowej można zastosować test Welcha lub test Manna-Whitneya.
 
@@ -4716,8 +4711,8 @@ Jeżeli depresję mierzymy na skali liczbowej można zastosować test Welcha lub
 \toprule
 m-pracy & średnia & mediana & n\\
 \midrule
-Przychodnia & 7.833333 & 7 & 12\\
-Szpital & 8.450549 & 6 & 91\\
+Przychodnia & 7,833333 & 7 & 12\\
+Szpital & 8,450549 & 6 & 91\\
 \bottomrule
 \end{tabular}
 
@@ -4727,8 +4722,8 @@ Sprawdzamy czy rozkłady są normalne:
 \toprule
 m-pracy. & S-W & p\\
 \midrule
-Przychodnia & 0.9256178 & 0.3359655\\
-Szpital & 0.7865090 & 0.0000000\\
+Przychodnia & 0,9256178 & 0,3359655\\
+Szpital & 0,7865090 & 0,0000000\\
 \bottomrule
 \end{tabular}
 
@@ -4736,7 +4731,7 @@ Nie są. Należy zastosować test Manna-Whitneya:
 
 \begin{verbatim}
 ## $p.value
-## [1] 0.8528214
+## [1] 0,8528214
 \end{verbatim}
 
 Wynik jest ten sam (brak zależności). Nie ma
@@ -4823,13 +4818,13 @@ Macierz korelacji dla zmiennych \texttt{zzp}, \texttt{sp}, \texttt{sw}, \texttt{
 
 \begin{verbatim}
 ##          zzp      sp      sw     kpw     kpp      po    staz
-## zzp   1.0000 -0.5095 -0.1644  0.3245  0.3796 -0.3325  0.0666
-## sp   -0.5095  1.0000  0.2815 -0.1041 -0.3446  0.3103 -0.0918
-## sw   -0.1644  0.2815  1.0000 -0.4524  0.0163  0.1801 -0.1994
-## kpw   0.3245 -0.1041 -0.4524  1.0000  0.4234 -0.1339  0.0030
-## kpp   0.3796 -0.3446  0.0163  0.4234  1.0000 -0.3380 -0.1015
-## po   -0.3325  0.3103  0.1801 -0.1339 -0.3380  1.0000  0.2808
-## staz  0.0666 -0.0918 -0.1994  0.0030 -0.1015  0.2808  1.0000
+## zzp   1,0000 -0,5095 -0,1644  0,3245  0,3796 -0,3325  0,0666
+## sp   -0,5095  1,0000  0,2815 -0,1041 -0,3446  0,3103 -0,0918
+## sw   -0,1644  0,2815  1,0000 -0,4524  0,0163  0,1801 -0,1994
+## kpw   0,3245 -0,1041 -0,4524  1,0000  0,4234 -0,1339  0,0030
+## kpp   0,3796 -0,3446  0,0163  0,4234  1,0000 -0,3380 -0,1015
+## po   -0,3325  0,3103  0,1801 -0,1339 -0,3380  1,0000  0,2808
+## staz  0,0666 -0,0918 -0,1994  0,0030 -0,1015  0,2808  1,0000
 \end{verbatim}
 
 Można zaobserwować wiele wysokich wartości współczynnika korelacji
@@ -4841,41 +4836,41 @@ Zakładamy, że \texttt{zzp} jest objaśniana przez \texttt{sp}, \texttt{sw}, \t
 (Odważnie dołączamy \texttt{staz} mimo że w świetle analizy macierzy korelacji raczej nie jest to dobry pomysł.)
 Oszacowanie tego modelu daje następujące wyniki:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 13.035 & 3.706 & 3.517 & 0.001 & NA & 5.570 20.500\\
-sp & -1.099 & 0.331 & -3.325 & 0.002 & -0.480 & -1.760 -0.430\\
-sw & 0.124 & 0.115 & 1.075 & 0.288 & 0.160 & -0.110 0.360\\
-kpw & 0.778 & 0.376 & 2.068 & 0.044 & 0.310 & 0.020 1.540\\
-kpp & 0.032 & 0.235 & 0.137 & 0.891 & 0.020 & -0.440 0.500\\
+(Intercept) & 13,035 & 3,706 & 3,517 & 0,001 & NA & 5,57 20,50\\
+sp & -1,099 & 0,331 & -3,325 & 0,002 & -0,48 & -1,76 -0,43\\
+sw & 0,124 & 0,115 & 1,075 & 0,288 & 0,16 & -0,11  0,36\\
+kpw & 0,778 & 0,376 & 2,068 & 0,044 & 0,31 & 0,02  1,54\\
+kpp & 0,032 & 0,235 & 0,137 & 0,891 & 0,02 & -0,44  0,50\\
 \addlinespace
-po & -0.040 & 0.026 & -1.545 & 0.129 & -0.210 & -0.090 0.010\\
-staz & 0.045 & 0.047 & 0.953 & 0.346 & 0.130 & -0.050 0.140\\
-plecM & 0.624 & 2.437 & 0.256 & 0.799 & 0.040 & -4.280 5.530\\
-roddzialtak & 1.138 & 0.896 & 1.270 & 0.211 & 0.150 & -0.670 2.940\\
+po & -0,040 & 0,026 & -1,545 & 0,129 & -0,21 & -0,09  0,01\\
+staz & 0,045 & 0,047 & 0,953 & 0,346 & 0,13 & -0,05  0,14\\
+plecM & 0,624 & 2,437 & 0,256 & 0,799 & 0,04 & -4,28  5,53\\
+roddzialtak & 1,138 & 0,896 & 1,270 & 0,211 & 0,15 & -0,67  2,94\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 40.85\%.
+Współczynnik zbieżności wynosi \text{40,85}\%.
 Tylko dwie zmienne \texttt{sp} oraz \texttt{kpw} okazały się istotne.
 
 Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
 nieistotne. Kolejno należało wyeliminować \texttt{sw}, \texttt{kpp}, \texttt{po}, \texttt{staz}, \texttt{plec} oraz \texttt{roddzial}.
 W modelu ostatecznym \texttt{zzp} jest objaśniana przez \texttt{sp} oraz \texttt{kpw}:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Zmienna & B & SE & z & p & Beta & CI\\
 \midrule
-(Intercept) & 13.987 & 2.969 & 4.710 & 0.000 & NA & 8.030 19.950\\
-sp & -1.112 & 0.263 & -4.226 & 0.000 & -0.480 & -1.640 -0.580\\
-kpw & 0.682 & 0.283 & 2.412 & 0.019 & 0.270 & 0.110 1.250\\
+(Intercept) & 13,987 & 2,969 & 4,710 & 0,000 & NA & 8,03 19,95\\
+sp & -1,112 & 0,263 & -4,226 & 0,000 & -0,48 & -1,64 -0,58\\
+kpw & 0,682 & 0,283 & 2,412 & 0,019 & 0,27 & 0,11  1,25\\
 \bottomrule
 \end{tabular}
 
-Współczynnik zbieżności wynosi 33.41\%.
+Współczynnik zbieżności wynosi \text{33,41}\%.
 Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
 
 \textbf{Regresja logistyczna}
@@ -4892,20 +4887,20 @@ zmianę miejsca pracy (zmieni=0, nie zmieni=1).
 Zakładamy, że \texttt{zp}, podobnie jak w przypadku zamiaru,
 jest objaśniana przez \texttt{sp}, \texttt{sw}, \texttt{kpw}, \texttt{kpp}, \texttt{po}, \texttt{staz}, \texttt{plec} oraz \texttt{roddzial}.
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
 \midrule
-(Intercept) & -4.702 & 4.599 & -1.022 & 0.307 & 0.010 & 0.000 82.270\\
-sp & 1.082 & 0.480 & 2.254 & 0.024 & 2.950 & 1.300 9.150\\
-sw & -0.082 & 0.143 & -0.577 & 0.564 & 0.920 & 0.680 1.220\\
-kpw & -0.415 & 0.410 & -1.013 & 0.311 & 0.660 & 0.280 1.510\\
-kpp & 0.154 & 0.386 & 0.399 & 0.690 & 1.170 & 0.620 2.530\\
+(Intercept) & -4,702 & 4,599 & -1,022 & 0,307 & 0,01 & 0,00 82,27\\
+sp & 1,082 & 0,480 & 2,254 & 0,024 & 2,95 & 1,30  9,15\\
+sw & -0,082 & 0,143 & -0,577 & 0,564 & 0,92 & 0,68  1,22\\
+kpw & -0,415 & 0,410 & -1,013 & 0,311 & 0,66 & 0,28  1,51\\
+kpp & 0,154 & 0,386 & 0,399 & 0,690 & 1,17 & 0,62  2,53\\
 \addlinespace
-po & 0.037 & 0.036 & 1.028 & 0.304 & 1.040 & 0.970 1.130\\
-staz & -0.107 & 0.071 & -1.512 & 0.130 & 0.900 & 0.760 1.020\\
-plecM & 13.102 & 2596.962 & 0.005 & 0.996 & 489784.870 & 0.000 NA\\
-roddzialtak & -1.817 & 1.074 & -1.692 & 0.091 & 0.160 & 0.020 1.310\\
+po & 0,037 & 0,036 & 1,028 & 0,304 & 1,04 & 0,97  1,13\\
+staz & -0,107 & 0,071 & -1,512 & 0,130 & 0,90 & 0,76  1,02\\
+plecM & 13,102 & 2596,962 & 0,005 & 0,996 & 489784,87 & 0,00    NA\\
+roddzialtak & -1,817 & 1,074 & -1,692 & 0,091 & 0,16 & 0,02  1,31\\
 \bottomrule
 \end{tabular}
 
@@ -4916,12 +4911,12 @@ Postępując podobnie jak w przypadku „normalnej'' regresji eliminujemy
 iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
 do modelu w którym odejście z pracy objaśnia tylko satysfakcja:
 
-\begin{tabular}{lrrrrll}
+\begin{tabular}{lrrrrrl}
 \toprule
 Parametr & Ocena & SE & z & p & OR & CI\\
 \midrule
-(Intercept) & -5.448 & 2.460 & -2.215 & 0.027 & 0.000 & 0.000 0.360\\
-sp & 0.803 & 0.283 & 2.838 & 0.005 & 2.230 & 1.350 4.260\\
+(Intercept) & -5,448 & 2,460 & -2,215 & 0,027 & 0,00 & 0,00 0,36\\
+sp & 0,803 & 0,283 & 2,838 & 0,005 & 2,23 & 1,35 4,26\\
 \bottomrule
 \end{tabular}
 
@@ -4934,7 +4929,7 @@ Macierz pomyłek:
 ##        1  6 45
 \end{verbatim}
 
-Stąd: czułość 0.98; swoistość 0.33.
+Stąd: czułość \text{0,98}; swoistość \text{0,33}.
 
 Krzywą ROC przedstawiono na rysunku:
 

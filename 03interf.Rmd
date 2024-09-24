@@ -38,8 +38,8 @@ max.err.sd <- sd(w, na.rm = T)
 ```
 
 Czyli średnio rugbysta na turnieju ważył 
-`r sprintf ("%.2f", true.mean.w)` kg (`Mean` na wydruku powyżej)
-a odchylenie standardowe (*s*) wyniosło `r sprintf("%.2f", max.err.sd)` kg.
+`r round(true.mean.w, 2)` kg (`Mean` na wydruku powyżej)
+a odchylenie standardowe (*s*) wyniosło `r round(max.err.sd, 2)` kg.
 
 Rozkład, pokazany na rysunku \@ref(fig:rwcWeight), jest dwumodalny, bo w rugby są dwie grupy zawodników
 i wcale nie wszyscy ważą ponad 110 kilogramów.
@@ -66,12 +66,12 @@ mean.s02 <- mean(s02)
 sd.s02 <- sd(s02)
 ```
 
-Średnia (średnich z próby) ma wartość `r sprintf("%.2f", mean.s02)` kilogramów
-a odchylenie standardowe `r sprintf("%.2f", sd.s02)` kilogramów.
+Średnia (średnich z próby) ma wartość `r round(mean.s02, 2)` kilogramów
+a odchylenie standardowe `r round(sd.s02, 2)` kilogramów.
 Wartość $s/\sqrt{2}$ (odchylenie standardowe podzielone przez pierwiastek kwadratowy 
-z liczebności próby) jest równa `r sprintf("%.2f", max.err.sd/sqrt(2)) `. Zauważmy, że ta wartość
+z liczebności próby) jest równa `r round(max.err.sd/sqrt(2), 2) `. Zauważmy, że ta wartość
 jest zbliżona do wartości odchylenia standardowego uzyskanego 
-w eksperymencie (`r sprintf("%.2f", sd.s02)` vs `r sprintf ("%.2f", max.err.sd/sqrt(2)) `).
+w eksperymencie (`r round(sd.s02, 2)` vs `r round (max.err.sd/sqrt(2), 2) `).
 
 Zauważmy też, że wartość najniższej średniej wyniosła `r min(s02)` kilogramów zaś najwyższej `r max (s02)` kilogramów.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
@@ -97,7 +97,7 @@ Wartość $s/\sqrt{10}$ jest równa `r round(max.err.sd/sqrt(10), 2)`.
 
 **Szacujemy średnią na podstawie 40 zawodników pobranych losowo**.
 
-Uwaga: 40 zawodników to `r sprintf ("%.1f%%", 40/wN *100)` 
+Uwaga: 40 zawodników to `r round (40/wN *100, 1)`% 
 całości. Powtarzamy eksperyment `r sample.size` razy.
 
 ```{r}

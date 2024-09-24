@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="https://hrpunio.github.io/SMI_Bookdown/przedmiotbadan.html">Łagodne wprowadzenie do statystyki</a></li>
+        <li><a href="https://hrpunio.github.io/SMI_Bookdown/przedmiotbadan.html">Podstawy statystyki</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s

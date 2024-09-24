@@ -1,5 +1,5 @@
 ---
-title: "Łagodne wprowadzenie do statystyki"
+title: "Podstawy statystyki"
 author:
 - name: Tomasz Przechlewski
   email: t.plata-przechlewski@psw.kwidzyn.edu.pl
@@ -17,6 +17,8 @@ subtitle: "Podręcznik dla studentów wydziałów nauk o zdrowiu"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F )
+## This does not work in inline formulas
+options(OutDec = ",")
 
 ## https://pogotowiestatystyczne.pl/jak-analizowac-wyniki-badan-przy-uzyciu-ankiety-wlasnego-autorstwa/
 ##
