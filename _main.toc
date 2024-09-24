@@ -33,7 +33,7 @@
 \contentsline {subsection}{\numberline {3.5.3}Testowanie hipotez}{38}{subsection.3.5.3}%
 \contentsline {subsection}{\numberline {3.5.4}Testy nieparametryczne}{40}{subsection.3.5.4}%
 \contentsline {section}{\numberline {3.6}Statystyk Carl Pearson}{40}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Słownik terminów które warto znać}{40}{section.3.7}%
+\contentsline {section}{\numberline {3.7}Słownik terminów, które warto znać}{40}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Analiza współzależności pomiędzy zmiennymi}{42}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Dwie zmienne nominalne}{43}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Ryzyko względne oraz iloraz szans}{43}{subsection.4.1.1}%
@@ -72,7 +72,7 @@
 \contentsline {subsection}{\numberline {5.2.4}Metryczka (analiza respondentów)}{77}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}Weryfikacja hipotezy 1}{78}{subsection.5.2.5}%
 \contentsline {subsection}{\numberline {5.2.6}Weryfikacja hipotezy 2}{79}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Weryfikacja hipotez 3---5}{79}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.7}Weryfikacja hipotez 3--5}{79}{subsection.5.2.7}%
 \contentsline {subsection}{\numberline {5.2.8}Wnioski}{82}{subsection.5.2.8}%
 \contentsline {section}{\numberline {5.3}Depresja i jej uwarunkowania wśród studentów PSW}{82}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Cel}{82}{subsection.5.3.1}%
@@ -80,7 +80,7 @@
 \contentsline {subsection}{\numberline {5.3.3}Zastosowane metody statystyczne}{83}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}Metryczka}{83}{subsection.5.3.4}%
 \contentsline {subsection}{\numberline {5.3.5}Weryfikacja hipotezy 1}{83}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Weryfikacja hipotez 2---4}{84}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.6}Weryfikacja hipotez 2--4}{84}{subsection.5.3.6}%
 \contentsline {subsection}{\numberline {5.3.7}Depresja a płeć}{85}{subsection.5.3.7}%
 \contentsline {subsection}{\numberline {5.3.8}Depresja a staż}{85}{subsection.5.3.8}%
 \contentsline {subsection}{\numberline {5.3.9}Depresja a rodzaj miejsca pracy}{86}{subsection.5.3.9}%

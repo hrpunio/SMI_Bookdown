@@ -19,7 +19,7 @@ Należy zastanowić się nad trzema sprawami:
 **Co chcemy ustalić?**
 
 Najlepiej jakąś zależność. Na przykład: stress a wypalenie zawodowe;
-satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej
+satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej.
 
 Może być od biedy opis czegoś lub porównanie czegoś z czymś. Przykłady:
 nadwaga wśród studentów wydziału zdrowia PSW; analiza porównawcza
@@ -85,11 +85,11 @@ Taki pomiar jest mocno zgrubny: ktoś
 się może bać panicznie a ktoś inny dużo mniej. 
 
 Subtelniejszy pomiar to wybór spośród pięciu wariantów: 
-bardzo się boję — boję się — trudno powiedzieć — nie boję się — zupełnie się nie boję.
+bardzo się boję – boję się – trudno powiedzieć – nie boję się – zupełnie się nie boję.
 
 Taką skalę pomiarową określamy jak wiemy jako **porządkową**. Pomiary nie są liczbami,
 ale są uporządkowane.
-Rangi wartości są już liczbami (np. 1—5 w przykładowej skali pięciowariantowej), 
+Rangi wartości są już liczbami (np. 1–5 w przykładowej skali pięciowariantowej), 
 można je np. uśredniać.
 Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali **Likerta**.
 Można sobie wymyślać skalę Likerta 7-punktową i więcej. 
@@ -113,12 +113,12 @@ pytań o strach względem COVID19:
 
 The Fear of COVID-19 Scale: Development and Initial Validation. 
 International Journal of
-Mental Health and Addiction, 1—9. 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/
+Mental Health and Addiction, 1–9. 
+(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7100496/).
 
 Lęk przed koronawirusem COVID-19
-i lęk przed śmiercią — polskie adaptacje narzędzi
-https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html
+i lęk przed śmiercią – polskie adaptacje narzędzi
+(https://www.termedia.pl/Fear-of-COVID-19-and-death-anxiety-Polish-adaptations-of-scales,116,44937,1,1.html).
 
 
 1. I am most afraid of Corona.
@@ -173,7 +173,6 @@ czynnika nosi nazwę **formatywnego** (albo indeksu): czynnik jest sumą indykat
 Przykładem może być SES: 
 status socjo-ekonomiczny będący agregatem wykształcenia (W), dochodu (D) 
 oraz zawodu (Z).
-
 
 W założeniu indykatory są jednakowo dobrymi miarami
 czynnika refleksyjnego i jako takie powinny być mocno
@@ -234,18 +233,6 @@ s0 <- read.csv("palenie_PSW.csv", sep = ',',  header=F, skip=1, na.string="NA", 
    'ocena.wiedzy', 'wzorce.palenia', 'plec', 'wiek', 'staz', 'miejsce.pracy'))
 
 s1 <- s0 %>%
-   mutate(
-staz=recode(staz,
-'0-3 lat'   = '06 i mniej',
-'4-6 lat'   = '06 i mniej',
-'7-9 lat'   = '07-12',
-'8-12 lat'  = '07-12',
-'10-12 lat' = '07-12',
-'13-15 lat' = '13-18',
-'16-18 lat' = '13-18',
-'19-21 lat' = '19 i więcej',
-'22-24 lat' = '19 i więcej',
-'25 lat i więcej' = '19 i więcej') ) %>%
 #
 ##T12. Uważasz, że bardziej szkodliwe dla zdrowia jest: [JW]
 # "Każda forma kontaktu"
@@ -306,6 +293,7 @@ mutate (
           P11 +
           P12A + P12B + P12C + P12D + P12E + P12F )
 
+s1$staz <- factor (s0$staz, levels=c('0-4', '5-9', '10-14', '15 i więcej'))
 ```
 
 ### Cel
@@ -361,7 +349,7 @@ Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 * Hipotezę 2 weryfikowano na podstawie wielkości odsetka respondentów wykazujących się
   dobrą i bardzo dobrą wiedzą na temat palenia.
 
-* Hipotezy 3—5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
+* Hipotezy 3–5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
   oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
   Kruskala-Wallisa.
 
@@ -411,7 +399,7 @@ p.status <- s0.status %>%
 p.status
 ```
 
-Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku \@ref(fig:rysunek54)
+Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku \@ref(fig:rysunek54).
 
 ```{r rysunek54, fig.cap="Studenci wg stażu pracy (%)", out.width=ex.out.width}
 s0.staz <- s1 %>%
@@ -472,7 +460,7 @@ z jakąś średnią ogólnopolską.
 (mediana `r P.total.median`); 3/4 respondentów nie uzyskało więcej niż
 `r P.total.q3` (czyli `r sprintf("%.1f", P.total.q3/19 *100)` %).
 
-### Weryfikacja hipotez 3—5
+### Weryfikacja hipotez 3–5
 
 Czy palenie jest skorelowane z płcią?
 
@@ -488,7 +476,7 @@ chi_test <- chisq.test(t.sex.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
+Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
 
 Czy palenie jest skorelowane ze stażem pracy?
 
@@ -506,7 +494,7 @@ chi_test <- chisq.test(t.staz.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
+Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
 
 Czy palenie jest skorelowane z miejscem pracy?
 
@@ -524,7 +512,7 @@ chi_test <- chisq.test(t.praca.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`)
+Nie jest o czym świadczy wysoka wartość p (`r sprintf("%.4f", chi_test["p.value"])`).
 
 Czy wiedza na temat palenia jest skorelowana z płcią?
 
@@ -584,7 +572,7 @@ wilcoxp <- wilcox.test(P.total ~ miejsce.pracy, data=s1)
 wilcoxp['p.value']
 ```
 
-Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` — nie ma podstaw
+Wartość p wynosi `r sprintf("%.8f", wilcoxp['p.value'])` – nie ma podstaw
 od odrzucenia hipotezy o identyczności rozkładów  na poziomie p = 0,05. Nie ma różnicy
 w poziomie wiedzy wśród pracowników przychodni i szpitali.
 
@@ -614,13 +602,13 @@ kw<- kruskal.test(P.total ~ staz, data = s1)
 kw["p.value"]
 ```
 
-Wartość p wynosi `r sprintf("%.8f", kw["p.value"])` — nie ma podstaw
+Wartość p wynosi `r sprintf("%.8f", kw["p.value"])` – nie ma podstaw
 od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
 różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
 ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej  mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
-0—5 mała; 6—10 średnia; 11—15 duża, 16—19 ogromna:
+0–5 mała; 6–10 średnia; 11–15 duża, 16–19 ogromna:
 
 ```{r}
 ## Wiedza a palenie
@@ -687,8 +675,8 @@ możliwe są 4 warianty odpowiedzi, odpowiadające zwiększonej intensywności o
 którym w związku z tym przypisuje się wartości od zera do 3 punktów. Maksymalna liczba punktów
 w teście wynosi 63 a minimalna 0.
 
-Interpretacja wyników testu Becka: 0—19 brak/łagodna depresja;
-20—25 umiarkowana; 26—63 ciężka depresja.
+Interpretacja wyników testu Becka: 0–19 brak/łagodna depresja;
+20–25 umiarkowana; 26–63 ciężka depresja.
 
 Postawiono następujące hipotezy badawcze:
 
@@ -704,7 +692,7 @@ Postawiono następujące hipotezy badawcze:
 
 * Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 
-* Hipotezy 2—4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+* Hipotezy 2–4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
   oraz porównania poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
   Kruskala-Wallisa.
 
@@ -850,7 +838,9 @@ P21=recode(P21,
 'Utraciłem wszelkie zainteresowanie sprawami seksu'=3)) %>%
   mutate (P=P1+P2+P3+P4+P5+P6 + P7 + P8 + P9 +P10 + 
             P11+P12+P13+P14+P15+P16 + P17 + P18 + P19 +P20 + P21,
-          Depresja = case_when( P < 20 ~ "B", P < 26 ~ "Ł", TRUE ~ "C")) 
+          Depresja = case_when( P < 20 ~ "Brak", P < 26 ~ "Łagodna", TRUE ~ "Ciężka")) 
+
+s0$Depresja <- factor(s0$Depresja, levels=c("Brak", "Łagodna", "Ciężka"))
 
 ```
 
@@ -929,12 +919,12 @@ p.2
 Ciężką postać depresji wykazuje zaledwie 3% studentów. Należy odrzucić hipotezę
 że depresja stanowi poważny problem wśród studentów RM/PO PSW.
 
-### Weryfikacja hipotez 2—4
+### Weryfikacja hipotez 2–4
 
 Aby móc zastosować metody tablicy wielodzielczej i testu chi-kwadrat
 oryginalne wartości liczbowe depresji zamieniono
-na skalę porządkową: 0—19 brak/łagodna depresja (B);
-20—25 umiarkowana (Ł); 26—63 ciężka depresja (C).
+na skalę porządkową: 0–19 brak/łagodna depresja (Brak);
+20–25 umiarkowana (Łagodna); 26–63 ciężka (Ciężka).
 
 ### Depresja a płeć 
 
@@ -1107,14 +1097,14 @@ czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
 
 ### Zastosowane metody statystyczne
 
-* Do weryfikacji hipotez 1—5 wykorzystano model regresji liniowej.
+* Do weryfikacji hipotez 1–5 wykorzystano model regresji liniowej.
 
 * Do weryfikacji hipotezy 6 wykorzystano model regresji logistycznej.
 
 ### Wyniki
 
 Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
-od razu do weryfikacji hipotez 1—6.
+od razu do weryfikacji hipotez 1–6.
 
 Macierz korelacji dla zmiennych `zzp`, `sp`, `sw`, `kpw`, `kpp` oraz `po`:
 
@@ -1293,7 +1283,7 @@ ggroc(roc_obj,
 
 * Satysfakcja jest większym predyktorem zamiaru zmiany pracy niż konflikt personalny 
   ze współpracownikami.
-  Pozostałe czynniki okazały się nieistotne (hipotezy 1—5).
+  Pozostałe czynniki okazały się nieistotne (hipotezy 1–5).
 
 * Satysfakcja jest jedynym czynnikiem  istotnie wpływającym na zmianę miejsca pracy.
   Pozostałe czynniki okazały się nieistotne (hipoteza 6).
@@ -1364,7 +1354,7 @@ Pytanie 8
 Pytanie 9
 
 0. Nie myślę o odebraniu sobie życia
-1. Myślę o samobójstwie — ale nie mógłbym tego dokonać
+1. Myślę o samobójstwie – ale nie mógłbym tego dokonać
 2. Pragnę odebrać sobie życie
 3. Popełnię samobójstwo, jak będzie odpowiednia sposobność
 
@@ -1414,7 +1404,7 @@ Pytanie 16
 
 0. Sypiam dobrze, jak zwykle
 1. Sypiam gorzej niż dawniej
-2. Rano budzę się 1—2 godziny za wcześnie i trudno jest mi ponownie usnąć
+2. Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć
 3. Budzę się kilka godzin za wcześnie i nie mogę usnąć
 
 Pytanie 17
@@ -1452,7 +1442,7 @@ Pytanie 21
 2. Problemy płciowe wyraźnie mniej mnie interesują
 3. Utraciłem wszelkie zainteresowanie sprawami seksu
 
-**Treść pytań* (nie prezentowana ankietowanym):
+**Treść pytań** (nie prezentowana ankietowanym):
 Odczuwanie smutku i przygnębienia (1),
 Martwienie się o przyszłość (2),
 Uważasz, że zaniedbujesz swoje obowiązki? (3),
@@ -1670,7 +1660,7 @@ Kwidzyn 2022.
 
 **Konflikt ze współpracownikami/KPW**
 
-(Raz na miesiąc lub mniej/1—2 razy w miesiącu/1—2 razy w tygodniu/1—2 razy dziennie/wiele razy dziennie.)
+(Raz na miesiąc lub mniej/1–2 razy w miesiącu/1–2 razy w tygodniu/1–2 razy dziennie/wiele razy dziennie.)
 
 16. Jak często w pracy kłócisz się z innymi osobami?
 17. Jak często inni ludzie krzyczą na Ciebie w pracy?
@@ -1679,16 +1669,16 @@ Kwidzyn 2022.
 
 **Konflikt z przełożonym/KPP**
 
-(Raz na miesiąc lub mniej/1—2 razy w miesiącu/1—2 razy w tygodniu/1—2 razy dziennie/wiele razy dziennie.)
+(Raz na miesiąc lub mniej/1–2 razy w miesiącu/1–2 razy w tygodniu/1–2 razy dziennie/wiele razy dziennie.)
 
 20. Jak często w pracy kłócisz się z przełożonym?
 21. Jak często twój przełożony krzyczy na ciebie?
 22. Jak często twój przełożony jest niemiły w pracy?
 23. Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?
 
-**Przywiązanie do ogranizacji/PO** (`PO-1`—`PO-18`), składające się z następujących aspektów:
-przywiązanie afektywne (`PO-1`—`PO-6`), przywiązanie normatywne (`PO-7`—`PO-12`), 
-przywiązanie trwania (`PO-13`—`PO-18`).
+**Przywiązanie do ogranizacji/PO** (`PO-1`–`PO-18`), składające się z następujących aspektów:
+przywiązanie afektywne (`PO-1`–`PO-6`), przywiązanie normatywne (`PO-7`–`PO-12`), 
+przywiązanie trwania (`PO-13`–`PO-18`).
 
 (Zdecydowanie się nie zgadzam/nie zgadzam się/raczej się nie zgadzam/
 trudno powiedzieć/raczej się zgadzam/zgadzam się/zdecydowanie się zgadzam.)
@@ -1744,5 +1734,5 @@ Liu Y i inni, *Turnover intention and its associated factors among nurses:  a mu
 Front. Public Health 11:1141441 (2023)
 https://www.frontiersin.org/articles/10.3389/fpubh.2023.1141441/full
 oraz
-Bańka A., Bazińska R., Wołowska A., *Polska wersja Meyera i Allen Skali Przywiązania do Organizacji*, Czasopismo Psychologiczne 2002, nr 8 (1), s. 65—74.
+Bańka A., Bazińska R., Wołowska A., *Polska wersja Meyera i Allen Skali Przywiązania do Organizacji*, Czasopismo Psychologiczne 2002, nr 8 (1), s. 65–74.
 

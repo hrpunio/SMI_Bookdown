@@ -157,7 +157,7 @@ W naszym przykładzie należy wykonać:
   W takich pytaniach należy przeliczyć rangi wg prostej formuły s1r = 6 - s1.
   
   * Miarą satysfakcji będzie suma rang s1r+s2+s3.
-  * Miarą zamiaru odejścia będzie suma rang zo1+zo2+zo3
+  * Miarą zamiaru odejścia będzie suma rang zo1+zo2+zo3.
   
 * Zmienna `plec` jest mierzona w skali nominalnej. Nie musimy jest przekodowywać
 
@@ -178,7 +178,7 @@ pytania z wielokrotnym wyborem.
 * Wartości zmiennych `wiek` oraz `staz` są liczbami. Mogą być analizowane tak-jak-są
 (regresja/korelacja), ale można też je przekodować na wartości nominalne
 (mały-średni-duży staż) i zastosować metody z grupy zmienna-liczbowa/zmienna nominalna
-(takie jak test ANOVA czy Kruskala-Wallisa)
+(takie jak test ANOVA czy Kruskala-Wallisa).
 
 Przekodowanie wykonujemy wybierając **Dane** w menu głównym. 
 
@@ -189,7 +189,7 @@ Przekodowanie wykonujemy wybierając **Dane** w menu głównym.
 
 Uwaga: Jamovi nie zmieni wartości zmiennej `s1` tylko utworzy nową zmienną
 z przekodowanymi wartościami. Zmienna na podstawie której jest tworzona
-nowa zmienna nazywa się źródłową (`s1` w naszym przykładzie jest źródłowa.)
+nowa zmienna nazywa się źródłową (`s1` w naszym przykładzie jest źródłowa).
 
 ```{r przeksztalcenie0, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
 knitr::include_graphics("./jamovi_przeksztalcenie_0_small.png")
@@ -274,7 +274,7 @@ knitr::include_graphics("./jamovi_przeksztalcenie_3.png")
 W podobny łatwy sposób przekodowujemy `s3` oraz `zo1`, `zo2`, `zo3`.
 
 **Uwaga**: polecenie `IF` wpisujemy używając dużych liter. Słowo
-`$source` wpisujemy tak jak jest to zademonstrowane (`$Source` jest błędem.)
+`$source` wpisujemy tak jak jest to zademonstrowane (`$Source` jest błędem).
 
 Przekodowanie pytania z możliwością wielokrotnego wyboru jest równie
 proste, tyle że pisania jest więcej. Zmienna `wiedza_na_temat_palenia` może zawierać
@@ -369,7 +369,7 @@ realizuje `s1pr = 6 - s1p`. Satysfakcja to suma rang z trzech pytań:
 `satysfakcja =  s1pr + s2p + s3p`.
 
 W celu wyliczanie nowych zmiennych należy wybrać Dane Oblicz. Pojawia się okno
-zmiennej wyliczonej zatytułowane `ZMIENNA WYLICZONA`
+zmiennej wyliczonej zatytułowane `ZMIENNA WYLICZONA`.
 
 Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego,
 w przykładzie

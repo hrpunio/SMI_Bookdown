@@ -80,7 +80,7 @@ na minus lub `r  round(max(s02) - mean.s02, 2)` kilogramów na plus.
 
 **Szacujemy średnią na podstawie 10 zawodników pobranych losowo**.
 
-Powtarzamy eksperyment `r sample.size` razy
+Powtarzamy eksperyment `r sample.size` razy.
 
 ```{r}
 s10 <- mks(10, wN)
@@ -170,7 +170,7 @@ Ten która ma **mniejszą wariancję**. Taki estymator nazywa się **efektywny**
 Estymator zatem powinien być **nieobciążony**, **zgodny** oraz **efektywny** (czyli mieć
 małą wariancję). Można matematycznie udowodnić, że pewien estymator ma tak małą wariancję, że
 niemożliwe jest wynalezienie czegoś jeszcze bardziej efektywnego. Takim estymatorem
-średniej w populacji  jest średnia z próby...
+średniej w populacji  jest średnia z próby.
 
 Konkretną wartość estymatora dla konkretnych wartości próby nazywamy **oceną**
 (parametru).
@@ -411,8 +411,8 @@ jako ryzyko/szansa/prawdopodobieństwo
 (wynosi ono `r round(nrow( r %>% filter (wiek < 30)) / nrow(r) * 100, 2)`%).
 
 Podobnie można obliczyć prawdopodobieństwo, że wiek kandydata będzie się
-zawierał w przedziale 50—60 lat.
-Ponieważ kandydatów w wieku 50—60 lat jest `r nrow( r %>% filter (wiek >= 50 & wiek <= 60))`,
+zawierał w przedziale 50–60 lat.
+Ponieważ kandydatów w wieku 50–60 lat jest `r nrow( r %>% filter (wiek >= 50 & wiek <= 60))`,
 to szukane prawdopodobieństwo 
 jest równe: `r round(nrow( r %>% filter (wiek >= 50 & wiek <= 60)) / nrow(r) * 100, 2)`%).
 
@@ -526,7 +526,7 @@ Jeżeli wariancja błędu jest duża, to w pojedynczej próbie mogą wystąpić 
 znacznie różniące się od prawdziwej średniej; jeżeli jest mała to wartości bardzo różniące
 się od prawdziwej średniej mają małe szanse na zaistnienie. W przypadku rozkładu
 normalnego wiemy, że wariancja błędu jest równa $s^2/n$
-(gdzie $s^2$ jest wariancją w populacji, a $n$ wielkością próby.)
+(gdzie $s^2$ jest wariancją w populacji, a $n$ wielkością próby).
 
 W ramach wnioskowania stosowane są trzy metody (podejścia): 
 
@@ -549,14 +549,14 @@ punktowym proporcji/ryzyka jest proporcja/ryzyko z próby.
 
 Nie można ustalić prawdopodobieństwa popełnienia 
 błędu dla dokładnej wartości parametru (co wynika z właściwości matematycznych
-modelu), ale można dla dowolnego przedziału od—do. 
+modelu), ale można dla dowolnego przedziału od–do. 
 
 Czyli nie można ustalić, że z prawdopodobieństwem 95%
 oszacujemy wartość średnią czegoś jako 5,000000,
 ale można z prawdopodobieństwem 95% oszacować
-**przedział**, w którym znajdzie się średnia (przykładowo, że będzie to przedział 4,9—5,1).
+**przedział**, w którym znajdzie się średnia (przykładowo, że będzie to przedział 4,9–5,1).
 
-Estymacja przedziałowa to oszacowanie przedziału wartości od—do,
+Estymacja przedziałowa to oszacowanie przedziału wartości od–do,
 który z zadanym z góry prawdopodobieństwem zawiera prawdziwą wartość parametru.
 
 Z góry wyznaczone prawdopodobieństwo nazywa się
@@ -609,11 +609,11 @@ odrzucamy hipotezę zerową (różnica jest istotna statystycznie).
 Przyjmijmy przykładowo, że prawdopodobieństwo wystąpienia różnicy 1,1 lat (i większej) oszacowane
 na podstawie odpowiedniego modelu matematycznego (rozkład normalny) wynosi 0,3 
 co znaczy że coś takiego
-zdarza się względnie często — trzy razy na 10 pobranych prób.
+zdarza się względnie często – trzy razy na 10 pobranych prób.
 
 Załóżmy z kolei że, ta różnica wyniosła 3,2 lata. Prawdopodobieństwo 
 wystąpienia takiej różnicy (i większej) wynosi 0,009 co znaczy że coś takiego
-zdarza się względnie rzadko — 9 razy na tysiąc prób.
+zdarza się względnie rzadko – 9 razy na tysiąc prób.
 
 Przyjmując, że możemy się mylić 5 razy na 100 w pierwszym przypadku statystyk powie,
 że nie ma podstaw do odrzucenia hipotezy $H_0$. 
@@ -647,7 +647,7 @@ nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
 
 ## Statystyk Carl Pearson
 
-W punkcie \@ref(fnightingale) przypomnieliśmy postać Florence Nightingale — matki
+W punkcie \@ref(fnightingale) przypomnieliśmy postać Florence Nightingale – matki
 statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
 Ojców było więcej niż matek oczywiście, a wśród nich Francis Galton (regresja),
 Carl Pearson (współczynnik korelacji liniowej, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
@@ -671,28 +671,27 @@ Jeszcze jeden argument żeby nie traktować
 wyników analiz statystycznych jako wiedzy objawionej,
 absolutnie pewnej i 100% prawdziwej (por. uwagę w punkcie \@ref(przedmiotS)).
 
-## Słownik terminów które warto znać
+## Słownik terminów, które warto znać
 
-Estymacja (punktowa, przedziałowa): szacowanie wartości parametru na podstawie próby.
+1. Estymacja (punktowa, przedziałowa): szacowanie wartości parametru na podstawie próby.
 
-Estymator (nieobciążony, zgodny, efektywny): funkcja na wartościach próby która służy
-do oszacowania parametru. 
+2. Estymator (nieobciążony, zgodny, efektywny): funkcja na wartościach próby która służy
+   do oszacowania parametru. 
 
-Hipoteza statystyczna: przypuszczenie dotyczące parametru lub rozkładu zmiennej.
+3. Hipoteza statystyczna: przypuszczenie dotyczące parametru lub rozkładu zmiennej.
 
-Ocena (parametru): konkretna wartość estymatora dla pewnej próby.
+4. Ocena (parametru): konkretna wartość estymatora dla pewnej próby.
 
-Poziom istotności (testu; oznaczany jako $\alpha$; zwykle 0,05): prawdopodobieństwo
-popełnienia błędu.
+5. Poziom istotności (testu; oznaczany jako $\alpha$; zwykle 0,05): prawdopodobieństwo popełnienia błędu.
 
-Poziom ufności = prawdopodobieństwo, że przedział ufności zawiera prawdziwą wartość parametru;
-oznaczany jako $1- \alpha$; zwykle 0,95.
+6. Poziom ufności = prawdopodobieństwo, że przedział ufności zawiera prawdziwą wartość parametru;
+   oznaczany jako $1- \alpha$; zwykle 0,95.
 
-Rozkład (prawdopodobieństwa): przypisanie prawdopodobieństwa wartościom zmiennej losowej.
+7. Rozkład (prawdopodobieństwa): przypisanie prawdopodobieństwa wartościom zmiennej losowej.
 
-Test statystyczny: metoda weryfikacji hipotezy statystycznej.
+8. Test statystyczny: metoda weryfikacji hipotezy statystycznej.
 
-Wnioskowanie statystyczne: wnioskowanie o całości na podstawie próby.
+9. Wnioskowanie statystyczne: wnioskowanie o całości na podstawie próby.
 
 
 

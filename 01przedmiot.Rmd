@@ -8,7 +8,7 @@ Statystyka to też **dziedzina wiedzy**, upraszczając zbiór metod, które słu
 do tworzenia statystyk w pierwszym znaczeniu tego słowa. 
 Wreszcie statystyka to **pojedyncza metoda** ze zbioru metod opracowanych
 w dziedzinie, np. średnia to statystyka. Trochę to niefortunne, ale
-świat nie jest doskonały jak wiemy...
+świat nie jest doskonały jak wiemy.
 
 **Statystyka** (obiegowo): dział matematyki, a w związku z tym
 wiedza absolutnie
@@ -52,13 +52,13 @@ co tak naprawdę jest badane. Zgony to w oczywisty sposób za mało.
 
 Zwróćmy uwagę, że *Zgony w mieście Kwidzyn w roku 2022* to nie to samo
 (ktoś może być mieszkańcem
-a umrzeć w Polsce i/lub ktoś może nie być mieszkańcem i umrzeć w Kwidzynie.)
+a umrzeć w Polsce i/lub ktoś może nie być mieszkańcem i umrzeć w Kwidzynie).
 
 **Generalizacja**: ocena całości na podstawie części. Badamy zjawisko wypalenia
 zawodowego pielęgniarek i pielęgniarzy w Polsce (populacja). Wobec zaporowych kosztów
 mierzenia wszystkich decydujemy się na przeprowadzenie ankiety wśród studentów
 pielęgniarstwa PSW (próba). Czy możemy twierdzić na podstawie próby, że wyniki
-badania dla całej Polski są identyczne? Raczej nie...
+badania dla całej Polski są identyczne? Raczej nie.
 
 Próba, która pozwala na generalizację nazywa się próbą **reprezentatywną**.
 Najlepszym sposobem na uzyskanie próby reprezentatywnej jest losowanie.
@@ -92,7 +92,7 @@ Wyróżnia się następujące **typy skal pomiarowych**:
 * **porządkowa** (*ordinal scale*), klasyfikuje i porządkuje: dzień tygodnia
 w którym nastąpił zgon (po poniedziałku jest wtorek);
 
-* **liczbowa**, mierzy w potocznym tego słowa znaczeniu: wiek zmarłego w latach
+* **liczbowa**, mierzy w potocznym tego słowa znaczeniu: wiek zmarłego w latach.
 
 Mówimy **zmienna mierzalna** albo **zmienna ilościowa** dla zmiennych mierzonych
 za pomocą skali liczbowej.  Mówimy **zmienna niemierzalna** albo
@@ -111,35 +111,35 @@ Przykładem może być ciśnienie krwi lub waga noworodka.
 
 **Rodzaje danych**
 
-* Przekrojowe (zmarli w Kwidzynie)
+* Przekrojowe (zmarli w Kwidzynie);
 
-* Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000—2022)
+* Czasowe: każda obserwacja ma przypisany czas (liczba zmarłych w Polsce w latach 2000–2022);
 
-* Przestrzenne: każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne)
+* Przestrzenne: każda obserwacja ma przypisane miejsce na kuli ziemskiej (współrzędne geograficzne).
 
 ## Rodzaje i sposoby analizy danych
 
 Rodzaje **analizy statystycznej** zależą od rodzaju danych
 (jakie mamy dane takie możemy stosować metody):
 
-* jedna zmienna/dane przekrojowe: analiza struktury
+* jedna zmienna/dane przekrojowe: analiza struktury;
 
-* jedna zmienna/dane czasowe: analiza dynamiki zjawiska
+* jedna zmienna/dane czasowe: analiza dynamiki zjawiska;
 
-* co najmniej dwie zmienne: analiza współzależności (nadwaga powoduje cukrzycę)
+* co najmniej dwie zmienne: analiza współzależności (nadwaga powoduje cukrzycę).
 
 
 Sposoby analizy danych zależą od sposobu pomiaru (populacja/próba/generalizacja):
 
-**Opis statystyczny** — (proste) przedstawienie badanych zbiorowości/zmiennych
+**Opis statystyczny** – (proste) przedstawienie badanych zbiorowości/zmiennych
  tabel, wykresów lub parametrów (np. średnia, mediana) ;
- Opis statystyczny może dotyczyć: — struktury zbiorowości; — współzależności; —
+ Opis statystyczny może dotyczyć: – struktury zbiorowości; – współzależności; –
  zmian zjawiska w czasie.
 
 **Wnioskowanie statystyczne**: wnioskowanie na temat całości na podstawie próby;
-wykorzystuje metody analizy matematycznej
+wykorzystuje metody analizy matematycznej.
 
-**Opisujemy** populację lub próbę. **Wnioskujemy** na podstawie próby o całości...
+**Opisujemy** populację lub próbę. **Wnioskujemy** na podstawie próby o całości.
 
 ## Sposoby pomiaru danych i organizacja badania
 
@@ -182,7 +182,7 @@ sensie, że ich wpływ na skutek jest ustalony.
 
 Pomiarowi/manipulacji podlega zbiór jednostek podzielonych
 **losowo** na dwie grupy: grupa **eksperymentalna** (**experimental group**)
-oraz **grupa kontrolna** (**control group**)
+oraz **grupa kontrolna** (**control group**).
 
 W medycynie używa się terminu **badania kliniczne** czyli badania
 które dotyczą ludzi. Badania kliniczne  także dzielą 
@@ -190,7 +190,7 @@ się na eksperymentalne oraz obserwacyjne. Eksperyment nazywa się
 RCT (*randomized clinical trial*/randomizowane kontrolowane badania kliniczne.)
 Manipulacja określana jest jako
 ekspozycja (**exposure**) albo leczenie (**treatment**)
-Zmienne ukryte określa się mianem **confunding factors** (**czynniki zakłócające**)
+Zmienne ukryte określa się mianem **confunding factors** (**czynniki zakłócające**).
 
 Rysunek \@ref(fig:fluor) przedstawia zależność pomiędzy wynikiem (*outcome*), przyczyną
 oraz czynnikami zakłócającymi na przykładzie zależności dotyczącej domniemanego
@@ -199,7 +199,7 @@ W badaniu, którego autor uważał, że udowodnił związek fluoryzowanie→nowo
 porównał on współczynniki zgonów z miast fluoryzujących oraz
 nie fluoryzujących wodę. Okazało się, że przeciętnie współczynnik ten był wyższy
 w grupie miast fluoryzujących wodę. Czy to świadczy, że fluoryzowanie wody
-powoduje raka? Nie...
+powoduje raka? Nie.
 
 W innym badaniu tych samych miast okazało się, że
 w grupie miast fluoryzujących wodę przeciętnie mieszkają starsi ludzie. 
@@ -214,27 +214,27 @@ knitr::include_graphics("./Model1_cropped.png")
 
 **Efekt przyczynowy** to **ilościowe** określenie wpływu
 ekspozycji na wynik 
-poprzez porównanie wielkości wyniku dla różnych wielkości ekspozycji
+poprzez porównanie wielkości wyniku dla różnych wielkości ekspozycji.
 
 Są dwa typy **efektu przyczynowego**:
 indywidualny efekt interwencji (*individual treatment effect*) oraz
-średni efekt interwencji (*average treatment effect*)
+średni efekt interwencji (*average treatment effect*).
 
 **Individual Treatment Effect (ITE)**
 
 Indywidualny efekt interwencji (ITE) określa ilościowo wpływ
-interwencji dla konkretnej osoby, poprzez porównanie
+interwencji dla konkretnej osoby poprzez porównanie
 wyników dla różnych wartości interwencji.
      
 Mogę pić kawę lub nie pić kawy a wynikiem będzie ocena. Oczywiście
-nie mogą zrobić tych dwóch rzeczy na raz...
+nie mogą zrobić tych dwóch rzeczy na raz.
 
 **Average Treatment Effect (ATE)**
 
 Średni efekt interwencji 
-określa ilościowo wpływ interwencji dla grupy osób
+określa ilościowo wpływ interwencji dla grupy osób.
 
-W grupie studentów jedni pili kawę inni nie...
+W grupie studentów jedni pili kawę inni nie.
 
 Jeżeli grupa (populacja) została uprzednio podzielona (losowo) na
 grupę **eksperymentalną** oraz **grupę kontrolną**
@@ -259,7 +259,7 @@ a studentom w **grupie kontrolnej** podajemy 1l brązowej wody o smaku i zapachu
 grupie studentów pijących 1l kawy okazały się wyższe niż w grupie pijącej kolorową wodę.
 Czy można powiedzieć że udowodniono
 iż picie dużej ilości kawy poprawia wynik egzaminu?
-Raczej tak...
+Raczej tak.
 :::
 
 **Badania obserwacyjne** można z kolei podzielić na **analityczne** i **opisowe**.
@@ -284,14 +284,14 @@ Badanie **kliniczno-kontrolne** (*case-control study*): **retrospektywna** ocena
 dla jednostek, u których stwierdzono wynik (chorobę). Grupę kontrolną tworzą **dopasowane** jednostki
 u których wyniku nie stwierdzono (dopasowane w sensie, że są podobne podobne.)
 W praktyce badanie kliniczno-kontrolne to badanie chorych, którzy zgłosili się do przychodni;
-grupą kontrolną są podobni chorzy (wiek, płeć) z innej przychodni :-)
+grupą kontrolną są podobni chorzy (wiek, płeć) z innej przychodni.
 
-Problem1: błąd pamięci (*recall bias*) pacjenci — zwłaszcza zdrowi — słabo pamiętają
+Problem1: błąd pamięci (*recall bias*) pacjenci – zwłaszcza zdrowi – słabo pamiętają
 fakty które miały miejsce lata temu.
-Problem2: trudności z **dopasowaniem** grupy kontrolnej (łatwiej powiedzieć niż zrobić.)
+Problem2: trudności z **dopasowaniem** grupy kontrolnej (łatwiej powiedzieć niż zrobić).
 
 Badania **prospektywne**: od przyczyny do skutku (*cohort*); badanie **retrospektywne**:
-od skutku do przyczyny (case-control)
+od skutku do przyczyny (*case-control*).
 
 Badanie przekrojowe (*cross-sectional study*): badanie związku między wynikiem a ekspozycją
 bez podziału na grupę eksperymentalną i kontrolną.
@@ -306,18 +306,18 @@ Badamy grupę pacjentów przychodni onkologicznej. Stwierdzamy że 90% z nich pa
 papierosy. Czy z tego wynika że palenie powoduje raka? Niekoniecznie. Możemy **dopasować**
 pacjentów o podobnym profilu demograficzno-społecznym z innej przychodni (którzy nie chorują na raka)
 i stwierdzić że 20% z nich paliło. 
-To już jest konkretny argument — ale takie badanie nie jest już **przekrojowe**
+To już jest konkretny argument – ale takie badanie nie jest już **przekrojowe**
 tylko **kliniczno-kontrolne**.
 :::
 
 ::: {.example}
 **Kawa a ocena (kontynuacja)**
 
-można oprócz pytania studentów o ilość kawy i wynik pytać ich jeszcze o czas poświęcony
+Można oprócz pytania studentów o ilość kawy i wynik pytać ich jeszcze o czas poświęcony
 na naukę oraz o średnią ze studiów (wrodzone predyspozycje w dziedzinie intelektualnej). 
 Za pomocą metody regresji możemy ustalić czy i jak bardzo kawa, czas i predyspozycje
 wpływają na ocenę. Teoretycznie zamiast eksperymentu można używać regresji, ale jest to w większości
-przypadków trudne — albo zmienne nie da się zmierzyć (czy średnia ze studiów jest dobrą miarą predyspozycji?)
+przypadków trudne – albo zmienne nie da się zmierzyć (czy średnia ze studiów jest dobrą miarą predyspozycji?)
 albo jakąś ważną zmienną pominiemy. Więcej na temat regresji w rozdziale \@ref(causality).
 
 :::
@@ -328,11 +328,11 @@ wielkością dochodu narodowego, a przeciętną oczekiwaną długością życia 
 
 Problem: błąd ekologizmu (**ecological fallacy**.) Zależności na poziomie indywidualnym oraz zagregowanym
 mogą być różne. Można oczekiwać, że im większy dochód tym osoba dłużej żyje (poziom indywidualny.) Jeżeli
-w kraju występują duże różnice w dochodach (na przykład w USA) to przeciętnie dochód jest wysoki, ale jest
+w kraju występują duże różnice w dochodach (na przykład w USA), to przeciętnie dochód jest wysoki, ale jest
 dużo osób o niskich dochodach, o ograniczonym dostępie do służby zdrowia, i krótszej oczekiwanej długości życia.
 Przeciętna oczekiwana długość życia na poziomie całego kraju jest niższa (bo jest sumą wysokiej
-dla bogatych + niskiej dla biednych);
-w rezultacie zależność na poziomie zagregowanym może się znacząco różnić
+dla bogatych + niskiej dla biednych).
+W rezultacie zależność na poziomie zagregowanym może się znacząco różnić
 od tej na poziomie indywidualnym.
 
 ### Przykłady badań
@@ -352,7 +352,7 @@ następujące części:
 Żeby się zorientować jakie dane (jakie zmienne i jak mierzone) oraz jakie metody statystyczne zostały
 wykorzystane w pracy wystarczy zapoznać się z treścią punktu **materiał i metoda**. W szczególności
 powinien tam być określony **rodzaj badania**: eksperyment, badanie kohortowe, kliniczno-kontrolne,
-przekrojowe lub inne...
+przekrojowe lub inne.
 
 ::: {.example}
 **Czy konsumpcja soli kuchennej szkodzi? (eksperyment)**
@@ -379,7 +379,7 @@ Simon i inni badali konflikt Praca-Dom w zawodzie Pielęgniarki/Pielęgniarza
 (Work-Home Conflict in the European Nursing Profession
 Michael Simon 1, Angelika Kümmerling, Hans-Martin Hasselhorn; Next-Study Group
 Int J Occup Environ Health 2004 Oct-Dec;10(4):384-91. doi: 10.1179/oeh.2004.10.4.384.
-https://pubmed.ncbi.nlm.nih.gov/15702752/)
+https://pubmed.ncbi.nlm.nih.gov/15702752/).
 
 Konflikt Praca-Dom (WHC) to sytuacja kiedy
 nie można zająć się zadaniami lub obowiązkami w jednej dziedzinie ze względu na obowiązki
@@ -397,7 +397,7 @@ Podstawowym narzędziem badawczym jak się łatwo domyśleć była ankieta,
 a przyczyny WHC ustalono za pomocą metody regresji wielorakiej.
 
 Teraz porównajmy koszty badania #1, w którym jedynie starano się ustalić że sól szkodzi (lub nie)
-z badaniem #2, w którym starano się ustalić przyczyny stanów psychicznych badanych-:)
+z badaniem #2, w którym starano się ustalić przyczyny stanów psychicznych badanych.
 :::
 
 ## Miary częstości chorób
@@ -411,9 +411,9 @@ Czyli jeżeli
 chorych w populacji narażonej o wielkości 1mln jest 20 osób, to współczynnik wynosi 20/1mln = 0,000002 co trudno
 skomentować po polsku. Jeżeli pomnożymy owe 0,000002 przez 100 tys ($n=5$), to współczynnik będzie równy 2, 
 co interpretujemy jako dwa przypadki na 100 tys.
-(albo 0,2 na 10 tys, jeżeli $n=4$, co już jednak brzmi trochę gorzej.)
+(albo 0,2 na 10 tys, jeżeli $n=4$, co już jednak brzmi trochę gorzej).
 
-**Współczynnik zapadalności** (*incidence rate*): liczba nowych chorych w określonym czasie (dzień, tydzień, rok) podzielona przez wielkość populacji narażonej. Też zwykle pomnożona przez $10^n$
+**Współczynnik zapadalności** (*incidence rate*): liczba nowych chorych w określonym czasie (dzień, tydzień, rok) podzielona przez wielkość populacji narażonej. Też zwykle pomnożona przez $10^n$.
 
 **Współczynnik śmiertelności** (*case fatality rate*): liczba zgonów z powodu X w określonym czasie (dzień, tydzień, rok) podzielona
 przez liczbę chorych na X w tym samym czasie. Śmiertelność jest miarą ciężkości choroby X.
@@ -424,10 +424,10 @@ liczbę ludności w tym czasie (pomnożone przez $10^n$).
 Jeżeli współczynnik zgonów nie uwzględnia wieku, nazywany jest surowym (*crude*); grupy różniące się strukturą wieku
 nie powinny być porównywane za pomocą współczynników surowych tylko standaryzowanych (*age-standardized* albo
 *age-adjusted*). Przykładowo jeżeli porównamy współczynnik zgonów USA i Nigerii to okaże się że w USA jest wyższy
-a to z tego powodu że społeczeństwo amerykańskie jest znacznie starsze (a umierają zwykle ludzie starzy)
+a to z tego powodu że społeczeństwo amerykańskie jest znacznie starsze (a umierają zwykle ludzie starzy).
 
 **Współczynnik zgonów** standaryzowany według wieku to ważona średnia współczynników w poszczególnych
-grupach wiekowych, gdzie wagami są udziały tychże grup wiekowych w pewnej **standardowej populacji**
+grupach wiekowych, gdzie wagami są udziały tychże grup wiekowych w pewnej **standardowej populacji**.
 
 
 ## Oprogramowanie
@@ -437,16 +437,16 @@ i mamy w tym zakresie trzy możliwości:
 
 1. Arkusz kalkulacyjny. Przydatny na etapie zbierania danych i ich wstępnej
    analizy, później już niekoniecznie. Policzenie niektórych rzeczy jest niemożliwe
-   (brak stosownych procedur) lub czasochłonne (w porównaniu do 2—3)
+   (brak stosownych procedur) lub czasochłonne (w porównaniu do 2–3).
   
 2. Oprogramowanie specjalistyczne komercyjne takie jak programy STATA czy SPSS.
    Wady: cena i czas niezbędny na ich poznanie. 
 
-3. Oprogramowanie specjalistyczne darmowe: Jamovi oraz R
-   Same zalety:-)
+3. Oprogramowanie specjalistyczne darmowe: Jamovi oraz R.
+   Same zalety.
    
 W większości podręczników opisuje się **procedury** 
 oraz **program**, w którym te procedury można zastosować jednocześnie. 
 My zdecydowaliśmy się oddzielnie przestawić teorię 
-statystyki (rozdziały \@ref(przedmiotbadan)—\@ref(surveyexamples))
-a oddzielnie opis posługiwania się konkretnym programem (rozdział \@ref(intro2jamovi))
+statystyki (rozdziały \@ref(przedmiotbadan)–\@ref(surveyexamples))
+a oddzielnie opis posługiwania się konkretnym programem (rozdział \@ref(intro2jamovi)).

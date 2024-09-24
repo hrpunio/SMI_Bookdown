@@ -11,9 +11,9 @@ Upraszczając *metoda hypodedukcji* sprowadza się do dedukcyjnego sformułowani
 nie można dowieść prawdziwości żadnej hipotezy, można natomiast wykazać, że 
 hipoteza jest fałszywa.
 
-Związki między zmiennymi mogą być albo **funkcyjne** — wartościom jednej zmiennej 
+Związki między zmiennymi mogą być albo **funkcyjne** – wartościom jednej zmiennej 
 odpowiada tylko jedna wartość drugiej zmiennej lub
-**stochastyczne** — wartościom jednej zmiennej odpowiadają z pewnym
+**stochastyczne** – wartościom jednej zmiennej odpowiadają z pewnym
 przybliżeniem wartości innej zmiennej.
 
 Problem: czy istnieje związek (zależność) pomiędzy cechami? 
@@ -49,7 +49,7 @@ empiryczny odpowiednik prawdopodobieństwa.
 Eksperyment, który przeprowadził Linus Pauling (laureat nagrody Nobla 
 za odkrycie witaminy C), 
 polegał na tym, że podzielił 280 narciarzy na dwie 140 osobowe grupy. 
-Przez 5—7 dni podawał witaminę C jednej grupie oraz placebo drugiej grupie.
+Przez 5–7 dni podawał witaminę C jednej grupie oraz placebo drugiej grupie.
 Obserwował zachorowania na przeziębienie przez następne dwa tygodnie.
 Jeden narciarz nie dokończył eksperymentu. Historia milczy dlaczego :-)
 
@@ -62,12 +62,12 @@ zachorowało 31. Zatem:
 
 Na tzw. chłopski rozum jeżeli witamina C **nie działa**, to powinien
 zachorować ten sam odsetek narciarzy w obu grupach. 
-A tak nie jest jak widać...
+A tak nie jest jak widać.
 :::
 
 Prostymi miarami oceny siły zależności mogą być: 
 
-* różnica  ryzyk (**risk difference**)
+* różnica  ryzyk (**risk difference**),
 * ryzyko względne (**relative risk**), oraz 
 * iloraz szans (**odds ratio**).
 
@@ -330,7 +330,7 @@ kable(digits=3, narciarze.ex.table, booktabs = TRUE)
 Proszę
 zwrócić uwagę że **rozkłady brzegowe** są identyczne, identyczna
 jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
-liczbami całkowitymi, ale tak ma być i nie jest to błąd)
+liczbami całkowitymi, ale tak ma być i nie jest to błąd).
 
 Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
 tak dużych lub większych różnic. Wynosi ono `r chipv.txt`.
@@ -386,7 +386,7 @@ Uwaga: status-społeczno-ekonomiczny to powiedzmy miara prestiżu używana w soc
 (można na Wikipedii doczytać co to dokładnie jest).
 
 Tym razem tabela składa się z 3 wierszy i 3 kolumn (ostatni wiersz/kolumna się
-nie liczą bo to sumy — rozkłady brzegowe).
+nie liczą bo to sumy – rozkłady brzegowe).
 
 Przedstawmy tę tabelę w postaci udziałów procentowych sumujących się
 dla każdego wiersza osobno do 100% (tj. dzielimy
@@ -404,7 +404,7 @@ kable(smoke.x, col.names = c('High', 'Low', 'Middle', 'Sum'), booktabs = TRUE)
 
 Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
 pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
-być identyczne jak w wierszach 1—3 (nagłówka nie liczymy). Tym idealnym 
+być identyczne jak w wierszach 1–3 (nagłówka nie liczymy). Tym idealnym 
 procentom odpowiadają następujące liczebności:
 
 ```{r, message=FALSE, echo=FALSE}
@@ -420,7 +420,8 @@ kable(smokers.ex.table, booktabs = TRUE)
 Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi 
 (porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi `r chipv.txt`.
 Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
-statusu i palenia (myląc się w przybliżeniu `r chipv.txt` ≈ raz na tysiąc)
+statusu i palenia (myląc się w przybliżeniu `r chipv.txt` ≈ raz na tysiąc).
+
 :::
 
 ## Zmienna liczbowa i zmienna nominalna
@@ -493,6 +494,7 @@ na rodzaj miejsca pracy (szpital/przychodnia).
 s0 <- read.csv("depresjaPSW.csv", sep = ';', header = T) |>
 mutate (P = ifelse (praca == 'Szpital', P + 5, P)) |>
   mutate (P = ifelse (P > 30, P - 6, P))
+s0$staz <- factor(s0$staz, levels = c('<06', '07-12', '13-18', '>19'))
 
 s0.mp <- s0 %>%
   group_by(praca) %>%
@@ -629,8 +631,8 @@ W ankiecie, którą wypełnili
 Studenci pielęgniarstwa i ratownictwa PSW w 2023 roku 
 było też pytanie o staż pracy. Oryginalną liczbową wartość zmiennej
 staż zamieniono na zmienną w skali nominalnej o następujących
-czterech wartościach: `<6` (oznacza od 0 do 6 lat stażu pracy), `07-12` (7—12 lat), `13-18` (13—18 lat)
-oraz `>19` (19 i więcej lat.)
+czterech wartościach: `<6` (oznacza od 0 do 6 lat stażu pracy), `07-12` (7–12 lat), `13-18` (13–18 lat)
+oraz `>19` (19 i więcej lat).
 
 ```{r, echo=F}
 s0.staz <- s0 %>%
@@ -686,7 +688,7 @@ pval <- kw['p.value']
 
 Prawdopodobieństwo tak dużej wartości statystyki testu
 przy założeniu, że  rozkłady wartości zmiennej we wszystkich grupach są identyczne wynosi
-`r sprintf("%.4f", pval)` (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności)
+`r sprintf("%.4f", pval)` (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).
 
 :::
 
@@ -747,7 +749,7 @@ $$\mathrm{cov} (xy) = \frac{1}{n} \left( (x_1 - \bar x) (y_1 - \bar y)  + ... +
 
 Kowariancja zależy od rozproszenia (im większe tym większa), 
 ma też dziwną jednostkę (jednostkaX · jednostkaY) oraz zależy 
-od wybranych skal (tony vs gramy na przykład.)
+od wybranych skal (tony vs gramy na przykład).
 
 Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji, 
@@ -785,7 +787,7 @@ test statystyczny, który sprowadza się do określenia jakie jest
 prawdopodobieństwo otrzymania r = `r rpm` przy założeniu że 
 prawdziwa wartość r wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi `r sprintf ("%e", rpm.p)` 
-(czyli jest ekstremalnie małe — r jest istotnie różne od zera).
+(czyli jest ekstremalnie małe – r jest istotnie różne od zera).
 :::
 
 ### Macierz korelacji
@@ -798,7 +800,7 @@ hurtowa ocena współczynników korelacji w postaci kwadratowej **macierzy korel
 
 Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, szczęściem a stanem zdrowia.
 (The relationship between happiness and self-rated health: A population-based study of 19499 Iranian adults;
-https://doi.org/10.1371/journal.pone.0265914)
+https://doi.org/10.1371/journal.pone.0265914).
 
 ```{r, message=F}
 h0 <- read.csv("iran_happiness.csv", sep = ',', dec = ".",  header=T, na.string="NA" ) %>%
@@ -862,7 +864,7 @@ Współczynnik $b_1$ ma prostą interpretację: jeżeli wartość zmiennej $X$
 rośnie o jednostkę to wartość zmiennej $Y$ zmienia
 się przeciętnie o $b_1$ jednostek zmiennej Y. 
 Wyraz wolny zwykle nie ma sensownej interpretacji
-(formalnie jest to wartość zmiennej $Y$ dla $X=0$)
+(formalnie jest to wartość zmiennej $Y$ dla $X=0$).
 
 Oznaczmy przez $y_i$ wartości obserwowane (zwane też empirycznymi)
 a przez $\hat y_i$ *wartości teoretyczne* (leżące na prostej linii regresji).
@@ -1052,14 +1054,13 @@ oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p < 0,05). 
 
 Kolumna `CI95` zawiera 95% przedziały ufności: z 95% prawdopodobieństwem wartość współczynnika nachylenia
-prostej znajduje się w przedziale `r  sprintf ("%.3f—%.3f", lm.0.ci[2,1], lm.0.ci[2,2])`.
+prostej znajduje się w przedziale `r  sprintf ("%.3f–%.3f", lm.0.ci[2,1], lm.0.ci[2,2])`.
 
 ```{r, warning=F, message=F, out.width="75%"}
 
 ggplot(rwc, aes(x = weight, y = height)) + geom_point() +
   geom_smooth(method='lm', se=F)
 ```
-
 
 :::
 
@@ -1075,6 +1076,7 @@ Następujący równanie opisuje zależność pomiędzy dochodem narodowym na gł
 a konsumpcją mięsa w kilogramach:
 
 $$\textrm{konsumpcja} = b_0 + b_1 \textrm{gdp}$$
+
 Model oszacowano dla `r nrow(n0)` krajów świata w roku 2013 na podstawie danych
 pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
 następujące wyniki:
@@ -1147,7 +1149,6 @@ regresji wielorakiej zapisać można jako:
 $$Y = b_0 + b_1 \cdot X_1 + b_2 \cdot X_2 + ... + b_k \cdot X_k $$
 
 
-
 Wpływ każdej
 zmiennej $X_i$ na zmienną zależną $Y$ jest określony przez odpowiedni współczynnik $b_i$.
 Zmienne $X_i$ mogą być zmiennymi liczbowymi lub nominalnymi.
@@ -1216,7 +1217,7 @@ $$\textrm{ciśnienie} = b_0 + b_1 \textrm{BMI} + b_2\textrm{wiek}$$
 Dane pochodzą z badania: Zależność pomiędzy BMI i wiekiem a występowaniem cukrzycy
 wśród dorosłych osób w Chinach. Badanie kohortowe (Chen i inni, *Association of body mass index
 and age with incident diabetes in Chinese adults: a population-based cohort study.*
-BMJ Open. 2018 Sep 28;8(9):e021768. doi: 10.1136/bmjopen-2018-021768. PMID: 30269064; PMCID: PMC6169758.)
+BMJ Open. 2018 Sep 28;8(9):e021768. doi: 10.1136/bmjopen-2018-021768. PMID: 30269064; PMCID: PMC6169758).
 
 Oryginalny zbiór danych liczy 60 tysięcy obserwacji. Dla celów przykładu losowo wybrano 90, 490
 oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacowania modelu.
@@ -1266,7 +1267,7 @@ oceny parametrów regresji. Tej kolumny na poprzednich wydrukach
 nie było, bo w przypadku regresji 
 prostej standaryzacja jest zabiegiem raczej zbędnym. Dla wyrazu wolnego
 nie ma wartości standaryzowanej (co oznaczono jako `NA` czyli *not available*),
-ale to żadna strata — oceny tego parametru nie są interpretowane.
+ale to żadna strata – oceny tego parametru nie są interpretowane.
 Wpływ `BMI` na wielkość ciśnienia jest nieco niższy niż `age`.
 
 Oszacowanie równania dla próby o wielkości 490 obserwacji daje następujące
@@ -1325,7 +1326,8 @@ Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%.
 Przedziały ufności są jeszcze węższe. Ocena `age` 
 z 95% prawdopodobieństwem znajduje się w przedziale [0.290 0.350]
 a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0.240 0.730].
-Przedział jest ponad 8 razy węższy...
+Przedział jest ponad 8 razy węższy.
+
 :::
 
 ### Zmienne zero-jedynkowe
@@ -1342,6 +1344,7 @@ można zamienić na zmienną binarną `praca` przypisując 1 = szpital, oraz
 i rodzaju miejsca pracy. Możemy to zapisać jako następujące równanie regresji:
 
 $$\textrm{stres} = b_0 + b_1\textrm{staż} + b_2 \textrm{satysfakcja} + b_3 \textrm{praca}$$
+
 Jaka jest interpretacja współczynnika $b_3$? Zakładając że 0 = przychodnia, $b_3$ oznacza 
 przeciętną zmianę wielkości stresu
 spowodowaną pracą w szpitalu w porównaniu do pracy w przychodni. Jeżeli ten współczynnik jest istotny
@@ -1424,7 +1427,7 @@ kable(lm.1.coef.df, row.names = F, digits=3,
 
 Współczynnik zbieżności wynosi `r sprintf ("%.2f", lmr * 100)`%. Tylko dwie na siedem zmiennych
 są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
-z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie — nie mamy
+z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie – nie mamy
 nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
 Zmienne, które okazały się istotne jednocześnie mają największą wielkość efektu (kolumna `Beta`)
 i nie jest to przypadek.
@@ -1467,7 +1470,7 @@ Ktoś mógłby dojść do wniosku że wszystko da się **uistotnić**
 wystarczy zwiększyć wielkość próby. Teoretycznie tak, praktycznie nie. 
 W praktyce nie interesuje nas niewielka wielkość 
 efektu (znikomy wpływ czegoś na coś). Dodatkowo zebranie dużej próby może
-być kosztowne czyli w praktyce niemożliwe — nie mamy dość dużo pieniędzy.
+być kosztowne czyli w praktyce niemożliwe – nie mamy dość dużo pieniędzy.
 Można teoretycznie określić jaka wielkość próby pozwoli na ocenę jakiej
 wielkości efektu. Sposób postępowania jest wtedy następujący: określamy
 jaka wielkość efektu ma **znaczenie praktyczne** i na tej podstawie określamy
@@ -1614,7 +1617,7 @@ W tym modelu prawdopodobieństwo osteoporozy jest identyczne dla
 kobiet i mężczyzn, zatem w oczywisty sposób dewiancja tego modelu
 będzie większa. Pytanie jest czy różnica jest istotna statystycznie.
 Jeżeli jest większa to przyjmuje się, że szacowany model jest lepszy od modelu
-trywialnego (warunek minimum przydatności.)
+trywialnego (warunek minimum przydatności).
 
 Jeżeli model zawiera wiele zmiennych w tym zmienne liczbowe, idea
 liczenia dewiancji jest podobna, ale oczywiście szczegóły są już bardziej
@@ -1623,7 +1626,7 @@ tym program komputerowy.
 
 **Minimalne kryteria oceny przydatności modelu regresji logistycznej**:
 istotnie mniejsza od modelu zerowego dewiancja oraz istotnie różne
-od zera parametry przy zmiennych niezależnych (predyktorach)
+od zera parametry przy zmiennych niezależnych (predyktorach).
 
 **Ocena skuteczności klasyfikacji**
 
@@ -1640,6 +1643,7 @@ czułość (*sensitivity*) oraz swoistość (*specifity*).
 
 1. Odsetek sukcesów zaklasyfikowanych jako „sukces” (**Czułość**); określany
    także jako TPR (*true-positive-rate*).
+   
 2. Odsetek porażek zaklasyfikowanych jako „porażka” (**Swoistość**);
    określany także jako TNR (*true-negative-rate*).
 
@@ -1663,7 +1667,7 @@ Krzywa ROC przedstawia w układzie współrzędnych XY wartości
 czułości oraz swoistości dla różnych wartości granicznych.
 Współczynnik AUC (*area under curve*) to wielkość pola pod
 krzywą wyrażona w procentach pola kwadratu o boku 100%.
-AUC zawiera się w przedziale 50—100. Im większa wartość współczynnika tym lepiej.
+AUC zawiera się w przedziale 50–100. Im większa wartość współczynnika tym lepiej.
 Model który klasyfikuje czysto losowo 
 ma wartość AUC równą 50% (por. rysunek \@ref(fig:ROCcurve)).
 
@@ -1695,7 +1699,7 @@ Odpowiada to następującemu równaniu:
 $$\ln(o) = b_0$$
 
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
-oraz prawdopodobieństwo
+oraz prawdopodobieństwo.
 
 ```{r, out.width="75%"}
 ## Najpierw Model zerowy
@@ -1743,7 +1747,7 @@ oraz zero w przypadku jeżeli była mężczyzną.
 Dla przypomnienia $o$ jest szansą wystąpienia osteoporozy.
 
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
-oraz prawdopodobieństwo
+oraz prawdopodobieństwo.
 
 ```{r, message=F, out.width="75%"}
 ## Model1
@@ -1766,7 +1770,7 @@ kable(gml.1.coef.df, row.names = F, digits=3,
       col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
 ```
 
-Znając wartości współczynników równania można obliczyć wartości $\ln(o)$
+Znając wartości współczynników równania można obliczyć wartości $\ln(o)$.
 
 ```{r, out.width="75%"}
 ## Prawdopodobieństwa
@@ -1785,7 +1789,7 @@ pchisq.glm.1 <- pchisq(glm.1$null.deviance -  glm.1$deviance, glm.1$df.null - gl
 ##pchisq.glm.1
 ```
 
-Dewiancja modelu jest istotnie mniejsza od modelu zerowego (wartość $p$ wynosi bowiem `r pchisq.glm.1`)
+Dewiancja modelu jest istotnie mniejsza od modelu zerowego (wartość $p$ wynosi bowiem `r pchisq.glm.1`).
 
 Zależność pomiędzy wystąpieniem osteoporozy a płcią, wiekiem oraz poziomem witaminy D
 można opisać następującym równaniem regresji:
@@ -1793,7 +1797,7 @@ można opisać następującym równaniem regresji:
 $$\ln(o) = b_0 + b_1 \textrm{kobieta} + b_2 \textrm{wiek} + b_3 \textrm{poziomD}$$
 
 W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
-oraz prawdopodobieństwo
+oraz prawdopodobieństwo.
 
 ```{r, message=F, out.width="75%"}
 glm.2 = glm(osteoporosis ~ d + age + genderF, data = vd0, family = "binomial")
@@ -1836,17 +1840,15 @@ czulosc <- table[4] / (table[3]+table[4])
 swoistosc <- table[1] / (table[1]+table[2])
 ```
 
-Stąd: czułość `r czulosc`; swoistość `r swoistosc`
-
-Istotność modelu
+Stąd: czułość `r czulosc`; swoistość `r swoistosc`.
 
 ```{r}
 pchisq.glm.2 <- pchisq(glm.2$null.deviance -  glm.2$deviance, glm.2$df.null - glm.2$df.residual, lower.tail = F)
 ##pchisq.glm.2
 ##anova(glm.0, glm.2, test = 'Chisq')
 ```
-
-Dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = `r pchisq.glm.2`)
+Istotność modelu:
+dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = `r pchisq.glm.2`).
 
 Krzywa ROC
 
@@ -1880,9 +1882,9 @@ liniowej Pearsona ($\tau_x$ oraz $\tau_y$ oznaczają **rangi**):
 
 $$\rho_{xy} = \frac{\textrm{cov}(\tau_x, \tau_y)}{s_{\tau_x}  s_{\tau_y}}$$
 
-Współczynnik $\rho_{xy}$ to — podobnie jak **oryginalny** współczynnik
-korelacji liniowej Pearsona — miara niemianowana, o wartościach
-ze zbioru [-1;1];
+Współczynnik $\rho_{xy}$ to – podobnie jak **oryginalny** współczynnik
+korelacji liniowej Pearsona – miara niemianowana, o wartościach
+ze zbioru [-1;1].
 
 ::: {.example}
 **Spożycie mięsa**
@@ -1907,8 +1909,7 @@ rsm.p <- rsm.out["p.value"]
 
 Nie ma sensu liczenia współczynnika korelacji rang w przypadku kiedy obie
 cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
-Ale nie jest to też błędem więc w powyższym przykładzie 
-go liczymy :-)
+Ale nie jest to też błędem więc w powyższym przykładzie go liczymy.
 
 Współczynnik korelacji liniowej Spearmana 
 wynosi `r sprintf("%.2f", rsm)` (umiarkowana korelacja).
@@ -1918,7 +1919,7 @@ test statystyczny, który sprowadza się do określenia jakie jest
 prawdopodobieństwo otrzymania $r_s$ = `r sprintf("%.2f", rsm)` przy założeniu że 
 prawdziwa wartość $r_s$ wynosi zero. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi `r sprintf ("%e", rsm.p)` 
-(czyli jest ekstremalnie małe — współczynnik jest istotnie różny od zera).
+(czyli jest ekstremalnie małe – współczynnik jest istotnie różny od zera).
 
 :::
 

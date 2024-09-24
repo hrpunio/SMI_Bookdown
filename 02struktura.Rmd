@@ -1,7 +1,7 @@
 
 # Analiza jednej zmiennej {#analiza1z}
 
-**Statystyka opisowa** (opis statystyczny) to zbiór metod statystycznych służących do — surprise, surprise — opisu
+**Statystyka opisowa** (opis statystyczny) to zbiór metod statystycznych służących do – surprise, surprise – opisu
 (w sensie przedstawienia sumarycznego) zbioru danych;
 w zależności od typu danych (przekrojowe, czasowe, przestrzenne) oraz sposobu pomiaru
 (dane nominalne, porządkowe liczbowe) należy używać różnych metod.
@@ -34,7 +34,7 @@ wartościom zmiennej odpowiedniej **liczby wystąpień** w postaci **liczebnośc
 **Tablica statystyczna** to (w podstawowej formie) dwukolumnowa tabela zawierająca
 wartości zmiennej oraz odpowiadające tym wartościom liczebności (i/lub częstości).
 
-**Tablica dla zmiennej niemierzalnej (nominalnej albo porządkowej)**
+**Tablica dla zmiennej niemierzalnej (nominalnej albo porządkowej)**.
 
 ::: {.example}
 **Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
@@ -92,7 +92,7 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
 * nie było przedziałów z zerową liczebnością;
 
-* przedziałów nie było za dużo ani za mało (typowo 5—15);
+* przedziałów nie było za dużo ani za mało (typowo 5–15);
 
 * większość populacji nie znajdowała się w jednym albo dwóch przedziałach.
 
@@ -111,7 +111,7 @@ t3 <- kable(osoby.L, col.names = c('liczba osób', 'liczba gospodarstw', '%'), b
 t3
 ```
 
-Źródło: Bank danych lokalnych GUS, podgrupa P4287/Gospodarstwa domowe według liczby osób osób
+Źródło: Bank danych lokalnych GUS, podgrupa P4287/Gospodarstwa domowe według liczby osób
 
 :::
 
@@ -136,7 +136,7 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
 * nie było przedziałów z zerową liczebnością;
 
-* przedziałów nie było za dużo ani za mało (typowo 8—15);
+* przedziałów nie było za dużo ani za mało (typowo 8–15);
 
 * większość populacji nie znajdowała się w jednej czy dwóch przedziałach;
 
@@ -148,12 +148,12 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 ::: {.example}
 **Dzietność kobiet na świecie**
 
-Współczynnik dzietności (*fertility ratio* albo FR) — przeciętna liczba urodzonych dzieci przypadająca
-na jedną kobietę w wieku rozrodczym (15—49 lat).
-Przyjmuje się, iż FR między 2,10—2,15 zapewnia zastępowalność pokoleń.
+Współczynnik dzietności (*fertility ratio* albo FR) – przeciętna liczba urodzonych dzieci przypadająca
+na jedną kobietę w wieku rozrodczym (15–49 lat).
+Przyjmuje się, iż FR między 2,10–2,15 zapewnia zastępowalność pokoleń.
 
 Dane dotyczące dzietności dla wszystkich krajów świata pobrano
-ze strony https://ourworldindata.org/grapher/fertility-rate-complete-gapminder)
+ze strony https://ourworldindata.org/grapher/fertility-rate-complete-gapminder).
 
 ```{r, echo=F}
 dA <- read.csv("fertility_rate_2003_2018.csv", sep = ';',
@@ -200,14 +200,14 @@ t2
 
 Zapis `(1,1.5]` oznacza przedział od 1,0 do 1,5 prz czym dolny koniec nie należy
 do przedziału a górny 1,5 należy. Który koniec „wchodzi“, a który nie powinien być
-jasno oznaczony. Zwykle jest tak jak w przykładzie: górny „wchodzi, dolny „nie wchodzi“.
+jasno oznaczony. Zwykle jest tak jak w przykładzie: górny „wchodzi“, dolny „nie wchodzi“.
 
 Każda tablica statystyczna **musi** mieć:
 
 1. Część liczbową (kolumny i wiersze); 
 
-   + żadna rubryka w części liczbowej nie może być pusta (żelazna zasada); w szczególności brak danych należy
-     explicite zaznaczyć umownym symbolem
+   + żadna rubryka w części liczbowej nie może być pusta (żelazna zasada); 
+     w szczególności brak danych należy zaznaczyć umownym symbolem.
    
 2. Część opisową:
 
@@ -218,7 +218,7 @@ Każda tablica statystyczna **musi** mieć:
    + ewentualne uwagi odnoszące się do danych liczb.
 
 Pominięcie czegokolwiek z powyższego jest **ciężkim błędem**. Jeżeli
-nie ma danych (a często — z różnych powodów — nie ma, należy to zaznaczyć a nie pozostawiać pustą rubrykę).
+nie ma danych (a często – z różnych powodów – nie ma, należy to zaznaczyć a nie pozostawiać pustą rubrykę).
 
 ## Wykresy
 
@@ -233,11 +233,11 @@ się rozkłady dla różnych, ale logicznie powiązanych populacji
 
 Do powyższego celu celu stosuje się: 
 
-* **wykres słupkowy** (skala nominalna/porządkowa)
+* **wykres słupkowy** (skala nominalna/porządkowa);
 
-* **wykres kołowy** (skala nominalna/porządkowa)
+* **wykres kołowy** (skala nominalna/porządkowa);
 
-* **histogram** (albo wykres słupkowy dla skal nominalnych)
+* **histogram** (albo wykres słupkowy dla skal nominalnych).
 
 Uwaga: **wykres kołowy** jest
 zdecydowanie gorszy od wykresu słupkowego i nie jest zalecany.
@@ -246,7 +246,7 @@ będzie on bardziej zrozumiały i łatwiejszy w interpretacji.
 
 Podobnie jak tablice, rysunki powinny być opatrzone tytułem
 oraz zawierać źródło wskazujące na pochodzenie danych
-(zobacz przedstawione przykłady.)
+(zobacz przedstawione przykłady).
 
 ### Skala nominalna i porządkowa
 
@@ -383,7 +383,9 @@ h2018
 ```
 :::
 
-Im więcej przedziałów (mniejsza rozpiętość przedziału) tym histogram jest bardziej szczegółowy co niekoniecznie
+Im więcej przedziałów (mniejsza rozpiętość przedziału),
+tym histogram jest bardziej szczegółowy
+co niekoniecznie
 jest pożądane bo zaciemnia ogólny obraz. Nie ma złotych recept na to ile powinno być przedziałów,
 a ich liczba determinuje kształt oraz optyczną wielkość histogramu.
 Im mniej przedziałów tym histogram będzie optycznie większy.
@@ -393,8 +395,8 @@ Im mniej przedziałów tym histogram będzie optycznie większy.
 Nie każdy, kto wie kim była Florence Nightingale, wie że
 była ona także statystykiem. W czasie wojny krymskiej nie tylko 
 zorganizowała opiekę nad rannymi żołnierzami, ale również
-— aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe 
-— prowadziła staranną ewidencję szpitalną oraz 
+– aby przekonać swoich przełożonych do zwiększenia nakładów na szpitale polowe 
+– prowadziła staranną ewidencję szpitalną oraz 
 zgromadzone dane potrafiła analizować, używając wykresów własnego projektu.
 
 W szczególności słynny jest diagram Nightingale zwane także 
@@ -409,14 +411,14 @@ knitr::include_graphics("./FN_diagram.jpg")
 
 Jest to coś w rodzaju wykresu słupkowego tyle że zamiast słupków są wycinki koła. Wycinków jest dwanaście tyle ile miesięcy.
 Długość promienia a co za tym idzie wielkość pola wycinka zależy od wielkości zjawiska,
-który reprezentuje (przyczyna śmierci: rany/choroby/inne)
+który reprezentuje (przyczyna śmierci: rany/choroby/inne).
 
 Wpisując Florence+Nightingale można znaleźć dużo informacji 
-na temat, w tym: http://www.matematyka.wroc.pl/ciekawieomatematyce/pielegniarka-statystyczna
+na temat, w tym: http://www.matematyka.wroc.pl/ciekawieomatematyce/pielegniarka-statystyczna.
 
 W 1859 roku Nightingale została wybrana jako pierwsza kobieta na członka Royal Statistical Society (Królewskie Stowarzyszenie Statystyczne) oraz została honorowym członkiem American Statistical Association (Amerykańskiego Stowarzyszenia Statystycznego).  
 
-Więc szanowi czytelnicy wnioski są oczywiste :-) 
+Więc szanowi czytelnicy wnioski są oczywiste.
 
 ## Analiza parametryczna
 
@@ -451,17 +453,17 @@ Rzadkie przypadki rozkładów wielomodalnych zwykle wynikają z łącznego anali
 dwóch różniących się wartością średnią zbiorów danych.
 Oczywistym zaleceniem w takiej sytuacji jest analiza każdego zbioru oddzielnie.
 
-Rodzaje miar położenia
+Rodzaje miar położenia:
 
 
-* klasyczne 
-  + **średnia arytmetyczna**
+* klasyczne:
+  + **średnia arytmetyczna**,
 
-* pozycyjne 
-  + **mediana**
-  + **dominanta**
-  + **kwartyle**
-  + ewentualnie kwantyle, decyle, centyle (rzadziej używane)
+* pozycyjne:
+  + **mediana**,
+  + **dominanta**,
+  + **kwartyle**,
+  + ewentualnie kwantyle, decyle, centyle (rzadziej używane).
 
 **Średnia arytmetyczna** (*mean*, *arithmetic mean*), to łączna suma
 wartości podzielona przez liczbę sumowanych jednostek. Jeżeli
@@ -480,7 +482,7 @@ wartości zmiennej równe lub większe od mediany.
 Stąd też mediana bywa nazywana wartością środkową.
 Mediana jest oznaczana symbolem Me.
 
-Własności mediany: odporna na wartości nietypowe (w przeciwieństwie do średniej)
+Własności mediany: odporna na wartości nietypowe (w przeciwieństwie do średniej).
 
 **Dominanta** (*mode*), wartość najczęściej występująca. Jeżeli rozkład jest
 wielomodalny to dominanta jest nieokreślona. W szczególności w zbiorowościach
@@ -491,8 +493,8 @@ symbolem D lub Mo.
 one zbiorowość na 4 równe części, każda zawierająca 25% całości. Kwartyle oznaczne
 są symbolami $Q_1$, $Q_2$, $Q_3$, $Q_4$.
 
-Pierwszy kwartyl dzieli **uporządkowaną** zbiorowość w proporcji 25%—75%.
-Trzeci dzieli **uporządkowaną** zbiorowość w proporcji 75%—25%. 
+Pierwszy kwartyl dzieli **uporządkowaną** zbiorowość w proporcji 25%–75%.
+Trzeci dzieli **uporządkowaną** zbiorowość w proporcji 75%–25%. 
 Drugi kwartyl to mediana.
 
 **Kwantyle** (D, wartości dziesiętne), podobnie jak kwartyle, tyle że dzielą na 10 części.
@@ -517,7 +519,7 @@ Uwaga: średnia dzietność na świecie **nie wynosi** `r sprintf ("%.2f", mean2
 (bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
 Podobnie dzietność połowy kobiet na świecie wyniosła
 `r median2018` dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
-względów jak w przypadku średniej.)
+względów jak w przypadku średniej).
 
 :::
 
@@ -526,7 +528,7 @@ względów jak w przypadku średniej.)
 w wieku rozrodczym. Jeżeli liczymy średnią dla 202 krajów, to mamy *średnią-średnich*).
 Inny przykład: odsetek ludności w wieku poprodukcyjnym wg powiatów (średnia z czegoś takiego
 nie da nam odsetka ludności w wieku poprodukcyjnym w Polsce, 
-bo powiaty różnią się liczbą ludności.)
+bo powiaty różnią się liczbą ludności).
 
 ::: {.example}
 **Współczynnik dzietności (kontynuacja)**:
@@ -543,12 +545,12 @@ Miary zmienności określają zmienność (dyspersję albo rozproszenie) w zbior
 
 Rodzaje miar zmienności:
 
-* Klasyczne
-  + wariancja i odchylenie standardowe
+* Klasyczne:
+  + wariancja i odchylenie standardowe,
 
-* Pozycyjne
-  + rozstęp
-  + rozstęp ćwiartkowy
+* Pozycyjne:
+  + rozstęp,
+  + rozstęp ćwiartkowy.
 
 **Wariancja** (*variance*) jest to średnia arytmetyczna kwadratów
 odchyleń poszczególnych wartości zmiennej od średniej arytmetycznej
@@ -604,23 +606,25 @@ knitr::include_graphics("./neg_posit_screw.png")
 
 Miary asymetrii:
 
-* klasyczny współczynnik asymetrii ($g$)
+* klasyczny współczynnik asymetrii ($g$):
 
-  + przyjmuje wartości ujemne dla asymetrii lewostronnej; a dodatnie
+  + Przyjmuje wartości ujemne dla asymetrii lewostronnej; a dodatnie
     dla prawostronnej. Teoretycznie może przyjąć dowolnie dużą wartość,
     ale w praktyce rzadko przekracza 3 co do wartości bezwzględnej.
 
-  + wartości większe od 2 świadczą o dużej, a większe od 3 o bardzo dużej
-    asymetrii
+  + Wartości większe od 2 świadczą o dużej, a większe od 3 o bardzo dużej
+    asymetrii.
 
-* współczynniki asymetrii Pearsona ($W_s$)
-  + wykorzystuje różnice między średnią a dominantą: $W_s = (\bar x - D)/s$
-  + wykorzystuje różnice między średnią a medianą: $W_s = 3(\bar x - Me)/s$
+* współczynniki asymetrii Pearsona ($W_s$):
+
+  + Wykorzystuje różnice między średnią a dominantą: $W_s = (\bar x - D)/s$.
+  
+  + Wykorzystuje różnice między średnią a medianą: $W_s = 3(\bar x - Me)/s$.
 
 * Współczynnik asymetrii oparty na odległościach między kwartylami:
   
   + Obliczany jest według następującej 
-    formuły: $W_{sq} =  ((Q_3 - Q_2) - (Q_2 - Q_1))/ (Q_3 - Q_1)$
+    formuły: $W_{sq} =  ((Q_3 - Q_2) - (Q_2 - Q_1))/ (Q_3 - Q_1)$.
 
 ```{r message=FALSE, echo=FALSE, out.width="70%"}
 skewness2018 <- Skew(d2018$frate)
@@ -890,18 +894,18 @@ ciała występowało na turnieju w roku 2023.
 
 W rozdziale przedstawiono osiem sposobów opisania rozkładu zmiennej:
 
-1. Tablice statystyczne
+1. Tablice statystyczne.
 
-2. Wykres słupkowy
+2. Wykres słupkowy.
 
-3. Wykres kołowy (niezalecany)
+3. Wykres kołowy (niezalecany).
 
-4. Histogram
+4. Histogram.
 
-5. Wykres pudełkowy
+5. Wykres pudełkowy.
 
-6. Miary tendencji centralnej: średnia, mediana, kwartyle
+6. Miary tendencji centralnej: średnia, mediana, kwartyle.
 
-7. Miary rozproszenia: odchylenie standardowe, rozstęp ćwiartkowy
+7. Miary rozproszenia: odchylenie standardowe, rozstęp ćwiartkowy.
 
 8. Miary asymetrii.

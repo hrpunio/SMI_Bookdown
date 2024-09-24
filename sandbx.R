@@ -146,6 +146,8 @@ s0 <- read.csv("palenie_PSW.csv", sep = ',',  header=F, skip=1, na.string="NA", 
                              'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12',
                              'ocena.wiedzy', 'wzorce.palenia', 'plec', 'wiek', 'staz', 'miejsce.pracy'))
 
+levels(as.factor(s0$staz))
+
 s1 <- s0 %>%
   mutate(
     staz=recode(staz,
