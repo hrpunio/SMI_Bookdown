@@ -607,7 +607,7 @@ od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
 różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
-ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej  mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
+ze statusem względem palenia? Chcemy zastosować tablicę wielodzielną/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej  mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
 0–5 mała; 6–10 średnia; 11–15 duża, 16–19 ogromna:
 
 ```{r}
@@ -692,7 +692,7 @@ Postawiono następujące hipotezy badawcze:
 
 * Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 
-* Hipotezy 2–4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+* Hipotezy 2–4 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
   oraz porównania poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
   Kruskala-Wallisa.
 
@@ -921,14 +921,14 @@ Ciężką postać depresji wykazuje zaledwie 3% studentów. Należy odrzucić hi
 
 ### Weryfikacja hipotez 2–4
 
-Aby móc zastosować metody tablicy wielodzielczej i testu chi-kwadrat
+Aby móc zastosować metody tablicy wielodzielnej i testu chi-kwadrat
 oryginalne wartości liczbowe depresji zamieniono
 na skalę porządkową: 0–19 brak/łagodna depresja (Brak);
 20–25 umiarkowana (Łagodna); 26–63 ciężka (Ciężka).
 
 ### Depresja a płeć 
 
-Tablica wielodzielcza i test chi-kwadrat:
+Tablica wielodzielna i test chi-kwadrat:
 
 ```{r, echo=F}
 dep.sex.f <- s0 %>%
@@ -946,7 +946,7 @@ Nie stwierdzono zależności pomiędzy depresją a płcią (p = `r round(chi_tes
 
 ### Depresja a staż 
 
-Tablica wielodzielcza i test chi-kwadrat:
+Tablica wielodzielna i test chi-kwadrat:
 
 ```{r, echo=F}
 ## tablica 
@@ -996,7 +996,7 @@ różnicy w poziomie depresji wśród pracowników o różnym stażu pracy.
 
 ### Depresja a rodzaj miejsca pracy  
 
-Tablica wielodzielcza i test chi-kwadrat:
+Tablica wielodzielna i test chi-kwadrat:
 
 ```{r}
 ##

@@ -4,12 +4,32 @@
 %%
 \usepackage{polyglossia}  \setdefaultlanguage{polish}
 %%
+%% redefine headers
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhf{}
+\fancyhead[LE,RO]{{\sffamily\fontsize{8.8}{11}\selectfont \thepage}}
+%% \ifnum\value{chapter} ... \fi = remove chapter number from TOC (because it is zero)
+\fancyhead[RE]{{\sffamily\fontsize{8.8}{11}\selectfont \nouppercase{\ifnum\value{chapter}=0\else\thechapter.\space\fi\leftmark}}}
+\fancyhead[LO]{{\sffamily\fontsize{8.8}{11}\selectfont \nouppercase{\ifnum\value{chapter}=0\else\thesection.\space\fi\rightmark}}}
+%% remove page number from 1st chapter page
+%% this is not working
+%%\fancyfoot{}
+%%\cfoot{}
+\pagestyle{fancy}
+%%
 \usepackage{booktabs}
 \usepackage{fontspec}
 %\defaultfontfeatures{Mapping=TeX}
 \setmainfont[Ligatures=TeX]{Cambria}
 %\setmainfont{Cambria}
 \setmathfont{Cambria Math}
+%% Sans for running-headers:
+%%Dejavu Sans
+%%\setsansfont{Dejavu Sans Condensed}
+\setsansfont{Roboto Condensed}
 %% Supress any other theorems (probably)
 \newtheorem{theorem}{}
 %%
@@ -84,6 +104,11 @@
 \AtBeginEnvironment{verbatim}{\medskip}
 \AfterEndEnvironment{verbatim}{\par\medskip}
 %%
+%% remove pagenumber at chapter title page
+\renewcommand\ps@plain{\let\@mkboth\@gobbletwo
+     \let\@oddhead\@empty
+     \def\@oddfoot{\reset@font\hfil}
+     \let\@evenhead\@empty\let\@evenfoot\@oddfoot}
 %%
 %%
 \makeatother

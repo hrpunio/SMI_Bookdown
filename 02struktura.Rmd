@@ -567,12 +567,12 @@ pierwiastkiem kwadratowym z wariancji. Parametr ten określa
 przeciętną różnicę wartości zmiennej od średniej arytmetycznej.
 Odchylenie standardowe jest oznaczane symbolem $s$.
 
-**Rozstęp ćwiartkowy** (*interquartile range*, IQR) ma banalnie prostą definicję:
+**Rozstęp** jest to różnica pomiędzy największą a najmniejszą
+wartością zmiennej w zbiorowości: $R = x_{\max} - x_{\min}$. Rzadko stosowana
+miara, bo jej wartość zależy za bardzo od wartości nietypowych.
 
-$$
-R_Q = Q_3 - Q_1
-$$
-gdzie: $Q_1$, $Q_3$ oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
+**Rozstęp ćwiartkowy** (*interquartile range*, IQR) ma banalnie prostą definicję:
+$R_Q = Q_3 - Q_1$, gdzie: $Q_1$, $Q_3$ oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 
 ::: {.example}
 **Współczynnik dzietności (kontynuacja)**
@@ -580,11 +580,13 @@ gdzie: $Q_1$, $Q_3$ oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 ```{r, echo=F}
 sd2018 <-  sd(d2018$frate)
 iqr2018 <- q3.2018 - q1.2018
+range2018 <- max(d2018$frate) - min(d2018$frate)
 ```
 
 Średnie odchylenie od średniej wartości współczynnika
 wynosi `r round(sd2018, 2)` dziecka. 
 Wartość rozstępu ćwiartkowego wynosi `r round(iqr2018, 2)` dziecka.
+Wartość rozstępu wynosi `r round(range2018, 2)` dziecka.
 :::
 
 **Uwaga**: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy

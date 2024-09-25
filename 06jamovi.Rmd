@@ -55,7 +55,7 @@ Typowa sesja w **Jamovi**:
       liniowej/macierz korelacji (*Regresja*).
    4. Analiza zależności między zmienną liczbową a zmiennymi liczbowymi/nominalnymi:
       regresja liniowa i logistyczna (**Regresja**).
-   5. Analiza zależności między zmiennymi nominalnymi: tablica wielodzielcza, test
+   5. Analiza zależności między zmiennymi nominalnymi: tablica wielodzielna, test
       chi-kwadrat zgodności (*Częstości*).
     
    Wykonanie obliczeń jest banalnie proste i sprowadza się do wybrania myszką odpowiednich
@@ -438,7 +438,7 @@ knitr::include_graphics("./jamovi_statystyki_opisowe_wynik.png")
 Poniżej okien wyboru zmiennych są zakładki określające precyzyjnie, co ma
 być obliczone oraz jakie wykresy mają zostać wyrysowane.
 Przykładowo domyślny wydruk nie zawiera
-rozstępu kwartylowego. Żeby go dodać do wyniku należy
+rozstępu ćwiartkowego. Żeby go dodać do wyniku należy
 w zakładce `Statystyki` zaznaczyć przycisk `IQR`.
 
 ### Analiza zależności: zmienne nominalne

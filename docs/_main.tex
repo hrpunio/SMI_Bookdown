@@ -69,12 +69,32 @@
 %%
 \usepackage{polyglossia}  \setdefaultlanguage{polish}
 %%
+%% redefine headers
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhf{}
+\fancyhead[LE,RO]{{\sffamily\fontsize{8.8}{11}\selectfont \thepage}}
+%% \ifnum\value{chapter} ... \fi = remove chapter number from TOC (because it is zero)
+\fancyhead[RE]{{\sffamily\fontsize{8.8}{11}\selectfont \nouppercase{\ifnum\value{chapter}=0\else\thechapter.\space\fi\leftmark}}}
+\fancyhead[LO]{{\sffamily\fontsize{8.8}{11}\selectfont \nouppercase{\ifnum\value{chapter}=0\else\thesection.\space\fi\rightmark}}}
+%% remove page number from 1st chapter page
+%% this is not working
+%%\fancyfoot{}
+%%\cfoot{}
+\pagestyle{fancy}
+%%
 \usepackage{booktabs}
 \usepackage{fontspec}
 %\defaultfontfeatures{Mapping=TeX}
 \setmainfont[Ligatures=TeX]{Cambria}
 %\setmainfont{Cambria}
 \setmathfont{Cambria Math}
+%% Sans for running-headers:
+%%Dejavu Sans
+%%\setsansfont{Dejavu Sans Condensed}
+\setsansfont{Roboto Condensed}
 %% Supress any other theorems (probably)
 \newtheorem{theorem}{}
 %%
@@ -149,6 +169,11 @@
 \AtBeginEnvironment{verbatim}{\medskip}
 \AfterEndEnvironment{verbatim}{\par\medskip}
 %%
+%% remove pagenumber at chapter title page
+\renewcommand\ps@plain{\let\@mkboth\@gobbletwo
+     \let\@oddhead\@empty
+     \def\@oddfoot{\reset@font\hfil}
+     \let\@evenhead\@empty\let\@evenfoot\@oddfoot}
 %%
 %%
 \makeatother
@@ -1342,12 +1367,12 @@ pierwiastkiem kwadratowym z wariancji. Parametr ten określa
 przeciętną różnicę wartości zmiennej od średniej arytmetycznej.
 Odchylenie standardowe jest oznaczane symbolem \(s\).
 
-\textbf{Rozstęp ćwiartkowy} (\emph{interquartile range}, IQR) ma banalnie prostą definicję:
+\textbf{Rozstęp} jest to różnica pomiędzy największą a najmniejszą
+wartością zmiennej w zbiorowości: \(R = x_{\max} - x_{\min}\). Rzadko stosowana
+miara, bo jej wartość zależy za bardzo od wartości nietypowych.
 
-\[
-R_Q = Q_3 - Q_1
-\]
-gdzie: \(Q_1\), \(Q_3\) oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
+\textbf{Rozstęp ćwiartkowy} (\emph{interquartile range}, IQR) ma banalnie prostą definicję:
+\(R_Q = Q_3 - Q_1\), gdzie: \(Q_1\), \(Q_3\) oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 
 \begin{example}
 \textbf{Współczynnik dzietności (kontynuacja)}
@@ -1355,6 +1380,7 @@ gdzie: \(Q_1\), \(Q_3\) oznaczają odpowiednio pierwszy oraz trzeci kwartyl.
 Średnie odchylenie od średniej wartości współczynnika
 wynosi \text{1,26} dziecka.
 Wartość rozstępu ćwiartkowego wynosi \text{1,81} dziecka.
+Wartość rozstępu wynosi \text{5,91} dziecka.
 \end{example}
 
 \textbf{Uwaga}: odchylenie standardowe/ćwiartkowe są miarami mianowanymi. Zawsze należy
@@ -1653,20 +1679,20 @@ Powtarzamy eksperyment \text{1000} razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    74,0    96,5   102,5   102,4   109,0   130,0
+##    80,0    96,5   102,5   102,6   109,0   132,0
 \end{verbatim}
 
-Średnia (średnich z próby) ma wartość \text{102,43} kilogramów
-a odchylenie standardowe \text{9,2} kilogramów.
+Średnia (średnich z próby) ma wartość \text{102,61} kilogramów
+a odchylenie standardowe \text{9,06} kilogramów.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
 z liczebności próby) jest równa \text{9,14}. Zauważmy, że ta wartość
 jest zbliżona do wartości odchylenia standardowego uzyskanego
-w eksperymencie (\text{9,2} vs \text{9,14}).
+w eksperymencie (\text{9,06} vs \text{9,14}).
 
-Zauważmy też, że wartość najniższej średniej wyniosła \text{74} kilogramów zaś najwyższej \text{130} kilogramów.
+Zauważmy też, że wartość najniższej średniej wyniosła \text{80} kilogramów zaś najwyższej \text{132} kilogramów.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-o \text{28,43} kilogramów
-na minus lub \text{27,57} kilogramów na plus.
+o \text{22,61} kilogramów
+na minus lub \text{29,39} kilogramów na plus.
 
 \textbf{Szacujemy średnią na podstawie 10 zawodników pobranych losowo}.
 
@@ -1674,11 +1700,11 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    90,6   100,1   103,0   102,9   106,0   114,3
+##    91,8    99,9   102,6   102,6   105,3   116,9
 \end{verbatim}
 
-Średnia ma wartość \text{102,91} kilogramów, a odchylenie standardowe
-\text{4,12} kilogramów.
+Średnia ma wartość \text{102,63} kilogramów, a odchylenie standardowe
+\text{3,84} kilogramów.
 Wartość \(s/\sqrt{10}\) jest równa \text{4,09}.
 
 \textbf{Szacujemy średnią na podstawie 40 zawodników pobranych losowo}.
@@ -1688,15 +1714,15 @@ całości. Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    96,3   101,4   102,8   102,8   104,1   109,1
+##   95,75  101,42  102,78  102,75  104,13  108,53
 \end{verbatim}
 
-Średnia jest równa \text{102,78} kilogramów, a odchylenie standardowe \text{2,05} kilogramów.
+Średnia jest równa \text{102,75} kilogramów, a odchylenie standardowe \text{1,98} kilogramów.
 Wartość \(s/\sqrt{40}\) jest równa \text{2,04}.
 
-Zauważmy też, że wartość najniższej średniej wyniosła \text{96,3} kilogramów zaś najwyższej \text{109,1282051} kilogramów.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o \text{6,48} kilogramów
-na minus lub \text{6,35} kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
+Zauważmy też, że wartość najniższej średniej wyniosła \text{95,75} kilogramów zaś najwyższej \text{108,525} kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o \text{7} kilogramów
+na minus lub \text{5,78} kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (por. rysunek \ref{fig:wagaSrednia}).
@@ -1776,17 +1802,17 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   18,50   38,00   45,50   45,69   52,50   75,00
+##   18,50   39,00   46,00   46,15   53,62   76,50
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{45,69} lat.
-Odchylenie standardowe wyniosło \text{10,12}.
+Średnia średnich z próby ma wartość \text{46,15} lat.
+Odchylenie standardowe wyniosło \text{10,55}.
 Wartość \(s/\sqrt{2}\) jest równa \text{10,33}.
 
-Wartość najniższej średniej wyniosła \text{18,5} lat zaś najwyższej \text{75} lat.
+Wartość najniższej średniej wyniosła \text{18,5} lat zaś najwyższej \text{76,5} lat.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-o \text{27,19} lat
-na minus lub \text{29,31} lat na plus.
+o \text{27,65} lat
+na minus lub \text{30,35} lat na plus.
 
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}.
 
@@ -1794,11 +1820,11 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   32,20   43,30   46,40   46,28   49,30   59,40
+##   33,90   43,00   46,20   46,16   49,10   59,20
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,28} lat.
-Odchylenie standardowe wyniosło \text{4,51}.
+Średnia średnich z próby ma wartość \text{46,16} lat.
+Odchylenie standardowe wyniosło \text{4,48}.
 Wartość \(s/\sqrt{10}\) jest równa \text{4,62}.
 
 \textbf{Szacujemy średnią na podstawie 40 kandydatów pobranych losowo}
@@ -1808,11 +1834,11 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39,33   44,80   46,33   46,28   47,77   52,02
+##   38,85   44,58   46,15   46,20   47,90   53,05
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,28} lat.
-Odchylenie standardowe wyniosło \text{2,23}.
+Średnia średnich z próby ma wartość \text{46,2} lat.
+Odchylenie standardowe wyniosło \text{2,34}.
 Wartość \(s/\sqrt{40}\) jest równa \text{2,31}.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}.
@@ -1821,17 +1847,17 @@ Uwaga: 70 kandydatów to około ok 1\% całości (\text{1000} powtórzeń).
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39,79   45,00   46,21   46,24   47,48   51,43
+##   38,79   45,07   46,30   46,29   47,47   51,31
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,24} lat.
-Odchylenie standardowe wyniosło \text{1,74}
+Średnia średnich z próby ma wartość \text{46,29} lat.
+Odchylenie standardowe wyniosło \text{1,82}
 Wartość \(s/\sqrt{70}\) jest równa \text{1,75}.
 
-Wartość najniższej średniej wyniosła \text{39,79} lat zaś najwyższej \text{51,43} lat.
+Wartość najniższej średniej wyniosła \text{38,79} lat zaś najwyższej \text{51,31} lat.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-już tylko o \text{6,46} lat
-na minus lub \text{5,19} lat na plus.
+już tylko o \text{7,5} lat
+na minus lub \text{5,02} lat na plus.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek \ref{fig:wiekSredni}).
 
@@ -2930,7 +2956,7 @@ udostępnia dane dotyczące konsumpcji żywności
 na świecie (\url{https://www.fao.org/faostat/en/\#home}). Bank światowy
 udostępnia dane dotyczące dochodu narodowego (\url{https://data.worldbank.org/}).
 
-Konsumpcja mięsa jest mierzona jako średnia konsumpcja w kilogramach w każdym kraju (\emph{per capita} się mówi);
+Konsumpcja mięsa jest mierzona jako średnia roczna konsumpcja w kilogramach w każdym kraju (\emph{per capita} się mówi).
 Dochód podobnie jako średnia wielkość dochodu narodowego \emph{per capita}.
 Dane dotyczą roku 2013.
 
@@ -4453,7 +4479,7 @@ od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
 różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
-ze statusem względem palenia? Chcemy zastosować tablicę wielodzielczą/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
+ze statusem względem palenia? Chcemy zastosować tablicę wielodzielną/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
 0--5 mała; 6--10 średnia; 11--15 duża, 16--19 ogromna:
 
 \begin{tabular}{lrrr}
@@ -4556,7 +4582,7 @@ Postawiono następujące hipotezy badawcze:
 \item
   Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 \item
-  Hipotezy 2--4 zweryfikowano z wykorzystaniem tablic wielodzielczych/testu chi-kwadrat
+  Hipotezy 2--4 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
   oraz porównania poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
   Kruskala-Wallisa.
 \end{itemize}
@@ -4595,7 +4621,7 @@ Ciężką postać depresji wykazuje zaledwie 3\% studentów. Należy odrzucić h
 \hypertarget{weryfikacja-hipotez-24}{%
 \subsection{Weryfikacja hipotez 2--4}\label{weryfikacja-hipotez-24}}
 
-Aby móc zastosować metody tablicy wielodzielczej i testu chi-kwadrat
+Aby móc zastosować metody tablicy wielodzielnej i testu chi-kwadrat
 oryginalne wartości liczbowe depresji zamieniono
 na skalę porządkową: 0--19 brak/łagodna depresja (Brak);
 20--25 umiarkowana (Łagodna); 26--63 ciężka (Ciężka).
@@ -4603,7 +4629,7 @@ na skalę porządkową: 0--19 brak/łagodna depresja (Brak);
 \hypertarget{depresja-a-pux142eux107}{%
 \subsection{Depresja a płeć}\label{depresja-a-pux142eux107}}
 
-Tablica wielodzielcza i test chi-kwadrat:
+Tablica wielodzielna i test chi-kwadrat:
 
 \begin{tabular}{lrr}
 \toprule
@@ -4628,7 +4654,7 @@ Nie stwierdzono zależności pomiędzy depresją a płcią (p = \text{0,986}).
 \hypertarget{depresja-a-staux17c}{%
 \subsection{Depresja a staż}\label{depresja-a-staux17c}}
 
-Tablica wielodzielcza i test chi-kwadrat:
+Tablica wielodzielna i test chi-kwadrat:
 
 \begin{tabular}{lrrrr}
 \toprule
@@ -4689,7 +4715,7 @@ różnicy w poziomie depresji wśród pracowników o różnym stażu pracy.
 \hypertarget{depresja-a-rodzaj-miejsca-pracy}{%
 \subsection{Depresja a rodzaj miejsca pracy}\label{depresja-a-rodzaj-miejsca-pracy}}
 
-Tablica wielodzielcza i test chi-kwadrat:
+Tablica wielodzielna i test chi-kwadrat:
 
 \begin{tabular}{lrr}
 \toprule
@@ -5770,7 +5796,7 @@ Typowa sesja w \textbf{Jamovi}:
     Analiza zależności między zmienną liczbową a zmiennymi liczbowymi/nominalnymi:
     regresja liniowa i logistyczna (\textbf{Regresja}).
   \item
-    Analiza zależności między zmiennymi nominalnymi: tablica wielodzielcza, test
+    Analiza zależności między zmiennymi nominalnymi: tablica wielodzielna, test
     chi-kwadrat zgodności (\emph{Częstości}).
   \end{enumerate}
 
@@ -6185,7 +6211,7 @@ wynikowego zostanie automagicznie uaktualniona.
 Poniżej okien wyboru zmiennych są zakładki określające precyzyjnie, co ma
 być obliczone oraz jakie wykresy mają zostać wyrysowane.
 Przykładowo domyślny wydruk nie zawiera
-rozstępu kwartylowego. Żeby go dodać do wyniku należy
+rozstępu ćwiartkowego. Żeby go dodać do wyniku należy
 w zakładce \texttt{Statystyki} zaznaczyć przycisk \texttt{IQR}.
 
 \hypertarget{analiza-zaleux17cnoux15bci-zmienne-nominalne}{%

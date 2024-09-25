@@ -716,7 +716,7 @@ udostępnia dane dotyczące konsumpcji żywności
 na świecie (https://www.fao.org/faostat/en/#home). Bank światowy
 udostępnia dane dotyczące dochodu narodowego (https://data.worldbank.org/). 
 
-Konsumpcja mięsa jest mierzona jako średnia konsumpcja w kilogramach w każdym kraju (*per capita* się mówi);
+Konsumpcja mięsa jest mierzona jako średnia roczna konsumpcja w kilogramach w każdym kraju (*per capita* się mówi).
 Dochód podobnie jako średnia wielkość dochodu narodowego *per capita*. 
 Dane dotyczą roku 2013.
 
