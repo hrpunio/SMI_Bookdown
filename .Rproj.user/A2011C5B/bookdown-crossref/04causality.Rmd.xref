@@ -23,6 +23,7 @@ h2:zmienna-liczbowa-i-zmienne-liczbowe-lub-nominalne Zmienna liczbowa i zmienne 
 h3:regresja-wieloraka Regresja wieloraka
 h3:zmienne-zero-jedynkowe Zmienne zero-jedynkowe
 h2:przypadek-specjalny-regresja-logistyczna Przypadek specjalny: regresja logistyczna
+fig:ConfMx Macierz błędów
 fig:ROCcurve Krzywa ROC
 h2:przypadek-specjalny-co-najmniej-dwie-zmienne-porządkowe Przypadek specjalny: co najmniej dwie zmienne porządkowe
 h3:pomiar-siły-zależności-współczynnik-korelacji-rang Pomiar siły zależności: współczynnik korelacji rang

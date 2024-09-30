@@ -5,6 +5,8 @@ require('DescTools')
 library("rstatix")
 library("knitr")
 library("ggpubr")
+library ("pROC")
+require("DescTools")
 ###
 dA <- read.csv("fertility_rate_2003_2018.csv", sep = ';',
                header=T, na.string="NA");
@@ -778,3 +780,226 @@ s0 <- read.csv("depresja_PSW_2023.csv", sep = ',',  header=F, skip=1, na.string=
   mutate (P=P1+P2+P3+P4+P5+P6 + P7 + P8 + P9 +P10 +
             P11+P12+P13+P14+P15+P16 + P17 + P18 + P19 +P20 + P21,
           Depresja = case_when( P < 20 ~ "B", P < 26 ~ "Ł", TRUE ~ "C"))
+
+###
+
+vitC <- read.csv(file='vit_C.csv',sep=';',header=T)
+narciarze <- table(vitC)
+narciarze.table <- as.data.frame.matrix(addmargins(narciarze))
+rownames(narciarze.table) <- c('C', 'P', 'razem')
+kable(narciarze.table, col.names = c('zdrowy', 'katar', 'razem'), booktabs = TRUE)
+
+narciarze.total <- sum(narciarze)
+narciarze.p <- narciarze/narciarze.total *100
+narciarze.p <- proportions(narciarze, margin = 1)
+narciarze.p.m <- addmargins(narciarze.p, margin = 1)
+Sum <- margin.table(narciarze,2) /narciarze.total
+narciarze.x <- cbind(rbind(narciarze.p, Sum), c(1,1,1)) * 100
+kable(digits=2, narciarze.x, col.names = c('nocold', 'cold', 'razem'), booktabs = TRUE)
+##########
+###########
+##########
+
+vd0 <- read.csv("vitD.csv", sep = ',', dec = ".",  header=T, na.string="NA" ) %>%
+  select(d=vitamin_D_level, age, gender, osteoporosis) %>%
+  mutate (genderF = recode(gender,
+                           '1' = 1,
+                           '2' = 0))
+sample.size=nrow(vd0)
+sample.size
+
+sample.by.gender.K <- vd0 |> filter(genderF == 1) |> summarise(n = n()) |>
+  unlist() |> unname()
+sample.by.gender.M <- vd0 |> filter(genderF == 0) |> summarise(n = n()) |>
+  unlist() |> unname()
+
+osteoporosis.by.gender.K <- vd0.o <- vd0 |> filter (osteoporosis ==1) |>
+  filter(genderF ==1) |> summarise(n =n()) |> unlist() |> unname()
+osteoporosis.by.gender.M <- vd0.o <- vd0 |> filter (osteoporosis ==1) |>
+  filter(genderF ==0) |> summarise(n =n()) |> unlist() |> unname()
+
+
+sum(vd0$osteoporosis)
+## 26 przypadków osteoporozy
+## 21 K; 5 M
+vd0.o <- vd0 |> filter (osteoporosis ==1) |>
+  group_by(gender) |> summarise(o = sum(osteoporosis))
+
+## Najpierw Model zerowy
+glm.0 = glm(osteoporosis ~ NULL, data = vd0, family = "binomial")
+
+
+
+## Tylko część wydruku
+gml.0.coef <- as.data.frame(coef(summary(glm.0)))
+intercept <- gml.0.coef[1,1]
+
+logit <- intercept
+prob0 <- exp(logit)/(1+exp(logit))
+
+##
+prob0 * sample.size
+sampleK <- 242
+sampleM <- 150
+prob0 * sampleK  ## 16 było 21
+prob0 * sampleM  ## 9.9 było 5
+
+
+## About 6.6%
+## Dodanie kolumny zamiast nazw wierszy
+gml.0.coef.df <- tibble::rownames_to_column(gml.0.coef, "Parametr")
+kable(gml.0.coef.df, row.names = F,
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p'), booktabs = TRUE )
+
+
+#Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
+#wyniosło `r prob0`. Krzywa ROC dla modelu zerowego wygląda następująco:
+#
+
+pred.0 <- predict(glm.0, type = "response")
+y.pred.0 <- ifelse(pred.0 < 0.5, 0, 1)
+roc_obj <- roc(vd0$osteoporosis, pred.0, legacy.axes = T)
+##plot(roc_obj, main = "ROC Curve for the Logistic Regression Model", legacy.axes = T)
+auc<- auc_value <- auc(roc_obj)
+
+ggroc(roc_obj,
+      legacy.axes = T,
+      colour = 'steelblue', size = 2) +
+  geom_abline(intercept = 0, slope = 1) +
+  ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')'))
+
+
+##Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
+##z bardziej skomplikowanymi modelami.
+
+
+
+## Model1
+
+glm.1 = glm(osteoporosis ~ genderF, data = vd0, family = "binomial")
+
+print(summary(glm.1), show.residuals = TRUE)
+PseudoR2(glm.1, which='McFadden')
+PseudoR2(glm.1, which='Nagelkerke')
+
+## oryginalne wartości współczynników
+gml.1.coef <- as.data.frame(coef(summary(glm.1)))
+## OR
+glm.1.or <- round(exp(coef(glm.1)), 2)
+
+## Kobieta = 1
+intercept <- gml.1.coef[1,1]
+b1.coeff <- gml.1.coef[2,1]
+intercept
+b1.coeff
+logit <- intercept + b1.coeff
+prob0K <- exp(logit)/(1+exp(logit))
+prob0K
+##
+logit <- intercept
+prob0M <- exp(logit)/(1+exp(logit))
+prob0M
+
+prob0K * sampleK  ## 21 było 21
+prob0M * sampleM  ## 5 było 5
+##################################################
+
+
+
+## Przedziały ufności
+glm.1.ci <- round(exp(confint(glm.1)), 2)
+##glm_ci_txt <- sprintf ("%.3f %.3f", glm.1.ci[,1], glm.1.ci[,2] )
+glm_ci_txt <- sprintf ("%s %s", format(glm.1.ci[,1], decimal.mark=",", digits=3), format(glm.1.ci[,2], decimal.mark=",", digits=3) )
+
+## zestawienie tabelaryczne wyników
+gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
+  mutate(or=glm.1.or,  ci=glm_ci_txt)
+
+kable(gml.1.coef.df, row.names = F, digits=3,
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
+
+
+Znając wartości współczynników równania można obliczyć wartości $\ln(o)$.
+
+```{r, out.width="75%"}
+## Prawdopodobieństwa
+intercept <- gml.1.coef[1,1]
+beta1 <- gml.1.coef[2,1]
+## F=1
+logit_F <- intercept + beta1
+logit_M <- intercept
+
+probF <- exp(logit_F)/(1+exp(logit_F))
+probM <- exp(logit_M)/(1+exp(logit_M))
+
+## Istotność modelu
+pchisq.glm.1 <- pchisq(glm.1$null.deviance -  glm.1$deviance, glm.1$df.null - glm.1$df.residual, lower.tail = F)
+##anova(glm.0, glm.1, test = 'Chisq')
+##pchisq.glm.1
+
+
+##
+##
+
+glm.2 = glm(osteoporosis ~ d + age + genderF, data = vd0, family = "binomial")
+
+## oryginalne wartości współczynników
+gml.2.coef <- as.data.frame(coef(summary(glm.2)))
+## OR
+glm.2.or <- round(exp(coef(glm.2)), 2)
+## Przedziały ufności
+glm.2.ci <- round(exp(confint(glm.2)), 2)
+##glm_ci_txt <- sprintf ("%.3f %.3f", glm.2.ci[,1], glm.2.ci[,2] )
+glm_ci_txt <- sprintf ("%s %s", format(glm.2.ci[,1], decimal.mark=",", digits=3), format(glm.2.ci[,2], decimal.mark=",", digits=3) )
+
+## zestawienie tabelaryczne wyników
+gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
+  mutate(or=glm.2.or,
+         ci=glm_ci_txt)
+
+kable(gml.2.coef.df, row.names = F, digits=3,
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
+
+##Macierz pomyłek (*confussion matrix*):
+##
+## Prawdopodobieństwa
+##
+## Predykcja
+pred.2 = predict(glm.2, type = "response")
+y.pred.2 = ifelse(pred.2 < 0.7, 0, 1)
+
+table.xx <- table(y.pred.2, vd0$osteoporosis)
+
+dimnames(table.xx) <- list(
+  'Prognoza' = c("0", "1"),
+  'Osteoporoza' = c("0", "1")
+)
+
+table.xx
+
+czulosc <- table[4] / (table[3]+table[4])
+swoistosc <- table[1] / (table[1]+table[2])
+
+##
+##
+
+
+pchisq.glm.2 <- pchisq(glm.2$null.deviance -  glm.2$deviance, glm.2$df.null - glm.2$df.residual, lower.tail = F)
+##pchisq.glm.2
+##anova(glm.0, glm.2, test = 'Chisq')
+
+
+roc_obj <- roc(vd0$osteoporosis, pred.2, legacy.axes = T)
+##plot(roc_obj, main = "ROC Curve for the Logistic Regression Model", legacy.axes = T)
+auc<- auc_value <- auc(roc_obj)
+
+roc_obj$thresholds
+
+ggroc(roc_obj,
+      legacy.axes = T,
+      colour = 'steelblue', size = 2) +
+  geom_abline(intercept = 0, slope = 1) +
+  ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')'))
+
+install.packages("sjSDM")
+librabry("sjSDM")

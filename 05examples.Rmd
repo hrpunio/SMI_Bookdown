@@ -30,7 +30,7 @@ pracujących w różnych systemach opieki.
 	
 Jeżeli mamy zamiar badać nadwagę, to powinniśmy zmierzyć masę ciała.
 Jeżeli celem jest ustalenie zależności pomiędzy stresem a wypaleniem
-zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenia.  Jak
+zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenie.  Jak
 dotąd banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
 pytanie **jak**?
 
@@ -41,8 +41,8 @@ Możemy pytać w ankiecie o dwie rzeczy:
 * **fakty** (wiek, staż, zawód, tętno, przebyte choroby);
 
 * **przekonania**, **wartości**, **postawy**; 
-  **uczucia** (strach / radość) albo **zamiary**
-  (w języku attitudes/emotions/intentions).
+  **uczucia** (strach/radość) albo **zamiary**
+  (*attitudes*/*emotions*/*intentions*).
 
 Mierzenie **faktów** nie wymaga dodatkowych objaśnień. Problem jest
 z mierzeniem **przekonań**.
@@ -61,7 +61,7 @@ Postawy/uczucia/zamiary są to pojęcia
 abstrakcyjne. Często (albo zawsze) definiowane w obszarze psychologii,
 nauk o zarządzaniu itp.
 
-Pomiar *przekonań* jest dokonywany w specyficzny sposób.
+Pomiar przekonań jest dokonywany w specyficzny sposób.
 **Definicja konceptualna** definiuje pojęcie 
 (zaufanie do kogoś/czegoś to **przekonanie**, że 
 *działania tego kogoś/czegoś okażą się zgodne z naszymi
@@ -70,7 +70,7 @@ oczekiwaniami*; satysfakcja to
 samoskuteczność to 
 **przekonanie**, iż *jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele*).
 **Definicja operacyjna** określa jak zmierzyć pojęcie
-(jak zmierzyć satysfakcję)
+(jak zmierzyć satysfakcję).
 Przejście od definicji konceptualnej do definicji operacyjnej
 bywa czasami mocno, hmm... arbitralne.
 
@@ -102,7 +102,7 @@ czy się bardziej-bardziej czy jednak bardziej-bardziej-bardziej boi.
 Ponieważ skala Likerta, mimo że lepsza od pytań tak/nie,  jest ciągle zgrubna, to 
 uważa się powszechnie, że lepszy wynik da pomiar 
 wielokrotny. 
-W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej precyzyjny. Tutaj pytamy się parę razy o to samo co
+W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej precyzyjny. Tutaj pytamy się parę razy o to samo, co
 ma dać podobny efekt (mniejszy średni błąd pomiaru). 
 Taka seria pytań nosi też nazwę skali albo **inwentarza**.
 Nie pytamy się zatem **Czy pan/pani boi się COVID19?** tylko zadajemy serię
@@ -212,11 +212,9 @@ przekonania** (strach, samoskuteczność, wypalenie zawodowe, stress czy satysfa
 * Dokształcamy się nieco z psychologii mimo wszystko;
 
 * Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił żeby
-  mierzyć to co my chcemy zmierzyć, bo **raczej nie należy wymyślać własnych skal**;
+  mierzyć to co chcemy zmierzyć, bo **raczej nie należy wymyślać własnych skal**;
 
-* Robimy ankietę (w Internecie) i zbieramy dane;
-
-* Wykonujemy analizę statystyczną.
+* Przeprowadzamy ankietę i wykonujemy analizę statystyczną.
 
 Banalnie proste co udowodnimy na przykładach.
 
@@ -322,7 +320,7 @@ Badanie ankietowe wśród studentów Ratownictwa Medycznego (RM) oraz Pielęgnia
 przeprowadzono w styczniu 2023.
 Ankieta zawierała pytania dotyczące palenia tytoniu (pali/nie pali/palił, jak długo pali itd),
 test wiedzy na temat szkodliwości palenia oraz pytania
-o rodzaj miejsca pracy, staż pracy i płeć itd.
+o rodzaj miejsca pracy, staż pracy, płeć itd.
 
 Pięć następujących pytań oceniało wiedzę ankietowanego na temat szkodliwości palenia:
 
@@ -342,7 +340,7 @@ za wskazanie nieprawidłowej
 otrzymywał (minus) -1 punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
 Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 
-### Zastosowane metody statystyczne
+Zastosowane metody statystyczne:
 
 * Hipotezę 1 weryfikowano na podstawie wielkości odsetka respondentów palących.
 
@@ -446,7 +444,7 @@ Pracę w szpitalu zadeklarowało `r s1.praca.S.prop`% respondentów a w przychod
 
 ```{r, echo=F}
 pala_lub_palili <- s0 %>% filter (status != 'Nigdy nie paliłem/am') %>%
-  summarize(n=n())
+  summarize(n=n()) |> unlist() |> unname()
 ```
 
 Palą lub paliło `r pala_lub_palili` respondentów 
@@ -458,7 +456,7 @@ z jakąś średnią ogólnopolską.
 
 Średnia wartość uzyskana w teście wyniosła `r round(P.total.mean, 2)`
 (mediana `r P.total.median`); 3/4 respondentów nie uzyskało więcej niż
-`r P.total.q3` (czyli `r round(P.total.q3/19 *100, 1)` %).
+`r P.total.q3` (czyli `r round(P.total.q3/19 *100, 1)`% wartości maksymalnej).
 
 ### Weryfikacja hipotez 3–5
 
@@ -617,7 +615,8 @@ wiedza.status.t <- s1 %>%
   mutate( P.total=case_when(P.total < 6 ~ "mała",  
                          P.total < 11 ~ "średnia", 
                          P.total < 16 ~ "duża",
-                         TRUE ~ "ogromna") ) %>%
+                         TRUE ~ "ogromna"),
+          P.total = factor(P.total, levels=c('mała', 'średnia', 'duża', 'ogromna'))) %>%
   table()
 
 ws.t <- kable(wiedza.status.t, booktabs = TRUE)
@@ -644,7 +643,7 @@ kw<- kruskal.test(P.total ~ status, data = s1)
 kw$p.value
 ```
 
-Wynik jest identyczny (wysoka wartość p `r round(kw$p.value, 4)`).
+Wynik jest identyczny (wysoka wartość p = `r round(kw$p.value, 4)`).
 
 ### Wnioski
 
@@ -688,7 +687,7 @@ Postawiono następujące hipotezy badawcze:
 
 4. Problem depresji zależy od płci.
 
-### Zastosowane metody statystyczne
+Zastosowane metody statystyczne:
 
 * Hipotezę 1 oceniono na podstawie odsetka respondentów wykazujących ciężką postać depresji.
 
@@ -897,7 +896,7 @@ p.3
 
 Rozkład studentów wg stanu psychicznego przedstawiono na wykresie \@ref(fig:rysunek58).
 
-```{r rysunek58, fig.cap="Studenci wg stanu psychicznego (%)", echo=F, out.width=ex.out.width}
+```{r rysunek58, fig.cap="Studenci wg stanu psychicznego (%)", echo=F, out.width=ex.out.width.x}
 s0.dep <- s0 %>%
   select (Depresja) %>%
   group_by(Depresja)%>%
@@ -1057,10 +1056,11 @@ różnicy w poziomie depresji wśród pracowników szpitali i przychodni.
 
 Czy satysfakcja z pracy, satysfakcja z wynagrodzenia, 
 konflikt personalny ze współpracownikami oraz 
-konflikt personalny z przełożonym warunkują
+konflikt personalny z przełożonym 
+warunkują
 przywiązanie do miejsca
-pracy oraz zamiar zmiany miejsca pracy (zamiar odejścia) w środowisku
-pielęgniarek/pielęgniarzy.
+pracy oraz zamiar zmiany miejsca pracy w środowisku
+pielęgniarek.
 
 **Postawiono następujące hipotezy badawcze**:
 
@@ -1071,7 +1071,7 @@ pielęgniarek/pielęgniarzy.
 
 3. Duże przywiązanie do miejsca pracy zmniejsza zamiar zmiany miejsca pracy.
 
-4. Zamiar zmiany miejsca pracy zależy od płci i stażu pracy.
+4. Zamiar zmiany miejsca pracy zależy od stażu pracy.
 
 5. Praca na oddziale ratunkowym lub intensywnej terapii zwiększa
    zamiar zmiany miejsca pracy
@@ -1084,7 +1084,15 @@ pielęgniarek/pielęgniarzy.
 
 ### Metoda
 
-Badanie ankietowe wśród studentów PSW przeprowadzono w 2023/2024 roku.
+```{r}
+d1 <- read.csv("satisfaction_intention_commitment_PSW.csv",  sep = ';',  dec = ".", header=T, na.string="NA") |>
+  filter (plec == 'K') 
+sample.size <- nrow(d1)
+##
+## zzp sp ssp sw kpw kpp poA poN poT po plec staz kierunek zmiana roddzial staz.klasa
+```
+
+Badanie ankietowe wśród studentek PSW przeprowadzono w 2023/2024 roku.
 Zamiar zmiany pracy (ZZP),
 przywiązanie do miejsca pracy (przywiązanie organizacyjne PO),
 satysfakcja z pracy (SP),
@@ -1092,10 +1100,10 @@ satysfakcja z wynagrodzenia (SW),
 konflikt personalny ze współpracownikami (KPW)
 oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
 stosownych skal pomiarowych. Ankietowani byli także pytani
-o płeć, staż oraz 
+o staż oraz 
 czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
 
-### Zastosowane metody statystyczne
+Zastosowane metody statystyczne:
 
 * Do weryfikacji hipotez 1–5 wykorzystano model regresji liniowej.
 
@@ -1103,19 +1111,20 @@ czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
 
 ### Wyniki
 
-Pomniemy część opisową wyników żeby się nie powtarzać i przejdziemy
+W badaniu wzięło udział `r sample.size` studentek.
+
+Pominiemy pozostałą część opisową wyników żeby się nie powtarzać i przejdziemy
 od razu do weryfikacji hipotez 1–6.
 
 Macierz korelacji dla zmiennych `zzp`, `sp`, `sw`, `kpw`, `kpp` oraz `po`:
 
 ```{r}
-d1 <- read.csv("satisfaction_intention_commitment_PSW.csv",  sep = ';',  dec = ".", header=T, na.string="NA")
-## zzp sp ssp sw kpw kpp poA poN poT po plec staz kierunek zmiana roddzial staz.klasa
-
 ## Macierz korelacji
 macierz.k <- d1 %>% select (zzp, sp, sw, kpw, kpp, po, staz) %>%
   na.omit() %>% cor(use = "complete.obs")
-round(macierz.k,4)
+macierz.k.df <- as.data.frame.matrix(macierz.k)
+kable(macierz.k.df, digits=3,
+      col.names = c('zzp', 'sp', 'sw', 'kpw', 'kpp', 'po', 'staz'), booktabs = TRUE )
 ```
 
 Można zaobserwować wiele wysokich wartości współczynnika korelacji
@@ -1124,12 +1133,12 @@ Można zaobserwować wiele wysokich wartości współczynnika korelacji
 
 **Regresja liniowa**
 
-Zakładamy, że `zzp` jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz`, `plec` oraz `roddzial`.
+Zakładamy, że `zzp` jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz` oraz `roddzial`.
 (Odważnie dołączamy `staz` mimo że w świetle analizy macierzy korelacji raczej nie jest to dobry pomysł.)
 Oszacowanie tego modelu daje następujące wyniki:
 
 ```{r}
-lm.1 <- lm(data=d1, zzp ~ sp + sw + kpw + kpp + po + staz + plec + roddzial)
+lm.1 <- lm(data=d1, zzp ~ sp + sw + kpw + kpp + po + staz  + roddzial)
 ##summary(lm1)
 lmsum1 <- summary(lm.1)
 lmr <- summary(lm.1)$r.squared
@@ -1146,7 +1155,7 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm.1.std,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1154,7 +1163,7 @@ Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%.
 Tylko dwie zmienne `sp` oraz `kpw` okazały się istotne.
 
 Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
-nieistotne. Kolejno należało wyeliminować `sw`, `kpp`, `po`, `staz`, `plec` oraz `roddzial`.
+nieistotne. Kolejno należało wyeliminować `sw`, `kpp`, `po`, `staz` oraz `roddzial`.
 W modelu ostatecznym `zzp` jest objaśniana przez `sp` oraz `kpw`:
 
 ```{r}
@@ -1175,7 +1184,7 @@ lm.7.coef.df <- tibble::rownames_to_column(lm.7.coef, "Parametr") %>%
   mutate(std=lm.7.std,  ci=lm_ci_txt)
 
 kable(lm.7.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1184,23 +1193,33 @@ Satysfakcja jest większym predyktorem zamiaru zmiany pracy (kolumna Beta).
 
 **Regresja logistyczna**
 
+```{r, message=FALSE, warning=FALSE}
+## Logistyczna
+e1 <- d1  %>% mutate (zp=case_when(zzp < 12 ~ 0,  TRUE ~ 1))
+
+sample.size <- nrow(e1)
+odejdzie <- e1 |> filter (zp == 1) |> summarise(n =n()) |> unlist() |> unname()
+nieodejdzie <- e1 |> filter (zp == 0) |> summarise(n =n()) |> unlist() |> unname()
+```
+
 Żeby zademonstrować przykład wykorzystania regresji logistycznej przyjmijmy, że jak ktoś bardzo chce
 zmienić pracę to ją zmieni.
 Niech to **bardzo chce** będzie wtedy kiedy wartość `zzp` wynosi co najmniej 12.
 Zmienną `zzp` należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją `zp`), która 
-przyjmuje wartość 0 jeżeli `zzp` jest większe
-równe od 12 lub wartość 1 jeżeli `zzp` jest mniejsze od 12.
+przyjmuje wartość 1 jeżeli `zzp` jest większe
+równe od 12 lub wartość 0 jeżeli `zzp` jest mniejsze od 12. 
 Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
-zmianę miejsca pracy (zmieni=0, nie zmieni=1).
+zmianę miejsca pracy (zmieni=1, nie zmieni=0).
+
+Respondentów, którzy
+odejdą jest `r odejdzie` (`r round(odejdzie/sample.size * 100, 2)`%).
 
 Zakładamy, że `zp`, podobnie jak w przypadku zamiaru,
-jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz`, `plec` oraz `roddzial`.
+jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz` oraz `roddzial`.
 
 ```{r, message=FALSE, warning=FALSE}
-## Logistyczna
-e1 <- d1  %>% mutate (zp=case_when(zzp < 12 ~ 1,  TRUE ~ 0))
 
-glm.1 <- glm(zp ~ sp + sw + kpw + kpp + po + staz + plec + roddzial, 
+glm.1 <- glm(zp ~ sp + sw + kpw + kpp + po + staz + roddzial, 
              data = e1, family = "binomial")
 ##summary(glm.1)
 ## oryginalne wartości współczynników
@@ -1216,15 +1235,24 @@ gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm.1.or,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI95'), booktabs = TRUE )
+##
+pchisq.glm.1 <- pchisq(glm.1$null.deviance -  glm.1$deviance, glm.1$df.null - glm.1$df.residual, lower.tail = F)
+mcfadden.1 <- PseudoR2(glm.1, which='McFadden')
+nagelkerke.1 <- PseudoR2(glm.1, which='Nagelkerke')
 ```
+
+Dewiancja modelu (`r round(glm.1$deviance, 2)`) jest istotnie mniejsza 
+od modelu zerowego (`r round(glm.1$null.deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.1, 4)`.
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.1, 4)`
+a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.1, 4)`.
 
 Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej na poziomie
 istotności 0,05 tylko `sp` jest istotna (`roddzialtak` jest także istotny ale na poziomie 0,1).
 
 Postępując podobnie jak w przypadku  „normalnej” regresji eliminujemy
 iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
-do modelu w którym odejście z pracy objaśnia tylko satysfakcja:
+do modelu,  w którym odejście z pracy objaśnia tylko satysfakcja:
 
 ```{r, message=F, warning=F}
 glm.2 <- glm(zp ~ sp , data = e1, family = "binomial")
@@ -1242,10 +1270,21 @@ gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
   mutate(or=glm.2.or,  ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI95'), booktabs = TRUE )
+
+pchisq.glm.2 <- pchisq(glm.2$null.deviance -  glm.2$deviance, glm.2$df.null - glm.2$df.residual, lower.tail = F)
+mcfadden.2 <- PseudoR2(glm.2, which='McFadden')
+nagelkerke.2 <- PseudoR2(glm.2, which='Nagelkerke')
 ```
 
-Macierz pomyłek:
+
+Dewiancja modelu (`r round(glm.2$deviance, 2)`) jest istotnie mniejsza 
+od modelu zerowego (`r round(glm.2$null.deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.2, 4)`.
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.2, 4)`
+a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.2, 4)`.
+
+
+Macierz błędów dla $p_g = 0,5$:
 
 ```{r}
 pred.2 = predict(glm.2, type = "response")
@@ -1253,8 +1292,8 @@ y.pred.2 = ifelse(pred.2 < 0.5, 0, 1)
 
 table <- table(y.pred.2, e1$zp)
 dimnames(table) <- list(
-  'Prognoza' = c("0", "1"),
-  'zp' = c("0", "1"))
+  'Prognoza' = c("nie odejdzie", "odejdzie"),
+  'zp' = c("nie odejdzie", "odejdzie"))
 table
 
 czulosc <- table[4] / (table[3]+table[4])
@@ -1262,10 +1301,14 @@ swoistosc <- table[1] / (table[1]+table[2])
 ```
 
 Stąd: czułość `r round(czulosc, 2)`; swoistość `r round(swoistosc, 2)`.
+Model zp-sp poprawnie klasyfikuje 
+`r round(czulosc * 100, 2)`% przypadków odejścia
+oraz `r round(swoistosc * 100, 2)`% przypadków pozostania.
 
-Krzywą ROC przedstawiono na rysunku:
 
-```{r, message=F, warning=F, out.width="70%"}
+Krzywą ROC przedstawiono na rysunku \@ref(fig:ROC2):
+
+```{r ROC2, message=F, warning=F, out.width="80%", fig.cap='Krzywa ROC modelu zp-sp'}
 roc_obj <- roc(e1$zp, pred.2, legacy.axes = T)
 ##plot(roc_obj, main = "ROC Curve for the Logistic Regression Model", legacy.axes = T)
 auc<- auc_value <- auc(roc_obj)
@@ -1330,115 +1373,115 @@ Pytanie 5
 
 Pytanie 6
 
-0. Sądzę, że nie zasługuję na karę
-1. Sądzę, że zasługuję na karę
-2. Spodziewam się ukarania
-3. Wiem, że jestem karany (lub ukarany)
+0. Sądzę, że nie zasługuję na karę.
+1. Sądzę, że zasługuję na karę.
+2. Spodziewam się ukarania.
+3. Wiem, że jestem karany (lub ukarany).
 
 Pytanie 7
 
-0. Jestem z siebie zadowolony
-1. Nie jestem z siebie zadowolony
-2. Czuję do siebie niechęć
-3. Nienawidzę siebie
+0. Jestem z siebie zadowolony.
+1. Nie jestem z siebie zadowolony.
+2. Czuję do siebie niechęć.
+3. Nienawidzę siebie.
 
 Pytanie 8
 
-0. Nie czuję się gorszy od innych ludzi
-1. Zarzucam sobie, że jestem nieudolny i popełniam błędy
-2. Stale potępiam siebie za popełnione błędy
-3. Winię siebie za wszelkie zło, które istnieje
+0. Nie czuję się gorszy od innych ludzi.
+1. Zarzucam sobie, że jestem nieudolny i popełniam błędy.
+2. Stale potępiam siebie za popełnione błędy.
+3. Winię siebie za wszelkie zło, które istnieje.
 
 Pytanie 9
 
-0. Nie myślę o odebraniu sobie życia
-1. Myślę o samobójstwie – ale nie mógłbym tego dokonać
-2. Pragnę odebrać sobie życie
-3. Popełnię samobójstwo, jak będzie odpowiednia sposobność
+0. Nie myślę o odebraniu sobie życia.
+1. Myślę o samobójstwie – ale nie mógłbym tego dokonać.
+2. Pragnę odebrać sobie życie.
+3. Popełnię samobójstwo, jak będzie odpowiednia sposobność.
 
 Pytanie 10
 
-0. Nie płaczę częściej niż zwykle
-1. Płaczę częściej niż dawniej
-2. Ciągle chce mi się płakać
-3. Chciałbym płakać, lecz nie jestem w stanie
+0. Nie płaczę częściej niż zwykle.
+1. Płaczę częściej niż dawniej.
+2. Ciągle chce mi się płakać.
+3. Chciałbym płakać, lecz nie jestem w stanie.
 
 Pytanie 11
 
-0. Nie jestem bardziej podenerwowany niż dawniej
-1. Jestem bardziej nerwowy i przykry niż dawniej
-2. Jestem stale zdenerwowany lub rozdrażniony
-3. Wszystko, co dawniej mnie drażniło, stało się obojętne
+0. Nie jestem bardziej podenerwowany niż dawniej.
+1. Jestem bardziej nerwowy i przykry niż dawniej.
+2. Jestem stale zdenerwowany lub rozdrażniony.
+3. Wszystko, co dawniej mnie drażniło, stało się obojętne.
 
 Pytanie 12
 
-0. Ludzie interesują mnie jak dawniej
-1. Interesuję się ludźmi mniej niż dawniej
-2. Utraciłem większość zainteresowań innymi ludźmi
-3. Utraciłem wszelkie zainteresowanie innymi ludźmi
+0. Ludzie interesują mnie jak dawniej.
+1. Interesuję się ludźmi mniej niż dawniej.
+2. Utraciłem większość zainteresowań innymi ludźmi.
+3. Utraciłem wszelkie zainteresowanie innymi ludźmi.
 
 Pytanie 13
 
-0. Decyzje podejmuję łatwo, tak jak dawniej
-1. Częściej niż kiedyś odwlekam podjęcie decyzji
-2. Mam dużo trudności z podjęciem decyzji
-3. Nie jestem w stanie podjąć żadnej decyzji
+0. Decyzje podejmuję łatwo, tak jak dawniej.
+1. Częściej niż kiedyś odwlekam podjęcie decyzji.
+2. Mam dużo trudności z podjęciem decyzji.
+3. Nie jestem w stanie podjąć żadnej decyzji.
 
 Pytanie 14
 
-0. Sądzę, że wyglądam nie gorzej niż dawniej
-1. Martwię się tym, że wyglądam staro i nieatrakcyjnie
-2. Czuję, że wyglądam coraz gorzej
-3. Jestem przekonany, że wyglądam okropnie i odpychająco
+0. Sądzę, że wyglądam nie gorzej niż dawniej.
+1. Martwię się tym, że wyglądam staro i nieatrakcyjnie.
+2. Czuję, że wyglądam coraz gorzej.
+3. Jestem przekonany, że wyglądam okropnie i odpychająco.
 
 Pytanie 15
 
-0. Mogę pracować jak dawniej
-1. Z trudem rozpoczynam każdą czynność
-2. Z wielkim wysiłkiem zmuszam się do zrobienia czegokolwiek
-3. Nie jestem w stanie nic zrobić
+0. Mogę pracować jak dawniej.
+1. Z trudem rozpoczynam każdą czynność.
+2. Z wielkim wysiłkiem zmuszam się do zrobienia czegokolwiek.
+3. Nie jestem w stanie nic zrobić.
 
 Pytanie 16
 
-0. Sypiam dobrze, jak zwykle
-1. Sypiam gorzej niż dawniej
-2. Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć
-3. Budzę się kilka godzin za wcześnie i nie mogę usnąć
+0. Sypiam dobrze, jak zwykle.
+1. Sypiam gorzej niż dawniej.
+2. Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć.
+3. Budzę się kilka godzin za wcześnie i nie mogę usnąć.
 
 Pytanie 17
 
-0. Nie męczę się bardziej niż dawniej
+0. Nie męczę się bardziej niż dawniej.
 1. Męczę się znacznie łatwiej niż poprzednio.
 2. Męczę się wszystkim, co robię.
 3. Jestem zbyt zmęczony, aby cokolwiek robić.
 
 Pytanie 18
 
-0. Mam apetyt nie gorszy niż dawniej
-1. Mam trochę gorszy apetyt
-2. Apetyt mam wyraźnie gorszy
-3. Nie mam w ogóle apetytu
+0. Mam apetyt nie gorszy niż dawniej.
+1. Mam trochę gorszy apetyt.
+2. Apetyt mam wyraźnie gorszy.
+3. Nie mam w ogóle apetytu.
 
 Pytanie 19
 
-0. Nie tracę na wadze (w okresie ostatniego miesiąca)
-1. Straciłem na wadze więcej niż 2 kg
-2. Straciłem na wadze więcej niż 4 kg
-3. Straciłem na wadze więcej niż 6 kg
+0. Nie tracę na wadze (w okresie ostatniego miesiąca).
+1. Straciłem na wadze więcej niż 2 kg.
+2. Straciłem na wadze więcej niż 4 kg.
+3. Straciłem na wadze więcej niż 6 kg.
 
 Pytanie 20
 
-0. Nie martwię się o swoje zdrowie bardziej niż zawsze
-1. Martwię się swoimi dolegliwościami, mam rozstrój żołądka, zaparcie, bóle
-2. Stan mojego zdrowia bardzo mnie martwi, często o tym myślę
-3. Tak bardzo martwię się o swoje zdrowie, że nie mogę o niczym innym myśleć
+0. Nie martwię się o swoje zdrowie bardziej niż zawsze.
+1. Martwię się swoimi dolegliwościami, mam rozstrój żołądka, zaparcie, bóle.
+2. Stan mojego zdrowia bardzo mnie martwi, często o tym myślę.
+3. Tak bardzo martwię się o swoje zdrowie, że nie mogę o niczym innym myśleć.
 
 Pytanie 21
 
-0. Moje zainteresowania seksualne nie uległy zmianom
-1. Jestem mniej zainteresowany sprawami płci (seksu)
-2. Problemy płciowe wyraźnie mniej mnie interesują
-3. Utraciłem wszelkie zainteresowanie sprawami seksu
+0. Moje zainteresowania seksualne nie uległy zmianom.
+1. Jestem mniej zainteresowany sprawami płci (seksu).
+2. Problemy płciowe wyraźnie mniej mnie interesują.
+3. Utraciłem wszelkie zainteresowanie sprawami seksu.
 
 **Treść pytań** (nie prezentowana ankietowanym):
 Odczuwanie smutku i przygnębienia (1),
@@ -1480,7 +1523,7 @@ http://centrum-psychologiczne.com/files/files/Skala_Depresji_Becka_word.pdf
 
 ### Ankieta na temat szkodliwości palenia
 
-Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
+Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu.
 
 **Pytania**
 

@@ -97,8 +97,8 @@ Wartość $s/\sqrt{10}$ jest równa `r round(max.err.sd/sqrt(10), 2)`.
 
 **Szacujemy średnią na podstawie 40 zawodników pobranych losowo**.
 
-Uwaga: 40 zawodników to `r round (40/wN *100, 1)`% 
-całości. Powtarzamy eksperyment `r sample.size` razy.
+Uwaga: 40 zawodników to `r round (40/wN *100, 1)`% całości. 
+Powtarzamy eksperyment `r sample.size` razy.
 
 ```{r}
 s40 <- mks(40, wN)
@@ -253,7 +253,7 @@ Wartość $s/\sqrt{10}$ jest równa `r round(max.err.sd/sqrt(10), 2) `.
 
 **Szacujemy średnią na podstawie 40 kandydatów pobranych losowo**
 
-Uwaga: 40 kandydatów to ok 0.6% całości.
+Uwaga: 40 kandydatów to ok. 0,6% całości.
 Powtarzamy eksperyment `r sample.size` razy.
 
 ```{r}
@@ -324,12 +324,12 @@ Wnioski:
 
 * Precyzja wnioskowania zwiększa się wraz z liczebnością próby;
 
-* Precyzja wniskowania zwiększa się tym szybciej
-im rozproszenie w populacji generalnej jest mniejsze;
+* Precyzja wnioskowania zwiększa się tym szybciej
+  im rozproszenie w populacji generalnej jest mniejsze;
 
 * Żeby z dużą dokładnością
-wnioskować o średniej dla dużej populacji wcale nie trzeba pobierać 
-dużej próby (w ostatnim przykładzie było to 1% całości).
+  wnioskować o średniej dla dużej populacji wcale nie trzeba pobierać 
+  dużej próby (w ostatnim przykładzie było to 1% całości).
 
 ## Rozkład normalny
 
@@ -392,7 +392,7 @@ to zapewne trochę by się różnił,  bo byśmy wylosowali inne wartości do pr
 Ta **teoretyczna abstrakcja** określana jest 
 **prawdopodobieństwem**. Rzucając monetą `r sample.size` razy spodziewamy
 się po `r sample.size/2` orłów i reszek, 
-co w modelu matematycznym będzie opisane jak:
+co w modelu matematycznym będzie opisane jako:
 prawdopodobieństwo wyrzucenia orła wynosi 0,5. 
 Rzucanie monetą to bardzo prosty eksperyment; nasz z liczeniem średniej
 wieku jest bardziej skomplikowany więc miło jest się
@@ -417,7 +417,7 @@ to szukane prawdopodobieństwo
 jest równe: `r round(nrow( r %>% filter (wiek >= 50 & wiek <= 60)) / nrow(r) * 100, 2)`%).
 
 Jeżeli zamiast rozkładu empirycznego będziemy używać rozkład normalnego, który jak widzimy
-jest jego dobrym przybliżeniem, to nie musimy liczyć empirycznych liczebności. Wystarczy że
+jest jego dobrym przybliżeniem, to nie musimy liczyć empirycznych liczebności. Wystarczy, że
 znamy średnią i odchylenie standardowe a potrafimy obliczyć każde prawdopodobieństwo dla
 każdego przedziału wartości zmiennej.
 
@@ -522,8 +522,9 @@ na podstawie konkretnego estymatora, inaczej mówiąc jak dużo mogliśmy się p
 
 Do oceny tej wiarygodności można użyć wariancji-średniej-z-próby, która nazywa się
 **wariancją błędu** (*error variance*).
-Jeżeli wariancja błędu jest duża, to w pojedynczej próbie mogą wystąpić wartości
-znacznie różniące się od prawdziwej średniej; jeżeli jest mała to wartości bardzo różniące
+Jeżeli wariancja błędu jest duża, to średnia obliczona na podstawie próby
+może znacznie się różnić od prawdziwej średniej.
+Jeżeli wariancja błędu jest mała, to wartości bardzo różniące
 się od prawdziwej średniej mają małe szanse na zaistnienie. W przypadku rozkładu
 normalnego wiemy, że wariancja błędu jest równa $s^2/n$
 (gdzie $s^2$ jest wariancją w populacji, a $n$ wielkością próby).
@@ -598,7 +599,7 @@ Duża różnica pomiędzy **hipotezą** a wynikiem z próby może wynikać z teg
 
 Statystyk zawsze wybierze drugą wersję. Pozostaje tylko ustalić co to jest rzadko (dla statystyka)?
 
-Rzadko, to z prawdopodobieństwem mniejszym niż z góry ustalone małe prawdopodobieństwo.
+Rzadko, to z prawdopodobieństwem mniejszym niż z góry ustalone małe prawdopodobieństwo
 zwane **poziomem istotności**.  Określa ono jak często
 możemy się pomylić **odrzucając hipotezę zerową, która jest prawdziwa**.
 
@@ -684,7 +685,7 @@ absolutnie pewnej i 100% prawdziwej (por. uwagę w punkcie \@ref(przedmiotS)).
 
 5. Poziom istotności (testu; oznaczany jako $\alpha$; zwykle 0,05): prawdopodobieństwo popełnienia błędu.
 
-6. Poziom ufności = prawdopodobieństwo, że przedział ufności zawiera prawdziwą wartość parametru;
+6. Poziom ufności: prawdopodobieństwo, że przedział ufności zawiera prawdziwą wartość parametru;
    oznaczany jako $1- \alpha$; zwykle 0,95.
 
 7. Rozkład (prawdopodobieństwa): przypisanie prawdopodobieństwa wartościom zmiennej losowej.

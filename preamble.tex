@@ -96,13 +96,15 @@
 \setlength\parindent{15\p@}
 %%
 %% Already defined
-\RequirePackage{etoolbox}
+%%\RequirePackage{etoolbox}
 %%%\preto{\@verbatim}{\topsep=3pt \partopsep=3pt }
 \AtBeginEnvironment{tabular}{\medskip}
 \AfterEndEnvironment{tabular}{\par\medskip}
 %%
 \AtBeginEnvironment{verbatim}{\medskip}
 \AfterEndEnvironment{verbatim}{\par\medskip}
+%%
+\AtBeginEnvironment{figure}{\centering}
 %%
 %% remove pagenumber at chapter title page
 \renewcommand\ps@plain{\let\@mkboth\@gobbletwo
@@ -113,6 +115,21 @@
 %%
 \makeatother
 %%%
+\AtEndDocument{%%
+\clearpage
+\thispagestyle{empty}
+\vbox to \textheight{\vss} %% <-- force newpage
+%%
+  \begingroup
+ \setkeys{Gin}{width=210mm,height=300mm}
+ %%\clearpage
+ \thispagestyle{empty}
+  \vbox to \textheight{\vss%
+   \hbox to\textwidth{\hss
+     \includegraphics[width=170mm]{Cover_04.png}\hss}
+   \vss}
+  \endgroup
+}
 \AtBeginDocument{%%
  \let\maketitle\relax
   %% Insert title page
@@ -122,7 +139,7 @@
  \setkeys{Gin}{width=210mm,height=300mm}
 \vbox to \textheight{\vss%
    \hbox to\textwidth{\hss
-     \includegraphics[width=210mm]{Cover_03.png}\hss}
+     \includegraphics[width=170mm]{Cover_03.png}\hss}
    \vss}
 \vbox to \textheight{%
   \vskip20mm

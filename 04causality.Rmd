@@ -67,19 +67,19 @@ A tak nie jest jak widać.
 
 Prostymi miarami oceny siły zależności mogą być: 
 
-* różnica  ryzyk (**risk difference**),
-* ryzyko względne (**relative risk**), oraz 
-* iloraz szans (**odds ratio**).
+* różnica  ryzyk (*risk difference*),
+* ryzyko względne (*relative risk*), oraz 
+* iloraz szans (*odds ratio*).
 
 Jeżeli $r_e$ oznacza ryzyko w grupie eksperymentalnej (*test group*, grupa narażona, *exposed group*),
 a $r_k$ w grupie kontrolnej (*control group*, grupa nienarażona, *unexposed group*), 
 to **różnica ryzyk** to po prostu $r_e - r_k$.
 W przykładzie będzie to $22,14 - 12,2 = -9,94$%
-Ta miara aczkolwiek prosta jest rzadko stosowana. 
+Ta miara, aczkolwiek prosta jest rzadko stosowana. 
 
 Znacznie częściej używa się **ryzyka względnego** definiowanego jako
 $RR = r_e/r_k$. Oczywiste jest, że $RR < 1$ oznacza zmniejszenie
-ryzyka; $RR > 1$ oznacza zwiększenia; $RR = 1$ oznacza brak zależności.
+ryzyka; $RR > 1$ oznacza zwiększenie; $RR = 1$ oznacza brak zależności.
 
 Zamiast ryzyka (czyli ilorazu liczby sukcesów do liczby prób) można używać
 pojęcia szansa/szansy (*odds*) definiowanego
@@ -146,7 +146,7 @@ Dla danych w tej postaci:
 
 $\textrm{RR} = (17/(17 + 122))/(31/(31 + 109)) = 0,55$ oraz
 
-$\textrm{OR} = (17 * 109)/(31 * 122) =0,48$ 
+$\textrm{OR} = (17 \cdot 109)/(31 \cdot 122) =0,48$ 
 
 Otrzymaliśmy oczywiście identyczny wynik jak w poprzednim przykładzie.
 
@@ -228,28 +228,32 @@ Ograniczmy się do analizy tabel dwudzielnych.
 ::: {.example}
 **Narciarze Paulinga (kontynuacja)**
 
-Eksperyment Paulinga można przedstawić w postaci tablicy dwudzielnej
-(`P`/`C` oznacza czy narciarz zażywał witaminę czy placebo; `cold`/`nocold`
-czy zachorował czy nie zachorował na katar):
+Eksperyment Paulinga można przedstawić w postaci następującej tablicy dwudzielnej:
 
 ```{r, message=FALSE, echo=FALSE}
 vitC <- read.csv(file='vit_C.csv',sep=';',header=T)
 narciarze <- table(vitC)
-narciarze.table <- addmargins(narciarze)
-kable(narciarze.table, col.names = c('nocold', 'cold', 'razem'), booktabs = TRUE)
+##narciarze.table <- addmargins(narciarze)
+##kable(narciarze.table, col.names = c('nocold', 'cold', 'razem'), booktabs = TRUE)
+narciarze.table <- as.data.frame.matrix(addmargins(narciarze)) 
+rownames(narciarze.table) <- c('grupa C', 'grupa P', 'razem')
+kable(narciarze.table, col.names = c('zdrowy', 'katar', 'razem'), booktabs = TRUE)
 ```
 
-Taka tabela składa się z wierszy i kolumn. Dolny wiersz (Sum czyli Razem
-po polsku) zawiera łączną liczebność dla wszystkich wierszy w danej kolumnie. Podobnie prawa skrajna kolumna zawiera łączną
-liczebność dla wszystkich kolumn dla danego wiersza. Dolny wiersz/Prawą
-kolumnę nazywamy **rozkładami brzegowymi**.
+Taka tabela składa się z wierszy i kolumn.
+Dolny wiersz zawiera łączną liczebność dla wszystkich wierszy w danej kolumnie.
+Podobnie prawa skrajna kolumna zawiera łączną
+liczebność dla wszystkich kolumn dla danego wiersza. Dolny wiersz/prawą
+kolumnę nazywamy **rozkładami brzegowymi**. Rozkłady brzegowe przestawiają
+rozkłady każdej zmiennej osobno.
+
 Pozostałe kolumny oraz wiersze nazywane
 są **rozkładami warunkowymi**. Rozkładów warunkowych jest tyle ile
 wynosi suma $r + c$ gdzie $r$ to liczba wariantów jednej cechy
 a $c$ to liczba wariantów drugiej cechy.
 
 Przy warunku że narciarz brał witaminę C, `r narciarze[1,1]` takich osób
-nie zachorowało (**nocold**) a `r narciarze[1,2]` zachorowało (**cold**). 
+nie zachorowało, a `r narciarze[1,2]` zachorowało. 
 Drugi rozkład warunkowy: `r narciarze[2,1]` narciarzy, którzy brali placebo
 nie zachorowało, a `r narciarze[2,2]` zachorowało. Są także rozkłady
 warunkowe dla drugiej cechy. W grupie narciarzy, którzy zachorowali
@@ -265,8 +269,9 @@ Zamiast liczebności można posługiwać się odsetkami (procentami):
 narciarze.total <- sum(narciarze)
 narciarze.p <- narciarze/narciarze.total *100
 
-narciarze.table.p <- addmargins(narciarze.p)
-kable(digits=2, narciarze.table.p, col.names = c('nocold', 'cold', 'razem'), booktabs = TRUE)
+narciarze.table.p <- as.data.frame.matrix(addmargins(narciarze.p))
+rownames(narciarze.table.p) <- c('grupa C', 'grupa P', 'razem')
+kable(digits=2, narciarze.table.p, col.names = c('zdrowy', 'katar', 'razem'), booktabs = TRUE)
 ```
 
 Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
@@ -283,7 +288,9 @@ narciarze.p <- proportions(narciarze, margin = 1)
 narciarze.p.m <- addmargins(narciarze.p, margin = 1)
 Sum <- margin.table(narciarze,2) /narciarze.total
 narciarze.x <- cbind(rbind(narciarze.p, Sum), c(1,1,1)) * 100
-kable(digits=2, narciarze.x, col.names = c('nocold', 'cold', 'razem'), booktabs = TRUE)
+rownames(narciarze.x) <- c('grupa C', 'grupa P', 'razem')
+
+kable(digits=2, narciarze.x, col.names = c('zdrowy', 'katar', 'razem'), booktabs = TRUE)
 ```
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
@@ -319,11 +326,12 @@ sprawdzić,
 ```{r, message=FALSE, echo=FALSE}
 chi_skiers <- chisq.test(narciarze)
 narciarze.expected <- chi_skiers$expected
-narciarze.ex.table <- addmargins(narciarze.expected)
+narciarze.ex.table <- as.data.frame.matrix(addmargins(narciarze.expected))
 
+rownames(narciarze.ex.table) <- c('grupa C', 'grupa P', 'razem')
 chipv <- chi_skiers$p.value
 ##chipv.txt <- sprintf("%f", chipv)
-kable(digits=3, narciarze.ex.table, booktabs = TRUE)
+kable(digits=3, narciarze.ex.table, col.names =  c('zdrowy', 'katar', 'razem'),  booktabs = TRUE)
 ```
 
 Proszę
@@ -377,11 +385,13 @@ smokerData <- read.csv(file='smoker.csv',sep=';',header=T)
 #
 smoke <- table(smokerData)
 
-smoke.table <- addmargins(smoke)
-kable(smoke.table, booktabs = TRUE)
+smoke.table <- as.data.frame.matrix(addmargins(smoke))
+rownames(smoke.table) <- c('current', 'former', 'never', 'razem')
+
+kable(smoke.table, col.names =  c('High', 'Low', 'Middle', 'razem'), booktabs = TRUE)
 ```
 
-Uwaga: status-społeczno-ekonomiczny to powiedzmy miara prestiżu używana w socjologii
+Uwaga: status-społeczno-ekonomiczny, to powiedzmy miara prestiżu używana w socjologii
 (można na Wikipedii doczytać co to dokładnie jest).
 
 Tym razem tabela składa się z 3 wierszy i 3 kolumn (ostatni wiersz/kolumna się
@@ -398,7 +408,9 @@ smoke.p <- proportions(smoke, margin = 1)
 smoke.p.m <- addmargins(smoke.p, margin = 1)
 Sum <- margin.table(smoke,2) /smoke.total
 smoke.x <- cbind(rbind(smoke.p, Sum), c(1,1,1)) * 100
-kable(smoke.x, col.names = c('High', 'Low', 'Middle', 'Sum'), booktabs = TRUE)
+rownames(smoke.x) <- c('current', 'former', 'never', 'razem')
+
+kable(smoke.x, digits=2, col.names = c('High', 'Low', 'Middle', 'razem'), booktabs = TRUE)
 ```
 
 Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
@@ -409,14 +421,16 @@ procentom odpowiadają następujące liczebności:
 ```{r, message=FALSE, echo=FALSE}
 chi_smokers <- chisq.test(smoke)
 smokers.expected <- chi_smokers$expected
-smokers.ex.table <- addmargins(smokers.expected)
+smokers.ex.table <- as.data.frame.matrix(addmargins(smokers.expected))
+rownames(smokers.ex.table) <- c('current', 'former', 'never', 'razem')
 
 chipv <- chi_smokers$p.value
 ##chipv.txt <- sprintf("%f", chipv)
-kable(smokers.ex.table, booktabs = TRUE)
+kable(smokers.ex.table, col.names =  c('High', 'Low', 'Middle', 'razem'), booktabs = TRUE)
 ```
 
-Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi 
+Wartość prawdopodobieństwa dla testu chi-kwadrat określająca, że przy założeniu
+niezależności obu zmiennych tak duża różnica między liczebnościami rzeczywistymi a idealnymi 
 (porównaj stosowne tabele wyżej) jest dziełem przypadku wynosi `r round(chipv, 4)`.
 Jest to prawdopodobieństwo tak małe, że statystyk odrzuca założenie o niezależności
 statusu i palenia (myląc się w przybliżeniu `r round(chipv, 4)` ≈ raz na tysiąc).
@@ -465,12 +479,12 @@ Odrzucenie hipotezy zerowej oznacza, że istnieje związek pomiędzy jedną a dr
 Jeżeli nie ma podstaw do odrzucenia
    hipotezy zerowej to oznacza to że takiej zależności nie udało nam się wykazać.
 
-Omawiając wynik należy podać się wartość $t_k$ oraz p. Statystyka testu może się
+Omawiając wynik należy podać wartość $t_k$ oraz p. Statystyka testu może się
 różnie nazywać i być oznaczana różnym symbolem,
 np.: t (test t Welcha), U (test U Manna-Whitneya).
 
 Testy $t$ Welcha oraz ANOVA są **parametryczne**, porównujemy średnie w grupach.
-Testy U-Manna-Whitneya oraz Kruskala-Wallisa są **nieparametryczne** porównujemy
+Testy U-Manna-Whitneya oraz Kruskala-Wallisa są **nieparametryczne** bo porównujemy
 rozkłady wartości zmiennej w grupach.
 
 ### Test $t$ Welcha
@@ -641,8 +655,9 @@ kable(s0.staz, col.names = c('staż (kategoria)', 'średnia', 'mediana', 'n'), b
 ```
 
 Zakładając, że rozkłady w grupach są normalne, do weryfikacji hipotezy
-o równości wszystkich średnich możemy zastosować test ANOVA z poprawką Welcha. Na poniższym wydruku kolumna F zawiera
-wartość statystki testu ANOVA, a kolumna p jak zwykle wartość prawdopodobieństwa p:
+o równości wszystkich średnich możemy zastosować test ANOVA z poprawką Welcha.
+Na poniższym wydruku wartość statystyki testu jest oznaczona jako `F`,
+a wartość p symbolem `p-value`:
 
 ```{r, message=F, warning=F}
 #anova.test <- anova_test(P ~ staz, data=s0)
@@ -677,7 +692,7 @@ w grupach są identyczne.
 **Poziom depresji a staż pracy** 
 
 Na poniższym wydruku wartość statystyki testu jest oznaczona jako
-`Kruskal-Wallis chi-squared` a wartość p symbolem `p-value`:
+`Kruskal-Wallis chi-squared`, a wartość p symbolem `p-value`:
 
 ```{r, echo=F}
 kw <- kruskal.test(P ~ staz, data = s0)
@@ -713,7 +728,7 @@ o zależności nieliniowej.
 
 Organizacja Narodów Zjednoczonych do spraw Wyżywienia i Rolnictwa znana jako FAO
 udostępnia dane dotyczące konsumpcji żywności 
-na świecie (https://www.fao.org/faostat/en/#home). Bank światowy
+na świecie (https://www.fao.org/faostat/en/#home). Bank Światowy
 udostępnia dane dotyczące dochodu narodowego (https://data.worldbank.org/). 
 
 Konsumpcja mięsa jest mierzona jako średnia roczna konsumpcja w kilogramach w każdym kraju (*per capita* się mówi).
@@ -722,10 +737,13 @@ Dane dotyczą roku 2013.
 
 ```{r message=FALSE, echo=FALSE, out.width="90%"}
 ## Dane FAO/WorldBank
-meatCons <- read.csv(file='meatCons_vs_GDP.csv',sep=';',header=T)
+meatCons <- read.csv(file='meatCons_vs_GDP.csv',sep=';',header=T) |>
+  mutate (gdp2013 = gdp2013 / 1000)
+  
 ggplot(meatCons, aes(x = gdp2013, y = y2013)) +
   geom_point(color="steelblue", size=1) +
   geom_smooth(method = "lm", se = F) +
+  ylab('kg/per capita') +
   geom_smooth(method = "loess", color="red", se = F)
 ```
 
@@ -743,8 +761,8 @@ Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych $X
 od ich wartości średnich. Dla $n$ obserwacji na zmiennych $X$ oraz $Y$
 można powyższe zapisać w postaci następującej formuły:
 
-$$\mathrm{cov} (xy) = \frac{1}{n} \left( (x_1 - \bar x) (y_1 - \bar y)  + ... +
-(x_n- \bar x) (y_n - \bar y) \right)$$
+$$\mathrm{cov} (xy) = \frac{1}{n} \left( (x_1 - \bar x)\cdot (y_1 - \bar y)  + ... +
+(x_n- \bar x)\cdot (y_n - \bar y) \right)$$
 
 Kowariancja zależy od rozproszenia (im większe tym większa), 
 ma też dziwną jednostkę (jednostkaX · jednostkaY) oraz zależy 
@@ -752,7 +770,7 @@ od wybranych skal (tony vs gramy na przykład).
 
 Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji, 
-zwanego **współczynnikiem korelacji liniowej Pearsona**, (*Pearson
+zwanego **współczynnikiem korelacji liniowej Pearsona** (*Pearson
 correlation coefficient*). Standaryzacja polega na podzieleniu wartości
 kowariancji przez iloczyn odchyleń standardowych $s_x$ oraz $s_y$.
 
@@ -862,8 +880,7 @@ w przypadku regresji, tj. siły zależności pomiędzy zmiennymi.
 Współczynnik $b_1$ ma prostą interpretację: jeżeli wartość zmiennej $X$
 rośnie o jednostkę to wartość zmiennej $Y$ zmienia
 się przeciętnie o $b_1$ jednostek zmiennej Y. 
-Wyraz wolny zwykle nie ma sensownej interpretacji
-(formalnie jest to wartość zmiennej $Y$ dla $X=0$).
+Wyraz wolny zwykle nie ma sensownej interpretacji, formalnie jest to wartość zmiennej $Y$ dla $X=0$.
 
 Oznaczmy przez $y_i$ wartości obserwowane (zwane też empirycznymi)
 a przez $\hat y_i$ *wartości teoretyczne* (leżące na prostej linii regresji).
@@ -876,7 +893,7 @@ $$(\hat y_1 - y_1)^2 + (\hat y_2 - y_2)^2 + ... +  (\hat y_n - y_n)^2 \to \min$$
 Rozwiązując powyższy **problem minimalizacyjny** otrzymujemy wzory
 określające wartości parametrów $b_0$ oraz $b_1$. Metoda wyznaczania parametrów
 linii prostej w oparciu o minimalizację sumy kwadratów odchyleń 
-nosi nazwę **metoda najmniejszych kwadratów**.
+nosi nazwę **metody najmniejszych kwadratów**.
 
 Przypominamy, że **estymatorem** nazywamy metodę oszacowania parametru na podstawie próby.
 Ponieważ traktujemy $b_0$ oraz $b_1$ jako parametry pewnej populacji generalnej
@@ -912,7 +929,7 @@ prostej do wartości empirycznych?
 Oznaczając *resztę* jako: $e_i = y_i - \hat y_i$, definiujemy **wariancję
 resztową**  jako:
 
-$$s_e^2 = \frac{e_1^2 + e_2^2 + ... e_n^2}{n-k}$$.
+$$s_e^2 = \frac{e_1^2 + e_2^2 + ... + e_n^2}{n-k}$$.
 
 Gdzie $n$ oznacza liczbę obserwacji (liczebność próby), a $k$ liczbę
 szacowanych parametrów bez wyrazu wolnego czyli jeden w regresji
@@ -957,7 +974,7 @@ jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.
 
 **Ocena dopasowania: istotność parametru $b_1$**
 
-Jeżeli: $Y= 0 \cdot X + b_0$, to $Y = b_0$ czyli nie ma zależności
+Jeżeli: $Y= 0 \cdot X + b_0$, to $Y = b_0$, czyli nie ma zależności
 pomiędzy $X$ oraz $Y$.
 Wartości $b_1$ bliskie zero wskazują na słabą zależność
 pomiędzy cechami.
@@ -1083,8 +1100,10 @@ pobranych z bazy FAO Food Balance Sheet oraz Banku Światowego, otrzymując
 następujące wyniki:
 
 ```{r, message=F, out.width="75%"}
-meatCons <- meatCons %>% mutate (gdp2013 = gdp2013 / 1000)
+##meatCons <- meatCons %>% mutate (gdp2013 = gdp2013 / 1000)
+
 ggplot(meatCons, aes(x = gdp2013, y = y2013)) + geom_point() +
+  ylab('kg/per capita') +
   geom_smooth(method='lm', se=F)
 ```
 
@@ -1321,7 +1340,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 ```
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%.
@@ -1345,7 +1364,7 @@ można zamienić na zmienną binarną `praca` przypisując 1 = szpital, oraz
 (obie mierzone na skali liczbowej)
 i rodzaju miejsca pracy. Możemy to zapisać jako następujące równanie regresji:
 
-$$\textrm{stres} = b_0 + b_1\textrm{staż} + b_2 \textrm{satysfakcja} + b_3 \textrm{praca}$$
+$$\textrm{stres} = b_0 + b_1\cdot \textrm{staż} + b_2 \cdot \textrm{satysfakcja} + b_3\cdot \textrm{praca}$$
 
 Jaka jest interpretacja współczynnika $b_3$? Zakładając że 0 = przychodnia, $b_3$ oznacza 
 przeciętną zmianę wielkości stresu
@@ -1381,11 +1400,11 @@ oraz status względem palenia (palił, pali, nigdy nie palił).
 Zwróćmy uwagę że zmienne mierzące status względem palenia/picia mają nie dwie a trzy wartości. 
 Należy każdą zamienić na dwie zmienne binarne, wg schematu:
 
-`CS` (*current smoker*/pali) = 1 jeżeli pali, 0 w przeciwnym przypadku
+`CS` (pali) = 1 jeżeli pali, 0 w przeciwnym przypadku;
 
-`PS` (*past smoker*/palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku
+`PS` (palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku;
 
-`CD` (*current drinker*/pije) oraz `PD` (*past drinker*/pił) *per analogiam* do `CS`/`CD`
+`CD` (pije) oraz `PD` (pił) *per analogiam* do `CS`/`CD`.
 
 Zmienna płeć `genderF` = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
 dwuwartościowej wskazuje, która wartość jest zakodowana jako 1. Przykładowo `genderF` (*female* żeby się
@@ -1423,12 +1442,12 @@ lm.1.coef.df <- tibble::rownames_to_column(lm.1.coef, "Parametr") %>%
   mutate(std=lm.1.std,  ci=lm_ci_txt)
 
 kable(lm.1.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. Tylko dwie na siedem zmiennych
-są istotne. Zwróćmy uwagę że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
+są istotne. Zwróćmy uwagę, że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
 z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie – nie mamy
 nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
 Zmienne, które okazały się istotne jednocześnie mają największą wielkość efektu (kolumna `Beta`)
@@ -1457,7 +1476,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1468,11 +1487,11 @@ które zmienne mają największy wpływ na wielkość ciśnienia krwi.
 
 :::
 
-Ktoś mógłby dojść do wniosku że wszystko da się **uistotnić**
+Ktoś mógłby dojść do wniosku, że wszystko da się **uistotnić**
 wystarczy zwiększyć wielkość próby. Teoretycznie tak, praktycznie nie. 
 W praktyce nie interesuje nas niewielka wielkość 
-efektu (znikomy wpływ czegoś na coś). Dodatkowo zebranie dużej próby może
-być kosztowne czyli w praktyce niemożliwe – nie mamy dość dużo pieniędzy.
+efektu czyli znikomy wpływ czegoś na coś. Dodatkowo zebranie dużej próby może
+być kosztowne lub wręcz w praktyce niemożliwe – nie mamy dość dużo pieniędzy.
 Można teoretycznie określić jaka wielkość próby pozwoli na ocenę jakiej
 wielkości efektu. Sposób postępowania jest wtedy następujący: określamy
 jaka wielkość efektu ma **znaczenie praktyczne** i na tej podstawie określamy
@@ -1508,7 +1527,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1535,7 +1554,7 @@ lm.3.coef.df <- tibble::rownames_to_column(lm.3.coef, "Parametr") %>%
   mutate(std=lm.3.std,  ci=lm_ci_txt)
 
 kable(lm.3.coef.df, row.names = F, digits=3,
-      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI'), booktabs = TRUE )
+      col.names = c('Zmienna', 'B', 'SE', 'z', 'p', 'Beta', 'CI95'), booktabs = TRUE )
 
 ```
 
@@ -1557,8 +1576,8 @@ to zastosowanie regresji
 doprowadzi do obliczenia (teoretycznych) wartości $Y$ różnych od $0$ i $1$.
 Taki wynik nie ma sensownej interpretacji.
 
-Ale zamiast szacować regresję $Y$ względem ($X$/$X$-ów) można szacować
-regresję względem ryzyka dla $Y$ (czyli prawdopodobieństwa że $Y$ przyjmie wartość 1).
+Ale zamiast szacować regresję $Y$ względem $X$ (lub $X$-ów) można szacować
+regresję względem ryzyka dla $Y$ (czyli **prawdopodobieństwa**, że $Y$ przyjmie wartość 1).
 Tutaj znowu pojawia się jednak trudność, bo ryzyko może przyjąć tylko wartości
 z przedziału $[0,1]$.
 Nie wchodząc w matematyczne zawiłości,
@@ -1569,7 +1588,7 @@ $$\ln(\frac{p}{1-p}) = b_0 + b_1 \cdot x_1  + \ldots + b_k \cdot x_k$$
 Zauważmy, że $o = \frac{p}{1-p}$ to nic innego jak szansa (*odds*, por. punkt \@ref(oddsSec)).
 Parametr $b_i$ jest miarą wpływu zmiennej $X_i$ na zmienną $Y$.
 Jeżeli $X_i$ wzrośnie o jednostkę, to logarytm ilorazu szans
-wzrośnie o $\ln(o)$ (przy założeniu, że pozostałem zmienne $X$ mają
+wzrośnie o $b_i$ (przy założeniu, że pozostałe zmienne $X$ mają
 pewne ustalone wartości a zmienia się tylko $X_i$).
 Jeżeli $X_i$ jest zmienną **dwuwartościową**
 to interpretacja jest jeszcze prostsza: jest to logarytm ilorazu szans
@@ -1589,46 +1608,42 @@ to wzrost szansy, a jeżeli mniejsza od 100, spadek szansy.
 **Ocena dopasowania**
 
 Nie ma w przypadku regresji logistycznej możliwości obliczenia sumy
-kwadratów reszt (*residual sum of squares*) oraz współczynnika zbieżności.
+kwadratów reszt czy współczynnika zbieżności.
 Model ocenia się 
-używając jako kryterium dewiancję (*deviance*). Dewiancja to miara, której
+używając jako kryterium **dewiancję** (*deviance*), której
 wielkość zależy od proporcji pomiędzy liczbą sukcesów obliczonych
-z modelu a liczbą sukcesów zaobserwowanych (jak dokładnie dewiancja
-jest liczona nie jest dla nas istotne).
-
-Wyjaśnijmy to na przykładzie
-prostego modelu pomiędzy wystąpieniem osteoporozy a płcią. Model ma postać:
-
-$$\ln(o) = b_0 + b_1 \textrm{płeć}$$
-
-Po oszacowaniu $b_0$ oraz $b_1$ możemy łatwo obliczyć $\ln(o)$.
-Wiedząc że $\ln(o)=\frac{p}{1-p}$ możemy stąd obliczyć prawdopodobieństwo, które
-jak widać będzie różne dla kobiet i mężczyzn.
-Po pomnożeniu tych prawdopodobieństw przez liczebności dostajemy
-(teoretyczne) liczebności sukcesów (tj. wystąpienia osteoporozy).
+na podstawie modelu a liczbą sukcesów zaobserwowanych.
 Dewiancja będzie tym większa im różnica między tymi
 teoretycznymi liczebnościami a liczebnościami empirycznymi będzie większa.
 
-Jako minimum porównuje się wielkość dewiancji szacowanego modelu
-z modelem zerowym (*null model*), tj. modelem w którym po prawej stronie
-równania występuje tylko stała:
+Porównuje się wielkość dewiancji szacowanego modelu
+z modelem zerowym (*null model*), tj. modelem, w którym po prawej stronie
+równania występuje tylko stała. Wyjaśnijmy to na przykładzie
+prostego modelu pomiędzy wystąpieniem osteoporozy a płcią, który ma postać:
+
+$$\ln(o) = b_0 + b_1 \cdot \textrm{płeć}$$
+
+Model zerowy ma postać:
 
 $$\ln(o) = b_0$$
 
-W tym modelu prawdopodobieństwo osteoporozy jest identyczne dla
+W modelu zerowym prawdopodobieństwo osteoporozy jest identyczne dla
 kobiet i mężczyzn, zatem w oczywisty sposób dewiancja tego modelu
 będzie większa. Pytanie jest czy różnica jest istotna statystycznie.
-Jeżeli jest większa to przyjmuje się, że szacowany model jest lepszy od modelu
+Jeżeli jest, to przyjmuje się, że szacowany model jest lepszy od modelu
 trywialnego (warunek minimum przydatności).
 
-Jeżeli model zawiera wiele zmiennych w tym zmienne liczbowe, idea
-liczenia dewiancji jest podobna, ale oczywiście szczegóły są już bardziej
-skomplikowane. Szczegóły te nie są  wszakże dla nas istotne bo zajmuje się 
-tym program komputerowy.
+Zamiast współczynnika zbieżności $R^2$ stosuje się
+współczynniki pn. pseudo-$R^2$, takie jak pseudo-$R^2$  McFaddena lub pseudo-$R^2$ Nagelkerke. 
+Ich interpretacja
+jest podobna do „normalnego“ $R^2$: im bliżej zera tym gorzej, im
+bliżej jedności tym lepiej.
 
-**Minimalne kryteria oceny przydatności modelu regresji logistycznej**:
-istotnie mniejsza od modelu zerowego dewiancja oraz istotnie różne
-od zera parametry przy zmiennych niezależnych (predyktorach).
+Minimalne kryteria oceny przydatności modelu regresji logistycznej:
+mała dewiancja, duże wartości współczynników pseudo-$R^2$,
+dewiancja istotnie mniejsza od modelu zerowego
+oraz
+istotnie różne od zera parametry przy zmiennych niezależnych.
 
 **Ocena skuteczności klasyfikacji**
 
@@ -1638,43 +1653,58 @@ zmiennej nominalnej w kategoriach „sukces”/„porażka”.
 Ważnym kryterium oceny jakości modelu  jest ocena jakości
 klasyfikacji, to jest ocena na ile model poprawnie
 przypisuje przypadkom kategorie zmiennej prognozowanej. Im mniejsza
-rozbieżność pomiędzy wartościami rzeczywistymi, a prognozowanymi tym oczywiście lepiej.
+rozbieżność pomiędzy wartościami rzeczywistymi a prognozowanymi tym oczywiście lepiej.
 
-Tę jakość klasyfikacji ocenia się za pomocą dwóch wskaźników:
-czułość (*sensitivity*) oraz swoistość (*specifity*). 
-
-1. Odsetek sukcesów zaklasyfikowanych jako „sukces” (**Czułość**); określany
-   także jako TPR (*true-positive-rate*).
-   
-2. Odsetek porażek zaklasyfikowanych jako „porażka” (**Swoistość**);
-   określany także jako TNR (*true-negative-rate*).
-
-Klasyfikacja w modelu regresji logistycznej wygląda następująco.
-Jeżeli prawdopodobieństwo obliczone z modelu
+Klasyfikacja w modelu regresji logistycznej wygląda następująco:
+jeżeli prawdopodobieństwo obliczone z modelu
 jest wyższe-lub-równe niż założona **wartość graniczna** ($p_g$), to zakładamy „sukces”,
 jeżeli tak nie jest, to zakładamy „porażkę”. 
-Wartość graniczna jest ustala albo
-arbitralnie albo na podstawie jakieś dodatkowej (pozastatystycznej) informacji.
-Domyślnie za wartość graniczną przyjmuje się zwykle $p_g = 0,5$, co oznacza że
-wartości $p \geq 0,5$ zostaną zamienione na „sukces”
-a wartości $p < 0,5$ zostaną zamienione na „porażkę”.
+Wartość $p_g$ jest ustala albo
+arbitralnie, albo na podstawie jakieś dodatkowej (pozastatystycznej) informacji.
+Domyślnie przyjmuje się zwykle $p_g = 0,5$, co oznacza że
+wartości $p \geq 0,5$ zostaną zamienione na „sukces”,
+a wartości $p < 0,5$ na „porażkę”.
+
+**Macierz błędów**
+
+Tabela dwudzielna przedstawiająca rozkład wartości prognozowanych i wartości emprycznych 
+nazywa sie macierzą błędów (*confussion matrix*), por. rysunek \@ref(fig:ConfMx).
+
+```{r ConfMx, out.width="75%", fig.cap = "Macierz błędów"}
+knitr::include_graphics("./ConfussionMatrix.pdf")
+```
+
+Poszczególne rubryki macierzy błedów zawierają liczbę:
+sukcesów zaklasyfikowanych jako „sukces” (*true positive*, TP),
+sukcesów zaklasyfikowanych jako „porażka” (*false positive*, FP),
+porażek zaklasyfikowanych jako „porażka” (*true negative*, TN)
+oraz porażek zaklasyfikowanych jako „sukces” (*false negative*, FN).
+
+Jakość klasyfikacji ocenia się także za pomocą dwóch wskaźników:
+**czułość** (*sensitivity*) oraz **swoistość** (*specifity*). 
+
+Czułość to odsetek sukcesów zaklasyfikowanych jako „sukces” 
+($\mathrm{TP}/(\mathrm{TP}+\mathrm{FN})$).
+Swoistość to  odsetek porażek zaklasyfikowanych 
+jako „porażka” ($\mathrm{TN}/(\mathrm{TN} + \mathrm{TP})$).
 
 **Ocena dopasowania: krzywa ROC**
 
-Czułości oraz swoistości zależą od prawdopodobieństwa granicznego.
+Czułość oraz swoistość zależą od prawdopodobieństwa granicznego.
 Im wyższa
 jest wartość prawdopodobieństwa granicznego  tym mniej będzie „sukcesów“.
 
 Krzywa ROC przedstawia w układzie współrzędnych XY wartości
-czułości oraz swoistości dla różnych wartości granicznych.
+czułości oraz swoistości dla wybranych wartości granicznych.
+
 Współczynnik AUC (*area under curve*) to wielkość pola pod
 krzywą wyrażona w procentach pola kwadratu o boku 100%.
 AUC zawiera się w przedziale 50–100. Im większa wartość współczynnika tym lepiej.
 Model który klasyfikuje czysto losowo 
 ma wartość AUC równą 50% (por. rysunek \@ref(fig:ROCcurve)).
 
-```{r ROCcurve, out.width="75%", fig.cap = "Krzywa ROC"}
-knitr::include_graphics("./ROCcurve.png")
+```{r ROCcurve, out.width="85%", fig.cap = "Krzywa ROC"}
+knitr::include_graphics("./ROCcurve.pdf")
 ```
 
 ::: {.example}
@@ -1687,21 +1717,26 @@ vd0 <- read.csv("vitD.csv", sep = ',', dec = ".",  header=T, na.string="NA" ) %>
                          '1' = 1, 
                          '2' = 0))
 sample.size=nrow(vd0)
+sample.by.gender.K <- vd0 |> filter(genderF == 1) |> summarise(n = n()) |>
+  unlist() |> unname()
+sample.by.gender.M <- vd0 |> filter(genderF == 0) |> summarise(n = n()) |>
+  unlist() |> unname()
+osteoporosis.by.gender.K <- vd0 |> filter (osteoporosis ==1) |>
+  filter(genderF ==1) |> summarise(n =n()) |> unlist() |> unname()
+osteoporosis.by.gender.M <- vd0 |> filter (osteoporosis ==1) |>
+  filter(genderF ==0) |> summarise(n =n()) |> unlist() |> unname()
+
 ```
 
-Al Zarooni A.A.R i inni badali wpływ różnych czynników na ryzyka na
-wystąpienie osteoporozy (Risk factors for vitamin D deficiency
+Al Zarooni A.A.R i inni badali wpływ różnych czynników,
+takich jak deficyt witaminy D, wiek oraz płeć,
+na ryzyko
+wystąpienia osteoporozy (Risk factors for vitamin D deficiency
 in Abu Dhabi Emirati population; https://doi.org/10.1371/journal.pone.0264064),
-takich jak deficyt witaminy D, wiek oraz płeć w grupie `r sample.size` osób.
+w grupie `r sample.size` osób, w tym `r sample.by.gender.K` 
+kobiet (`r osteoporosis.by.gender.K` przypadków osteoporozy)
+oraz `r sample.by.gender.M` mężczyzn (`r osteoporosis.by.gender.M` przypadków osteoporozy).
 
-Zacznijmy od modelu zerowego tj. takiego w którym ryzyko/prawdopodobieństwo/szansa
-wystąpienia osteoporozy jest takie same bez względu na wielkości innych zmiennych.
-Odpowiada to następującemu równaniu:
-
-$$\ln(o) = b_0$$
-
-W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
-oraz prawdopodobieństwo.
 
 ```{r, out.width="75%"}
 ## Najpierw Model zerowy
@@ -1714,12 +1749,26 @@ prob0 <- exp(logit)/(1+exp(logit))
 ## About 6.6%
 ## Dodanie kolumny zamiast nazw wierszy
 gml.0.coef.df <- tibble::rownames_to_column(gml.0.coef, "Parametr")
-kable(gml.0.coef.df, row.names = F,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p'), booktabs = TRUE )
+##kable(gml.0.coef.df, row.names = F,
+#      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p'), booktabs = TRUE )
 ```
 
-Można obliczyć że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
-wyniosło `r prob0`. Krzywa ROC dla modelu zerowego wygląda następująco:
+Zacznijmy od modelu zerowego, tj. takiego, w którym szansa
+wystąpienia osteoporozy jest takie sama bez względu na wielkości innych zmiennych.
+Odpowiada to następującemu równaniu:
+
+$$\ln(o) = `r round(intercept, 5)`0$$
+
+Można obliczyć, że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
+wyniosło `r prob0`. Zatem teoretyczna liczba przypadków osteoporozy 
+wyniesie     
+`r prob0` $\cdot$ `r sample.by.gender.K` = 
+`r round(prob0 * sample.by.gender.K, 2)` (kobiety) oraz
+`r prob0` $\cdot$ `r sample.by.gender.M` = 
+`r round(prob0 * sample.by.gender.M, 2)` (mężczyźni). Dla przypomnienia empiryczne
+wartości były równe odpowiednio `r osteoporosis.by.gender.K` oraz `r osteoporosis.by.gender.M`.
+
+Krzywa ROC dla modelu zerowego wygląda następująco:
 
 ```{r, message=F, out.width="75%"}
 pred.0 <- predict(glm.0, type = "response")
@@ -1739,17 +1788,19 @@ Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
 z bardziej skomplikowanymi modelami.
 
 Takim bardziej skomplikowanym modelem będzie przykładowo 
-zależność pomiędzy wystąpieniem osteoporozy a płcią, którą
+zależność pomiędzy wystąpieniem osteoporozy a płcią, który
 można opisać następującym równaniem regresji:
 
-$$\ln(o) = b_0 + b_1 \textrm{kobieta}$$
+$$\ln(o) = b_0 + b_1 \cdot \textrm{kobieta}$$
 
 Zmienna `kobieta` przyjmuje wartość 1 jeżeli osoba była kobietą
 oraz zero w przypadku jeżeli była mężczyzną.
-Dla przypomnienia $o$ jest szansą wystąpienia osteoporozy.
 
-W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
-oraz prawdopodobieństwo.
+
+W tabeli zestawiono wartości parametrów oszacowanego modelu (`Ocena`), 
+oceny błędu standardowego parametrów (`SE`),
+ilorazu szans (`OR`), przedziału ufności parametrów 
+dla ilorazu szans (CI95) oraz prawdopodobieństwo służące do oceny istotności parametru (`p`).
 
 ```{r, message=F, out.width="75%"}
 ## Model1
@@ -1769,10 +1820,10 @@ gml.1.coef.df <- tibble::rownames_to_column(gml.1.coef, "Parametr") %>%
   mutate(or=glm.1.or,  ci=glm_ci_txt)
 
 kable(gml.1.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI95'), booktabs = TRUE )
 ```
 
-Znając wartości współczynników równania można obliczyć wartości $\ln(o)$.
+Szansa na wystąpienie osteoporozy jest 2,76 raza większa u kobiety niż u mężczyzny.
 
 ```{r, out.width="75%"}
 ## Prawdopodobieństwa
@@ -1789,17 +1840,35 @@ probM <- exp(logit_M)/(1+exp(logit_M))
 pchisq.glm.1 <- pchisq(glm.1$null.deviance -  glm.1$deviance, glm.1$df.null - glm.1$df.residual, lower.tail = F)
 ##anova(glm.0, glm.1, test = 'Chisq')
 ##pchisq.glm.1
+##
+mcfadden.1 <- PseudoR2(glm.1, which='McFadden')
+nagelkerke.1 <- PseudoR2(glm.1, which='Nagelkerke')
 ```
 
-Dewiancja modelu jest istotnie mniejsza od modelu zerowego (wartość $p$ wynosi bowiem `r pchisq.glm.1`).
+Można obliczyć, że (teoretyczne) prawdopodobieństwo wystąpienia osteoporozy
+wyniosło `r round(probF, 4)` (kobieta) oraz `r round(probM,4)` (mężczyzna). 
+Zatem teoretyczna liczba przypadków osteoporozy 
+wyniesie `r round(probF * sample.by.gender.K, 2)` (kobiety) oraz
+`r round(probM * sample.by.gender.M, 2)` (mężczyźni). Dla przypomnienia empiryczne
+wartości były równe odpowiednio `r osteoporosis.by.gender.K` 
+oraz `r osteoporosis.by.gender.M`.
 
-Zależność pomiędzy wystąpieniem osteoporozy a płcią, wiekiem oraz poziomem witaminy D
-można opisać następującym równaniem regresji:
+Dewiancja modelu (`r round(glm.1$deviance, 2)`) jest istotnie mniejsza 
+od modelu zerowego (`r round(glm.0$deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.1, 4)`.
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.1, 4)`
+a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.1, 4)`.
 
-$$\ln(o) = b_0 + b_1 \textrm{kobieta} + b_2 \textrm{wiek} + b_3 \textrm{poziomD}$$
 
-W tabeli zestawiono wartości parametrów oszacowanego modelu, ilorazy szans, przedziału ufności
-oraz prawdopodobieństwo.
+Zależność pomiędzy wystąpieniem osteoporozy a płcią (`genderF`), wiekiem (`age`) oraz poziomem witaminy D
+(`d`) można opisać następującym równaniem regresji:
+
+$$\ln(o) = b_0 + b_1 \cdot \textrm{genderF} + b_2 \cdot \textrm{age} + b_3 \cdot \textrm{d}$$
+
+W tabeli zestawiono wartości parametrów oszacowanego modelu, 
+oceny błędu standardowego parametrów,
+ilorazu szans, przedziału ufności parametrów 
+dla ilorazu szans oraz prawdopodobieństwo służące do oceny istotności parametru.
+
 
 ```{r, message=F, out.width="75%"}
 glm.2 = glm(osteoporosis ~ d + age + genderF, data = vd0, family = "binomial")
@@ -1818,10 +1887,23 @@ gml.2.coef.df <- tibble::rownames_to_column(gml.2.coef, "Parametr") %>%
          ci=glm_ci_txt)
 
 kable(gml.2.coef.df, row.names = F, digits=3,
-      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI'), booktabs = TRUE )
+      col.names = c('Parametr', 'Ocena', 'SE', 'z', 'p', 'OR', 'CI95'), booktabs = TRUE )
+###
+pchisq.glm.2 <- pchisq(glm.2$null.deviance -  glm.2$deviance, glm.2$df.null - glm.2$df.residual, lower.tail = F)
+mcfadden.2 <- PseudoR2(glm.2, which='McFadden')
+nagelkerke.2 <- PseudoR2(glm.2, which='Nagelkerke')
+
 ```
 
-Macierz pomyłek (*confussion matrix*)
+Dewiancja modelu (`r round(glm.2$deviance, 2)`) jest istotnie mniejsza 
+od modelu zerowego (`r round(glm.0$deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.2, 4)`.
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.2, 4)`
+a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.2, 4)`.
+
+Parametr `d` okazał się nieistotny statystycznie. Każdy rok (`age`) zwiększa szanse na osteoporozę
+o 17%, Kobiety mają ponad 11-krotnie większe szanse na osteoporozę niż mężczyźni.
+
+Macierz błędów dla $p_g = 0,5$:
 
 ```{r}
 ## Prawdopodobieństwa
@@ -1832,8 +1914,8 @@ y.pred.2 = ifelse(pred.2 < 0.5, 0, 1)
 
 table <- table(y.pred.2, vd0$osteoporosis)
 dimnames(table) <- list(
-  'Prognoza' = c("0", "1"),
-  'Osteoporoza' = c("0", "1")
+  'Prognoza' = c("nie", "tak"),
+  'Osteoporoza' = c("nie", "tak")
 )
 
 table
@@ -1842,15 +1924,12 @@ czulosc <- table[4] / (table[3]+table[4])
 swoistosc <- table[1] / (table[1]+table[2])
 ```
 
-Stąd: czułość `r czulosc`; swoistość `r swoistosc`.
+Stąd: czułość  `r table[4]` / (`r table[3]` + `r table[4]`) = `r czulosc`; 
+swoistość  `r table[1]` / (`r table[1]` + `r table[2]`) = `r swoistosc`.
+Model regresji logistycznej poprawnie klasyfikuje 
+`r round(czulosc * 100, 2)`% przypadków osteoporozy
+oraz `r round(swoistosc * 100, 2)`% przypadków braku osteoporozy.
 
-```{r}
-pchisq.glm.2 <- pchisq(glm.2$null.deviance -  glm.2$deviance, glm.2$df.null - glm.2$df.residual, lower.tail = F)
-##pchisq.glm.2
-##anova(glm.0, glm.2, test = 'Chisq')
-```
-Istotność modelu:
-dewiancja jest istotnie mniejsza od dewiancji modelu zerowego (p = `r pchisq.glm.2`).
 
 Krzywa ROC
 

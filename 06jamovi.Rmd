@@ -1,6 +1,6 @@
 # Praca z programem Jamovi {#intro2jamovi}
 
-Jak wspomniano w rozdziale 1, statystkę można uprawiać (tj. liczyć statystyki w drugim tego słowa znaczeniu :-))
+Jak wspomniano w rozdziale 1, statystkę można uprawiać (tj. liczyć statystyki w drugim tego słowa znaczeniu)
 wykorzystując różne programy. My zdecydowaliśmy się promować **Jamovi**, program 
 który naszym zdaniem jest najlepszym – z punktu widzenia większości
 studentów Nauk o Zdrowiu – połączeniem ceny, możliwości, prostoty i łatwości nauki.
@@ -13,10 +13,10 @@ a więc można go używać za darmo. Program jest dostępny ze strony
 https://www.jamovi.org/download.html. Klikamy, ściągamy, uruchamiamy instalator.
 Program jest dość duży, ale to nie jest aż tak wielki problem w czasach kiedy
 pojemności dysków w domowym komputerze zaczynają się od 250 gigabajtów. Jest
-też wersja Jamovi365, którą można się posługiwać w przeglądarce i wtedy nic nie trzeba
-instalować na swoim komputerze.
+też wersja Jamovi365, którą można się posługiwać w przeglądarce i wtedy nie trzeba
+instalować niczego na swoim komputerze.
 
-W naszym podręczniku pokazujemy jak uprawiać statystykę z tradycyjną wersją Jamovi.
+W podręczniku pokazujemy jak uprawiać statystykę z tradycyjną wersją Jamovi.
 Po zainstalowaniu uruchamiamy program, którego ekran startowy wygląda jak
 na rysunku \@ref(fig:mainscreen).
 
@@ -37,7 +37,7 @@ Menu akcji umożliwia wykonanie podstawowych akcji:
 * modyfikowanie raportu (pozycja **Edit**).
 
 
-Typowa sesja w **Jamovi**:
+Typowa sesja w Jamovi:
 
 1. Wczytanie danych z pliku o praktycznie dowolnym formacie. Jeżeli przykładowo 
    dane są wynikiem wykonania badania ankietowego z wykorzystaniem Formularzy Google to 
@@ -67,7 +67,7 @@ Typowa sesja w **Jamovi**:
    zapisać, żeby np. wysłać wykładowcy lub nie zaczynać od zera jeżeli będziemy musieli
    pracę kontynuować, bo wykładowca chciał żebyśmy coś poprawili.
    
-## Analiza ankiety: satysfakcja – wiedza o paleniu – zamiar odejścia
+## Analiza ankiety satysfakcja – wiedza o paleniu – zamiar odejścia
 
 Przykład nieco absurdalny, ale za to w zwartej postaci ilustrujący 
 praktyczne sposoby transformacji danych oraz
@@ -153,13 +153,13 @@ W naszym przykładzie należy wykonać:
 * Zmienne `s1`–`s3` oraz `zo1`–`zo3` są mierzone w skali porządkowej. Wartości tych zmiennych
   chcemy zmienić (przekodować) na rangi wg schematu: `Zdecydowanie się nie zgadzam` = 1;
   `Nie zgadzam się` = 2; `Trudno powiedzieć` = 3 itd.
-  Dodatkowo zauważmy że `s1` jest pytaniem odwróconym. 
+  Dodatkowo zauważmy, że `s1` jest pytaniem odwróconym. 
   W takich pytaniach należy przeliczyć rangi wg prostej formuły s1r = 6 - s1.
   
   * Miarą satysfakcji będzie suma rang s1r+s2+s3.
   * Miarą zamiaru odejścia będzie suma rang zo1+zo2+zo3.
   
-* Zmienna `plec` jest mierzona w skali nominalnej. Nie musimy jest przekodowywać
+* Zmienna `plec` jest mierzona w skali nominalnej. Nie musimy jest przekodowywać.
 
 * Wartość zmiennej `wiedza_nt_palenia` należy przekodować na liczbę wg schematu:
   za wybranie poprawnej odpowiedzi plus jeden punkt; za wybranie błędnej odpowiedzi 
@@ -172,7 +172,7 @@ Uwaga: Sposób mierzenia wiedzy nt. palenia jest niepotrzebnie pokręcony; zamia
 pytania z wielokrotnym wyborem spośród 8 możliwości/wariantów prościej jest zastosować
 8 pytań Tak/Nie po czym pytania poprawne zsumować 
 a pytania niepoprawne też dodać a wartość odjąć od sumy uzyskanej dla pytań poprawnych.
-My o tym wiemy, że tak jest bez sensu ale pokazujemy jako przykład przekodowania
+My o tym wiemy, że tak jest bez sensu, ale pokazujemy jako przykład przekodowania
 pytania z wielokrotnym wyborem.
 
 * Wartości zmiennych `wiek` oraz `staz` są liczbami. Mogą być analizowane tak-jak-są
@@ -182,13 +182,13 @@ pytania z wielokrotnym wyborem.
 
 Przekodowanie wykonujemy wybierając **Dane** w menu głównym. 
 
-1. Klikamy w nazwę zmienną, którą zamierzamy przekodować. Niech to będzie `s1`. 
+1. Klikamy w nazwę zmiennej, którą zamierzamy przekodować. Niech to będzie `s1`. 
    Kolumna po kliknięciu zmieni kolor. 
 
 2. Wybieramy ikonę `Przekształcenie`. Wypełniamy jak na rysunku \@ref(fig:przeksztalcenie0).
 
 Uwaga: Jamovi nie zmieni wartości zmiennej `s1` tylko utworzy nową zmienną
-z przekodowanymi wartościami. Zmienna na podstawie której jest tworzona
+z przekodowanymi wartościami. Zmienna, na podstawie której jest tworzona
 nowa zmienna nazywa się źródłową (`s1` w naszym przykładzie jest źródłowa).
 
 ```{r przeksztalcenie0, out.width=jamovi.screen, fig.cap = "Przekształcenie"}
@@ -233,7 +233,7 @@ IF (warunek, jeżeli-prawda, jeżeli-fałsz)
   bieżącą wartością w kolumnie źródłowej jest `Zdecydowanie się nie zgadzam`
   to wykonaj `jeżeli-prawda`; w wypadku przeciwnym wykonaj `jeżeli-fałsz`.
 
-`jeżeli-prawda` to zwykle wstawienie nowej wartości; 
+Część `jeżeli-prawda` to zwykle wstawienie nowej wartości; 
 `jeżeli-fałsz` to często następna formuła `IF` albo wstawienie innej
 nowej wartości. Przykładowo jeżeli 
 bieżącą wartością w kolumnie źródłowej jest `Zdecydowanie się nie zgadzam`
@@ -256,11 +256,11 @@ Naciskamy Enter i gotowe. Zostaje utworzona zmienna `s1p`
 zawierająca zamiast napisów rangi.
 
 Jeżeli uporaliśmy się z przekodowaniem `s1` 
-ustawiamy kursor na `s2` w okno danych. Naciskamy ikonę `Przekształcenie`.
+ustawiamy kursor na `s2` w oknie danych. Naciskamy ikonę `Przekształcenie`.
 Upewniamy się, że zmienną źródłową jest `s2`.
 Zmieniamy nazwę nowej zmiennej na `s2p`. Klikamy
 w pole wyboru przekształcenia. Poprzednio były tam tylko dwie pozycje
-`Brak` oraz `Utwórz nowe przekształcenie` teraz jest trzecia pozycja
+`Brak` oraz `Utwórz nowe przekształcenie`, teraz jest trzecia pozycja
 `Likert2R5` czyli przekształcenie, które zdefiniowaliśmy dla zmiennej `s1p`.
 Wybieramy `Likert2R5` bo zmienną `s2` chcemy przekodować dokładnie
 w ten sam sposób jak `s1`. Po wybraniu przekształcenia w oknie danych
@@ -373,7 +373,7 @@ zmiennej wyliczonej zatytułowane `ZMIENNA WYLICZONA`.
 
 Pierwszy pasek zawiera nazwę zmienną (domyślnie nazwę kolumny w konwencji arkusza kalkulacyjnego,
 w przykładzie
-jest to litera `H`) W polu definiowania zmiennej należy wpisać
+jest to litera `H`). W polu definiowania zmiennej należy wpisać
 stosowną formułę matematyczną. W przypadku odwracania pytania `s1p` będzie to:
 
 ```
@@ -447,7 +447,7 @@ Wybieramy `Analizy`→`Częstości`→`Próby niezależne`.
 
 Podobnie jak w przypadku analizy struktury jest wyświetlana
 lista zmiennych oraz okna i strzałki pozwalające
-wygodnie wybrać to co ma być analizowane. Jest to tak proste
+wygodnie wybrać to co ma być analizowane. Jest to tak proste,
 że wystarczy przyjrzeć się przykładowemu rysunkowi żeby
 wiedzieć jak postępować. Przykładową analizę zależności
 pomiędzy zmiennymi nominalnymi `zamiarOklasa` oraz `staz.klasa` przedstawia rysunek \@ref(fig:tabeleKrzyzowe).
@@ -466,9 +466,9 @@ Ustawiamy kursor na zmiennej grupującej
 (na przykład `plec`) i klikamy strzałkę dolną (por. rys. \@ref(fig:testyJamovi)).
 
 Zaznaczamy przyciski `Test Welcha`, `U Manna-Whitneya` (w sekcji **Testy**) oraz `Test normalności`
-(w sekcji **Weryfikacja założeń**)
+(w sekcji **Weryfikacja założeń**).
 
-Jeżeli zmienna nominalna więcej niż dwie wartości
+Jeżeli zmienna nominalna (grupująca) przyjmuje więcej niż dwie wartości
 wybieramy `Analizy`→​`ANOVA`→​`Jednoczynnikowa ANOVA`. Zmienne zależne
 i grupujące wybieramy w identyczny sposób jak w przypadku testu Welcha (por. rys. \@ref(fig:anovaJamovi)).
 Zaznaczamy przyciski `Nie zakładaj równości (Test Welcha)` (w sekcji **Wariancje**) oraz `Test normalności`

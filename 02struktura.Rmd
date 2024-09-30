@@ -2,8 +2,8 @@
 # Analiza jednej zmiennej {#analiza1z}
 
 **Statystyka opisowa** (opis statystyczny) to zbiór metod statystycznych służących do – surprise, surprise – opisu
-(w sensie przedstawienia sumarycznego) zbioru danych;
-w zależności od typu danych (przekrojowe, czasowe, przestrzenne) oraz sposobu pomiaru
+(w sensie przedstawienia sumarycznego) zbioru danych.
+W zależności od typu danych (przekrojowe, czasowe, przestrzenne) oraz sposobu pomiaru
 (dane nominalne, porządkowe liczbowe) należy używać różnych metod.
 
 W przypadku **danych przekrojowych** opis statystyczny nazywany jest **analizą struktury**
@@ -37,7 +37,7 @@ wartości zmiennej oraz odpowiadające tym wartościom liczebności (i/lub częs
 **Tablica dla zmiennej niemierzalnej (nominalnej albo porządkowej)**.
 
 ::: {.example}
-**Absolwenci studiów pielęgniarskich w ośmiu największych krajach UE**
+**Absolwenci studiów pielęgniarskich w wybranych krajach UE**
 
 ```{r, echo=F}
 members <- read.csv("eu_codes_members.csv", sep = ';', dec = ".",  header=T, na.string="NA" ) %>%
@@ -58,8 +58,7 @@ g1 <- g0 %>%
 t1 <- kable(g1, col.names = c('kraj', 'liczba absolwentów'), booktabs = TRUE)
 ```
 
-Tablica: Absolwenci studiów pielęgniarskich w ośmiu największych
-krajach UE w roku 2018
+Tablica: Absolwenci studiów pielęgniarskich w wybranych krajach UE w roku 2018
 
 ```{r, echo=F}
 t1
@@ -70,10 +69,10 @@ t1
 
 W przykładzie **jednostką statystyczną** jest absolwent studiów pielęgniarskich
 w roku 2018, 
-badaną **zmienną** zaś **kraj w którym ukończył studia**.
+badaną **zmienną** zaś **kraj, w którym ukończył studia**.
 
 
-**Tablica dla zmiennej mierzalnej liczbowej skokowej**
+**Tablica dla zmiennej mierzalnej liczbowej skokowej**.
 
 Przypomnijmy, że zmienna skokowa to taka zmienna, która
 może przyjąć skończoną (przeliczalną) liczbę wartości.
@@ -87,7 +86,7 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
 * przedziały wartości były jednakowej rozpiętości;
 
-* Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
+* na zasadzie wyjątku dopuszcza się, aby pierwszy i ostatni przedział
   były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**;
 
 * nie było przedziałów z zerową liczebnością;
@@ -107,7 +106,7 @@ n.s <- c(2790, 3420, 2618, 2246, 1813, 12887)
 osoby.L <- tibble(l.s, n.s) %>%
   mutate (p = n.s/12887 * 100 )
 
-t3 <- kable(osoby.L, col.names = c('liczba osób', 'liczba gospodarstw', '%'), booktabs = TRUE)
+t3 <- kable(osoby.L, digits=2, col.names = c('liczba osób', 'liczba gospodarstw', '%'), booktabs = TRUE)
 t3
 ```
 
@@ -131,7 +130,7 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
 * przedziały wartości były jednakowej rozpiętości;
 
-* Na zasadzie wyjątku dopuszcza się aby pierwszy i ostatni przedział
+* na zasadzie wyjątku dopuszcza się, aby pierwszy i ostatni przedział
   były **otwarte**, tj. nie miały dolnej (pierwszy) lub górnej (ostatni) **granicy**;
 
 * nie było przedziałów z zerową liczebnością;
@@ -140,9 +139,9 @@ Liczba przedziałów jest dobierana metodą prób i błędów, tak aby:
 
 * większość populacji nie znajdowała się w jednej czy dwóch przedziałach;
 
-* zwykle przyjmuje się za końce przedziałów **okrągłe liczby**
+* zwykle przyjmuje się za końce przedziałów **okrągłe liczby**,
   bo dziwnie 
-  by wyglądało gdyby koniec przedziału np. był równy 1,015 zamiast 1,0. 
+  by wyglądało gdyby koniec przedziału, np. był równy 1,015 zamiast 1,0. 
 
 
 ::: {.example}
@@ -223,7 +222,7 @@ nie ma danych (a często – z różnych powodów – nie ma, należy to zaznacz
 ## Wykresy
 
 **Wykresy statystyczne** są graficzną formą prezentacji materiału
-statystycznego, są mniej precyzyjne i szczegółowe niż tablice,
+statystycznego. Są mniej precyzyjne i szczegółowe niż tablice,
 natomiast bardziej sugestywne.
 
 Celem jest pokazanie rozkładu wartości zmiennej w populacji: jakie wartości występują
@@ -254,7 +253,7 @@ oraz zawierać źródło wskazujące na pochodzenie danych
 
 Na wykresie słupkowym długość każdego prostokąta (**słupka**) jest proporcjonalna
 do liczebności, którą reprezentuje. Wartości zmiennej (etykiety) są umieszczane pod lub obok słupka.
-Słupki można rysować pionowo lub poziomo (jako na powyższym przykładzie). Jeżeli etykiety są długie,
+Słupki można rysować pionowo lub poziomo (jak na poniższym przykładzie). Jeżeli etykiety są długie,
 to należy słupki rysować poziomo,
 bo wtedy można zmieścić etykiety bez potrzeby ich obracania o 90° czy skracania.
 
@@ -386,7 +385,7 @@ h2018
 Im więcej przedziałów (mniejsza rozpiętość przedziału),
 tym histogram jest bardziej szczegółowy
 co niekoniecznie
-jest pożądane bo zaciemnia ogólny obraz. Nie ma złotych recept na to ile powinno być przedziałów,
+jest pożądane, bo zaciemnia ogólny obraz. Nie ma złotych recept na to ile powinno być przedziałów,
 a ich liczba determinuje kształt oraz optyczną wielkość histogramu.
 Im mniej przedziałów tym histogram będzie optycznie większy.
 
@@ -402,14 +401,15 @@ zgromadzone dane potrafiła analizować, używając wykresów własnego projektu
 W szczególności słynny jest diagram Nightingale zwane także 
 różą Nightingale (rys. \@ref(fig:nightingale)), które wprawdzie
 (podobno) nie okazały się szczególnie użyteczny, no ale nie każdy nowy 
-pomysł jest od razu genialny:
+pomysł jest od razu genialny.
 
 ```{r nightingale, out.width="90%", fig.cap = "Róża Nightingale"}
 knitr::include_graphics("./FN_diagram.jpg")
 ```
 
 
-Jest to coś w rodzaju wykresu słupkowego tyle że zamiast słupków są wycinki koła. Wycinków jest dwanaście tyle ile miesięcy.
+Róża Nightingala to coś w rodzaju wykresu słupkowego, tyle że zamiast słupków są wycinki koła. 
+Wycinków jest dwanaście tyle ile miesięcy.
 Długość promienia a co za tym idzie wielkość pola wycinka zależy od wielkości zjawiska,
 który reprezentuje (przyczyna śmierci: rany/choroby/inne).
 
@@ -491,7 +491,7 @@ symbolem D lub Mo.
 
 **Kwartyle** (*quartile*): coś jak mediana tylko bardziej szczegółowo. Kwartyli jest trzy i dzielą
 one zbiorowość na 4 równe części, każda zawierająca 25% całości. Kwartyle oznaczne
-są symbolami $Q_1$, $Q_2$, $Q_3$, $Q_4$.
+są symbolami $Q_1$, $Q_2$, $Q_3$.
 
 Pierwszy kwartyl dzieli **uporządkowaną** zbiorowość w proporcji 25%–75%.
 Trzeci dzieli **uporządkowaną** zbiorowość w proporcji 75%–25%. 
@@ -508,7 +508,7 @@ Przykładowo wartość 99 centyla i mniejszą ma 99% jednostek w populacji.
 Średnia: `r round(mean2018, 2)`.
 Interpretacja: średnia wartość współczynnika dzietności wyniosła
 `r round(mean2018, 2)` dziecka.
-Mediana: `r median2018`. Interpretacja mediany: współczynnik dzietności 
+Mediana: `r median2018`. Interpretacja mediany: wartość współczynnika dzietności 
 w połowie krajów na świecie
 wynosiła `r median2018` dziecka i mniej.
 Dominanta: `r dominanta2018`. Interpretacja dominanty: najwięcej krajów wykazuje współczynnik dzietności 
@@ -516,14 +516,14 @@ równy `r dominanta2018`. Wartość cokolwiek przypadkowa, bowiem krajów wykazu
 współczynnik równy `r dominanta2018`, jest raptem `r dominanta2018N`.
 
 Uwaga: średnia dzietność na świecie **nie wynosi** `r round(mean2018, 2)` dziecka
-(bo po pierwsze uśredniamy kraje a nie kobiety a po drugie kraje różnią się liczbą ludności).
+(bo po pierwsze uśredniamy kraje a nie kobiety, a po drugie kraje różnią się liczbą ludności).
 Podobnie dzietność połowy kobiet na świecie wyniosła
 `r median2018` dziecka i mniej jest niepoprawną interpretacją mediany (z tych samych
 względów jak w przypadku średniej).
 
 :::
 
-**Generalna uwaga**: interpretacja średniej-średnich często jest nieoczywista i należy uważać.
+**Generalna uwaga**: interpretacja średniej-średnich często jest nieoczywista i należy uważać
 (a współczynnik dzietności jest średnią: średnia liczba dzieci urodzonych przez kobietę 
 w wieku rozrodczym. Jeżeli liczymy średnią dla 202 krajów, to mamy *średnią-średnich*).
 Inny przykład: odsetek ludności w wieku poprodukcyjnym wg powiatów (średnia z czegoś takiego
@@ -638,15 +638,15 @@ skewness2018WS_q <- ((q3.2018 - median2018) - (median2018  - q1.2018)) / (q3.201
 :::{.example}
 **Współczynnik dzietności (kontynuacja)**
 
-Współczynnik asymetrii $g$ wynosi `r round(skewness2018, 2)`; Współczynnik
+Współczynnik asymetrii $g$ wynosi `r round(skewness2018, 2)`. Współczynnik
 Pearsona wykorzystujący dominantę wynosi `r round(skewness2018WS_d, 2)`
 a wykorzystujący medianę `r round(skewness2018WS_m, 2)`.
-Wreszcie wartość współczynnika opartego o kwartle
+Wreszcie wartość współczynnika opartego o kwartyle
 wynosi `r round(skewness2018WS_q, 2)`. Wszystkie współczynniki wskazują
 prawostronną (dodatnią) asymetrię. Współczynniki oparte
 o dominantę i kwartle wskazują słabą asymetrię, a oparte o medianę
 oraz klasyczny umiarkowaną. Jest całkowicie normalne, że różne miary
-wykazują różne wartości asymetrii. 
+wykazują różne natężenie asymetrii. 
 
 :::
 
@@ -795,7 +795,7 @@ a współczynnika skośności Pearsona wykorzystującego medianę wynosi `r roun
 #| odchyl.st  | `r sd.b`     | `r sd.f`     |
 #| iqr        | `r iqr.b`    | `r iqr.f`    |
 #| g          | `r iqr.b`    | `r iqr.f`    |
-miara <- c('średnia', 'mediana', 'odchyl.st', 'iqr', 'skośność')
+miara <- c('średnia', 'mediana', 'odchyl.standard.', 'odchyl.ćwiartkowe', 'skośność')
 atak <- c(mean.b, median.b, sd.b, iqr.b, skewness.b)
 mlyn <- c(mean.f, median.f, sd.f, iqr.f, skewness.f)
 porownanie <- data.frame(miara, atak, mlyn)
@@ -805,7 +805,7 @@ t122
 
 Średnio zawodnik młyna ważył prawie 20 kg więcej od zawodnika ataku (w przypadku mediany
 jest to dokładnie 20 kg więcej). 
-Zmienność mierzona wielkością odchylenia standardowego oraz IQR jest w obu grupach podobna.
+Zmienność mierzona wielkością odchylenia standardowego oraz $Q_R$ jest w obu grupach podobna.
 Oba rozkłady są zbliżone do rozkładu symetrycznego.
 
 ```{r}
@@ -822,11 +822,11 @@ Pudełka na wykresie pudełkowym są rysowane według następujących zasad
 
 * lewy i prawy bok pudełka jest równy kwartylom;
 * linia pionowa w środku pudełka jest równa medianie;
-* linie poziome (zwane wąsami) mają długość równą $Q_1 - 1,5 \textrm{IQR}$ 
-  oraz $Q_3 + 1,5 \textrm{IQR}$
-  (dla przypomnienia: $Q_1$, $Q_3$ to kwartyle, zaś $\textrm{IQR}$ to rozstęp ćwiartkowy);
+* linie poziome (zwane wąsami) mają długość równą $Q_1 - 1,5 \cdot Q_R$ 
+  oraz $Q_3 + 1,5 \cdot Q_R$
+  (dla przypomnienia: $Q_1$, $Q_3$ to kwartyle, zaś $Q_R$ to rozstęp ćwiartkowy);
 * kropki przed oraz za wąsami to wartości zmiennej większe od
-  $Q_3 + 1,5 \textrm{IQR}$ lub mniejsze od $Q_1 - 1,5 \textrm{IQR}$.
+  $Q_3 + 1,5 \cdot Q_R$ lub mniejsze od $Q_1 - 1,5\cdot Q_R$.
 
 ```{r boxplot, out.width="99%", fig.cap = "Wykres pudełkowy"}
 knitr::include_graphics("./boxPlotExample.png")
@@ -846,7 +846,7 @@ rozkład posiada też wartości odstające, a górny nie.
 
 Zwróć uwagę na następującą sztuczkę. Wartości nietypowe nie są definiowane jako na przykład górne/dolne
 1% wszystkich wartości, bo wtedy **każdy rozkład** miałby wartości nietypowe,
-ale jako wartości mniejsze lub większe od $Q_{1,3} \pm 1,5 \cdot \mathrm{IQR}$.
+ale jako wartości mniejsze lub większe od $Q_{1,3} \pm 1,5 \cdot Q_R$.
 Wszystkie wartości rozkładów o umiarkowanej zmienności mieszczą się wewnątrz tak zdefiniowanego przedziału.
 
 Typowo wykres zawiera wiele pudełek, a każde pudełko wizualizuje jeden rozkład. Pudełka

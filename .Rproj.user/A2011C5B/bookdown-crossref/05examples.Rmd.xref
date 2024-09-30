@@ -9,7 +9,6 @@ fig:modelP Modele pomiaru czynnika ukrytego
 h2:wiedza-na-temat-szkodliwości-palenia-i-jej-uwarunkowania-wśród-studentów-psw Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW
 h3:cel Cel
 h3:metoda Metoda
-h3:zastosowane-metody-statystyczne Zastosowane metody statystyczne
 h3:metryczka-analiza-respondentów Metryczka (analiza respondentów)
 fig:rysunek51 Studenci wg wyniku testu na znajomość szkodliwości palenia
 fig:rysunek52 Studenci wg statusu palenia (%)
@@ -21,7 +20,6 @@ h3:wnioski Wnioski
 h2:depresja-i-jej-uwarunkowania-wśród-studentów-psw Depresja i jej uwarunkowania wśród studentów PSW
 h3:cel-1 Cel
 h3:metoda-1 Metoda
-h3:zastosowane-metody-statystyczne-1 Zastosowane metody statystyczne
 h3:metryczka Metryczka
 fig:rysunek56 Studenci wg wyniku testu Becka
 fig:rysunek57 Studenci wg stażu pracy (%)
@@ -35,8 +33,8 @@ h3:wnioski-1 Wnioski
 h2:satysfakcja-przywiązanie-i-zamiar-odejścia Satysfakcja, przywiązanie i zamiar odejścia
 h3:cel-2 Cel
 h3:metoda-2 Metoda
-h3:zastosowane-metody-statystyczne-2 Zastosowane metody statystyczne
 h3:wyniki Wyniki
+fig:ROC2 Krzywa ROC modelu zp-sp
 h3:wnioski-2 Wnioski
 h2:formularze-ankiet Formularze ankiet
 h3:skala-depresji-becka Skala Depresji Becka
