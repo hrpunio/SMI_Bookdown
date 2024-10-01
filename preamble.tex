@@ -1,3 +1,4 @@
+\usepackage{indentfirst}
 %%%
 %\usepackage[a4paper, total={6in, 8.6in}]{geometry}
 %% paperheight  =297mm,paperwidth =210mm,layoutheight =237mm,layoutwidth =167mm,
@@ -5,6 +6,8 @@
 \usepackage[a4paper, total={125mm, 200mm}]{geometry}
 %%
 \usepackage{polyglossia}  \setdefaultlanguage{polish}
+\setmainlanguage{polish}
+
 %%
 %% redefine headers
 \usepackage{fancyhdr}
@@ -23,6 +26,7 @@
 \pagestyle{fancy}
 %%
 \usepackage{booktabs}
+%\usepackage{indentfirst}
 \usepackage{fontspec}
 %\defaultfontfeatures{Mapping=TeX}
 \setmainfont[Ligatures=TeX]{Cambria}
@@ -115,6 +119,13 @@
      \let\@evenhead\@empty\let\@evenfoot\@oddfoot}
 %%
 %%
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+%%
+%% Add dot to section headers
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad}
+%%
+%%
 \makeatother
 %%%
 \AtEndDocument{%%
@@ -136,7 +147,7 @@
  \let\maketitle\relax
   %% Insert title page
  \begin{titlepage}
- \begingroup  
+ \begingroup
  %% reset
  \setkeys{Gin}{width=210mm,height=300mm}
 \vbox to \textheight{\vss%
@@ -217,4 +228,6 @@
 \setlength{\belowdisplayshortskip}{0pt plus 3pt}
 \parindent12pt
 \parskip0pt
+%%\SetLanguageKeys{}{indentfirst=true} %<- polyglossia
+%% Indent first paragraph
 %%% end-of-preamble

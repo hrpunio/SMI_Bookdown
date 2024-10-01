@@ -541,7 +541,7 @@ nie większą niż `r q3.2018` dziecka.
 
 ### Miary zmienności
 
-Miary zmienności określają zmienność (dyspersję albo rozproszenie) w zbiorowości.
+Miary zmienności mierzą zmienność (rozproszenie) w zbiorowości.
 
 Rodzaje miar zmienności:
 
