@@ -1546,8 +1546,8 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 
 5. Staż pracy
 □ Mniej niż rok
-□ 1-10 lat
-□ 10-15 lat
+□ 1--10 lat
+□ 10--15 lat
 □ Więcej niż 15 lat
 
 6. Miejsce pracy
@@ -1563,8 +1563,8 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 8. Od ilu lat palisz?
 □ Nie palę/Nie dotyczy
 □ Mniej niż rok
-□ 1-10 lat
-□ 11-15 lat
+□ 1--10 lat
+□ 11--15 lat
 □ Więcej niż 15 l
 
 9. Czy zdarza Ci się palić w miejscu pracy?
@@ -1584,7 +1584,7 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 □ Nie dotyczy
 
 12. Uważasz, że bardziej szkodliwe dla zdrowia jest:
-□ Palenie czynne - dym tytoniowy wdychany bezpośrednio przez palacza
+□ Palenie czynne -- dym tytoniowy wdychany bezpośrednio przez palacza
 □ Palenie bierne-boczny strumień dymu
 ☒ Każda forma kontaktu z dymem jest równie szkodliwa
 □ Nie wiem/Nie mam zdania
@@ -1606,7 +1606,7 @@ poniżej 15 roku życia?
 □ Nie dotyczy
 
 16. Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
-bezpośrednio przez palenie papierosów?(wielokrotnego)
+bezpośrednio przez palenie papierosów?
 ☒ Przewlekła obturacyjna choroba płuc
 ☒ Astma oskrzelowa
 ☒ Alergie wziewne
@@ -1618,7 +1618,7 @@ bezpośrednio przez palenie papierosów?(wielokrotnego)
 □ Nie wiem
 
 17. Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
-bezpośrednio przez palenie papierosów? (wielokrotnego)
+bezpośrednio przez palenie papierosów? 
 ☒ Nadciśnienie tętnicze krwi
 ☒ Zawał mięśnia sercowego
 ☒ Udar mózgu
@@ -1635,13 +1635,13 @@ bezpośrednio przez palenie papierosów? (wielokrotnego)
 □ Nie
 □ Nie wiem
 
-19. Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (wielokrotnego)
+19. Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? 
 ☒ Upośledza węch i smak
 ☒ Powoduje podrażnienie spojówek
 ☒ Obniża apetyt
 ☒ Niszczy struny głosowe
 ☒ Zmniejsza ostrość wzroku
-□ Palenie nie ma negatywnego wpływu na narządy zmysłu.
+□ Palenie nie ma negatywnego wpływu na narządy zmysłu
 
 20. Jak oceniasz swoją wiedzę na temat palenia papierosów i jego wpływu na zdrowie człowieka?
 □ Bardzo dobrze

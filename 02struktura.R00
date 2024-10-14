@@ -187,8 +187,8 @@ Tablica: Kraje świata według współczynnika dzietności (2018)
 d2018 <- d2018 %>% mutate(frateClass = cut(frate, breaks=seq(1, 8, by=.5)))
 ##levels(d2018$frateClass)
 
-d2018s <- d2018 %>% group_by(frateClass) %>% summarise(n=n()) |>
-  mutate(frateClass = sub(',', '–', frateClass) )
+d2018s <- d2018 %>% group_by(frateClass) %>% summarise(n=n()) #|>
+  #mutate(frateClass = sub(',', '–', frateClass) )
 
 t2 <- kable(d2018s, col.names = c('Wsp. dzietności', 'liczba krajów'), booktabs = TRUE)
 t2
@@ -302,11 +302,10 @@ którą reprezentuje. Łącznie wszystkie wycinki tworzą pełne koło.
 ```{r, echo=F, out.width="85%"}
 pc2 <- g1 %>%
   mutate(pct = values/sum(values)*100)  %>%
-  #ggplot(aes(x="", y=pct, fill=member)) + # pct used here so slices add to 100
   ggplot(aes(x="", y=pct, fill=reorder(member, pct))) + # pct used here so slices add to 100
   geom_bar(stat="identity", width=1) +
   coord_polar("y", start=0) +
-  scale_fill_discrete(name = "Member") +
+  ##scale_fill_discrete(name = "Member") +
   geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
   ggtitle("Absolwenci studiów pielęgniarskich w wybranych krajach UE w roku 2018",
           subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
@@ -314,8 +313,6 @@ pc2 <- g1 %>%
   theme_void() +
   theme(legend.position = "right") +
   theme(plot.title = element_text(hjust = 0.5, size=12)) 
-  #labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
-pc2
 ```
 :::
 
@@ -332,20 +329,19 @@ bo brakuje rozróżnialnych kolorów, a wycinki koła są zbyt wąskie żeby cok
 
 ```{r, echo=F, out.width="85%"}
 pc21 <- g2 %>%
-  mutate(pct = values/sum(values)*100) |>
-  ggplot(aes(x="", y=pct, fill=reorder(member, pct) )) +
-  ##ggplot(aes(x="", y=pct, fill=member)) + # pct used here so slices add to 100
+  mutate(pct = values/sum(values)*100)  %>%
+  #ggplot(aes(x="", y=pct, fill=reorder(member, pct) )) + # pct used here so slices add to 100
+  ggplot(aes(x="", y=pct, fill=member )) + # pct used here so slices add to 100
   geom_bar(stat="identity", width=1) +
   coord_polar("y", start=0) +
   geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
+  ##scale_fill_discrete(name = "Member") +
   ##facet_wrap(~pie, ncol = 2) +
-  scale_fill_discrete(name = "Member") +
   theme_void() +
   theme(plot.title = element_text(hjust = 0.5, size=12)) +
   ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018",
           subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
   theme(legend.position = "right") 
-  #labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
 pc21
 ```
 
@@ -375,14 +371,13 @@ wariantów zmiennej są przedziały wartości.
 
 ```{r message=FALSE, echo=FALSE, out.width="85%"}
 h2018 <- ggplot(d2018, aes(x = frate)) + 
- geom_histogram(binwidth = 0.5, fill=default_cyan, color='cyan4') +
+ geom_histogram(binwidth = 0.25, fill=default_cyan) +
  ylab("liczba krajów") +
  xlab("współczynnik dzietności") +
- scale_y_continuous(breaks=seq(0, 60, by=10)) +
  ggtitle("Kraje świata według współczynnika dzietności (2018)") +
  theme(plot.title = element_text(hjust = 0.5, size=12) ) +
  labs(caption="źródło: https://ourworldindata.org/grapher/fertility-rate-complete-gapminder") +
- coord_cartesian(ylim = c(0, 55), xlim=c(0, 8))
+ coord_cartesian(ylim = c(0, 30), xlim=c(0, 8))
 h2018
 
 ```
@@ -394,7 +389,6 @@ co niekoniecznie
 jest pożądane, bo zaciemnia ogólny obraz. Nie ma złotych recept na to ile powinno być przedziałów,
 a ich liczba determinuje kształt oraz optyczną wielkość histogramu.
 Im mniej przedziałów tym histogram będzie optycznie większy.
-W powyższym przykładzie rozpiętość przedziału jest równa 0,5.
 
 ## Statystyczka Florence Nightingale {#fnightingale}
 
@@ -719,7 +713,6 @@ Histogram przy przyjęciu długości przedziału równej `r hw`kg
 ```{r, warning=FALSE, out.width="85%"}
 h1.b <- ggplot(b, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
-  scale_y_continuous(breaks=seq(0, 200, by=20)) +
   ylab("N") +
   xlab("kg") +
   geom_vline(xintercept = mean.b, colour="forestgreen", size=1) +
@@ -768,7 +761,6 @@ Histogram przy przyjęciu długości przedziału równej `r hw`kg
 ```{r, warning=FALSE, out.width="85%"}
 h1.f <- ggplot(f, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
-  scale_y_continuous(breaks=seq(0, 200, by=20)) +
   ylab("N") +
   xlab("kg") +
   geom_vline(xintercept = mean.f, colour="forestgreen", size=1) +
@@ -818,10 +810,6 @@ Zmienność mierzona wielkością odchylenia standardowego oraz $Q_R$ jest w obu
 Oba rozkłady są zbliżone do rozkładu symetrycznego.
 
 ```{r}
-## same scale
-h1.b <- h1.b + coord_cartesian(ylim = c(0, 200))
-h1.f <- h1.f + coord_cartesian(ylim = c(0, 200))
-
 ggarrange(h1.b, h1.f, ncol = 2, nrow = 1)
 ```
 :::

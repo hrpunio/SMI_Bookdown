@@ -63,7 +63,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\usepackage{indentfirst}
+\usepackage{indentfirst} %% umieszczony gdzie indziej nie działa :-(
 %%%
 %\usepackage[a4paper, total={6in, 8.6in}]{geometry}
 %% paperheight  =297mm,paperwidth =210mm,layoutheight =237mm,layoutwidth =167mm,
@@ -1042,27 +1042,27 @@ Tablica: Kraje świata według współczynnika dzietności (2018)
 \toprule
 Wsp. dzietności & liczba krajów\\
 \midrule
-(1,1,5] & 24\\
-(1,5,2] & 61\\
-(2,2,5] & 40\\
-(2,5,3] & 17\\
-(3,3,5] & 8\\
+(1–1,5] & 24\\
+(1–5,2] & 61\\
+(2–2,5] & 40\\
+(2–5,3] & 17\\
+(3–3,5] & 8\\
 \addlinespace
-(3,5,4] & 15\\
-(4,4,5] & 11\\
-(4,5,5] & 12\\
-(5,5,5] & 6\\
-(5,5,6] & 5\\
+(3–5,4] & 15\\
+(4–4,5] & 11\\
+(4–5,5] & 12\\
+(5–5,5] & 6\\
+(5–5,6] & 5\\
 \addlinespace
-(6,6,5] & 1\\
-(7,7,5] & 1\\
+(6–6,5] & 1\\
+(7–7,5] & 1\\
 \bottomrule
 \end{tabular}
 
 Źródło: \url{https://ourworldindata.org/grapher/fertility-rate-complete-gapminder}
 \end{example}
 
-Zapis \texttt{(1,1.5{]}} oznacza przedział od 1,0 do 1,5 przy czym dolny koniec nie należy
+Zapis \texttt{(1–1,5{]}} oznacza przedział od 1,0 do 1,5 przy czym dolny koniec nie należy
 do przedziału a górny 1,5 należy. Który koniec „wchodzi``, a który nie powinien być
 jasno oznaczony. Zwykle jest tak jak w przykładzie: górny „wchodzi``, dolny „nie wchodzi``.
 
@@ -1189,6 +1189,7 @@ co niekoniecznie
 jest pożądane, bo zaciemnia ogólny obraz. Nie ma złotych recept na to ile powinno być przedziałów,
 a ich liczba determinuje kształt oraz optyczną wielkość histogramu.
 Im mniej przedziałów tym histogram będzie optycznie większy.
+W powyższym przykładzie rozpiętość przedziału jest równa 0,5.
 
 \hypertarget{fnightingale}{%
 \section{Statystyczka Florence Nightingale}\label{fnightingale}}
@@ -1712,20 +1713,20 @@ Powtarzamy eksperyment \text{1000} razy
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    76,0    96,0   103,5   103,0   109,5   131,0
+##    77,5    97,0   103,0   102,5   108,5   131,0
 \end{verbatim}
 
-Średnia (średnich z próby) ma wartość \text{102,97} kilogramów
-a odchylenie standardowe \text{9,44} kilogramów.
+Średnia (średnich z próby) ma wartość \text{102,52} kilogramów
+a odchylenie standardowe \text{8,84} kilogramów.
 Wartość \(s/\sqrt{2}\) (odchylenie standardowe podzielone przez pierwiastek kwadratowy
 z liczebności próby) jest równa \text{9,14}. Zauważmy, że ta wartość
 jest zbliżona do wartości odchylenia standardowego uzyskanego
-w eksperymencie (\text{9,44} vs \text{9,14}).
+w eksperymencie (\text{8,84} vs \text{9,14}).
 
-Zauważmy też, że wartość najniższej średniej wyniosła \text{76} kilogramów zaś najwyższej \text{131} kilogramów.
+Zauważmy też, że wartość najniższej średniej wyniosła \text{77,5} kilogramów zaś najwyższej \text{131} kilogramów.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-o \text{26,97} kilogramów
-na minus lub \text{28,03} kilogramów na plus.
+o \text{25,02} kilogramów
+na minus lub \text{28,48} kilogramów na plus.
 
 \textbf{Szacujemy średnią na podstawie 10 zawodników pobranych losowo}.
 
@@ -1733,11 +1734,11 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    89,9    99,6   102,6   102,6   105,6   123,0
+##   91,22  100,10  103,10  102,99  105,70  116,90
 \end{verbatim}
 
-Średnia ma wartość \text{102,62} kilogramów, a odchylenie standardowe
-\text{4,22} kilogramów.
+Średnia ma wartość \text{102,99} kilogramów, a odchylenie standardowe
+\text{4,16} kilogramów.
 Wartość \(s/\sqrt{10}\) jest równa \text{4,09}.
 
 \textbf{Szacujemy średnią na podstawie 40 zawodników pobranych losowo}.
@@ -1747,15 +1748,15 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    96,5   101,5   102,9   102,9   104,3   109,4
+##   96,33  101,27  102,81  102,78  104,28  108,85
 \end{verbatim}
 
-Średnia jest równa \text{102,86} kilogramów, a odchylenie standardowe \text{2,06} kilogramów.
+Średnia jest równa \text{102,78} kilogramów, a odchylenie standardowe \text{2,11} kilogramów.
 Wartość \(s/\sqrt{40}\) jest równa \text{2,04}.
 
-Zauważmy też, że wartość najniższej średniej wyniosła \text{96,5} kilogramów zaś najwyższej \text{109,425} kilogramów.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o \text{6,36} kilogramów
-na minus lub \text{6,57} kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
+Zauważmy też, że wartość najniższej średniej wyniosła \text{96,325} kilogramów zaś najwyższej \text{108,85} kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o \text{6,46} kilogramów
+na minus lub \text{6,07} kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (por. rysunek \ref{fig:wagaSrednia}).
@@ -1835,17 +1836,17 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   18,50   39,50   47,00   46,61   54,00   74,00
+##   19,50   38,50   46,00   45,91   53,50   75,00
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,61} lat.
-Odchylenie standardowe wyniosło \text{10,23}.
+Średnia średnich z próby ma wartość \text{45,91} lat.
+Odchylenie standardowe wyniosło \text{10,71}.
 Wartość \(s/\sqrt{2}\) jest równa \text{10,33}.
 
-Wartość najniższej średniej wyniosła \text{18,5} lat zaś najwyższej \text{74} lat.
+Wartość najniższej średniej wyniosła \text{19,5} lat zaś najwyższej \text{75} lat.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-o \text{28,11} lat
-na minus lub \text{27,39} lat na plus.
+o \text{26,41} lat
+na minus lub \text{29,09} lat na plus.
 
 \textbf{Szacujemy średnią na podstawie 10 kandydatów pobranych losowo}.
 
@@ -1853,11 +1854,11 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   30,80   43,10   46,30   46,28   49,40   61,10
+##    32,5    43,1    46,3    46,3    49,3    60,6
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,28} lat.
-Odchylenie standardowe wyniosło \text{4,68}.
+Średnia średnich z próby ma wartość \text{46,3} lat.
+Odchylenie standardowe wyniosło \text{4,62}.
 Wartość \(s/\sqrt{10}\) jest równa \text{4,62}.
 
 \textbf{Szacujemy średnią na podstawie 40 kandydatów pobranych losowo}
@@ -1867,11 +1868,11 @@ Powtarzamy eksperyment \text{1000} razy.
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   39,17   44,75   46,16   46,20   47,62   53,50
+##   37,92   44,62   46,15   46,15   47,64   53,92
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,2} lat.
-Odchylenie standardowe wyniosło \text{2,21}.
+Średnia średnich z próby ma wartość \text{46,15} lat.
+Odchylenie standardowe wyniosło \text{2,3}.
 Wartość \(s/\sqrt{40}\) jest równa \text{2,31}.
 
 \textbf{Szacujemy średnią na podstawie 70 kandydatów pobranych losowo}.
@@ -1880,17 +1881,17 @@ Uwaga: 70 kandydatów to około ok 1\% całości (\text{1000} powtórzeń).
 
 \begin{verbatim}
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   41,11   45,01   46,24   46,24   47,44   51,56
+##   40,94   45,03   46,29   46,29   47,52   51,71
 \end{verbatim}
 
-Średnia średnich z próby ma wartość \text{46,24} lat.
-Odchylenie standardowe wyniosło \text{1,76}
+Średnia średnich z próby ma wartość \text{46,29} lat.
+Odchylenie standardowe wyniosło \text{1,8}
 Wartość \(s/\sqrt{70}\) jest równa \text{1,75}.
 
-Wartość najniższej średniej wyniosła \text{41,11} lat zaś najwyższej \text{51,56} lat.
+Wartość najniższej średniej wyniosła \text{40,94} lat zaś najwyższej \text{51,71} lat.
 Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się
-już tylko o \text{5,13} lat
-na minus lub \text{5,32} lat na plus.
+już tylko o \text{5,35} lat
+na minus lub \text{5,43} lat na plus.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek \ref{fig:wiekSredni}).
 
@@ -5543,7 +5544,7 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
   □ Nie dotyczy
 \item
   Jakie według Ciebie choroby układu oddechowego mogą być spowodowane
-  bezpośrednio przez palenie papierosów?(wielokrotnego)
+  bezpośrednio przez palenie papierosów?
   ☒ Przewlekła obturacyjna choroba płuc
   ☒ Astma oskrzelowa
   ☒ Alergie wziewne
@@ -5555,7 +5556,7 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
   □ Nie wiem
 \item
   Jakie według Ciebie choroby kardiologiczne mogą być spowodowane
-  bezpośrednio przez palenie papierosów? (wielokrotnego)
+  bezpośrednio przez palenie papierosów?
   ☒ Nadciśnienie tętnicze krwi
   ☒ Zawał mięśnia sercowego
   ☒ Udar mózgu
@@ -5572,7 +5573,7 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
   □ Nie
   □ Nie wiem
 \item
-  Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów? (wielokrotnego)
+  Jaki według Ciebie ma wpływ palenie papierosów na narządy zmysłów?
   ☒ Upośledza węch i smak
   ☒ Powoduje podrażnienie spojówek
   ☒ Obniża apetyt

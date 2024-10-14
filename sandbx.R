@@ -1003,3 +1003,112 @@ ggroc(roc_obj,
 
 install.packages("sjSDM")
 librabry("sjSDM")
+
+###
+dA <- read.csv("fertility_rate_2003_2018.csv", sep = ';',
+               header=T, na.string="NA");
+d2018 <- dA %>% filter(yr==2018)
+s2018 <- summary(d2018$frate)
+mean2018 <- s2018[["Mean"]]
+median2018 <- s2018[["Median"]]
+srednia2018 <- s2018[["Mean"]]
+min2018 <- s2018[["Min."]]
+max2018 <- s2018[["Max."]]
+N2018 <-nrow(d2018)
+##
+dominanta2018 <- Mode(d2018$frate)
+dominanta2018Attr <- attributes(dominanta2018)
+dominanta2018N <- dominanta2018Attr$freq
+
+q1.2018 <- quantile(d2018$frate, probs = 0.25)
+q3.2018 <- quantile(d2018$frate, probs = 0.75)
+###
+d2018 <- d2018 %>% mutate(frateClass = cut(frate, breaks=seq(1, 8, by=.5)))
+##levels(d2018$frateClass)
+
+d2018s <- d2018 %>% group_by(frateClass) %>% summarise(n=n()) |>
+  mutate(frateClass = sub(',', '–', frateClass) )
+
+t2 <- kable(d2018s, col.names = c('Wsp. dzietności', 'liczba krajów'), booktabs = TRUE)
+t2
+d2018s$frateClass
+
+
+##
+members <- read.csv("eu_codes_members.csv", sep = ';', dec = ".",  header=T, na.string="NA" ) %>%
+  add_row(member = 'Other', geo = "OTHER")
+members.codes <- members$geo
+members.big <-c ('DE', 'ES', 'FR', 'IT', 'PL', 'RO', 'NL', 'BE')
+
+g0 <- read.csv("nursing_graduates_UE.csv", sep = ';', dec = ".",  header=T, na.string="NA" )
+
+g1 <- g0 %>%
+  filter (year == 2018 & isco08 == 'OC2221_3221' & unit == 'NR') %>%
+  filter (geo %in%  members.codes) %>%
+  filter (geo %in%  members.big) %>%
+  mutate ( geo =  as.factor(geo)) %>%
+  left_join(members, by='geo') %>%
+  select (member, values)
+pc2 <- g1 %>%
+  mutate(pct = values/sum(values)*100)  %>%
+  ggplot(aes(x="", y=pct, fill=reorder(member, pct))) + # pct used here so slices add to 100
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+  scale_fill_discrete(name = "Member") +
+  geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
+  ggtitle("Absolwenci studiów pielęgniarskich w wybranych krajach UE w roku 2018",
+          subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
+  ##facet_wrap(~pie, ncol = 2) +
+  theme_void() +
+  theme(legend.position = "right") +
+  theme(plot.title = element_text(hjust = 0.5, size=12))
+#labs(caption="Żródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
+pc2
+
+
+g2 <- g0 %>%
+  filter (year == 2018 & isco08 == 'OC2221_3221' & unit == 'NR') %>%
+  filter (geo %in%  members.codes) %>%
+  mutate(geo=recode(geo,
+                    'AT' = 'AT', 'BE' = 'BE', 'BG' = 'BG', 'CY' = 'OTHER', 'CZ' = 'CZ',
+                    'DE' = 'DE', 'DK' = 'DK', 'EE' = 'OTHER', 'EL' = 'EL',
+                    'ES' = 'ES', 'FI' = 'FI', 'FR' = 'FR', 'HR' = 'HR', 'HU' = 'HU',
+                    'IE'= 'IE', 'IT' = 'IT', 'LT' = 'OTHER', 'LU' = 'OTHER',
+                    'LV' = 'OTHER', 'MT' = 'OTHER', 'NL' = 'NL', 'PL' = 'PL', 'PT' = 'PT',
+                    'RO' = 'RO', 'SI' = 'SI', 'SK' = 'SK' )) %>%
+  group_by(geo) %>%
+  summarise(values=sum(values)) %>%
+  mutate ( geo =  as.factor(geo)) %>%
+  left_join(members, by='geo') %>%
+  select (member, values)
+
+pc21 <- g2 %>%
+  mutate(pct = values/sum(values)*100)  %>%
+  ggplot(aes(x="", y=pct, fill=reorder(member, pct) )) + # pct used here so slices add to 100
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+  geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
+  scale_fill_discrete(name = "Member") +
+  ##facet_wrap(~pie, ncol = 2) +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5, size=12)) +
+  ggtitle("Absolwenci studiów pielęgniarskich w krajach UE w roku 2018",
+          subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
+  theme(legend.position = "right")
+#labs(caption="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)")
+pc21
+
+pc2 <- g1 %>%
+  mutate(pct = values/sum(values)*100)  %>%
+  ggplot(aes(x="", y=pct, fill=reorder(member, pct))) + # pct used here so slices add to 100
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+  scale_fill_discrete(name = "Member") +
+  geom_text(aes(label = values), size=3, position = position_stack(vjust=0.5)) +
+  ggtitle("Absolwenci studiów pielęgniarskich w wybranych krajach UE w roku 2018",
+          subtitle="Źródło: Eurostat, tablica Health graduates (HLTH_RS_GRD)") +
+  ##facet_wrap(~pie, ncol = 2) +
+  theme_void() +
+  theme(legend.position = "right") +
+  theme(plot.title = element_text(hjust = 0.5, size=12))
+pc2
