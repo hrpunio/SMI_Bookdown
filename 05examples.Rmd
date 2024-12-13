@@ -1,24 +1,23 @@
 # Przykłady badań ankietowych {#surveyexamples}
 
-Uwaga: ankieta nie jest kolejną metodą statystyczną tylko techniką zbierania danych.
+Uwaga: ankieta nie jest kolejną metodą statystyczną, lecz techniką zbierania danych.
 Wszystkie metody już zostały przedstawione i żadnej nowej nie będzie.
 
 ## Jak zacząć badanie?
 
-Każde badanie, w tym ankietowe.
-
-Należy zastanowić się nad trzema sprawami: 
+Przed rozpoczęciem każdego badania, w tym ankietowego,
+należy zastanowić się nad trzema sprawami: 
 
 1. Co chcemy ustalić? 
 
-2. Jakie dane są nam potrzebne, żeby ustalić to co chcemy ustalić?
+2. Jakie dane są nam potrzebne, żeby ustalić, to co planujemy?
 
 3. Jak te dane zebrać (czyli co i w jaki sposób zmierzyć)?
 
 
 **Co chcemy ustalić?**
 
-Najlepiej jakąś zależność. Na przykład: stress a wypalenie zawodowe;
+Najlepiej jakąś zależność. Na przykład: stres a wypalenie zawodowe;
 satysfakcja zawodowa a retencja; determinanty satysfakcji zawodowej.
 
 Może być od biedy opis czegoś lub porównanie czegoś z czymś. Przykłady:
@@ -30,17 +29,17 @@ pracujących w różnych systemach opieki.
 	
 Jeżeli mamy zamiar badać nadwagę, to powinniśmy zmierzyć masę ciała.
 Jeżeli celem jest ustalenie zależności pomiędzy stresem a wypaleniem
-zawodowym to niewątpliwie powinniśmy zmierzyć stress i wypalenie.  Jak
-dotąd banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
+zawodowym to niewątpliwie powinniśmy zmierzyć stres i wypalenie.  Jak
+dotąd jest banalnie prosto. Problem zaczyna się w momencie odpowiedzi na
 pytanie **jak**?
 
-### Mierzenie twardych faktów vs mierzenia przekonań
+### Mierzenie twardych faktów vs mierzenie przekonań
 
 Możemy pytać w ankiecie o dwie rzeczy:
 
-* **fakty** (wiek, staż, zawód, tętno, przebyte choroby);
+* o **fakty** (wiek, staż, zawód, tętno, przebyte choroby);
 
-* **przekonania**, **wartości**, **postawy**; 
+* o **przekonania**, **wartości**, **postawy**; 
   **uczucia** (strach/radość) albo **zamiary**
   (*attitudes*/*emotions*/*intentions*).
 
@@ -52,7 +51,7 @@ za prawdziwą. **Wartości** to trwałe przekonania o tym,
 co jest ważne dla jednostki.  Stają się standardami, według których jednostki dokonują wyborów.
 **Postawy** to mentalne dyspozycje/nastawienie 
 przed podjęciem decyzji, które skutkują 
-określonym zachowaniem (zrobię to a nie tamto). Postawy 
+określonym zachowaniem (zrobię to, a nie tamto). Postawy 
 kształtowane są wartościami i przekonaniami.
 
 ### Pomiar przekonań, wartości i postaw
@@ -68,45 +67,47 @@ Pomiar przekonań jest dokonywany w specyficzny sposób.
 oczekiwaniami*; satysfakcja to
 **uczucie** *przyjemności, zadowolenia z czegoś*;
 samoskuteczność to 
-**przekonanie**, iż *jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele*).
-**Definicja operacyjna** określa jak zmierzyć pojęcie
+**przekonanie**, iż *jest się w stanie zrealizować określone działanie lub osiągnąć wyznaczone cele*).
+**Definicja operacyjna** określa, jak zmierzyć pojęcie
 (jak zmierzyć satysfakcję).
 Przejście od definicji konceptualnej do definicji operacyjnej
-bywa czasami mocno, hmm... arbitralne.
+bywa czasami mocno arbitralne.
 
 ### Skala Likerta
 
-Przykładowo chcemy się dowiedzieć czy i jak bardzo respondenci boją się COVID19. 
+Przykładowo chcemy się dowiedzieć, czy i jak bardzo respondenci boją się COVID-19. 
 
-W najprostszej wersji się po prostu pytamy: 
-**Czy pan/pani boi się COVID19?** i dajemy 
-respondentowi trzy możliwe  warianty odpowiedzi: Tak/Nie/Nie wiem. 
+W najprostszej wersji po prostu pytamy: 
+**Czy pan/pani boi się COVID-19?** i dajemy 
+respondentowi trzy możliwe  warianty odpowiedzi: tak/nie/nie wiem. 
 Taki pomiar jest mocno zgrubny: ktoś 
-się może bać panicznie a ktoś inny dużo mniej. 
+się może bać panicznie, a ktoś inny dużo mniej. 
 
 Subtelniejszy pomiar to wybór spośród pięciu wariantów: 
 bardzo się boję – boję się – trudno powiedzieć – nie boję się – zupełnie się nie boję.
 
-Taką skalę pomiarową określamy jak wiemy jako **porządkową**. Pomiary nie są liczbami,
+Taką skalę pomiarową określamy, jak wiemy, jako **porządkową**. Pomiary nie są liczbami,
 ale są uporządkowane.
 Rangi wartości są już liczbami (np. 1–5 w przykładowej skali pięciowariantowej), 
 można je np. uśredniać.
 Tego typu skala pomiarowa, typowa dla ankiet, nosi nazwę skali **Likerta**.
 Można sobie wymyślać skalę Likerta 7-punktową i więcej. 
 
-Naszym zdaniem powyżej 7 wariantów normalny respondent będzie miał problem 
-czy się bardziej-bardziej czy jednak bardziej-bardziej-bardziej boi.
+Naszym zdaniem powyżej 7 wariantów normalny respondent będzie miał problem
+z odpowiedzią,
+czy boi się bardziej-bardziej, czy jednak bardziej-bardziej-bardziej.
 
-### Skala pomiarowa czyli inwentarz albo kwestionariusz
+### Skala pomiarowa, czyli inwentarz albo kwestionariusz
 
 Ponieważ skala Likerta, mimo że lepsza od pytań tak/nie,  jest ciągle zgrubna, to 
 uważa się powszechnie, że lepszy wynik da pomiar 
 wielokrotny. 
-W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy co daje pomiar bardziej precyzyjny. Tutaj pytamy się parę razy o to samo, co
+W naukach podstawowych mierzymy (np. linijką) parę razy, a wynik uśredniamy,
+co daje pomiar bardziej precyzyjny. Tutaj pytamy parę razy o to samo, co
 ma dać podobny efekt (mniejszy średni błąd pomiaru). 
 Taka seria pytań nosi też nazwę skali albo **inwentarza**.
-Nie pytamy się zatem **Czy pan/pani boi się COVID19?** tylko zadajemy serię
-pytań o strach względem COVID19:
+Nie pytamy zatem **Czy pan/pani boi się COVID-19?**, tylko zadajemy serię
+pytań o strach względem COVID-19.
 
 ::: {.example}
 **Strach przed COVID19**
@@ -161,62 +162,61 @@ Odpowiadający ma do wyboru pięć wariantów odpowiedzi:
 
 **Ukryty czynnik** (strach) kształtuje wartości **indykatorów** (odpowiedzi na pytania)
 Taki sposób pomiaru **ukrytego czynnika** (*latent* w języku angielskim) określa się
-mianem refleksyjnego (co jest kalką od *reflexive*). Na rysunku \@ref(fig:modelP)
+mianem refleksyjnego (co jest kalką angielskiego słowa *reflexive*). Na rysunku \@ref(fig:modelP)
 kierunek strzałki obrazuje zależność (czynnik→indykator).
 
 ```{r modelP, out.width="90%", fig.cap = "Modele pomiaru czynnika ukrytego"}
 knitr::include_graphics("./pomiar_ses-cropped.png")
 ```
 
-Alternatywny sposób definiowania ukrytego (w pewnym sensie, raczej złożonego)
+Alternatywny sposób definiowania ukrytego (w pewnym sensie raczej złożonego)
 czynnika nosi nazwę **formatywnego** (albo indeksu): czynnik jest sumą indykatorów.
 Przykładem może być SES: 
 status socjo-ekonomiczny będący agregatem wykształcenia (W), dochodu (D) 
 oraz zawodu (Z).
 
 W założeniu indykatory są jednakowo dobrymi miarami
-czynnika refleksyjnego i jako takie powinny być mocno
+czynnika refleksyjnego i jako takie powinny być mocno
 skorelowane (mierzą to samo). 
 Natomiast składniki czynnika formatywnego nie powinny
 być skorelowane, raczej każdy powinien mierzyć **inny
-aspekt** czynnika. Ktoś może być profesorem 
-za przeproszeniem filozofii, nie mieć pracy i kiepskie
+aspekt** czynnika. Ktoś może być profesorem filozofii, nie mieć pracy i kiepskie
 dochody. 
-Tylko jeden z trzech aspektów podwyższa mu SES;
-albo świetnie zarabiająca prostytutka bez matury.
+Tylko jeden z trzech aspektów podwyższa mu SES. Inny przykład to
+świetnie zarabiająca prostytutka bez matury.
 
 Jeżeli w czynniku refleksyjnym pominiemy jeden z trzech indykatorów, to nic się
 nie stanie oprócz tego, że pomiar będzie mniej precyzyjny. Jeżeli
-w czynniku formatywnym pominiemy indykator, to popełniamy gruby błąd, bo pomijamy
+w czynniku formatywnym pominiemy indykator, to popełniamy bardzo duży błąd, bo pomijamy
 istotny składnik całości.
 
 Dobrą wiadomością jest, że najprostszy sposób pomiaru traktuje czynniki
 refleksyjne i formatywne jednakowo: wartością czynnika jest suma albo ewentualnie średnia 
-wartość indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta
-suma (albo średnia) wartości rang po prostu. W skali strachu przed COVID ten kto się najbardziej
+wartość indykatorów. Jeżeli indykatory są mierzone za pomocą skali Likerta, to
+wartością czynnika będzie suma (albo średnia) wartości rang. W skali strachu przed COVID-19 ten, kto się najbardziej
 boi powinien odpowiedzieć 7 razy **zdecydowanie tak**, co odpowiada 
 sumie 35 rang (jeżeli rangujemy od 1 do 5). 
-Ten który się wcale nie boi zaś będzie miał 7.
+Osoba, która wcale się nie boi, będzie zaś miała 7.
 
 Małym utrudnieniem mogą być **pytania odwrócone**. Jeżeli pytamy
-o strach przed COVID i w każdym pytaniu jak bardzo ktoś się boi, albo jak
+o strach przed COVID-19 i w każdym pytaniu, jak bardzo ktoś się boi, albo jak
 bardzo mu serce bije, ale w jednym z pytań zapytamy **nie boję się COVID**,
 to ranga 5 odpowiada uczuciu **braku strachu**. Rangi w pytaniach odwróconych
-należy przeliczyć (odwrócić): 1 zamienić na 5, 2 na 4 itd...
-Jeżeli używamy cudzych skal to w opisie powinno być wskazane, które
+należy przeliczyć (odwrócić): 1 zamienić na 5, 2 na 4 itd.
+Jeżeli używamy cudzych skal, to w opisie powinno być wskazane, które
 pytania są odwrócone.
 
 **Zalecany schemat postępowania jeżeli w ankiecie mają być mierzone
-przekonania** (strach, samoskuteczność, wypalenie zawodowe, stress czy satysfakcja):
+przekonania** (strach, samoskuteczność, wypalenie zawodowe, stres czy satysfakcja):
 
 * Dokształcamy się nieco z psychologii mimo wszystko;
 
-* Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił żeby
+* Robimy przegląd literatury i znajdujemy skalę, którą ktoś już wymyślił, żeby
   mierzyć to co chcemy zmierzyć, bo **raczej nie należy wymyślać własnych skal**;
 
 * Przeprowadzamy ankietę i wykonujemy analizę statystyczną.
 
-Banalnie proste co udowodnimy na przykładach.
+Banalnie proste, co udowodnimy na przykładach.
 
 ## Wiedza na temat szkodliwości palenia i jej uwarunkowania wśród studentów PSW
 
@@ -299,7 +299,8 @@ s1$staz <- factor (s0$staz, levels=c('0-4', '5-9', '10-14', '15 i więcej'))
 Celem jest ocena wielkości zjawiska palenia tytoniu oraz
 poziom wiedzy na temat szkodliwości palenia tytoniu
 wśród
-studentów PSW oraz zweryfikowanie wpływu wybranych czynników warunkujących ten nałóg.
+studentów studiów zaocznych Powiślańskiej Szkoły Wyższej (PSW)
+oraz zweryfikowanie wpływu wybranych czynników warunkujących ten nałóg.
 
 **Postawiono następujące hipotezy badawcze**:
 
@@ -337,7 +338,7 @@ odpowiedzi respondent otrzymywał 1 punkt.
 W przypadku pytań wielokrotnego wyboru (WW) za wskazanie prawidłowej odpowiedzi
 respondent otrzymywał 1 punkt, ale
 za wskazanie nieprawidłowej
-otrzymywał (minus) -1 punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
+otrzymywał minusowy punkt (aby nie opłacała się strategia zaznaczenia wszystkich odpowiedzi).
 Maksymalna możliwa do uzyskania liczba punktów wynosiła 19.
 
 Zastosowane metody statystyczne:
@@ -348,7 +349,7 @@ Zastosowane metody statystyczne:
   dobrą i bardzo dobrą wiedzą na temat palenia.
 
 * Hipotezy 3–5 zweryfikowano z wykorzystaniem tablic wielodzielnych/testu chi-kwadrat
-  oraz porównania średniego poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
+  oraz porównania poziomu depresji w grupach za pomocą testów Manna-Whitneya oraz
   Kruskala-Wallisa.
 
 
@@ -357,7 +358,7 @@ Zastosowane metody statystyczne:
 Rozkład ankietowanych wg wyniku testu 
 na znajomość szkodliwości palenia przedstawiono na rysunku \@ref(fig:rysunek51).
 
-```{r rysunek51, fig.cap="Studenci wg wyniku testu na znajomość szkodliwości palenia", echo=F, out.width=ex.out.width}
+```{r rysunek51, fig.cap="Studenci według wyniku testu na znajomość szkodliwości palenia", echo=F, out.width=ex.out.width}
 P.total.mean <- mean (s1$P.total)
 P.total.sd <- sd (s1$P.total)
 P.total.median <- median(s1$P.total)
@@ -381,7 +382,7 @@ Rozkład ankietowanych ze względu na status względem
 palenia przedstawiono na rysunku \@ref(fig:rysunek52).
 
 
-```{r rysunek52, fig.cap="Studenci wg statusu palenia (%)", out.width=ex.out.width}
+```{r rysunek52, fig.cap="Studenci według statusu palenia (%)", out.width=ex.out.width}
 s0.status <- s1 %>%
   select (status) %>%
   group_by(status)%>%
@@ -399,7 +400,7 @@ p.status
 
 Rozkład ankietowanych ze względu na staż pracy przedstawiono na rysunku \@ref(fig:rysunek54).
 
-```{r rysunek54, fig.cap="Studenci wg stażu pracy (%)", out.width=ex.out.width}
+```{r rysunek54, fig.cap="Studenci według stażu pracy (%)", out.width=ex.out.width}
 s0.staz <- s1 %>%
   select (staz) %>%
   group_by(staz)%>%
@@ -437,8 +438,8 @@ s1.praca.S.prop <- s1 %>%
 ```
 
 Zatem wśród respondentów było `r s1.plec.K.prop`% kobiet i `r 100 - s1.plec.K.prop`% mężczyzn.
-Pracę w szpitalu zadeklarowało `r s1.praca.S.prop`% respondentów a w przychodni 
-`r 100 - s1.praca.S.prop`% respondentów.
+Pracę w szpitalu zadeklarowało `r s1.praca.S.prop`% badanych, a w przychodni 
+-- `r 100 - s1.praca.S.prop`%.
 
 ### Weryfikacja hipotezy 1
 
@@ -447,9 +448,9 @@ pala_lub_palili <- s0 %>% filter (status != 'Nigdy nie paliłem/am') %>%
   summarize(n=n()) |> unlist() |> unname()
 ```
 
-Palą lub paliło `r pala_lub_palili` respondentów 
-(`r round(pala_lub_palili/ P.total.N *100, 2)` %).
-Żeby stwierdzić czy to jest dużo czy mało to na przykład można by porównać
+Pali lub paliło `r pala_lub_palili` respondentów 
+(`r round(pala_lub_palili/ P.total.N *100, 2)`%).
+Żeby stwierdzić, czy to jest dużo, czy mało, to na przykład można by porównać to
 z jakąś średnią ogólnopolską.
 
 ### Weryfikacja hipotezy 2
@@ -474,7 +475,7 @@ chi_test <- chisq.test(t.sex.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
+Nie jest, o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Czy palenie jest skorelowane ze stażem pracy?
 
@@ -492,7 +493,7 @@ chi_test <- chisq.test(t.staz.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
+Nie jest, czego dowodzi wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Czy palenie jest skorelowane z miejscem pracy?
 
@@ -510,7 +511,7 @@ chi_test <- chisq.test(t.praca.f)
 chi_test
 ```
 
-Nie jest o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
+Nie, wskazuje na to wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
 Czy wiedza na temat palenia jest skorelowana z płcią?
 
@@ -523,7 +524,7 @@ s0.pl <- s1 %>%
   summarise(m = mean(P.total), me=median(P.total), n=n())
 kable(s0.pl, col.names = c('płeć', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 ```
-Sprawdzamy czy rozkłady są normalne:
+Sprawdzamy, czy rozkłady są normalne:
 
 ```{r}
 sw.s1.table.plec <- s1 %>%
@@ -542,7 +543,7 @@ wilcoxp['p.value']
 Wartość p wynosi `r round(wilcoxp$p.value, 8)`, zatem
 hipotezę o braku zależności na poziomie 0,05 należy odrzucić.
 Istnieje zależność pomiędzy wiedzą na temat palenia a płcią. Kobiety
-wykazują się wyższą wiedzą na temat szkodliwości palenia od mężczyzn.
+wykazują się wyższą od mężczyzn wiedzą na temat szkodliwości palenia.
 
 Czy wiedza na temat palenia jest skorelowana z miejscem pracy?
 
@@ -550,17 +551,17 @@ Czy wiedza na temat palenia jest skorelowana z miejscem pracy?
 s0.mp <- s1 %>%
   group_by(miejsce.pracy) %>%
   summarise(m = mean(P.total), me=median(P.total), n=n())
-kable(s0.mp, col.names = c('m.pracy', 'średnia', 'mediana', 'n'), booktabs = TRUE)
+kable(s0.mp, col.names = c('m. pracy', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 ```
 
-Sprawdzamy czy rozkłady są normalne:
+Sprawdzamy, czy rozkłady są normalne:
 
 ```{r}
 sw.s1.table.praca <- s1 %>%
   group_by(miejsce.pracy) %>%
   shapiro_test(P.total) %>% select(miejsce.pracy, statistic, p)
 
-kable(sw.s1.table.praca, col.names = c('m.pracy', 'S-W', 'p'), booktabs = TRUE)
+kable(sw.s1.table.praca, col.names = c('m. pracy', 'S-W', 'p'), booktabs = TRUE)
 ```
 
 Nie są. Należy zastosować test U Manna-Whitneya:
@@ -571,7 +572,7 @@ wilcoxp$p.value
 ```
 
 Wartość p wynosi `r round(wilcoxp$p.value, 8)` – nie ma podstaw
-od odrzucenia hipotezy o identyczności rozkładów  na poziomie p = 0,05. Nie ma różnicy
+do odrzucenia hipotezy o identyczności rozkładów  na poziomie p = 0,05. Nie ma różnicy
 w poziomie wiedzy wśród pracowników przychodni i szpitali.
 
 Czy wiedza na temat palenia jest skorelowana ze stażem?
@@ -583,7 +584,7 @@ s1.st <- s1 %>%
 kable(s1.st, col.names = c('staż', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 ```
 
-Sprawdzamy czy rozkłady są normalne:
+Sprawdzamy, czy rozkłady są normalne:
 
 ```{r}
 sw.s1.table.staz <- s1 %>%
@@ -601,11 +602,11 @@ kw$p.value
 ```
 
 Wartość p wynosi `r round(kw$p.value, 8)` – nie ma podstaw
-od odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
+do odrzucenia hipotezy o identyczności rozkładów na poziomie p = 0,05. Nie ma
 różnicy w poziomie wiedzy wśród pracowników o różnym stażu pracy.
 
 Czy wiedza o szkodliwości palenia jest skorelowana
-ze statusem względem palenia? Chcemy zastosować tablicę wielodzielną/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej  mierzącej wiedzę nt szkodliwości palenia na nominalną, np tak:
+ze statusem względem palenia? Chcemy zastosować tablicę wielodzielną/test chi kwadrat. Musimy zatem zamienić skalę liczbową zmiennej  mierzącej wiedzę nt szkodliwości palenia na nominalną, np. tak:
 0–5 mała; 6–10 średnia; 11–15 duża, 16–19 ogromna:
 
 ```{r}
@@ -626,10 +627,10 @@ chi_test <- chisq.test(wiedza.status.t)
 chi_test
 ```
 
-Wiedza i status względem palenia nie są skorelowane
+Wiedza i status względem palenia nie są skorelowane,
 o czym świadczy wysoka wartość p (`r round(chi_test$p.value, 4)`).
 
-Można to samo zweryfikować stosując test Kruskala-Wallisa:
+Można to samo zweryfikować, stosując test Kruskala-Wallisa:
 
 ```{r}
 ## albo średnia wiedza w grupach wg statusu
@@ -649,22 +650,23 @@ Wynik jest identyczny (wysoka wartość p = `r round(kw$p.value, 4)`).
 
 * Ponad połowa studentów pali lub paliła.
 
-* Istnieje zależność pomiędzy wiedzą o szkodliwości palenia a płcią.
+* Istnieje zależność pomiędzy wiedzą o szkodliwości palenia a płcią.
 
-* Nie ma związku pomiędzy statusem względem palenia a płcią, miejscem pracy i stażem.
+* Nie ma związku pomiędzy statusem względem palenia a płcią, miejscem pracy i stażem.
 
-* Nie ma związku pomiędzy wiedzą o szkodliwości palenia a miejscem pracy i stażem.
+* Nie ma związku pomiędzy wiedzą o szkodliwości palenia a miejscem pracy i stażem.
 
-## Depresja i jej uwarunkowania wśród studentów PSW
+## Depresja i jej uwarunkowania wśród studentów Powiślańskiej Szkoły Wyższej
 
 ### Cel
 
-Celem jest ustalenie czy depresja jest istotnym problemem wśród
-studentów PSW oraz zweryfikowanie wybranych czynników warunkujących depresję.
+Celem jest ustalenie, czy depresja jest istotnym problemem wśród
+studentów studiów zaocznych Powiślańskiej Szkoły Wyższej (PSW)
+oraz zweryfikowanie wybranych czynników warunkujących depresję.
 
 ### Metoda
 
-Badanie ankietowe wśród studentów Ratownictwa Medycznego (RM) oraz Pielęgniarstwa (PO)
+Badanie ankietowe wśród studentów ratownictwa medycznego (RM) oraz pielęgniarstwa (PO)
 przeprowadzono w styczniu 2023.
 Ankieta zawierała test samooceny depresji Becka oraz pytania
 o rodzaj miejsca pracy, staż pracy i płeć.
@@ -672,7 +674,7 @@ o rodzaj miejsca pracy, staż pracy i płeć.
 Test samooceny depresji Becka składa się z 21 pytań. W każdym pytaniu
 możliwe są 4 warianty odpowiedzi, odpowiadające zwiększonej intensywności objawów depresji,
 którym w związku z tym przypisuje się wartości od zera do 3 punktów. Maksymalna liczba punktów
-w teście wynosi 63 a minimalna 0.
+w teście wynosi 63, a minimalna 0.
 
 Interpretacja wyników testu Becka: 0–19 brak/łagodna depresja;
 20–25 umiarkowana; 26–63 ciężka depresja.
@@ -854,13 +856,13 @@ s0.sd <- sd(s0$P, na.rm=TRUE)
 ```
 
 W badaniu wzięło udział `r s0.N` studentów. Otrzymano `r s0.N` poprawnie
-wypełnionych ankiet. Średnia wartość testu Becka wyniosła `r round(s0.mean, 3)` (odchylenie
+wypełnione ankiety. Średnia wartość testu Becka wyniosła `r round(s0.mean, 3)` (odchylenie
 standardowe `r round(s0.sd, 3)`).
 
-Rozkład ankietowanych wg wyniku testu Becka przedstawiono na rysunku \@ref(fig:rysunek56).
+Rozkład ankietowanych według wyniku testu Becka przedstawiono na rysunku \@ref(fig:rysunek56).
 
 
-```{r rysunek56, fig.cap="Studenci wg wyniku testu Becka", out.width=ex.out.width}
+```{r rysunek56, fig.cap="Studenci według wyniku testu Becka", out.width=ex.out.width}
 ex.p <- ggplot(s0, aes(x = P)) + 
   geom_histogram(binwidth = 2, fill='steelblue', color='navyblue') +
   ylab("liczba respondentów") +
@@ -872,7 +874,7 @@ ex.p
 
 Rozkład ankietowanych ze względu na staż przedstawiono na rysunku \@ref(fig:rysunek57).
 
-```{r rysunek57, fig.cap="Studenci wg stażu pracy (%)", out.width=ex.out.width}
+```{r rysunek57, fig.cap="Studenci według stażu pracy (%)", out.width=ex.out.width}
 ##
 s0.staz <- s0 %>%
   select (staz) %>%
@@ -894,9 +896,9 @@ p.3
 
 ### Weryfikacja hipotezy 1
 
-Rozkład studentów wg stanu psychicznego przedstawiono na wykresie \@ref(fig:rysunek58).
+Rozkład studentów według stanu psychicznego przedstawiono na wykresie \@ref(fig:rysunek58).
 
-```{r rysunek58, fig.cap="Studenci wg stanu psychicznego (%)", echo=F, out.width=ex.out.width.x}
+```{r rysunek58, fig.cap="Studenci według stanu psychicznego (%)", echo=F, out.width=ex.out.width.x}
 s0.dep <- s0 %>%
   select (Depresja) %>%
   group_by(Depresja)%>%
@@ -915,15 +917,15 @@ p.2 <- s0.dep %>%
 p.2
 ```
 
-Ciężką postać depresji wykazuje zaledwie 3% studentów. Należy odrzucić hipotezę
+Ciężką postać depresji wykazuje zaledwie 3% studentów. Należy odrzucić hipotezę,
 że depresja stanowi poważny problem wśród studentów RM/PO PSW.
 
 ### Weryfikacja hipotez 2–4
 
-Aby móc zastosować metody tablicy wielodzielnej i testu chi-kwadrat
+Aby móc zastosować metody tablicy wielodzielnej i testu chi-kwadrat,
 oryginalne wartości liczbowe depresji zamieniono
-na skalę porządkową: 0–19 brak/łagodna depresja (Brak);
-20–25 umiarkowana (Łagodna); 26–63 ciężka (Ciężka).
+na skalę porządkową: 0–19 brak/łagodna depresja (brak);
+20–25 umiarkowana (łagodna); 26–63 ciężka (ciężka).
 
 ### Depresja a płeć 
 
@@ -964,7 +966,7 @@ chi_test
 
 Nie stwierdzono zależności pomiędzy depresją a stażem pracy (p = `r round(chi_test$p.value, 4)`).
 
-Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej
+Jeżeli depresję mierzymy na (oryginalnej) skali liczbowej, to
 można zastosować test ANOVA lub Kruskala-Wallisa.
 
 ```{r}
@@ -974,7 +976,7 @@ s0.staz <- s0 %>%
 kable(s0.staz, col.names = c('staż', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 ```
 
-Sprawdzamy czy rozkłady są normalne:
+Sprawdzamy, czy rozkłady są normalne:
 
 ```{r}
 sw.s0.table.staz <- s0 %>%
@@ -1014,7 +1016,7 @@ Nie stwierdzono zależności pomiędzy depresją
 a miejscem pracy (p = `r round(chi_test$p.value, 4)`).
 
 
-Jeżeli depresję mierzymy na skali liczbowej można zastosować test Welcha lub test Manna-Whitneya.
+Jeżeli depresję mierzymy na skali liczbowej, to można zastosować test Welcha lub test Manna-Whitneya.
 
 ```{r, echo=F}
 ## Depresja ~ praca
@@ -1024,7 +1026,7 @@ s0.mp <- s0 %>%
 kable(s0.mp, col.names = c('m-pracy', 'średnia', 'mediana', 'n'), booktabs = TRUE)
 ```
 
-Sprawdzamy czy rozkłady są normalne:
+Sprawdzamy, czy rozkłady są normalne:
 
 ```{r}
 sw.s0.table.mp <- s0 %>%
@@ -1060,7 +1062,7 @@ konflikt personalny z przełożonym
 warunkują
 przywiązanie do miejsca
 pracy oraz zamiar zmiany miejsca pracy w środowisku
-pielęgniarek.
+pielęgniarek?
 
 **Postawiono następujące hipotezy badawcze**:
 
@@ -1076,7 +1078,7 @@ pielęgniarek.
 5. Praca na oddziale ratunkowym lub intensywnej terapii zwiększa
    zamiar zmiany miejsca pracy
 
-6. Zmianę miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia,
+6. Zmiana miejsca pracy zależy od satysfakcji z pracy, satysfakcji z wynagrodzenia,
    konfliktu personalnego,
    przywiązania do miejsca pracy,
    pracy na oddziale ratunkowym lub intensywnej terapii, 
@@ -1092,16 +1094,16 @@ sample.size <- nrow(d1)
 ## zzp sp ssp sw kpw kpp poA poN poT po plec staz kierunek zmiana roddzial staz.klasa
 ```
 
-Badanie ankietowe wśród studentek PSW przeprowadzono w 2023/2024 roku.
+Badanie ankietowe wśród studentek studiów zaocznych PSW przeprowadzono w 2023 i 2024 roku.
 Zamiar zmiany pracy (ZZP),
 przywiązanie do miejsca pracy (przywiązanie organizacyjne PO),
-satysfakcja z pracy (SP),
-satysfakcja z wynagrodzenia (SW),
+satysfakcja z pracy (SP),
+satysfakcja z wynagrodzenia (SW),
 konflikt personalny ze współpracownikami (KPW)
 oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
 stosownych skal pomiarowych. Ankietowani byli także pytani
-o staż oraz 
-czy pracują na oddziale ratunkowym/intensywnej terapii (`roddzial`).
+o staż oraz o to,
+czy pracują na oddziale ratunkowym/intensywnej terapii (zmienna `roddzial`).
 
 Zastosowane metody statystyczne:
 
@@ -1111,9 +1113,9 @@ Zastosowane metody statystyczne:
 
 ### Wyniki
 
-W badaniu wzięło udział `r sample.size` studentek.
+W badaniu wzięły udział `r sample.size` studentki.
 
-Pominiemy pozostałą część opisową wyników żeby się nie powtarzać i przejdziemy
+Pominiemy pozostałą część opisową wyników, żeby się nie powtarzać, i przejdziemy
 od razu do weryfikacji hipotez 1–6.
 
 Macierz korelacji dla zmiennych `zzp`, `sp`, `sw`, `kpw`, `kpp` oraz `po`:
@@ -1160,9 +1162,9 @@ kable(lm.1.coef.df, row.names = F, digits=3,
 ```
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. 
-Tylko dwie zmienne `sp` oraz `kpw` okazały się istotne.
+Tylko zmienne `sp` oraz `kpw` okazały się istotne.
 
-Stosując metodę regresji krokowej usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
+Stosując metodę regresji krokowej, usuwamy iteracyjnie (jedną na raz) wszystkie zmienne
 nieistotne. Kolejno należało wyeliminować `sw`, `kpp`, `po`, `staz` oraz `roddzial`.
 W modelu ostatecznym `zzp` jest objaśniana przez `sp` oraz `kpw`:
 
@@ -1202,17 +1204,18 @@ odejdzie <- e1 |> filter (zp == 1) |> summarise(n =n()) |> unlist() |> unname()
 nieodejdzie <- e1 |> filter (zp == 0) |> summarise(n =n()) |> unlist() |> unname()
 ```
 
-Żeby zademonstrować przykład wykorzystania regresji logistycznej przyjmijmy, że jak ktoś bardzo chce
-zmienić pracę to ją zmieni.
-Niech to **bardzo chce** będzie wtedy kiedy wartość `zzp` wynosi co najmniej 12.
+Żeby zademonstrować przykład wykorzystania regresji logistycznej, przyjmijmy,
+że jeśli ktoś bardzo chce
+zmienić pracę, to ją zmieni.
+Niech to **bardzo chce** będzie wtedy, kiedy wartość `zzp` wynosi co najmniej 12.
 Zmienną `zzp` należy w tym celu przekodować na zmienną dwuwartościową (nazwijmy ją `zp`), która 
-przyjmuje wartość 1 jeżeli `zzp` jest większe
-równe od 12 lub wartość 0 jeżeli `zzp` jest mniejsze od 12. 
+przyjmuje wartość 1, jeżeli `zzp` jest większe lub
+równe od 12 lub wartość 0, jeżeli `zzp` jest mniejsze od 12. 
 Model nie objaśnia teraz zależności pomiędzy zamiarem, ale prognozuje
 zmianę miejsca pracy (zmieni=1, nie zmieni=0).
 
 Respondentów, którzy
-odejdą jest `r odejdzie` (`r round(odejdzie/sample.size * 100, 2)`%).
+odejdą, jest `r odejdzie` (`r round(odejdzie/sample.size * 100, 2)`%).
 
 Zakładamy, że `zp`, podobnie jak w przypadku zamiaru,
 jest objaśniana przez `sp`, `sw`, `kpw`, `kpp`, `po`, `staz` oraz `roddzial`.
@@ -1244,15 +1247,15 @@ nagelkerke.1 <- PseudoR2(glm.1, which='Nagelkerke')
 
 Dewiancja modelu (`r round(glm.1$deviance, 2)`) jest istotnie mniejsza 
 od modelu zerowego (`r round(glm.1$null.deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.1, 4)`.
-Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.1, 4)`
-a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.1, 4)`.
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.1, 4)`,
+a pseudo-$R^2$ Nagelkerke -- `r round(nagelkerke.1, 4)`.
 
-Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej na poziomie
-istotności 0,05 tylko `sp` jest istotna (`roddzialtak` jest także istotny ale na poziomie 0,1).
+Wartości większości współczynników okazały się nieistotne. Mówiąc konkretniej: na poziomie
+istotności 0,05 tylko `sp` jest istotna (`roddzialtak` jest także istotny, ale na poziomie 0,1).
 
-Postępując podobnie jak w przypadku  „normalnej” regresji eliminujemy
+Postępując podobnie jak w przypadku  „normalnej” regresji, eliminujemy
 iteracyjnie wszystkie zmienne nieistotne ostatecznie dochodząc
-do modelu,  w którym odejście z pracy objaśnia tylko satysfakcja:
+do modelu,  w którym odejście z pracy objaśnia tylko satysfakcja:
 
 ```{r, message=F, warning=F}
 glm.2 <- glm(zp ~ sp , data = e1, family = "binomial")
@@ -1280,8 +1283,8 @@ nagelkerke.2 <- PseudoR2(glm.2, which='Nagelkerke')
 
 Dewiancja modelu (`r round(glm.2$deviance, 2)`) jest istotnie mniejsza 
 od modelu zerowego (`r round(glm.2$null.deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.2, 4)`.
-Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.2, 4)`
-a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.2, 4)`.
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.2, 4)`,
+a pseudo-$R^2$ Nagelkerke -- `r round(nagelkerke.2, 4)`.
 
 
 Macierz błędów dla $p_g = 0,5$:
@@ -1339,7 +1342,7 @@ ggroc(roc_obj,
 Pytanie 1
 
 0. Nie jestem smutny ani przygnębiony.
-1. Odczuwam często smutek, przygnębienie
+1. Odczuwam często smutek, przygnębienie.
 2. Przeżywam stale smutek, przygnębienie i nie mogę uwolnić się od tych przeżyć.
 3. Jestem stale tak smutny i nieszczęśliwy, że jest to nie do wytrzymania.
 
@@ -1395,9 +1398,9 @@ Pytanie 8
 Pytanie 9
 
 0. Nie myślę o odebraniu sobie życia.
-1. Myślę o samobójstwie – ale nie mógłbym tego dokonać.
+1. Myślę o samobójstwie, ale nie mógłbym tego dokonać.
 2. Pragnę odebrać sobie życie.
-3. Popełnię samobójstwo, jak będzie odpowiednia sposobność.
+3. Popełnię samobójstwo, gdy będzie odpowiednia sposobność.
 
 Pytanie 10
 
@@ -1494,14 +1497,14 @@ Zadowolenie z siebie (7),
 Czy czujesz się gorszy od innych? (8),
 Czy masz myśli samobójcze? (9),
 Często chce Ci się płakać? (10),
-Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11),
+Jesteś ostatnio bardziej nerwowy i rozdrażniony? (11),
 Czy zmieniło się coś w Twoim zainteresowaniu innymi ludźmi? (12),
 Czy ostatnio miewasz większe problemy z podejmowaniem różnych decyzji? (13),
 Czy uważasz, że wyglądasz gorzej i mniej atrakcyjnie niż kiedyś? (14),
-Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15),
+Czy masz większe trudności z wykonywaniem różnych prac i zadań? (15),
 Masz kłopoty ze snem? (16),
 Czy męczysz się bardziej niż zwykle? (17),
-Czy masz kłopoty z apetytem? (18),
+Czy masz kłopoty z apetytem? (18),
 W ciągu ostatniego miesiąca nie stosowałem diety, aby schudnąć,
 lecz straciłem na wadze (19),
 Czy ostatnio bardziej martwisz się swoim stanem zdrowia? (20),
@@ -1535,8 +1538,8 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 
 3. Pochodzenie
 □ wieś
-□ Miasto do 20 tys. mieszkańców
-□ Miasto powyżej 20 tyś mieszkańców
+□ Miasto do 20 tys. mieszkańców
+□ Miasto powyżej 20 tys. mieszkańców
 
 4. Wykształcenie
 □ Średnie medyczne
@@ -1553,7 +1556,7 @@ Poziom wiedzy personelu pielęgniarskiego na temat szkodliwości palenia tytoniu
 6. Miejsce pracy
 □ Oddział zabiegowy
 □ Oddział zachowawczy
-□ Przychodnia/poradnia
+□ Przychodnia lub poradnia
 
 7. Czy kiedykolwiek paliłeś/aś papierosy?
 □ Paliłem/łam
@@ -1657,7 +1660,7 @@ bezpośrednio przez palenie papierosów?
 
 (Prawidłowe odpowiedzi zaznaczono ☒)
 
-**Źródło**: Na podstawie ankiety z pracy Izabeli Marendowskiej
+**Źródło**: na podstawie ankiety z pracy Izabeli Marendowskiej
      *Ocena poziomu wiedzy pielęgniarek na
 temat szkodliwości palenia papierosów* (promotor: dr Marzena Barton);
 Kwidzyn 2022.
@@ -1715,34 +1718,34 @@ Kwidzyn 2022.
 20. Jak często w pracy kłócisz się z przełożonym?
 21. Jak często twój przełożony krzyczy na ciebie?
 22. Jak często twój przełożony jest niemiły w pracy?
-23. Jak często Twój przełożony robi ci nieprzyjemne rzeczy w pracy?
+23. Jak często twój przełożony robi ci nieprzyjemne rzeczy w pracy?
 
-**Przywiązanie do ogranizacji/PO** (`PO-1`–`PO-18`), składające się z następujących aspektów:
+**Przywiązanie do organizacji/PO** (`PO-1`–`PO-18`), składające się z następujących aspektów:
 przywiązanie afektywne (`PO-1`–`PO-6`), przywiązanie normatywne (`PO-7`–`PO-12`), 
 przywiązanie trwania (`PO-13`–`PO-18`).
 
 (Zdecydowanie się nie zgadzam/nie zgadzam się/raczej się nie zgadzam/
 trudno powiedzieć/raczej się zgadzam/zgadzam się/zdecydowanie się zgadzam.)
 
-24. Zakład pracy, w której pracuję ma dla mnie duże znaczenie osobiste. (PO-2)
+24. Zakład pracy, w którym pracuję, ma dla mnie duże znaczenie. (PO-2)
 25. Czułbym się winny, gdybym teraz odszedł z mojego zakładu pracy (PO-18)
-26 .Zbyt wiele straciłbym w moim życiu, decydując się teraz na odejście z mojego zakładu pracy (PO-9)
+26. Zbyt wiele straciłbym w moim życiu, decydując się teraz na odejście z mojego zakładu pracy (PO-9)
 27. Mogę powiedzieć, że czuję się w moim zakładzie pracy jak w rodzinie (PO-5)
-28. Gdybym dostał ofertę lepszej pracy, czułbym się nie w porządku odchodząc z mojego zakładu pracy (PO-14)
+28. Gdybym dostał ofertę lepszej pracy, czułbym się nie w porządku, odchodząc z mojego zakładu pracy (PO-14)
 29. Byłbym bardzo zadowolony gdybym do emerytury mógł pracować w moim zakładzie pracy (PO-11)
 30. Wiele zawdzięczam mojemu zakładowi pracy (PO-4)
 31. Jednym z głównych powodów, dla których wciąż pracuję 
-    w tym zakładzie pracy  jest wiara w znaczenie lojalności  
+    w tym zakładzie pracy, jest wiara w znaczenie lojalności  
     dająca mi poczucie moralnego obowiązku pozostania (PO-16)
 32. Czuje, że problemy mojego zakładu pracy są rzeczywiście moimi własnymi problemami (PO-6)
 33. Nie odszedłbym teraz z mojego zakładu pracy, ponieważ mam zobowiązania 
-    w stosunku do ludzi, którzy w niej pracują (PO-17)
+    w stosunku do ludzi, którzy w niej pracują (PO-17)
 34. Jedną z kilku negatywnych konsekwencji odejścia z mojego zakładu pracy 
     mógłby być brak dostępnych możliwości zatrudnienia (PO-10)
-35. Byłoby mi bardzo ciężko odejść teraz z mojego zakładu pracy, nawet gdybym chciał (PO-3)
+35. Byłoby mi bardzo ciężko odejść teraz z mojego zakładu pracy, nawet gdybym chciał (PO-3)
 36. Ten zakład pracy zasługuje na to, żebym był wobec niego w porządku (PO-15)
-37. Mam poczucie, że pozostanie w zakładzie pracy jest dla mnie koniecznością (PO-12)
-38. Sprawia mi przyjemność, kiedy mogę porozmawiać o moim  zakładzie pracy z ludźmi z zewnątrz (PO-1)
+37. Mam poczucie, że pozostanie w zakładzie pracy jest dla mnie koniecznością (PO-12)
+38. Sprawia mi przyjemność, kiedy mogę porozmawiać o moim  zakładzie pracy z ludźmi z zewnątrz (PO-1)
 39. Sądzę, że odchodząc z mojego zakładu  pracy, mam zbyt mało innych możliwości do wyboru (PO-8)
 40. Nawet, gdyby to było dla mnie korzystne, nie czułbym się w porządku odchodząc 
     teraz z mojego zakładu pracy (PO-13)
@@ -1770,7 +1773,7 @@ trudno powiedzieć/raczej się zgadzam/zgadzam się/zdecydowanie się zgadzam.)
 
 
 **Źródło:**
-Liu Y i inni, *Turnover intention and its associated factors among nurses:  a multi-center cross-sectional study*
+Liu Y i inni, *Turnover intention and its associated factors among nurses:  a multi-center cross-sectional study*
 (Zamiar zmiany pracy oraz czynniki z nim związane wśród pielęgniarek: badanie przekrojowe.)
 Front. Public Health 11:1141441 (2023)
 https://www.frontiersin.org/articles/10.3389/fpubh.2023.1141441/full

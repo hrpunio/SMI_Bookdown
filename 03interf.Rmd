@@ -3,8 +3,8 @@
 **Chcemy się dowiedzieć czegoś na temat populacji (całości)
 na podstawie próby (części tej całości).**
 
-Przykładowo chcemy ocenić ile wynosi średnia waga główki kapusty
-na 100 h polu. Można ściąć wszystkie i zważyć, ale można też ściąć
+Przykładowo chcemy ocenić, ile wynosi średnia waga główki kapusty
+na 100-hektarowym polu. Można ściąć wszystkie i zważyć, ale można też ściąć
 trochę (pobrać próbę się mówi uczenie) zważyć i poznać średnią
 na całym polu z dobrą dokładnością.
 
@@ -19,7 +19,7 @@ wN <- length(w)
 ```
 
 W turnieju o Puchar Świata w rugby w 2015 roku uczestniczyło
-`r wN` rugbystów. Znamy szczegółowe dane odnośnie wzrostu i wagi każdego
+`r wN` rugbystów. Znamy szczegółowe dane odnośnie do wagi każdego
 uczestnika turnieju. Obliczamy (prawdziwą) średnią, odchylenie standardowe 
 i współczynnik zmienności masy ciała:
 
@@ -38,8 +38,8 @@ max.err.sd <- sd(w, na.rm = T)
 ```
 
 Czyli średnio rugbysta na turnieju ważył 
-`r round(true.mean.w, 2)` kg (`Mean` na wydruku powyżej)
-a odchylenie standardowe (*s*) wyniosło `r round(max.err.sd, 2)` kg.
+`r round(true.mean.w, 2)` kg (`Mean` na wydruku powyżej),
+a odchylenie standardowe (*s*) wyniosło `r round(max.err.sd, 2)` kg.
 
 Rozkład, pokazany na rysunku \@ref(fig:rwcWeight), jest dwumodalny, bo w rugby są dwie grupy zawodników
 i wcale nie wszyscy ważą ponad 110 kilogramów.
@@ -53,7 +53,7 @@ q1
 ```
 
 
-**Szacujemy średnią na podstawie 2 zawodników pobranych losowo**.
+**Szacujemy średnią na podstawie dwóch zawodników pobranych losowo**.
 
 Powtarzamy eksperyment `r sample.size` razy 
 (dwóch bo dla jednego nie obliczymy wariancji).
@@ -66,15 +66,15 @@ mean.s02 <- mean(s02)
 sd.s02 <- sd(s02)
 ```
 
-Średnia (średnich z próby) ma wartość `r round(mean.s02, 2)` kilogramów
+Średnia (średnich z próby) ma wartość `r round(mean.s02, 2)` kilogramów,
 a odchylenie standardowe `r round(sd.s02, 2)` kilogramów.
 Wartość $s/\sqrt{2}$ (odchylenie standardowe podzielone przez pierwiastek kwadratowy 
 z liczebności próby) jest równa `r round(max.err.sd/sqrt(2), 2) `. Zauważmy, że ta wartość
 jest zbliżona do wartości odchylenia standardowego uzyskanego 
 w eksperymencie (`r round(sd.s02, 2)` vs `r round (max.err.sd/sqrt(2), 2) `).
 
-Zauważmy też, że wartość najniższej średniej wyniosła `r min(s02)` kilogramów zaś najwyższej `r max (s02)` kilogramów.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
+Zauważmy też, że wartość najniższej średniej wyniosła `r min(s02)` kilogramów, zaś najwyższej `r max (s02)` kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości, to mylimy się 
 o `r round(mean.s02 - min(s02), 2)` kilogramów
 na minus lub `r  round(max(s02) - mean.s02, 2)` kilogramów na plus.
 
@@ -112,8 +112,8 @@ sd.s40 <- sd(s40)
 Średnia jest równa `r round(mean.s40, 2)` kilogramów, a odchylenie standardowe `r round(sd.s40, 2)` kilogramów.
 Wartość $s/\sqrt{40}$ jest równa `r round(max.err.sd/sqrt(40), 2)`.
 
-Zauważmy też, że wartość najniższej średniej wyniosła `r min(s40)` kilogramów zaś najwyższej `r max (s40)` kilogramów.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się o `r round(mean.s40 - min(s40), 2)` kilogramów
+Zauważmy też, że wartość najniższej średniej wyniosła `r min(s40)` kilogramów, zaś najwyższej `r max (s40)` kilogramów.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości, to mylimy się o `r round(mean.s40 - min(s40), 2)` kilogramów
 na minus lub `r  round(max(s40) - mean.s40, 2)` kilogramów na plus. Niewątpliwie wynik znacznie lepszy niż dla próby
 dwuelementowej.
 
@@ -142,7 +142,7 @@ p1
 
 Wartość średnią wyznaczamy na podstawie jakiejś konkretnej **metody**.
 Wydaje się na podstawie powyższych eksperymentów, że z dobrym skutkiem
-możemy jako metodę wykorzystać **średnią-z-próby**.
+możemy jako metodę wykorzystać **średnią z próby**.
 
 W ogólności taką metodą, która formalnie jest funkcją elementów z próby, nazywa się
 w statystyce **estymatorem**. Warto to pojęcie zapamiętać. Wnioskujemy
@@ -151,14 +151,14 @@ o wartości nieznanego parametru w populacji posługując się estymatorem.
 Kontynuując wnioski z eksperymentu należy zauważyć, że
 wszystkie średnie-ze-średnich (bez względu na liczebność próby) są zbliżone do wartości
 prawdziwej (to się nazywa **nieobciążoność** estymatora);
-Mówiąc innymi słowy jeżeli będziemy oceniać wartość prawdziwej średniej na podstawie próby,
+Innymi słowy, jeżeli będziemy oceniać wartość prawdziwej średniej na podstawie próby,
 a naszą ocenę powtórzymy wielokrotnie,
-to średnia będzie zbliżona do wartości prawdziwej (a nie np. niższa czy wyższa)
+to średnia będzie zbliżona do wartości prawdziwej (a nie np. niższa czy wyższa).
 Ta cecha jest niezależna od wielkości próby.
 
-Jeżeli rośnie liczebność próby to zmienność wartości średniej-w-próbie maleje, co za tym
+Jeżeli rośnie liczebność próby, to zmienność wartości średniej-w-próbie maleje, co za tym
 idzie  prawdopodobieństwo, że wartość oceniona na podstawie
-średniej z próby będzie zbliżona do wartości szacowanego parametru rośnie (to się nazywa **zgodność**).
+średniej z próby będzie zbliżona do wartości szacowanego parametru, rośnie (to się nazywa **zgodność**).
 Co więcej, dobrym przybliżeniem zmienności średniej-w-próbie
 jest prosta formuła $s/\sqrt{n}$ gdzie $n$ jest liczebnością próby a $s$ jest odchyleniem
 standardowym w populacji z której pobrano próbę. 
@@ -186,7 +186,7 @@ wN <- length(w)
 
 W wyborach samorządowych w Polsce w roku 2018 o mandat radnego
 sejmików wojewódzkich ubiegało się `r wN` kandydatów. 
-Znamy szczegółowe dane odnośnie wieku każdego kandydata,
+Znamy szczegółowe dane odnośnie do wieku każdego kandydata,
 bo to zostało publicznie podane przez Państwową Komisję Wyborczą.
 Obliczamy (prawdziwą) średnią, odchylenie standardowe 
 i współczynnik zmienności wieku kandydatów:
@@ -200,10 +200,10 @@ max.err.sd <- sd(w)
 ##max.err.sd / true.mean.w * 100
 ```
 
-Czyli średnio kandydat miał `r round(true.mean.w, 2)` lat
+Średnio kandydat miał zatem `r round(true.mean.w, 2)` lat,
 a odchylenie standardowe wieku wyniosło `r round(max.err.sd, 2)` lat.
 
-Rozkład znowu jest dwumodalny z jakiś powodów (por. rysunek \@ref(fig:wiekKnR)).
+Rozkład znowu jest z jakichś powodów dwumodalny (por. rysunek \@ref(fig:wiekKnR)).
 
 ```{r wiekKnR, fig.cap='Rozkład wieku kandydatów na radnych'}
 q1 <- ggplot(r, aes(x=wiek)) +
@@ -214,7 +214,7 @@ q1
 ```
 
 
-**Szacujemy średnią na podstawie 2 kandydatów pobranych losowo**.
+**Szacujemy średnią na podstawie dwóch kandydatów pobranych losowo**.
 
 Powtarzamy eksperyment `r sample.size` razy.
 
@@ -231,8 +231,8 @@ mean.s02 <- mean(k02)
 Odchylenie standardowe wyniosło `r  round(sd02, 2)`.
 Wartość $s/\sqrt{2}$ jest równa `r round(max.err.sd/sqrt(2), 2) `.
 
-Wartość najniższej średniej wyniosła `r min(k02)` lat zaś najwyższej `r max (k02)` lat.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
+Wartość najniższej średniej wyniosła `r min(k02)` lat, zaś najwyższej `r max (k02)` lat.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości, to mylimy się 
 o `r round(mean.s02 - min(k02), 2)` lat
 na minus lub `r  round(max(k02) - mean.s02, 2)` lat na plus.
 
@@ -290,9 +290,9 @@ mean.s70 <- mean(k70)
 Odchylenie standardowe wyniosło `r  round(sd70, 2)`
 Wartość $s/\sqrt{70}$ jest równa `r round(max.err.sd/sqrt(70), 2)`.
 
-Wartość najniższej średniej wyniosła `r round(min(k70), 2)` lat zaś najwyższej `r round(max(k70), 2)` lat.
-Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości to mylimy się 
-już tylko o `r round(mean.s70 - min(k70), 2)` lat
+Wartość najniższej średniej wyniosła `r round(min(k70), 2)` lat, zaś najwyższej `r round(max(k70), 2)` lat.
+Gdybyśmy mieli pecha i wylosowali te skrajnie nieprawdziwe wartości, to mylimy się 
+już tylko o `r round(mean.s70 - min(k70), 2)` lat
 na minus lub `r  round(max(k70) - mean.s70, 2)` lat na plus.
 
 Podsumujmy eksperyment wykresem rozkładu wartości średnich (rysunek \@ref(fig:wiekSredni)).
@@ -322,13 +322,13 @@ otrzymujemy prawdziwą wartość średniej.
 
 Wnioski: 
 
-* Precyzja wnioskowania zwiększa się wraz z liczebnością próby;
+* Precyzja wnioskowania zwiększa się wraz z liczebnością próby.
 
 * Precyzja wnioskowania zwiększa się tym szybciej
-  im rozproszenie w populacji generalnej jest mniejsze;
+  im rozproszenie w populacji generalnej jest mniejsze.
 
 * Żeby z dużą dokładnością
-  wnioskować o średniej dla dużej populacji wcale nie trzeba pobierać 
+  wnioskować o średniej dla dużej populacji, wcale nie trzeba pobierać 
   dużej próby (w ostatnim przykładzie było to 1% całości).
 
 ## Rozkład normalny
@@ -337,13 +337,13 @@ Wnioski:
 przyporządkowanie kolejnym wartościom zmiennej odpowiadających im liczebności. 
 
 Załóżmy, że istnieje zapotrzebowanie społeczne na  wiedzę na temat wieku kandydatów
-na radnych. Możemy to jak widać łatwo liczyć, ale jednocześnie jest to kłopotliwe. 
-Należy do tego mieć zbiór ponad 7 tys liczb. 
+na radnych. Możemy to, jak widać, łatwo liczyć, ale jednocześnie jest to kłopotliwe. 
+Należy do tego mieć zbiór ponad 7 tys. liczb. 
 **Rozkład teoretyczny** to matematyczne uogólnienie **rozkładu empirycznego**.
 Jest to model matematyczny operujący pojęciem (ściśle sformalizowanym) **prawdopodobieństwa**
 (zamiast liczebności). **Rozkład teoretyczny** jest: 
 
-* zbliżony do empirycznego jeżeli chodzi o wyniki (jest przybliżeniem empirycznego);
+* zbliżony do empirycznego, jeżeli chodzi o wyniki (jest przybliżeniem empirycznego);
 
 * jest zdefiniowany za pomocą kilku liczb; nie ma potrzeby korzystania z liczebności.
 
@@ -351,7 +351,7 @@ Okazuje się, że istnieje jeden **rozkład  teoretyczny**, który z dobrą dok�
 opisuje rozkłady empiryczne będące wynikiem powyższej zabawy. 
 Ten rozkład (zwany **normalnym**)
 zależy tylko od dwóch parametrów: średniej i odchylenia standardowego, gdzie średnia będzie
-równa (prawdziwej) średniej w populacji a odchylenie standardowe 
+równa (prawdziwej) średniej w populacji, a odchylenie standardowe 
 równe odchyleniu standardowemu w populacji podzielonemu przez pierwiastek z wielkości próby.
 
 Przybliżenie za pomocą rozkładu normalnego średniego rozkładu wieku kandydatów na radnych
@@ -390,35 +390,35 @@ Gdybyśmy powtórzyli nasz
 eksperyment (generowania `r sample.size` losowych prób przypominam),
 to zapewne trochę by się różnił,  bo byśmy wylosowali inne wartości do prób. 
 Ta **teoretyczna abstrakcja** określana jest 
-**prawdopodobieństwem**. Rzucając monetą `r sample.size` razy spodziewamy
-się po `r sample.size/2` orłów i reszek, 
-co w modelu matematycznym będzie opisane jako:
+**prawdopodobieństwem**. Rzucając monetą `r sample.size` razy, spodziewamy
+się po `r sample.size/2` orłów i reszek, 
+co w modelu matematycznym będzie opisane jako:
 prawdopodobieństwo wyrzucenia orła wynosi 0,5. 
-Rzucanie monetą to bardzo prosty eksperyment; nasz z liczeniem średniej
-wieku jest bardziej skomplikowany więc miło jest się
-dowiedzieć,  że używając czerwonej krzywej można łatwo obliczyć jak bardzo
-prawdopodobne jest na przykład popełnienie błędu większego niż 10% średniej, albo
+Rzucanie monetą to bardzo prosty eksperyment; nasz z liczeniem średniej
+wieku jest bardziej skomplikowany, więc miło jest się
+dowiedzieć,  że używając czerwonej krzywej, można łatwo obliczyć, jak bardzo
+prawdopodobne jest np. popełnienie błędu większego niż 10% średniej albo
 większego niż 0,1 lat. Albo jak duża powinna być próba żeby ten
 błąd był nie większy niż 0,1 lat.
 
-Interpretacja wartości rozkładu empirycznego zwykle jest w kategoriach ryzyka/szansy czy
+Interpretacja wartości rozkładu empirycznego zwykle jest w kategoriach ryzyka, szansy czy
 prawdopodobieństwa. Przykładowo interesuje nas prawdopodobieństwo, że kandydat ma
 mniej niż 30 lat. 
 Takich kandydatów jest `r nrow( r %>% filter (wiek < 30))`
 a wszystkich kandydatów dla przypomnienia
 jest `r nrow(r)`. Iloraz tych wartości będzie interpretowany 
 jako ryzyko/szansa/prawdopodobieństwo
-(wynosi ono `r round(nrow( r %>% filter (wiek < 30)) / nrow(r) * 100, 2)`%).
+(wynosi ono `r round(nrow( r %>% filter (wiek < 30)) / nrow(r), 2)`%).
 
 Podobnie można obliczyć prawdopodobieństwo, że wiek kandydata będzie się
 zawierał w przedziale 50–60 lat.
 Ponieważ kandydatów w wieku 50–60 lat jest `r nrow( r %>% filter (wiek >= 50 & wiek <= 60))`,
 to szukane prawdopodobieństwo 
-jest równe: `r round(nrow( r %>% filter (wiek >= 50 & wiek <= 60)) / nrow(r) * 100, 2)`%).
+jest równe: `r round(nrow( r %>% filter (wiek >= 50 & wiek <= 60)) / nrow(r), 2)`%.
 
-Jeżeli zamiast rozkładu empirycznego będziemy używać rozkład normalnego, który jak widzimy
+Jeżeli zamiast rozkładu empirycznego będziemy używać rozkładu normalnego, który jak widzimy
 jest jego dobrym przybliżeniem, to nie musimy liczyć empirycznych liczebności. Wystarczy, że
-znamy średnią i odchylenie standardowe a potrafimy obliczyć każde prawdopodobieństwo dla
+znamy średnią i odchylenie standardowe, a potrafimy obliczyć każde prawdopodobieństwo dla
 każdego przedziału wartości zmiennej.
 
 W szczególności dla rozkładu normalnego prawdopodobieństwo przyjęcia wartości z przedziału
@@ -426,13 +426,13 @@ $m \pm s$ (średnia plus/minus odchylenie standardowe) wynosi około 0,68
 prawdopodobieństwo przyjęcia wartości z przedziału $m \pm 2 \times s$
 wynosi około 0,95 a przyjęcia wartości z przedziału $m \pm 3 \times s$ około 0,997.
 Czyli w przedziale $[-3s < m, m +3s]$ znajdują się praktycznie wszystkie wartości
-rozkładu. Albo innymi słowy przyjęcie wartości spoza przedziału średnia plus/minus trzykrotność
+rozkładu. Albo innymi słowy: przyjęcie wartości spoza przedziału średnia plus/minus trzykrotność
 odchylenia standardowego jest bardzo mało prawdopodobna.
 
 Za pomocą rozkładu normalnego można opisać rozkład wagi rugbystów, wieku posłów, wagę noworodków i miliony innych rozkładów.
 Uogólnieniem teoretycznym pojęcia **zmiennej statystycznej**, które do tej pory
-używaliśmy jest **zmienna losowa**, tj. zmienna, która przyjmuje wartości liczbowe
-z określonym prawdopodobieństwem np. określonym przez rozkład normalny.
+używaliśmy, jest **zmienna losowa**, tj. zmienna, która przyjmuje wartości liczbowe
+z określonym prawdopodobieństwem, np. określonym przez rozkład normalny.
 
 ## Odsetek kobiet wśród kandydatów na radnych
 
@@ -459,7 +459,7 @@ x420.mean <- mean(x420)
 ```
 
 Dane dotyczące kandydatów na radnych do sejmików wojewódzkich zawierają także płeć kandydata.
-Ktoś może być ciekaw
+Ktoś może być ciekaw,
 jaki był odsetek kobiet w tej grupie. Taki parametr nazywa się proporcją
 albo ryzykiem, a potocznie i niefachowo procentem. 
 Matematycznym modelem jest **zmienna dwuwartościowa**, która
@@ -469,8 +469,8 @@ empiryczną wartość tego prawdopodobieństwa jako liczbę kobiet do liczby
 wszystkich kandydatów. Wartość tego parametru wynosi `r round(p.k, 4)` (albo 
 `r round(p.k *100, 2)`%). 
 Potraktujmy to jako prawdziwą wartość prawdopodobieństwa (p), że
-kandydat jest kobietą i empirycznie sprawdźmy czy możemy szacować
-o prawdziwej wartości tego parametru 
+kandydat jest kobietą i empirycznie sprawdźmy, czy możemy szacować
+o prawdziwej wartości tego parametru,
 używając (jako estymatora żeby się przyzwyczajać do nowych terminów) proporcji z próby.
 Tradycyjnie powtarzamy eksperyment 1000 razy 
 dla trzech różnych wielkości próby. 
@@ -496,31 +496,31 @@ Wnioski:
 
 * Dla próby 20 elementowej rozkład nie przypomina rozkładu normalnego.
 
-* Dla prób 120 i 420 elementowej rozkład jest podobny do normalnego.
+* Dla próby 120- i 420-elementowej rozkład jest podobny do normalnego.
 
 * Zmienność estymatora maleje wraz ze wzrostem liczebności próby; 
-  każe nam to przypuszczać (i tak jest w istocie) że jest on zgodny.
+  każe nam to przypuszczać (i tak jest w istocie), że jest on zgodny.
 
 * W każdym przypadku średnia z 1000 eksperymentów jest zbliżona do wartości prawdziwej;
   każe nam to przypuszczać (i tak jest w istocie) że estymator jest nieobciążony.
  
-Rozkład normalny jest tak magiczny że nawet jeżeli zmienna, której parametr
-szacujemy nie ma rozkładu zbliżonego
-do normalnego (jak w przypadku zmiennej, która przyjmuje tylko dwie wartości)
+Rozkład normalny jest tak magiczny, że nawet jeżeli zmienna, której parametr
+szacujemy, nie ma rozkładu zbliżonego
+do normalnego (jak w przypadku zmiennej, która przyjmuje tylko dwie wartości),
 to i tak estymator tego parametru będzie normalny. Co najwyżej będziemy
-potrzebowali większej próby żeby „znormalniał” (jak w opisywanym przykładzie).
+potrzebowali większej próby, żeby „znormalniał” (jak w opisywanym przykładzie).
  
 
 ## Wnioskowanie statystyczne 
 
 Celem analizy danych z próby jest **uogólnienie** uzyskanych wyników na całą populację. To uogólnienie
 nazywa się wnioskowaniem (*interferance*). Przypominamy, że **wnioskujemy**
-o wartości parametru w populacji posługując się **estymatorem**. W przypadku
-wnioskowania o średniej estymatorem jest średnia-z-próby.
-Dobrze by było wiedzieć jak bardzo wiarygodna jest ta wartość (zwana oceną parametru) uzyskana
-na podstawie konkretnego estymatora, inaczej mówiąc jak dużo mogliśmy się pomylić.
+o wartości parametru w populacji, posługując się **estymatorem**. W przypadku
+wnioskowania o średniej estymatorem jest średnia z próby.
+Dobrze by było wiedzieć, jak bardzo wiarygodna jest ta wartość (zwana oceną parametru) uzyskana
+na podstawie konkretnego estymatora, inaczej mówiąc: jak bardzo mogliśmy się pomylić.
 
-Do oceny tej wiarygodności można użyć wariancji-średniej-z-próby, która nazywa się
+Do oceny tej wiarygodności można użyć wariancji średniej z próby, która nazywa się
 **wariancją błędu** (*error variance*).
 Jeżeli wariancja błędu jest duża, to średnia obliczona na podstawie próby
 może znacznie się różnić od prawdziwej średniej.
@@ -540,11 +540,11 @@ W ramach wnioskowania stosowane są trzy metody (podejścia):
 ### Estymacja punktowa
 
 Szacujemy średnią (albo inny parametr) i tę wartość uznajemy za wartość prawdziwą;
-dokładność szacunku jest nieokreślona. Inaczej mówiąc wartość **estymatora**
+dokładność szacunku jest nieokreślona. Inaczej mówiąc, wartość **estymatora**
 dla konkretnej próby przyjmujemy za ocenę parametru.
 
-Estymatorem punktowym średniej jest średnia z próby a estymatorem
-punktowym proporcji/ryzyka jest proporcja/ryzyko z próby.
+Estymatorem punktowym średniej jest średnia z próby, a estymatorem
+punktowym proporcji/ryzyka jest proporcja/ryzyko z próby.
 
 ### Estymacja przedziałowa
 
@@ -552,16 +552,14 @@ Nie można ustalić prawdopodobieństwa popełnienia
 błędu dla dokładnej wartości parametru (co wynika z właściwości matematycznych
 modelu), ale można dla dowolnego przedziału od–do. 
 
-Czyli nie można ustalić, że z prawdopodobieństwem 95%
-oszacujemy wartość średnią czegoś jako 5,000000,
-ale można z prawdopodobieństwem 95% oszacować
-**przedział**, w którym znajdzie się średnia (przykładowo, że będzie to przedział 4,9–5,1).
-
 Estymacja przedziałowa to oszacowanie przedziału wartości od–do,
 który z zadanym z góry prawdopodobieństwem zawiera prawdziwą wartość parametru.
 
-Z góry wyznaczone prawdopodobieństwo nazywa się
-**poziomem ufności** (określa jak często mamy się **NIE pomylić**).
+Z góry ustalone prawdopodobieństwo nazywa się **poziomem ufności**.
+Określenie „95% przedział ufności” oznacza, że 95 razy na 100 będzie on zawierał prawdziwą
+wartość parametru (a pięć razy na 100 nie będzie zawierał). Mówimy „95% przedział ufności”
+albo „na poziomie ufności równym 95%” przedział zawiera prawdziwą wartość parametru.
+
 
 ### Testowanie hipotez
 
@@ -569,10 +567,11 @@ Większość analiz statystycznych polega na porównaniu. W wyniku
 tego porównania otrzymujemy liczbę. Załóżmy, że mamy dwie próby dotyczące wieku
 kandydatów na radnych do sejmików wojewódzkich z roku 2018 (średnia 46,1) 
 oraz z roku 2014 (47,2). Różnica wynosi 1,1 lat i może być spowodowana błędem przypadkowym
-(tj. gdybyśmy wylosowali jeszcze raz dwie próby, to wynik byłby zupełnie odmienny np 46,9 vs 46,5)
+(tj. gdybyśmy wylosowali jeszcze raz dwie próby, to wynik byłby zupełnie odmienny, np. 46,9 vs 46,5)
 i/lub wynikać z tego, że faktycznie w roku 2014 kandydaci byli starsi. 
 
-Formalnie stawiamy **hipotezę**, że różnica średnich wynosi zero. Jest to tzw. **hipoteza zerowa**. Niezbędne jest także postawienie **hipotezy alternatywnej**,
+Formalnie stawiamy **hipotezę**, że różnica średnich wynosi zero.
+Jest to tzw. **hipoteza zerowa**. Niezbędne jest także postawienie **hipotezy alternatywnej**,
 którą może być proste zaprzeczenie zerowej.
 Zapisuje się to następująco ($m_{14}$/$m_{18}$ oznacza odpowiednio średnie w latach 2014/2018):
 
@@ -580,71 +579,70 @@ $H_0$: różnica średnich wieku wynosi zero ($m_{14} = m_{18}$)
 
 $H_1$: różnica średnich wieku jest różna od zera ($m_{14} \not= m_{18}$)
 
-Hipotezy sprawdzamy wykorzystując **test statystyczny** czyli zmienną losową,
+Hipotezy sprawdzamy wykorzystując **statystykę testu** czyli zmienną losową,
 której rozkład prawdopodobieństwa zależy (jest funkcją powiedziałby matematyk)
 od wartości testowanych parametrów (w tym przypadku $m_{14}$ oraz $m_{18}$).
-Tę zmienną losową nazywa się **statystyką testu**.
 
 Nie jest chyba wielkim zaskoczeniem, że **statystyką testu** w teście różnicy średnich jest
-różnica średnich w próbie (poprawnie mówiąc różnica uwzględniająca liczebność próby
+różnica średnich w próbie (poprawnie mówiąc: różnica uwzględniająca liczebność próby
 oraz zmienność obu populacji). Całkiem **zdroworozsądkowo** możemy przyjąć, że duże wartości
 **statystyki testu** świadczą na rzecz
 hipotezy alternatywnej, natomiast małe na rzecz hipotezy zerowej. 
 
 Duża różnica pomiędzy **hipotezą** a wynikiem z próby może wynikać z tego, że:
 
-1. Pechowo trafiła nam się nietypowa próba, który zdarza się rzadko (rozkład normalny).
+1. Pechowo trafiła nam się nietypowa próba, która zdarza się rzadko.
 
 2. Hipoteza jest fałszywa, średnie mają inną wartość niż zakładamy w hipotezie zerowej.
 
-Statystyk zawsze wybierze drugą wersję. Pozostaje tylko ustalić co to jest rzadko (dla statystyka)?
+Statystyk zawsze wybierze drugą wersję. Pozostaje tylko ustalić, co to jest rzadko (dla statystyka)?
 
-Rzadko, to z prawdopodobieństwem mniejszym niż z góry ustalone małe prawdopodobieństwo
-zwane **poziomem istotności**.  Określa ono jak często
-możemy się pomylić **odrzucając hipotezę zerową, która jest prawdziwa**.
+Rzadko, to z prawdopodobieństwem mniejszym niż z góry ustalone małe prawdopodobieństwo
+zwane **poziomem istotności**.  Określa ono, jak często
+możemy się pomylić, **odrzucając hipotezę zerową, która jest prawdziwa**.
 
-Teraz wystarczy obliczyć prawdopodobieństwo wystąpienia różnicy, którą otrzymaliśmy lub jeszcze większej
-i porównać je z poziomem istotności. Jeżeli to prawdopodobieństwo jest równe lub niższe od poziomu istotności
+Teraz wystarczy obliczyć prawdopodobieństwo wystąpienia różnicy, którą otrzymaliśmy, lub jeszcze większej
+i porównać je z poziomem istotności. Jeżeli to prawdopodobieństwo jest równe lub niższe od poziomu istotności,
 odrzucamy hipotezę zerową (różnica jest istotna statystycznie).
 
-Przyjmijmy przykładowo, że prawdopodobieństwo wystąpienia różnicy 1,1 lat (i większej) oszacowane
-na podstawie odpowiedniego modelu matematycznego (rozkład normalny) wynosi 0,3 
-co znaczy że coś takiego
+Przyjmijmy przykładowo, że prawdopodobieństwo wystąpienia różnicy 1,1 lat (i większej) oszacowane
+na podstawie odpowiedniego modelu matematycznego wynosi 0,3,
+co znaczy, że coś takiego
 zdarza się względnie często – trzy razy na 10 pobranych prób.
 
-Załóżmy z kolei że, ta różnica wyniosła 3,2 lata. Prawdopodobieństwo 
-wystąpienia takiej różnicy (i większej) wynosi 0,009 co znaczy że coś takiego
+Załóżmy z kolei, że ta różnica wyniosła 3,2 lata. Prawdopodobieństwo 
+wystąpienia takiej różnicy (i większej) wynosi 0,009, co znaczy, że coś takiego
 zdarza się względnie rzadko – 9 razy na tysiąc prób.
 
-Przyjmując, że możemy się mylić 5 razy na 100 w pierwszym przypadku statystyk powie,
+Przyjmując, że możemy się mylić 5 razy na 100 w pierwszym przypadku, statystyk powie,
 że nie ma podstaw do odrzucenia hipotezy $H_0$. 
 Różnica 1,1 lat wynika z przypadku. W drugim wypadku
-statystyk powie, że hipoteza jest fałszywa, bo zdarzyło się coś co nie powinno się zdarzyć.
+statystyk powie, że hipoteza jest fałszywa, bo zdarzyło się coś, co nie powinno się zdarzyć.
 
 Ale jest jeszcze drugi przypadek popełnienia błędu: 
 **przyjmujemy hipotezę zerową, która jest fałszywa**. W testach
 statystycznych nie określa się prawdopodobieństwa popełnienia tego błędu, a w związku z tym nie można
 **przyjąć hipotezy zerowej** (bo nie znamy ryzyka popełnienia błędu).
 
-W konsekwencji hipotezę zerową albo się odrzuca albo **nie ma podstaw do odrzucenia**.
+W konsekwencji hipotezę zerową albo się odrzuca, albo **nie ma podstaw do odrzucenia**.
 Wniosek cokolwiek niekonkluzywny, ale tak jest. 
 
-Dlatego też często „opłaca się” tak postawić hipotezę zerową aby ją następnie odrzucić,
+Dlatego też często „opłaca się” tak postawić hipotezę zerową, aby ją następnie odrzucić,
 bo taki rezultat jest bardziej konkretny.
 
 ### Testy nieparametryczne
 
 Można testować hipotezy na temat wartości parametrów, ale można też testować
 przypuszczenia o charakterze mniej konkretnym. Na przykład, że dwie zmienne
-są niezależne (co to znaczy wyjaśniono w następnym rozdziale), albo
-że dwa rozkłady są podobne do siebie (rozkłady nie średnie).
+są niezależne (co to znaczy, wyjaśniono w następnym rozdziale) albo
+że dwa rozkłady są podobne do siebie (rozkłady, nie średnie).
 Takie hipotezy/testy określa się jako **nieparametryczne**.
 Przykładami są testy niezależności chi-kwadrat albo normalności
 Shapiro-Wilka (opisane w następnym rozdziale).
 
 Oczywiste, ale powtórzmy: przypuszczenia o charakterze nieparametrycznym 
 możemy tylko testować (sprawdzać hipotezy);
-nie obliczamy wtedy ani ocen ani nie wyznaczamy przedziałów ufności.
+nie obliczamy wtedy ani ocen, ani nie wyznaczamy przedziałów ufności.
 
 ## Statystyk Carl Pearson
 
@@ -652,7 +650,7 @@ W punkcie \@ref(fnightingale) przypomnieliśmy postać Florence Nightingale – 
 statystyki i bardzo dobrej kobiety. A kto był ojcem tejże statystyki?
 Ojców było więcej niż matek oczywiście, a wśród nich Francis Galton (regresja),
 Carl Pearson (współczynnik korelacji liniowej, test niezależności chi-kwadrat) oraz Ronald Fisher (podstawy wnioskowania).
-Niestety wszyscy wymienieni byli
+Niestety, wszyscy wymienieni byli
 zadeklarowanymi rasistami oraz wyznawcami społecznego darwninizmu
 i eugeniki. Pierwszymi zastosowaniami „nowoczesnych” metod statystycznych było
 naukowe udowodnienie, że biali ludzie są lepsi od innych:
@@ -663,12 +661,12 @@ porównywalnej z **aryjską**  [...]
 Historia pokazuje jeden i tylko jeden sposób, w jaki powstaje wysoka cywilizacja,
 a mianowicie **walka rasy** i przetrwanie rasy sprawniejszej fizycznie i psychicznie…*
 
-Powyższe to cytat z *National Life from the standpoint of science* Carla Pearsona (Londyn 1905).
+To cytat z *National Life from the standpoint of science* Carla Pearsona (Londyn 1905).
 
 Naszym zdaniem dobrze jest pamiętać o tym fatalnym starcie „nowoczesnej statystyki”, bo chociaż
 jest mało prawdopodobne, że zostanie ona  znowu wykorzystania do równie odrażających celów, to
 jest raczej więcej niż pewne, że będzie użyta do innych szwindli.
-Jeszcze jeden argument żeby nie traktować
+Jeszcze jeden argument, żeby nie traktować
 wyników analiz statystycznych jako wiedzy objawionej,
 absolutnie pewnej i 100% prawdziwej (por. uwagę w punkcie \@ref(przedmiotS)).
 
