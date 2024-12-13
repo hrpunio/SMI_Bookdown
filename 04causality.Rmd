@@ -1,7 +1,7 @@
 
 # Analiza współzależności pomiędzy zmiennymi {#causality}
 
-Pomiędzy zjawiskami występują związki (zależności.) Nauki formułują te związki
+Pomiędzy zjawiskami występują związki (zależności). Nauki formułują te związki
 w postaci **praw**. Jak takie **prawo naukowe** powstaje? Typowo w dwu etapach,
 najpierw za pomocą **dedukcji** stawia się **hipotezę**, potem konfrontuje się 
 hipotezę z danymi (podejście hipotetyczno-dedukcyjne). 
@@ -12,13 +12,13 @@ nie można dowieść prawdziwości żadnej hipotezy, można natomiast wykazać, 
 hipoteza jest fałszywa.
 
 Związki między zmiennymi mogą być albo **funkcyjne** – wartościom jednej zmiennej 
-odpowiada tylko jedna wartość drugiej zmiennej lub
+odpowiada tylko jedna wartość drugiej zmiennej -- albo
 **stochastyczne** – wartościom jednej zmiennej odpowiadają z pewnym
 przybliżeniem wartości innej zmiennej.
 
 Problem: czy istnieje związek (zależność) pomiędzy cechami? 
-Przykładowo czy istnieje związek pomiędzy paleniem (przyczyna)
-a chorobą nowotworową (skutek), wiekiem a prawdopodobieństwem zgonu z powodu COVID19 itd.
+Przykładowo: czy istnieje związek pomiędzy paleniem (przyczyna)
+a chorobą nowotworową (skutek), wiekiem a prawdopodobieństwem zgonu z powodu COVID-19 itd.?
 
 Jaki jest charakter zależności? Jaka jest siła zależności?
 
@@ -48,34 +48,34 @@ empiryczny odpowiednik prawdopodobieństwa.
 
 Eksperyment, który przeprowadził Linus Pauling (laureat nagrody Nobla 
 za odkrycie witaminy C), 
-polegał na tym, że podzielił 280 narciarzy na dwie 140 osobowe grupy. 
+polegał na tym, że podzielił 280 narciarzy na dwie 140-osobowe grupy. 
 Przez 5–7 dni podawał witaminę C jednej grupie oraz placebo drugiej grupie.
 Obserwował zachorowania na przeziębienie przez następne dwa tygodnie.
-Jeden narciarz nie dokończył eksperymentu. Historia milczy dlaczego :-)
+Jeden narciarz nie dokończył eksperymentu. Historia milczy, dlaczego tak się stało :-)
 
 W grupie 139 narciarzy, którym podano witaminę C
-(grupa C) zachorowało 17. W grupie 140 narciarzy, którym podano placebo (grupa P)
+(grupa C), zachorowało 17. W grupie 140 narciarzy, którym podano placebo (grupa P)
 zachorowało 31. Zatem:
 
 * Ryzyko zachorowania w grupie C wyniosło 17/139 = 12,2%.
 * Ryzyko zachorowania w grupie P wyniosło 31/140 = 22,14%.
 
-Na tzw. chłopski rozum jeżeli witamina C **nie działa**, to powinien
+Na chłopski rozum: jeżeli witamina C **nie działa**, to powinien
 zachorować ten sam odsetek narciarzy w obu grupach. 
-A tak nie jest jak widać.
+A tak, jak widać, nie jest.
 :::
 
 Prostymi miarami oceny siły zależności mogą być: 
 
 * różnica  ryzyk (*risk difference*),
-* ryzyko względne (*relative risk*), oraz 
+* ryzyko względne (*relative risk*) oraz 
 * iloraz szans (*odds ratio*).
 
 Jeżeli $r_e$ oznacza ryzyko w grupie eksperymentalnej (*test group*, grupa narażona, *exposed group*),
 a $r_k$ w grupie kontrolnej (*control group*, grupa nienarażona, *unexposed group*), 
 to **różnica ryzyk** to po prostu $r_e - r_k$.
 W przykładzie będzie to $22,14 - 12,2 = -9,94$%
-Ta miara, aczkolwiek prosta jest rzadko stosowana. 
+Ta miara, aczkolwiek prosta, jest rzadko stosowana. 
 
 Znacznie częściej używa się **ryzyka względnego** definiowanego jako
 $RR = r_e/r_k$. Oczywiste jest, że $RR < 1$ oznacza zmniejszenie
@@ -86,10 +86,10 @@ pojęcia szansa/szansy (*odds*) definiowanego
 jako iloraz sukcesów do porażek. 
 
 Jeżeli $o_e$ oznacza szanse w grupie eksperymentalnej 
-a $o_k$ w grupie kontrolnej, to **iloraz szans** (*odds ratio*), jest
+a $o_k$ w grupie kontrolnej, to **iloraz szans** (*odds ratio*) jest
 definiowany jako stosunek $\textrm{OR} = o_e/o_k$.
 
-Przykładowo jeżeli w dwukrotnym rzucie monetą otrzymano orła i reszkę to ryzyko
+Przykładowo jeżeli w dwukrotnym rzucie monetą otrzymano orła i reszkę, to ryzyko
 otrzymania orła wynosi 1/2 = 0,5 a szansa otrzymania orła wynosi 1/1 = 1.
 
 ::: {.example}
@@ -99,24 +99,24 @@ Przypomnijmy: ryzyko zachorowania w grupie C wynosi 12,2; ryzyko zachorowania w 
 wyniosło 22,14. Ryzyko względne wynosi zatem $12,2/22,14 = 0,55$. 
 Podanie witaminy C zmniejsza ryzyko zachorowania o prawie połowę.
 
-Szansa, że narciarz z grupy C zachoruje wynosi 17/122 = 13,9%.
-Szansa, że narciarz w grupie P zachoruje wynosi 28,44%.
+Szansa, że narciarz z grupy C zachoruje, wynosi 17/122 = 13,9%.
+Szansa, że narciarz w grupie P zachoruje, wynosi 28,44%.
 
 Zatem iloraz szans
 dla narciarzy wyniesie 13,9/28,44 = 0,48.
 Podanie witaminy C zmniejsza szansę na zachorowanie o ponad połowę. 
-Albo 1/0,48 = 2,04, co oznacza, że narciarz, który nie brał witaminy C ma ponad 
+Albo 1/0,48 = 2,04, co oznacza, że narciarz, który nie brał witaminy C, ma ponad 
 dwukrotnie większą szansę na zachorowanie.
 
-Jak widać dla dużych ryzyk (rzut monetą) szansa 
+Jak widać, dla dużych ryzyk (rzut monetą) szansa 
 różni się znacznie od prawdopodobieństwa, ale dla małych ryzyk obie miary mają zbliżoną wartość.
 :::
 
 Właściwości ilorazu szans: 
 
-* jeżeli równe 1 to sukces/porażka równie prawdopodobne;
-* jeżeli większe od 1 to sukces jest bardziej prawdopodobny;
-* jeżeli jest mniejsze od 1 to porażka jest bardziej prawdopodobna.
+* jeżeli równe 1, to sukces/porażka równie prawdopodobne;
+* jeżeli większe od 1, to sukces jest bardziej prawdopodobny;
+* jeżeli jest mniejsze od 1, to porażka jest bardziej prawdopodobna.
 
 Dane w badaniach wykorzystujących ryzyko/szanse mają często postać 
 następującej tabeli dwudzielnej o wymiarach $2\times 2$
@@ -203,16 +203,16 @@ ryzyka względnego (ocena punktowa `r rr`) przedział ufności wynosi [`r rr_low
 :::
 
 **Uwaga**: nie jest specjalnie istotne jaka jest konkretna formuła obliczania
-przedziałów ufności, przecież obliczenia i tak koniec-końców wykona
+przedziałów ufności, przecież obliczenia i tak koniec końców wykona
 program komputerowy.
 
 Przedział ufności dla ilorazu szans nie zawiera 1; 
 zatem branie witaminy C zmniejsza szanse na zachorowanie;
-albo zwiększa na niezachorowanie od $1/0,25 = 4$ do $1/0,9 \approx 1,1$. Żeby
-to zabrzmiało ładnie i po polsku: zwiększa na niezachorowanie od 10% do 300%.
+albo zwiększa szanse na niezachorowanie od $1/0,25 = 4$ do $1/0,9 \approx 1,1$. Żeby
+to zabrzmiało ładnie i po polsku: zwiększa szanse na niezachorowanie od 10% do 300%.
 
 Dlaczego taka znacząca rozpiętość? Bo próba jest względnie mała. Gdyby
-Pauling zwerbował nie 280 a 2800 narciarzy mógłby weryfikować działanie
+Pauling zwerbował nie 280, a 2800 narciarzy mógłby weryfikować działanie
 swojej witaminy z większą pewnością.
 
 ### Tabele wielodzielne
@@ -248,19 +248,19 @@ kolumnę nazywamy **rozkładami brzegowymi**. Rozkłady brzegowe przestawiają
 rozkłady każdej zmiennej osobno.
 
 Pozostałe kolumny oraz wiersze nazywane
-są **rozkładami warunkowymi**. Rozkładów warunkowych jest tyle ile
-wynosi suma $r + c$ gdzie $r$ to liczba wariantów jednej cechy
+są **rozkładami warunkowymi**. Rozkładów warunkowych jest tyle, ile
+wynosi suma $r + c$, gdzie $r$ to liczba wariantów jednej cechy,
 a $c$ to liczba wariantów drugiej cechy.
 
-Przy warunku że narciarz brał witaminę C, `r narciarze[1,1]` takich osób
+Przy warunku, że narciarz brał witaminę C, `r narciarze[1,1]` takich osób
 nie zachorowało, a `r narciarze[1,2]` zachorowało. 
-Drugi rozkład warunkowy: `r narciarze[2,1]` narciarzy, którzy brali placebo
+Drugi rozkład warunkowy: `r narciarze[2,1]` narciarzy, którzy brali placebo,
 nie zachorowało, a `r narciarze[2,2]` zachorowało. Są także rozkłady
-warunkowe dla drugiej cechy. W grupie narciarzy, którzy zachorowali
+warunkowe dla drugiej cechy. W grupie narciarzy, którzy zachorowali,
 `r narciarze[1,1]` brało witaminę C, a `r narciarze[2,1]` brało placebo.
-Wreszcie w grupie narciarzy, którzy nie zachorowali
+W grupie narciarzy, którzy nie zachorowali,
 `r narciarze[2,1]` brało witaminę C, a `r narciarze[2,2]` brało placebo.
-Rozkładów warunkowych jest 4 bo obie cechy mają po dwa warianty. Jest
+Rozkłady warunkowe są cztery, bo obie cechy mają po dwa warianty. Jest
 to najmniejsza możliwa tabela wielodzielna.
 
 Zamiast liczebności można posługiwać się odsetkami (procentami):
@@ -274,7 +274,7 @@ rownames(narciarze.table.p) <- c('grupa C', 'grupa P', 'razem')
 kable(digits=2, narciarze.table.p, col.names = c('zdrowy', 'katar', 'razem'), booktabs = TRUE)
 ```
 
-Narciarze, którzy brali witaminę C oraz nie zachorowali stanowią
+Narciarze, którzy brali witaminę C oraz nie zachorowali, stanowią
 `r round(narciarze.table.p[1,1], 2)`%
 wszystkich narciarzy. Mało przydatne...
 
@@ -295,28 +295,29 @@ kable(digits=2, narciarze.x, col.names = c('zdrowy', 'katar', 'razem'), booktabs
 
 Otrzymaliśmy ryzyka zachorowania na katar (lub nie zachorowania). Ryzyko
 zachorowania dla całej grupy wynosi
-`r round(narciarze.x[3,2], 2)`% a nie zachorowania
-`r round(narciarze.x[3,1], 2)`%. Jest przyznajmy całkiem **zdroworozsądkowym założeniem**
+`r round(narciarze.x[3,2], 2)`%, a ryzyko niezachorowania
+to `r round(narciarze.x[3,1], 2)`%. Jest, przyznajmy, całkiem **zdroworozsądkowym założeniem**
 (uczenie hipotezą statystyczną), że jeżeli przyjmowanie witaminy nie ma związku
-z zachorowaniem lub nie na katar, to w grupie tych co brali i tych co nie brali
+z zachorowaniem lub nie na katar, to w grupie tych, którzy brali, i tych którzy nie brali
 powinniśmy mieć identyczne rozkłady warunkowe równe rozkładowi brzegowemu.
 Czyli powinno przykładowo zachorować
 `r  round(narciarze.x[3,2], 2)`% narciarzy, którzy
-brali witaminę C a widzimy , że zachorowało
+brali witaminę C, a widzimy, że zachorowało
 jedynie `r round(narciarze.x[1,2], 2)`%.
 
-Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się 
+Na oko księgowego witamina C działa (bo są różnice), ale dla statystyka liczy się to,
 czy ta różnica jest na tyle duża, że (z założonym prawdopodobieństwem) 
 można wykluczyć działanie przypadku.
 
 Rozumowanie jest następujące: jeżeli prawdopodobieństwo wystąpienia 
 tak dużej różnicy jest małe, to cechy nie są niezależne. 
-Jest to istota i jedyny wniosek z czegoś co się nazywa 
-testem istotności-chi-kwadrat. 
-Test chi-kwadrat porównuje liczebności tablicy wielodzielnej z idealną-tablicą-wielodzielną, która zakłada niezależność jednej zmiennej od drugiej.
+Jest to istota i jedyny wniosek z czegoś, co się nazywa 
+testem niezależności chi-kwadrat. 
+Test chi-kwadrat porównuje liczebności tablicy wielodzielnej z idealną tablicą wielodzielną,
+która zakłada niezależność jednej zmiennej od drugiej.
 
 Można udowodnić, że taka idealna tablica powstanie przez przemnożenie dla 
-każdego elementu tablicy odpowiadających mu wartości brzegowych 
+każdego elementu tablicy odpowiadających mu wartości brzegowych, 
 a następnie podzieleniu tego przez łączną liczebność (czyli przykładowo pierwszy
 element poniższej „idealnej” tablicy to `r narciarze.table[3,1]` pomnożone przez
 `r narciarze.table[1,3]` i podzielone przez `r narciarze.table[3,3]`; proszę
@@ -334,12 +335,12 @@ chipv <- chi_skiers$p.value
 kable(digits=3, narciarze.ex.table, col.names =  c('zdrowy', 'katar', 'razem'),  booktabs = TRUE)
 ```
 
-Proszę
+Warto
 zwrócić uwagę że **rozkłady brzegowe** są identyczne, identyczna
 jest też łączna liczebność. Różnią się tylko rozkłady warunkowe (które nie są
 liczbami całkowitymi, ale tak ma być i nie jest to błąd).
 
-Za pomocą testu chi-kwadrat obliczamy jakie jest prawdopodobieństwo wystąpienia
+Za pomocą testu chi-kwadrat obliczamy prawdopodobieństwo wystąpienia
 tak dużych lub większych różnic. Wynosi ono `r round(chipv, 4)`.
 Czyli wystąpienie tak dużych różnic
 pomiędzy **oczekiwanymi** (przy założeniu o niezależności zmiennych)
@@ -348,9 +349,9 @@ a obserwowanymi liczebnościami zdarza się około 4 razy na 100.
 :::
 
 Jeszcze raz przypominamy ideę testu: jeżeli prawdopodobieństwo zaobserwowanych
-różnic jest małe to zakładamy że:
+różnic jest małe, to zakładamy, że:
 
-* albo mamy pecha i pięć razy podrzucając monetą zawsze nam spadła
+* albo mamy pecha i pięć razy podrzucając monetą, zawsze nam spadła
 reszka (prawdopodobieństwo około 0,03), albo
 
 * że założenie co do niezależności jest fałszywe. 
@@ -358,15 +359,15 @@ reszka (prawdopodobieństwo około 0,03), albo
 Statystyk zawsze wybierze
 drugie. Pozostaje tylko ustalenie co to znaczy **małe**.
 
-Małe to takie które jest mniejsze od arbitralnie przyjętego
-przez statystyka. Zwykle jest to 0,05 lub 0,01 (czasami 0,1)
-co oznacza że odrzucając założenie o braku związku pomiędzy
-katarem a braniem witaminy C pomylimy się pięć lub raz na 100.
+Małe to takie, które jest mniejsze od arbitralnie przyjętego
+przez statystyka. Zwykle jest to 0,05 lub 0,01 (czasami 0,1),
+co oznacza, że odrzucając założenie o braku związku pomiędzy
+katarem a braniem witaminy C, pomylimy się pięć razy lub raz na 100.
 
 **Uwaga**: proszę zwrócić uwagę że wniosek z testu niezależności jest
 słabszy niż z porównania ryzyk. Tam mamy informację że zależność istnieje 
 i oszacowaną jej wielkość (np. za pomocą ryzyka względnego) tutaj tylko
-zweryfikowaliśmy fakt czy obie zmienne są niezależne lub nie.
+zweryfikowaliśmy fakt, czy obie zmienne są niezależne, czy nie.
 
 ::: {.example}
 **Palenie a status społeczno-ekonomiczny**
@@ -376,7 +377,7 @@ Dla pewnej grupy osób odnotowujemy ich status-społeczno-ekonomiczny
 oraz status-względem-palenia 
 (wartości: pali/**current**, palił-nie-pali/**former**, nigdy-nie-palił/**never**). 
 Obie zmienne są nominalne, obie mają po trzy wartości. Można
-poklasyfikować wszystkich badanych w następujący sposób:
+sklasyfikować wszystkich badanych w następujący sposób:
 
 ```{r message=FALSE, echo=F}
 smokerData <- read.csv(file='smoker.csv',sep=';',header=T)
@@ -391,11 +392,11 @@ rownames(smoke.table) <- c('current', 'former', 'never', 'razem')
 kable(smoke.table, col.names =  c('High', 'Low', 'Middle', 'razem'), booktabs = TRUE)
 ```
 
-Uwaga: status-społeczno-ekonomiczny, to powiedzmy miara prestiżu używana w socjologii
-(można na Wikipedii doczytać co to dokładnie jest).
+Uwaga: status-społeczno-ekonomiczny, to miara prestiżu używana w socjologii
+(można na Wikipedii doczytać, co to dokładnie jest).
 
-Tym razem tabela składa się z 3 wierszy i 3 kolumn (ostatni wiersz/kolumna się
-nie liczą bo to sumy – rozkłady brzegowe).
+Tym razem tabela składa się z trzech wierszy i trzech kolumn (ostatni wiersz/kolumna się
+nie liczą, bo to są sumy – rozkłady brzegowe).
 
 Przedstawmy tę tabelę w postaci udziałów procentowych sumujących się
 dla każdego wiersza osobno do 100% (tj. dzielimy
@@ -414,7 +415,7 @@ kable(smoke.x, digits=2, col.names = c('High', 'Low', 'Middle', 'razem'), bookta
 ```
 
 Rozumowanie jest identyczne jak dla narciarzy Paulinga. Jeżeli nie ma zależności
-pomiędzy paleniem a statusem to procenty w ostatnim wierszu powinny
+pomiędzy paleniem a statusem, to procenty w ostatnim wierszu powinny
 być identyczne jak w wierszach 1–3 (nagłówka nie liczymy). Tym idealnym 
 procentom odpowiadają następujące liczebności:
 
@@ -458,7 +459,7 @@ więcej niż dwie). Stosujemy odpowiedni test statystyczny:
 + jeżeli liczba grup jest większa od dwóch oraz nie można przyjąć założenia
   o normalności rozkładów, to stosujemy test Kruskala-Wallisa.
 
-Powyższe w postaci diagramu ze strzałkami przedstawiono na rysunku \@ref(fig:testy).
+W postaci diagramu ze strzałkami przedstawiono to na rysunku \@ref(fig:testy).
 
 ```{r testy, out.width="80%", fig.cap = "Testowanie istotności różnicy pomiędzy średnimi"}
 knitr::include_graphics("./TestFlowChart.pdf")
@@ -470,35 +471,35 @@ Każdy z testów jest interpretowany identycznie:
 
 2. Obliczane jest prawdopodobieństwo $t \geq t_k$ czyli przyjęcia przez
    statystykę testu $t$  równej lub większej od $t_k$ (co do wartości bezwzględnej).
-   To prawdopodobieństwo zwyczajowo oznacza się literą p albo p-value (czyli wartość p).
-3. Jeżeli p jest mniejsze/równe od przyjętego poziomu istotności to hipotezę zerową odrzucamy;
-   jeżeli p jest większe od przyjętego poziomu istotności to nie ma podstaw do odrzucenia
+   To prawdopodobieństwo zwyczajowo oznacza się literą p albo p-value (czyli „wartość p”).
+3. Jeżeli p jest mniejsze/równe od przyjętego poziomu istotności, to hipotezę zerową odrzucamy;
+   jeżeli p jest większe od przyjętego poziomu istotności, to nie ma podstaw do odrzucenia
    hipotezy zerowej.
 
 Odrzucenie hipotezy zerowej oznacza, że istnieje związek pomiędzy jedną a drugą zmienną.
 Jeżeli nie ma podstaw do odrzucenia
-   hipotezy zerowej to oznacza to że takiej zależności nie udało nam się wykazać.
+   hipotezy zerowej, to oznacza to, że takiej zależności nie udało nam się wykazać.
 
-Omawiając wynik należy podać wartość $t_k$ oraz p. Statystyka testu może się
+Omawiając wynik, należy podać wartość $t_k$ oraz p. Statystyka testu może się
 różnie nazywać i być oznaczana różnym symbolem,
 np.: t (test t Welcha), U (test U Manna-Whitneya).
 
 Testy $t$ Welcha oraz ANOVA są **parametryczne**, porównujemy średnie w grupach.
-Testy U-Manna-Whitneya oraz Kruskala-Wallisa są **nieparametryczne** bo porównujemy
+Testy U-Manna-Whitneya oraz Kruskala-Wallisa są **nieparametryczne**, bo porównujemy
 rozkłady wartości zmiennej w grupach.
 
 ### Test $t$ Welcha
 
-Test stosujemy jeżeli porównujemy dwie grupy oraz można przyjąć
+Test stosujemy, jeżeli porównujemy dwie grupy oraz można przyjąć
 założenie, że rozkład wartości w obu grupach jest normalny.
-Test $t$ Welcha jest testem parametrycznym. Sprawdzamy czy średnie w grupach są równe.
+Test $t$ Welcha jest testem parametrycznym. Sprawdzamy, czy średnie w grupach są równe.
 
 ::: {.example}
 **Poziom depresji a miejsce pracy**
 
 Studenci pielęgniarstwa i ratownictwa PSW w 2023 roku wypełnili
 ankietę zawierającą 
-test depresji Becka, mierzący **poziom depresji** (wartość liczbowa) 
+test depresji Becka, mierzący **poziom depresji** (wartość liczbowa),
 oraz pytanie o rodzaj miejsca pracy (skala nominalna). Poniżej
 zestawiono średnie wartości **poziomu depresji** w podziale
 na rodzaj miejsca pracy (szpital/przychodnia). 
@@ -524,7 +525,7 @@ Kolumna n zawiera liczebności.
 
 Średnie różnią się 
 o `r round(s0.mp.szpital - s0.mp.przychodnia, 2)`. 
-Pytanie czy to dużo czy mało?
+Pytanie: czy to dużo czy mało?
 
 Przyjmijmy (na razie bez sprawdzania), że rozkłady wartości poziomu depresji
 w obu grupach są 
@@ -541,9 +542,9 @@ Kolumna t  zawiera wartość statystyki testu $t_k$. Kolumna p
 zawiera oczywiście wartość prawdopodobieństwa p.
 
 Ponieważ wartość $p$ równa `r pval.mp` jest mniejsza od każdego zwyczajowo
-przyjmowanego poziomu istotności (0,05 na przykład, albo 0,1) hipotezę, że średnie w obu grupach są równe należy odrzucić.
-W konsekwencji stwierdzamy, że poziom depresji pracujących w Szpitalu
-był istotnie wyższy od pracujących w Przychodni.
+przyjmowanego poziomu istotności (np. 0,05 albo 0,1), hipotezę, że średnie w obu grupach są równe należy odrzucić.
+W konsekwencji stwierdzamy, że poziom depresji pracujących w szpitalu
+był istotnie wyższy od pracujących w przychodni.
 
 :::
 
@@ -572,7 +573,7 @@ kable(sw.table, col.names = c('m-pracy', 'S-W', 'p'), booktabs = TRUE)
 ## małe wartości świadczą przeciw $H_0$
 ```
 
-Kolumna S-W zawiera wartości statystki testu S-W oczywiście.
+Kolumna S-W zawiera oczywiście wartości statystyki testu S-W.
 
 Rozkład w grupie `szpital` nie jest normalny (o czym świadczy niska wartość p).
 Nasze założenie co do normalności
@@ -590,10 +591,10 @@ p2.mp <- s0 %>% filter (praca == 'Przychodnia') %>% ggplot(aes(sample=P)) + stat
 ggarrange(p1.mp, p2.mp, ncol = 2, nrow = 1)
 ```
 
-Prosta odpowiada teoretycznym wartościom kwantyli rozkładu poziomu depresji przy założeniu
+Prosta odpowiada teoretycznym wartościom kwantyli rozkładu poziomu depresji przy założeniu,
 że mają one rozkład normalny. Punkty odpowiadają zaobserwowanym wartościom kwantyli. 
 Im bardziej punkty nie pokrywają się z prostą 
-(zwłaszcza na skrajach rozkładu) tym mniej wierzymy, że rozkład jest normalny.
+(zwłaszcza na skrajach rozkładu), tym mniej wierzymy, że rozkład jest normalny.
 
 W tym przypadku wygląda, że rozkład w grupie Szpital **nie jest** normalny.
 W grupie Przychodnia jest lepiej, ale jednocześnie to lepiej jest mało wiarygodne
@@ -603,13 +604,13 @@ z uwagi na małą liczebność grupy (zaledwie 12 obserwacji).
 
 ### Test U Manna-Whitneya
 
-Test U Manna-Whitneya jest testem nieparametrycznym. Sprawdzamy czy rozkłady
+Test U Manna-Whitneya jest testem nieparametrycznym. Sprawdzamy, czy rozkłady
 zmiennej w grupach są identyczne.
 
 ::: {.example}
 **Poziom depresji a miejsce pracy** 
 
-Ponieważ grup jest dokładnie 2 a rozkład nie jest normalny, stosujemy test U Manna-Whitneya.
+Ponieważ grup jest dokładnie 2, a rozkład nie jest normalny, stosujemy test U Manna-Whitneya.
 
 ```{r, echo=F}
 wilcoxp.table <- wilcox_test(P ~ praca, data=s0) %>%
@@ -621,9 +622,9 @@ pval.u <- wilcoxp.table$p
 Prawdopodobieństwo wystąpienia tak dużej wartości statystyki testu (U) przy założeniu, że 
 rozkłady zmiennej w obu grupach 
 są identyczne wynosi `r  pval.u`. Różnica jest zatem istotna na każdym zwyczajowo
-przyjmowanym poziomie istotności (0,05 na przykład, albo 0,1); oba rozkłady różnią się.
+przyjmowanym poziomie istotności (np. 0,05 albo 0,1); oba rozkłady różnią się.
 Kolumna U zawiera wartość statystyki testu U. Przypominamy, że
-dobry zwyczaj nakazuje podawać tę wartość omawiając wynik testu (więc ją podajemy).
+dobry zwyczaj nakazuje podawać tę wartość omawiając wynik testu, dlatego to czynimy.
 
 Depresja wśród pracowników szpitali jest wyższa niż wśród pracowników
 przychodni (w przypadku testu U Manna-Whitneya porównujemy wartości mediany).
@@ -632,10 +633,10 @@ przychodni (w przypadku testu U Manna-Whitneya porównujemy wartości mediany).
 
 ### Test ANOVA
 
-Jeżeli liczba grup jest większa niż dwie, ale można przyjąć założenie
+Jeżeli liczba grup jest większa niż dwie, ale można przyjąć założenie,
 że w każdej grupie zmienna ma rozkład normalny, to stosujemy test ANOVA z poprawką Welcha.
 Test ANOVA jest testem parametrycznym.
-Sprawdzamy czy średnie w wszystkich grupach są równe.
+Sprawdzamy, czy średnie we wszystkich grupach są równe.
 
 ::: {.example}
 **Poziom depresji a staż pracy** 
@@ -669,7 +670,7 @@ p.anova <- anova.test$p.value
 Wartość p równa `r round(p.anova, 4)` świadczy o tym, że nie ma istotnych różnic pomiędzy średnimi, co oznacza,
 że pomiędzy poziomem depresji a kategoriami stażu pracy nie ma zależności.
 
-Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać trzeba
+Czy zastosowanie testu ANOVA było poprawne? Żeby się o tym przekonać, trzeba
 zastosować (znowu) test Shapiro-Wilka:
 
 ```{r, echo=F}
@@ -701,7 +702,7 @@ pval <- kw$p.value
 ```
 
 Prawdopodobieństwo tak dużej wartości statystyki testu
-przy założeniu, że  rozkłady wartości zmiennej we wszystkich grupach są identyczne wynosi
+przy założeniu, że  rozkłady wartości zmiennej we wszystkich grupach są identyczne, wynosi
 `r round(pval, 4)` (różnice są zatem nieistotne; wszystkie rozkłady są identyczne i nie ma zależności).
 
 :::
@@ -710,7 +711,7 @@ przy założeniu, że  rozkłady wartości zmiennej we wszystkich grupach są id
 
 ### Korelacyjny wykres rozrzutu 
 
-Wykres rozrzutu (*scatter plot*) znany także jako korelogram, albo wykres XY,
+Wykres rozrzutu (*scatter plot*), znany także jako korelogram albo wykres XY,
 to prosty wykres kreślony w układzie kartezjańskim, w którym każdej obserwacji 
 (składającej się z dwóch liczb) odpowiada kropka o współrzędnych XY. 
 
@@ -731,8 +732,8 @@ udostępnia dane dotyczące konsumpcji żywności
 na świecie (https://www.fao.org/faostat/en/#home). Bank Światowy
 udostępnia dane dotyczące dochodu narodowego (https://data.worldbank.org/). 
 
-Konsumpcja mięsa jest mierzona jako średnia roczna konsumpcja w kilogramach w każdym kraju (*per capita* się mówi).
-Dochód podobnie jako średnia wielkość dochodu narodowego *per capita*. 
+Konsumpcja mięsa jest mierzona jako średnia roczna konsumpcja w kilogramach na mieszkańca w każdym kraju (*per capita*).
+Dochód zaś jest mierzony jako średni dochód w tysiącach dolarów na mieszkańca w każdym kraju (*per capita*). 
 Dane dotyczą roku 2013.
 
 ```{r message=FALSE, echo=FALSE, out.width="90%"}
@@ -748,10 +749,13 @@ ggplot(meatCons, aes(x = gdp2013, y = y2013)) +
 ```
 
 Przy dużej dozie wyobraźni można dostrzec relację liniową pomiędzy
-konsumpcją mięsa a GDP co oznaczono na wykresie linią prostą. Można też założyć, że
+konsumpcją mięsa a GDP, co oznaczono na wykresie linią prostą. Można też założyć, że
 relacja pomiędzy konsumpcją mięsa a GDP ma charakter nieliniowy (linia krzywa).
-Liniowa czy nieliniowa, relacja jest na pewno mocno przybliżona co jest najbardziej
-pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
+Relacja, niezależnie od tego,
+czy jest liniowa czy nieliniowa,
+jest na pewno mocno przybliżona,
+co stanowi najbardziej pewny wniosek,
+który można wysnuć z wykresu rozrzutu.
 
 :::
 
@@ -759,16 +763,16 @@ pewnym wnioskiem, który można wysnuć z wykresu rozrzutu.
 
 Kowariancja to średnia arytmetyczna iloczynów odchyleń wartości zmiennych $X$, $Y$
 od ich wartości średnich. Dla $n$ obserwacji na zmiennych $X$ oraz $Y$
-można powyższe zapisać w postaci następującej formuły:
+można to zapisać w postaci następującej formuły:
 
 $$\mathrm{cov} (xy) = \frac{1}{n} \left( (x_1 - \bar x)\cdot (y_1 - \bar y)  + ... +
 (x_n- \bar x)\cdot (y_n - \bar y) \right)$$
 
-Kowariancja zależy od rozproszenia (im większe tym większa), 
+Kowariancja zależy od rozproszenia (im większe, tym większa), 
 ma też dziwną jednostkę (jednostkaX · jednostkaY) oraz zależy 
-od wybranych skal (tony vs gramy na przykład).
+od wybranych skal (np. tony vs gramy).
 
-Z powyższych powodów do pomiaru związku pomiędzy cechami używa się
+Z tych powodów do pomiaru związku pomiędzy cechami używa się
 standaryzowanego współczynnika kowariancji, 
 zwanego **współczynnikiem korelacji liniowej Pearsona** (*Pearson
 correlation coefficient*). Standaryzacja polega na podzieleniu wartości
@@ -779,7 +783,7 @@ $$r_{xy} = \frac{\mathrm{cov}(xy) }{s_x \cdot s_y}$$
 Współczynnik jest miarą niemianowaną, przyjmującą wartości ze zbioru $[-1;1]$; 
 Skrajne wartości $\pm 1$
 świadczą o związku funkcyjnym (wszystkie punkty układają się na linii prostej);
-wartość zero świadczy o braku związku co odpowiada linii poziomej lub pionowej
+wartość zero świadczy o braku związku, co odpowiada linii poziomej lub pionowej
 (por. rysunek \@ref(fig:correlations5)).
 
 ```{r correlations5, out.width="99%", fig.cap = "Wykresy rozrzutu dla korelacji o różnej sile"}
@@ -815,7 +819,7 @@ hurtowa ocena współczynników korelacji w postaci kwadratowej **macierzy korel
 ::: {.example}
 **Korelacja pomiędzy wiekiem, edukacją, szczęściem a stanem zdrowia**
 
-Mohammadi S. i inni badali zależność pomiędzy wiekiem, poziomem edukacji, szczęściem a stanem zdrowia.
+S. Mohammadi i inni badali zależność pomiędzy wiekiem, poziomem edukacji, szczęściem a stanem zdrowia.
 (The relationship between happiness and self-rated health: A population-based study of 19499 Iranian adults;
 https://doi.org/10.1371/journal.pone.0265914).
 
@@ -854,7 +858,7 @@ można formalnie zapisać jako:
 $$ \textrm{wynik} = b_0 + b_1 \cdot \textrm{kawa}$$
 
 Współczynnik $b_1$ określa wpływ spożycia kawy na wynik egzaminu.
-W szczególności jeżeli $b_1 = 0$ to
+W szczególności jeżeli $b_1 = 0$, to
 nie ma związku między spożywaniem kawy a wynikiem egzaminu.
 
 ### Regresja prosta {#regProsta}
@@ -882,27 +886,27 @@ rośnie o jednostkę to wartość zmiennej $Y$ zmienia
 się przeciętnie o $b_1$ jednostek zmiennej Y. 
 Wyraz wolny zwykle nie ma sensownej interpretacji, formalnie jest to wartość zmiennej $Y$ dla $X=0$.
 
-Oznaczmy przez $y_i$ wartości obserwowane (zwane też empirycznymi)
+Oznaczmy przez $y_i$ wartości obserwowane (zwane też empirycznymi),
 a przez $\hat y_i$ *wartości teoretyczne* (leżące na prostej linii regresji).
 
-Wartości $b_0$ oraz $b_1$ wyznacza się minimalizując sumę kwadratów
+Wartości $b_0$ oraz $b_1$ wyznacza się, minimalizując sumę kwadratów
 odchyleń wartości teoretycznych od wartości empirycznych, tj.:
 
 $$(\hat y_1 - y_1)^2 + (\hat y_2 - y_2)^2 + ... +  (\hat y_n - y_n)^2 \to \min$$
 
-Rozwiązując powyższy **problem minimalizacyjny** otrzymujemy wzory
+Rozwiązując powyższy **problem minimalizacyjny**, otrzymujemy wzory
 określające wartości parametrów $b_0$ oraz $b_1$. Metoda wyznaczania parametrów
 linii prostej w oparciu o minimalizację sumy kwadratów odchyleń 
 nosi nazwę **metody najmniejszych kwadratów**.
 
 Przypominamy, że **estymatorem** nazywamy metodę oszacowania parametru na podstawie próby.
-Ponieważ traktujemy $b_0$ oraz $b_1$ jako parametry pewnej populacji generalnej
+Ponieważ traktujemy $b_0$ oraz $b_1$ jako parametry pewnej populacji generalnej,
 to „wzory na $b_0$ oraz $b_1$“ statystyk nazwie estymatorami parametrów $b_0$ oraz $b_1$. 
 
-Przypominamy dalej, że wartość średnia **dobrego estymatora** powinna wynosić zero (bo wtedy nie ma błędu systematycznego),
-oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności próby. Można udowodnić
+Przypominamy też, że wartość średnia **dobrego estymatora** powinna wynosić zero (bo wtedy nie ma błędu systematycznego)
+oraz że wariancja estymatora powinna maleć wraz ze wzrostem liczebności próby. Można udowodnić,
 że estymatory parametrów $b_0$ oraz $b_1$
-uzyskane **metodą najmniejszych kwadratów** posiadają obie właściwości.
+uzyskane **metodą najmniejszych kwadratów** mają obie właściwości.
 
 Graficznie **kryterium minimalizacyjne** przedstawia rysunek \@ref(fig:KMNK).
 
@@ -918,8 +922,8 @@ wartości empiryczne; kropki czerwone to wartości teoretyczne.
 Zadanie wyznaczenie
 parametrów takiej prostej oczywiście realizuje program komputerowy.
 
-Można udowodnić, że bez względu czy punkty na wykresie układają się
-w przybliżeniu wzdłuż prostej czy nie, zawsze **jakaś prosta** zostanie
+Można udowodnić, że bez względu na to, czy punkty na wykresie układają się
+w przybliżeniu wzdłuż prostej, czy nie, zawsze **jakaś prosta** zostanie
 dopasowana (jeżeli tylko punktów jest więcej niż jeden). 
 Jak ocenić w sposób bardziej konkretny, a nie tylko na oko jakość dopasowania
 prostej do wartości empirycznych?
@@ -946,13 +950,11 @@ albo suma kwadratów błędów vel **resztowa suma kwadratów**):
 
 $$\mathrm{RSK} = (y_1 - \hat y_1)^2 + (y_2 - \hat y_2)^2 + ... +  (y_n - \hat y_n)^2$$.
 
-Suma kwadratów odchyleń **wartości empirycznych**
-od średniej (**ogólna suma kwadratów**):
+Suma kwadratów odchyleń wartości empirycznych od średniej (ogólna suma kwadratów):
 
 $$\mathrm{OSK} = (y_1 - \bar y)^2 + (y_2 - \bar y)^2 + ... +  (y_n - \bar y)^2$$
 
-Suma kwadratów odchyleń **wartości teoretycznych**
-od średniej (**wyjaśniona suma kwadratów**):
+Suma kwadratów odchyleń wartości teoretycznych od średniej (wyjaśniona suma kwadratów):
 
 $$\mathrm{WSK} = (\hat y_1 - \bar y)^2 + (\hat y_2 - \bar y)^2 + ... +  (\hat y_n - \bar y)^2$$
 
@@ -965,12 +967,12 @@ $$ 1 =  \mathrm{WSK}/\mathrm{OSK} + \mathrm{RSK}/\mathrm{OSK}$$
 
 **Współczynnik determinacji** oznaczany jako $\Phi^2$ (duża grecka litera Fi) to $\mathrm{RSK}/\mathrm{OSK}$.
 
-Współczynniki przyjmują wartość z przedziału $[0,1]$ lub $[0, 100]$% jeżeli
+Współczynniki przyjmują wartość z przedziału $[0,1]$ lub $[0, 100]$%, jeżeli
 ich wartości zostaną pomnożone przez 100.
 
 Interpretacja współczynnika zbieżności: udział (procent) zmienności wyjaśnianej
 przez linię regresji. Im $R^2$ jest bliższe jedności (lub 100% jeżeli
-jest współczynnik zbieżności jest wyrażony w procentach) tym lepiej.
+współczynnik zbieżności jest wyrażony w procentach), tym lepiej.
 
 **Ocena dopasowania: istotność parametru $b_1$**
 
@@ -986,12 +988,12 @@ W konsekwencji znamy jego dokładny rozkład, bo przypominamy, że rozkład
 normalny jest określony przez dwa parametry: średnią oraz wariancję (lub
 odchylenie standardowe).
 
-Można teraz zadać pytanie jeżeli faktycznie $b_1=0$, to jakie jest prawdopodobieństwo, że
-współczynnik $\hat b_1$ oszacowany
-na podstawie $n$ obserwacji będzie (co do wartości bezwzględnej) większy niż $b_e$.
+Można teraz zadać pytanie: jeżeli faktycznie $b_1=0$, to jakie jest prawdopodobieństwo, że
+współczynnik $b_1$ oszacowany
+na podstawie $n$ obserwacji będzie (co do wartości bezwzględnej) większy niż $b_e$?
 Albo inaczej: otrzymaliśmy $b_e$, jakie jest prawdopodobieństwo
 otrzymania takiej wartości (lub większej co do wartości bezwzględnej)
-przy założeniu, że istotnie $b_1=0$.
+przy założeniu, że istotnie $b_1=0$?
 
 Jeżeli takie prawdopodobieństwo jest duże, to uznajemy, że $b_1 = 0$,
 a jeżeli małe, to będziemy raczej sądzić, że $b_1 \not= 0$. 
@@ -1059,19 +1061,19 @@ kable(lm.0.coef.df, row.names = F, digits=3,
 
 ```
 
-Pierwsza kolumna `Zmienna` zawiera nazwy zmiennych (`(Intercept)` oznacza wyraz wolny).
+Kolumna `Zmienna` zawiera nazwy zmiennych (`(Intercept)` oznacza wyraz wolny).
 Druga kolumna oznaczona jako `B` zawiera oszacowane wartości (oceny) parametrów linii regresji.
 Kolumna `SE` zawiera oceny błędu standardowego estymatorów parametrów linii regresji.
 Kolumna `p` zawiera prawdopodobieństwo $b>b_e$.
 
-Wzrost wagi zawodnika o 1kg
-skutkuje przeciętnie większym wzrostem o `r round(coeff_b, 3)` cm. Współczynnik determinacji
+Wzrost wagi zawodnika o 1 kg
+skutkuje przeciętnie większym wzrostem o `r round(coeff_b, 3)` cm. Współczynnik determinacji
 wynosi `r round(lmr * 100, 2)`%. 
-Współczynnik nachylenia prostej jest istotny ponieważ wartość $p$ (tak mała, że w tabeli
+Współczynnik nachylenia prostej jest istotny, ponieważ wartość $p$ (tak mała, że w tabeli
 oznaczona jako 0)
 jest grubo poniżej zwyczajowego poziomu istotności (p < 0,05). 
 
-Kolumna `CI95` zawiera 95% przedziały ufności: z 95% prawdopodobieństwem wartość współczynnika nachylenia
+Kolumna `CI95` zawiera 95% przedziały ufności: z 95-proc. prawdopodobieństwem wartość współczynnika nachylenia
 prostej znajduje się w przedziale `r  sprintf ("%.3f–%.3f", lm.0.ci[2,1], lm.0.ci[2,2])`.
 
 ```{r, warning=F, message=F, out.width="75%"}
@@ -1090,7 +1092,7 @@ meatCons <- read.csv(file='meatCons_vs_GDP.csv',sep=';',header=T)
 n0 <- nrow(meatCons)
 ```
 
-Następujący równanie opisuje zależność pomiędzy dochodem narodowym na głowę (tys USD *per capita*)
+Poniższe równanie opisuje zależność pomiędzy dochodem narodowym na głowę (tys USD *per capita*)
 a konsumpcją mięsa w kilogramach:
 
 $$\textrm{konsumpcja} = b_0 + b_1 \textrm{gdp}$$
@@ -1135,8 +1137,8 @@ kable(lm.0.coef.df, row.names = F, digits=3,
 
 ```
 
-Każdy tysiąc USD *per capita* więcej dochodu narodowego (GDP) oznacza przeciętny 
-wzrost spożycia mięsa o `r round(coeff_b, 3)`  kg.  Przeciętna różnica wartości teoretycznych
+Każdy 1000 USD *per capita* więcej dochodu narodowego (GDP) oznacza przeciętny 
+wzrost spożycia mięsa o `r round(coeff_b, 3)` kg.  Przeciętna różnica wartości teoretycznych
 od empirycznych wynosi 21,04 kg (średni błąd szacunku). 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%.
 Współczynnik nachylenia prostej (którego wartość 
@@ -1181,8 +1183,8 @@ weryfikuje się istotność współczynników $b_i$.
 **Standaryzacja współczynników regresji**
 
 Ponieważ współczynniki regresji $b_1, …, b_k$ mogą być wyrażone w różnych jednostkach miary,
-bezpośrednie porównanie jest niemożliwe; mały współczynnik może w rzeczywistości być ważniejszy niż większy.
-Jeżeli chcemy porównywać wielkości współczynników to trzeba je **zestandaryzować**.
+bezpośrednie ich porównanie jest niemożliwe; mały współczynnik może w rzeczywistości być ważniejszy niż większy.
+Jeżeli chcemy porównywać wielkości współczynników, to trzeba je **zestandaryzować**.
 
 Standaryzowany współczynnik regresji dla $i$-tej zmiennej
 obliczony jest poprzez pomnożenie współczynnika regresji $b_i$ przez $s_{xi}$
@@ -1190,7 +1192,7 @@ i podzielenie przez $s_y$:
 
 $$\beta_i = b_i \frac{s_{xi}}{s_y}$$
 
-Dla przypomnienia $s_{xi}$
+Dla przypomnienia: $s_{xi}$
 to odchylenie standardowe zmiennej $X_i$, a $s_y$ to odchylenie standardowe zmiennej $Y$.
 Interpretacja współczynnika standaryzowanego jest cokolwiek dziwaczna:
 zmiana zmiennej $X_i$ o jedno odchylenie standardowe ($s_{xi}$)
@@ -1212,15 +1214,15 @@ przekonania i postawy, które z definicji są bezjednostkowe.
 Zwykle jest tak, że do objaśniania kształtowania się wartości zmiennej $Y$ kandyduje wiele potencjalnych
 predyktorów $X_k$.
 Model zawierający wszystkie $X_k$ predyktory niekoniecznie będzie najlepszy.
-Nie wdając się w omawianie szczegółowych zasad poprzestaniemy na dwóch kryteriach:
+Nie wdając się w omawianie szczegółowych zasad, poprzestaniemy na dwóch kryteriach:
 
-1. Model prostszy jest lepszy od modelu bardziej skomplikowanego jeżeli adekwatnie objaśnia zmienność $Y$
+1. Model prostszy jest lepszy od modelu bardziej skomplikowanego, jeżeli adekwatnie objaśnia zmienność $Y$
    (zasada brzytwy Ockhama).
 
 2. Model powinien zawierać tylko zmienne o współczynnikach, których wartości są statystycznie różne od zera.
 
 Regresja krokowa (*stepwise regression*) jest metodą  wyboru najlepszych predyktorów
-spośród większego zbioru zmiennych. Występuje w dwóch wariantach  **dołączania** i **eliminacji**.
+spośród większego zbioru zmiennych. Występuje w dwóch wariantach:  **dołączania** i **eliminacji**.
 Ponieważ **eliminacja** wydaje się prostsza omówimy tylko ten wariant.
 
 W metodzie eliminacji początkowym modelem jest model zawierający wszystkie potencjalne $X_k$ predyktory.
@@ -1241,7 +1243,7 @@ and age with incident diabetes in Chinese adults: a population-based cohort stud
 BMJ Open. 2018 Sep 28;8(9):e021768. doi: 10.1136/bmjopen-2018-021768. PMID: 30269064; PMCID: PMC6169758).
 
 Oryginalny zbiór danych liczy 60 tysięcy obserwacji. Dla celów przykładu losowo wybrano 90, 490
-oraz 4490 obserwacji. Zobaczymy jaki ma wpływ wielkość próby na wynik szacowania modelu.
+oraz 4490 obserwacji. Zobaczymy, jaki ma wpływ wielkość próby na wynik szacowania modelu.
 
 Oszacowanie równania dla próby o wielkości 90 obserwacji daje następujące wyniki:
 
@@ -1287,7 +1289,7 @@ oceny parametrów regresji. Tej kolumny na poprzednich wydrukach
 (punkt \@ref(regProsta))
 nie było, bo w przypadku regresji 
 prostej standaryzacja jest zabiegiem raczej zbędnym. Dla wyrazu wolnego
-nie ma wartości standaryzowanej (co oznaczono jako `NA` czyli *not available*),
+nie ma wartości standaryzowanej (co oznaczono jako `NA`, czyli *not available*),
 ale to żadna strata – oceny tego parametru nie są interpretowane.
 Wpływ `BMI` na wielkość ciśnienia jest nieco niższy niż `age`.
 
@@ -1316,7 +1318,7 @@ kable(lm.2.coef.df, row.names = F, digits=3,
 ```
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. 
-Wpływ `BMI` na wielkość ciśnienia jest teraz wyższy niż `age`. Przedziały ufności są węższe
+Wpływ `BMI` na wielkość ciśnienia jest teraz wyższy niż `age`. Przedziały ufności są węższe,
 co wynika z większej liczebności próby.
 
 Oszacowanie równania dla próby o wielkości 4490 obserwacji daje następujące
@@ -1345,8 +1347,8 @@ kable(lm.3.coef.df, row.names = F, digits=3,
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%.
 Przedziały ufności są jeszcze węższe. Ocena `age` 
-z 95% prawdopodobieństwem znajduje się w przedziale [0.290 0.350]
-a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0.240 0.730].
+z 95-proc. prawdopodobieństwem znajduje się w przedziale [0,290 0,350]
+a w pierwszym oszacowaniu dla znacznie mniejszej próby było to [0,240 0,730].
 Przedział jest ponad 8 razy węższy.
 
 :::
@@ -1359,8 +1361,8 @@ wielorakiej. Zmienna nominalna jest zamieniana na jedną lub więcej
 zmiennych binarnych, które przyjmują tylko dwie wartości 0 lub 1.
 
 Przykładowo rodzaj miejsca pracy (skala nominalna; dwie wartości: szpital, przychodnia)
-można zamienić na zmienną binarną `praca` przypisując 1 = szpital, oraz
-0 = przychodnia (lub odwrotnie). Załóżmy że poziom stresu zależy od stażu pracy, satysfakcji
+można zamienić na zmienną binarną `praca`, przypisując 1 = szpital, oraz
+0 = przychodnia (lub odwrotnie). Załóżmy, że poziom stresu zależy od stażu pracy, satysfakcji
 (obie mierzone na skali liczbowej)
 i rodzaju miejsca pracy. Możemy to zapisać jako następujące równanie regresji:
 
@@ -1372,19 +1374,19 @@ spowodowaną pracą w szpitalu w porównaniu do pracy w przychodni. Jeżeli ten 
 statystycznie, to istnieje zależność pomiędzy stresem a miejscem pracy. Czyli zamiast
 stosować test $t$ Welcha i porównywać średnie w grupach,
 możemy oszacować model regresji z wykorzystaniem stosownej
-zmiennej zero-jedynkowej a następnie sprawdzić czy współczynnik stojący przy tej zmiennej jest istotny.
+zmiennej zero-jedynkowej, a następnie sprawdzić, czy współczynnik stojący przy tej zmiennej jest istotny.
 
-Jeżeli zmienna nominalna ma $n$ wartości należy ją zamienić na $n-1$ zmiennych zero-jedynkowych.
-Załóżmy że stress zależy także od wykształcenia, mierzonego w skali nominalnej
-(średnie, licencjat, magisterskie.) Tworzymy dwie zmienne:
-magister (jeden jeżeli respondent ma wykształcenie magisterskie lub 0 jeżeli nie ma) 
-oraz licencjat (jeden jeżeli respondent ma licencjat lub 0 jeżeli nie ma). Równanie
+Jeżeli zmienna nominalna ma $n$ wartości, należy ją zamienić na $n-1$ zmiennych zero-jedynkowych.
+Załóżmy że stres zależy także od wykształcenia, mierzonego w skali nominalnej
+(średnie, licencjat, magisterskie). Tworzymy dwie zmienne:
+magister (1, jeżeli respondent ma wykształcenie magisterskie, lub 0, jeżeli nie ma) 
+oraz licencjat (1, jeżeli respondent ma licencjat, lub 0, jeżeli nie ma). Równanie
 regresji ma postać:
 
 $$\textrm{stres} = b_0 + b_1\textrm{staż} + b_2 \textrm{satysfakcja} + b_3 \textrm{praca}
 + b_4 \textrm{magister} + b_5 \textrm{licencjat} $$
 
-Jeżeli $\textrm{magister} = 0$ oraz $\textrm{licencjat} = 0$ to osoba ma wykształcenie średnie.
+Jeżeli $\textrm{magister} = 0$ oraz $\textrm{licencjat} = 0$, to osoba ma wykształcenie średnie.
 
 Interpretacja: $b_4$ (jeżeli istotne) oznacza przeciętną zmianę wielkości stresu osoby z wykształceniem magisterskim w porównaniu do osoby z wykształceniem średnim. Podobnie $b_5$ oznacza przeciętną zmianę 
 wielkości stresu osoby z wykształceniem licencjackim 
@@ -1397,20 +1399,20 @@ Poprzednio rozważany model
 rozszerzymy o trzy zmienne: płeć (kobieta/mężczyzna),
 status względem picia alkoholu (pije, pił, nigdy nie pił)
 oraz status względem palenia (palił, pali, nigdy nie palił). 
-Zwróćmy uwagę że zmienne mierzące status względem palenia/picia mają nie dwie a trzy wartości. 
-Należy każdą zamienić na dwie zmienne binarne, wg schematu:
+Zwróćmy uwagę, że zmienne mierzące status względem palenia/picia mają nie dwie, a trzy wartości. 
+Należy każdą zamienić na dwie zmienne binarne, według schematu:
 
 `CS` (pali) = 1 jeżeli pali, 0 w przeciwnym przypadku;
 
-`PS` (palił) = 1 jeżeli palił ale nie pali, 0 w przeciwnym przypadku;
+`PS` (palił) = 1 jeżeli palił, ale nie pali, 0 w przeciwnym przypadku;
 
 `CD` (pije) oraz `PD` (pił) *per analogiam* do `CS`/`CD`.
 
-Zmienna płeć `genderF` = 1 jeżeli kobieta, lub 0 jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
-dwuwartościowej wskazuje, która wartość jest zakodowana jako 1. Przykładowo `genderF` (*female* żeby się
-trzymać języka angielskiego) wskazuje że jedynką jest kobieta.
-Taka konwencja ułatwia interpretację. Gdybyśmy zamiast `genderF` nazwali zmienną `gender` to na pierwszy
-rzut oka nie było by wiadomo co zakodowano jako jeden. A tak wiadomo od razu jak
+Zmienna płeć `genderF` = 1, jeżeli kobieta, lub 0, jeżeli mężczyzna. Zauważmy, że nazwa zmiennej
+dwuwartościowej wskazuje, która wartość jest zakodowana jako 1. Przykładowo `genderF` (*female*, żeby się
+trzymać języka angielskiego) wskazuje, że jedynką jest kobieta.
+Taka konwencja ułatwia interpretację. Gdybyśmy zamiast `genderF` nazwali zmienną `gender`, to na pierwszy
+rzut oka nie byłoby wiadomo, co zakodowano jako jeden. A tak wiadomo od razu, jak
 interpretować parametr stojący przy tej zmiennej: zmiana wielkości ciśnienia u kobiet w porównaniu do mężczyzn.
 
 Rozważany model ma postać:
@@ -1448,7 +1450,7 @@ kable(lm.1.coef.df, row.names = F, digits=3,
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. Tylko dwie na siedem zmiennych
 są istotne. Zwróćmy uwagę, że nieistotnie zmienne mają przedziały ufności zawierające zero. W konsekwencji
-z 95% prawdopodobieństwem wartości tych współczynników mogą być raz ujemne raz dodatnie – nie mamy
+z 95-proc. prawdopodobieństwem wartości tych współczynników mogą być raz ujemne, raz dodatnie – nie mamy
 nawet pewności co do kierunku zależności między zmienną objaśniającą a ciśnieniem.
 Zmienne, które okazały się istotne jednocześnie mają największą wielkość efektu (kolumna `Beta`)
 i nie jest to przypadek.
@@ -1482,19 +1484,19 @@ kable(lm.3.coef.df, row.names = F, digits=3,
 
 Współczynnik zbieżności wynosi `r round(lmr * 100, 2)`%. Zwiększenie
 liczebności próby z 90 do 4490 obserwacji spowodowało, że tylko dwie z siedmiu zmiennych 
-mają nieistotne wartości. Analizując wartości standaryzowane możemy ustalić
+mają nieistotne wartości. Analizując wartości standaryzowane, możemy ustalić,
 które zmienne mają największy wpływ na wielkość ciśnienia krwi.
 
 :::
 
-Ktoś mógłby dojść do wniosku, że wszystko da się **uistotnić**
+Ktoś mógłby dojść do wniosku, że wszystko da się „uistotnić”,
 wystarczy zwiększyć wielkość próby. Teoretycznie tak, praktycznie nie. 
 W praktyce nie interesuje nas niewielka wielkość 
-efektu czyli znikomy wpływ czegoś na coś. Dodatkowo zebranie dużej próby może
+efektu, czyli znikomy wpływ czegoś na coś. Dodatkowo zebranie dużej próby może
 być kosztowne lub wręcz w praktyce niemożliwe – nie mamy dość dużo pieniędzy.
-Można teoretycznie określić jaka wielkość próby pozwoli na ocenę jakiej
-wielkości efektu. Sposób postępowania jest wtedy następujący: określamy
-jaka wielkość efektu ma **znaczenie praktyczne** i na tej podstawie określamy
+Można teoretycznie określić, jaka wielkość próby pozwoli na ocenę jakiej
+wielkości efektu. Sposób postępowania jest wtedy następujący: określamy,
+jaka wielkość efektu ma **znaczenie praktyczne**, i na tej podstawie określamy
 liczebność próby. Takie zaawansowane podejście
 wykracza poza ramy tego podręcznika.
 
@@ -1502,7 +1504,7 @@ wykracza poza ramy tego podręcznika.
 **Regresja krokowa**
 
 W modelu zależność pomiędzy ciśnienie skurczowym, BMI, wiekiem, płcią, paleniem i piciem
-(próba 4490) zmienne `PD` oraz `PS` są nieistotne przy czym współczynnik
+(próba 4490) zmienne `PD` oraz `PS` są nieistotne, przy czym współczynnik
 przy zmiennej `PD` ma wartość $p$ równą 0,309 zaś przy zmiennej
 `PS` ma wartość 0,05324. Usuwamy zmienną `PD` (bo wartość $p$ jest większa)
 i szacujemy równanie regresji dla sześciu pozostałych zmiennych. Otrzymujemy:
@@ -1560,23 +1562,23 @@ kable(lm.3.coef.df, row.names = F, digits=3,
 
 Wszystkie współczynniki mają istotnie różnie od zera wartości. Wartość
 współczynnika zbieżności ostatecznego modelu wynosi `r round(lmr * 100, 2)`%.
-Usuwając nieistotne zmienne z modelu obniżyliśmy wartość
+Usuwając nieistotne zmienne z modelu, obniżyliśmy wartość
 współczynnika zmienności o 
 `r round(lmr7, 4) * 100`%  -  `r round(lmr, 4) * 100`%  =  `r round(lmr7 - lmr, 4) * 100`%, czyli
-tyle co nic.
+tyle, co nic.
 
 :::
 
 ## Przypadek specjalny: regresja logistyczna
 
-Jeżeli zmienna $Y$ jest zmienną **dwuwartościową**, czyli taką która przyjmuje tylko dwie 
+Jeżeli zmienna $Y$ jest zmienną **dwuwartościową**, czyli taka, która przyjmuje tylko dwie 
 wartości (np. chory/zdrowy), to metoda regresji nie może być zastosowana. 
 Przykładowo jeżeli zakodujemy te wartości jako chory=0 i zdrowy=1,
 to zastosowanie regresji
 doprowadzi do obliczenia (teoretycznych) wartości $Y$ różnych od $0$ i $1$.
 Taki wynik nie ma sensownej interpretacji.
 
-Ale zamiast szacować regresję $Y$ względem $X$ (lub $X$-ów) można szacować
+Ale zamiast szacować regresję $Y$ względem $X$ (lub $X$-ów), można szacować
 regresję względem ryzyka dla $Y$ (czyli **prawdopodobieństwa**, że $Y$ przyjmie wartość 1).
 Tutaj znowu pojawia się jednak trudność, bo ryzyko może przyjąć tylko wartości
 z przedziału $[0,1]$.
@@ -1589,19 +1591,19 @@ Zauważmy, że $o = \frac{p}{1-p}$ to nic innego jak szansa (*odds*, por. punkt 
 Parametr $b_i$ jest miarą wpływu zmiennej $X_i$ na zmienną $Y$.
 Jeżeli $X_i$ wzrośnie o jednostkę, to logarytm ilorazu szans
 wzrośnie o $b_i$ (przy założeniu, że pozostałe zmienne $X$ mają
-pewne ustalone wartości a zmienia się tylko $X_i$).
+pewne ustalone wartości, a zmienia się tylko $X_i$).
 Jeżeli $X_i$ jest zmienną **dwuwartościową**
 to interpretacja jest jeszcze prostsza: jest to logarytm ilorazu szans
 dla wartości $X_i=1$ względem $X_i=0$. 
 
 Zwykle zamiast **logarytmu ilorazu szans** wolimy interpretować zmianę w kategoriach
-**ilorazu szans**. Aby otrzymać ów iloraz należy wykonać następujące 
+**ilorazu szans**. Aby otrzymać ów iloraz, należy wykonać następujące 
 przekształcenie ($\exp$ oznacza podstawę logarytmu naturalnego):
 
 $$o = \exp^{\ln(o)}$$
 
 Zwykle iloraz szans wyraża się
-w procentach, czyli mnoży przez 100. Jeżeli ta liczba jest większa od 100 oznacza
+w procentach, czyli mnoży przez 100. Jeżeli ta liczba jest większa od 100, oznacza
 to wzrost szansy, a jeżeli mniejsza od 100, spadek szansy.
 
 
@@ -1609,7 +1611,7 @@ to wzrost szansy, a jeżeli mniejsza od 100, spadek szansy.
 
 Nie ma w przypadku regresji logistycznej możliwości obliczenia sumy
 kwadratów reszt czy współczynnika zbieżności.
-Model ocenia się 
+Model ocenia się, 
 używając jako kryterium **dewiancję** (*deviance*), której
 wielkość zależy od proporcji pomiędzy liczbą sukcesów obliczonych
 na podstawie modelu a liczbą sukcesów zaobserwowanych.
@@ -1629,7 +1631,7 @@ $$\ln(o) = b_0$$
 
 W modelu zerowym prawdopodobieństwo osteoporozy jest identyczne dla
 kobiet i mężczyzn, zatem w oczywisty sposób dewiancja tego modelu
-będzie większa. Pytanie jest czy różnica jest istotna statystycznie.
+będzie większa. Pytanie, czy różnica jest istotna statystycznie.
 Jeżeli jest, to przyjmuje się, że szacowany model jest lepszy od modelu
 trywialnego (warunek minimum przydatności).
 
@@ -1651,37 +1653,37 @@ Model regresji logistycznej nie oblicza wartości zmiennej prognozowanej,
 bo ta nie jest liczbą, tylko **klasyfikuje**, tj. ustala (albo prognozuje) wartość
 zmiennej nominalnej w kategoriach „sukces”/„porażka”.
 Ważnym kryterium oceny jakości modelu  jest ocena jakości
-klasyfikacji, to jest ocena na ile model poprawnie
+klasyfikacji, to jest ocena, na ile model poprawnie
 przypisuje przypadkom kategorie zmiennej prognozowanej. Im mniejsza
-rozbieżność pomiędzy wartościami rzeczywistymi a prognozowanymi tym oczywiście lepiej.
+rozbieżność pomiędzy wartościami rzeczywistymi a prognozowanymi, tym oczywiście lepiej.
 
 Klasyfikacja w modelu regresji logistycznej wygląda następująco:
 jeżeli prawdopodobieństwo obliczone z modelu
-jest wyższe-lub-równe niż założona **wartość graniczna** ($p_g$), to zakładamy „sukces”,
+jest wyższe od przyjętej **wartości granicznej** ($p_g$) lub jej równe, to zakładamy „sukces”,
 jeżeli tak nie jest, to zakładamy „porażkę”. 
-Wartość $p_g$ jest ustala albo
+Wartość $p_g$ jest ustalana albo
 arbitralnie, albo na podstawie jakieś dodatkowej (pozastatystycznej) informacji.
-Domyślnie przyjmuje się zwykle $p_g = 0,5$, co oznacza że
+Domyślnie przyjmuje się zwykle $p_g = 0,5$, co oznacza, że
 wartości $p \geq 0,5$ zostaną zamienione na „sukces”,
 a wartości $p < 0,5$ na „porażkę”.
 
 **Macierz błędów**
 
-Tabela dwudzielna przedstawiająca rozkład wartości prognozowanych i wartości emprycznych 
-nazywa sie macierzą błędów (*confussion matrix*), por. rysunek \@ref(fig:ConfMx).
+Tabela dwudzielna przedstawiająca rozkład wartości prognozowanych i wartości empirycznych 
+nazywa się macierzą błędów (*confussion matrix*), por. rysunek \@ref(fig:ConfMx).
 
 ```{r ConfMx, out.width="75%", fig.cap = "Macierz błędów"}
 knitr::include_graphics("./ConfussionMatrix.pdf")
 ```
 
-Poszczególne rubryki macierzy błedów zawierają liczbę:
+Poszczególne rubryki macierzy błędów zawierają liczbę:
 sukcesów zaklasyfikowanych jako „sukces” (*true positive*, TP),
 sukcesów zaklasyfikowanych jako „porażka” (*false positive*, FP),
 porażek zaklasyfikowanych jako „porażka” (*true negative*, TN)
 oraz porażek zaklasyfikowanych jako „sukces” (*false negative*, FN).
 
 Jakość klasyfikacji ocenia się także za pomocą dwóch wskaźników:
-**czułość** (*sensitivity*) oraz **swoistość** (*specifity*). 
+**czułości** (*sensitivity*) oraz **swoistości** (*specifity*). 
 
 Czułość to odsetek sukcesów zaklasyfikowanych jako „sukces” 
 ($\mathrm{TP}/(\mathrm{TP}+\mathrm{FN})$).
@@ -1692,18 +1694,18 @@ jako „porażka” ($\mathrm{TN}/(\mathrm{TN} + \mathrm{TP})$).
 
 Czułość oraz swoistość zależą od prawdopodobieństwa granicznego.
 Im wyższa
-jest wartość prawdopodobieństwa granicznego  tym mniej będzie „sukcesów“.
+jest wartość prawdopodobieństwa granicznego, tym mniej będzie „sukcesów“.
 
 Krzywa ROC przedstawia w układzie współrzędnych XY wartości
 czułości oraz swoistości dla wybranych wartości granicznych.
 
 Współczynnik AUC (*area under curve*) to wielkość pola pod
 krzywą wyrażona w procentach pola kwadratu o boku 100%.
-AUC zawiera się w przedziale 50–100. Im większa wartość współczynnika tym lepiej.
-Model który klasyfikuje czysto losowo 
+AUC zawiera się w przedziale 50–100. Im większa wartość współczynnika, tym lepiej.
+Model, który klasyfikuje czysto losowo, 
 ma wartość AUC równą 50% (por. rysunek \@ref(fig:ROCcurve)).
 
-```{r ROCcurve, out.width="85%", fig.cap = "Krzywa ROC"}
+```{r ROCcurve, out.width="75%", fig.cap = "Krzywa ROC"}
 knitr::include_graphics("./ROCcurve.pdf")
 ```
 
@@ -1784,17 +1786,16 @@ ggroc(roc_obj,
   ggtitle(paste0('ROC Curve ', '(AUC = ', auc, ')'))
 ```
 
-Model zerowy jak sama nazwa wskazuje może tylko służyć do porównania
+Model zerowy, jak sama nazwa wskazuje, może tylko służyć do porównania
 z bardziej skomplikowanymi modelami.
 
 Takim bardziej skomplikowanym modelem będzie przykładowo 
-zależność pomiędzy wystąpieniem osteoporozy a płcią, który
+zależność pomiędzy wystąpieniem osteoporozy a płcią, którą
 można opisać następującym równaniem regresji:
 
 $$\ln(o) = b_0 + b_1 \cdot \textrm{kobieta}$$
 
-Zmienna `kobieta` przyjmuje wartość 1 jeżeli osoba była kobietą
-oraz zero w przypadku jeżeli była mężczyzną.
+Zmienna `kobieta` przyjmuje wartość 1, jeżeli osoba była kobietą, oraz 0, jeżeli była mężczyzną.
 
 
 W tabeli zestawiono wartości parametrów oszacowanego modelu (`Ocena`), 
@@ -1855,7 +1856,7 @@ oraz `r osteoporosis.by.gender.M`.
 
 Dewiancja modelu (`r round(glm.1$deviance, 2)`) jest istotnie mniejsza 
 od modelu zerowego (`r round(glm.0$deviance, 2)`), ponieważ wartość $p$ wynosi `r round(pchisq.glm.1, 4)`.
-Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.1, 4)`
+Wartość współczynnika pseudo-$R^2$ McFaddena wyniosła `r round(mcfadden.1, 4)`,
 a pseudo-$R^2$ Nagelkerke wyniosła `r round(nagelkerke.1, 4)`.
 
 
@@ -1953,7 +1954,7 @@ ggroc(roc_obj,
 
 Współczynnik korelacji rang Spearmana (*Spearman's Rank-Order Correlation*)
 może być stosowany
-w przypadku gdy cechy są mierzone w skali porządkowej (lub lepszej czyli liczbowej).
+w przypadku, gdy cechy są mierzone w skali porządkowej (lub lepszej, czyli liczbowej).
 
 Obliczenie współczynnika Spearmana dla $N$ obserwacji na zmiennych $XY$
 polega na zamianie wartości
@@ -1988,17 +1989,17 @@ rsm.out <- cor.test(meatCons$y1980, meatCons$y2013, method="spearman")
 rsm.p <- rsm.out$p.value
 ```
 
-Nie ma sensu liczenia współczynnika korelacji rang w przypadku kiedy obie
+Nie ma sensu liczenie współczynnika korelacji rang w przypadku, kiedy obie
 cechy są liczbami, bo wtedy należy użyć normalnego współczynnika Pearsona.
-Ale nie jest to też błędem więc w powyższym przykładzie go liczymy.
+Ale nie jest to też błędem, więc w powyższym przykładzie go liczymy.
 
 Współczynnik korelacji liniowej Spearmana 
 wynosi `r round(rsm, 2)` (umiarkowana korelacja).
 
 Czy ta wartość jest istotnie różna od zera? Jest na to stosowny
-test statystyczny, który sprowadza się do określenia jakie jest
-prawdopodobieństwo otrzymania $r_s$ = `r round(rsm, 2)` przy założeniu że 
-prawdziwa wartość $r_s$ wynosi zero. Otóż w naszym przykładzie
+test statystyczny, który sprowadza się do określenia, jakie jest
+prawdopodobieństwo otrzymania $r_s$ = `r round(rsm, 2)` przy założeniu, że 
+prawdziwa wartość $r_s$ wynosi 0. Otóż w naszym przykładzie
 to prawdopodobieństwo wynosi `r sprintf ("%e", rsm.p)` 
 (czyli jest ekstremalnie małe – współczynnik jest istotnie różny od zera).
 
@@ -2020,4 +2021,4 @@ Przedstawiono 7 następujących metod ustalania zależności między zmiennymi:
 
 6. Regresja logistyczna.
 
-7. testy $t$ Welcha, U Manna-Whitneya, ANOVA albo test Kruskala-Wallisa.
+7. Testy $t$ Welcha, U Manna-Whitneya, ANOVA albo test Kruskala-Wallisa.
