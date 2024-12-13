@@ -188,7 +188,7 @@ Przekodowanie wykonujemy, wybierając **Dane** w menu głównym.
 2. Wybieramy ikonę `Przekształcenie`. Wypełniamy jak na rysunku \@ref(fig:przeksztalcenie0).
 
 Uwaga: Jamovi nie zmieni wartości zmiennej `s1`, tylko utworzy nową zmienną
-z przekodowanymi wartościami. Zmienna, na podstawie której jest tworzona
+z przekodowanymi wartościami. Zmienna, na podstawie której jest tworzona
 nowa zmienna, nazywa się źródłową (`s1` w naszym przykładzie jest źródłowa).
 
 ```{r przeksztalcenie0, out.width=jamovi.screen, fig.cap = "Przekształcenie"}

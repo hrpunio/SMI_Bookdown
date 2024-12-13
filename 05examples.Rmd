@@ -1056,12 +1056,12 @@ różnicy w poziomie depresji wśród pracowników szpitali i przychodni.
 
 ### Cel
 
-Czy satysfakcja z pracy, satysfakcja z wynagrodzenia, 
+Czy satysfakcja z pracy, satysfakcja z wynagrodzenia, 
 konflikt personalny ze współpracownikami oraz 
-konflikt personalny z przełożonym 
+konflikt personalny z przełożonym 
 warunkują
 przywiązanie do miejsca
-pracy oraz zamiar zmiany miejsca pracy w środowisku
+pracy oraz zamiar zmiany miejsca pracy w środowisku
 pielęgniarek?
 
 **Postawiono następujące hipotezy badawcze**:
@@ -1100,9 +1100,9 @@ przywiązanie do miejsca pracy (przywiązanie organizacyjne PO),
 satysfakcja z pracy (SP),
 satysfakcja z wynagrodzenia (SW),
 konflikt personalny ze współpracownikami (KPW)
-oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
+oraz konflikt personalny z przełożonym (KPP) były mierzone za pomocą
 stosownych skal pomiarowych. Ankietowani byli także pytani
-o staż oraz o to,
+o staż oraz o to,
 czy pracują na oddziale ratunkowym/intensywnej terapii (zmienna `roddzial`).
 
 Zastosowane metody statystyczne:

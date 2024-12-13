@@ -2,9 +2,9 @@
 # Analiza współzależności pomiędzy zmiennymi {#causality}
 
 Pomiędzy zjawiskami występują związki (zależności). Nauki formułują te związki
-w postaci **praw**. Jak takie **prawo naukowe** powstaje? Typowo w dwu etapach,
+w postaci **praw**. Jak takie **prawo naukowe** powstaje? Typowo w dwu etapach,
 najpierw za pomocą **dedukcji** stawia się **hipotezę**, potem konfrontuje się 
-hipotezę z danymi (podejście hipotetyczno-dedukcyjne). 
+hipotezę z danymi (podejście hipotetyczno-dedukcyjne). 
 Na tym drugim etapie używa się statystyki (lub matematyki, jeżeli prawo ma charakter deterministyczny).
 
 Upraszczając, *metoda hypodedukcji* sprowadza się do dedukcyjnego sformułowania hipotezy, która następnie jest empirycznie *falsyfikowana*, tj. próbuje się wykazać, że jest ona nieprawdziwa. Konsekwencje:
@@ -874,9 +874,9 @@ O tym składniku zakładamy, że średnia jego wartość wynosi zero.
 Można to sobie wyobrazić następująco: w populacji jest jakaś prawdziwa zależność
 $Y = b_0 + b_1 \cdot X$ pomiędzy $X$ a $Y$, która w próbie
 ujawnia się z błędem o charakterze losowym. Ten błąd może wynikać
-z pominięcia pewnej ważnej zmiennej (model
+z pominięcia pewnej ważnej zmiennej (model
 jest zawsze uproszczeniem rzeczywistości), przybliżonego charakteru linii
-prostej jako zależności pomiędzy $X$ a $Y$ (prosta, ale nie do końca prosta)
+prostej jako zależności pomiędzy $X$ a $Y$ (prosta, ale nie do końca prosta)
 albo błędu pomiaru.
 
 Współczynnik $b_1$ (nachylenia prostej) określa wielkość efektu
