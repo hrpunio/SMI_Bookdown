@@ -613,9 +613,9 @@ podać jednostkę miary.
 
 ### Miary asymetrii
 
-Asymetria albo skośność (*skewness*), to odwrotność symetrii. Szereg jest symetryczny
+Asymetria albo skośność (*skewness*) jest odwrotnością symetrii. Rozkład jest symetryczny
 jeżeli jednostki są rozłożone „równomiernie” wokół wartości średniej.
-W szeregu symetrycznym wartości średniej i mediany są sobie równe.
+W rozkładzie symetrycznym wartości średniej i mediany są sobie równe.
 Skośność może być dodatnia (*positive skew*) lub ujemna (*negative skew*).
 W przypadku asymetrii prawostronnej większa część zbiorowości przyjmuje wartości
 poniżej średniej. W przypadku asymetrii lewostronnej jest odwrotnie.
@@ -728,7 +728,7 @@ skewness.b_q <- ((q3.b - median.b) - (median.b  - q1.b)) / (q3.b -  q1.b)
 Histogram przy przyjęciu długości przedziału równej `r hw` kg 
 (pionowa linia zielona  oznacza poziom średniej):
 
-```{r, warning=FALSE, out.width="85%"}
+```{r, warning=FALSE, out.width="90.0%"}
 h1.b <- ggplot(b, aes(x = weight)) + 
   geom_histogram(binwidth = hw, fill='deepskyblue3') +
   scale_y_continuous(breaks=seq(0, 200, by=20)) +
@@ -791,10 +791,10 @@ h1.f
 Liczba zawodników młyna wyniosła `r n.f`.
 Średnio zawodnik młyna ważył `r round(mean.f, 1)` kg.
 Wartość mediany wyniosła `r round(median.f, 1)` kg (połowa zawodników
-młyna ważyło `r median.f` kg i mniej). Wartości
-pierwszego i trzeciego kwartyla wyniosły odpowiednio `r q1.f` oraz `r q3.f` kg (1/4 zawodników
-młyna ważyło `r q1.f` kg i mniej; 
-1/4 zawodników młyna ważyło `r q3.f` kg i więcej).
+młyna ważyło `r median.f` kg i mniej). Wartości
+pierwszego i trzeciego kwartyla wyniosły odpowiednio `r q1.f` oraz `r q3.f` kg (1/4 zawodników
+młyna ważyło `r q1.f` kg i mniej; 
+1/4 zawodników młyna ważyło `r q3.f` kg i więcej).
 
 Odchylenie standardowe jest równe `r round(sd.f, 1)` kg (przeciętnie
 odchylenie od średniej arytmetycznej wynosi `r round(sd.f, 1)` kg).

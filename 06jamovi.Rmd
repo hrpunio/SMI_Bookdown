@@ -1,6 +1,6 @@
 # Praca z programem Jamovi {#intro2jamovi}
 
-Jak wspomniano w rozdziale \@ref(#przedmiotbadan), statystkę można uprawiać (tj. liczyć statystyki w drugim tego słowa znaczeniu),
+Jak wspomniano w rozdziale \@ref(przedmiotbadan), statystkę można uprawiać (tj. liczyć statystyki w drugim tego słowa znaczeniu),
 wykorzystując różne programy. My zdecydowaliśmy się promować **Jamovi**, program,
 który naszym zdaniem jest najlepszym – z punktu widzenia większości
 studentów nauk o zdrowiu – połączeniem ceny, możliwości, prostoty i łatwości nauki.
@@ -470,18 +470,18 @@ knitr::include_graphics("./jamovi_tabele_krzyzowe.png")
 Jeżeli zmienna nominalna (zwana grupującą) przyjmuje dwie wartości,
 wybieramy `Analizy`→`Testy t`→`Test t dla prób niezależnych`. 
 Zmienne zależne to zmienne, których wartości zostaną podzielone na grupy.
-Ustawiamy kursor kolejno na zmiennej, która nas interesuje i klikamy w strzałkę górną.
+Ustawiamy kursor kolejno na zmiennej, która nas interesuje i klikamy w strzałkę górną.
 Ustawiamy kursor na zmiennej grupującej 
-(np. `plec`) i klikamy strzałkę dolną (por. rys. \@ref(fig:testyJamovi)).
+(np. `plec`) i klikamy strzałkę dolną (por. rys. \@ref(fig:testyJamovi)).
 
-Zaznaczamy przyciski `Test Welcha`, `U Manna-Whitneya` (w sekcji **Testy**) oraz `Test normalności`
-(w sekcji **Weryfikacja założeń**).
+Zaznaczamy przyciski `Test Welcha`, `U Manna-Whitneya` (w​sekcji **Testy**) oraz `Test normalności`
+(w sekcji **Weryfikacja założeń**).
 
 Jeżeli zmienna nominalna (grupująca) przyjmuje więcej niż dwie wartości,
 wybieramy `Analizy`→​`ANOVA`→​`Jednoczynnikowa ANOVA`. Zmienne zależne
-i grupujące wybieramy w identyczny sposób jak w przypadku testu Welcha (por. rys. \@ref(fig:anovaJamovi)).
-Zaznaczamy przyciski `Nie zakładaj równości (test Welcha)` (w sekcji **Wariancje**) oraz `Test normalności`
-(w sekcji **Weryfikacja założeń**) i `Tabela statystyk opisowych` (w sekcji **Dodatkowe statystyki**).
+i grupujące wybieramy w identyczny sposób jak w przypadku testu Welcha (por. rys. \@ref(fig:anovaJamovi)).
+Zaznaczamy przyciski `Nie zakładaj równości (test Welcha)` (w sekcji **Wariancje**) oraz `Test normalności`
+(w sekcji **Weryfikacja założeń**) i `Tabela statystyk opisowych` (w sekcji **Dodatkowe statystyki**).
 
 Jeżeli wynik testu Shapiro-Wilka wskaże, że rozkład zmiennej zależnej nie jest normalny, należy
 wykonać test Kruskala-Wallisa, wybierając `Jednoczynnikowa ANOVA Test Kruskala-Wallisa`.
@@ -501,9 +501,9 @@ knitr::include_graphics("./jamovi_anova.png")
 Wybieramy `Analizy`→`Regresja`→`Regresja liniowa`.
 
 Interfejs jest podobny do poprzednio opisywanych. Wybieramy
-zmienną zależną (musi oczywiście być liczbowa), klikając w górną strzałkę. 
-Zmienne niezależne mierzone w skali liczbowej
-wybieramy, klikając w środkową strzałkę, a zmienne niezależne mierzone
+zmienną zależną (musi oczywiście być liczbowa), klikając w górną strzałkę. 
+Zmienne niezależne mierzone w skali liczbowej
+wybieramy, klikając w środkową strzałkę, a zmienne niezależne mierzone
 w skali nominalnej -- w dolną strzałkę.
 Wynik automatycznie pojawia się w lewym oknie (por. rys. \@ref(fig:regresjaLiniowa)).
 

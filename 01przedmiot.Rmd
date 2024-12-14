@@ -196,15 +196,15 @@ Zmienne ukryte określa się mianem **confunding factors** (**czynniki zakłóca
 Rysunek \@ref(fig:fluor) przedstawia zależność pomiędzy wynikiem (*outcome*), przyczyną
 oraz czynnikami zakłócającymi na przykładzie zależności dotyczącej domniemanego
 wpływu fluoryzowania wody na zwiększenie ryzyka zgonów z powodu nowotworów.
-W badaniu, którego autor uważał, że udowodnił związek fluoryzowanie→nowotwór,
+W badaniu, którego autor uważał, że udowodnił związek fluoryzowanie→nowotwór,
 porównał on współczynniki zgonów z miast fluoryzujących oraz
 niefluoryzujących wodę. Okazało się, że przeciętnie współczynnik ten był wyższy
-w grupie miast fluoryzujących wodę. Czy to świadczy, że fluoryzowanie wody
+w grupie miast fluoryzujących wodę. Czy to świadczy, że fluoryzowanie wody
 powoduje raka? Nie.
 
-W innym badaniu tych samych miast okazało się, że
-w grupie miast fluoryzujących wodę przeciętnie mieszkają starsi ludzie. 
-A ponieważ współczynniki zgonów rosną wraz z wiekiem, to nie można
+W innym badaniu tych samych miast okazało się, że
+w grupie miast fluoryzujących wodę przeciętnie mieszkają starsi ludzie. 
+A ponieważ współczynniki zgonów rosną wraz z wiekiem, to nie można
 wykluczyć, że prawdziwą przyczyną obserwowanego zwiększenia wartości
 współczynników zgonów jest wiek, a nie fluoryzacja.
 
@@ -234,7 +234,7 @@ nie mogą zrobić tych dwóch rzeczy naraz.
 
 Średni efekt interwencji 
 określa ilościowo wpływ interwencji dla grupy osób.
-W grupie studentów jedni pili kawę, inni nie.
+W grupie studentów jedni pili kawę, inni nie.
 
 Jeżeli grupa (populacja) została uprzednio podzielona (losowo) na
 grupę **eksperymentalną** oraz **grupę kontrolną**,
@@ -264,8 +264,8 @@ Raczej tak.
 
 **Badania obserwacyjne** można z kolei podzielić na **analityczne** i **opisowe**.
 
-W badaniach **analitycznych** porównuje się grupę kontrolną z grupą poddaną ekspozycji/leczeniu;
-w badaniach opisowych nie ma grupy kontrolnej.
+W badaniach **analitycznych** porównuje się grupę kontrolną z grupą poddaną ekspozycji/leczeniu;
+w badaniach opisowych nie ma grupy kontrolnej.
 
 Badania analityczne dzielimy dalej na:
 
@@ -297,7 +297,7 @@ Badanie **przekrojowe** (*cross-sectional study*): podobne do badania kliniczno-
 na grupy kontrolną i eksperymentalną następuje po wybraniu próby, np. pacjentki po badaniu mammograficznym
 są dzielone według wyniku badania.
 
-Badania opisowe to zwykle badania przekrojowe, w tym **badania ankietowe**. W badaniu opisowym
+Badania opisowe to zwykle badania przekrojowe, w tym **badania ankietowe**. W badaniu opisowym
 można ustalić zależność (korelacyjną) czegoś z czymś, nie da się jednak ustalić związku przyczyna-skutek.
 
 ::: {.example}

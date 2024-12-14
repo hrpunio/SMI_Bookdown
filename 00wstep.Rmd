@@ -1,16 +1,17 @@
 # Wstęp {-}
 
-Przygotowując się kilka lat temu do zajęć z przedmiotu Statystyka Medyczna
+Przygotowując się kilka lat temu do zajęć z przedmiotu statystyka medyczna,
 ze zdumieniem odkryłem, że
 nie istnieje coś takiego jak polski podręcznik do statystyki medycznej
 powszechnie dostępny w księgarni, który mogę polecić
-swoim studentom. Byłem tym tym bardziej zdziwiony, że wiedziałem już wtedy
+swoim studentom. Byłem tym faktem tym bardziej zdziwiony, że wiedziałem
+już wtedy,
 co oznacza akronim EBM.
-W tamtym czasie prawdę mówiąc była tylko jedna
+W tamtym czasie, prawdę mówiąc, była tylko jedna
 książka ze statystyką medyczną w tytule -- absolutnie moim zdaniem
-nie nadająca się do polecenia jej komukolwiek kto chciałby się
+nienadająca się do polecenia jej komukolwiek, kto chciałby się
 nauczyć statystyki.
-Jest to książka tak **beznadziejna**, że nie wymienię nawet jej tytułu -- 
+Jest to książka tak beznadziejna, że nie wymienię nawet jej tytułu -- 
 tłumaczenie
 z języka angielskiego zresztą.
 
@@ -18,26 +19,26 @@ W trakcie zajęć odkryłem także, że studenci w ogromnej większości
 są przekonani, że przedmiot ten jest trudny i mają w związku z tym
 ogromną -- graniczącą z pewnością -- obawę, że nie są w stanie go opanować.
 
-W moim przekonaniu żeby ten stan rzeczy zmienić należy zademonstrować
+W moim przekonaniu żeby ten stan rzeczy zmienić, należy zademonstrować
 -- teoretycznie oraz praktycznie -- że statystyka nie jest
-wcale aż taka trudna. Teoretycznie oznaczałoby,
-że cześć matematyczna powinna być zredukowana do absolutnego minimum,
-a praktycznie, że należy pokazać jak i czym da się łatwo statystkę uprawiać
-czyli liczyć. Przez **czym** oczywiście współcześnie należy
-rozumieć konkretny program komputerowy i niekoniecznie tym programem musi być
+wcale aż taka trudna. Teoretycznie oznaczałoby to,
+że część matematyczna powinna być zredukowana do absolutnego minimum,
+a praktycznie -- że należy pokazać jak i czym, da się łatwo statystkę uprawiać,
+czyli liczyć. Przez czym oczywiście współcześnie należy
+rozumieć konkretny program komputerowy i niekoniecznie musi nim być
 arkusz kalkulacyjny.
 
 Sposobem na lepsze zrozumienie statystyki nie może być zasypanie
 studenta wielopiętrowymi formułami matematycznymi (co dyskwalifikuje
 część podręczników), ale raczej zastąpienie formalnej ścisłości
 przykładami i odwołanie się do zdrowego rozsądku, który przecież
-jest istotą wielu procedur statystycznych, takich jak na przykład
+jest istotą wielu procedur statystycznych, takich jak np.
 testy istotności.
 
-Kierując się tym założeniem całość teorii wyłożono w czterech pierwszych
+Kierując się tym założeniem, całość teorii wyłożono w czterech pierwszych
 rozdziałach podręcznika.
-W pierwszym jak to zwykle bywa przedstawiono czym jest statystyka,
-czym się zajmuje oraz wyjaśniono **podstawowe pojęcia**, którymi
+W pierwszym, jak to zwykle bywa, przedstawiono, czym jest statystyka,
+czym się zajmuje, oraz wyjaśniono **podstawowe pojęcia**, którymi
 statystyka się posługuje, takie jak populacja, próba czy pomiar.
 W rozdziale drugim przedstawiono metody **opisu statystycznego**.
 Rozdział trzeci przedstawia ideę **wnioskowania statystycznego**.
@@ -45,13 +46,13 @@ Najbardziej
 obszerny rozdział czwarty opisuje metody **analizy zależności**.
 
 Pozostałe rozdziały poświęcono praktyce. Rozdział piąty zawiera
-przykładowe analizy trzech badań ankietowych a rozdział szósty
-opisuje
+przykładowe analizy trzech badań ankietowych, a rozdział szósty
+opisuje,
 jak uprawiać statystykę z wykorzystaniem programu Jamovi.
 
 Podręcznik został napisany dla studentów Wydziału Nauk o Zdrowiu
 Powiślańskiej Szkoły Wyższej, których uczę od kilku lat
-statystyki medycznej, ale mam nadzieję że może być przydatny
+statystyki medycznej, ale mam nadzieję, że może być przydatny
 także dla studentów innych kierunków zwłaszcza kierunków medycznych.
 
 Elektroniczne wersje podręcznika w formatach HTML, PDF oraz EPUB znajdują

@@ -1632,7 +1632,7 @@ Model zerowy ma postać:
 $$\ln(o) = b_0$$
 
 W modelu zerowym prawdopodobieństwo osteoporozy jest identyczne dla
-kobiet i mężczyzn, zatem w oczywisty sposób dewiancja tego modelu
+kobiet i mężczyzn, zatem w oczywisty sposób dewiancja tego modelu
 będzie większa. Pytanie, czy różnica jest istotna statystycznie.
 Jeżeli jest, to przyjmuje się, że szacowany model jest lepszy od modelu
 trywialnego (warunek minimum przydatności).

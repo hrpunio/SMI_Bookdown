@@ -6,7 +6,7 @@ author:
   affiliation: Powiślańska Szkoła Wyższa (Kwidzyn-Gdańsk)
 date: "![Styczeń 2024/wersja robocza](./FN.jpg){width=50%} "
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: ["bookdown::gitbook", "word_document"]
 documentclass: book
 classoption:
   - openany
